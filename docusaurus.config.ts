@@ -77,11 +77,7 @@ const config: Config = {
         // {to: '/blog', label: 'Blog', position: 'left'},
       ],
     },
-    docs: {
-      sidebar: {
-        autoCollapseCategories: true,
-      },
-    },
+    
     footer: {
       style: 'dark',
       copyright: `Copyright © ${new Date().getFullYear()} Developed and maintained by SafeSquid Labs, a strategic business unit of Office Efficiencies (INDIA) Private Limited. `,
