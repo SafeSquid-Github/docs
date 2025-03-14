@@ -1,3 +1,5 @@
+# Kerberos SSO Authentication Setup
+
 ## Objective 
  The main aim/objective of this particular authentication is that the user doesn't have to enter its credentials the software will automatically detect from which user group does the user belong and will set the restrictions accordingly. 
 
