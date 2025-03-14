@@ -1,6 +1,7 @@
 ---
-title: How To implement your Secure Web Gateway
+title: How To
 ---
+# How To implement your Secure Web Gateway
 
 ## Overview
 

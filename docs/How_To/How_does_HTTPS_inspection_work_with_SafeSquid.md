@@ -12,9 +12,9 @@ If HTTPS inspection is disabled then SafeSquid resolve IP of xyz.com with the he
 
 If HTTPS inspection enabled then
 
-i) SafeSquid resolves IP of www.xyz.com with the help of DNS and establishes connection to the www.xyz.com.
+1. SafeSquid resolves IP of www.xyz.com with the help of DNS and establishes connection to the www.xyz.com.
 
-ii) SafeSquid performs SSL handshake with server.
+2. SafeSquid performs SSL handshake with server.
 
 SafeSquid sends client hello message to the server in the process of SSL handshake.
 
@@ -28,7 +28,7 @@ If SafeSquid finds that server certificate is valid then SafeSquid performs SSL 
 
 After this SafeSquid uses server certificate (public key) to encrypt the data that will be sent to server. Further server can decrypt the data sent by the SafeSquid and returns response accordingly.
 
-iii) SafeSquid performs SSL handshake with client
+3. SafeSquid performs SSL handshake with client
 
 Client browsers send client hello message to the SafeSquid server in the process of SSL handshake.
 
