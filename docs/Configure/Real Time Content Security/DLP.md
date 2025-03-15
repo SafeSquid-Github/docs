@@ -1,3 +1,5 @@
+# Data Loss Prevention
+
 ## Overview
 
 DLP is nothing **but a Data Loss Prevention** module in Safequid. DLP module was introduced in SafeSquid to restrict end users from sending sensitive or critical information outside the corporate network. You can achieve this simply by creating rule(s) in the DLP section for blocking the predefined content type.

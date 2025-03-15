@@ -1,3 +1,5 @@
+# Proxy Chain
+
 ## Overview
 
 The Proxy chain section allows you to selectively forward requests through another proxy, SOCKS4 or SOCKS5 firewalls.

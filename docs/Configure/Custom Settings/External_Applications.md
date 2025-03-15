@@ -1,3 +1,5 @@
+# External Applications
+
 ## Overview
 
 The external feature allows you to use any program or script to parse the contents of a file.

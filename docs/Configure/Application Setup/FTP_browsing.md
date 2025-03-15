@@ -1,3 +1,5 @@
+# FTP Browsing
+
 ## Overview
 
 The FTP Browsing section lets you configure how the FTP connections are established, and results are displayed.

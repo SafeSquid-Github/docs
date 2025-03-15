@@ -1,3 +1,5 @@
+# Text Analzer
+
 ## Overview
 
 Text Analyzer enables you to detect and restrict access to websites that may contain inappropriate or pornographic content based on a keyword scoring system.

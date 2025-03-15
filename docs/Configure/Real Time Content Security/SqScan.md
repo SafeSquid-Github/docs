@@ -1,3 +1,5 @@
+# SqScan
+
 ## Overview
 
 SqScan is a built-in module in SafeSquid that protects users against malware.

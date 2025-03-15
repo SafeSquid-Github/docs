@@ -1,3 +1,5 @@
+# ICAP 
+
 ## What is the advantage of using ICAP?
 
 ICAP is a protocol designed to off-load specific Internet-based content to dedicated servers, thereby freeing up resources and standardizing how features are implemented.

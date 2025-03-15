@@ -1,3 +1,5 @@
+# Request Types
+
 ## Overview
 
 Use Request Profiler to Manage profiling based on the request sent to the web server.

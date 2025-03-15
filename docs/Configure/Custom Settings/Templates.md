@@ -1,3 +1,5 @@
+# Templates
+
 ## Overview
 
 Customized templates can be useful:

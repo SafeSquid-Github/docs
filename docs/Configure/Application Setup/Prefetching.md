@@ -1,3 +1,5 @@
+# Prefetching
+
 ## Overview
 
 Use Prefetching to enhance user experience. SafeSquid can analyze HTML pages, to identify links to embedded content, and initiate the fetch and cache process while still serving the initial HTML pages. Create entries in the Prefetch Sub-Section and set the logic for analyzing the HTML pages. Enable Caching for using Prefetching effectively.

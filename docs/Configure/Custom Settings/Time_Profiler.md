@@ -1,3 +1,5 @@
+# Time Profiler
+
 ## Overview
 
 Use Time Profiler to set up your Time-based Internet Access policies.

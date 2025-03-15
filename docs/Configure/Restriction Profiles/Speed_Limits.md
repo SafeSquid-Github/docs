@@ -1,3 +1,5 @@
+# Speed Limits
+
 ## Overview
 
 The SafeSquid Limits feature allows you to define User Limits, for accessing content from the Internet.

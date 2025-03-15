@@ -1,4 +1,4 @@
-## Integration of LDAP 
+# Integration of LDAP 
 
 Here I am integrating my Active Directory with the following information.
 

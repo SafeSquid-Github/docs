@@ -1,3 +1,5 @@
+# HTTPS Inspection
+
 ## Overview
 
 This section allows you to configure the overall operation to handle scanning of connections under HTTPS (HTTP over SSL).

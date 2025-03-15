@@ -1,3 +1,5 @@
+# Elevated Privacy
+
 ## Overview
 
 Use Elevated Privacy to protect privacy activity across different websites.

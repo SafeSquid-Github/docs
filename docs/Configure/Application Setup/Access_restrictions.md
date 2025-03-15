@@ -1,3 +1,5 @@
+# Access Restriction
+
 ## Overview
 
 Use Access Restriction to Allow/Deny access to SafeSquid's service for specific user/user groups. Allows you to specify the Access rights for various users and to profile the users into user groups for being uniquely processed in other sections.

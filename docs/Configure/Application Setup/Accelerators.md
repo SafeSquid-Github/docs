@@ -1,4 +1,4 @@
-## Accelerators
+# Accelerators
 
 Use accelerators to optimize resource utilization and improve response time.
 

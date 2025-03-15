@@ -1,3 +1,5 @@
+# Header Filter
+
 ## Overview
 
 Control how SafeSquid modifies the HTTP header messages exchanged between your Internet Clients like web browsers and the requested web service.

@@ -1,16 +1,18 @@
+# Response Type
+
 ## Overview
 
 Use Response profiles to manage profiling based on the responses received from the webserver.
 
 You can manage Profiling based on the following parameters present in the responses received from the web server.
 
--   Mime
+1. Mime
 
--   File
+1. File
 
--   Content-Length
+1. Content-Length
 
--   Response header pattern, etc.,
+1. Response header pattern, etc.,
 
 ## Enabling the Response Profiler section on the SafeSquid User Interface
 
@@ -54,9 +56,9 @@ The first entry that matches the Response Profile of a connection, will be appli
 
 Enable or Disable this entry.
 
--   TRUE: Enable this entry.
+1. TRUE: Enable this entry.
 
--   FALSE: Disable this entry.
+1. FALSE: Disable this entry.
 
 ### Comment
 
@@ -112,11 +114,11 @@ This option is to control how the transfer encoding chunk header should be handl
 
 **Example**: Transfer-Encoding: chunked
 
--   **ANY:** Select this if the transfer encoding chunked does not matter in the response header.
+1. **ANY:** Select this if the transfer encoding chunked does not matter in the response header.
 
--   **NO:** Select this if you don't want to apply a profile if the transfer encoding chunked is present in the response header.
+1. **NO:** Select this if you don't want to apply a profile if the transfer encoding chunked is present in the response header.
 
--   **YES:** Select this if you want to apply a profile if the transfer encoding chunked is present in the response header.
+1. **YES:** Select this if you want to apply a profile if the transfer encoding chunked is present in the response header.
 
 ### multipart_byterange
 
@@ -128,11 +130,11 @@ Content-type: application/x-pdf Content-range: bytes 500-999/8000 ...the first r
 
 Content-type: application/x-pdf Content-range: bytes 7000-7999/8000 ...the second range... --THIS_STRING_SEPARATES--
 
--   **ANY**: Select this if multipart/ byterange does not matter in the response header.
+1. **ANY**: Select this if multipart/ byterange does not matter in the response header.
 
--   **NO:** Select this if you don't want to apply a profile if multipart/ byteranges are present in the response header.
+1. **NO:** Select this if you don't want to apply a profile if multipart/ byteranges are present in the response header.
 
--   **YES:** Select this if you want to apply a profile if multipart/ byteranges are present in the response header.
+1. **YES:** Select this if you want to apply a profile if multipart/ byteranges are present in the response header.
 
 ### Minimum Content Size
 
