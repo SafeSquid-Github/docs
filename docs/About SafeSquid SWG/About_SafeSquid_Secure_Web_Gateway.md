@@ -76,7 +76,7 @@ Regulate the use of Internet Applications.
 
 ## Typical High-Level Solution Architecture
 
-![](/img/About_SafeSquid_SWG/About_SafeSquid_Secure_Web_Gateway/image1.webp)
+![](/img/About_SafeSquid_SWG/image1.webp)
 
 In a typical organization setting, the amalgamation of [SafeSquid Application Eco-system](https://help.safesquid.com/portal/en/kb/application-eco-system) constitutes the complete SWG solution.
 
