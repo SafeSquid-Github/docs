@@ -12,12 +12,14 @@
 
 4.  Check whether these parameters are uncommented as shown below-
 
-```
+
 dnssec-validation no;
-listen-on {127.0.0.1;};
+listen-on \{127.0.0.1;\};
+
 auth-nxdomain no; # conform to RFC1035
-//listen-on-v6 { any; };
-```
+
+//listen-on-v6 \{ any; \};
+
 
 5.  Modify the **named.conf** file with this command
 
