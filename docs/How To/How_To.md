@@ -1,6 +1,19 @@
 ---
 title: How To
+description: Step-by-step guide to implement SafeSquid Secure Web Gateway and optimally use its features.
+keywords:
+  - SafeSquid
+  - Secure Web Gateway
+  - Proxy Server
+  - Web Security
+  - Installation Guide
+  - HTTPS Inspection
+  - Web Categorization
+  - Bandwidth Management
+  - Content Filtering
+  - Troubleshooting
 ---
+
 # How To implement your Secure Web Gateway
 
 ## Overview
