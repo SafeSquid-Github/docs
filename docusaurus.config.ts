@@ -49,7 +49,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/SafeSquidFullTech.png',
     navbar: {
-      title: 'SafeSquid Documentation',
+      title: 'SafeSquid',
       items: [
         {
           type: 'docSidebar',
