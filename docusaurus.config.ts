@@ -47,9 +47,9 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/SafeSquidFullTech.png',
+    image: '@site/static/img/favicon.ico',
     navbar: {
-      title: 'SafeSquid',
+      title: 'SafeSquid SWG',
       items: [
         {
           type: 'docSidebar',
@@ -57,7 +57,7 @@ const config: Config = {
           position: 'left',
           label: 'Documentation',
         },
-        // {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/blog', label: 'Blog', position: 'left'},
       ],
     },
     docs: {
