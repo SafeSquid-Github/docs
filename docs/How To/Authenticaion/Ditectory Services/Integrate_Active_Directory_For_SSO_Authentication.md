@@ -133,12 +133,15 @@ At path:
 Run command:
 
 > cat safesquid.dns.conf
-```
-zone safesquid.test {
+
+zone safesquid.test \{
+
 type stub;
-masters {192.168.221.1;};
-};
-```
+
+masters \{192.168.221.1;\};
+
+\};
+
 Also, it will automatically copy at given path:
 
 /etc/bind/
@@ -146,12 +149,15 @@ Also, it will automatically copy at given path:
 Run command:
 
 > cat safesquid.dns.conf
-```
-zone safesquid.test {
+
+zone safesquid.test \{
+
 type stub;
-masters {192.168.221.1;};
-};
-```
+
+masters \{192.168.221.1;\};
+
+\};
+
 **(Note: Monit service must be up.)**
 
 ![clicking on ldap entries tab to check for entries](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image23.webp)

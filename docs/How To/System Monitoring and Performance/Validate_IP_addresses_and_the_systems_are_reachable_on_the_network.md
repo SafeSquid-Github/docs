@@ -139,19 +139,26 @@ After completing the entire configuration when you save the entry, the file with
 **(Note: Monit service must be running)**
 
 > root@sabproxy:/usr/local/safesquid/security/dns# cat safesquid.dns.conf
-```
-zone safesquid.test {
+
+zone safesquid.test \{
+
 type stub;
-masters {192.168.221.1;};
-};
-```
-```
+
+masters \{192.168.221.1;\};
+
+\};
+
+
 root@sabproxy:/etc/bind# cat safesquid.dns.conf
-zone safesquid.test {
+
+zone safesquid.test \{
+
 type stub;
-masters {192.168.221.1;};
-};
-```
+
+masters \{192.168.221.1;\};
+
+\};
+
 **If safesquid.dns.conf is empty, configure LDAP for SSO authentication from SafeSquid Web GUI LINK properly and then do above steps again to verify.**
 
 **Note: Monit service should be running.**

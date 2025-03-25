@@ -112,12 +112,15 @@ Command: vim abc.safesquid.co
 
 Add below lines
 
-```
-zone "abc.safesquid.com" {
+
+zone "abc.safesquid.com" \{
+
 type forward;
-forwarders {10.10.124.101;};
-};
-```
+
+forwarders \{10.10.124.101;\};
+
+\};
+
 
 Command to restart bind9 service:
 
