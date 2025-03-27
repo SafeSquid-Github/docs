@@ -1,0 +1,20 @@
+name: Build Docs and Publish
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: node:20
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          node-version: '20'
+      - run: npm install
+      - run: npm run build
+      - run: apt-get update && apt-get install -y rsync
+      - run: mkdir -p /github/home/.ssh
+      - run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > /github/home/.ssh/id_ed25519 && chmod 600 /github/home/.ssh/id_ed25519
+      - run: rsync -avz --delete build/ -e "ssh -o StrictHostKeyChecking=no -i  /github/home/.ssh/id_ed25519" ${{ vars.REMOTE_USER }}@${{ vars.REMOTE_HOST }}:${{ vars.REMOTE_PATH }}
