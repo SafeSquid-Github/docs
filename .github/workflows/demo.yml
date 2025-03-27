@@ -5,7 +5,6 @@ on:
       - main
 jobs:
   build:
-  build:
     runs-on: ubuntu-latest
     container:
       image: node:20
