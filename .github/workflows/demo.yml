@@ -17,4 +17,4 @@ jobs:
       - run: apt-get update && apt-get install -y rsync
       - run: mkdir -p ~/.ssh
       - run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
-      - run: rsync -avz --delete build/  -e "ssh -i ~/.ssh/id_ed25519" "${{ secrets.REMOTE_USER }}"@"${{ secrets.REMOTE_HOST }}":"${{ secrets.REMOTE_PATH }}"
+      - run: rsync -avz --delete build/  -e "ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_ed25519" "${{ secrets.REMOTE_USER }}"@"${{ secrets.REMOTE_HOST }}":"${{ secrets.REMOTE_PATH }}"
