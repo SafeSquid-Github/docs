@@ -14,3 +14,8 @@ jobs:
           node-version: '20'
       - run: npm install
       - run: npm run build
+      - run: | 
+          mkdir -p `/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > /.ssh/id_rsa
+          chmod 600 /.ssh/id_rsa
+      - run:  rsync -avz --delete build/ ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:${{ secrets.REMOTE_PATH }}
