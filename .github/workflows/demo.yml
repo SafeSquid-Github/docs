@@ -16,6 +16,5 @@ jobs:
       - run: npm run build
       - run: | 
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > /.ssh/id_rsa
-          chmod 600 /.ssh/id_rsa
-      - run:  rsync -avz --delete build/  -e "ssh -i "${{ secrets.SSH_PRIVATE_KEY }}"" "${{ secrets.REMOTE_USER }}"@"${{ secrets.REMOTE_HOST }}":"${{ secrets.REMOTE_PATH }}"
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > /.ssh/id_ed25519 && chmod 600 /.ssh/id_ed25519
+      - run:  rsync -avz --delete build/  -e "ssh -i "${{ secrets.SSH_PRIVATE_KEY }}"" "${{ variables.REMOTE_USER }}"@"${{ variables.REMOTE_HOST }}":"${{ variables.REMOTE_PATH }}"
