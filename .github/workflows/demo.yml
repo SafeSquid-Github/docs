@@ -18,4 +18,4 @@ jobs:
       - run: mkdir -p ~/.ssh
       - run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
       - run: ls -lrt ~/.ssh/id_ed25519
-      - run: echo "rsync -avz --delete build/ -e "ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_ed25519" root@139.59.18.174:/usr/local/src/"
+      - run: echo "rsync -avz --delete build/ -e ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_ed25519 root@139.59.18.174:/usr/local/src/"
