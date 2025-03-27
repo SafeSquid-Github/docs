@@ -9,12 +9,24 @@ jobs:
     container:
       image: node:20
     steps:
+      # Checkout the repository
       - uses: actions/checkout@v3
+
+      # Set up Node.js
+      - uses: actions/setup-node@v3
         with:
           node-version: '20'
+
+      # Install dependencies and build the project
       - run: npm install
       - run: npm run build
+
+      # Install rsync
       - run: apt-get update && apt-get install -y rsync
+
+      # Set up SSH for rsync
       - run: mkdir -p /github/home/.ssh
       - run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > /github/home/.ssh/id_ed25519 && chmod 600 /github/home/.ssh/id_ed25519
-      - run: rsync -avz --delete build/ -e "ssh -o StrictHostKeyChecking=no -i  /github/home/.ssh/id_ed25519" ${{ vars.REMOTE_USER }}@${{ vars.REMOTE_HOST }}:${{ vars.REMOTE_PATH }}
+
+      # Use rsync to deploy the build directory
+      - run: rsync -avz --delete build/ -e "ssh -o StrictHostKeyChecking=no -i /github/home/.ssh/id_ed25519" ${{ vars.REMOTE_USER }}@${{ vars.REMOTE_HOST }}:${{ vars.REMOTE_PATH }}
