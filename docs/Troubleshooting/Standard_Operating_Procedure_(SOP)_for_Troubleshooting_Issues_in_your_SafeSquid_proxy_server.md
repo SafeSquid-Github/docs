@@ -112,13 +112,13 @@ Configure curl to use the proxy with the --proxy option to check the response vi
 ## Access and Filter SafeSquid's Extended Logs:
 
 Use the awk command to view a summary of connections related to the websites you are trying to debug for example "safesquid.com":
-```
-awk -F't' '{print $4, $2, $11, $12, $6, $21, $24, $23, $33, $37}' /var/log/safesquid/extended/extended.log | grep "website"
-```
+
+awk -F't' '\{print $4, $2, $11, $12, $6, $21, $24, $23, $33, $37\}' /var/log/safesquid/extended/extended.log | grep "website"
+
 Example:
-```
-awk -F't' '{print $4, $2, $11, $12, $6, $21, $15, $24, $23, $33, $37}' /var/log/safesquid/extended/extended.log | grep "safesquid.com"
-```
+
+awk -F't' '\{print $4, $2, $11, $12, $6, $21, $15, $24, $23, $33, $37\}' /var/log/safesquid/extended/extended.log | grep "safesquid.com"
+
 Customize the output with different log keys as needed.
 
 **Interpret the Output:**
@@ -150,13 +150,13 @@ Requests which are blocked by SafeSquid will have a status code of 451.
 ![showing logs in safesquid server greping website name](/img/Troubleshooting/Standard_Operating_Procedure_(SOP)_for_Troubleshooting_Issues_in_your_SafeSquid_proxy_server/image11.webp)
 
 You can get more specific by mentioning IP or username to get user-specific logs.
-```
-awk -F't' '{print $4, $2, $11, $12, $6, $21, $24, $23, $33, $37}' /var/log/safesquid/extended/extended.log | grep "<WEBSITE>" | grep "<USER IP>"
-```
+
+awk -F't' '\{print $4, $2, $11, $12, $6, $21, $24, $23, $33, $37\}' /var/log/safesquid/extended/extended.log | grep "WEBSITE" | grep "USER IP"
+
 Example:
-```
-awk -F't' '{print $4, $2, $11, $12, $6, $21, $24, $23, $33, $37}' /var/log/safesquid/extended/extended.log | grep "safesquid.com" | grep "192.168.2.108"
-```
+
+awk -F't' '\{print $4, $2, $11, $12, $6, $21, $24, $23, $33, $37\}' /var/log/safesquid/extended/extended.log | grep "safesquid.com" | grep "192.168.2.108"
+
 This will only show traffic to the proxy generated from the specified user to the specified website.
 
 ![showing logs in safesquid server greping IP address name](/img/Troubleshooting/Standard_Operating_Procedure_(SOP)_for_Troubleshooting_Issues_in_your_SafeSquid_proxy_server/image12.webp)
