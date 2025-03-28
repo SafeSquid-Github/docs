@@ -3,17 +3,20 @@ import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
+import {useColorMode} from '@docusaurus/theme-common/internal';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  LightSvg: React.ComponentType<React.ComponentProps<'svg'>>;
+  DarkSvg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
     title: 'Free to download and use',
-    Svg: require('@site/static/img/free2use.svg').default,
+    LightSvg: require('@site/static/img/free2use_light.svg').default,
+    DarkSvg: require('@site/static/img/free2use.svg').default,
     description: (
       <>
         Log in to the  <Link href='https://key.safesquid.com'>SafeSquid Self-Service Portal</Link>  and deploy On-Premises, Off-Premises (Cloud), or a hybrid Secure Web Gateway for your enterprise within 15 minutes. 
@@ -22,7 +25,8 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Agent-less integration with your environment',
-    Svg: require('@site/static/img/integrations.svg').default,
+    LightSvg: require('@site/static/img/integrations_light.svg').default,
+    DarkSvg: require('@site/static/img/integrations.svg').default,
     description: (
       <>
         With an Enterprise Ready Architecture, SafeSquid can easily integrate with your IAM systems, ICAP servers, DLP systems, SIEMs, and SoC threat intelligence, to easily blend in your environment.
@@ -31,7 +35,8 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Scale Effortlessly',
-    Svg: require('@site/static/img/scale.svg').default,
+    LightSvg: require('@site/static/img/scale_light.svg').default,
+    DarkSvg: require('@site/static/img/scale.svg').default,
     description: (
       <>
         SafeSquid's SMP-Aware Architecture synergistically scales-up the throughput to absorb load bursts.
@@ -39,27 +44,12 @@ const FeatureList: FeatureItem[] = [
       </>
     ),
   },
-  // {
-  //   title: 'Real-Time Threat Intelligence',
-  //   Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-  //   description: (
-  //     <>
-  //       To ensure your organisation's security posture has maximum relevance, intelligence feeds are directly injected at the web gateway in real-time.
-  //     </>
-  //   ),
-  // },
-  // {
-  //   title: 'Painless Disaster Recovery',
-  //   Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-  //   description: (
-  //     <>
-  //       Even if you face total environmental disasters, our integrated configuration backup and restoration, ensures painless and timely recovery.
-  //     </>
-  //   ),
-  // }
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, LightSvg, DarkSvg, description}: FeatureItem) {
+  const {isDarkTheme} = useColorMode();
+  const Svg = isDarkTheme ? DarkSvg : LightSvg;
+  
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
