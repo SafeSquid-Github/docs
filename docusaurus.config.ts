@@ -10,7 +10,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://help.safesquid.com',
+  url: 'https://docsnew.safesquid.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -38,8 +38,14 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
         },
-        theme: {
+                theme: {
           customCss: './src/css/custom.css',
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
         },
       } satisfies Preset.Options,
     ],
@@ -57,9 +63,7 @@ const config: Config = {
           position: 'left',
           label: 'Documentation',
         },
-        // {
-        //   to: '/blog', label: 'Blog', position: 'left'
-        // },
+        // {to: '/blog', label: 'Blog', position: 'left'},
       ],
     },
     docs: {
@@ -74,6 +78,26 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+    },
+    algolia: {
+      // Application ID provided by Algolia
+      appId: 'YOUR_APP_ID',
+      // Public API key
+      apiKey: 'YOUR_SEARCH_API_KEY',
+      indexName: 'safesquid',
+      // Optional: see doc section below
+      contextualSearch: true,
+      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+      externalUrlRegex: 'docs\\.safesquid\\.com|help\\.safesquid\\.com',
+      // Optional: Replace parts of the item URLs from Algolia search results
+      replaceSearchResultPathname: {
+        from: '/docs/', // or any other path
+        to: '/',
+      },
+      // Optional: Algolia search parameters
+      searchParameters: {},
+      // Optional: path for search page that enabled by default (`false` to disable it)
+      searchPagePath: 'search',
     },
   } satisfies Preset.ThemeConfig,
 };
