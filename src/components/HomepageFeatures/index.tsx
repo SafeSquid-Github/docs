@@ -13,7 +13,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Free to download and use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/free2use.svg').default,
     description: (
       <>
         Log in to the  <Link href='https://key.safesquid.com'>SafeSquid Self-Service Portal</Link>  and deploy On-Premises, Off-Premises (Cloud), or a hybrid Secure Web Gateway for your enterprise within 15 minutes. 
@@ -22,7 +22,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Agent-less integration with your environment',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/integrations.svg').default,
     description: (
       <>
         With an Enterprise Ready Architecture, SafeSquid can easily integrate with your IAM systems, ICAP servers, DLP systems, SIEMs, and SoC threat intelligence, to easily blend in your environment.
@@ -31,7 +31,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Scale Effortlessly',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/scale.svg').default,
     description: (
       <>
         SafeSquid's SMP-Aware Architecture synergistically scales-up the throughput to absorb load bursts.
