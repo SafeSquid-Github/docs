@@ -81,9 +81,9 @@ const config: Config = {
     },
     algolia: {
       // Application ID provided by Algolia
-      appId: 'YOUR_APP_ID',
+      appId: '7DI7ZBE5OK',
       // Public API key
-      apiKey: 'YOUR_SEARCH_API_KEY',
+      apiKey: '00ea75a6b92329e1c776c9b025658040',
       indexName: 'safesquid',
       // Optional: see doc section below
       contextualSearch: true,
