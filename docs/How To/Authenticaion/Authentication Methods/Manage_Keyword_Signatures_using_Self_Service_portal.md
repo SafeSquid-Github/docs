@@ -1,4 +1,4 @@
-# Manage Disk Space on SafeSquid Server
+# Manage Keyword Signatures Using Self Service Portal
 
 We're going to assume that you've an active SafeSquid account with atleast one Activation Key. If this is not completed yet, you can register at https://key.safesquid.com/
 

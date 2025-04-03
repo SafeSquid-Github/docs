@@ -1,0 +1,1 @@
+https://help.safesquid.com/portal/en/kb/articles/sqscan#Go_to_Configure_Page

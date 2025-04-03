@@ -32,13 +32,6 @@ HDD: 160 GB (Depending on the size of logs and database you want to store)
 
 See the Hardware Requirements here - Hardware requirements
 
-## What is SafeSquid Appliance Builder?
-
-SafeSquid Appliance Builder (SAB) is the most recommended method for setting up your secure web gateway. SAB is a customized distro of Ubuntu Linux. It enables you to quickly setup your secure web gateway on a standard Intel server hardware, or as a virtual appliance on any virtualization platform like VMware or Hyper-V.
-
-SAB automatically installs and configures all dependency libraries, and services.
-
-For more details follow LINK
 
 ## Where should I get the latest version of SafeSquid to upgrade?
 

@@ -1,0 +1,1 @@
+https://help.safesquid.com/portal/en/kb/articles/image-analyzer#Overview
