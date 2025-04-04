@@ -1,0 +1,1 @@
+https://help.safesquid.com/portal/en/kb/articles/manage-keyword-signatures-using-self-service-portal

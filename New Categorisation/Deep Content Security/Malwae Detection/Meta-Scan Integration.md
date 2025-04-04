@@ -1,1 +1,0 @@
-https://help.safesquid.com/portal/en/kb/articles/defend-against-malware-and-external-attacks#Overview

@@ -86,3 +86,4 @@ You should click on close button for analyzing drilled report.
 
 
 https://help.safesquid.com/portal/en/kb/articles/setup-reporting-module
+https://help.safesquid.com/portal/en/kb/articles/mail-integration-with-reporting-module
