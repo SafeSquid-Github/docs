@@ -1,17 +1,19 @@
-# Overview
+# Analyze The SafeSquid
+
+## Overview
 
 Logs provide a timeline of events for the Linux operating system, applications and system, and are very useful and valuable troubleshooting tool when you encounter any problem. When any issue/problem occurs then system administrator will analyze the log files first.
 Most of the log files are stored in plain text form and are stored in the /var/log directory path.
 
 There are 2 type of logs which are essential with SafeSquid installed on your server. One is SafeSquid application log and other is safesquid activity log which are written in system logs.
 To view any log file you can use any one of the following commands:
-# less /var/log/logfilename
-# more -f /var/log/logfilename
-# cat /var/log/logfilename
-# tail -f /var/log/logfilename
-# grep -i error /var/log/logfilename
+> less /var/log/logfilename
+> more -f /var/log/logfilename
+>  /var/log/logfilename
+> tail -f /var/log/logfilename
+> grep -i error /var/log/logfilename
 
-# SafeSquid Application Logs
+## SafeSquid Application Logs
 
 SafeSquid application produces these logs. Logs contain all kinds of error messages, warnings or other events written by the SafeSquid. These messages can provide logical, high-level information that are connected to specific use cases. Each log message needs to provide useful information that helps you understand the behavior of SafeSquid.
 SafeSquid application generates six different log formats.
@@ -37,7 +39,7 @@ The path to these log files are as follows:
 
 You can see the Native Log and Config Log details from **SafeSquid Interface.**
 
-## Native logs 
+### Native logs 
 
 It records various functional aspects like REQUESTS, SECURITY, REDIRECT etc. that are affected by the various features and their configuration.
 
@@ -98,14 +100,14 @@ You can see **each request and response** processed through SafeSquid.
 You can also search for particular string by using search bar. '"**Resume**" button will help you to **stop real time streaming of logs**. 
 
   -----------------------------------------------------------------------------------------------------------------------------------------------
-  ![Access Reports to view Dashboard on safesquid user interface ](media/image1.png){width="6.268055555555556in" height="3.5256944444444445in"}
+  ![Access Reports to view Dashboard on safesquid user interface ](/img/How_To/Analyze_The_SafeSquid_Logs/image1.webp)
   -----------------------------------------------------------------------------------------------------------------------------------------------
 
   -----------------------------------------------------------------------------------------------------------------------------------------------
 
  
 
-## Extended logs 
+### Extended logs 
 
 The extended.log (NCSA / Extended log format) records maximum details of each request handled by the proxy application. Extended logs will be helpful for generation of reports to analyze the user activities.
 
@@ -114,10 +116,12 @@ The extended.log (NCSA / Extended log format) records maximum details of each re
 "record_id"     "client_id"     "request_id"    "date_time"     "elapsed_time"  "status"        "size"  "upload"  "download"      "bypassed"      "client_ip"     "username"      "method"        "url"   "http_referer"    "useragent"     "mime"  "filter_name"   "filtering_reason"      "interface"     "cachecode"     "peercode"        "peer"  "request_host"  "request_tld"   "referer_host"  "referer_tld"   "range" "time_profiles"   "user_groups"   "request_profiles"      "application_signatures"        "categories"    "response_profiles"       "upload_content_types"  "download_content_types"        "profiles"
 
 **Example Log Line1:
-"1531492103912WfkgX"    "91"    "2"    "13/Jul/2018:19:58:26"    "3663"    "200"    "626"    "0"    "626"    "FALSE"    "192.168.0.24"    "anonymous@192.168.0.24"    "GET"    ""    "<https://accounts.google.com/>"    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0"    "image/png"    "-"    "-"    "192.168.24.74:8080"    "TCP_MISS"    "DIRECT"    "ssl.gstatic.com"    "ssl.gstatic.com"    "gstatic.com"    "accounts.google.com"    "google.com"    "100-1K"    ""    "ADMINS"    ""    "Unidentified Web2.0,Firefox,Internet Browser"    "Search Engines & Portals"    "POTENTIAL MALWARE THREATS,SMALL DOWNLOADS"    "-"    "image/png"    "READ ONLY,ANTIVIRUS"**
+"1531492103912WfkgX"    "91"    "2"    "13/Jul/2018:19:58:26"    "3663"    "200"    "626"    "0"    "626"    "FALSE"    "192.168.0.24"    "anonymous@192.168.0.24"    "GET"    ""    "https://accounts.google.com/"    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0"    "image/png"    "-"    "-"    "192.168.24.74:8080"    "TCP_MISS"    "DIRECT"    "ssl.gstatic.com"    "ssl.gstatic.com"    "gstatic.com"    "accounts.google.com"    "google.com"    "100-1K"    ""    "ADMINS"    ""    "Unidentified Web2.0,Firefox,Internet Browser"    "Search Engines & Portals"    "POTENTIAL MALWARE THREATS,SMALL DOWNLOADS"    "-"    "image/png"    "READ ONLY,ANTIVIRUS"**
 
 **Example Log Line2:**
-**"153157359815951WfkgX"    "1595"    "1"    "14/Jul/2018:18:36:38"    "106"    "403"    "1517132"    "1517132"    "0"    "FALSE"    "192.168.0.24"    "anonymous@192.168.0.24"    "POST"    "[http://www.csm-testcenter.org:80/test](http://www.csm-testcenter.org/test)"    "-"    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0"    "text/html"    "DLP"    "application/vnd.ms-excel"    "192.168.24.74:8080"    "TCP_DENIED"    "DIRECT"    "safesquid"    "www.csm-testcenter.org"    "csm-testcenter.org"    "www.csm-testcenter.org"    "csm-testcenter.org"    "1M-10M"    ""    "ADMINS"    "MEDIUM UPLOADS"    "Unidentified Web2.0,All Posts,All Uploads,Uploads,Firefox,Internet Browser"    "Unknown"    ""    "application/vnd.ms-excel,text/plain"    "-"    "READ ONLY,ANTIVIRUS,BLOCK UPLOADS"**
+```
+**"153157359815951WfkgX"    "1595"    "1"    "14/Jul/2018:18:36:38"    "106"    "403"    "1517132"    "1517132"    "0"    "FALSE"    "192.168.0.24"    "anonymous@192.168.0.24"    "POST"    [http://www.csm-testcenter.org:80/test](http://www.csm-testcenter.org/test)    "-"    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0"    "text/html"    "DLP"    "application/vnd.ms-excel"    "192.168.24.74:8080"    "TCP_DENIED"    "DIRECT"    "safesquid"    "www.csm-testcenter.org"    "csm-testcenter.org"    www.csm-testcenter.org    "csm-testcenter.org"    "1M-10M"    ""    "ADMINS"    "MEDIUM UPLOADS"    "Unidentified Web2.0,All Posts,All Uploads,Uploads,Firefox,Internet Browser"    "Unknown"    ""    "application/vnd.ms-excel,text/plain"    "-"    "READ ONLY,ANTIVIRUS,BLOCK UPLOADS"**
+```
 
 The details of the fields in extended.log are as follows:
 
@@ -153,7 +157,7 @@ The details of the fields in extended.log are as follows:
 
   url                      An HTTP url is a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it. Example1> 
 
-  http_referer             An HTTP header field that identifies the address of the webpage that linked to the resource being requested. "-" is substituted when there is no referrer in HTTP header field. Example1> <https://accounts.google.com/>
+  http_referer             An HTTP header field that identifies the address of the age that linked to the resource being requested. "-" is substituted when there is no referrer in HTTP header field. Example1> https://accounts.google.com/
 
   useragent                User agent is the client which initiates a request. Useraagent are often browsers, editors, spiders (web-traversing robots), or other end user tools. Example1> Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
 
@@ -213,12 +217,12 @@ You can use **search option** to find information related to specific user or
 You can also **search individually** from above list.
 
   -------------------------------------------------------------------------------------------------------------
-  ![Detailed logs of safesquid ](media/image2.png){width="6.268055555555556in" height="3.5256944444444445in"}
+  ![Detailed logs of safesquid ](/img/How_To/Analyze_The_SafeSquid_Logs/image2.webp)
   -------------------------------------------------------------------------------------------------------------
 
   -------------------------------------------------------------------------------------------------------------
 
-## Config logs
+### Config logs
 
 Config logs contain the details related to the **SafeSquid user interface activities **like **configuration change**. You can find the users information who made the configuration changes and when.
 
@@ -227,10 +231,10 @@ Config logs contain the details related to the **SafeSquid user interface act
 "ACCESS_TIME"    "SAFESQUID_INTERFACE"    "USERNAME@IP"    "PAGE"    "SECTION"    "ACTION"    "HTTP_METHOD"    "URL"    "REFERER"    "ARGUMENTS"    "CONFIG_FILE"    "REASON"
 
 **Example Log Line1**:
-**"01/Aug/2018:01:30:19"    "192.168.24.74:8080"    "anonymous@192.168.0.27"    ""    "dlp"    "edit"    "POST"    "[http://safesquid.cfg:80/](http://safesquid.cfg/)"    "<http://safesquid.cfg/>"    "F0=TRUE&F1=Block the uploading of PDF and Microsoft Word Documents. &F2=BLOCK-ALL-UPLOADS&F3=application/octet-stream,application/x-msdownload|application/x-dosexec&F4=.bat$|.exe$,.exe$&F5=MIME_OR_FILE&F6=DO_NOT_BYPASS&handler=configuration&section=dlp&subsection=DLP&id=3&action=edit"    ""    ""**
+**"01/Aug/2018:01:30:19"    "192.168.24.74:8080"    "anonymous@192.168.0.27"    ""    "dlp"    "edit"    "POST"    "[http://safesquid.cfg:80/](http://safesquid.cfg/)"    "http://safesquid.cfg/"    "F0=TRUE&F1=Block the uploading of PDF and Microsoft Word Documents. &F2=BLOCK-ALL-UPLOADS&F3=application/octet-stream,application/x-msdownload|application/x-dosexec&F4=.bat$|.exe$,.exe$&F5=MIME_OR_FILE&F6=DO_NOT_BYPASS&handler=configuration&section=dlp&subsection=DLP&id=3&action=edit"    ""    ""**
 
 **Example Log Line2**:
-**"01/Aug/2018:18:29:38"    "192.168.24.74:8080"    "anonymous@192.168.0.27"    ""    ""    ""    "POST"    "[http://safesquid.cfg:80/](http://safesquid.cfg/)"    "<http://safesquid.cfg/>"    "handler=save&filename=config.xml" "/usr/local/safesquid/security/policies/config_anonymous@192.168.0.27_2018-08-27-18-29-38.xml"    ""**
+**"01/Aug/2018:18:29:38"    "192.168.24.74:8080"    "anonymous@192.168.0.27"    ""    ""    ""    "POST"    "[http://safesquid.cfg:80/](http://safesquid.cfg/)"    "http://safesquid.cfg/"    "handler=save&filename=config.xml" "/usr/local/safesquid/security/policies/config_anonymous@192.168.0.27_2018-08-27-18-29-38.xml"    ""**
 
 The details of the fields in config.log are as follows:
 
@@ -255,10 +259,10 @@ The details of the fields in config.log are as follows:
 
   URL                   SafeSquid interface URL is a reference to open WebGUI to View/change configuration. Example> [http://safesquid.cfg:80/](http://safesquid.cfg/)
 
-  REFERER               Referer address of the SafeSquid interface URL. Example1> <http://safesquid.cfg/>
+  REFERER               Referer address of the SafeSquid interface URL. Example1> http://safesquid.cfg/
 
   ARGUMENTS             This field displays the SafeSquid policy details which was modified. 
-                        Where F# shows the field values of the all fields. section=# displays section name. id=# determines the policy number from top. action=# shows the action performed on that policy.
+                        Where F## shows the field values of the all fields. section=## displays section name. id=## determines the policy number from top. action=## shows the action performed on that policy.
                         Example1> F0=TRUE&F1=Block the uploading of PDF and Microsoft Word Documents. &F2=BLOCK UPLOADS&F3=application/octet-stream, application/x-msdownload|application/x-dosexec&F4=.bat$|.exe$,.exe$&F5=MIME_OR_FILE&F6=DO_NOT_BYPASS&handler=configuration&section=dlp&subsection=DLP&id=3&action=edit
 
   CONFIG_FILE           A backup config.xml file along with the path which can be restored at any time by the administrator. 
@@ -274,14 +278,14 @@ Click on **"Config logs"**
 You can use **search option** to find information related to specific Time, Interface, Username, Section, Action, Arguments, Config File.
 
   ------------------------------------------------------------------------------------------------------------------
-  ![Configuration logs of safesquid ](media/image3.png){width="6.268055555555556in" height="3.5256944444444445in"}
+  ![Configuration logs of safesquid ](/img/How_To/Analyze_The_SafeSquid_Logs/image3.webp)
   ------------------------------------------------------------------------------------------------------------------
 
   ------------------------------------------------------------------------------------------------------------------
 
  
 
-## Performance logs 
+### Performance logs 
 
 Performance logs will be helpful to analyze the performance of SafeSquid. 
 SafeSquid Performance logs provide performance metrics to identify any outage due to resource shortfall, or failure in Internet Connectivity, or surge in web-traffic, etc.
@@ -473,7 +477,7 @@ From the interface go to support page, there you will see an option **Performan
 
 See More about [How to generate the Performance Plot ](https://help.safesquid.com/portal/en/kb/articles/generate-performance-plot-from-safesquid-user-interfce)
 
-## Bypass logs
+### Bypass logs
 
 Bypass logs contain the details related to the execution of bypass privilege granted to any user. When users with bypass privilege, execute their privilege to access a web-site that is not explicitly allowed, it is recorded in the bypass logs. It also records the users' opinions about the site, and the URLs that were additionally bypassed, to present a seamless experience.
 
@@ -482,10 +486,10 @@ Bypass logs contain the details related to the execution of bypass privilege gra
 "TimeStamp"    "Action"    "User    "Referrer.Domain"    "Requested.Domain"    "From/Referral/URL"    "Method"    "Requested/URL"    "Categories,Applied"    "Suggested,Categories"
 
 **Example Log Line1**:
-**"2018.09.12:21:07:11"    "NOT BYPASSED"    "anonymous@192.168.0.24"    "microsoft.com"    "optimizely.com"    "<https://powerbi.microsoft.com/>"    "POST"    "[https://logx.optimizely.com:443/v1/events](https://logx.optimizely.com/v1/events)"    "business,computersandsoftware"    "-"**
+**"2018.09.12:21:07:11"    "NOT BYPASSED"    "anonymous@192.168.0.24"    "microsoft.com"    "optimizely.com"    "https://powerbi.microsoft.com/"    "POST"    "[https://logx.optimizely.com:443/v1/events](https://logx.optimizely.com/v1/events)"    "business,computersandsoftware"    "-"**
 
 **Example Log Line2**:
-**"2018.09.12:21:07:51"    "HOST ADDED"    "anonymous@192.168.0.24"    "microsoft.com"    "optimizely.com"    "<https://powerbi.microsoft.com/>"    "POST"    "[https://logx.optimizely.com:443/v1/events](https://logx.optimizely.com/v1/events)"    "business,computersandsoftware"    "test"**
+**"2018.09.12:21:07:51"    "HOST ADDED"    "anonymous@192.168.0.24"    "microsoft.com"    "optimizely.com"    "https://powerbi.microsoft.com/"    "POST"    "[https://logx.optimizely.com:443/v1/events](https://logx.optimizely.com/v1/events)"    "business,computersandsoftware"    "test"**
 
 The details of the fields in bypass.log are as follows:
 
@@ -507,7 +511,7 @@ The details of the fields in bypass.log are as follows:
   Requested.Domain       Domain name of the requested web-server. Example> optimizely.com
 
   From/Referral/URL      From/Referrer/URL is the URL of the HTTP resource that referred the user to the resource requested. "-" is substituted when there are no referrer URL.
-                         Example> <https://powerbi.microsoft.com/>
+                         Example> https://powerbi.microsoft.com/
 
   Method                 A method is part of HTTP request sent by client to the server. Example> POST
 
@@ -521,14 +525,14 @@ The details of the fields in bypass.log are as follows:
                          Example> test
   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-##  Privacy logs
+###  Privacy logs
 
 Privacy Logs are used to record incidences of cookies, and queries going to third-party web sites.
 Privacy log captures incidences of third-party web-sites when a user accesses a web-site, and action taken by elevated privacy. 
 
 **FORMAT / LEGEND**:
 
-YYYY/mm/DD:HH:MM:SS    <ClientID>    username@IP    HTTP-REFERRER    METHOD    URL    [USER_AGENT]    action 
+YYYY/mm/DD:HH:MM:SS    ClientID    username@IP    HTTP-REFERRER    METHOD    URL    [USER_AGENT]    action 
 
 The details of the fields in privacy.log are as follows:
 
@@ -537,11 +541,11 @@ The details of the fields in privacy.log are as follows:
   ----------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   YYYY/mm/DD: HH:MM: SS   Time when SafeSquid generated this record and stored in privacy log. SafeSquid begins printing of each record on a new line with the first column as the TimeStamp in YYYY/mm/DD: HH:MM: SS format.
 
-  <ClientID>            The internal SafeSquid ID associated with the present/ongoing connection.
+  ClientID            The internal SafeSquid ID associated with the present/ongoing connection.
 
   username@IP             The username@IP(or user ID) used by the client for authentication. If no value is present, "anonymous" is substituted. 
 
-  HTTP-REFERRER           An HTTP header field that identifies the address of the webpage that linked to the resource being requested. "-" is substituted when there is no referrer in HTTP header field.
+  HTTP-REFERRER           An HTTP header field that identifies the address of the age that linked to the resource being requested. "-" is substituted when there is no referrer in HTTP header field.
 
   METHOD                  A method is part of HTTP request sent by client to the server. 
 
@@ -552,7 +556,7 @@ The details of the fields in privacy.log are as follows:
   action                  Action is the privacy level applied to the request.
   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# SafeSquid activity log written in system logs
+## SafeSquid activity log written in system logs
 
 The path to these log files is as follows:
 
@@ -564,7 +568,7 @@ The path to these log files is as follows:
   **Syslog**                  **/var/log/syslog**
   -----------------------------------------------------------------------
 
-## Monit Log
+### Monit Log
 
 SafeSquid Uses Monit service for managing and monitoring its process. Monit service is particularly useful for monitoring daemon processes, such as those started at system boot time. While Monit service is running and if SafeSquid process is terminated either manually or automatically then SafeSquid will be restarted. Also, Monit service plays a crucial role when user want to modify any startup parameter or upgrade the SafeSquid version.
 
@@ -587,7 +591,7 @@ SafeSquid Uses Monit service for managing and monitoring its process. Monit serv
 [IST Jan 20 13:08:43] info     : 'safesquid.dns.conf' timestamp was not changed for /usr/local/safesquid/security/dns/safesquid.dns.conf
 [IST Jan 20 13:08:43] info     : 'upgrade' timestamp was not changed for /tmp/safesquid/upgrade**
 
-## Syslog
+### Syslog
 
 Linux's syslog service provides a highly configurable logging system. Some messages triggered by SafeSquid application are been stored in syslog. Syslog is a standard log for sending and receiving notification messages--in a particular format--from various network devices. The messages include time stamps, event messages, severity, host IP addresses, diagnostics and more. 
 Syslog was designed to monitor network devices and systems to send out notification messages if there are any issues with functioning--it also sends out alerts for pre-notified events and monitors suspicious activity via the change log/event log of participating network devices.

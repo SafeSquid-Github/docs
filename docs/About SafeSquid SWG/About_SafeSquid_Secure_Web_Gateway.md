@@ -193,3 +193,25 @@ Allows alterations to the dashboard, reporting interfaces, and analytics to suit
 ### Real-Time Streaming to Log Aggregators
 
 Facilitates real-time transport of logs to remote aggregators and analytics facilities such as SIEM, asset, and network monitoring systems.
+
+## What is SafeSquid?
+
+SafeSquid is an RFC 2616 compliant HTTP/1.1 proxy server, specially designed to provide maximum protocol, and payload security.
+
+SafeSquid based Secure Web Gateways enable your users to safely access the web.
+
+SafeSquid, when setup in Reverse Proxy mode, secures your web applications.
+
+SafeSquid is a highly scalable software, that enables scaling up by increasing the hardware provisioning, or scaling out by creating an application cluster.
+
+## Why should I use SafeSquid?
+
+SafeSquid is an HTTP Proxy Server specially designed for web security. You should use SafeSquid for securely distributing Internet access across large network and to protect your enterprise against productivity losses, and collateral losses.
+
+## Which Operating Systems does SafeSquid support?
+
+SafeSquid support both operating systems, i.e. LINUX as well as Microsoft Windows.
+
+The installable packages for both these platforms (LINUX and Microsoft Windows) are different for obvious reasons, the configuration and operation is quite identical. So, you can choose platform of your choice, to host SafeSquid Proxy Service.
+
+Yes, the advantages of deploying SafeSquid on Linux are overall higher because the Linux operating system is better suited for servers. But then if you are more comfortable with Microsoft®Windows, you can happily deploy on Windows. Migration from either of the platforms to the other is not very difficult, really!
