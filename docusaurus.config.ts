@@ -83,7 +83,7 @@ const config: Config = {
       // Application ID provided by Algolia
       appId: 'VDAYH8QLO8',
       // Public API key
-      apiKey: '1ded24cda08d39c76408bbc739a83647',
+      apiKey: 'd60fc30e42711815476a72c8b3469240',
       indexName: 'safesquid',
       // Optional: see doc section below
       contextualSearch: true,
