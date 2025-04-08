@@ -1,3 +1,170 @@
-## [Customise blocking templates](https://help.safesquid.com/portal/en/kb/articles/create-custom-templates)
+# Create Custom Templates
 
-Organisations can customize blocking templates to conform to organizational branding and communication styles.
+## Overview
+
+Templates are used throughout SafeSquid as a replacement for pages which can't be displayed due to filtering, error, or other conditions. Customized templates can be really useful, when you would want the error messages to be displayed in a language other than English. It can also be used to display your company logo, warning or message like 'If you feel this site was unnecessarily blocked, please notify the administrator on helpdisk@mycompany.com'.
+
+A template may not necessarily be an html, but can be almost about anything like an audio file, flash file or an executable. It can be used to invoke a file for a specific condition. For example, SafeSquid has 3 built-in templates - tinygif (a 1x1 transparent gif image), checkeredgif (a 4x4 gray and transparent checkered pattern), and tinyswf (an empty flash animation). The checkeredgif template is used by default, to replace images that it blocked by the Pornographic Image Filter add-on module that is used to block pornographic images in real time. So, when the page is displayed to a user, a block of checkered boxes is displayed instead of the blocked image.
+
+## Prerequisites
+
+Create your own html file and place that file in the below paths
+
+for windows version of SafeSquid:
+
+**c:ProgramDatausrlocalsafesquidui_roottemplates**
+
+The path for Linux version of SafeSquid is:
+
+**/usr/local/safesquid/ui_root/templates/**
+
+**Note**: If you want to use any images in the html file make sure that the image also exist in the same path.
+
+## Example:
+
+Here i am creating below html page:
+
+![](/img/How_To/Create_Custom_Templates/image1.webp)
+
+I Am saving this file with name:
+
+**Custom_template.html**
+
+I will use this file in the below configuration
+
+## [Access the SafeSquid user interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+
+### Go to Configure Page
+
+![Clicking on configure in SafeSquid interface](/img/How_To/Create_Custom_Templates/image2.webp)
+
+### Go to Custom Settings
+
+![Clicking to custom settings](/img/How_To/Create_Custom_Templates/image3.webp)
+
+### Go to Templates
+
+![Clicking on templates ](/img/How_To/Create_Custom_Templates/image4.webp)
+
+### Clone existing entry
+
+![Cloning the existing entry by clicking on clone](/img/How_To/Create_Custom_Templates/image5.webp)
+
+### Edit the original entry
+
+![Clicking on edit to edit the policies](/img/How_To/Create_Custom_Templates/image6.webp)
+
+You must edit the original entry, because the entries in template section are processed from top to bottom
+
+![Editing the comment as per your entry](/img/How_To/Create_Custom_Templates/image7.webp)
+
+![In profiles, selecting the required profile in the drop down menu](/img/How_To/Create_Custom_Templates/image8.webp)
+
+![Do not change the "name" field](/img/How_To/Create_Custom_Templates/image9.webp)
+
+![Giving the name of your html file in file field](/img/How_To/Create_Custom_Templates/image10.webp)
+
+![clicking on save policy to save it](/img/How_To/Create_Custom_Templates/image11.webp)
+
+![Saved rule](/img/How_To/Create_Custom_Templates/image12.webp)
+
+## Testing
+
+![Testing the template](/img/How_To/Create_Custom_Templates/image13.webp)
+
+## Saving the Configuration 
+
+![clicking on save config to save the policy](/img/How_To/Create_Custom_Templates/image14.webp)
+
+
+# Templates
+
+## Overview
+
+Customized templates can be useful:
+
+When you would want the error messages to be displayed in a language other than English.
+
+When you would want to display the Company logo, Warnings, Custom messages, and notifications.
+
+Templates are used throughout SafeSquid as a replacement for pages that can\'t be displayed due to filtering, error, or other conditions.
+
+SafeSquid has many default templates. You can replace the default templates with your customized templates.
+
+A template may not necessarily be an HTML but can also be almost about anything like an audio file, flash file or an executable.
+
+## Enabling the Template section on the SafeSquid User Interface
+
+## [Access SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+
+## Go to the configure page.
+
+![clicking on configure in safesquid interface ](/img/Configure/Custom_Settings/Templates/image1.webp)
+
+![clicking on custom settings in the sidebar](/img/Configure/Custom_Settings/Templates/image2.webp)
+
+## Go to Templates
+
+## Manage Templates
+
+![showing Manage Templates section in templates](/img/Configure/Custom_Settings/Templates/image3.webp)
+
+### Enabled
+
+Enable or Disable this entry
+
+-   TRUE: Enable this entry.
+
+-   FALSE: Disable this entry.
+
+### Comment
+
+For documentation and future references, explain the relevance of this entry with your policies.
+
+### Profiles
+
+Specify the Profiles applicable for this entry.
+
+This entry will be applicable only if the connection has any one of the specified profiles.
+
+Leave it Blank, to apply for all connections irrespective of any applied profile.
+
+To avoid application to a connection that has a profile, use a negated profile (! profile).
+
+### Name
+
+Specify the name of the template here, for identification, and this is used in other sections for reference purposes.
+
+### File
+
+Specify the filename of the template, here. You must mention the path(location) of the file here.
+
+A template may not necessarily be in an HTML pattern but can be almost about anything like an audio file, flash file or an executable one.
+
+### Mime Type
+
+Specify the type of the template here.
+
+While using an executable template, this is set, by having the external program send an HTTP response header.
+
+### Response code
+
+The response code is to be used when sending the template.
+
+### Type
+
+Specify the type of the template.
+
+-   **FILE:** The contents of the file will be sent.
+
+-   **EXECUTABLE:** The file is executed and whatever is its output on the STDOUT, is sent as the template.
+
+### Parsable
+
+Choose here whether to substitute the variables present in the HTML codes used to display the template.
+
+There are several variables that can be used in templates if the Parsable option is selected which will be replaced with information about the request currently being handled. These variables can be used to generate content in real-time.
+
+-   TRUE: Select Parsable to true if you want to parse the template.
+
+-   FALSE: Select Parsable to False if you do not want to parse the template.

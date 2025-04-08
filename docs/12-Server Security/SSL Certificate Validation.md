@@ -188,3 +188,8 @@ You should get SSL certificate on **SafeSquid self-service portal** at - https:/
 You can generate new self-signed certificate also.
 
 Follow - LINK
+
+
+## Can I use my SSL certificates generated from my Enterprise CA?
+
+Yes, you can use your SSL certificate generated from you Enterprise CA if you have. SafeSquid provides you a facility to use SSL certificate generated from Enterprise CA.
