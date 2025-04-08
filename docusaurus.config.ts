@@ -10,7 +10,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'http://docsnew.safesquid.com'
+  url: 'http://docsnew.safesquid.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -88,7 +88,7 @@ const config: Config = {
       // Optional: see doc section below
       contextualSearch: true,
       // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-      externalUrlRegex: 'docs\\.safesquid\\.com|help\\.safesquid\\.com',
+      externalUrlRegex: 'docs\\.safesquid\\.com|docsnew\\.safesquid\\.com',
       // Optional: Replace parts of the item URLs from Algolia search results
       replaceSearchResultPathname: {
         from: '/docs/', // or any other path
