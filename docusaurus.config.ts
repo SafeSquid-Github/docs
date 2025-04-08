@@ -10,7 +10,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://docsnew.safesquid.com',
+  url: 'http://docsnew.safesquid.com'
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -81,9 +81,9 @@ const config: Config = {
     },
     algolia: {
       // Application ID provided by Algolia
-      appId: '7DI7ZBE5OK',
+      appId: 'VDAYH8QLO8',
       // Public API key
-      apiKey: '00ea75a6b92329e1c776c9b025658040',
+      apiKey: '1ded24cda08d39c76408bbc739a83647',
       indexName: 'safesquid',
       // Optional: see doc section below
       contextualSearch: true,
@@ -98,6 +98,7 @@ const config: Config = {
       searchParameters: {},
       // Optional: path for search page that enabled by default (`false` to disable it)
       searchPagePath: 'search',
+      placeholder: 'Search documentation',
     },
   } satisfies Preset.ThemeConfig,
 };
