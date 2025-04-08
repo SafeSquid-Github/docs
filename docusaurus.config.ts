@@ -15,8 +15,6 @@ const config: Config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  trailingSlash: true,
-
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'SafeSquid-Github', // Usually your GitHub org/user name.
@@ -91,7 +89,7 @@ const config: Config = {
       indexName: 'safesquid',
 
       // Optional: see doc section below
-      contextualSearch: true,
+      contextualSearch: false,
 
       // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
       externalUrlRegex: 'docs\\.safesquid\\.com',
@@ -110,8 +108,6 @@ const config: Config = {
 
       // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
       insights: false,
-
-      //... other Algolia params
     },
   } satisfies Preset.ThemeConfig,
 };
