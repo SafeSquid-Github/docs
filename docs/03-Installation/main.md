@@ -1,3 +1,17 @@
+---
+title: Installation
+description: Learn how to get install SafeSquid Secure Web Gateway, the world's most advanced HTTP Proxy Server for Application Layer Security.
+keywords:
+  - SafeSquid
+  - Secure Web Gateway
+  - HTTP Proxy Server
+  - Application Layer Security
+  - Zero-Trust Web Security
+  - Install SWG
+  - Install SafeSquid
+image: /img/Getting-Started/Getting_Started_with_SafeSquid_Secure_Web_Gateway/image1.webp
+---
+
 ## Install SafeSquid Secure Web Gateway
 
 You can setup your secure web gateway using different installation mechanisms based on your deployment plan.

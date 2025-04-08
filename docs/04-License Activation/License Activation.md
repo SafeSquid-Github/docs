@@ -1,5 +1,3 @@
-https://help.safesquid.com/portal/en/kb/articles/register-and-generate-your-activation-key#Why_Register
-
 ---
 title: Activate a SafeSquid Instance
 ---
