@@ -87,13 +87,6 @@ const config: Config = {
       indexName: 'safesquid',
       // Optional: see doc section below
       contextualSearch: false,
-      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-      externalUrlRegex: 'docs\\.safesquid\\.com|docsnew\\.safesquid\\.com',
-      // Optional: Replace parts of the item URLs from Algolia search results
-      replaceSearchResultPathname: {
-        from: '/docs/', // or any other path
-        to: '/',
-      },
       // Optional: path for search page that enabled by default (`false` to disable it)
       searchPagePath: 'search',
       placeholder: 'Search documentation',
