@@ -86,7 +86,7 @@ Regulate the use of Internet Applications.
 
 ![](/img/About_SafeSquid_SWG/image1.webp)
 
-In a typical organization setting, the amalgamation of [SafeSquid Application Eco-system](https://help.safesquid.com/portal/en/kb/application-eco-system) constitutes the complete SWG solution.
+In a typical organization setting, the amalgamation of [SafeSquid Application Eco-system](/docs/05-Architecture/Application_Eco-System.md) constitutes the complete SWG solution.
 
 ## Solution Highlight
 

@@ -181,3 +181,5 @@ OR
 By default, SafeSquid will listen on PORT 8080. If you observe SafeSquid is listening on any one of the ports shown in the image, then its confirm that SafeSquid has started.
 
 > **Note**: This installation does not include the Monit and Bind configurations.
+
+Make some additional configurations to services used by SafeSquid, for [Monit](/docs/13-System%20Audit/Monitoring.md) and [BIND9](/docs/14-Performance%20Optimisation/01-Internalisae%20DNS/Bind.md).

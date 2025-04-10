@@ -1,4 +1,14 @@
-# Installation procedure for bind in Ubuntu
+---
+title: Installation Procedure for BIND in Ubuntu  
+Description: Follow this step-by-step guide to install and configure BIND on Ubuntu for DNS resolution in SafeSquid environments, ensuring seamless integration with proxy services.  
+
+Keywords:  
+- Install BIND Ubuntu  
+- BIND9 configuration SafeSquid  
+- DNS setup SafeSquid  
+- Ubuntu DNS server setup  
+- SafeSquid bind integration  
+---
 
 1.  Install bind with the command given below
 

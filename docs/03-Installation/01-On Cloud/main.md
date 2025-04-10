@@ -28,7 +28,7 @@ As you expanded globally, you adopted BYOD and remote work policies, causing web
 
 Hairpinning forced your traffic into inefficient detours, significantly increasing latency and doubling the data volume passing through your single gateway. The degradation impacted user experience, contributed to network congestion, and drove up bandwidth usage and costs.
 
-![](/media/image1.webp)
+![](/img/Install_SWG_on_Cloud/image1.webp)
 
 ### Shift from On-premises to Cloud SWG
 
@@ -121,7 +121,7 @@ SafeSquid's [cloud-init](https://github.com/SafeSquid-Github/safesquid_cloud-ini
 
 #### Deployment on Existing VM
 
-##### [SafeSquid Appliance Builder](https://help.safesquid.com/portal/en/kb/articles/install-safesquid-secure-web-gateway-using-safesquid-appliance-builder)
+##### [SafeSquid Appliance Builder](/docs/03-Installation/02-On-Premise/main.md)
 
 SAB is an ISO of the latest minimal Ubuntu LTS 20.04, designed to simplify deployment in environments where full automation is not feasible. SAB automates the installation of Ubuntu, followed by downloading and deploying SafeSquid SWG, streamlining the setup process.
 

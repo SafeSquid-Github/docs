@@ -33,7 +33,7 @@ Administer the usage of your Activation key.
 
 You can **deactivate** your unused instances.
 
-For more details [Manage Your Activation Key](https://help.safesquid.com/portal/en/kb/articles/manage-key)
+For more details [Manage Your Activation Key](/docs/04-License%20Activation/Manage%20Key.md)
 
 # Manage Custom Web-Site Categorization
 
@@ -49,19 +49,19 @@ The Self-Service Portal enables you to easily apply the custom categorization au
 
 1.   Audit your custom categorization
 
-Read more about: [Manage Custom Web-Site Categorization](https://help.safesquid.com/portal/en/kb/articles/manage-custom-web-site-categorization)
+Read more about: [Manage Custom Web-Site Categorization](/docs/09-Profiling%20Engine/Website%20Categorization.md)
 
 # Manage SSL Trusted Root Certificate Authority
 
 The SafeSquid Self-Service Portal enables you to manage Trusted Root CA across all your SafeSquid Installations. You can Generate Self Signed Certificate, or upload your existing Enterprise CA.
 
-Read More about [SSL certificates from Self Service Portal](https://help.safesquid.com/portal/en/kb/articles/setting-up-ssl-certificates-from-self-service-portal)
+Read More about [SSL certificates from Self Service Portal](/docs/12-Server%20Security/SSL%20Certificate%20Validation.md)
 
 # Manage Web Security Client
 
 SafeSquid Web Security Client is a VPN-based solution to enforce the Internet Use Policies for Laptop Users. The Self-Service Portal enables you to easily manage the clients.
 
-Read more about: [Manage VPN settings of Web Security Client](https://help.safesquid.com/portal/en/kb/articles/manage-vpn-settings-of-web-security-client)
+Read more about: [Manage VPN settings of Web Security Client](/docs/19-VPN%20Integration/main.md)
 
 # Manage Confidential Data Signatures
 
@@ -69,4 +69,4 @@ SafeSquid's DLP (Data Leakage Prevention) module, enables you to prevent the upl
 
 The Self-Service Portal enables you to specify the patterns to search. Your SafeSquid installations will automatically use these patterns and enforce your policies.
 
-Read more about [Manage Confidential Data Signatures.](https://help.safesquid.com/portal/en/kb/articles/manage-confidential-data-signatures)
+Read more about [Manage Confidential Data Signatures.](/docs/09-Profiling%20Engine/Application%20Signatures.md)

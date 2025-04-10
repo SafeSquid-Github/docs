@@ -1,4 +1,14 @@
-# How To configure Proxy In a Browser
+---
+title: Configure SafeSquid as a Reverse Proxy  
+Description: Learn how to configure SafeSquid as a reverse proxy to optimize website performance, enable SSL termination, enhance security, and provide caching, all without requiring client-side proxy configuration.
+
+Keywords:
+- SafeSquid reverse proxy setup  
+- Configure SafeSquid SSL termination  
+- SafeSquid web acceleration  
+- Reverse proxy caching SafeSquid  
+- SafeSquid reverse proxy authentication  
+---
 
 ## Overview
 
@@ -64,7 +74,7 @@ Make sure that port 80 is free in proxy server, because it should not be allocat
 
 You can verify it by using below command:
 
-**netstat -tulnp**
+> **netstat -tulnp**
 
 ![Check port 80 is free in proxy server by using netstat command](/img/How_To/How_to_configure_reverse_proxy/image1.webp)
 
@@ -74,11 +84,11 @@ Enable forwarding option in **/etc/sysctl.conf file**
 
 Replace this line as**: net.ipv4.ip_forward=0 to net.ipv4.ip_forward=1**
 
-**net.ipv4.ip_forward=1**
+> **net.ipv4.ip_forward=1**
 
 Then add the Iptables rule to redirect the traffic from 80 to 8080:
 
-**iptables -A PREROUTING -t nat -p tcp --dport 80 -j REDIRECT --to 8080**
+> **iptables -A PREROUTING -t nat -p tcp --dport 80 -j REDIRECT --to 8080**
 
 In proxy block all websites except your website, so that the proxy does not to be an open proxy.
 

@@ -17,13 +17,13 @@ The purpose-oriented architecture promises scalable performance while ensuring c
 
 SafeSquid-based Secure Web Gateway (SWG) shields enterprises from advanced cyber‑threats by delivering robust perimeter-level application layer security.
 
-Learn more [about SafeSquid SWG!](https://help.safesquid.com/portal/en/kb/articles/about-safesquid-secure-web-gateway)
+Learn more [about SafeSquid SWG!](/docs/01-About%20SafeSquid%20SWG/main.md)
 
 ## Typical High-Level Solution Architecture
 
 ![Solution Architecture](/img/Getting-Started/Getting_Started_with_SafeSquid_Secure_Web_Gateway/image1.webp)
 
-In a typical organization setting, the amalgamation of [SafeSquid Application Eco-system](https://help.safesquid.com/portal/en/kb/articles/application-eco-system) constitutes the complete SWG solution.
+In a typical organization setting, the amalgamation of [SafeSquid Application Eco-system](/docs/05-Architecture/Application_Eco-System.md) constitutes the complete SWG solution.
 
 ## Deployment Provisioning
 
@@ -57,7 +57,7 @@ SafeSquid is
 
 As a thumb rule for server sizing add 2 CPU cores and 4GB RAM per 100 concurrent connections.
 
-If you intend to use SafeSquid\'s HTTPS Inspection feature, using processors with \"AES-NI" is recommended.
+If you intend to use SafeSquid's HTTPS Inspection feature, using processors with "AES-NI" is recommended.
 
 Refer to [How to find out AES-NI (Advanced Encryption) Enabled on Linux System](https://www.cyberciti.biz/faq/how-to-find-out-aes-ni-advanced-encryption-enabled-on-linux-system/) to get more details on ASE-NI.
 
@@ -85,4 +85,4 @@ SafeSquid Appliance Builder (SAB) is the most recommended method for setting up 
 
 SAB automatically installs and configures all dependency libraries, and services.
 
-For more details follow [SAB installation LINK]
+For more details follow [SAB installation LINK](/docs/03-Installation/02-On-Premise/main.md)

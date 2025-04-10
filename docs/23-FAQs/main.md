@@ -1,21 +1,4 @@
 # FAQ
-## What is the process for migrating from another proxy solution to SafeSquid?
-## How do I enable debugging mode in SafeSquid?
-## Internet is working slow for my proxy – how to troubleshoot?
-## The Internet is slow when going via proxy, but normal when bypassing – what’s the root cause?
-## Why is my proxy server consuming high CPU or RAM?
-## Why do I keep getting CAPTCHA prompts even after completing them when using a proxy?
-## How to configure SafeSquid to enforce compliance with corporate policies (e.g., HIPAA, GDPR)?
-## My proxy server is connected to two ISPs. How can I configure it to ensure that mission-critical applications use the second ISP?
- 
-
-## What is SafeSquid Appliance Builder?
-
-SafeSquid Appliance Builder (SAB) is the most recommended method for setting up your secure web gateway. SAB is a customized distro of Ubuntu Linux. It enables you to quickly setup your secure web gateway on a standard Intel server hardware, or as a virtual appliance on any virtualization platform like VMware or Hyper-V.
-
-SAB automatically installs and configures all dependency libraries, and services.
-
-For more details follow LINK
 
 ## What is SafeSquid for Windows?
 
@@ -54,9 +37,6 @@ For more details follow- LINK
 ## Why am I getting "Proxy Access Denied?"
 
 If you should not properly configure policies under access restriction section or administrator should not give you access of SafeSquid Interface, you are getting "Proxy Access Denied" template.
-
-
-
 
 ## Can I use SafeSquid Captive portal to monitor internet usage traffic?
 
@@ -164,49 +144,6 @@ SafeSquid block these proxies so that no user can access the blocked websites.
 
 For more detail follow -- How to block anonymous proxies
 
-## Can I prevent users to use their personal Gmail account in company network?
-
-Yes, you can prevent users from using their personal Gmail account in company network using SafeSquid.
-
-Currently e-mails are necessary to exchange information. But allowing personal e-mails in the office network allows users to spend their productive time in other unnecessary things. Personal mails can be also a path leading to send confidential information. Blocking personal mails, solves the issue. But now some of the company mails are via Google Corporate domains.
-
-Google corporate account allows organization to have their mailing server along with the additional Gmail features personalized for the organization with complete control. So, we currently cannot block Gmail.
-
-For more details -- How To
-
-## Can I prevent user to login over Facebook or Gmail?
-
-SafeSquid restrict specific users from login over Facebook or Gmail.
-
-Except selected users all can able to login into Facebook or Gmail.
-
-For more details - How To
-
-## Can I prevent users from downloading large files?
-
-## Does SafeSquid protect network against Malware and External Attacks?
-
-SafeSquid protect network against Malware and External attacks
-
-There are numerous ways to protect and remove malware from our computers.
-
-No one method is enough to ensure your computer is secure.
-
-The more layers of Défense, the harder for hackers to use your computer.
-
-Here are three simple ways to protect your computer,
-
-Configure SafeSquid....
-
-SvScan Antivirus
-
-Clam AV Antivirus
-
-ICAP Antivirus
-
-For more details follow - How To
-
-## Does SafeSquid protect network against Internal Threats and Data Leakage?
 
 ## Should I block third party cookie?
 

@@ -287,7 +287,7 @@ Typically, this drive is the same as the installation disk.
 
 Caution: The [GRUB](https://www.gnu.org/software/grub/) bootloader is essential for booting into the installed system. Installing GRUB on the wrong drive can render the system unbootable.
 
-Note: These additional steps are particularly important for users with specific network configurations or those installed from a USB drive.
+> Note: These additional steps are particularly important for users with specific network configurations or those installed from a USB drive.
 
 Ensure all configurations are double-checked to avoid common installation errors.
 
@@ -330,7 +330,7 @@ In the end, the system will reboot itself and go through some system initializat
 
 ![At the end, the system will reboot itself and goes through some system initialization](/img/How_To/Install_SafeSquid_Secure_Web_Gateway_using_SafeSquid_Appliance_Builder/image46.webp)
 
-Note: If you have configured your system's boot order with the USB drive or ISO image as the primary boot device, it is likely that the installation menu will reappear upon reboot.
+> Note: If you have configured your system's boot order with the USB drive or ISO image as the primary boot device, it is likely that the installation menu will reappear upon reboot.
 
 To prevent this, ensure you unmount the USB drive or detach the ISO file from the virtual machine settings before restarting your server.
 
@@ -338,7 +338,7 @@ A welcome screen will appear with a SafeSquid (Secure Web Gateway) screen.
 
 ![safesquid secure web gateway ](/img/How_To/Install_SafeSquid_Secure_Web_Gateway_using_SafeSquid_Appliance_Builder/image47.webp)
 
-Note: If you face any error while installing SafeSquid Appliance
+> Note: If you face any error while installing SafeSquid Appliance
 
 Builder (SAB-ISO), you will get debugging logs information by pressing ALT+F4 to return to previous screen press ALT+F1.
 
@@ -363,5 +363,6 @@ You land into console where SafeSquid SWG will be seen as shown below after succ
 # Post-Installation Checklist and Recommendations
 
 The SafeSquid instance can now be activated from the product interface.
-[To access the product interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface),
-SafeSquid® [proxy server must be configured on the web-browser](https://help.safesquid.com/portal/en/kb/articles/how-to-configure-proxy-in-a-browser). Post activation, [setup SSL Inspection](https://help.safesquid.com/portal/en/kb/articles/setup-https-inspection) and configure policies as per the enterprise's requirements.
+[To access the product interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md),
+SafeSquid® [proxy server must be configured on the web-browser](/docs/17-Operational%20Modes/TCP%20Proxy.md).
+Post activation, [setup SSL Inspection](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md) and configure policies as per the enterprise's requirements.

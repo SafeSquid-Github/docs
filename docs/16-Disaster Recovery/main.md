@@ -1,6 +1,15 @@
 ---
-title: Disaster Recovery
+title: Disaster Recovery with SafeSquid Cloud Restore  
+Description: Learn how to use SafeSquid’s Cloud Restore feature for disaster recovery, enabling fast and efficient restoration of configuration files and SSL certificates using the same activation key after system failure or in cluster deployments.
+
+Keywords:
+- SafeSquid disaster recovery  
+- SafeSquid cloud restore  
+- Restore SafeSquid configuration  
+- SafeSquid backup and recovery  
+- SafeSquid SSL recovery  
 ---
+
 ## Overview
 
 A disaster can strike at any time, it may due to network or system failure.
@@ -51,7 +60,10 @@ Same policy configuration as well as SSL configuration on new appliance or multi
 
 6.  As soon as he clicks on cloud restore option from new appliance SafeSquid is prompting "You can get configuration file and SSL certificate shared with activation key".
 
-7.  Bob clicks on Restore button and he should find one more prompt to Restore Configuration > **downloaded:/usr/local/safesquid/security/policies/config.xml downloaded:/usr/local/safesquid/security/ssl/ROOT_X509File.cer downloaded:/usr/local/safesquid/security/ssl/ROOT_PrivateKeyFile.pem**
+7.  Bob clicks on Restore button and he should find one more prompt to Restore Configuration 
+> **downloaded:/usr/local/safesquid/security/policies/config.xml 
+
+> downloaded:/usr/local/safesquid/security/ssl/ROOT_X509File.cer downloaded:/usr/local/safesquid/security/ssl/ROOT_PrivateKeyFile.pem**
 
 8.  This line only comes when SafeSquid find new backup of configuration on cloud.
 
@@ -63,7 +75,7 @@ Your monit service must be up and running. Monit service is required to start Sa
 
 ## Configure Cloud Restore
 
-## [Access the SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ![Access the SafeSquid User Interface to configure cloud restore](/img/How_To/Setup_Cloud_Restore/image1.webp)
 

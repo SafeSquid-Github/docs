@@ -15,7 +15,7 @@ You must Activate a SafeSquid Instance before using it to access the web.
 
 ## Prerequisites
 
-To access the SafeSquid GUI, you need to [configure your browser to use a proxy](https://help.safesquid.com/portal/en/kb/articles/how-to-configure-proxy-in-a-browser).
+To access the SafeSquid GUI, you need to [configure your browser to use a proxy](/docs/17-Operational%20Modes/TCP%20Proxy.md).
 
 First, register on the SafeSquid website to get the activation key. If you already have the activation key follow the below steps to activate SafeSquid.
 
@@ -37,6 +37,7 @@ First, register on the SafeSquid website to get the activation key. If you alrea
 
 
 ## FAQs
+
 **Where should I get a product activation key?**
 
 You can get a product activation key **on SafeSquid self-service portal** - https://key.safesquid.com/

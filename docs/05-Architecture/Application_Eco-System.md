@@ -15,7 +15,7 @@ Keywords:
 
 In a typical organization setting, the amalgamation of SafeSquid Application Eco-system constitutes the complete SWG solution.
 
-## [Self-Service Portal](https://help.safesquid.com/portal/en/kb/articles/management-of-self-service-portal)
+## [Self-Service Portal](/docs/05-Architecture/Management_of_Self-Service_Portal.md)
 
 To manage properties associated with the activation key, like custom web categorisation, certificates, and subscription details, use the Self-Service portal.
 
@@ -61,10 +61,6 @@ Bind is configured to utilize Root DNS servers and internal network DNS services
 
 NTP is used for time synchronizations with the Active directory in SSO configuration
 
-## [Startup Parameters of SafeSquid Service](https://help.safesquid.com/portal/en/kb/articles/safesquid-startup-parameters)
-
-To optimise overall system & application performance, tune-up SafeSquid's startup parameters from the product interface.
-
-## [Files and Folders](https://help.safesquid.com/portal/en/kb/articles/file-and-folder)
+## [Files and Folders](/docs/05-Architecture/SafeSquid_SWG_directorys.md)
 
 SafeSquid provides a detailed directory structure used for configuration, logging, caching, and storing critical system components. It helps administrators locate and manage SafeSquid's operational files efficiently.

@@ -1,4 +1,14 @@
-# Upgrade SafeSquid to a Newer Version
+---
+title: Upgrade SafeSquid to a Newer Version  
+Description: Learn how to upgrade SafeSquid Secure Web Gateway to the latest version using the Web GUI, including prerequisites, cleanup instructions, and step-by-step guidance on uploading and applying the new tarball package.
+
+Keywords:
+- Upgrade SafeSquid SWG  
+- SafeSquid tarball update  
+- Update SafeSquid from GUI  
+- SafeSquid version upgrade  
+- SafeSquid Monit service  
+---
 
 ## Overview
 
@@ -8,31 +18,31 @@ SafeSquid SWG upgrade is a newer version of the SafeSquid that offers a signific
 
 Monit service should be running and started on your SafeSquid server, you can check it by using below command from your SafeSquid server
 
-pidof monit
+> pidof monit
 
 If you did not find pid of monit, run below command to Start the Monit service
 
-/etc/init.d/monit start
+> /etc/init.d/monit start
 
 The partition size of /tmp/safesquid used must be less than 4%, you can check it by using below command
 
-df -kh
+> df -kh
 
 After executing the command last line of the output will be similar as shown below
 
-/dev/ram1 62M 1.3M 58M 3% /tmp/safesquid
+> /dev/ram1 62M 1.3M 58M 3% /tmp/safesquid
 
 Check the highlighted number which shows the actual usage, if it is greater than 4%, then remove the files from the folder /tmp/safesquid
 
 You can remove files from /tmp/safesquid by going to that folder location using the command:
 
-cd /tmp/safesquid
+> cd /tmp/safesquid
 
 Further delete all the files from the folder by using the command:
 
-rm -rf *
+> rm -rf *
 
-## [Access the SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ![your current version of safesquid will be shown in the right hand bottom corner in the safesquid interface](/img/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image1.webp)
 
