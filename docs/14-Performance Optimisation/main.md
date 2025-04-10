@@ -22,7 +22,7 @@ Captive portals are typically used by business centres, airports, hotel lobbies,
 
 ## Multi-homing your network
 
-Using multiple Internet Service Providers (ISPs) minimises the risk of downtime due to outages at the internet provider. [Splitting load between different ISPs]() allows you to manage bandwidth more effectively by leveraging the combined capacity of multiple ISPs.
+Using multiple Internet Service Providers (ISPs) minimises the risk of downtime due to outages at the internet provider. Splitting load between different ISPs allows you to manage bandwidth more effectively by leveraging the combined capacity of multiple ISPs.
 
 
 ## [Caching Specific websites](/docs/14-Performance%20Optimisation/Content%20Caching.md)

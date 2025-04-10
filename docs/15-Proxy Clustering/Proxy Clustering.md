@@ -36,8 +36,6 @@ To enable policy configuration, follow the steps below in your secondary/slave p
 
 ## Access your web interface and go to support.
 
-<https://safesquid.cfg> -> support
-
 ![accessing safesquid web interface and going to support ](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image2.webp)
 
 ## Select Startup Params
