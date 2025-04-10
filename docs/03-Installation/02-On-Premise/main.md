@@ -1,5 +1,13 @@
 ---
 title: SafeSquid Appliance Builder
+Description: This documentation explains how to quickly deploy SafeSquid Secure Web Gateway using the SafeSquid Appliance Builder (SAB), a pre-configured ISO that automates installation, system hardening, and setup across physical and virtual environments.
+
+Keywords:
+- SafeSquid Appliance Builder  
+- Install Secure Web Gateway ISO  
+- Secure Web Gateway automated installation  
+- SWG deployment on virtual machine  
+- SafeSquid ISO setup guide  
 ---
 
 # Problem
@@ -22,7 +30,7 @@ Use the latest stable version of [SAB](https://downloads.safesquid.com/appliance
 
 The SafeSquid Web Gateway (SWG) deployment with SafeSquid Appliance Builder (SAB) supports all base platforms. You can directly install on any Intel server grade platform or any virtualization platform.
 
-## For Local Hardware
+### For Local Hardware
 
 #### Prepare the bootable media
 
@@ -35,14 +43,18 @@ If the machine's disk has a different OS installed, backup and format the disk b
 
 2.  **Secondary Boot Device:** Bootable Media with SAB
 
-### ![Showing boot order of the machine](/img/How_To/Install_SafeSquid_Secure_Web_Gateway_using_SafeSquid_Appliance_Builder/image1.webp)For Virtual Infrastructure SAB installation is compatible with both Type 1 and Type 2 hypervisors.
-For implementation on Type 2 hypervisors, such as **[VirtualBox](https://www.virtualbox.org/)®**̥ or **[VMware](https://www.vmware.com/)®**̥, establishing connectivity between the host and the Virtual Machine (VM) is mandatory. This can be
-achieved through two methods: 
-1.  Network Address Translation (NAT): Used when the VM operates behind the host, routing all network traffic through the host's IP address.
+![Showing boot order of the machine](/img/How_To/Install_SafeSquid_Secure_Web_Gateway_using_SafeSquid_Appliance_Builder/image1.webp)
 
-2.  Bridged Adapter: Used to give the VM direct access to the network, bypassing the host's IP. The VM receives a private IP address on the network.
+### For Virtual Infrastructure 
+SAB installation is compatible with both Type 1 and Type 2 hypervisors. For implementation on Type 2 hypervisors, such as **[VirtualBox](https://www.virtualbox.org/)®**̥ or **[VMware](https://www.vmware.com/)®**̥, establishing connectivity between the host and the Virtual Machine (VM) is mandatory. This can be achieved through two methods:
+
+1.  **Network Address Translation (NAT)**: Used when the VM operates behind the host, routing all network traffic through the host's IP address.
+
+2.  **Bridged Adapter**: Used to give the VM direct access to the network, bypassing the host's IP. The VM receives a private IP address on the network.
 
 ## Initial Boot
+
+> **NOTE**: If you face any error during installation, press ALT+F4 to get debugging logs. To return to the previous screen press ALT+F1.
 
 On booting from the SAB, the SafeSquid installer will guide you through the installation process. Ensure a reliable internet connection as SAB will download updates and SafeSquid software during installation.
 
@@ -163,8 +175,8 @@ To adhere to any network policies your organization might have regarding externa
 
 Leave this blank if not required and press continue.
 
-## Set up users and passwords (For Expert Installation)
-
+## Set up users and passwords (Only For Expert Installation)
+ 
 Here, you can create the SafeSquid administrator user.
 
 ### Full Name

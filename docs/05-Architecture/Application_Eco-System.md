@@ -1,8 +1,14 @@
 ---
 title: Application Eco-System
----
+Description: Explore the SafeSquid Application Eco-System, a comprehensive framework that integrates data feeds, DNSBL, reporting, backups, and supporting services like Monit and BIND to deliver a fully functional, cloud-connected Secure Web Gateway solution.
 
-# Application Eco-System
+Keywords:
+- SafeSquid Application Eco-System  
+- SafeSquid threat intelligence updates  
+- DNSBL integration SafeSquid  
+- SafeSquid reporting and analytics  
+- SafeSquid supporting services  
+---
 
 ## Typical High-Level Solution Architecture
 ![](/img/Application_Eco-System/Application_Eco-System/image1.webp)
@@ -61,58 +67,4 @@ To optimise overall system & application performance, tune-up SafeSquid's startu
 
 ## [Files and Folders](https://help.safesquid.com/portal/en/kb/articles/file-and-folder)
 
-**/usr/local/safesquid** - SafeSquid installation directory
-
-**/etc/init.d/safesquid** - SafeSquid service init scripts
-
-**/etc/init.d/tcp_tune.sh** - TCP tuning script
-
-**/etc/logrotate.d/safesquid** - SafeSquid log management script
-
-**/etc/monit/conf.d/safesquid.monit** - Monit configuration file for SafeSquid
-
-**/etc/pam.d/safesquid** - PAM configuration file for SafeSquid
-
-**/etc/sysctl.conf** - System tuning configuration file
-
-**/opt/safesquid/bin/safesquid** - main SafeSquid configuration file
-
-**/opt/safesquid/bin/modules** - Customisation library of add-on modules
-
-**/opt/safesquid/bin/sections** - UI Layout directory
-
-**/opt/safesquid/default** - Setup and Startup configuration folder
-
-**/tmp/safesquid -** SafeSquid temporary folder
-
-**/var/cache/safesquid** - SafeSquid\'s caching directory
-
-**/var/db/safesquid/report** - Web analytics databases
-
-**/var/db/safesquid/ssl** - SSL certificate storage
-
-**/var/db/safesquid/users** - User-to-IP mapping database
-
-**/var/lib/safesquid/application_signatures** - Application signature storage
-
-**/var/lib/safesquid/category** - Custom category storage
-
-**/var/lib/safesquid/content_signatures** -- Content signature shared library and storage
-
-**/var/lib/safesquid/imgfilter** - Image Analyser dependency and finetuning files
-
-**/var/lib/safesquid/ssqore** -- ssqore dependency files and signature storage
-
-**/var/lib/safesquid/sqscan** - sqscan dependency files and anti-malware signature storage
-
-**/var/log/safesquid/config** - SafeSquid Config Logs
-
-**/var/log/safesquid/extended** -- SafeSquid Extended Logs
-
-**/var/log/safesquid/native** - SafeSquid Native Logs
-
-**/var/log/safesquid/performance** - Performance Logs
-
-**/var/log/safesquid/privacy** -- Privacy logs
-
-**/var/run/safesquid** - SafeSquid PID
+SafeSquid provides a detailed directory structure used for configuration, logging, caching, and storing critical system components. It helps administrators locate and manage SafeSquid's operational files efficiently.

@@ -1,5 +1,13 @@
-# About SafeSquid Web Gateway
-
+---
+title: About SafeSquid
+description: This documentation provides a comprehensive overview of SafeSquid Secure Web Gateway, detailing its architecture, core features, security mechanisms, and deployment strategies.
+Keywords:  
+- SafeSquid Secure Web Gateway  
+- Layer 7 web security  
+- Enterprise proxy server  
+- Deep content inspection proxy  
+- Application Layer Firewall (ALF)  
+----
 ## Background
 
 Right since its very birth, WWW challenged enterprises with productivity losses.

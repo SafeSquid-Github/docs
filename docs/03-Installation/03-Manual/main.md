@@ -1,5 +1,13 @@
 ---
-title: Installation of SafeSquid using TAR file
+title: Install SafeSquid Using TAR file
+Description: Learn how to install SafeSquid Secure Web Gateway using a TAR file on RedHat, CentOS, SuSe, and other Linux distributions. 
+Keywords:
+- Install SafeSquid using TAR file  
+- SafeSquid on CentOS/RedHat/SuSe  
+- Manual SafeSquid installation Linux  
+- SafeSquid TAR package setup  
+- Configure SafeSquid with Monit and BIND  
+
 ---
 SafeSquid is a versatile web filtering software that can be installed on various Linux operating systems, including but not limited to Red-Hat, SuSe, and CentOS.
 
@@ -7,7 +15,7 @@ This flexibility allows users to deploy SafeSquid on their existing infrastructu
 
 The installation process on Linux distributions other than Ubuntu involves a few additional steps and configurations to ensure optimal performance and stability.
 
-## Key Considerations:
+## Key Considerations
 
 System Compatibility: Before proceeding with the installation, verify that your chosen Linux distribution is compatible with SafeSquid and meets the necessary system requirements, such as CPU, memory, and storage.
 
@@ -53,7 +61,7 @@ Check - Bind Configuration with SafeSquid
 
 Go to the linux server and change the directory to "/usr/local/src" by using below command
 
-cd /usr/local/src
+> cd /usr/local/src
 
 Use the "wget" command to download the latest SafeSquid package on the Linux machine on which you want to install SafeSquid. The command will download the tarball file.
 
@@ -64,7 +72,7 @@ Wget http://downloads.safesquid.net/appliance/binary/safesquid_latest.tar.gz
 
 Extract the files from tar by using the command below.
 
-tar -zxvf safesquid_latest.tar.gz
+> tar -zxvf safesquid_latest.tar.gz
 
 The output of the above command is shown below.
 
@@ -74,7 +82,7 @@ All the files will be extracted in the directory having name "_mkappliance".
 
 You must execute/run the setup.sh script to install SafeSquid.
 
-_mkappliance/installation/setup.sh
+> _mkappliance/installation/setup.sh
 
 Output after script execution is shown below.
 
@@ -86,7 +94,7 @@ Installation completes if you did not get any error.
 
 You can check if any of the dependencies missing for SafeSquid by using the "ldd" command as shown below.
 
-ldd /opt/safesquid/bin/safesquid
+> ldd /opt/safesquid/bin/safesquid
 
 Output for the above command is shown below.
 
@@ -156,16 +164,20 @@ If you notice that any of the dependencies are not present then, you should inst
 
 Further you need to Start the SafeSquid service by using the command below.
 
-/etc/init.d/safesquid start
+> /etc/init.d/safesquid start
 
 ## Testing
 
 You can check whether SafeSquid service is running or not by using these commands.
 
-pidof safesquid OR netstat -tulnp | grep "safesquid"
+> pidof safesquid 
+
+OR
+
+> netstat -tulnp | grep "safesquid"
 
 ![checking whether SafeSquid service is running or not by using these commands pidof safesquid OR netstat -tulnp | grep "safesquid"](/img/Installing_SafeSquid_on_Various_Linux_Distributions_Using_SafeSquid's_tar_file_(1)/image4.webp)
 
 By default, SafeSquid will listen on PORT 8080. If you observe SafeSquid is listening on any one of the ports shown in the image, then its confirm that SafeSquid has started.
 
-**Note**: This installation does not include the Monit and Bind configurations.
+> **Note**: This installation does not include the Monit and Bind configurations.

@@ -1,5 +1,12 @@
 ---
 title: Install Secure Web Gateway on the Cloud
+Description: This documentation provides a detailed guide on deploying SafeSquid Secure Web Gateway in cloud environments. 
+Keywords:
+- Install Secure Web Gateway on the cloud  
+- Cloud-based SWG deployment  
+- SafeSquid cloud SWG  
+- Cloud-agnostic web gateway  
+- Secure Web Gateway for remote workforce  
 ---
 ## Preamble
 
@@ -39,21 +46,21 @@ By adopting cloud SWG, you have:
 
 ### What to Look for in a Cloud SWG Solution
 
-> **Ensure Interoperability**
->
-> When you choose a non-interoperable Cloud SWG, integration with your existing infrastructure becomes disrupted, leading to administrative overhead. Ensuring seamless compatibility with your networking, identity, and security systems allows for consistent enforcement and operational efficiency.
->
-> **Optimize Control in SWG Architecture**
->
-> You adopt multi-tenant SWG for simplified management. However, restricted payload inspection, standardized security policies, and shared resource constraints create operational limitations. Single-tenant SWG offers you greater control, enabling deep traffic inspection, custom security policies, and dedicated resource allocation for enhanced security.
->
-> **Avoid Vendor Lock-In**
->
-> Relying on a vendor-controlled Cloud SWG, customization, and flexibility increase your dependency on a single provider, and migration becomes restricted. Proprietary architectures limit policy adjustments and multi-cloud integration. Choosing a provider-agnostic SWG gives you greater adaptability and long-term scalability.
->
-> **Evaluate Outbound Data Transfer Costs**
->
-> Cloud providers charge per GB for outbound traffic from your Cloud SWG to the internet, while inbound and return traffic are typically free. Inter-cloud and inter-region transfers incur additional costs, increasing expenses in multi-cloud and hybrid deployments. Assessing data flow and provider pricing helps you control bandwidth costs.
+ **Ensure Interoperability**
+
+ When you choose a non-interoperable Cloud SWG, integration with your existing infrastructure becomes disrupted, leading to administrative overhead. Ensuring seamless compatibility with your networking, identity, and security systems allows for consistent enforcement and operational efficiency.
+
+ **Optimize Control in SWG Architecture**
+
+ You adopt multi-tenant SWG for simplified management. However, restricted payload inspection, standardized security policies, and shared resource constraints create operational limitations. Single-tenant SWG offers you greater control, enabling deep traffic inspection, custom security policies, and dedicated resource allocation for enhanced security.
+
+ **Avoid Vendor Lock-In**
+
+ Relying on a vendor-controlled Cloud SWG, customization, and flexibility increase your dependency on a single provider, and migration becomes restricted. Proprietary architectures limit policy adjustments and multi-cloud integration. Choosing a provider-agnostic SWG gives you greater adaptability and long-term scalability.
+
+ **Evaluate Outbound Data Transfer Costs**
+
+ Cloud providers charge per GB for outbound traffic from your Cloud SWG to the internet, while inbound and return traffic are typically free. Inter-cloud and inter-region transfers incur additional costs, increasing expenses in multi-cloud and hybrid deployments. Assessing data flow and provider pricing helps you control bandwidth costs.
 
 ### SafeSquid SWG: The Cloud-Agnostic Solution
 
@@ -81,7 +88,8 @@ Ideal for rapid rollouts and minimal setup.
 
 2.  Custom Image Ingestion:
 
-    a.  Direct URL ingestion-[http://downloads.SafeSquid.com/appliance/cloud-img/SafeSquid-swg.img](http://downloads.safesquid.com/appliance/cloud-img/safesquid-swg.img)
+    a.  Direct URL ingestion-
+    > [http://downloads.SafeSquid.com/appliance/cloud-img/SafeSquid-swg.img](http://downloads.safesquid.com/appliance/cloud-img/safesquid-swg.img)
 
     b.  Local file upload
 

@@ -9,7 +9,7 @@ keywords:
   - Zero-Trust Web Security
   - Install SWG
   - Install SafeSquid
-image: /img/Getting-Started/Getting_Started_with_SafeSquid_Secure_Web_Gateway/image1.webp
+
 ---
 
 ## Install SafeSquid Secure Web Gateway

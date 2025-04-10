@@ -1,4 +1,15 @@
-# Management of Self Service Portal
+---
+title: Management of Self Service Portal  
+Description: Discover how the SafeSquid Self-Service Portal simplifies centralized management of licenses, custom web categorization, SSL certificates, VPN clients, and DLP signatures across all SafeSquid installations with a unified cloud-based interface.
+
+Keywords:
+- SafeSquid Self-Service Portal  
+- Manage SafeSquid activation key  
+- SafeSquid custom web categorization  
+- SafeSquid SSL certificate management  
+- SafeSquid Web Security Client VPN  
+- SafeSquid confidential data signatures  
+---
 
 ## Overview
 
