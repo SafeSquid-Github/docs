@@ -45,7 +45,7 @@ To cater to your organisation's web traffic load, estimate the Hardware Requirem
 | 16            | 32          | 4TB     | 2000                         | 1000            |
 | 16            | 64          | 8TB     | 3000                         | 1500            |
 
-  Add 2 CPU cores and 4GB RAM per 100 concurrent connections<br>
+  Add 2 CPU cores and 4GB RAM per 100 concurrent connections
   Use processors with "AES-NI"
 
 The above-specified Minimal Hardware should enable you to do a functional setup of SafeSquid.

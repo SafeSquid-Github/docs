@@ -36,7 +36,7 @@ To enable policy configuration, follow the steps below in your secondary/slave p
 
 ## Access your web interface and go to support.
 
-<https://safesquid.cfg> -\> support
+<https://safesquid.cfg> -> support
 
 ![accessing safesquid web interface and going to support ](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image2.webp)
 
@@ -50,11 +50,11 @@ To enable policy configuration, follow the steps below in your secondary/slave p
 
 ## Add your Master proxy server's IP address.
 
-![adding your master proxy server\'s IP address](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image5.webp)
+![adding your master proxy server's IP address](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image5.webp)
 
 ## Add your Master proxy server's port Number.
 
-![adding your master proxy server\'s port number](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image6.webp)
+![adding your master proxy server's port number](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image6.webp)
 
 ## Now click on the correct icon to save the configuration.
 

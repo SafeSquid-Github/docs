@@ -16,7 +16,7 @@ In the event of a network disruption or disaster, managing bandwidth ensures tha
 
 To avoid degraded user experience due to network congestion, efficient allocation of network resources is essential. With SafeSquid, you can [set boundaries on the size and volume of data transfers](/docs/14-Performance%20Optimisation/Bandwidth%20Management.md).
 
-## [Setup Captive Portal]()
+## Setup Captive Portal
 
 Captive portals are typically used by business centres, airports, hotel lobbies, coffee shops, and other venues that offer Wi-Fi hot spots for Internet users. To secure public or guest Wi-Fi networks, the Internet clients are redirected to a captive portal. Here, the users are requested to reveal their identity for web access. SafeSquid correlates the user identity with the client IP for applying the access policies.
 
