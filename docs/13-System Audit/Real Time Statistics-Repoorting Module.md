@@ -15,31 +15,26 @@ SafeSquid gives you the ultimate visibility into your activities with detailed r
 
 SafeSquid provides you report based on last **1000 transactions** by default.SafeSquid also provides you report based on **date range**. SafeSquid also provide you the customize facility in **last transaction** as well as **date range**.
 
-The dashboard displays the following activities based on last 1000 transactions:
+The dashboard displays the following activities based on the last 1000 transactions:
 
-+-----------------------------------+--------------------------------------+
-| -   IP Address                    | -   Upload Content                   |
-+===================================+======================================+
-| -   User Name                     | -   Download Content11.Time Profiles |
-+-----------------------------------+--------------------------------------+
-| -   User Group                    | -   Block Websites                   |
-+-----------------------------------+--------------------------------------+
-| -   Websites                      | -   Security Breaches                |
-+-----------------------------------+--------------------------------------+
-| -   Domains                       | -   Connection Failed                |
-+-----------------------------------+--------------------------------------+
-| -   IP Address                    | -   DNS Failed                       |
-+-----------------------------------+--------------------------------------+
-| -   User Name                     | -   Bypass Websites                  |
-+-----------------------------------+--------------------------------------+
-| -   User Group                    |                                      |
-+-----------------------------------+--------------------------------------+
-| -   Profiles                      |                                      |
-+-----------------------------------+--------------------------------------+
-| -   Application Signature         |                                      |
-+-----------------------------------+--------------------------------------+
-| -   Categories                    |                                      |
-+-----------------------------------+--------------------------------------+
+1. IP Address  
+2. Upload Content  
+3. User Name  
+4. Download Content  
+5. User Group  
+6. Block Websites  
+7. Websites  
+8. Security Breaches  
+9. Domains  
+10. Connection Failed  
+11. IP Address  
+12. DNS Failed  
+13. User Name  
+14. Bypass Websites  
+15. User Group  
+16. Profiles  
+17. Application Signature  
+18. Categories
 
 ![Detailed real-time reporting SafeSquid Dashboard](/img/How_To/Reporting_(Dashboard)/image1.webp)
 
