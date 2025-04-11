@@ -1,6 +1,14 @@
 ---
-title : Access The SafeSquid User Interface
+title: Access The SafeSquid User Interface  
+description: Learn how to access and configure the SafeSquid WebGUI for managing your Secure Web Gateway. This guide walks you through setting proxy settings, navigating to the dashboard, and accessing critical configuration features.  
+keywords:  
+- SafeSquid WebGUI  
+- access SafeSquid interface  
+- proxy configuration  
+- safesquid.cfg login  
+- browser proxy settings  
 ---
+
 ## Overview
 
 SafeSquid Proxy Service has a browser-based intrinsic WebGUI, that allows users to configure, and manage its various features. To access the Interface, you must configure your web browser to use the SafeSquid® proxy server. You should be able to access the WebGUI with the http://Safesquid.cfg/

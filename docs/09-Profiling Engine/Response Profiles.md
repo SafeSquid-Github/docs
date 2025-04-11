@@ -1,4 +1,17 @@
-# Response Type
+---
+title: Response Profiles
+Description: Learn how to configure SafeSquid's Response Types section to profile web server responses using MIME types, file extensions, content sizes, and header patterns for enhanced traffic control and content filtering.  
+Keywords:  
+- SafeSquid response types  
+- SafeSquid response profiler  
+- SafeSquid MIME filtering  
+- SafeSquid file extension block  
+- SafeSquid content length rules  
+- SafeSquid response header filtering  
+- SafeSquid websocket profiling  
+- SafeSquid block downloads by type  
+- configure SafeSquid response profiles  
+---
 
 ## Overview
 
@@ -13,8 +26,6 @@ You can manage Profiling based on the following parameters present in the respon
 1. Content-Length
 
 1. Response header pattern, etc.,
-
-## Enabling the Response Profiler section on the SafeSquid User Interface
 
 ## [Access SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
 

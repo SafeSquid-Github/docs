@@ -7,7 +7,7 @@ Keywords:
 - Enterprise proxy server  
 - Deep content inspection proxy  
 - Application Layer Firewall (ALF)  
-----
+---
 ## Background
 
 Right since its very birth, WWW challenged enterprises with productivity losses.

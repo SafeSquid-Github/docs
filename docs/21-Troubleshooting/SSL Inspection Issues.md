@@ -1,4 +1,13 @@
-# SSL Certification Errors
+---
+title: SSL Certification Errors
+Description: Identify and fix SSL certificate-related errors in SafeSquid such as secured connection failures, zero-byte certificates, and DNS mismatches. Step-by-step resolutions for common HTTPS inspection and certificate issues.  
+Keywords:  
+- SSL certificate error  
+- HTTPS inspection issue  
+- SafeSquid certificate troubleshooting  
+- secured connection fail  
+- domain mismatch SSL  
+---
 
 ## Issues with their Root Cause
 

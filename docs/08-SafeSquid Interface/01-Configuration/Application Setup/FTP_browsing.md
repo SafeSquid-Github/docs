@@ -1,4 +1,12 @@
-# FTP Browsing
+---
+title: FTP Browsing  
+description: Configure FTP browsing in SafeSquid to enable anonymous FTP access, support passive mode behind firewalls, and control how FTP directory listings are displayed.  
+keywords:  
+- safesquid ftp browsing  
+- ftp passive mode proxy  
+- configure ftp access safesquid  
+- ftp proxy settings  
+---
 
 ## Overview
 

@@ -1,4 +1,13 @@
-# Category Update Not Working
+---
+title: Category Update Not Working
+description: Resolve issues related to updating whitelist or blacklist categories in SafeSquid by troubleshooting categorization engine connectivity and configuration.
+keywords:
+- safesquid category update failed
+- safesquid categorization engine issue
+- safesquid category server connection
+- whitelist not updating safesquid
+- blacklist update issue safesquid
+---
 
 ## Issues
 
@@ -32,6 +41,6 @@ Escape character is '^]'.
 
 If the server is not reachable, you have to run the below commands and try telnet again
 
-rndc flush
+> rndc flush
 
-/etc/init.d/bind9 restart
+> /etc/init.d/bind9 restart

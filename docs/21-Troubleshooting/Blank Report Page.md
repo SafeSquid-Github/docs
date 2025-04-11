@@ -1,5 +1,6 @@
-# Not Displaying Anything on Report Page
-
+---
+title: Not Displaying Anything on Report Page
+---
 ## ISSUE
 
 Custom group name is taking time to update on Dashboard.

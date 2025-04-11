@@ -1,4 +1,13 @@
-# LDAP Entries Not Fetched
+---
+title: LDAP Entries Not Fetched
+description: Troubleshooting guide for resolving LDAP integration issues with Active Directory in SafeSquid, including LDAP configuration and AD connectivity.
+keywords:
+- safesquid ldap integration
+- ldap entries not showing
+- ldap can't contact server
+- safesquid ad integration issues
+- troubleshoot safesquid ldap
+---
 
 ## Issues
 

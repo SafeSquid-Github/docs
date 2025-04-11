@@ -1,5 +1,13 @@
-# Allow Specific YouTube Channel and its Playlist
-
+---
+title: Allow Specific YouTube Channel and its Playlist
+description: Learn how to configure SafeSquid to block YouTube access for students while allowing specific channels and playlists for educational purposes.
+keywords:
+- allow specific youtube channel safesquid
+- safesquid youtube playlist access
+- block youtube except channels safesquid
+- youtube channel policy safesquid
+- safesquid content filtering youtube
+---
 
 ## Client Scenario
 
@@ -17,7 +25,7 @@ You can achieve this by creating a policy in the Request Profiles Section and bi
 
 ## Prerequisites
 
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](https://help.safesquid.com/portal/en/kb/articles/setup-https-inspection)
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
 
 You need the YouTube **Channel-ID** and **List-ID** of the playlist you want to allow. You have to extract the Channel-ID and List-ID of the playlist from the YouTube URL before creating rules in SafeSquid.
 

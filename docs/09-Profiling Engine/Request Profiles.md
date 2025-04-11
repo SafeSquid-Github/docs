@@ -1,4 +1,17 @@
-# Request Types
+---
+title: Request Profiles
+Description: Learn how to use the Request Types section in SafeSquid to create precise, profile-based rules for web access control, enforce safe search, manage social media permissions, and bypass HTTPS inspection.  
+Keywords:  
+- SafeSquid request types  
+- configure request profiles SafeSquid  
+- SafeSquid block websites  
+- SafeSquid allow request by method  
+- SafeSquid user agent filtering  
+- SafeSquid smart TLD  
+- SafeSquid enforce safe search  
+- bypass HTTPS inspection SafeSquid  
+- hostname based filtering SafeSquid  
+---
 
 ## Overview
 
@@ -12,9 +25,8 @@ By using this section Make the social networks (Facebook, Twitter) for read-only
 
 This section helps you to enforce the safe search for Google, Yahoo, and YouTube.
 
-## Enabling the Request Type section on the SafeSquid User Interface
 
-## [Access SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to the configure page
 
@@ -237,6 +249,3 @@ Using Google Keep's host name I can create a Request profile for Google Keep.
 Using Request type I can access Google Keep while keeping while having the rest of the Google services blocked.
 
 ![showing rule created for google keep](/img/Configure/Custom_Settings/Request_Types/image8.webp)
-
-
-https://help.safesquid.com/portal/en/kb/articles/bypass-https-inspection-by-using-request-types

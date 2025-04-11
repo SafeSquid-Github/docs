@@ -1,4 +1,13 @@
-# Getting an Error Proxy Server Refusing Connections
+---
+title: Proxy Server Refusing Connections Error  
+description: Learn how to troubleshoot and resolve the "Proxy server refusing connections" error in SafeSquid. This guide covers SafeSquid and Monit service verification, IP/port checks, and browser configuration validation.  
+keywords:  
+- Proxy server refusing connection  
+- SafeSquid not responding  
+- SafeSquid monit service  
+- troubleshoot proxy errors  
+- SafeSquid not listening on port  
+---
 
 ## Issues
 

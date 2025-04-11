@@ -1,5 +1,5 @@
 ---
-title: Activate a SafeSquid Instance
+title: License Activation
 Description: Learn how to activate your SafeSquid Secure Web Gateway instance using an activation key via the web GUI. 
 Keywords:
 - Activate SafeSquid instance  

@@ -1,6 +1,15 @@
-# Restrict Any Desk
+---
+title: Restrict AnyDesk
+description: Learn how to configure SafeSquid to restrict access to AnyDesk by setting up policies and proxy configurations, ensuring secure network access.
+keywords:
+- restrict anydesk safesquid
+- safesquid block anydesk
+- configure anydesk restriction safesquid
+- safesquid remote desktop control
+- block remote access anydesk safesquid
+---
 
-## [Access the SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/Access-The-SafeSquid-User-Interface)
+## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to configure page
 

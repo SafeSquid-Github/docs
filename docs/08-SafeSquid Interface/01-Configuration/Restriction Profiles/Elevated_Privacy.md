@@ -1,4 +1,13 @@
-# Elevated Privacy
+---
+title: Elevated Privacy  
+description: Use SafeSquid's Elevated Privacy to block third-party cookies, hide referrers, and mask user agents. Enhance user privacy across the web by preventing online tracking and securing sensitive browsing activities.  
+keywords:  
+- third-party cookie blocking  
+- SafeSquid privacy control  
+- hide HTTP referrer  
+- elevated privacy filter  
+- user agent masking  
+---
 
 ## Overview
 

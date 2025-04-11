@@ -1,5 +1,6 @@
-## [Troubleshoot](https://help.safesquid.com/portal/en/kb/troubleshooting)
-
+---
+title: Troubleshoot
+---
 To identify the root cause of usability issues and performance bottlenecks, SafeSquid offers multiple levels of troubleshooting assistance.
 
 ### Use the SWG troubleshooter

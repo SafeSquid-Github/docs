@@ -1,4 +1,13 @@
-# Header Filter
+---
+title: Header Filter  
+description: Control and customize HTTP header management in SafeSquid with the Header Filter module. Modify, allow, deny, or insert request and response headers to enhance security, enforce policies, and prevent unauthorized access.  
+keywords:  
+- HTTP header filtering  
+- SafeSquid header control  
+- request header modification  
+- block WebSocket headers  
+- insert custom headers  
+---
 
 ## Overview
 

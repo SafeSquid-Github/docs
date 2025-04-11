@@ -1,4 +1,6 @@
-# FAQ
+---
+title: FAQ
+---
 
 ## What is SafeSquid for Windows?
 

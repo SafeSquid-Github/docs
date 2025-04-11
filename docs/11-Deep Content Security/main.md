@@ -14,7 +14,7 @@ By restricting the sources of executable scripts and resources, enforcing CSP at
 
 To block virus uploads and downloads, SafeSquid offers diverse antivirus setups to ensure comprehensive protection against various threats. To defend against Zero-Day malware, we recommend minimising the vulnerability window using a multi-layered antivirus scanning approach.
 
-### [SqScan](https://help.safesquid.com/portal/en/kb/articles/sqscan)
+### [SqScan](/docs/08-SafeSquid%20Interface/01-Configuration/Real%20Time%20Content%20Security/SqScan.md)
 
 SafeSquid's integrated on-the-wire malware scanner employs advanced heuristic techniques to evaluate and sanitize all payloads, including those that are compressed or encrypted.
 
@@ -23,7 +23,7 @@ SafeSquid's integrated on-the-wire malware scanner employs advanced heuristic te
 SafeSquid seamlessly integrates with the ClamAV engine for signature-based malware detection. Furthermore, its customisable
 configuration empowers security administrators to add PCRE keyword expressions sensitive to the organisation. Thus, enabling deep packet inspection for confidential information in archive files, emails, and Instant Messaging (IM) traffic.
 
-### [Generic ICAP Threat Detection Interface](https://help.safesquid.com/portal/en/kb/articles/icap)
+### [Generic ICAP Threat Detection Interface](/docs/08-SafeSquid%20Interface/01-Configuration/Real%20Time%20Content%20Security/ICAP.md)
 
 SafeSquid facilitates simultaneous connection with various ICAP-based threat detection services for broader security coverage. With its Intelligent Threat Quarantine Mechanism, SafeSquid automatically isolates content flagged by ICAP services.
 

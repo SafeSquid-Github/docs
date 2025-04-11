@@ -1,4 +1,13 @@
-# Allow Anydesk
+---
+title: Allow Anydesk
+description: Learn how to configure SafeSquid to securely allow access to Anydesk and other remote desktop applications while maintaining granular control through user profiles, SSL inspection bypass, and request type filters.
+keywords:
+- Allow Anydesk SafeSquid
+- bypass SSL inspection Anydesk
+- SafeSquid remote desktop access
+- SafeSquid user-agent filtering
+- SafeSquid access profile configuration
+---
 
 ## Overview
 
@@ -12,7 +21,7 @@ When a user tries to access a remote application, First SafeSquid checks for tha
 
 Remote applications like **Remote desktop applications, Download managers**, etc. (Anydesk and Teamviewer®) should get automatically blocked if HTTPS inspection is enabled. No need to configure any policy for blocking purposes.
 
-## [Access the SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/Access-The-SafeSquid-User-Interface)
+## [Access the SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ### Go to configure page
 

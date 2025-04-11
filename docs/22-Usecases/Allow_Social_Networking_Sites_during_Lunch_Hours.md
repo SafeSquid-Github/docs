@@ -1,3 +1,14 @@
+---
+title: Allow Social Networking Sites During Lunch Hours
+description: Learn how to configure SafeSquid to allow employees to access social networking sites during lunch hours while maintaining productivity controls.
+keywords:
+- allow social media lunch hours safesquid
+- safesquid time profile
+- lunch time policy safesquid
+- social networking site access safesquid
+- safe social media access safesquid
+---
+
 ## Overview
 
 Most network administrators can access and track anything employees do on their computers. Most of the employees waste their time on social network sites. This can damage not only employment status but employee's reputation also. In most organizations to limit the distraction employers choose to block social media access for the employees. Many organizations/companies prohibit access to social networking sites on their network computers because they believe such access leads to decreased productivity. Nowadays social media is an addiction, which can consume unproductive time of employees.
@@ -6,11 +17,11 @@ But nowadays some organization wants their employee to be happy and want to give
 
 ## Prerequisite 
 
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](https://help.safesquid.com/portal/en/kb/articles/setup-https-inspection)
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
 
 Make sure the SScore section is enabled as TRUE (Application setup >> Score)
 
-# [Access the SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+# [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ![Select Configure section to allow social networking sites in lunch hours](/img/How_To/Allow_Social_Networking_Sites_during_Lunch_Hours/image1.webp)
 

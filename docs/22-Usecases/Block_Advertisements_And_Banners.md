@@ -1,4 +1,13 @@
-# Block Advertisements And Banners
+---
+title: Block Advertisements And Banners
+description: Learn how to configure SafeSquid to block advertisements and banners, improving web page load time and security while reducing distractions and bandwidth usage.
+keywords:
+- block advertisements safesquid
+- block banners safesquid
+- secure web gateway ads blocking
+- safesquid ad blocking configuration
+- ads and banners blocking safesquid
+---
 
 ## Client Scenario
 
@@ -18,9 +27,9 @@ SafeSquid Secured web gateway (SWG) blocks all types of annoying ads and banners
 
 ## Prerequisites
 
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection](https://help.safesquid.com/portal/en/kb/articles/setup-https-inspection)
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
 
-## [Access the SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ![click on configure in safesquid interface](/img/How_To/Block_Advertisements_And_Banners/image1.webp)
 

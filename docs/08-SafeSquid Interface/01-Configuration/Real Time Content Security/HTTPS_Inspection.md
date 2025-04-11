@@ -1,4 +1,15 @@
-# HTTPS Inspection
+---
+title: HTTPS Inspection  
+description: Configure HTTPS Inspection in SafeSquid Secure Web Gateway to enable deep content inspection over encrypted traffic. Protect users from threats hidden in SSL connections, enforce security compliance, and control access to encrypted websites.  
+keywords:  
+- HTTPS inspection  
+- SSL deep scan  
+- SafeSquid SSL inspection  
+- decrypt HTTPS traffic  
+- SSL proxy firewall  
+- secure web gateway  
+- HTTPS content filtering  
+---
 
 ## Overview
 
@@ -38,13 +49,7 @@ Having HTTPS inspection features some interesting things that you can do with th
 
 First, generate SSL certificates from the self-service portal before configuring HTTPS inspection.
 
-[Setup your SSL certificates from self-service portal](https://help.safesquid.com/portal/en/kb/articles/setting-up-ssl-certificates-from-self-service-portal)
-
-[Download SSL Certificate from SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/download-ssl-certificate-from-interface)
-
 ### SSL Certs/Cache
-
-[Download SSL Certificate from SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/download-ssl-certificate-from-interface)
 
 **Download**: Download the SafeSquid certificate.
 
@@ -56,13 +61,10 @@ First, generate SSL certificates from the self-service portal before configuring
 
 Install SafeSquid SSL certificates into the browsers. If you did not install a certificate into the browser and HTTPS inspection is enabled, then you will get an error while accessing the HTTPS websites.
 
-[Importing into Mozilla Firefox](https://help.safesquid.com/portal/en/kb/articles/importing-your-ssl-certificate-into-firefox)
-
-[Importing into Internet Explorer or Chrome Browser](https://help.safesquid.com/portal/en/kb/articles/importing-your-ssl-certificate-into-internet-explorer-or-chrome)
 
 ## Enabling HTTPS inspection on the SafeSquid User Interface
 
-### [Access the SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ### Go to Configure Page
 

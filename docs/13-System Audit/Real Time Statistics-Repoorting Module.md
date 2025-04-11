@@ -1,4 +1,13 @@
-# Reporting (Dashboard)
+---
+title: Reporting Module 
+description: Learn how to effectively use SafeSquid's real-time dashboard reporting, filter data, and drill down into transactions for deep network analysis.
+keywords:
+- safesquid dashboard
+- safesquid reporting
+- realtime proxy reports
+- safesquid analytics
+- proxy traffic monitoring
+---
 
 ## Overview
 

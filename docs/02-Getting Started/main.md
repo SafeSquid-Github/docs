@@ -1,5 +1,5 @@
 ---
-title: Getting Started with SafeSquid Secure Web Gateway
+title: Getting Started
 description: Learn how to get started with SafeSquid Secure Web Gateway, the world's most advanced HTTP Proxy Server for Application Layer Security.
 keywords:
   - SafeSquid

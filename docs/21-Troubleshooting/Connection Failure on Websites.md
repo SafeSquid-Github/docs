@@ -1,4 +1,13 @@
-# Connection Failure to Websites
+---
+title: Connection Failure to Websites
+description: Learn how to resolve "Connection failed" errors when accessing websites through SafeSquid proxy, including DNS resolution and connectivity issues.
+keywords:
+- safesquid connection failure
+- proxy server connection failed
+- troubleshoot safesquid website access
+- telnet safesquid connectivity test
+- safesquid DNS resolution fix
+---
 
 ## Issues
 

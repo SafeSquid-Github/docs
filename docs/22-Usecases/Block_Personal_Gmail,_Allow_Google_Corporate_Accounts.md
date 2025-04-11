@@ -1,5 +1,14 @@
 # Block Personal Gmail, Allow Google Corporate Accounts
-
+---
+title: Block Personal Gmail, Allow Google Corporate Accounts
+description: Learn how to configure SafeSquid to block personal Gmail accounts while allowing only Google corporate accounts, enhancing productivity and data security.
+keywords:
+- block personal gmail safesquid
+- allow google corporate accounts safesquid
+- block personal gmail accounts
+- corporate email restriction safesquid
+- safe web gateway gmail restriction
+---
 ## Overview
 
 Nowadays emails are used very frequently to exchange information between people using electronic devices. In some organization personal emails in the office network are not allowed. Personal emails are blocked to avoid spending of productive time by employees. Allowing personal emails can also lead a path for leakage of confidential information. Nowadays some of the organization emails are via Google Corporate domains. Google corporate account allows organization to have their mailing server along with the additional Gmail features personalized for the organization with complete control. So, we currently cannot block Gmail.
@@ -12,7 +21,7 @@ SafeSquid Secure Web Gateway (SWG) allows you to access corporate account only a
 
 ## Policy Creation
 
-To solve problem of personal Gmail blocking. We need to manipulate headers of Gmail so that only specific domain (corporate domains) is/are allowed and rest are denied (this includes personal Gmail). Also, as Gmail is HTTPS website, we need to make sure [HTTPS Inspection is enabled.](https://help.safesquid.com/portal/en/kb/articles/setup-https-inspection)
+To solve problem of personal Gmail blocking. We need to manipulate headers of Gmail so that only specific domain (corporate domains) is/are allowed and rest are denied (this includes personal Gmail). Also, as Gmail is HTTPS website, we need to make sure [HTTPS Inspection is enabled.](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
 
 We can achieve the above by following steps --
 
@@ -20,7 +29,7 @@ We can achieve the above by following steps --
 
 We will first match request from only Google Application policy.
 
-From SafeSquid Dashboard click on Configure page at the Top Right Corner. You will see [Policies and profiles](https://help.safesquid.com/portal/en/kb/articles/4-2-accessprofiles) section on your screen.
+From SafeSquid Dashboard click on Configure page at the Top Right Corner. You will see Policies and profiles section on your screen.
 
 Search for default profile named GOOGLE APPLICATION.
 
@@ -30,7 +39,7 @@ Search for default profile named GOOGLE APPLICATION.
 
 ![edit and enable this policy](/img/How_To/Block_Personal_Gmail,_Allow_Google_Corporate_Accounts/image2.webp)
 
-'Note ': You can also add User Groups in [Policies and Profiles](https://help.safesquid.com/portal/en/kb/articles/4-2-accessprofiles) for specific group of users.
+> **Note** : You can also add User Groups for specific group of users.
 
 ### Enable policy from Header Filter Section
 
@@ -40,7 +49,7 @@ Click on **Restriction Policies** (Left Side Panel).
 
 Click on **Privacy Control** submenu.
 
-Click on [Header Filter](https://help.safesquid.com/portal/en/kb/articles/4-1-2-headerfilter) section. Make Sure Global part of this section is Enabled as True.
+Click on [Header Filter](/docs/10-Web%20Access%20Control/Header%20Obfuscation.md) section. Make Sure Global part of this section is Enabled as True.
 
 ![going to header filter under Restriction Policies ](/img/How_To/Block_Personal_Gmail,_Allow_Google_Corporate_Accounts/image3.webp)
 

@@ -1,4 +1,18 @@
-# Defend Against Internal Threats And Data Leakage
+---
+title: Data Leakage Prevention
+description: Learn how SafeSquid protects organizations against insider threats and data leakage with DLP, virus scanning, real-time monitoring, and role-based access control.
+keywords:
+- insider threats protection
+- data leakage prevention
+- safesquid DLP
+- internal data breach defense
+- endpoint protection
+- content filtering
+- in-memory virus scanning
+- safesquid role-based access
+- user activity monitoring
+- insider risk management
+---
 
 ## Overview
 
@@ -51,8 +65,3 @@ With real-time monitoring, like SafeSquid Reporting Module, you can see into you
 For example, if four new users were granted access to a critical application in one week in your network, would you like to notice?
 
 With real-time monitoring you would be alerted to such type of event so that you can investigate and mitigate the risk of a breach.
-
-[Block Emails or Files including archives or Social Posts using Keywords](https://help.safesquid.com/portal/en/kb/articles/block-emails-or-files-including-archives-or-social-posts-using-keywords)
-
-
-https://help.safesquid.com/portal/en/kb/articles/controlling-uploads-to-prevent-data-leakage#Overview

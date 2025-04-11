@@ -1,4 +1,19 @@
-# Unable to Login to Specific Website 
+---
+title: Login Issues on Specific Websites  
+Description: Learn how to resolve login failures on websites like Facebook and Google when using SafeSquid proxy, by disabling cookie filters, adjusting header filters, and configuring HTTPS inspection correctly.  
+Keywords:  
+- SafeSquid login issues  
+- can't login via proxy  
+- SafeSquid Facebook login block  
+- SafeSquid Google account login failed  
+- SafeSquid HTTPS inspection login error  
+- SafeSquid third-party cookies  
+- SafeSquid elevated privacy  
+- SafeSquid header filter  
+- SafeSquid block personal Gmail  
+- SafeSquid content modifier login block  
+---
+
 ## Issues
 
 1. I can able to access https://www.facebook.com/ via proxy but am not able to log on it.

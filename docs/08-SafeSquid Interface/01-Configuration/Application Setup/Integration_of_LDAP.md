@@ -1,4 +1,12 @@
-# Integration of LDAP 
+---
+title: Integration of LDAP  
+description: Learn how to integrate Microsoft Active Directory or OpenLDAP with SafeSquid Secure Web Gateway to enable centralized authentication, user profiling, and access control. This guide includes step-by-step configuration for LDAP servers, bind methods, and advanced filtering options.  
+keywords:  
+- safesquid ldap integration  
+- connect active directory to safesquid  
+- ldap authentication safesquid  
+- configure ldap proxy authentication  
+---
 
 Here I am integrating my Active Directory with the following information.
 
@@ -16,7 +24,7 @@ Here I am integrating my Active Directory with the following information.
 
 Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, password, base DN, domain) in the configuration are correct. If any value is inappropriate, SafeSquid will fail to fetch the LDAP entries.
 
-## [Access the SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ![clicking on configure in safesquid interface](/img/Configure/Application_Setup/Integration_of_LDAP/image1.webp)
 
@@ -108,7 +116,7 @@ Specify the Port for LDAP service. The default LDAP Port is 389.
 
 Communicate with the LDAP service using TLS protocol by copying the LDAP service CA certificate into the security directory and renaming the CA certificate to the LDAP_CA_FILE.cer file.
 
-**Note**: If you do not wish to verify the server certificate then do not mention the CA certificate. SafeSquid performs SSL without requesting a server certificate.
+> **Note**: If you do not wish to verify the server certificate then do not mention the CA certificate. SafeSquid performs SSL without requesting a server certificate.
 
 **TRUE**: Select this for SSL-based LDAP communications.
 
@@ -144,7 +152,7 @@ By default, configuration, the LDAP server returns only entries that necessarily
 
 Specify the LDAP Group Filter. This is required if the LDAP server does not support Reverse Group Membership.
 
-**Note:** Microsoft Windows AD server normally supports Reverse Group Membership.
+> **Note:** Microsoft Windows AD server normally supports Reverse Group Membership.
 
 Legacy OpenLDAP implementations may not have support for Reverse Group Membership.
 
@@ -198,7 +206,7 @@ If you have multiple LDAP servers, SafeSquid selects the appropriate LDAP server
 
 **For example:** If you set LDAP Domain of Active Directory: safesquid.test, then all users who present their credentials as username@safesquid.test are identified and validated from this LDAP server.
 
-**Note:** Setting this is extremely important, particularly if you are using multiple LDAP servers.
+> **Note:** Setting this is extremely important, particularly if you are using multiple LDAP servers.
 
 ![entering your ldap domain name. example: safesquid.test](/img/Configure/Application_Setup/Integration_of_LDAP/image21.webp)
 
@@ -210,7 +218,7 @@ SafeSquid extracts the user's DN using these attributes and uses the DN, and the
 
 **For example**: you could set: Login Attributes: sAMAccountname,uid, UserPrinicipalName, mail and thus allow your users to use their sAMAccountname or uid or UserPrinicipalName or emailid for authentication and profiling. Specifying Attributes that may not be supported by the LDAP server is permissible, though not effective.
 
-**Note**: The list of Login Attributes is comma-separated, and unnecessary spaces must be removed.
+> **Note**: The list of Login Attributes is comma-separated, and unnecessary spaces must be removed.
 
 #### Group Identifier
 
@@ -228,7 +236,7 @@ Legacy implementations of OpenLDAP do not support Reverse Group Membership by de
 
 SafeSquid would then be able to extract all the entries in LDAP that qualify as Groups. Then the values assigned to the attributes listed in the Group Filter for each of the entries would be considered as users belonging to these Groups.
 
-**Note:** Specifying Attributes that may not be supported by the LDAP server are harmless, though not effective &The list of Group Identifiers must be comma separated, and unnecessary spaces must be removed.
+> **Note:** Specifying Attributes that may not be supported by the LDAP server are harmless, though not effective &The list of Group Identifiers must be comma separated, and unnecessary spaces must be removed.
 
 ![clicking on save policy](/img/Configure/Application_Setup/Integration_of_LDAP/image22.webp)
 
@@ -240,4 +248,4 @@ View a list of LDAP entries that are fetched by SafeSquid from the LDAP service(
 
 ![showing all the users from directory in ldap entries tab](/img/Configure/Application_Setup/Integration_of_LDAP/image24.webp)
 
-**Note**: You can use Search Text Box to search users from AD (Active Directory) / Open LDAP. The login Attribute menu is used to search users or OU (Organizational Unit) from AD (Active Directory) / Open LDAP.
+> **Note**: You can use Search Text Box to search users from AD (Active Directory) / Open LDAP. The login Attribute menu is used to search users or OU (Organizational Unit) from AD (Active Directory) / Open LDAP.

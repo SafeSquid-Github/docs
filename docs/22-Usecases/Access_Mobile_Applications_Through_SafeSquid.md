@@ -1,6 +1,14 @@
 ---
-title: Access Mobile Applicatios Through Safesquid
+title: Access Mobile Applications Through SafeSquid
+description: Learn how to manage and control internet access for mobile applications through SafeSquid Secure Web Gateway, including scenarios where proxy enforcement and firewall restrictions are required.
+keywords:
+- mobile proxy settings safesquid
+- block mobile apps proxy
+- allow mobile apps through safesquid
+- safesquid mobile application access
+- proxy configuration for mobile devices
 ---
+
 ## Overview
 
 If your company/institution allows you to access the internet only via a proxy server, that adds an extra bit of complication for you to use any application that uses internet. The easiest work around for this is to set the relevant environment variables for the different protocols so that they take effect system wide.
@@ -21,8 +29,6 @@ If there is no direct Internet access to the mobiles, and you configured proxy i
 
 **why?**
 
-[**Do Android proxy settings apply to all apps on the device**](https://help.safesquid.com/portal/en/kb/articles/do-android-proxy-settings-apply-to-all-apps-on-the-device)
-
 Example:
 
 IP of my mobile: 192.168.27.60
@@ -35,4 +41,4 @@ Because the applications will not use the proxy settings, they use the direct ac
 
 In this case it is not possible to allow some of the applications to work with proxy, even though if you configure the proxy settings in the mobile. Because the applications not using proxy and looking for Internet access directly.       
 
-**Note: The same scenario is applicable in transparent mode also**.
+> **Note: The same scenario is applicable in transparent mode also**.

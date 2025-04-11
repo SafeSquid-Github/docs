@@ -1,4 +1,13 @@
-# Data Loss Prevention
+---
+title: Data Loss Prevention  
+description: Configure SafeSquid's DLP (Data Loss Prevention) module to block the upload of sensitive or unauthorized content such as macro-enabled files, audio, video, and confidential documents. Enforce content-aware policies based on user groups and file types.  
+keywords:  
+- SafeSquid DLP  
+- data loss prevention proxy  
+- block file uploads by type  
+- enforce upload restrictions  
+- secure web gateway content filtering  
+---
 
 ## Overview
 
@@ -6,9 +15,9 @@ DLP is nothing **but a Data Loss Prevention** module in Safequid. DLP module was
 
 ## Prerequisites
 
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection](https://help.safesquid.com/portal/en/kb/articles/https-inspection#Overview).
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md).
 
-## [Access the SafeSquid Interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to Configure Page 
 

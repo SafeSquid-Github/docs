@@ -1,4 +1,13 @@
-# Enforce SafeSearch
+---
+title: Enforce SafeSearch
+description: Learn how to configure SafeSquid to enforce SafeSearch on popular search engines like Google, Yahoo, and Bing, blocking explicit content from search results.
+keywords:
+- enforce safesearch safesquid
+- google safesearch safesquid
+- yahoo safesearch safesquid
+- bing safesearch safesquid
+- filter explicit content safesquid
+---
 
 ## Overview
 
@@ -28,27 +37,17 @@ SafeSquid SWG bydefault have some rules which offers SafeSearch for primarily us
 
 ## Prerequisites
 
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to Enable HTTPS Inspection](https://help.safesquid.com/portal/en/kb/articles/setup-https-inspection)
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to Enable HTTPS Inspection](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
 
 ## Google SafeSearch
 
 Filter explicit search results on Google search engine, like pornographic images, videos, and websites from Google Search results. Try disabling Google SafeSearch and you will not be able to as SafeSquid forcefully enforces it.
 
-Read more about [Google SafeSearch](https://help.safesquid.com/portal/en/kb/articles/enforce-google-safe-search-on-safesquid-proxy)
-
 ## Yahoo SafeSearch
 
 Filter explicit search results on Yahoo search engine, like pornographic images, videos, and websites from Yahoo Search results. Try disabling Yahoo SafeSearch and you will not be able to as SafeSquid forcefully enforces it.
-
-Read more about [Yahoo SafeSearch](https://help.safesquid.com/portal/en/kb/articles/enforce-yahoo-safe-search-on-safesquid-proxy)
 
 ## Bing SafeSearch 
 
 Filter explicit search results on Bing search engine, like pornographic images, videos, and websites from Bing Search results. Try disabling Bing SafeSearch and you will not be able to as SafeSquid forcefully enforces it.
 
-Read more about [Bing SafeSearch](https://help.safesquid.com/portal/en/kb/articles/enforce-bing-safe-search-on-safesquid-proxy)
-
-
-https://help.safesquid.com/portal/en/kb/articles/enforce-yahoo-safe-search-on-safesquid-proxy
-https://help.safesquid.com/portal/en/kb/articles/enforce-google-safe-search-on-safesquid-proxy
-https://help.safesquid.com/portal/en/kb/articles/enforce-bing-safe-search-on-safesquid-proxy

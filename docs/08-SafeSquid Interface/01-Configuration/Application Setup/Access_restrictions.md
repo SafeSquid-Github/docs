@@ -1,4 +1,12 @@
-# Access Restriction
+---
+title: Access Restriction  
+description: Configure SafeSquid Access Restriction to allow or deny specific users, IPs, or LDAP groups access to proxy services or the web interface. Learn how to apply authentication, interface-specific rules, and user group profiling.  
+keywords:  
+- safesquid access restriction  
+- safesquid authentication  
+- safesquid allow deny policy  
+- safesquid ldap integration  
+---
 
 ## Overview
 
@@ -7,10 +15,7 @@ Use Access Restriction to Allow/Deny access to SafeSquid's service for specific 
 In SafeSquid versions that support Windows Integrated Authentication, the Global Section allows you to explicitly Enable or Disable NTLM authentication. By setting this to "Disabled", you can explicitly switch off the support for Windows Integrated Authentication. If this option is enabled, SafeSquid offers authentication headers that encourage the client's browser to use Negotiate, NTLM or Basic Authentication, depending upon the browser's capabilities and the user's system configuration.
 
 ## Prerequisites
-
-[Avoid Locking Yourself to SafeSquid Interface When You Are Configuring Policies in Access Restrictions](https://help.safesquid.com/portal/en/kb/articles/avoid-locking-yourself-when-you-are-configuring-policies-in-access-restrictions)
-
-## [Access the SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to Configure Page
 
@@ -166,11 +171,11 @@ Read more about Enable SSO authentication for LDAP users.
 
 This field needs to be filled, only if you would want the user(s) to be authenticated, depending on the following conditions:
 
-a) With No Authentication selected, fill in the user name with which you would like the user to authenticate.
+1. With No Authentication selected, fill in the user name with which you would like the user to authenticate.
 
 You also have to fill in the Password field for this user. The user is allowed to access, with the specified User name and Password.
 
-b) With Pam Authentication selected, fill in the existing user name(s) on the server configured for PAM, and leave the Password field blank.
+2. With Pam Authentication selected, fill in the existing user name(s) on the server configured for PAM, and leave the Password field blank.
 
 Only users specified in this field are allowed authenticated access.
 

@@ -1,5 +1,5 @@
 ---
-title: Install SafeSquid Using TAR file
+title: Install Using TAR file
 Description: Learn how to install SafeSquid Secure Web Gateway using a TAR file on RedHat, CentOS, SuSe, and other Linux distributions. 
 Keywords:
 - Install SafeSquid using TAR file  

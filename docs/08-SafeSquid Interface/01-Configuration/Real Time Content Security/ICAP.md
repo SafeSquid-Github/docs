@@ -1,4 +1,17 @@
-# ICAP 
+---
+title: ICAP 
+description: Learn how to configure and use the ICAP module in SafeSquid SWG to offload security services like virus scanning, content filtering, and data loss prevention for improved scalability and centralized control.  
+keywords:  
+- ICAP integration  
+- SafeSquid ICAP  
+- content adaptation protocol  
+- ICAP proxy  
+- offload content filtering  
+- antivirus scanning proxy  
+- HTTP content modification  
+- ICAP server configuration  
+- secure web gateway  
+---
 
 ## What is the advantage of using ICAP?
 
@@ -62,7 +75,7 @@ software to operate on the content.
 
 ## Enabling the ICAP section on the SafeSquid User Interface
 
-## [Access the SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to Configure Page
 

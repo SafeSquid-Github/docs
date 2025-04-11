@@ -1,4 +1,13 @@
-# 2.0 Real-time content security
+---
+title: 2.0 Real-time content security  
+description: Configure SafeSquid's real-time content security features like HTTPS inspection, antivirus scanning, DLP, ICAP integration, and intelligent content filtering to enhance protection against malware, data leakage, and unauthorized access.  
+keywords:  
+- real-time content filtering  
+- safesquid ssl inspection  
+- web security gateway  
+- data loss prevention  
+- web content filtering  
+---
 
 Configure security filters like SSL inspection, antivirus, content modifier, and image scanning.
 

@@ -1,4 +1,12 @@
-# External Applications
+---
+title: External Applications  
+description: Learn how to integrate external programs or scripts with SafeSquid to parse and filter web content. Configure policies, execution methods, and content processing strategies.  
+keywords:  
+- safesquid external parsers  
+- web content filtering  
+- integrate external applications  
+- custom script web filtering  
+---
 
 ## Overview
 
@@ -10,7 +18,7 @@ If nobody is sent after the header, the original body with modified headers is u
 
 ## Enabling the External application section on the SafeSquid User Interface
 
-## [Access SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to the configure page
 

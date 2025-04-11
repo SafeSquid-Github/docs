@@ -1,4 +1,13 @@
-# Content Modifier
+---
+title: Content Modifier  
+description: Configure SafeSquid's Content Modifier to dynamically alter HTML, headers, and data in real-time. Remove or replace JavaScript, ActiveX, cookies, and modify content types to improve security and enforce custom web policies.  
+keywords:  
+- content modification proxy  
+- regex based content rewriting  
+- SafeSquid real-time content inspection  
+- modify client and server headers  
+- web page filtering proxy  
+---
 
 ## Overview
 
@@ -8,7 +17,7 @@ It enables you to modify the contents of web pages, files, the client header, an
 
 ## Enabling the Content modifier section on the SafeSquid User Interface
 
-## [Access the SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to Configure Page
 

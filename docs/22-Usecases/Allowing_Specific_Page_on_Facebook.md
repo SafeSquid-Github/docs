@@ -1,4 +1,13 @@
-# Allowing Specific Page on Facebook
+---
+title: Allow Specific Page on Facebook
+description: Learn how to configure SafeSquid to allow access to specific Facebook pages while blocking the rest, enabling you to control social media usage in your organization.
+keywords:
+- allow specific facebook page safesquid
+- safesquid block facebook except page
+- facebook page access safesquid
+- safesquid social media filtering
+- specific facebook page access policy
+---
 
 ## Overview
 
@@ -16,9 +25,9 @@ In the same way, you can create a policy to allow a specific page (only your com
 
 ## Prerequisites
 
-**HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](https://help.safesquid.com/portal/en/kb/articles/setup-https-inspection)**
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
 
-## [Access the SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ![Select Configure section from safesquid user interface to allow only specific page of Facebook ](/img/How_To/Allowing_Specific_Page_on_Facebook/image1.webp)
 

@@ -1,4 +1,13 @@
-# Allow Outlook to Work Through SafeSquid
+---
+title: Allow Outlook to Work Through SafeSquid
+description: Learn how to configure SafeSquid and system firewall rules to allow Microsoft Outlook to function properly in environments where proxy authentication and SSL inspection are enabled.
+keywords:
+- allow outlook through proxy
+- safesquid outlook configuration
+- iptables rules for outlook
+- outlook with SSL inspection
+- safesquid authentication settings
+---
 
 Many times, our team has been reported saying that MS Outlook isn't working when we enable authentication (Negotiate or basic) and/or SSL inspection. Remember that SafeSquid is generally deployed in an environment that has a firewall in front, that allows only 80 and 443 traffic from SafeSquid through it and blocks the rest.
 
@@ -11,10 +20,10 @@ There are a couple of methods to achieve this. We can either allow and block the
 The findings in allowing the Outlook traffic using the iptables rules are shown below:
 
 This rule is to allow the established incoming connections to the server
-**iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT**
+> **iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT**
 
 This rule is to allow the loopback connections to the server
-**iptables -A INPUT -i lo -m comment --comment "Allow loopback connections" -j ACCEPT**
+> **iptables -A INPUT -i lo -m comment --comment "Allow loopback connections" -j ACCEPT**
 
 This rule is to allow the incoming ping requests to the server**
 iptables -A INPUT -p icmp -m comment --comment "Allow Ping to work as expected" -j ACCEPT**
@@ -28,16 +37,16 @@ iptables -A INPUT -p tcp -m multiport --dports 1023,3268,3269,5222,5269,5280,808
 (Note that both the above rules are one and the same excepting the ports. iptables will not allow us to add all the above-mentioned ports at one go, which is the reason to separate them into two rules)
 
 This rule is to allow the incoming UDP connections to the server on the following ports, 53(DNS), 953(RNDC)
-**iptables -A INPUT -p udp -m multiport --dports 53,953 -j ACCEPT**
+> **iptables -A INPUT -p udp -m multiport --dports 53,953 -j ACCEPT**
 
 This rule is to allow the established outbound connections from the server
-**iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT**
+> **iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT**
 
 This rule is to allow the loopback connections from the server
-**iptables -A FORWARD -i lo -m comment --comment "Allow loopback connections" -j ACCEPT**
+> **iptables -A FORWARD -i lo -m comment --comment "Allow loopback connections" -j ACCEPT**
 
 This rule is to allow the ping outside from the server
-**iptables -A FORWARD -p icmp -m comment --comment "Allow Ping to work as expected" -j ACCEPT**
+> **iptables -A FORWARD -p icmp -m comment --comment "Allow Ping to work as expected" -j ACCEPT**
 
 This rule is to allow the connections on the following ports from the server, 22(SSH), 25(SMTP), **53(DNS), 110(POP), 389(LDAP), 587(SMTPS), 636(LDAPS), 953(RNDC), 993(IMAPS), 995(POP3S) 
 iptables -A FORWARD -p tcp -m multiport --dports 22,25,53,110,389,465,587,636,953,993,995 -j ACCEPT**
@@ -46,11 +55,11 @@ This rule is to allow the connections on the following ports from the server, 10
 iptables -A FORWARD -p tcp -m multiport --dports 1023,3268,3269,5222,5269,5280,8080 -j ACCEPT**
 
 This rule is to allow the UDP connections from the server on the following ports 53(DNS), 953(RNDC)
-**iptables -A FORWARD -p udp -m multiport --dports 53,953 -j ACCEPT**
+> **iptables -A FORWARD -p udp -m multiport --dports 53,953 -j ACCEPT**
 
 This rule is to DROP the remaining input traffic to the server
-**iptables -P INPUT DROP**
+> **iptables -P INPUT DROP**
 
 This rule is to drop the forward output traffic from the server
-**iptables -P FORWARD DROP**
+> **iptables -P FORWARD DROP**
 The above iptables rules are enough for Outlook to work in an environment where authentication and/or SSL inspection in SafeSquid are enabled.

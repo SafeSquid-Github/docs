@@ -1,5 +1,15 @@
-# Image Analzer
-
+---
+title: Image Analyzer
+description: Learn how to use SafeSquid’s Image Analyzer module to block inappropriate images in real-time using graphical content scoring. Explore privacy-aware filtering policies and debugging options.
+keywords:
+- SafeSquid image analyzer
+- block pornographic content
+- block inappropriate images
+- real-time image filtering
+- content-aware filtering
+- image scanning safesquid
+- graphical content analysis
+---
 ## Overview
 
 Use this section to prevent users from viewing pornographic image content.

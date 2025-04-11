@@ -1,4 +1,13 @@
-# Facebook Read Only Mode
+---
+title: Facebook Read Only Mode
+description: Learn how to configure SafeSquid to switch Facebook into read-only mode, allowing controlled access while preventing actions like commenting and sharing.
+keywords:
+- facebook read only mode safesquid
+- safesquid facebook access control
+- restrict facebook actions safesquid
+- safesquid social media filtering
+- facebook read only access safesquid
+---
 
 ## Overview
 
@@ -28,9 +37,9 @@ Block Facebook chat.
 
 ## Prerequisites
 
-**HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection](https://help.safesquid.com/portal/en/kb/articles/setup-https-inspection)**
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
 
-## [Access the SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ![Access safesquid user interface to enable Facebook read only mode](/img/How_To/Facebook_Read_Only_Mode/image1.webp)
 

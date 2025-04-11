@@ -1,4 +1,12 @@
-# Request Types
+---
+title: Request Types  
+description: Configure request profiling in SafeSquid to manage and control web access based on methods, protocols, referrers, and user agents. Enable selective access, enforce safe search, and apply granular request controls.  
+keywords:  
+- safesquid request profiler  
+- block request methods  
+- enforce safe search  
+- control user-agent access  
+---
 
 ## Overview
 
@@ -14,7 +22,7 @@ This section helps you to enforce the safe search for Google, Yahoo, and YouTube
 
 ## Enabling the Request Type section on the SafeSquid User Interface
 
-## [Access SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to the configure page
 

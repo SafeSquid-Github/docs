@@ -1,4 +1,12 @@
-# Proxy Chain
+---
+title: Proxy Chain  
+description: Configure SafeSquid's Proxy Chain to forward web traffic via upstream proxies using HTTP, SOCKS4/5, or CONNECT. Utilize ICP and CARP protocols to load balance and coordinate cache across peer proxies for optimized performance.  
+keywords:  
+- safesquid proxy chain  
+- forward proxy configuration  
+- carp and icp in proxy  
+- upstream proxy routing  
+---
 
 ## Overview
 

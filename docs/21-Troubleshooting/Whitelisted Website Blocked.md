@@ -1,4 +1,18 @@
-# White Listed Website is Blocked
+---
+title: Whitelisted Websites Blocked  
+Description: Learn how to resolve issues where websites added to the whitelist category are still blocked in SafeSquid. This guide walks you through verifying the categorization engine, editing website categorization, and adjusting access policies for effective web filtering.  
+Keywords:  
+- SafeSquid whitelist not working  
+- whitelisted website blocked SafeSquid  
+- SafeSquid allow specific website  
+- SafeSquid categorize websites  
+- SafeSquid access policies  
+- unblock whitelisted domain  
+- troubleshoot SafeSquid category block  
+- SafeSquid whitelist category  
+- SafeSquid custom web filtering  
+- SafeSquid category management  
+---
 
 ## Issues
 

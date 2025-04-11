@@ -1,4 +1,12 @@
-# System Configuration
+---
+title: System Configuration  
+description: Configure SafeSquid's System Configuration to fine-tune proxy hostname, connection pools, debugging headers, and compression policies for optimal secure web gateway performance.  
+keywords:  
+- safesquid system configuration  
+- connection pool tuning  
+- proxy hostname setup  
+- safe web gateway compression  
+---
 
 ## Overview
 
@@ -8,7 +16,7 @@ By this tuning, you can improve overall Internet service performance and manage 
 
 ## Enabling the System configuration section on the SafeSquid User Interface
 
-## [Access the SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to Configure Page
 
@@ -240,7 +248,7 @@ TRUE: Enable via header.
 
 FALSE: Disable via header.
 
-**Note**: You can view information on the current connection(s) that are being held open in the connection pool and/or awaiting reuse on SafeSquid Web-GUI i.e. on the Connection Pool tab of the Reports page.
+> **Note**: You can view information on the current connection(s) that are being held open in the connection pool and/or awaiting reuse on SafeSquid Web-GUI i.e. on the Connection Pool tab of the Reports page.
 
 ### Example
 

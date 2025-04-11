@@ -1,4 +1,13 @@
-# DNS Blacklist
+---
+title: DNS Blacklisting
+description: Learn how to configure SafeSquid to use DNS Blacklist (DNSBL) services to block access to dangerous websites based on DNS queries and blacklist services.
+keywords:
+- dns blacklist safesquid
+- block websites dnsbl safesquid
+- dns blacklist configuration safesquid
+- dns filtering safesquid
+- block dangerous websites safesquid
+---
 
 ## Overview
 
@@ -8,7 +17,7 @@ Before establishing a connection with "www.example.com", SafeSquid performs a DN
 
 SafeSquid caches the DNS query results for efficiency.
 
-## [Access the SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface#Overview)
+## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to Configure Page
 
@@ -89,5 +98,3 @@ DNS Blacklisting should also be considered in a situation where there are many d
 Once the DNSB blacklisting is configured, SafeSquid will look for the entry of the URL and the dnsbl domain you have configured. Example: SafeSquid will check for the DNS record of google.com.in.dnsblbl.org in the db.in.dnsbl.org file, if found then the URL will be blocked else the page will be loaded.
 
 ![Slide1-dnsbl.webp](/img/Configure/Real_Time_Content_Activity/DNS_blacklist/image7.webp)
-
-https://help.safesquid.com/portal/en/kb/articles/dns-failure

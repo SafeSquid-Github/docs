@@ -1,4 +1,13 @@
-# Block inappropriate images by using Image Analyzer
+---
+title: Block Inappropriate Images by Using Image Analyzer
+description: Learn how to configure SafeSquid to block inappropriate images in real time using the Image Analyzer, ensuring a safe browsing environment.
+keywords:
+- block inappropriate images safesquid
+- image analyzer safesquid
+- content filtering safesquid
+- block pornographic images safesquid
+- real-time image filtering safesquid
+---
 
 ## Overview
 
@@ -6,9 +15,9 @@ Use this section to prevent the users from viewing pornographic image content.Th
 
 ## Prerequisites
 
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection](https://help.safesquid.com/portal/en/kb/articles/setup-https-inspection)
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
 
-## [Access SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to Configure page
 

@@ -1,4 +1,13 @@
-# Interface Access Blocked Access Denied
+---
+title: Interface Access Denied  
+description: Resolve issues when SafeSquid denies access to its web interface due to misconfigured Access Restrictions. Learn root causes and how to regain access using SSH or service restart.  
+keywords:
+- safesquid access denied  
+- safesquid web interface blocked  
+- safesquid locked out  
+- safesquid access restriction troubleshooting  
+- safesquid ssh tunnel ui access  
+---
 
 ## Issues
 

@@ -1,4 +1,13 @@
-# Disk Space and RAM is Full On SafeSquid Server
+---
+title: Disk Space and RAM Full on SafeSquid Server
+description: Detailed steps for identifying, cleaning, and managing disk and memory usage on a SafeSquid proxy server to prevent performance issues.
+keywords:
+- safesquid disk full
+- safesquid server storage cleanup
+- safesquid logs delete
+- safesquid RAM usage high
+- free space safesquid server
+---
 
 ## Overview
 

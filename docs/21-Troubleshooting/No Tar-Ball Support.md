@@ -1,4 +1,14 @@
-# Unable to Generate Support Tar-ball
+---
+title: Unable to Generate Support Tar-ball  
+description: Step-by-step guide to troubleshoot and manually generate the support tarball in SafeSquid. Resolve issues related to missing scripts or permissions.  
+keywords:
+- safesquid support tarball issue  
+- safesquid generate logs tar.gz  
+- safesquid support_tarball.sh not working  
+- safesquid support diagnostics archive  
+- troubleshoot safesquid technical support logs  
+---
+
 ## ISSUE
 
 Unable to generate support tarball from SafeSquid Interface: **Support Page > Support Tarball**

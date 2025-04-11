@@ -1,4 +1,13 @@
-# DNS Blacklist
+---
+title: DNS Blacklist  
+description: Configure SafeSquid’s DNS Blacklist to automatically block access to malicious or suspicious domains using real-time DNSBL lookups. Enforce SOC-based web filtering policies efficiently and prevent users from accessing harmful content.  
+keywords:  
+- DNS blacklist proxy  
+- SafeSquid DNSBL  
+- block malicious domains  
+- web filtering using DNS  
+- secure web gateway threat protection  
+---
 
 ## Overview
 
@@ -8,7 +17,7 @@ Before establishing a connection with "www.example.com", SafeSquid performs a DN
 
 SafeSquid caches the DNS query results for efficiency.
 
-## [Access the SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface#Overview)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to Configure Page
 

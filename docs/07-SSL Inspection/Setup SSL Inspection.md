@@ -1,4 +1,16 @@
-# Setup HTTPS Inspection
+---
+title: Setup HTTPS Inspection 
+Description: Learn how to configure HTTPS inspection in SafeSquid to decrypt and analyze encrypted traffic for enhanced web security, malware detection, and policy enforcement.  
+Keywords:  
+- SafeSquid HTTPS inspection  
+- SSL inspection SafeSquid  
+- decrypt HTTPS traffic SafeSquid  
+- SafeSquid web proxy HTTPS  
+- web filtering encrypted traffic  
+- SSL certificate configuration SafeSquid  
+- HTTPS scanning enterprise proxy  
+- enable SSL inspection SafeSquid  
+---
 
 ## Overview
 
@@ -44,115 +56,15 @@ To achieve all the above, the Network administrator should set up a SafeSquid Se
 
 -   Forbid users from uploading files to any website.
 
-## Configure the HTTPS inspection 
+## How does HTTPS work?
 
-![Setting up HTTPS inspection](/img/How_To/Setup_HTTPS_Inspection/image1.webp)
+When you prepare your web server to use HTTPS you will be asked a few questions about your website and your company including your web site's domain name and your company's name and location. Your web server then creates two cryptographic keys: a private key and a public key. Your private key must remain private or the HTTPS connection could be made vulnerable. The public key does not need to be secret and is placed into a [Certificate Signing Request](https://www.sslshopper.com/what-is-a-csr-certificate-signing-request.html) or CSR, a piece of encrypted text that you will submit to a certificate authority. The certificate authority will validate your details and issue the SSL certificate which you can then install to the web server with the private key to enable HTTPS. For more information, see [SSL For Newbs](https://www.sslshopper.com/article-ssl-for-newbs.html).
 
-## Generate SSL (Self-Signed) certificates from self-service portal
+![showing flow chart of how https works](/img/How_To/How_does_HTTPS_work/image1.webp)
 
-You must generate an SSL certificate from the self-service portal before configuring HTTPS inspection.
+You can enable or disable HTTPS scanning from SafeSquid HTTPS inspection section.
 
-[Setup your SSL (Self Signed) certificates from self-service portal](https://help.safesquid.com/portal/en/kb/articles/setting-up-ssl-certificates-from-self-service-portal)
-
-Download [the SSL (Self Signed) Certificate from SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/download-ssl-certificate-from-interface)
-
-Importing SafeSquid SSL certificate into your browser
-
-When SafeSquid is installed in your network with HTTPS inspection enabled and the SSL certificate is not installed into the browser, then you will get an error while accessing the HTTPS websites. You must install the SafeSquid SSL certificate into the browsers.
-
--   
-
--   [Importing into Mozilla Firefox ](https://help.safesquid.com/portal/en/kb/articles/importing-your-ssl-certificate-into-firefox)
-
--   [Importing into Internet Explorer or Chrome Browser](https://help.safesquid.com/portal/en/kb/articles/importing-your-ssl-certificate-into-internet-explorer-or-chrome)[Enabling HTTPS inspection on SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/enabling-https-inspection-on-safesquid-user-interface)
-
--   
-
--   [How does HTTPS work?](https://help.safesquid.com/portal/en/kb/articles/how-does-https-work)
-
-## [How does HTTPS inspection work with SafeSquid?](https://help.safesquid.com/portal/en/kb/articles/how-does-https-inspection-work-with-safesquid)Troubleshooting
-
--   
-
--   [SSL certificate downloaded with zero size OR unable to download SSL certificate](https://help.safesquid.com/portal/en/kb/articles/ssl-certificate-downloaded-with-zero-size-or-unable-to-download-ssl-certificate)
-
--   [Application not working with HTTPS inspection](https://help.safesquid.com/portal/en/kb/articles/application-not-working-with-https-inspection)
-
--   [SSL certification errors](https://help.safesquid.com/portal/en/kb/articles/ssl-certification-errors)
-
-## [Certificate manageability](https://help.safesquid.com/portal/en/kb/articles/certificate-manageability)See Also
-
--   [Integrate AD or OpenLDAP with SafeSquid](https://help.safesquid.com/portal/en/kb/articles/integrate-ad-or-openldap-with-safesquid)
-
--   [Enforce Safe Searches ](https://help.safesquid.com/portal/en/kb/articles/how-to-enforce-safesearch)
-
--   [Enforce YouTube Restricted Mode ](https://help.safesquid.com/portal/en/kb/articles/how-to-enforce-youtube-restricted-mode)
-
--   [Defend Against Malware and External Attacks](https://help.safesquid.com/portal/en/kb/articles/defend-against-malware-and-external-attacks)
-
-
-
-# Enabling HTTPS inspection on SafeSquid User Interface
-
-## [Access the SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
-
-## Go to Configure Page
-
-![clicking on configure in safesquid interface](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image1.webp)
-
-## Open Real time content security side menu
-
-![clicking on Real Time Content Security in the sidebar](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image2.webp)
-
-## Open HTTPS Inspection section
-
-![clicking and opening HTTPS inspection section](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image3.webp)
-
-## Enable HTTPS Inspection
-
-**Note: In newer versions of SafeSquid which are released after June-2017, setup tab is removed. You will see only three subsections in HTTPS inspection section.**
-
-![showing global tab of HTTPS inspection](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image4.webp)
-
-## Open Global part of HTTPS Inspection section and make the Enabled as True.
-
-![clicking on edit policy in global tab ](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image5.webp)![selecting true in drop down menu](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image6.webp)
-
-![clicking on save policy](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image7.webp)
-
-## Open Inspection Policies Tab
-
-Make sure all the policies should be Enabled as True.
-
-![clicking on inspection policy tab](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image8.webp)
-
-![showing of default policies in Inspection policies tab](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image9.webp)
-
-![clicking on edit on last rule of Enforce SSL scanning for all websites](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image10.webp)
-
-![clicking on true in the drop down menu of the policy](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image11.webp)
-
-![clicking on the save policy](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image12.webp)
-
-## Save Configuration
-
-Click on Save Configuration icon situated at bottom left corner.
-
-![clicking on save conf to save the configuration](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image13.webp)
-
-When you click on Save config, it will give a prompt for asking the confirmation to store your configuration into the cloud.
-
-Select Yes only in below cases:
-
-if you want to use this same configuration in other SafeSquid instances.
-
-if your total configuration in all sections is completed and validated.
-
-Otherwise select No and click on submit
-
-
-
-# How does HTTPS inspection work with SafeSquid?
+## How does HTTPS inspection work with SafeSquid?
 
 ![HTTPS inspection flow](/img/How_To/How_does_HTTPS_inspection_work_with_SafeSquid/image1.webp)
 
@@ -194,46 +106,50 @@ Client browsers further verify the trust of the certificate (public key) sent by
 
 After this client uses SafeSquid created certificate (public key) to encrypt the data that will be sent to SafeSquid. SafeSquid can decrypt the data sent by clients with the help of created private key and checks the data and sends it to server by encrypting data with the server public key.
 
+## Configure the HTTPS inspection 
+
+![Setting up HTTPS inspection](/img/How_To/Setup_HTTPS_Inspection/image1.webp)
+
+## Generate SSL (Self-Signed) certificates from self-service portal
+
+You must generate an SSL certificate from the self-service portal before configuring HTTPS inspection.
+
+[Setup your SSL (Self Signed) certificates from self-service portal](/docs/12-Server%20Security/SSL%20Certificate%20Validation.md)
+
+Importing SafeSquid SSL certificate into your browser
+
+When SafeSquid is installed in your network with HTTPS inspection enabled and the SSL certificate is not installed into the browser, then you will get an error while accessing the HTTPS websites. You must install the SafeSquid SSL certificate into the browsers.
 
 
-# How does HTTPS work?
+## Enabling HTTPS inspection on SafeSquid User Interface
 
-When you prepare your web server to use HTTPS you will be asked a few questions about your website and your company including your web site's domain name and your company's name and location. Your web server then creates two cryptographic keys: a private key and a public key. Your private key must remain private or the HTTPS connection could be made vulnerable. The public key does not need to be secret and is placed into a [Certificate Signing Request](https://www.sslshopper.com/what-is-a-csr-certificate-signing-request.html) or CSR, a piece of encrypted text that you will submit to a certificate authority. The certificate authority will validate your details and issue the SSL certificate which you can then install to the web server with the private key to enable HTTPS. For more information, see [SSL For Newbs](https://www.sslshopper.com/article-ssl-for-newbs.html).
+### [Access the SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
-![showing flow chart of how https works](/img/How_To/How_does_HTTPS_work/image1.webp)
-
-You can enable or disable HTTPS scanning from SafeSquid HTTPS inspection section.
-
-
-# Enabling HTTPS inspection on SafeSquid User Interface
-
-## [Access the SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
-
-## Go to Configure Page
+### Go to Configure Page
 
 ![clicking on configure in safesquid interface](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image1.webp)
 
-## Open Real time content security side menu
+### Open Real time content security side menu
 
 ![clicking on Real Time Content Security in the sidebar](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image2.webp)
 
-## Open HTTPS Inspection section
+### Open HTTPS Inspection section
 
 ![clicking and opening HTTPS inspection section](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image3.webp)
 
-## Enable HTTPS Inspection
+### Enable HTTPS Inspection
 
 **Note: In newer versions of SafeSquid which are released after June-2017, setup tab is removed. You will see only three subsections in HTTPS inspection section.**
 
 ![showing global tab of HTTPS inspection](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image4.webp)
 
-## Open Global part of HTTPS Inspection section and make the Enabled as True.
+### Open Global part of HTTPS Inspection section and make the Enabled as True.
 
 ![clicking on edit policy in global tab ](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image5.webp)![selecting true in drop down menu](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image6.webp)
 
 ![clicking on save policy](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image7.webp)
 
-## Open Inspection Policies Tab
+### Open Inspection Policies Tab
 
 Make sure all the policies should be Enabled as True.
 
@@ -247,7 +163,7 @@ Make sure all the policies should be Enabled as True.
 
 ![clicking on the save policy](/img/How_To/Enabling_HTTPS_inspection_on_SafeSquid_User_Interface/image12.webp)
 
-## Save Configuration
+### Save Configuration
 
 Click on Save Configuration icon situated at bottom left corner.
 

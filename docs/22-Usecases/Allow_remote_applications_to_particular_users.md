@@ -1,4 +1,12 @@
-# Allow Remote Applicatios to Particular Users
+---
+title: Allow Remote Applications to Particular Users
+description: Learn how to allow specific users in your network to access remote applications securely using SafeSquid, including how to create policies without application signatures.
+keywords:
+- remote application access safesquid
+- safesquid user access control
+- safesquid policy creation
+- network access policy safesquid
+---
 
 ## Overview
 
@@ -10,7 +18,7 @@ When a user tries to access remote application software, First SafeSquid checks 
 
 ## How to Allow Remote Applications?
 
-Follow the Link: [**Allow anydesk **](https://help.safesquid.com/portal/en/kb/articles/allow-anydesk)
+Follow the Link: [**Allow anydesk **](/docs/22-Usecases/Allow_anydesk.md)
 
 ## How to create policy without Application Signature
 

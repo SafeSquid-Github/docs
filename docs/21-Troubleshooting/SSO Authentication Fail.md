@@ -1,4 +1,13 @@
-# SSP Authentication Fail
+---
+title: SSO Authentication Fail  
+Description: Troubleshoot SSP authentication failures and fix application compatibility issues caused by proxy authentication in SafeSquid. Learn how to verify Kerberos, DNS stub zones, and bypass authentication for unsupported apps.  
+Keywords:  
+- SafeSquid SSP fail  
+- SSO authentication error  
+- Kerberos troubleshooting  
+- proxy authentication bypass  
+- application login issues  
+---
 
 ## Troubleshooting
 

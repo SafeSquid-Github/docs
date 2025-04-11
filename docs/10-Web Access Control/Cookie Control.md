@@ -1,4 +1,13 @@
-# Cookie Filter
+---
+title: Cookie Filter
+description: Learn how to configure SafeSquid's cookie filter to manage cookie exchanges, block unwanted cookies, and ensure privacy for users.
+keywords:
+- cookie filter safesquid
+- block cookies safesquid
+- cookie management safesquid
+- restrict cookies safesquid
+- cookie filtering safesquid
+---
 
 ## Overview
 
@@ -16,7 +25,7 @@ You can also disable the users from logging into their personal accounts.
 
 Users can query the search engines (google, yahoo) but they are not able to login to their personal accounts (Gmail, shopping websites, trading websites).
 
-## [Access SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to configure page
 
@@ -327,5 +336,3 @@ Connections with the profile "DROP COOKIES FOR GOOGLE" will drop all cookies for
 Cookies will be dropped for both incoming and outgoing requests.
 
 ![](/img/Configure/Restriction_Profiles/Cookie_Filter/image8.webp)
-
-https://help.safesquid.com/portal/en/kb/articles/block-third-party-cookies

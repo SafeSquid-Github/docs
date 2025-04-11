@@ -1,4 +1,14 @@
-# Setup Monit for SafeSquid Monitoring
+---
+title: Monit
+description: Learn how to install, configure, and verify Monit for SafeSquid to ensure automatic monitoring and restarting of the proxy service.
+keywords:
+- monit safesquid setup
+- safesquid monit service
+- monit auto restart safesquid
+- safesquid monitoring daemon
+- safesquid high availability
+- monit startup configuration
+---
 
 ## Installation and configuration of Monit Service
 
@@ -14,7 +24,7 @@ You can check the status of the monit service using the command**:**
 
 Run the below command to install the monit service
 
-apt-get install monit
+> apt-get install monit
 
 Open **/etc/monit** folder and edit **monitrc** configuration file.
 
@@ -38,15 +48,15 @@ allow @monit
 
 -   To include the configuration or its parts from other files or directories.
 
-include /etc/monit/conf.d/
+> include /etc/monit/conf.d/
 
 -   Restart the monit service by using the command
 
-/etc/init.d/monit restart
+> /etc/init.d/monit restart
 
 -   Check whether SafeSquid is monitored by Monit or not by using the command
 
-monit status
+> monit status
 
 You will see all services monitored by the monit
 
@@ -66,4 +76,4 @@ You will observe that the SafeSquid service had automatically been started by Mo
 
 You can also execute the command below to start a monit service for every machine reboot.
 
-update-rc.d monit enable
+> update-rc.d monit enable

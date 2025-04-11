@@ -1,4 +1,13 @@
-# Activation Failure
+---
+title: Activation Failure
+description: Learn how to troubleshoot SafeSquid startup issues and activation failures, including file verification, service restart, and server connectivity checks.
+keywords:
+- safesquid activation failure
+- safesquid not starting
+- safesquid service restart
+- safesquid subscription error
+- safesquid proxy server refusing connection
+---
 
 ## Issues
 

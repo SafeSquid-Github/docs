@@ -1,4 +1,13 @@
-# Speed Limits
+---
+title: Speed Limits  
+description: Manage internet bandwidth and control data usage with SafeSquid's Speed Limits feature. Define download/upload limits, request caps, and bandwidth throttling to optimize performance and enforce usage policies.  
+keywords:  
+- SafeSquid speed limits  
+- bandwidth control  
+- internet usage policy  
+- download rate limiting  
+- data transfer restrictions  
+---
 
 ## Overview
 

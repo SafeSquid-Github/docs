@@ -1,4 +1,13 @@
-# YouTube API Integeration
+---
+title: YouTube API Integration
+description: Learn how to integrate YouTube API with SafeSquid to control and restrict YouTube video access based on categories, improving productivity and bandwidth management.
+keywords:
+- youtube api safesquid
+- safesquid youtube category restriction
+- block youtube videos safesquid
+- integrate youtube api safesquid
+- safesquid content filtering youtube
+---
 
 ## Overview
 

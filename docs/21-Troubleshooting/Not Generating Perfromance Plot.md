@@ -1,4 +1,13 @@
-# Unable to Generate Performance Plot
+---
+title: Unable to Generate Performance Plot  
+description: Troubleshooting guide for SafeSquid users unable to generate performance plots via the Support interface. Resolve issues related to missing gnuplot installation, script configuration, and manual plot generation.  
+keywords:  
+- safesquid performance plot issue  
+- safesquid gnuplot missing  
+- performance.png not generated  
+- troubleshoot safesquid plot.sh  
+- safesquid support performance metrics  
+---
 
 ## ISSUE
 
