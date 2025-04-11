@@ -1,5 +1,5 @@
 ---
-title: Adding Users Using SafeSquid Interface for Authentication
+title: Browser-based Authentication
 description: This guide explains how to add users and authenticate them using the SafeSquid interface when you don't have an Active Directory (AD) server. Learn how to configure user profiles and authentication settings.
 keywords:
 - SafeSquid user authentication
