@@ -7,7 +7,7 @@ The **Application Setup** section provides essential guides to configure various
 ## Included Topics
 
 - [Accelerators](/docs/08-SafeSquid%20Interface/01-Configuration/Application%20Setup/Accelerators.md): Configure accelerators to improve content delivery and performance.
-- [Access Restrictions](/docs/08-SafeSquid%20Interface/01-Configuration/Application%20Setup/Access%20restrictions.md): Set rules to limit or control access based on user and network parameters.
+- [Access Restrictions](/docs/08-SafeSquid%20Interface/01-Configuration/Application%20Setup/Access_restrictions.md): Set rules to limit or control access based on user and network parameters.
 - [Caching](/docs/08-SafeSquid%20Interface/01-Configuration/Application%20Setup/Caching.md): Optimize web traffic by configuring caching mechanisms for faster response times.
 - [FTP Browsing](/docs/08-SafeSquid%20Interface/01-Configuration/Application%20Setup/FTP_browsing.md): Set up FTP browsing and management within SafeSquid.
 - [Integration of LDAP](/docs/08-SafeSquid%20Interface/01-Configuration/Application%20Setup/Integration_of_LDAP.md): Integrate LDAP authentication for seamless user management.
