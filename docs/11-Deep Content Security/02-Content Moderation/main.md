@@ -1,5 +1,5 @@
 ---
-title: Content Moderation in SafeSquid
+title: Content Moderation
 ---
 SafeSquid’s content moderation engine analyzes and filters web content in real-time to enforce compliance, safety, and productivity policies.
 

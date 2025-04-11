@@ -1,3 +1,6 @@
+---
+title: SSL Inspection
+---
 ## [Setup SSL Inspection](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
 
 On the [Self-Service Portal](/docs/05-Architecture/Management_of_Self-Service_Portal.md),

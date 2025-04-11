@@ -1,3 +1,7 @@
+---
+title: User Identification
+---
+
 ## [Setup User Identities](/docs/06-User%20Identification/Setup%20Authentication.md)
 
 SafeSquid has a dynamic user and group identity management system with configurable identification options.

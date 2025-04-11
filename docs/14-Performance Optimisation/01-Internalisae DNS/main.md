@@ -1,5 +1,6 @@
-# Internal DNS Configuration in SafeSquid
-
+---
+title: Internal DNS
+---
 This section explains how to set up an internal DNS resolver to improve name resolution performance and control within a SafeSquid deployment.
 
 ## Included Topics

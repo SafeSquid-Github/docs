@@ -1,5 +1,5 @@
 ---
-title: Disaster Recovery with SafeSquid Cloud Restore  
+title: Disaster Recovery 
 Description: Learn how to use SafeSquid’s Cloud Restore feature for disaster recovery, enabling fast and efficient restoration of configuration files and SSL certificates using the same activation key after system failure or in cluster deployments.
 
 Keywords:

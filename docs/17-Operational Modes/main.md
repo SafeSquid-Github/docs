@@ -1,3 +1,7 @@
+---
+title: Operational Nodes
+---
+
 ## Configure Proxy on Internet Clients
 
 An explicit proxy can be configured globally at the system level on any Windows, Linux, Mac, or Android device. Only specific applications, like [browsers](/docs/17-Operational%20Modes/TCP%20Proxy.md), or remote desktop applications can also be configured to route the

@@ -1,5 +1,5 @@
 ---
-title: Manage VPN Settings of Web Security Client  
+title: VPN Inegration
 Description: Learn how to configure and manage VPN settings for SafeSquid Web Security Clients via the Self-Service Portal, including steps to set and verify the FQDN of your SafeSquid server for remote policy enforcement.
 
 Keywords:

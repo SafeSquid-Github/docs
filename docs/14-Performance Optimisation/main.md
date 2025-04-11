@@ -1,3 +1,6 @@
+---
+title: Performance Optimisation
+---
 ## [Integrate with Web Cache Communication Protocol (WCCP)](/docs/14-Performance%20Optimisation/WCCP%20Integration.md)
 
 For WCCP-enabled routers, SafeSquid can be configured to participate in transparent redirection.

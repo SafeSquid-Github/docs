@@ -1,4 +1,6 @@
-# Proxy Clustering in SafeSquid
+---
+title:Proxy Clustering
+---
 
 This section outlines the clustering capabilities in **SafeSquid** to support high availability and scalability in enterprise environments.
 

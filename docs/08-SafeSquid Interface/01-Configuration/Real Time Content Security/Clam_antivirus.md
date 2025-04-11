@@ -1,5 +1,5 @@
 ---
-title: Clamm Antivirus  
+title: Clam Antivirus  
 description: Integrate ClamAV with SafeSquid Secure Web Gateway to scan and block malware at the gateway level, preventing viruses, worms, and trojans from entering your network.  
 keywords:  
 - clamav integration  

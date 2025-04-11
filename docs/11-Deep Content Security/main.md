@@ -1,3 +1,7 @@
+---
+title: Deep Content Security
+---
+
 ## [Integrate with a DNS Blacklisting service (DNSBL)](https://help.safesquid.com/portal/en/kb/articles/dns-blacklist)
 
 DNS tunnelling attacks evade the legacy HTTP-based security solutions as the exploit is carried out via DNS queries, which are traditionally perceived as non-threatful. Integrating with a customisable DNSBL server enables your Security Operations Centre (SOC) to effectively block domains at the DNS level.
