@@ -18,10 +18,6 @@ Furthermore, SafeSquid can be configured for [Kerberos-based authentication](/do
 
 For flexible and modular authentication, SafeSquid supports integration with all Linux-PAM authentication modules, including biometric, and custom authentication schemes.
 
-### Verify user credentials with an in-built credential store
-
-If you do not have an enterprise credential store, you can [create users and passwords in SafeSquid](https://help.safesquid.com/portal/en/kb/articles/adding-users-using-safesquid-interface-for-authentication).
-
 ### Multi-Factor Authentication
 
 For heightened security, combine network-based and credential-based authentication.
