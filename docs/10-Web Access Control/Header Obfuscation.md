@@ -1,4 +1,13 @@
-# Header Filter
+---
+title: Header Obfuscation
+description: Learn how to configure SafeSquid's header filter to manage HTTP headers, allowing, denying, or inserting custom headers for better control over client-server communication.
+keywords:
+- header filter safesquid
+- modify headers safesquid
+- http header filtering safesquid
+- header policy safesquid
+- request response header safesquid
+---
 
 ## Overview
 

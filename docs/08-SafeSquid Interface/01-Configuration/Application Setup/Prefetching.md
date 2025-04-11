@@ -1,10 +1,18 @@
-# Prefetching
+---
+title: Prefetching  
+description: Learn how to configure SafeSquid’s Prefetching feature to improve user experience by fetching and caching embedded content in advance. Set global limits, define HTML tag rules, and optimize cache efficiency with advanced prefetching logic.  
+keywords:  
+- safesquid prefetch configuration  
+- safesquid accelerators  
+- web content prefetching  
+- enhance proxy performance  
+---
 
 ## Overview
 
 Use Prefetching to enhance user experience. SafeSquid can analyze HTML pages, to identify links to embedded content, and initiate the fetch and cache process while still serving the initial HTML pages. Create entries in the Prefetch Sub-Section and set the logic for analyzing the HTML pages. Enable Caching for using Prefetching effectively.
 
-## [Access the SafeSquid interface.](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to the configure page.
 

@@ -1,8 +1,12 @@
-## [Setup User Identities](https://help.safesquid.com/portal/en/kb/articles/setup-authentication)
+---
+title: User Identification
+---
+
+## [Setup User Identities](/docs/06-User%20Identification/Setup%20Authentication.md)
 
 SafeSquid has a dynamic user and group identity management system with configurable identification options.
 
-### [Profile clients based on network identifiers](https://help.safesquid.com/portal/en/kb/articles/ip-based-authentication)
+### [Profile clients based on network identifiers](/docs/06-User%20Identification/03-Network%20Identifiers/IP-Based%20Authentication.md)
 
 In shared workstations, guest, and static IP networks, the access control policies are defined based on device-specific network signatures. Moreover, devices that do not support credential verification, like printers, and IoT devices, are identified based on IP address. It also enables you to secure varied network segments differently.
 
@@ -12,26 +16,22 @@ For enterprises with centralized user management infrastructure, connect your LD
 
 SafeSquid is also optimised to concurrently connect with multiple directory services. When credentials are entered, SafeSquid intelligently verifies the user from the appropriate directory service and efficiently caches user data.
 
-Furthermore, SafeSquid can be configured for [Kerberos-based authentication](https://help.safesquid.com/portal/en/kb/articles/kerberos-sso-authentication-setup) for Single Sign On (SSO).
+Furthermore, SafeSquid can be configured for [Kerberos-based authentication](/docs/06-User%20Identification/Kerberos%20SSO.md) for Single Sign On (SSO).
 
 ### Integrate with PAM service
 
 For flexible and modular authentication, SafeSquid supports integration with all Linux-PAM authentication modules, including biometric, and custom authentication schemes.
 
-### Verify user credentials with an in-built credential store
-
-If you do not have an enterprise credential store, you can [create users and passwords in SafeSquid](https://help.safesquid.com/portal/en/kb/articles/adding-users-using-safesquid-interface-for-authentication).
-
 ### Multi-Factor Authentication
 
 For heightened security, combine network-based and credential-based authentication.
 
-### [Create User Groups](https://help.safesquid.com/portal/en/kb/articles/create-user-groups-based-on-network-ip-and-ldap-active-directory)
+### [Create User Groups](/docs/06-User%20Identification/03-Network%20Identifiers/Network%20Identifiers.md)
 
 For applying uniform security policies based on the specific roles, responsibilities, and risk profiles of different user sets, you can add user profiles to groups.
 
 On integrating your enterprise directory service, SafeSquid automatically extracts group membership information.
 
-## [Bypass Authentication for an application](https://help.safesquid.com/portal/en/kb/articles/bypass-authentication)
+## [Bypass Authentication for an application](/docs/06-User%20Identification/Bypass%20Authentication.md)
 
 Applications that do not support proxy authentication need to be bypassed to ensure no disruption for them while maintaining user authentication for other applications.

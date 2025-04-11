@@ -1,4 +1,13 @@
-# Access Profiles
+---
+title: Access Profiles  
+description: Configure granular internet access policies using Access Profiles in SafeSquid. Define and manage user privileges, time-based restrictions, and content-based access control for secure web usage.  
+keywords:  
+- access control policies  
+- SafeSquid access profiles  
+- web filtering rules  
+- user-based internet access  
+- secure browsing policy  
+---
 
 ## Overview
 

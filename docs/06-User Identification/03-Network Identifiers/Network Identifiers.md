@@ -1,4 +1,13 @@
-# Create User Groups based on network IP and LDAP (Active directory)
+---
+title: Network Identifiers
+description: Learn how to create user groups in SafeSquid based on LDAP users or network IP addresses and define access policies for different groups such as HR, Sales, and Managers.
+keywords:
+- user groups safesquid
+- ldap integration safesquid
+- access policies safesquid
+- ip based authentication safesquid
+- role-based user groups safesquid
+---
 
 ## Overview 
 
@@ -36,7 +45,6 @@ Below are the different ways to define your User Groups
 
 If you have an LDAP server integrated with SafeSquid and you want to define the access policies based on the LDAP users or Groups, then follow this method
 
-Read more about [Define User Groups That Correspond to Role-based Groups In LDAP](https://help.safesquid.com/portal/en/kb/articles/define-user-groups-that-correspond-to-role-based-groups-in-ldap)
 
 ## Define User Groups that correspond to specific users
 
@@ -48,31 +56,26 @@ Read more about Define User Groups that correspond to specific users
 
 If you want to define the access rules based on users network IP addresses then follow this method.
 
-Read more about [Define User Groups that include or exclude users based on their Network IP](https://help.safesquid.com/portal/en/kb/articles/define-user-groups-that-include-or-exclude-users-based-on-their-network-ip)
 
+## Define User Groups that include or exclude users based on their Network IP
 
-
-# Define User Groups that include or exclude users based on their Network IP
-
-## Overview
+### Overview
 
 Creating User Groups based on their network IP
 
-## Prerequisites
+### Prerequisites
 
-Note: [Avoid Locking Yourself to SafeSquid Interface When You Are Configuring Policies in Access Restrictions](https://help.safesquid.com/portal/en/kb/articles/avoid-locking-yourself-when-you-are-configuring-policies-in-access-restrictions)
+### [Access The SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
-## [Access The SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
-
-## Go to Configure Page
+### Go to Configure Page
 
 ![Select Configure Page Section](/img/How_To/Define_User_Groups_that_include_or_exclude_users_based_on_their_Network_IP/image1.webp)
 
-## Go to Application Setup
+### Go to Application Setup
 
 ![](/img/How_To/Define_User_Groups_that_include_or_exclude_users_based_on_their_Network_IP/image2.webp)
 
-## Go to Access Restrictions
+### Go to Access Restrictions
 
 ![Select Access Restrictions Section](/img/How_To/Define_User_Groups_that_include_or_exclude_users_based_on_their_Network_IP/image3.webp)
 

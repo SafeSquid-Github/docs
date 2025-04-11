@@ -1,11 +1,13 @@
-## [Categorise Websites](https://help.safesquid.com/portal/en/kb/articles/categorize-websites)
+# Profiling Engine in SafeSquid
 
-To efficiently manage access to websites based on their content category, SafeSquid has a dynamic web categorisation engine. Real-time updates to SafeSquid's web categorisation database ensure the accurate classification of more than a million websites into over a hundred categories. In addition to this, advanced heuristic algorithms categorize unknown websites in real-time, based on URL, content, functionality, target audience, thematic focus, and web traffic behavioural patterns.
+The Profiling Engine in **SafeSquid** enables precise control over web traffic by defining rules based on user behavior, request attributes, and content context.
 
-Furthermore, [custom categorisation](https://help.safesquid.com/portal/en/kb/articles/manage-custom-web-site-categorization) empowers security administrators with the ability to manually classify
-websites into [private categories](https://help.safesquid.com/portal/en/kb/articles/create-and-manage-your-private-categories).
-Use the custom categories to [allow](https://help.safesquid.com/portal/en/kb/articles/allow-specific-website-through-safesquid) or [block](https://help.safesquid.com/portal/en/kb/articles/block-specific-website-through-safesquid) websites through SafeSquid. Wildcards can be used to categorise domain variants under the same category.
+## Included Topics
 
-## [Control internet access based on time](https://help.safesquid.com/portal/en/kb/articles/time-profiler)
+- [Application Signatures](/docs/09-Profiling%20Engine/Application%20Signatures.md): Identify and manage traffic from specific applications.
+- [Request Profiles](/docs/09-Profiling%20Engine/Request%20Profiles.md): Control traffic based on user-agent, MIME types, headers, etc.
+- [Response Profiles](/docs/09-Profiling%20Engine/Response%20Profiles.md): Filter content based on server responses.
+- [Time Profiles](/docs/09-Profiling%20Engine/Time%20Profiles.md): Apply rules based on access time windows.
+- [Website Categorization](/docs/09-Profiling%20Engine/Time%20Profiles.md): Use category-based filtering for web traffic.
 
-SafeSquid offers customizable scheduling options for security policies, allowing temporal control over web traffic. Thus, you may allow access to specific websites based on the time of day, like social media during lunch hours.
+These profiles help enforce security, productivity, and compliance policies with granular precision.

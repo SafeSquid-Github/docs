@@ -1,4 +1,13 @@
-# Image Analzer
+---
+title: Image Analzer  
+description: Configure SafeSquid’s Image Analyzer to block inappropriate images by analyzing real-time graphical content and applying score-based filtering policies.  
+keywords:  
+- SafeSquid Image Analyzer  
+- image content filtering  
+- real-time image scanning  
+- block inappropriate images  
+- content security gateway  
+---
 
 ## Overview
 

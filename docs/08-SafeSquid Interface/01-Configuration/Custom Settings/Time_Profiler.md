@@ -1,4 +1,12 @@
-# Time Profiler
+---
+title: Time Profiler  
+description: Configure time-based access policies in SafeSquid using the Time Profiler. Define rules by setting ranges for months, days, weekdays, hours, and minutes to enforce granular time-based restrictions on web access.  
+keywords:  
+- safesquid time profiler  
+- time-based access control  
+- internet usage schedule  
+- web filtering by time  
+---
 
 ## Overview
 
@@ -14,7 +22,7 @@ Time Profiler Enables you to allow or block the categories, and websites based o
 
 ## Enabling the Time Profiler section on the SafeSquid User Interface
 
-## [Access SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to the configure page.
 

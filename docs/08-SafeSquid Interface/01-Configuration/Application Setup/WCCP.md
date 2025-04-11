@@ -1,4 +1,12 @@
-# WCCP
+---
+title: WCCP  
+description: Configure SafeSquid's WCCP (Web Cache Communication Protocol) integration to enable transparent redirection and enforce proxy without browser configurations.  
+keywords:  
+- WCCP transparent proxy  
+- safesquid wccp setup  
+- proxy without browser config  
+- enforce proxy using router  
+---
 
 ## Overview
 

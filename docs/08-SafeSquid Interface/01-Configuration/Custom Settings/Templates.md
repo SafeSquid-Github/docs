@@ -1,4 +1,12 @@
-# Templates
+---
+title: Templates  
+description: Learn how to configure and customize SafeSquid templates for error messages, content filtering notifications, and branding purposes. Manage template profiles, content types, and response codes effectively.  
+keywords:  
+- safesquid templates  
+- custom error pages  
+- content filtering messages  
+- customize safesquid ui  
+---
 
 ## Overview
 
@@ -16,7 +24,7 @@ A template may not necessarily be an HTML but can also be almost about anything 
 
 ## Enabling the Template section on the SafeSquid User Interface
 
-## [Access SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to the configure page.
 

@@ -1,4 +1,12 @@
-# Caching
+---
+title: Caching  
+description: Learn how to configure caching in SafeSquid to optimize bandwidth, enhance performance, and manage cache storage, refresh rules, and object integrity checks.  
+keywords:  
+- safesquid caching configuration  
+- web proxy cache management  
+- safesquid refresh rules  
+- optimize bandwidth safesquid  
+---
 
 ## Overview
 

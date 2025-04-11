@@ -1,4 +1,13 @@
-# Redirect 
+---
+title: Redirect  
+description: Configure SafeSquid’s Redirect module to enforce intelligent or 302-based redirection of URLs for safe browsing, safe search enforcement, and custom access control.  
+keywords:  
+- SafeSquid Redirect  
+- URL redirection  
+- enforce safe search  
+- HTTP 302 redirect  
+- content security policies  
+---
 
 ## Overview
 
@@ -8,7 +17,7 @@ You may create redirection policies that intelligently fetch response from a des
 
 Alternatively, you may create policies that respond with an HTTP 302 redirection that instructs the client to seek your suggested URL.
 
-## [Access the SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to Configure Page
 

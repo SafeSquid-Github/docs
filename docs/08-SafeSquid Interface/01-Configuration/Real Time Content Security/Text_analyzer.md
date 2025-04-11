@@ -1,4 +1,13 @@
-# Text Analzer
+---
+title: Text Analzer  
+description: Use SafeSquid's Text Analyzer to block access to inappropriate websites by scanning page content for specific keywords and assigning scores. When the threshold is exceeded, the page is automatically blocked.  
+keywords:  
+- SafeSquid text analyzer  
+- keyword-based content filtering  
+- block inappropriate websites  
+- real-time web content scanning  
+- content scoring system  
+---
 
 ## Overview
 

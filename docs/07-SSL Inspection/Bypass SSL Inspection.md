@@ -1,4 +1,15 @@
-# Bypass HTTPS Inspection by using Request Types
+---
+title: Bypass HTTPS Inspection 
+Description: Learn how to configure SafeSquid Secure Web Gateway to bypass HTTPS inspection for specific websites using request types. Protect privacy and meet compliance by excluding sensitive traffic from decryption.  
+Keywords:  
+- SafeSquid HTTPS inspection bypass  
+- SSL decryption exclusion SafeSquid  
+- SafeSquid request types configuration  
+- Bypass SSL inspection specific websites  
+- SafeSquid web proxy HTTPS control  
+- Compliance proxy SSL inspection  
+- SafeSquid decryption rules  
+---
 
 ## Business challenge
 
@@ -6,7 +17,7 @@ The HTTPS inspection Bypass option enables you to define specific websites that 
 
 ## To bypass HTTPS Inspection enabled SafeSquid default configuration
 
-### [Access the SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+### [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ![clicking on configure in safesquid interface](/img/How_To/Bypass_HTTPS_Inspection_by_using_Request_Types/image1.webp)
 
@@ -54,4 +65,4 @@ The HTTPS inspection Bypass option enables you to define specific websites that 
 
 ![click on save policy to save](/img/How_To/Bypass_HTTPS_Inspection_by_using_Request_Types/image16.webp)
 
-**Note**: Configure Proxy settings in drop box and upload/download files to validate the working
+> **Note**: Configure Proxy settings in drop box and upload/download files to validate the working

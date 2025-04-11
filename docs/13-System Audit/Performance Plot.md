@@ -1,10 +1,19 @@
-# Generate Performance Plot From SafeSquid User Interface
+---
+title: Performance Plot
+description: Step-by-step guide on generating, customizing, and saving performance plots directly from the SafeSquid proxy server interface.
+keywords:
+- safesquid performance plot
+- generate performance graph
+- safesquid proxy stats
+- network traffic graph safesquid
+- proxy server analytics
+---
 
 ## Overview
 
 This article helps you to understand, how to generate Performance plot from SafeSquid User Interface
 
-## [Access The SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access The SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 click on **Support**, you will see below page
 

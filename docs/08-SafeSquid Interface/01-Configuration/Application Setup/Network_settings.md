@@ -1,4 +1,12 @@
-# Network Settings
+---
+title: Network Settings  
+description: Configure network settings in SafeSquid to define listen interfaces, ports, bindings, and outbound routing via multi-homed systems. Learn how to enable transparent proxy, set up captive portals, and optimize traffic routing with SafeSquid’s flexible network configuration.  
+keywords:  
+- safesquid network configuration  
+- safesquid proxy listen settings  
+- safesquid transparent proxy setup  
+- safesquid multiple outbound interfaces  
+---
 
 ## Overview 
 

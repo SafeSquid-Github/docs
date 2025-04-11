@@ -1,4 +1,15 @@
-# SafeSquid Secure Web Gateway Directories
+---
+title: SafeSquid SWG Directories  
+Description: Get a comprehensive overview of SafeSquid's directory structure, including installation, configuration, modules, logs, and performance tuning folders essential for managing, monitoring, and customizing Secure Web Gateway operations on Linux systems.
+
+Keywords:
+- SafeSquid directory structure  
+- SafeSquid configuration files  
+- SafeSquid log management  
+- SafeSquid modules and plugins  
+- SafeSquid performance tuning  
+- SafeSquid SSL and DLP directories  
+---
 
 SafeSquid installation and operational directories adhere to the Linux Filesystem Hierarchy Standard (FHS) and house core components for Layer 7 security, system management, and performance optimization. Key directories and their purposes are outlined below:
 

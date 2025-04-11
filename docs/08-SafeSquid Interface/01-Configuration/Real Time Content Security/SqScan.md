@@ -1,4 +1,13 @@
-# SqScan
+---
+title: SqScan  
+description: Enable SafeSquid's SqScan module to provide in-memory virus scanning and real-time protection against malware, spyware, adware, and other online threats.  
+keywords:  
+- SqScan virus scanning  
+- SafeSquid malware protection  
+- real-time content security  
+- in-memory antivirus  
+- web gateway threat detection  
+---
 
 ## Overview
 
@@ -16,7 +25,7 @@ It prevents access and downloads from that type of website.
 
 ## Enabling SqScan section on SafeSquid User Interface
 
-## [Access the SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to Configure Page
 

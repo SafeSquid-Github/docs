@@ -1,4 +1,13 @@
-# Cookie Filter
+---
+title: Cookie Filter  
+description: Use SafeSquid's Cookie Filter to control the exchange of cookies between browsers and websites. Block or allow cookies based on domains, expiry time, and direction to manage user privacy and restrict account logins.  
+keywords:  
+- cookie filtering  
+- SafeSquid cookie control  
+- block browser cookies  
+- deny website cookies  
+- web privacy management  
+---
 
 ## Overview
 
@@ -16,7 +25,7 @@ You can also disable the users from logging into their personal accounts.
 
 Users can query the search engines (google, yahoo) but they are not able to login to their personal accounts (Gmail, shopping websites, trading websites).
 
-## [Access SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to configure page
 

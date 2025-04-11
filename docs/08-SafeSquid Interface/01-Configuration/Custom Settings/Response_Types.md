@@ -1,4 +1,12 @@
-# Response Type
+---
+title: Response Type  
+description: Configure response profiling in SafeSquid to manage content based on MIME types, file extensions, content size, and headers. Use response types to enforce granular download restrictions and identify protocols like WebSocket.  
+keywords:  
+- safesquid response profiling  
+- content filtering by mime type  
+- block file downloads  
+- manage response headers  
+---
 
 ## Overview
 
@@ -16,7 +24,7 @@ You can manage Profiling based on the following parameters present in the respon
 
 ## Enabling the Response Profiler section on the SafeSquid User Interface
 
-## [Access SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to configure page
 

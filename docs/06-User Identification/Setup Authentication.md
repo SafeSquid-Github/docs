@@ -1,7 +1,15 @@
+---
+title: Setup Authentication
+description: Learn how to set up and use different authentication methods in SafeSquid, including SafeSquid Users, SafeSquid Linux Machine Users, and adding users through the SafeSquid interface.
+keywords:
+- authentication safesquid
+- proxy authentication safesquid
+- safesquid user authentication
+- PAM authentication safesquid
+- SafeSquid authentication setup
+---
 
-# Authentication in SafeSquid
-
-Proxy Authentication:
+## Proxy Authentication
 
 Proxies can serve as access-control devices.
 
@@ -90,7 +98,7 @@ It is suitable for small organizations.
 
 
 
-# Adding users using SafeSquid interface for authentication
+##  Adding users using SafeSquid interface for authentication
 
 If you do not have an Active Directory (AD) server to integrate with SafeSquid LDAP, but you want authenticate users by assigning usernames and passwords to your users.
 

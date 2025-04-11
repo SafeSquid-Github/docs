@@ -1,4 +1,13 @@
-# Content Filtering
+---
+title: Content Filtering
+description: Learn how to configure SafeSquid to filter inappropriate content, including pornography, by using custom categorization, image filters, and text analyzers.
+keywords:
+- content filtering safesquid
+- block inappropriate content safesquid
+- block pornographic content safesquid
+- image filter safesquid
+- text analyzer safesquid
+---
 
 ## Overview
 
@@ -6,7 +15,7 @@ Prevent the users to access the inappropriate content like pornography.
 
 ## Prerequisites
 
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection](https://help.safesquid.com/portal/en/kb/articles/setup-https-inspection)
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
 
 ## Select the Filters to block 
 
@@ -44,7 +53,7 @@ Make the Global Section Enabled to TRUE.
 
 Then click on Filtering Policies and Enable policy to Enable as TRUE
 
-Read more about [How to block inappropriate images by using Image Analyzer](https://help.safesquid.com/portal/en/kb/articles/block-inappropriate-images-by-using-image-analyzer)
+Read more about [How to block inappropriate images by using Image Analyzer](/docs/11-Deep%20Content%20Security/02-Content%20Moderation/Image%20Analzer.md)
 
 ## Text Analyzer
 
@@ -54,9 +63,8 @@ Make the Global Section Enabled to TRUE.
 
 Then click on Filtering Policies and Enable policies to Enable as TRUE.
 
-Read more about [How to block inappropriate content by using text analysis](https://help.safesquid.com/portal/en/kb/articles/how-to-block-inappropriate-content-by-using-text-analysis)
 
-Read more about [Image Analyzer](https://help.safesquid.com/portal/en/kb/articles/2-6-image-analyzer) and [Text Analyzer](https://help.safesquid.com/portal/en/kb/articles/2-3-text-analyzer)
+Read more about [Image Analyzer](/docs/11-Deep%20Content%20Security/02-Content%20Moderation/Image%20Analzer.md) and [Text Analyzer](/docs/11-Deep%20Content%20Security/02-Content%20Moderation/Text%20Analyzer.md)
 
 ## Testing
 

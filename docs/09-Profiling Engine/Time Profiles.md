@@ -1,4 +1,17 @@
-# Time Profiler
+---
+title: Time Profiles 
+Description: Learn how to configure SafeSquid’s Time Profiler to implement time-based internet access control using customizable time ranges such as month, day, weekday, hour, and minute.  
+Keywords:  
+- SafeSquid time profiler  
+- SafeSquid time-based access control  
+- SafeSquid internet scheduling  
+- SafeSquid weekday access policies  
+- SafeSquid hour range filtering  
+- SafeSquid minute range web control  
+- SafeSquid access policies by time  
+- SafeSquid time match modes  
+- SafeSquid allranges vs absolutetime  
+---
 
 ## Overview
 
@@ -14,21 +27,21 @@ Time Profiler Enables you to allow or block the categories, and websites based o
 
 ## Enabling the Time Profiler section on the SafeSquid User Interface
 
-## [Access SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+### [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
-## Go to the configure page.
+### Go to the configure page.
 
 ![clicking on configure in safesquid interface](/img/Configure/Custom_Settings/Time_Profiler/image1.webp)
 
-## Go to custom settings.
+### Go to custom settings.
 
 ![clicking on custom settings in the sidebar](/img/Configure/Custom_Settings/Time_Profiler/image2.webp)
 
 ![clicking on time profile in the custom settings section](/img/Configure/Custom_Settings/Time_Profiler/image3.webp)
 
-## Global
+### Global
 
-### Enabled
+#### Enabled
 
 Enable or Disable the time profiles Section.
 
@@ -38,7 +51,7 @@ FALSE: Disable the time profiles section.
 
 ![showing global section of time profiler](/img/Configure/Custom_Settings/Time_Profiler/image4.webp)
 
-## Time profiles
+### Time profiles
 
 Create a list of Entries to implement your Time profile Policies.
 
@@ -70,7 +83,7 @@ The Above profile will block all social categories, every month from 1st-15th Fr
 
 ![showing time profiles tab in time profiler section](/img/Configure/Custom_Settings/Time_Profiler/image6.webp)
 
-### Enabled
+#### Enabled
 
 Enable or Disable this entry.
 
@@ -78,13 +91,13 @@ Enable or Disable this entry.
 
 -   FALSE: Disable this entry.
 
-### Comment
+#### Comment
 
 For documentation and future references, explain the relevance of this entry with your policies.
 
 That is, by reading the policies, a future user can understand the purpose of that entry.
 
-### Trace Entry
+#### Trace Entry
 
 Enable or Disable Tracing of this entry.
 
@@ -96,7 +109,7 @@ Enable entry tracing, is useful if you wish to validate, its application.
 
 -   **FALSE:** Select this option to disable profile tracing.
 
-### Time Profiles
+#### Time Profiles
 
 Specify the list of Time Profile(s)for which this entry should be applicable.
 
@@ -108,7 +121,7 @@ To avoid the application of this entry to a connection that has a Time Profile, 
 
 Go to Time Profiler to review or define new Time Profiles.
 
-### Month Range
+#### Month Range
 
 Set the month range for which this entry is active.
 
@@ -116,7 +129,7 @@ By default, it applies to all months.
 
 Example: January to March: Keep this policy active from the month of January through March.
 
-### Day Range
+#### Day Range
 
 Set the day range for which this entry is active.
 
@@ -126,7 +139,7 @@ By default, it applies to all days.
 
 If you mentioned the month range as January to March, then this profile will be active from every month 5 to 15 from January through March.
 
-### Weekday range
+#### Weekday range
 
 Set the weekday range for which this entry is active.
 
@@ -136,19 +149,19 @@ By default, it applies to all weekdays.
 
 If you mentioned Month Range and Day Range, then this profile is active for the combination of all ranges (Month Range + Day range + weekday range).
 
-### Hour Range
+#### Hour Range
 
 Set the hour range for which this entry is active. By default, applies to every hour.
 
 **Example:** Hour 9 to 12 then Keep this profile active from 9 AM to 12 AM.
 
-### Minute Range
+#### Minute Range
 
 Set the minute range for which this entry is active, if left blank apply to every minute. This can be used in conjunction with Hour Range.
 
 **Example**: If the hour range is 9 to 12 and the minute range is 15 to 30, then the profile remains active from 9:15 through 12:30.
 
-### Time Match Mode
+#### Time Match Mode
 
 Select the appropriate mode to match the multiple time ranges.
 
@@ -168,7 +181,7 @@ All ranges will match any time between 10 AM to 17 PM, on all weekdays from Mond
 
 That is, Entry will be active every day from Monday to Friday between 10 Am to 17 PM.
 
-### Added Time profiles
+#### Added Time profiles
 
 Specify the list of Profiles, to append to the connection's existing Profiles, if all the applicability test rules match.
 
@@ -180,7 +193,7 @@ When defining a new Profile, use terms that uniquely represent your needs.
 
 You can use added profiles in Virus scanning, SSL inspection and other filtering sections.
 
-### Removed Time profiles
+#### Removed Time profiles
 
 Specify the list of Profile(s), to remove the connection's existing Profiles, if all the applicability test rules match.
 

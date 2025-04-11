@@ -1,4 +1,12 @@
-# Categorize Websites
+---
+title: Categorize Websites  
+description: Learn how to manage and customize website categorization in SafeSquid. Create, edit, and assign websites to custom categories for enhanced web access control.  
+keywords:  
+- custom web categorization  
+- safesquid categorize websites  
+- website access control  
+- create web filter categories  
+---
 
 ## Overview
 
@@ -12,9 +20,9 @@ To Modify a website's categorisation, you must first use the search box to view 
 
 It will show you the details of the Total Number of Categories, the last updated, and the last changed.
 
-## [Advantages Of Custom Web Categorization](https://help.safesquid.com/portal/en/kb/articles/advantages-of-custom-web-categorization)
+## [Advantages Of Custom Web Categorization](/docs/09-Profiling%20Engine/Website%20Categorization.md)
 
-## [Access SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to the configure page
 
@@ -37,12 +45,6 @@ Enter the website/domain name in the search box and click on the search button, 
 ### Add your website to the custom category.
 
 ![adding your website and clicking on search](/img/Configure/Custom_Settings/Categorize_WebSites/image3.webp)
-
-Follow the below link for more understanding.
-
-[Allow specific website through SafeSquid.](https://help.safesquid.com/portal/en/kb/articles/allow-specific-website-through-safesquid)
-
-[Block specific website through SafeSquid](https://help.safesquid.com/portal/en/kb/articles/block-specific-website-through-safesquid).
 
 Upload website files.
 

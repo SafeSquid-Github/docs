@@ -1,4 +1,13 @@
-# Analyze The SafeSquid
+---
+title: Security Logs
+description: A comprehensive guide to understanding and analyzing SafeSquid proxy logs, including native logs, extended logs, performance metrics, and system integration logs.
+keywords:
+- safesquid logs
+- safesquid troubleshooting
+- safesquid native logs
+- safesquid extended logs
+- safesquid performance log analysis
+---
 
 ## Overview
 
