@@ -12,7 +12,7 @@ For enterprises with centralized user management infrastructure, connect your LD
 
 SafeSquid is also optimised to concurrently connect with multiple directory services. When credentials are entered, SafeSquid intelligently verifies the user from the appropriate directory service and efficiently caches user data.
 
-Furthermore, SafeSquid can be configured for [Kerberos-based authentication](/docs/06-User%20Identification/02-Directory%20Services/Kerberos%20SSO.md) for Single Sign On (SSO).
+Furthermore, SafeSquid can be configured for [Kerberos-based authentication](/docs/06-User%20Identification/Kerberos%20SSO.md) for Single Sign On (SSO).
 
 ### Integrate with PAM service
 
