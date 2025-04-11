@@ -1,9 +1,13 @@
-## When should I bypass authentication?
-
-Certain applications (like Dropbox) which does not support proxy authentication, they want to bypass authentication for that application.
-
-
-# Bypass Authentication
+---
+title: Bypass Authentication
+description: Learn how to bypass authentication for specific applications like Dropbox in SafeSquid, allowing automatic updates and ensuring secure internet usage tracking.
+keywords:
+- bypass authentication safesquid
+- safesquid proxy authentication bypass
+- bypass proxy authentication dropbox
+- safesquid authentication policy
+- allow application without authentication safesquid
+---
 
 ## Business challenge
 
@@ -13,7 +17,7 @@ The issue faced by Stark tech for automatic updates (AV, MS, etc), which can't g
 
 ## How SafeSquid bypass Authentication?
 
-### [Access the SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+### [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ![clicking on configure in safesquid intgerface](/img/How_To/Bypass_Authentication/image1.webp)
 

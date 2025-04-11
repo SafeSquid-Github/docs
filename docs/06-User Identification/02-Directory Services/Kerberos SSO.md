@@ -8,9 +8,9 @@ By properly configuring the necessary Kerberos related factors with SafeSquid, y
 
 SafeSquid SSO authentication ensures that your users do not have to manually provide their user credentials as username / password to access your networked enterprise resources and services, yet their access restricted as specified. SafeSquid SSO authentication, thus not only just adds convenience to the overall user experience, but also enhances security.
 
-# Testing Kerberos SSO Authentication Setup
+## Testing Kerberos SSO Authentication Setup
 
-## Configure Authentication in SafeSquid's Access Restrictions
+### Configure Authentication in SafeSquid's Access Restrictions
 
 SafeSquid's WebGUI is used to create/modify policy configuration. We can access the WebGUI from any authorized system, depending on Access Restrictions configuration section (by default ALL are allowed). To ensure that we do not get locked up, we will in the following steps configure the Access Restrictions section of SafeSquid to enable the SSO authentication, and then to enable authentication for only our Test Client **windows7.safesquid.test (My client machine)**. You may choose **AD browser** for testing purpose.
 
@@ -24,29 +24,29 @@ Configure your Internet browser to use **sabproxy.safesquid.test** : **port_usua
 
 ![configuring your browser to use safesquid proxy by setting your FQDN and por](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image1.webp)
 
-## [Access the SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+### [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
-## Go to Configure Page
+### Go to Configure Page
 
 ![clicking on configure in safesquid interface](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image2.webp)
 
-## Go to Application Setup
+### Go to Application Setup
 
 ![clicking on application setup](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image3.webp)
 
-## Go to Access Restrictions
+### Go to Access Restrictions
 
 ![going to integrate LDAP in application setup section]
 
-## Enable SSO Authentication
+### Enable SSO Authentication
 
 ![Enabling SSO authentication in global section](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image5.webp)
 
-## Go to Allow list
+### Go to Allow list
 
 ![going to allow list](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image6.webp)
 
-## Change the order of Default entries
+### Change the order of Default entries
 
 To avoid locking yourself to the SafeSquid User Interface.
 
@@ -62,7 +62,7 @@ To avoid locking yourself to the SafeSquid User Interface.
 
 ![commenting for future reference](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image10.webp)
 
-**Note**: If your LDAP server is not integrated then you will not see any users list in the drop-down menu.
+> **Note**: If your LDAP server is not integrated then you will not see any users list in the drop-down menu.
 
 ![clicking on LDAP profiles and selecting the LDAP user and LDAP group from your LDAP server from the drop down menu](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image11.webp)
 

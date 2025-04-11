@@ -25,7 +25,7 @@ This document outlines various use cases and configurations for SafeSquid Secure
 4. **[Allow AnyDesk](/docs/22-Usecases/Allow_anydesk.md)**
    - Provides a method for allowing AnyDesk access while restricting other applications.
 
-5. **[Allow Outlook To Work Through SafeSquid](/docs/22-Usecases/Allow_Outlook_To_Work_SafeSquid.md)**
+5. **[Allow Outlook To Work Through SafeSquid](/docs/22-Usecases/Allow_Outlook_To_Work_through_SafeSquid.md)**
    - Allows Outlook to operate through SafeSquid while ensuring security compliance.
 
 6. **[Allow Remote Applications to Particular Users](/docs/22-Usecases/Allow_remote_applications_to_particular_users.md)**
@@ -37,7 +37,7 @@ This document outlines various use cases and configurations for SafeSquid Secure
 8. **[Allow Specific YouTube Channel and Its Playlist](/docs/22-Usecases/Allow_Specific_YouTube_Channel_and_its_Playlist.md)**
    - Configuration to allow only specific YouTube channels or playlists.
 
-9. **[Allow Specific Page on Facebook](/docs/22-Usecases/Allow_Specific_Page_on_Facebook.md)**
+9. **[Allow Specific Page on Facebook](/docs/22-Usecases/Allowing_Specific_Page_on_Facebook.md)**
    - Describes how to allow specific Facebook pages while blocking others.
 
 10. **[Block Advertisements and Banners](/docs/22-Usecases/Block_Advertisements_And_Banners.md)**

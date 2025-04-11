@@ -1,4 +1,13 @@
-# IP Based Authentication
+---
+title: IP Based Authentication
+description: Learn how to configure IP-based authentication in SafeSquid to control web access based on IP addresses, ensuring secure access for trusted users and blocking suspicious addresses.
+keywords:
+- ip based authentication safesquid
+- safesquid ip access control
+- restrict ip access safesquid
+- safesquid authentication by ip
+- block ip address safesquid
+---
 
 ## Overview
 
@@ -14,7 +23,7 @@ A user whose access is restricted based on an access policy should get block tem
 
 To check the scenario, make sure that your IP address is not already added inside the Access restrictions section.
 
-## [Access the SafeSquid User interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access the SafeSquid User interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ![clicking on configure in safesquid interface](/img/How_To/IP_based_authentication/image1.webp)
 
