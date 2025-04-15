@@ -20,7 +20,7 @@ Cloud based IaaS or PaaS present a more cost‑efficient alternative, requiring 
 
 If you have already moved your Information Systems to Cloud based PaaS / IaaS, moving your SWG to the same Cloud service could be a very beneficial.
 
-### On-Premises SWG Struggles with Distributed Workforces
+## On-Premises SWG Struggles with Distributed Workforces
 
 Traditionally, all your employees worked from the headquarters. All your web traffic was routed through a single LAN gateway. To secure the web traffic, an on-premise Secure Web Gateway (SWG) appliance was deployed at the gateway, creating a well-defined network perimeter.
 
@@ -30,7 +30,7 @@ Hairpinning forced your traffic into inefficient detours, significantly increasi
 
 ![](/img/Install_SWG_on_Cloud/image1.webp)
 
-### Shift from On-premises to Cloud SWG
+## Shift from On-premises to Cloud SWG
 
 To eliminate the need for backhauling, you transitioned to a cloud SWG model. Remote workers' traffic is now routed directly to the nearest SWG instance, while traffic from remote offices is consolidated at edge devices like an SD-WAN edge controller before reaching the cloud SWG. The shift allows you to enforce centralized security policies across distributed SWG locations such as using SD-WAN overlays to secure and optimize traffic flows dynamically. Inspected traffic is then routed directly to the Internet.
 
@@ -44,7 +44,7 @@ By adopting cloud SWG, you have:
 
 4.  Shifted to a pay-as-you-go model, cutting capital expenses, and aligning costs with actual usage.
 
-### What to Look for in a Cloud SWG Solution
+## What to Look for in a Cloud SWG Solution
 
  **Ensure Interoperability**
 
@@ -62,7 +62,7 @@ By adopting cloud SWG, you have:
 
  Cloud providers charge per GB for outbound traffic from your Cloud SWG to the internet, while inbound and return traffic are typically free. Inter-cloud and inter-region transfers incur additional costs, increasing expenses in multi-cloud and hybrid deployments. Assessing data flow and provider pricing helps you control bandwidth costs.
 
-### SafeSquid SWG: The Cloud-Agnostic Solution
+## SafeSquid SWG: The Cloud-Agnostic Solution
 
 1.  SafeSquid SWG simplifies cloud adoption, enabling seamless integration with your preferred cloud platform.
 
@@ -74,15 +74,15 @@ By adopting cloud SWG, you have:
 
 5.  With support for multi-cloud connectivity, SafeSquid SWG offers greater flexibility to adapt to diverse cloud environments and organizational needs.
 
-### Cloud Deployment Options for SafeSquid SWG
+## Cloud Deployment Options for SafeSquid SWG
 
 There are 4 ways to deploy SafeSquid Secure Web Gateway on cloud platforms.
 
-#### Cloud-IMG framework
+### Cloud-IMG framework
 
 Ideal for rapid rollouts and minimal setup.
 
-##### Preparation
+#### Preparation
 
 1.  Download the SWG cloud-IMG file from the given link: [Cloud-IMG](http://downloads.safesquid.com/appliance/cloud-img/safesquid-swg.img).
 
@@ -95,13 +95,13 @@ Ideal for rapid rollouts and minimal setup.
 
 3.  SSH key-based authentication is preferred. Generate SSH keys via OpenSSH command-line tools or PuTTYgen utility.
 
-##### Implementation
+#### Implementation
 
 1.  Select SafeSquid-SWG (uploaded version) from the custom image section at the time of instantiating the VM.
 
 2.  Go with the SSH key access, and create the VM.
 
-#### Cloud-Init Framework
+### Cloud-Init Framework
 
 Choose for custom configuration, specific OS, and full installation control.
 
@@ -113,23 +113,23 @@ SafeSquid's [cloud-init](https://github.com/SafeSquid-Github/safesquid_cloud-ini
 
 3.  Digital Ocean
 
-##### Implementation
+#### Implementation
 
 1.  Copy the SafeSquid cloud-Init YAML script from the link: [Cloud-Init script](https://github.com/SafeSquid-Github/safesquid_cloud-init/blob/main/safesquid_cloud-init.yaml).
 
 2.  Attach the Cloud-Init script when instantiating the VM.
 
-#### Deployment on Existing VM
+### Deployment on Existing VM
 
-##### [SafeSquid Appliance Builder](/docs/03-Installation/02-On-Premise/main.md)
+#### [SafeSquid Appliance Builder](/docs/03-Installation/02-On-Premise/main.md)
 
 SAB is an ISO of the latest minimal Ubuntu LTS 20.04, designed to simplify deployment in environments where full automation is not feasible. SAB automates the installation of Ubuntu, followed by downloading and deploying SafeSquid SWG, streamlining the setup process.
 
-##### TAR-ball Package
+#### TAR-ball Package
 
 SafeSquid SWG can be set up on existing infrastructure or with a Linux OS other than Ubuntu using the TAR package. Additional configurations are required for services such as Monit and BIND9 to ensure proper functionality and seamless integration.
 
-### Validation
+## Validation
 
 Gain the console or CLI access to the SWG server and execute the following commands to verify the SWG status:
 
@@ -139,7 +139,7 @@ Gain the console or CLI access to the SWG server and execute the following comma
 
 3.  Validate Custom Partition -- **Lsblk**
 
-### Prevent Unauthorised SWG Access on Cloud
+## Prevent Unauthorised SWG Access on Cloud
 
 **Identity & Access Management (IAM) Enforcement** -- Implement Multi-Factor Authentication (MFA), Role-Based Access Control (RBAC), and Directory-Based Authentication using cloud-native IAM services and on-premises directory solutions.
 

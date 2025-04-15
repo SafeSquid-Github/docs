@@ -1,15 +1,10 @@
----
-title: Directory Services
----
+# Directory Services in SafeSquid
 
-### LDAP Users
+The **Directory Services** section in **SafeSquid** allows you to configure directory services for user authentication and management, integrating with existing identity management systems.
 
-You can integrate a LDAP service like OpenLDAP or Microsoft AD to setup Basic Proxy Authentication
+## Included Topics
 
-The openLDAP service is much simpler to implement and managing the users through LDAPadmin is much easier than the SafeSquid Users and the SafeSquid Linux Machine Users.
+- [Active Directory](/docs/06-User%20Identification/02-Directory%20Services/Active%20Directory/main.md): Configure and integrate Active Directory for centralized user management and authentication.
+- [OpenLDAP](/docs/06-User%20Identification/02-Directory%20Services/OpenLDAP/main.md): Set up and configure OpenLDAP for user authentication and directory management.
 
-Microsoft AD need to up and running on the Windows server and it is also easy to manage through LDAPadmin.
-
-These methods could be used it the number of the users in an organization are roughly around 50-65.
-
-The integration part is a bit tricky but once it is done then there won't be any problem in the future.
+These configurations enable seamless user authentication and policy enforcement, leveraging existing directory services.

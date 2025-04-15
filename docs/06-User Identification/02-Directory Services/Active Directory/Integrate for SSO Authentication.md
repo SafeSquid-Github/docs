@@ -23,9 +23,10 @@ In given example we are integrating an Active Directory for SSO authentication.
 
 **User Name**: administrator@safesquid.test (**User name should be any user from AD having administrative permissions**)
 
-Monit service must be Up. Verify it using command:
+Monit service must be Up. 
+Verify it using command:
 
-root@sabproxy: ~## pidof monit
+> pidof monit
 
 19940
 
@@ -38,7 +39,7 @@ Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, passw
 **Step 1**: Specify Name Server Addresses. 
 **Step 2**: Specify Time Synchronization Server. 
 
-(**Note**: Time Synchronization of AD server and Proxy server should be same. Verify it using "date" command)
+> **Note**: Time Synchronization of AD server and Proxy server should be same. Verify it using "date" command
 
 **Step 3**: Add DNS entry of SafeSquid server in your Active Directory Server. 
 
@@ -159,14 +160,12 @@ Run command:
 > cat safesquid.dns.conf
 
 zone safesquid.test \{
-
 type stub;
-
 masters \{192.168.221.1;\};
 
 \};
 
-**(Note: Monit service must be up.)**
+> **Note**: Monit service must be up.
 
 ![clicking on ldap entries tab to check for entries](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image23.webp)
 
@@ -190,14 +189,10 @@ Troubleshooting Steps
 
 When you click on Save config, it will give a prompt for asking the confirmation to store your configuration into the cloud.
 
-Select Yes only in below cases:
+**Select Yes only in below cases:**
 
-If you want to use this same configuration in other SafeSquid instances.
+1. If you want to use this same configuration in other SafeSquid instances.
 
-If your total configuration in all sections is completed and validated.
+2. If your total configuration in all sections is completed and validated.
 
 Otherwise select No and click on submit button.
-
-Enable SSO authentication for LDAP users
-
-Read more about Testing your Kerberos SSO authentication setup

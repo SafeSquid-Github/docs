@@ -49,19 +49,19 @@ As soon as you click on the save button it will show a prompt for username and p
 
 That's how easy it is to authenticate in SafeSquid.
 
-Disadvantages:
+**Disadvantages:**
 
-It has a few drawbacks of itself.
+1. It has a few drawbacks of itself.
 
-It is not that secured since the password field is visible and the same password is set for all the users.
+2. It is not that secured since the password field is visible and the same password is set for all the users.
 
-Therefore, if you want to set different password then you must make new policy.
+3. Therefore, if you want to set different password then you must make new policy.
 
-Even though it is simple to configure it is an arduous work to manage it.
+4. Even though it is simple to configure it is an arduous work to manage it.
 
-It is suitable if the number of users is less than 10.
+5. It is suitable if the number of users is less than 10.
 
-**SafeSquid Linux Machine Users**
+### SafeSquid Linux Machine Users
 
 For this principle you will be making the users in the Linux machine instead of making them in the configure page.
 
@@ -89,14 +89,11 @@ As soon as you click on the save button it will show a prompt for username and p
 
 That's how easy it is to authenticate in safesquid through creating user in linux machine and using PAM Authentication.
 
-Disadvantage:
+**Disadvantage:**
 
-Even though it is more secured then the SafeSquid User one it is still difficult to manage the users in the linux machine.
+1. Even though it is more secured then the SafeSquid User one it is still difficult to manage the users in the linux machine.
 
-It is suitable for small organizations.
-
-
-
+2. It is suitable for small organizations.
 
 ##  Adding users using SafeSquid interface for authentication
 

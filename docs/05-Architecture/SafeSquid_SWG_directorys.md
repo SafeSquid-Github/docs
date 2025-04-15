@@ -225,7 +225,7 @@ Contains the default SafeSquid configuration file (**default.config.xml**). Conf
 
 -   **config.xml**: The updated active configuration file.
 
--   **config_XXXX@YYYY_ZZZZ.xml**: A backup file representing the last saved configuration, where:
+-   **`config_XXXX@YYYY_ZZZZ.xml`**: A backup file representing the last saved configuration, where:
 
 -   **XXXX** is the username of the individual who modified it.
 

@@ -41,23 +41,21 @@ You must have integrated LDAP setup, if you want to create user groups based on 
 
 Below are the different ways to define your User Groups
 
-## Define User Groups that correspond to role-based groups in LDAP. (User-group based Policies)
+**Define User Groups that correspond to role-based groups in LDAP. (User-group based Policies)**
 
 If you have an LDAP server integrated with SafeSquid and you want to define the access policies based on the LDAP users or Groups, then follow this method
 
 
-## Define User Groups that correspond to specific users
+**Define User Groups that correspond to specific users**
 
 If you don't have LDAP server to integrate with SafeSquid, but you want to assign usernames and passwords to your users, then follow this method
 
-Read more about Define User Groups that correspond to specific users
-
-## Define User Groups that include or exclude users based on their Network IP (IP based Policies)
+**Define User Groups that include or exclude users based on their Network IP (IP based Policies)**
 
 If you want to define the access rules based on users network IP addresses then follow this method.
 
 
-## Define User Groups that include or exclude users based on their Network IP
+**Define User Groups that include or exclude users based on their Network IP**
 
 ### Overview
 

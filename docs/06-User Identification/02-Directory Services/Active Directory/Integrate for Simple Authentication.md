@@ -23,13 +23,14 @@ Base Dn : dc=safesquid,dc=test
 
 User Name : administrator@safesquid.test
 
-See more about [Integrate LDAP](https://help.safesquid.com/portal/en/kb/articles/1-2-integration-of-ldap) section, here we explained the working of each field in the Integrate LDAP section. 
 
 ## Prerequisites
 
 Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, password, base dn, domain ) in configuration are correct. If any value is wrong SafeSquid will fail to fetch the entries.
 
-## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+## Steps
+
+### [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ![Application Setup](/img/How_To/Integrate_Active_Directory_For_Simple_Authentication/image1.webp)
 
@@ -120,7 +121,5 @@ Read more about [Enable authentication for LDAP users](https://help.safesquid.co
 
 ### Troubleshooting
 
-[LDAP entries are not fetched](https://help.safesquid.com/portal/en/kb/articles/ldap-entries-are-not-fetched)
-
-[Authentication is not working](https://help.safesquid.com/portal/en/kb/articles/authentication-is-not-working)
+[LDAP entries are not fetched](/docs/21-Troubleshooting/Failed%20To%20Fetch%20LDAP%20Entries.md)
 

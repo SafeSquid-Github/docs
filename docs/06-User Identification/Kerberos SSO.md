@@ -1,101 +1,14 @@
-## What is SafeSquid SSO Authentication?
-
-SafeSquid SSO authentication is non-interactive authentication process.
-
-SafeSquid SSO Authentication support is particularly useful for Enterprise networks that have a Microsoft AD based Domain controller.
-
-By properly configuring the necessary Kerberos related factors with SafeSquid, your enterprise Internet users can enjoy SSO Authentication.
-
-SafeSquid SSO authentication ensures that your users do not have to manually provide their user credentials as username / password to access your networked enterprise resources and services, yet their access restricted as specified. SafeSquid SSO authentication, thus not only just adds convenience to the overall user experience, but also enhances security.
-
-## Testing Kerberos SSO Authentication Setup
-
-### Configure Authentication in SafeSquid's Access Restrictions
-
-SafeSquid's WebGUI is used to create/modify policy configuration. We can access the WebGUI from any authorized system, depending on Access Restrictions configuration section (by default ALL are allowed). To ensure that we do not get locked up, we will in the following steps configure the Access Restrictions section of SafeSquid to enable the SSO authentication, and then to enable authentication for only our Test Client **windows7.safesquid.test (My client machine)**. You may choose **AD browser** for testing purpose.
-
-My Test Client machine: **windows7.safesquid.test (Connect in your domain and should able to resolve. Verify time synchronization)**
-
-**We already done** [Preparatory Steps](https://help.safesquid.com/portal/en/kb/articles/validate-ip-addresses-and-the-systems-are-reachable-on-the-network) (Verify it once before setting proxy)
-
-Configure your Internet browser to use **sabproxy.safesquid.test** : **port_usually_8080** as your proxy server.
-
-**Note**: You should NOT be using the **IP address: port** format now. Always use **FQDN of Proxy Server**
-
-![configuring your browser to use safesquid proxy by setting your FQDN and por](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image1.webp)
-
-### [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
-
-### Go to Configure Page
-
-![clicking on configure in safesquid interface](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image2.webp)
-
-### Go to Application Setup
-
-![clicking on application setup](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image3.webp)
-
-### Go to Access Restrictions
-
-![going to integrate LDAP in application setup section]
-
-### Enable SSO Authentication
-
-![Enabling SSO authentication in global section](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image5.webp)
-
-### Go to Allow list
-
-![going to allow list](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image6.webp)
-
-### Change the order of Default entries
-
-To avoid locking yourself to the SafeSquid User Interface.
-
-**See the working of each default Entry here**
-
-![clicking on move down icon to move the entry down](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image7.webp)
-
-## Add LDAP users
-
-![clicking on edit policies ](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image8.webp)
-
-![selecting true in enabled field from the drop down menu](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image9.webp)
-
-![commenting for future reference](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image10.webp)
-
-> **Note**: If your LDAP server is not integrated then you will not see any users list in the drop-down menu.
-
-![clicking on LDAP profiles and selecting the LDAP user and LDAP group from your LDAP server from the drop down menu](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image11.webp)
-
-Here I am selecting the manager group from my AD so this policy will only applicable for the users from this group (manager group).
-
-If you want to apply rule for all the users, then keep this entry blank.
-
-![leaving the PAM authentication field as true](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image12.webp)
-
-![select or deselect CONFIG option for the safesquid interface access ](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image13.webp)
-
-![clicking on close icon to remove CONFIG from access](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image14.webp)
-
-![clicking on save policy](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image15.webp)
-
-Access the internet, confirm that you can access the web the way should be. '(**'It should not ask you for authentication prompt**)
-
-Take a look at the output of the **tail command** that you had earlier left running on the Linux console.
-
-You will see request from the user that had logged into the **windows7.safesquid.test** system and the user should be getting identified as username@SAFESQUID.TEST@ 192.168.221.212
-
-On the console leave this tail command running.
-
-tail -f /opt/safesquid/safesquid/logs/extended/extended.log
-
-Here we will be validating the SSO authentication, and the log lines here will reveal the success of our undertaken steps.
-
-If you can confirm that, hurrah you are done!
-
-To enable Windows Integrated authentication for the rest of your enterprise, modify the entry you created in the Access Restrictions for IP 192.168.221.212 and simply leave the IP address field blank.
-
-
-# Kerberos SSO Authentication Setup
+---
+title: Kerberos SSO
+description: This guide explains how to configure Kerberos SSO authentication using OpenLDAP and SafeSquid. Follow the step-by-step procedure for DNS configuration and SafeSquid integration.
+keywords:
+- OpenLDAP
+- SSO authentication
+- SafeSquid integration
+- Kerberos SSO
+- Active Directory integration
+- SafeSquid configuration
+---
 
 ## Objective 
  The main aim/objective of this particular authentication is that the user doesn't have to enter its credentials the software will automatically detect from which user group does the user belong and will set the restrictions accordingly. 
@@ -113,6 +26,16 @@ Microsoft AD needs to be integrated with the SafeSquid for the SSO authenticatio
 ## Client Scenario
 
 Since we want to use FQDN proxy server and not the IP Address format we need to create a new host and assign a required domain name. For this we will go to the AD which we created named 'mann-ad.safesquid.' Create New host and stet its name as 'sabproxy'. In the FQDN we will enter 'sabproxy.mann-ad.safesquid' and IP address as '192.168.56.101'. Now go to the Browser Settings, select Manual Proxy Configuration. Here we will enter HTTPS proxy as sabproxy.mann-ad.safesquid. Now we would be able to see all the created users in Network Tab in Developer Tools.
+
+## What is SafeSquid SSO Authentication?
+
+SafeSquid SSO authentication is non-interactive authentication process.
+
+SafeSquid SSO Authentication support is particularly useful for Enterprise networks that have a Microsoft AD based Domain controller.
+
+By properly configuring the necessary Kerberos related factors with SafeSquid, your enterprise Internet users can enjoy SSO Authentication.
+
+SafeSquid SSO authentication ensures that your users do not have to manually provide their user credentials as username / password to access your networked enterprise resources and services, yet their access restricted as specified. SafeSquid SSO authentication, thus not only just adds convenience to the overall user experience, but also enhances security.
 
 ## Procedure
 
@@ -186,12 +109,86 @@ A window like this will appear.
 
 
 
-### Kerberos Authentication
+## Testing Kerberos SSO Authentication Setup
 
-You can integrate a LDAP service like OpenLDAP or Microsoft AD to setup Kerberos Proxy Authentication.
+### Configure Authentication in SafeSquid's Access Restrictions
 
-The major difference and which makes the life of the users much easier is that it automatically identifies User. This means that the user no longer needs to enter its credentials for the authentication purpose.
+SafeSquid's WebGUI is used to create/modify policy configuration. We can access the WebGUI from any authorized system, depending on Access Restrictions configuration section (by default ALL are allowed). To ensure that we do not get locked up, we will in the following steps configure the Access Restrictions section of SafeSquid to enable the SSO authentication, and then to enable authentication for only our Test Client **windows7.safesquid.test (My client machine)**. You may choose **AD browser** for testing purpose.
 
-The setup of this is trickier than LDAP user but once it's done then it will be much easier to Authenticate the user without remembering the username and password or entering them again and again.
+My Test Client machine: **windows7.safesquid.test (Connect in your domain and should able to resolve. Verify time synchronization)**
 
-Read more about [Integrate a Linux Host with a Windows AD for Kerberos SSO authentication](https://help.safesquid.com/portal/en/kb/articles/integrate-a-linux-host-with-a-windows-ad-for-kerberos-sso-authentication)
+Configure your Internet browser to use **sabproxy.safesquid.test** : **port_usually_8080** as your proxy server.
+
+> **Note**: You should NOT be using the **IP address: port** format now. Always use **FQDN of Proxy Server**
+
+![configuring your browser to use safesquid proxy by setting your FQDN and por](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image1.webp)
+
+### [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+
+### Go to Configure Page
+
+![clicking on configure in safesquid interface](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image2.webp)
+
+### Go to Application Setup
+
+![clicking on application setup](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image3.webp)
+
+### Go to Access Restrictions
+
+![going to integrate LDAP in application setup section](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image4.webp)
+
+### Enable SSO Authentication
+
+![Enabling SSO authentication in global section](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image5.webp)
+
+### Go to Allow list
+
+![going to allow list](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image6.webp)
+
+### Change the order of Default entries
+
+To avoid locking yourself to the SafeSquid User Interface.
+
+**See the working of each default Entry here**
+
+![clicking on move down icon to move the entry down](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image7.webp)
+
+## Add LDAP users
+
+![clicking on edit policies ](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image8.webp)
+
+![selecting true in enabled field from the drop down menu](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image9.webp)
+
+![commenting for future reference](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image10.webp)
+
+> **Note**: If your LDAP server is not integrated then you will not see any users list in the drop-down menu.
+
+![clicking on LDAP profiles and selecting the LDAP user and LDAP group from your LDAP server from the drop down menu](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image11.webp)
+
+Here I am selecting the manager group from my AD so this policy will only applicable for the users from this group (manager group).
+
+If you want to apply rule for all the users, then keep this entry blank.
+
+![leaving the PAM authentication field as true](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image12.webp)
+
+![select or deselect CONFIG option for the safesquid interface access ](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image13.webp)
+
+![clicking on close icon to remove CONFIG from access](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image14.webp)
+
+![clicking on save policy](/img/How_To/Testing_your_Kerberos_SSO_authentication_setup/image15.webp)
+
+Access the internet, confirm that you can access the web the way should be. '(**'It should not ask you for authentication prompt**)
+
+Take a look at the output of the **tail command** that you had earlier left running on the Linux console.
+
+You will see request from the user that had logged into the **windows7.safesquid.test** system and the user should be getting identified as username@SAFESQUID.TEST@ 192.168.221.212
+
+On the console leave this tail command running.
+
+> tail -f /opt/safesquid/safesquid/logs/extended/extended.log
+
+Here we will be validating the SSO authentication, and the log lines here will reveal the success of our undertaken steps.
+
+If you can confirm that, hurrah you are done!
+
+To enable Windows Integrated authentication for the rest of your enterprise, modify the entry you created in the Access Restrictions for IP 192.168.221.212 and simply leave the IP address field blank.

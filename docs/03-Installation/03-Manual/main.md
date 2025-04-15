@@ -17,23 +17,23 @@ The installation process on Linux distributions other than Ubuntu involves a few
 
 ## Key Considerations
 
-System Compatibility: Before proceeding with the installation, verify that your chosen Linux distribution is compatible with SafeSquid and meets the necessary system requirements, such as CPU, memory, and storage.
+**System Compatibility**: Before proceeding with the installation, verify that your chosen Linux distribution is compatible with SafeSquid and meets the necessary system requirements, such as CPU, memory, and storage.
 
-Dependency Management: Different Linux distributions might require specific dependencies or libraries for SafeSquid. Ensure that all necessary software prerequisites are installed and updated.
+**Dependency Management**: Different Linux distributions might require specific dependencies or libraries for SafeSquid. Ensure that all necessary software prerequisites are installed and updated.
 
-Installation Process: The installation steps may vary slightly depending on the Linux distribution. It typically involves downloading the SafeSquid package tailored for the specific version of Linux and using the distribution's package manager for installation.
+**Installation Process**: The installation steps may vary slightly depending on the Linux distribution. It typically involves downloading the SafeSquid package tailored for the specific version of Linux and using the distribution's package manager for installation.
 
-Configuring Monit and BIND Services: SafeSquid utilizes Monit for management and monitoring of system processes and BIND for DNS services. Proper configuration of these services is crucial for the effective functioning of SafeSquid.
+**Configuring Monit and BIND Services**: SafeSquid utilizes Monit for management and monitoring of system processes and BIND for DNS services. Proper configuration of these services is crucial for the effective functioning of SafeSquid.
 
-Security and Firewall Settings: Configure your system's firewall to allow traffic through the ports used by SafeSquid. Also, ensure that your system is secured against potential threats.
+**Security and Firewall Settings**: Configure your system's firewall to allow traffic through the ports used by SafeSquid. Also, ensure that your system is secured against potential threats.
 
-Performance Optimization: Depending on your Linux distribution, there might be unique performance tuning options that can enhance the efficiency of SafeSquid.
+**Performance Optimization**: Depending on your Linux distribution, there might be unique performance tuning options that can enhance the efficiency of SafeSquid.
 
-Regular Maintenance and Updates: Keep SafeSquid and its dependencies updated to ensure security, stability, and access to the latest features.
+**Regular Maintenance and Updates**: Keep SafeSquid and its dependencies updated to ensure security, stability, and access to the latest features.
 
-Documentation and Support: Utilize the official SafeSquid documentation for detailed installation and configuration instructions. Seek support from the SafeSquid community or professional support services if needed.
+**Documentation and Support**: Utilize the official SafeSquid documentation for detailed installation and configuration instructions. Seek support from the SafeSquid community or professional support services if needed.
 
-Backup and Recovery Planning: Implement a strategy for backing up your SafeSquid configuration and system settings to facilitate quick recovery in case of system failure.
+**Backup and Recovery Planning**: Implement a strategy for backing up your SafeSquid configuration and system settings to facilitate quick recovery in case of system failure.
 
 This document aims to provide a step-by-step guide to installing SafeSquid on a variety of Linux distributions, highlighting important considerations and best practices to ensure a successful deployment.
 
@@ -53,11 +53,11 @@ You can check and install required dependencies below.
 
 Monit and Bind are other supporting services required by SafeSquid to work smoothly.
 
-Check - Configure Monit for SafeSquid Monitoring
+Check - [Configure Monit for SafeSquid Monitoring](/docs/13-System%20Audit/Monit.md)
 
-Check - Bind Configuration with SafeSquid
+Check - [Bind Configuration with SafeSquid](/docs/14-Performance%20Optimisation/01-Internalisae%20DNS/Bind.md)
 
-## Download the latest version in Linux server.
+## Download Latest Version in Linux Server
 
 Go to the linux server and change the directory to "/usr/local/src" by using below command
 
@@ -65,7 +65,7 @@ Go to the linux server and change the directory to "/usr/local/src" by using bel
 
 Use the "wget" command to download the latest SafeSquid package on the Linux machine on which you want to install SafeSquid. The command will download the tarball file.
 
-Wget http://downloads.safesquid.net/appliance/binary/safesquid_latest.tar.gz
+> Wget http://downloads.safesquid.net/appliance/binary/safesquid_latest.tar.gz
 
 ![going in /usr/local/src directory](/img/Installing_SafeSquid_on_Various_Linux_Distributions_Using_SafeSquid's_tar_file_(1)/image1.webp)
 ## Extract the tarball.
@@ -97,7 +97,7 @@ You can check if any of the dependencies missing for SafeSquid by using the "ldd
 > ldd /opt/safesquid/bin/safesquid
 
 Output for the above command is shown below.
-
+```
 root@safesquid:/opt/safesquid/bin## ldd /opt/safesquid/bin/safesquid
 
 linux-vdso.so.1 => (0x00007ffebebdb000)
@@ -157,7 +157,7 @@ libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007ff02fbc6000)
 libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007ff02f7fd000)
 
 libsasl2.so.2 => /usr/lib/x86_64-linux-gnu/libsasl2.so.2 (0x00007ff02f5e2000)
-
+```
 If you notice that any of the dependencies are not present then, you should install that dependencies to make SafeSquid work.
 
 ## Start the SafeSquid

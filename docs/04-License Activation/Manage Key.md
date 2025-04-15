@@ -1,5 +1,5 @@
 ---
-title: Manage Key in SafeSquid Self-Service Portal  
+title: Manage Key 
 Description: Learn how to manage your SafeSquid activation key, including downloading the key, viewing license details, deactivating unused instances, and editing instance information through the Self-Service Portal.
 
 Keywords:

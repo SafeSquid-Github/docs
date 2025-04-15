@@ -12,13 +12,12 @@ Here I am integrating my Active Directory with following information.
 
 **User Name: cn=admin,dc=safesquid,dc=net**
 
-See more about [**Integrate LDAP section**](https://help.safesquid.com/portal/en/kb/articles/integrate-ldap), here we explained the working of each field in the Integrate LDAP section.
 
 ## Prerequisites
 
 Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, password, base dn, domain ) in configuration are correct. If any value is wrong SafeSquid will fail to fetch the entries.
 
-## [Access the SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to configure Page
 
@@ -88,9 +87,9 @@ When you click on Save config, it will give a prompt for asking the confirmation
 
 Select Yes only in below cases:
 
-if you want to use this same configuration in other SafeSquid instances.
+1. if you want to use this same configuration in other SafeSquid instances.
 
-if your total configuration in all sections is completed and validated.
+2. if your total configuration in all sections is completed and validated.
 
 Otherwise select No and click on submit
 

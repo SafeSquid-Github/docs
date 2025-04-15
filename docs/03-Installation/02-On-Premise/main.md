@@ -21,7 +21,7 @@ To reduce the complexity, and save time in setting up the Secure Web Gateway, us
 
 By automating the manual processes in the installation process, the risk of errors is reduced. Pre-configured settings ensure optimal performance and robust security. Furthermore, SafeSquid Appliance Builder incorporates security best practices in its setup process, providing a hardened system by default.
 
-## How to install SafeSquid Secure Web Gateway using SafeSquid Appliance Builder
+## How to install SafeSquid SWG using SAB
 
 Use the latest stable version of [SAB](https://downloads.safesquid.com/appliance/safesquid.iso) to ensure up-to-date features and security patches. Verify the integrity of the downloaded ISO by matching the file's hash value against the officially disclosed on the website.
 
@@ -284,7 +284,7 @@ adjustments before proceeding.
 
 Typically, this drive is the same as the installation disk.
 
-Caution: The [GRUB](https://www.gnu.org/software/grub/) bootloader is essential for booting into the installed system. Installing GRUB on the wrong drive can render the system unbootable.
+> Caution: The [GRUB](https://www.gnu.org/software/grub/) bootloader is essential for booting into the installed system. Installing GRUB on the wrong drive can render the system unbootable.
 
 > Note: These additional steps are particularly important for users with specific network configurations or those installed from a USB drive.
 
@@ -347,9 +347,9 @@ If you observe the screen by default, it will give you username along with the p
 
 You need to enter the same username and password for the first login.
 
-**Username: administrator**
+> **Username: administrator**
 
-**Password: safesquid**
+> **Password: safesquid**
 
 ![safesquid first time login](/img/How_To/Install_SafeSquid_Secure_Web_Gateway_using_SafeSquid_Appliance_Builder/image48.webp) You need to reset the password on the first login.
 
