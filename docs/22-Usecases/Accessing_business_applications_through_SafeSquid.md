@@ -7,8 +7,9 @@ There is more than one reason because of why the application may not work throug
 
 1) The applications may have certain URLs that are getting blocked by SafeSquid. You need to allow those URLs by creating policies so that the application works properly. To identify whether URLs are getting blocked, you need to carefully observe the extended log of SafeSquid by verifying if the status code is '403' (which means blocked) for any of the requests sent by the application. To view the logs, you can run the following command by taking the SSH access of the SafeSquid server:
 
-> tail -F /var/log/safesquid/extended/extended.log | grep "192.168.0.17" | grep '403'
-
+```bash
+tail -F /var/log/safesquid/extended/extended.log | grep "192.168.0.17" | grep '403'
+```
 Where "192.168.0.17" is the IP of the machine accessing the application. You will be displayed with something like the following log line. The status code 403 describes the blocked URLs.
 ```
 "1496477492.50.1.2386.zx5NhVkA9enUdJEC"    "50"    "1"    "03/Jun/2017:13:41:32"    "78"    "403"    "0"    "0"    "0"    "-"    "192.168.0.17"    "anonymous@192.168.0.17"    "GET"    https://www.bing.com:80/search?q=porn&qs=n&form=QBLH&sp=-1&pq=porn&sc=0-0&sk=&cvid=ADEF7442BA9A41FEB3857DD679E8124F    https://www.bing.com/  "Mozilla"

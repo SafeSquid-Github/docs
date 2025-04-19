@@ -10,7 +10,6 @@ keywords:
 ---
 
 ## Overview
-
 As name indicates SafeSearch is a feature that acts as an automated filter of pornography and potentially offensive content.
 
 In SafeSquid SWG SafeSearch aims to:
@@ -23,7 +22,7 @@ Work closely with organizations such as charities, others in our industry and go
 
 Not only families having kids but also in organizations and businesses use these filters to prevent inappropriate search results appear in searchengine results.
 
-Google\'s SafeSearch is designed to screen sites that contain sexually explicit content and remove them from your search results. While no filter is 100% accurate, SafeSearch helps you avoid content you may prefer not to see or would rather your children did not stumble across.
+Google's SafeSearch is designed to screen sites that contain sexually explicit content and remove them from your search results. While no filter is 100% accurate, SafeSearch helps you avoid content you may prefer not to see or would rather your children did not stumble across.
 
 SafeSearch can easily be disabled by just few clicks, so in order to enforce we need a mechanism that cannot allow to disabled SafeSearch. You can configure your proxy server to override user preference if they have not already opted for SafeSearch, and enforce it to queries.
 
@@ -36,18 +35,13 @@ We will use SafeSquid SWG server in further discussion because it supports SSL I
 SafeSquid SWG bydefault have some rules which offers SafeSearch for primarily used search engines like Google, Yahoo, Bing. You just need to enable (if disabled) the SafeSearch policies in Policies and Profiles section.
 
 ## Prerequisites
-
 HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to Enable HTTPS Inspection](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
 
 ## Google SafeSearch
-
 Filter explicit search results on Google search engine, like pornographic images, videos, and websites from Google Search results. Try disabling Google SafeSearch and you will not be able to as SafeSquid forcefully enforces it.
 
 ## Yahoo SafeSearch
-
 Filter explicit search results on Yahoo search engine, like pornographic images, videos, and websites from Yahoo Search results. Try disabling Yahoo SafeSearch and you will not be able to as SafeSquid forcefully enforces it.
 
 ## Bing SafeSearch 
-
 Filter explicit search results on Bing search engine, like pornographic images, videos, and websites from Bing Search results. Try disabling Bing SafeSearch and you will not be able to as SafeSquid forcefully enforces it.
-

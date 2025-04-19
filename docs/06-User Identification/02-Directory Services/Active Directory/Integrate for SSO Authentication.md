@@ -10,7 +10,6 @@ keywords:
 ---
 
 ## Overview
-
 In given example we are integrating an Active Directory for SSO authentication.
 
 **Your Active directory (AD) FQDN**: ad.safesquid.test (You should get your AD FQDN from this location : AD ( Start > Control Panel > System > Full Computer name))
@@ -26,21 +25,22 @@ In given example we are integrating an Active Directory for SSO authentication.
 Monit service must be Up. 
 Verify it using command:
 
-> pidof monit
-
+```bash
+pidof monit
+```
 19940
 
 See more about Integrate LDAP section, here we explained the working of each field in the Integrate LDAP section.
 
 ## Prerequisites
-
 Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, password, base dn, domain) while configuration are correct. If any value is inappropriate then SafeSquid will fail to fetch the entries.
 
-**Step 1**: Specify Name Server Addresses. 
+**Step 1**: Specify Name Server Addresses.
+
 **Step 2**: Specify Time Synchronization Server. 
-
-> **Note**: Time Synchronization of AD server and Proxy server should be same. Verify it using "date" command
-
+:::note
+Time Synchronization of AD server and Proxy server should be same. Verify it using "date" command
+:::
 **Step 3**: Add DNS entry of SafeSquid server in your Active Directory Server. 
 
 **Step 4**: Make sure that your AD Domain must be resolvable from all clients and SafeSquid Server. For troubleshooting.
@@ -52,15 +52,12 @@ Once you complete all the above steps correctly then you are ready for SSO Confi
 ![clicking on configure in safesquid interface](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image1.webp)
 
 ## Go to Application Setup
-
 ![clicking on application setup](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image2.webp)
 
 ## Go to Integrate LDAP
-
 ![going to integrate LDAP in application setup section](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image3.webp)
 
 ## Ensure LDAP Section is enabled
-
 ![ensuring the LDAP section is enabled. by default it is set as false](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image4.webp)
 
 ![clicking on the global edit ](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image5.webp)
@@ -70,11 +67,9 @@ Once you complete all the above steps correctly then you are ready for SSO Confi
 ![clicking on save policy](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image7.webp)
 
 ## Go to LDAP servers
-
 ![going to LAP servers tab](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image8.webp)
 
 ## Creating new entry
-
 ![creating a new entry by clicking add new button](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image9.webp)
 
 ![some default values are set to some options. leaving enabled as true and writing comment for future reference](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image10.webp)
@@ -112,19 +107,18 @@ You can use any user from Active Directory who is having **Administrator permiss
 ![clicking on save policy](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image22.webp)
 
 ## Test User Extraction
-
 Troubleshooting:
 
 As soon as you Save policy by selecting NEGOTIATE_LDAP_AUTH
 
 **kerberos.sh*** script will automatically run from path
-
+```bash
 /usr/local/safesquid/ui_root/cgi-bin
-
+```
 1.Verify below files at path:
-
+```bash
 /usr/local/safesquid/security
-
+```
 HTTP.keytab
 
 krb5.conf
@@ -140,9 +134,9 @@ At path:
 /usr/local/safesquid/security/dns
 
 Run command:
-
-> cat safesquid.dns.conf
-
+```bash
+cat safesquid.dns.conf
+```
 zone safesquid.test \{
 
 type stub;
@@ -156,20 +150,22 @@ Also, it will automatically copy at given path:
 /etc/bind/
 
 Run command:
-
-> cat safesquid.dns.conf
-
+```bash
+cat safesquid.dns.conf
+```
 zone safesquid.test \{
 type stub;
 masters \{192.168.221.1;\};
 
 \};
-
-> **Note**: Monit service must be up.
-
+:::warning
+Monit service must be up.
+:::
 ![clicking on ldap entries tab to check for entries](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image23.webp)
 
-Step: Make sure that your AD Domain must be resolvable from all clients and SafeSquid Server.
+:::warning
+Make sure that your AD Domain must be resolvable from all clients and SafeSquid Server.
+:::
 
 For troubleshooting Follow Link
 
@@ -192,7 +188,6 @@ When you click on Save config, it will give a prompt for asking the confirmation
 **Select Yes only in below cases:**
 
 1. If you want to use this same configuration in other SafeSquid instances.
-
 2. If your total configuration in all sections is completed and validated.
 
 Otherwise select No and click on submit button.

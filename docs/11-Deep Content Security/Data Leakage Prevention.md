@@ -15,7 +15,6 @@ keywords:
 ---
 
 ## Overview
-
 According to a recent survey of hundreds of IT security professionals, most organizations have major security holes when it comes to protecting themselves against insider threats. Not all data loss is the result of external, malicious attacks. The inadvertent disclosure or mishandling of confidential data by internal employees is also a significant factor. If your IT security isn't in place across all devices that employees use then it's an open invitation to hackers and fraudsters. Organizations overwhelmingly maintained that the data loss was the top concern regarding insider threats. When asked which types of insider attacks were most concerned, 63 percent of respondents said data leaks, 57 percent said inadvertent data breaches and 53 percent said malicious data breaches. In these days, the role that insiders play in the vulnerability of all sizes of corporations is massive and growing.
 
 **So, who are these insiders?**
@@ -35,7 +34,6 @@ With the goal of mitigating all types and levels of insider threat, the SafeSqui
 SafeSquid's DLP module is the key solution to the Data Leakage. Using DLP module of SafeSquid can restrict the users to download or upload specific type of files, and also in memory virus scanners like SvScan prevents the all users from downloading and uploading virus infected files. By providing role-based access to the users, keep your organization safe and secure from internal attacks.
 
 ## Key solutions provided by SafeSquid
-
 **Data Loss prevention**
 
 Data loss prevention (DLP) is a strategy for making sure that end users do not send sensitive or critical information outside the corporate network. The term is also used to describe software products that help a network administrator control what data end users can transfer. A recent study towards data leakage said that internal data leakage is much more serious than external data leakage. The insider threat can be particularly difficult to guard, if someone is using their legitimate access to data for perverse purposes. DLP can detect files that contain confidential information and prevent them from leaving via the network.

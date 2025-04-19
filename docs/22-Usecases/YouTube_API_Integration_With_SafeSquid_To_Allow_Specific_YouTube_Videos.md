@@ -10,7 +10,6 @@ keywords:
 ---
 
 ## Overview
-
 YouTube is a video-sharing website which provides a wide variety of videos. YouTube video content categories organize channels and videos on YouTube website. YouTube has lots of videos for entertainment like comedy, music, movies, web series, sports, etc. YouTube also provides lots of educational and training content used by students, employees, faculties, etc. in day-to-day life.
 
 In every organization YouTube video should be used for Productive purposes like learning, Marketing, etc. YouTube's recommendations become confused over time, and begin showing you irrelevant or useless content. Watching unnecessary YouTube videos without any restriction, reduces work productivity and increases bandwidth utilization.
@@ -19,8 +18,7 @@ Restriction on watching unnecessary YouTube Videos will save lots of productive 
 
 SafeSquid SWG integrates with YouTube API which is used to identify the Category of the Requested YouTube Video. YouTube Video categories are enumerated in SafeSquid SWG. Now policies can be created on the basis of these categories so that Specific category of YouTube Videos can allow/block easily.
 
-# Client Scenario (Case Study)
-
+## Client Scenario (Case Study)
 Ganpat University provides graduate programs to various colleges. All the staff's PC/Laptop traffic is going via SafeSquid SWG.
 
 Ganpat University wants to block entire youtube.com for faculty and students, but wants some of the YouTube channels allowed which are helpful for faculty/students.
@@ -53,12 +51,10 @@ You can now allow/block specific category of videos on YouTube.
 
 ![Find category to allow or block Youtube video](/img/How_To/YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos/image1.webp)
 
-# Prerequisites
-
+## Prerequisites
 HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - How to enable HTTPS Inspection
 
-# Create a YouTube V3 API using your Google Account.
-
+## Create a YouTube V3 API using your Google Account.
 To Request the Category of Specific Video
 
 To extract Video Category from Video ID
@@ -67,7 +63,9 @@ Go To https://console.developers.google.com/apis/library [Link](https://console.
 
 ![Create a Youtube V3 API using google account for Youtube API integration with safesquid](/img/How_To/YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos/image2.webp)
 
-**Note:** What happens over here is If you don't Create a Project over here, Google will Automatically Create a new Project for you Named as "My First Project" when you ENABLE the YouTube Data API v3.
+:::note
+What happens over here is If you don't Create a Project over here, Google will Automatically Create a new Project for you Named as "My First Project" when you ENABLE the YouTube Data API v3.
+:::
 
 People doing it for the first time and have requirement to use YouTube Data API v3 to integrate it with SafeSquid-SWG.
 
@@ -77,44 +75,37 @@ Since they have specified Per Day Quota i.e. No of Request to find Information a
 
 Make sure that this Google Account is not using YouTube API for any other purposes as this will reduce the No of Request
 
-# CREATE A NEW PROJECT
-
+## CREATE A NEW PROJECT
 ![Click on select a project to integrate Youtube API with safesquid](/img/How_To/YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos/image3.webp)
 
 ![Click on project to integrate Youtube API with safesquid](/img/How_To/YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos/image4.webp)
 
-## NAME AS: YouTubeAPI-For-SafeSquid
-
+### NAME AS: YouTubeAPI-For-SafeSquid
 ![Name and create a project to integrate Youtube API with safesquid](/img/How_To/YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos/image5.webp)
 
 ![Redirect to API Library in API & Services section](/img/How_To/YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos/image6.webp)
 
-## SELECT A PROJECT
-
+### SELECT A PROJECT
 ![Select a project to integrate Youtube API with safesquid](/img/How_To/YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos/image7.webp)
 
 ![Get a access of API Library](/img/How_To/YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos/image8.webp)
 
 ![Select YOUTUBE DATA API V3 to integrate Youtube API with safesquid](/img/How_To/YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos/image9.webp)
 
-## ENABLE YOUTUBE DATA API V3
-
+### ENABLE YOUTUBE DATA API V3
 ![ENABLE YOUTUBE DATA API V3 to](/img/How_To/YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos/image10.webp)
 
-## CREATE CREDENTIALS
-
+### CREATE CREDENTIALS
 ![Select a Create credentials to integrate Youtube API with safesquid](/img/How_To/YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos/image11.webp)
 
 ![Click on Create credentials to integrate Youtube API with safesquid](/img/How_To/YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos/image12.webp)
 
-## SELECT API KEY
-
+### SELECT API KEY
 ![select API key to create API keys ](/img/How_To/YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos/image13.webp)
 
 ![Google generate Youtube API keys](/img/How_To/YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos/image14.webp)
 
-# Integrate the YouTube API Key in SafeSquid.
-
+## Integrate the YouTube API Key in SafeSquid.
 **To identify the category of the YouTube video**
 
 Now we are going to Integrating this Key in SafeSquid-SWG.
@@ -123,10 +114,14 @@ To do that, Go to SafeSquid console.
 
 Go to the path using below command:
 
-root@safesquid-swg:/var/lib/safesquid#cd /var/lib/safesquid/Create the directory using below command:
+```bash
+cd /var/lib/safesquid/
+```
+Create the directory using below command:
 
-root@safesquid-swg:/var/lib/safesquid#mkdir youtube
-
+```bash
+mkdir youtube
+```
 Give the permission using below command:
 
 chmod 774 youtube
@@ -187,9 +182,12 @@ AIz******************************o
 
 After doing so, you just need to **RESTART SafeSquid Service** from SafeSquid Interface or by command line.
 
+```bash
 /etc/init.d/safesquid restart
-
-**Note:** Please Restart SafeSquid Twice in order to Integrate YouTube API properly.
+```
+:::note
+Please Restart SafeSquid Twice in order to Integrate YouTube API properly.
+:::
 
 You have successfully integrated YouTube API with SafeSquid-SWG.
 

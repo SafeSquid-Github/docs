@@ -10,13 +10,11 @@ keywords:
 ---
 
 ## Issues
-
 I configured LDAP with Active Directory, but LDAP entries are still not fetched.
 
 ## Root Cause
 
 1.  **Case 1:** You should not have properly configured LDAP with Active Directory.
-
 1.  **Case 2:** You are not able to contact AD (Active Directory).
 
 Verify it from SafeSquid Logs.
@@ -84,13 +82,12 @@ Verify it from SafeSquid Logs.
   ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Troubleshooting
-
 ### Case 1: Check for configuration of LDAP with AD (Active Directory).
-
 Run command on the console:
 
+```bash
 ldapsearch -x -h 192.168.221.1 -b "dc=safesquid,dc=test" -D adusername@domain -w password
-
+```
 root@sabproxy:~# ldapsearch -x -h 192.168.221.1 -b "dc=safesquid,dc=test" -D administrator@safesquid.test -w sarva@1234
 
 The above command gives you the result of all the fetch entries of users from AD only if the configuration of LDAP integration is correct.
@@ -98,7 +95,6 @@ The above command gives you the result of all the fetch entries of users from AD
 Follow the [Link](https://help.safesquid.com/portal/en/kb/articles/integrate-ad-or-openldap-with-safesquid) for How to integrate AD or Open LDAP with SafeSquid.
 
 ### Case2: Check the connection to Active Directory
-
   -----------------------------------------------------------------------
   root@sabproxy:~# ping 192.168.221.1
   -----------------------------------------------------------------------
@@ -135,7 +131,9 @@ Follow the [Link](https://help.safesquid.com/portal/en/kb/articles/integrate-ad-
   rtt min/avg/max/mdev = 0.262/0.354/0.442/0.073 ms
   -----------------------------------------------------------------------
 
-**Note**: ad.safesquid.test (192.168.221.1) >> Active Directory FQDN and IP Address
+:::note
+ad.safesquid.test (192.168.221.1) >> Active Directory FQDN and IP Address
+:::
 
 **If you are unable to contact Active Directory you should face an error as shown below " Destination Host Unreachable"**
 

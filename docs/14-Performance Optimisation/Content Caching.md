@@ -11,15 +11,12 @@ Keywords:
 ---
 
 ## Overview
-
 Content Caching improves bandwidth efficiency. A page or file, when requested by a user, is served to the user and a copy of it is also maintained locally in the cache. So, when a request is made to fetch the same page or file, it is served with the local copy, instead of 'a fresh fetch'. SafeSquid has a very neat, efficient and manageable Content Caching system.
 
 ### [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
-
 ![clicking on configure in safesquid interface](/img/How_To/Caching_Specific_websites/image1.webp)
 
 ### Go to Access policies under Restriction Policies
-
 ![showing of default policies in access profiles](/img/How_To/Caching_Specific_websites/image2.webp)
 
 ![creating a new policy by clicking on add new ](/img/How_To/Caching_Specific_websites/image3.webp)
@@ -35,11 +32,9 @@ Content Caching improves bandwidth efficiency. A page or file, when requested by
 ![clicking on save policy](/img/How_To/Caching_Specific_websites/image8.webp)
 
 ### Go to Caching under Application Setup
-
 ![going to caching under application setup in sidebar](/img/How_To/Caching_Specific_websites/image9.webp)
 
 ### Go to Store
-
 ![clicking on store in caching](/img/How_To/Caching_Specific_websites/image10.webp)
 
 ![clicking on clone button to clone the already created policy](/img/How_To/Caching_Specific_websites/image11.webp)
@@ -59,7 +54,6 @@ Content Caching improves bandwidth efficiency. A page or file, when requested by
 ![clicking on global save policy to save it globally](/img/How_To/Caching_Specific_websites/image18.webp)
 
 ### Go to Manage cached Objects
-
 ![clicking on Manage cached objects in caching section](/img/How_To/Caching_Specific_websites/image19.webp)
 
 ![it will show all those websites under disk cache ](/img/How_To/Caching_Specific_websites/image20.webp)

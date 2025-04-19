@@ -10,33 +10,25 @@ keywords:
 ---
 
 ## Issues
-
 1.  I uploaded my activation key, but still SafeSquid UI is showing Failed to set Subscription details.
-
 1.  After uploading the activation key, I am getting the template on the browser proxy server refusing connections.
-
 1.  Unable to see subscription details on the support page from SafeSquid User Interface.
 
 ## Root Causes
 
 1.  SafeSquid server is unable to contact the SafeSquid Subscription server.
-
 1.  The file (activation key) was not uploaded correctly.
-
 1.  The file name you uploaded is other than **activation_key.**
-
 1.  After uploading the activation key, the page shows the proxy server refusing connections.
-
 1.  SafeSquid service restart was not done properly.
 
 ## Troubleshooting
-
 ### Case 1: Check for the activation_key file on the SafeSquid server.
-
 Run the below command and check for the file:
 
-> ls -lrt /usr/local/safesquid/security/
-
+```bash
+ls -lrt /usr/local/safesquid/security/
+```
   ---------------------------------------------------------------------------
   root@dev:~# ls -lrt /usr/local/safesquid/security/
   ---------------------------------------------------------------------------
@@ -59,16 +51,19 @@ Run the below command and check for the file:
 
 If the file was not found, then upload your activation key again and click on restart
 
-**Note**: Restart SafeSquid service from the SafeSquid Interface will work, only if the [monit service](https://help.safesquid.com/portal/en/kb/articles/setup-monit-for-safesquid-monitoring) is configured properly on the SafeSquid server.
+:::note
+Restart SafeSquid service from the SafeSquid Interface will work, only if the [monit service](/docs/13-System%20Audit/Monit.md) is configured properly on the SafeSquid server.
+:::
 
 Otherwise, you can directly restart the SafeSquid service from LINUX box by using below commands
 
-> /etc/init.d/safesquid stop
-
-> /etc/init.d/safesquid start
-
+```bash
+/etc/init.d/safesquid stop
+```
+```bash
+/etc/init.d/safesquid start
+```
 ### Case 2: Check the connection to the Subscription server, by using following commands
-
   -----------------------------------------------------------------------
   root@dev:~# ping swgupdates2.safesquid.net
   -----------------------------------------------------------------------
@@ -85,8 +80,9 @@ Otherwise, you can directly restart the SafeSquid service from LINUX box by usin
   rtt min/avg/max/mdev = 228.387/269.078/309.770/40.694 ms
   -----------------------------------------------------------------------
 
-> nslookup swgupdates2.safesquid.net
-
+```bash
+nslookup swgupdates2.safesquid.net
+```
   -----------------------------------------------------------------------
   Server: 127.0.0.1
   -----------------------------------------------------------------------
@@ -103,7 +99,8 @@ Otherwise, you can directly restart the SafeSquid service from LINUX box by usin
 
 SafeSquid restart was not done, start the SafeSquid from the server console by using the command below:
 
-> /etc/init.d/safesquid start
-
+```bash
+/etc/init.d/safesquid start
+```
 
 

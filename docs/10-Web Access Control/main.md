@@ -3,7 +3,6 @@
 Web Access Control in **SafeSquid** provides comprehensive tools for managing, restricting, and controlling user access to web resources.
 
 ## Included Features
-
 - [URL Redirection](/docs/10-Web%20Access%20Control/01-URL%20Redirection/main.md): Configure custom URL redirection rules for better user navigation and access control.
 - [Content Filtering](/docs/10-Web%20Access%20Control/Content%20Filtering.md): Block or allow web content based on categories, keywords, or domains.
 - [Cookie Control](/docs/10-Web%20Access%20Control/Cookie%20Control.md): Manage and block cookies to protect user privacy and prevent tracking.

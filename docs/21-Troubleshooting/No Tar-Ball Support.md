@@ -10,11 +10,9 @@ keywords:
 ---
 
 ## ISSUE
-
 Unable to generate support tarball from SafeSquid Interface: **Support Page > Support Tarball**
 
 ## Troubleshooting
-
 If you cannot generate support tarball from the SafeSquid interface, automatically follow the steps below.
 
 **Go to this path (location of support_tarball.sh script)**
@@ -57,8 +55,9 @@ Once you confirm the availability of **support_tarball.sh**, move to your requir
 
 **To generate support tarball manually as below :**
 
-> Command: ./support_tarball.sh
-
+```bash
+Command: ./support_tarball.sh
+```
 Go to the below path and run above command
 
 root@swg:/usr/local/safesquid/ui_root/cgi-bin# ./support_tarball.sh

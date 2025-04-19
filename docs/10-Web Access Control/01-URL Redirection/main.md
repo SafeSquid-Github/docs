@@ -3,9 +3,7 @@ title: URL Redirection
 ---
 
 ## Redirect One Website to Another Website
-
 ### [Access the SafeSquid User Interface ](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
-
 SafeSquid comes with sample policy, helping you in policy creation.
 
 In SafeSquid sample policies " Enable interface access through authentication " policy is already present. You have to just enable those policies, so that it becomes applicable.
@@ -29,7 +27,6 @@ Create a policy as shown:
 Click on save (Save button is placed at right bottom)
 
 ### Testing:
-
 In this the URL value 'rediff.com' is redirect to 'SafeSquid.com' and the port to redirect to 80.
 
 Go to browser and access https://www.rediff.com/, it must redirect to SafeSquid.com, we can verify in Native logs on SafeSquid interface Reports >> Native logs as like below.

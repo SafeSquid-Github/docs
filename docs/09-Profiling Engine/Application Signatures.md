@@ -30,7 +30,6 @@ To know more about this feature follow link [Block Emails or Files including arc
 
 
 ## Adding users using SafeSquid interface for authentication
-
 If you do not have an Active Directory (AD) server to integrate with SafeSquid LDAP, but you want authenticate users by assigning usernames and passwords to your users.
 
 ![clicking on configure in safesquid interface](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image1.webp)

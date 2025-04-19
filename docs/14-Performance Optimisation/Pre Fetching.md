@@ -11,25 +11,20 @@ Keywords:
 ---
 
 ## Overview
-
 The Prefetching feature can be used as an 'internet accelerator'. It allows virtually any file referenced in HTML to be pre-fetched, not just images, and cached.
 
 Prefetching is a good way to improve retrieval time. It reduces resource retrievals and improves retrieval time. The target range is wider than that of both, mirroring and caching.
 
 ### [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
-
 ### Go to configure
-
 ![clicking on configure in safesquid interface](/img/How_To/Prefetch_embedded_images/image1.webp)
 
 ### Go to Prefetching under Application Setup
-
 ![going to prefetching in application setup section](/img/How_To/Prefetch_embedded_images/image2.webp)
 
 ![making sure the global section is true in enabled field](/img/How_To/Prefetch_embedded_images/image3.webp)
 
 ### Go to Prefetch
-
 ![Go to prefetch tab](/img/How_To/Prefetch_embedded_images/image4.webp)
 
 ![clicking on add new to create a new policy](/img/How_To/Prefetch_embedded_images/image5.webp)

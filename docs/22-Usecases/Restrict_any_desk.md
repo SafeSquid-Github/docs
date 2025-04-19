@@ -10,13 +10,10 @@ keywords:
 ---
 
 ## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
-
 ## Go to configure page
-
 ![Go to configure page to Restict anydesk](/img/How_To/Restrict_any_desk/image1.webp)
 
 ## Go to Real time content security 
-
 ![Select HTTPS Inspection option in Real time content security section to Restrict anydesk](/img/How_To/Restrict_any_desk/image2.webp)
 
 ![Enabled Global section as true to restrict anydesk and to edit Inspection policy](/img/How_To/Restrict_any_desk/image3.webp)
@@ -36,7 +33,6 @@ keywords:
 ![Save configuration of policy to restrict anydesk](/img/How_To/Restrict_any_desk/image10.webp)
 
 ## Configuration on anydesk
-
 Set proxy on anydesk application
 
 If authentication is enabled you have to specify Username and Password on any desk application.

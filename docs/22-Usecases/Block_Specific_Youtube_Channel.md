@@ -10,19 +10,18 @@ keywords:
 ---
 
 ## Overview
-
 Prevent users to access specific YouTube Channel like 'T-Series'.
 
-**Note:** Blocking of Specific YouTube channel and allowing all the other YouTube videos is a hypothetical scenario. YouTube website is not designed for such hypothetical situation. However, this how-to will demonstrate to block a specific YouTube Channel and one of its playlist videos.
+:::note
+Blocking of Specific YouTube channel and allowing all the other YouTube videos is a hypothetical scenario. YouTube website is not designed for such hypothetical situation. However, this how-to will demonstrate to block a specific YouTube Channel and one of its playlist videos.
+:::
 
 ## Prerequisites
-
 HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
 
 You need the YouTube **Channel-ID** and **List-ID**. You have to extract Channel-ID and List-ID from YouTube URL before creating rules in SafeSquid.
 
 ## Policy Creation
-
 We can achieve the above by following steps --
 
 ### Extract Channel-ID from YouTube Channel
@@ -106,7 +105,6 @@ Save the Policy created.
 ![Save Block YouTube Channels policy to block specific YouTube channel ](/img/How_To/Block_Specific_Youtube_Channel/image12.webp)
 
 ## Test the YouTube Channel Blocked
-
 13. Now try to open the YouTube Channel of T-Series https://www.youtube.com/channel/UCq-Fj5jknLsUf-MWSy4_brA.
 
 All the YouTube channel of T-series will be blocked and Access block Template will be shown.
@@ -119,8 +117,8 @@ It will be blocked and Access block Template will be shown.
 
 ![Blocked and Access block Template will be shown](/img/How_To/Block_Specific_Youtube_Channel/image14.webp)
 
-**Note:**
+:::note
+This configuration will work only for videos sourced from the channel page and not from the feeds links or YouTube Videos embedded in website.
 
-**This configuration will work only for videos sourced from the channel page and not from the feeds links or YouTube Videos embedded in website.**
-
-**To block every video of any specific YouTube Channel you have to insert List-ID's (of every playlist in that channel) and file part (of each individual unlisted videos) of URL in the File field of Request Types Section.**
+To block every video of any specific YouTube Channel you have to insert List-ID's (of every playlist in that channel) and file part (of each individual unlisted videos) of URL in the File field of Request Types Section.
+:::

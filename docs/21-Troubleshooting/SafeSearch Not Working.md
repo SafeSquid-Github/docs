@@ -13,9 +13,9 @@ You have enabled all the entries required for Safe Searches, but you are able to
 
 Test your configuration once. All required entries must be enabled.
 
-Then test your HTTPS Inspection enabled or not. If if not enabled see our document - [How to configure HTTPS inspection](https://help.safesquid.com/portal/en/kb/articles/setup-https-inspection)
+Then test your HTTPS Inspection enabled or not. If if not enabled see our document - [How to configure HTTPS inspection](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
 
-Then check the SSL certificate in the browser. - [Testing the SSL Certificate (in Firefox)](https://help.safesquid.com/portal/en/kb/articles/importing-your-ssl-certificate-into-firefox#testing)
+Then check the SSL certificate in the browser. - [Testing the SSL Certificate (in Firefox)](/docs/12-Server%20Security/SSL%20Certificate%20Validation.md)
 
 Removes the cache and restart the browser and test it again.
 
