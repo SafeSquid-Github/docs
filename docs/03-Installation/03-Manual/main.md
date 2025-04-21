@@ -7,8 +7,11 @@ Keywords:
 - Manual SafeSquid installation Linux  
 - SafeSquid TAR package setup  
 - Configure SafeSquid with Monit and BIND  
-
 ---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 SafeSquid is a versatile web filtering software that can be installed on various Linux operating systems, including but not limited to Red-Hat, SuSe, and CentOS. This flexibility allows users to deploy SafeSquid on their existing infrastructure or select a Linux distribution that best fits their organizational needs and preferences. The installation process on Linux distributions other than Ubuntu involves a few additional steps and configurations to ensure optimal performance and stability.
 
 ## Key Considerations
@@ -76,43 +79,69 @@ You can check if any of the dependencies missing for SafeSquid by using the "ldd
 dd /opt/safesquid/bin/safesquid
 ```
 Output for the above command is shown below.
-```
+
 <Tabs>
 <TabItem value="Success" label="Success" default>
 root@safesquid:/opt/safesquid/bin## ldd /opt/safesquid/bin/safesquid
+
 linux-vdso.so.1 => (0x00007ffebebdb000)
+
 libldap_r-2.4.so.2 => /usr/lib/x86_64-linux-gnu/libldap_r-2.4.so.2 (0x00007ff03107e000)
+
 libpam.so.0 => /lib/x86_64-linux-gnu/libpam.so.0 (0x00007ff030e70000)
+
 liblber-2.4.so.2 => /usr/lib/x86_64-linux-gnu/liblber-2.4.so.2 (0x00007ff030c61000)
+
 libgssapi.so.3 => /usr/lib/x86_64-linux-gnu/libgssapi.so.3 (0x00007ff030a23000)
+
 libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007ff03081f000)
+
 libresolv.so.2 => /lib/x86_64-linux-gnu/libresolv.so.2 (0x00007ff030604000)
+
 libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007ff030300000)
+
 libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007ff02fffa000)
+
 libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007ff02fde4000)
+
 libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007ff02fbc6000)
+
 libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007ff02f7fd000)
+
 libsasl2.so.2 => /usr/lib/x86_64-linux-gnu/libsasl2.so.2 (0x00007ff02f5e2000)
 </TabItem>
 <TabItem value="Dependency Missing Error" label="Dependency Missing Error" default>
 root@safesquid:/opt/safesquid/bin## ldd /opt/safesquid/bin/safesquid
+
 linux-vdso.so.1 => (0x00007ffebebdb000)
+
 libldap_r-2.4.so.2 => /usr/lib/x86_64-linux-gnu/libldap_r-2.4.so.2 (0x00007ff03107e000)
+
 libpam.so.0 => /lib/x86_64-linux-gnu/libpam.so.0 (0x00007ff030e70000)
+
 liblber-2.4.so.2 => /usr/lib/x86_64-linux-gnu/liblber-2.4.so.2 (0x00007ff030c61000)
+
 libgssapi.so.3 => /usr/lib/x86_64-linux-gnu/libgssapi.so.3 (0x00007ff030a23000)
+
 libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007ff03081f000)
+
 libresolv.so.2 => /lib/x86_64-linux-gnu/libresolv.so.2 (0x00007ff030604000)
+
 libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007ff030300000)
+
 libgmp.so.3==> not found
+
 libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007ff02fffa000)
+
 libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007ff02fde4000)
+
 libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007ff02fbc6000)
+
 libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007ff02f7fd000)
+
 libsasl2.so.2 => /usr/lib/x86_64-linux-gnu/libsasl2.so.2 (0x00007ff02f5e2000)
 </TabItem>
 </Tabs>
-```
 If you notice that any of the dependencies are not present then, you should install that dependencies to make SafeSquid work.
 ## Start the SafeSquid
 Further you need to Start the SafeSquid service by using the command below.
