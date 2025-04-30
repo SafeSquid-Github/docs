@@ -36,16 +36,81 @@ const config: Config = {
       } as Preset.Options,
     ],
   ],
+  plugins: [
+    'docusaurus-plugin-image-zoom',
+  ],
   themeConfig: {
     image: '@site/static/img/favicon.ico',
+    zoom: {
+      selector: '.markdown :not(em) > img',
+      background: {
+        light: 'rgb(255, 255, 255)',
+        dark: 'rgb(50, 50, 50)'
+      },
+      config: {
+        // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+      }
+    },
     navbar: {
-      title: 'SafeSquid SWG',
+      // title: 'SafeSquid SWG',
+      logo: {
+        alt: 'SafeSquid Logo',
+        src: 'img/SafeSquidBlue.png',   // for light mode
+        srcDark: 'img/safesquidWhite.png', // for dark mode
+        className: 'custom-navbar-logo',
+      },
       items: [
+        // {to: '/blog', label: 'Blog', position: 'left'},
+        {
+          href: 'https://www.safesquid.com/#home',
+          label: 'HOME',
+          position: 'left',
+        },
+        {
+          href: 'https://www.safesquid.com/#about',
+          label: 'ABOUT',
+          position: 'left',
+        },
+        {
+          href: 'https://www.safesquid.com/#features',
+          label: 'FEATURES',
+          position: 'left',
+        },
+        {
+          href: 'https://www.safesquid.com/#technology',
+          label: 'TECHNOLOGY',
+          position: 'left',
+        },
+        {
+          href: 'https://www.safesquid.com/#solutions',
+          label: 'SOLUTIONS',
+          position: 'left',
+        },
+        {
+          href: 'https://www.safesquid.com/#get_started',
+          label: 'GET STARTED',
+          position: 'left',
+        },
+        {
+          href: 'https://www.safesquid.com/contact/',
+          label: 'CONTACT',
+          position: 'left',
+        },
+        {
+          href: 'https://www.safesquid.com/pricing/',
+          label: 'PRICING',
+          position: 'left',
+        },
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Documentation',
+          label: 'DOCS',
+        },
+        {
+          href: 'https://help.safesquid.com/portal/en/community/safesquid-labs',
+          label: 'FORUM',
+          position: 'left',
         },
       ],
     },
@@ -62,6 +127,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: ['bash'],
     },
     algolia: {
       appId: 'VDAYH8QLO8',
