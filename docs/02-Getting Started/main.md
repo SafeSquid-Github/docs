@@ -9,9 +9,6 @@ keywords:
   - Zero-Trust Web Security
 ---
 
----
-title: Getting Started with SafeSquid Secure Web Gateway
----
 ## Welcome to SafeSquid!
 
 SafeSquid is the world's most advanced HTTP Proxy Server, specifically designed for Application Layer Security. The purpose-oriented architecture promises scalable performance while ensuring comprehensive mitigation of Layer 7 threats. SafeSquid-based Secure Web Gateway (SWG) shields enterprises from advanced cyber‑threats by delivering robust perimeter-level application layer security.

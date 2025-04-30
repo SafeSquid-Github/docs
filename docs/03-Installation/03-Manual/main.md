@@ -48,7 +48,7 @@ cd /usr/local/src
 ```
 Use the "wget" command to download the latest SafeSquid package on the Linux machine on which you want to install SafeSquid. The command will download the tarball file.
 ```bash
-Wget http://downloads.safesquid.net/appliance/binary/safesquid_latest.tar.gz
+wget http://downloads.safesquid.net/appliance/binary/safesquid_latest.tar.gz
 ```
 ![going in /usr/local/src directory](/img/Installing_SafeSquid_on_Various_Linux_Distributions_Using_SafeSquid's_tar_file_(1)/image1.webp)
 ## Extract the tarball.
