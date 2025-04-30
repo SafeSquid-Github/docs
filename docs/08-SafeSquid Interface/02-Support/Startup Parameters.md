@@ -9,7 +9,6 @@ keywords:
 ---
 
 ## Overview
-
 SafeSquid loads default configuration/startup parameters from the startup.ini file. You can modify the startup parameter values from SafeSquid GUI. Modified values of startup parameters are stored in **/opt/safesquid/startup.ini** file.
 
 SafeSquid loads default setup parameters from the setup.ini file. To modify setup parameters, you should take a copy of the setup.ini file and store it as **/opt/safesquid/setup.ini** before editing it manually.
@@ -52,4 +51,6 @@ SafeSquid loads default setup parameters from the setup.ini file. To modify setu
 | **REAL_TIME_DB_WRITE**         | REAL_TIME_DB_WRITE determines whether SafeSquid logs should be written in the SQLite database. If REAL_TIME_DB_WRITE is set to 1, real-time logs will be written. If set to 0, they will not be written. Default: 1. |
 | **STATEMENT_COUNT**            | SafeSquid uses the STATEMENT_COUNT parameter to optimize writing into the SQLite database. STATEMENT_COUNT is the maximum number of log lines written into the database in one transaction. The default value of STATEMENT_COUNT is 100. |
 
-> **Note**: You can tune up the SafeSquid for better results. You can modify Startup Parameters to obtain better performance by tweaking the overall system & application tuning. Quite a few users have experienced difficulties due to a lack of understanding of SafeSquid\'s configuration, and possibly due to insufficient documentation on the subject.
+:::note
+You can tune up the SafeSquid for better results. You can modify Startup Parameters to obtain better performance by tweaking the overall system & application tuning. Quite a few users have experienced difficulties due to a lack of understanding of SafeSquid\'s configuration, and possibly due to insufficient documentation on the subject.
+:::

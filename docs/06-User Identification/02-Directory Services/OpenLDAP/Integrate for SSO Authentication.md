@@ -10,11 +10,8 @@ keywords:
 ---
 
 ## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
-
 ## Enable Authentication
-
 ### Click on configure
-
 ![Click on configure](/img/How_To/Enable_authentication_for_LDAP_users/image1.webp)
 
 ![clicking on application setup](/img/How_To/Enable_authentication_for_LDAP_users/image2.webp)
@@ -44,9 +41,9 @@ See the working of each Entry [here](https://help.safesquid.com/portal/en/kb/art
 ![in LDAP profiles selecting the users or user groups you want to set the authentication for](/img/How_To/Enable_authentication_for_LDAP_users/image11.webp)
 
 If you want to Authenticate all users from Active Directory Leave this field empty.
-
-Note: If you want to leave this field blank make sure that the user or IP address from where you are accessing SafeSquid interface must be free from authentication.
-
+:::note
+If you want to leave this field blank make sure that the user or IP address from where you are accessing SafeSquid interface must be free from authentication.
+:::
 ![leaving the profiles,Interface and IP address fields blank](/img/How_To/Enable_authentication_for_LDAP_users/image12.webp)
 
 ![leaving PAM authentication true as it is](/img/How_To/Enable_authentication_for_LDAP_users/image13.webp)
@@ -90,7 +87,6 @@ Note: If you want to leave this field blank make sure that the user or IP addres
 ![default entry to authenticate all users from AD which are not added in earlier entries](/img/How_To/Enable_authentication_for_LDAP_users/image32.webp)
 
 ### Verifying SSO Authentication 
-
 ![clicking on reports in the safesquid dashboard](/img/How_To/Enable_authentication_for_LDAP_users/image33.webp)
 
 ![clicking on detailed logs](/img/How_To/Enable_authentication_for_LDAP_users/image34.webp)

@@ -10,33 +10,25 @@ keywords:
 ---
 
 ## Issues
-
 -   I uploaded my activation key, but still SafeSquid UI is showing Failed to set Subscription details.
-
 -   After uploading the activation key, I am getting the template on the browser proxy server refusing connections.
-
 -   Unable to see subscription details on the support page from SafeSquid User Interface.
 
 ## Root Causes
-
 -   SafeSquid server is unable to contact the SafeSquid Subscription server
-
 -   The file (activation key) was not uploaded correctly.
-
 -   The file name you uploaded is other than **actiavtion_key**.
-
 -   After uploading the activation key, the page shows the proxy server refusing connections.
-
 -   SafeSquid service restart was not done properly.
 
 ## Troubleshooting
-
 ### Case 1: Check for the activation_key file on the SafeSquid server.
 
 Run the below command and check for the file
 
-> ls -lrt /usr/local/safesquid/security/
-
+```bash
+ls -lrt /usr/local/safesquid/security/
+```
 root@dev:~# ls -lrt /usr/local/safesquid/security/
 
 total 60
@@ -61,12 +53,13 @@ Note: Restart SafeSquid service from the SafeSquid Interface will work, only if 
 
 Otherwise, you can directly restart the SafeSquid service from the LINUX box by using the below commands
 
-> /etc/init.d/safesquid stop
-
-> /etc/init.d/safesquid start
-
+```bash
+/etc/init.d/safesquid stop
+```
+```bash
+/etc/init.d/safesquid start
+```
 ### Case 2: Check the connection to the Subscription server, by using the following commands
-
 root@dev:~# ping swgupdates2.safesquid.net
 
 PING swgupdates2.safesquid.net (104.236.27.61) 56(84) bytes of data.
@@ -97,8 +90,6 @@ After uploading the activation key, the page shows showing proxy server refusing
 
 SafeSquid restart was not done, start the SafeSquid from the server console by using the below command:
 
-> /etc/init.d/safesquid start
-
-
-
-## What should I do if SafeSquid fails to start or crashes unexpectedly?
+```bash
+/etc/init.d/safesquid start
+```

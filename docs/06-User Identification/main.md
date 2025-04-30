@@ -10,21 +10,13 @@ SafeSquid has a dynamic user and group identity management system with configura
 
 In shared workstations, guest, and static IP networks, the access control policies are defined based on device-specific network signatures. Moreover, devices that do not support credential verification, like printers, and IoT devices, are identified based on IP address. It also enables you to secure varied network segments differently.
 
-### Integrate your enterprise directory service
+### [Integrate your enterprise directory service](/docs/06-User%20Identification/02-Directory%20Services/main.md)
 
-For enterprises with centralized user management infrastructure, connect your LDAP-based directory services, like [Microsoft® Windows Active Directory](https://help.safesquid.com/portal/en/kb/articles/a-comprehensive-guide-on-how-to-integrate-windows-active-directory) or [OpenLDAP](https://help.safesquid.com/portal/en/kb/articles/integrate-openldap-with-safesquid), with SafeSquid to authenticate users.
+For enterprises with centralized user management infrastructure, connect your LDAP-based directory services, like [Microsoft® Windows Active Directory](/docs/06-User%20Identification/02-Directory%20Services/Active%20Directory/main.md) or [OpenLDAP](/docs/06-User%20Identification/02-Directory%20Services/OpenLDAP/main.md), with SafeSquid to authenticate users.
 
 SafeSquid is also optimised to concurrently connect with multiple directory services. When credentials are entered, SafeSquid intelligently verifies the user from the appropriate directory service and efficiently caches user data.
 
 Furthermore, SafeSquid can be configured for [Kerberos-based authentication](/docs/06-User%20Identification/Kerberos%20SSO.md) for Single Sign On (SSO).
-
-### Integrate with PAM service
-
-For flexible and modular authentication, SafeSquid supports integration with all Linux-PAM authentication modules, including biometric, and custom authentication schemes.
-
-### Multi-Factor Authentication
-
-For heightened security, combine network-based and credential-based authentication.
 
 ### [Create User Groups](/docs/06-User%20Identification/03-Network%20Identifiers/Network%20Identifiers.md)
 

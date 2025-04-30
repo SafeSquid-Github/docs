@@ -10,7 +10,6 @@ keywords:
 ---
 
 ## Overview
-
 Here i am integrating my Active Directory with following information.
 
 **IP Address**: 192.168.247.10
@@ -21,28 +20,22 @@ Here i am integrating my Active Directory with following information.
 
 **User Name**: cn=admin,dc=safesquid,dc=net
 
-See more about Integrate LDAP section, here we explained the working of each field in the Integrate LDAP section.
 
 ## Prerequisites
-
 Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, password, base dn, domain) in configuration are correct. If any value is wrong SafeSquid will fail to fetch the entries.
 
 ## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to configure Page
-
 ![clicking on configure in safesquid interface](/img/How_To/Integrate_openLDAP_for_simple_authentication/image1.webp)
 
 ## Go to Application Setup 
-
 ![clicking on application setup](/img/How_To/Integrate_openLDAP_for_simple_authentication/image2.webp)
 
 ## Go to Integrate LDAP
-
 ![going to integrate LDAP in application setup section](/img/How_To/Integrate_openLDAP_for_simple_authentication/image3.webp)
 
 ## Enable Integrate LDAP 
-
 ![ensuring the LDAP section is enabled. by default it is set as false](/img/How_To/Integrate_openLDAP_for_simple_authentication/image4.webp)
 
 ![clicking on the global edit ](/img/How_To/Integrate_openLDAP_for_simple_authentication/image5.webp)
@@ -52,11 +45,9 @@ Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, passw
 ![clicking on save policy](/img/How_To/Integrate_openLDAP_for_simple_authentication/image7.webp)
 
 ## Go to LDAP servers
-
 ![going to LAP servers tab](/img/How_To/Integrate_openLDAP_for_simple_authentication/image8.webp)
 
 ## Add a new entry 
-
 ![creating a new entry by clicking add new button](/img/How_To/Integrate_openLDAP_for_simple_authentication/image9.webp)
 
 ![some default values are set to some options. leaving enabled as true and writing comment for future reference](/img/How_To/Integrate_openLDAP_for_simple_authentication/image10.webp)
@@ -84,19 +75,16 @@ Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, passw
 ![clicking on ldap entries tab to check for entries](/img/How_To/Integrate_openLDAP_for_simple_authentication/image21.webp)
 
 ## Test User extraction 
-
 ![showing all the users from LDAP server in ldap entries tab](/img/How_To/Integrate_openLDAP_for_simple_authentication/image22.webp)
 
 ## Save Configuration 
-
 ![clicking on save config to save it](/img/How_To/Integrate_openLDAP_for_simple_authentication/image23.webp)
 
 **When you click on Save config, it will give a prompt for asking the confirmation to store your configuration into the cloud.**
 
 **Select Yes only in below cases:**
 
-**if you want to use this same configuration in other SafeSquid instances.**
+1. if you want to use this same configuration in other SafeSquid instances.
+2. if your total configuration in all sections is completed and validated.
 
-**if your total configuration in all sections is completed and validated.**
-
-**Otherwise select No and click on submit.**
+Otherwise select No and click on submit.

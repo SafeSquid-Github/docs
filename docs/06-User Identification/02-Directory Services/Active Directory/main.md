@@ -10,31 +10,22 @@ keywords:
 ---
 
 ## Overview
-
 After successfully installing AD on the machine, we need to set up our AD. In this document we will show you how to set up Active Directory and add new users/ groups/ computers in our AD. After that we will have to link our LDAPAdmin with Active Directory. Now finally we need to integrate our LDAP with SafeSquid and we will be able to see all the created users and user groups in our SafeSquid dashboard.
 
 ## Prerequisite
-
-Need to have SafeSquid installed in your system.
-
-Install LDAP Admin in your machine link to download: [https://sourceforge.net/projects/ldapadmin/](https://sourceforge.net/projects/ldapadmin/)
-
-Need to have the windows Server up and running on a VM or any machine and must be connected to the internet.
-
-AD needs to be installed, activated and running on the server.
-
+- Need to have SafeSquid installed in your system.
+- Install LDAP Admin in your machine link to download: [https://sourceforge.net/projects/ldapadmin/](https://sourceforge.net/projects/ldapadmin/)
+- Need to have the windows Server up and running on a VM or any machine and must be connected to the internet.
+- AD needs to be installed, activated and running on the server.
 Follow this link to install AD and activate AD in windows server: http://pc-addicts.com/setup-active-directory-server-2016/ or
 
 this link: https://dinika-15.medium.com/installing-active-directory-on-windows-server-2012-r2-e9e614770588
 
 ## Client Scenario
-
 Here we will create an Active Directory named mann-ad.safesquid. Then we will create a new user who's First Name is 'Mann' and Last Name is 'Prajapati'. This user's directory will be mann-ad.safesquid and his Logon name will be 'Mann'. After this while linking LDAPAdmin with AD we will give the Connection Name as 'SafeSquid AD' and the Host IP as 192.168.0.108. In the Base section we'll enter 'DC=mann-ad, DC=safesquid'. Now while creating account at the end set the Username as Administrator@mann-ad.safesquid and put a strong password. Next step is to integrate LDAP with SafeSquid. So in Ldap Basedn enter 'dc=mann, dc=safesquid' and in Ldap Domain enter mann.safesquid.
 
 ## Procedure
-
 ### Step 1: To add or view the users
-
 Click on Active Directory Users and Computers.
 
 ![in tools section of AD server, going to active directory users and computers](/img/How_To/Integrate_AD/image1.webp)
@@ -56,7 +47,6 @@ Enter your password. Then click on finish.
 ![setting up a strong password](/img/How_To/Integrate_AD/image5.webp)
 
 ### Step 2: Linking LDAPAdmin with AD
-
 Click on the connect Icon on the top left corner.
 
 ![in LDAPadmin clicking on connect icon](/img/How_To/Integrate_AD/image6.webp)
@@ -94,7 +84,6 @@ Now you will see the list of all the users.
 ![showing the list of all users](/img/How_To/Integrate_AD/image14.webp)
 
 ### Step 3: Integration with SafeSquid
-
 Now go to http://safesquid.cfg/ and click on configure.
 
 ![clicking on configure in safesquid interface](/img/How_To/Integrate_AD/image15.webp)

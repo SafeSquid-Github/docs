@@ -1,7 +1,6 @@
 # Integrate OpenLDAP with SafeSquid
 
 ## Overview
-
 Here I am integrating my Active Directory with following information.
 
 **IP Address: 192.168.247.10**
@@ -12,28 +11,22 @@ Here I am integrating my Active Directory with following information.
 
 **User Name: cn=admin,dc=safesquid,dc=net**
 
-See more about [**Integrate LDAP section**](https://help.safesquid.com/portal/en/kb/articles/integrate-ldap), here we explained the working of each field in the Integrate LDAP section.
 
 ## Prerequisites
-
 Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, password, base dn, domain ) in configuration are correct. If any value is wrong SafeSquid will fail to fetch the entries.
 
-## [Access the SafeSquid User Interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to configure Page
-
 ![Access configure page to Integrate OpenLDAP with safesquid](/img/How_To/Integrate_OpenLDAP_With_SafeSquid/image1.webp)
 
 ## Go to Application Setup
-
 ![Go to Application setup to Integrate OpenLDAP with safesquid](/img/How_To/Integrate_OpenLDAP_With_SafeSquid/image2.webp)
 
 ## Go to Integrate LDAP
-
 ![Go to Integrate LDAP section to integrate OpenLDAP with safesquid](/img/How_To/Integrate_OpenLDAP_With_SafeSquid/image3.webp)
 
 ## Enable Integrate LDAP 
-
 ![Enable global section as True in Integrate LDAP section to integrate OpenLDAP with safesquid](/img/How_To/Integrate_OpenLDAP_With_SafeSquid/image4.webp)
 
 ![Enable global section as True in Integrate LDAP section to integrate OpenLDAP with safesquid](/img/How_To/Integrate_OpenLDAP_With_SafeSquid/image5.webp)
@@ -43,11 +36,9 @@ Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, passw
 ![Save policy after enable global section as True in Integrate LDAP section to integrate OpenLDAP with safesquid](/img/How_To/Integrate_OpenLDAP_With_SafeSquid/image7.webp)
 
 ## Go to LDAP servers
-
 ![Select LDAP server to integrate OpenLDAP with safesquid](/img/How_To/Integrate_OpenLDAP_With_SafeSquid/image8.webp)
 
 ##  Add a new entry
-
 ![Add new entry in LDAP server section to integrate OpenLDAP with safesquid](/img/How_To/Integrate_OpenLDAP_With_SafeSquid/image9.webp)
 
 ![In new entry enabled policy as a true in LDAP server section to integrate OpenLDAP with safesquid](/img/How_To/Integrate_OpenLDAP_With_SafeSquid/image10.webp)
@@ -77,20 +68,17 @@ Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, passw
 ![Click on LDAP entires to check fetched entries from LDAP server](/img/How_To/Integrate_OpenLDAP_With_SafeSquid/image22.webp)
 
 ## Test User extraction 
-
 ![Result of user extraction ](/img/How_To/Integrate_OpenLDAP_With_SafeSquid/image23.webp)
 
 ## Save Configuration 
-
 ![Save Configuration of policy of integrate OpenLDAP with safesquid](/img/How_To/Integrate_OpenLDAP_With_SafeSquid/image24.webp)
 
 When you click on Save config, it will give a prompt for asking the confirmation to store your configuration into the cloud.
 
 Select Yes only in below cases:
 
-if you want to use this same configuration in other SafeSquid instances.
-
-if your total configuration in all sections is completed and validated.
+1. if you want to use this same configuration in other SafeSquid instances.
+2. if your total configuration in all sections is completed and validated.
 
 Otherwise select No and click on submit
 

@@ -15,7 +15,6 @@ Keywords:
 ---
 
 ## Issues
-
 When I access the website, it displays the connection failed error "**Connection to 192.168.27.30:80 failed**"
 
 When I access https://abc.safesquid.com/ via proxy and log in using my corporate email ID, it displays a connection fail error "**Connection to abc.safesquid.com:443 failed**"
@@ -23,13 +22,11 @@ When I access https://abc.safesquid.com/ via proxy and log in using my corporate
 ![Error showing "Connection to abc.safesquid.com:443 failed"](/img/Troubleshooting/Connection_failure_to_websites/image1.webp)
 
 ## Root Causes
-
 If the website which you are trying to reach is not up
 
 If you are unable to reach the particular website because of internet slowness issues.
 
 ## Troubleshooting
-
 ### Case1
 
 Check whether the website is opening without proxy configuration inside the browser (No proxy in the middle).
@@ -38,12 +35,14 @@ If the website is not opening without a proxy, then it is not the problem with S
 
 If it is opening without a proxy, then run the below command to verify whether the website is resolving or not.
 
-Command: nslookup 192.168.27.30
-
+```jsx title="Command"
+nslookup 192.168.27.30
+```
 **To check SafeSquid server is connecting to** 192.168.27.30 on port 80
 
-Command: telnet WEBSITE PORT_TO_CONNECTON
-
+```jsx title="Command"
+telnet WEBSITE PORT_TO_CONNECTON
+```
 you will get this output if the website is not able to connect
 
 telnet 192.168.27.30 80
@@ -58,8 +57,9 @@ If the website can connect you will get the below output
 
 you will get this output if the website is not able to connect:
 
-Command:telnet 192.168.27.30 80
-
+```jsx title="Command"
+telnet 192.168.27.30 80
+```
 you will get this output if the website can connect
 
 root@dev:~# telnet 192.168.27.30 80
@@ -78,8 +78,9 @@ To check the configuration on the local internal network and its address record 
 
 Run the below commands on the command prompt for **abc.safesquid.com**
 
-Command: nslookup abc.safesquid.com
-
+```jsx title="Command"
+nslookup abc.safesquid.com
+```
 If the website is resolving to the local internal network **e.g.** (10.10.11.78,10.10.128.106)
 
 You must do the conditional forwarding to safesquid local caching DNS server.
@@ -88,8 +89,9 @@ Go to the path: **/etc/bind/**
 
 and create a file.
 
-Command: vim named.conf
-
+```jsx title="Command"
+vim named.conf
+```
 root@swg:/etc/bind# vim named.conf
 
 // This is the primary configuration file for the BIND DNS server named.
@@ -118,12 +120,14 @@ include "/etc/bind/abc.safesquid.com";
 
 Go to the path
 
-Command: cd /etc/bind/
-
+```jsx title="Command"
+cd /etc/bind/
+```
 And create a file
 
-Command: vim abc.safesquid.co
-
+```jsx title="Command"
+vim abc.safesquid.co
+```
 Add below lines
 
 ```
@@ -135,6 +139,7 @@ forwarders {10.10.124.101;};
 
 Command to restart bind9 service:
 
-Command:/etc/init.d/bind9 restart
-
+```jsx title="Command"
+/etc/init.d/bind9 restart
+```
 Verify whether the website is resolving to the local IP successfully or not.

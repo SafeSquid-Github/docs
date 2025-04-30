@@ -26,7 +26,9 @@ YourSafeSquid server FQDN and click on Set URL
 
 You can verify yourSafeSquid server FQDN using the command:(on Linux box)
 
-> hostname -f
+```bash
+hostname -f
+```
 
 ![](/img/Application_Eco-System/Manage_VPN_settings_of_Web_Security_Client/image2.webp)
 

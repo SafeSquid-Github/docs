@@ -11,11 +11,9 @@ Keywords:
 ---
 
 ## Overview
-
 A proxy server is an intermediary server that forwards requests for content from multiple clients to different servers across the Internet. A reverse proxy server is a type of proxy server that typically sits behind the firewall in a private network and directs client requests to the appropriate backend server. A reverse proxy provides an additional level of abstraction and control to ensure the smooth flow of network traffic between clients and servers.
 
 ## Benefits of SafeSquid Reverse Proxy
-
 **Web acceleration**
 
 SafeSquid Reverse proxies can compress inbound and outbound data, as well as cache commonly requested content, both of which speed up the flow of traffic between clients and servers. They can also perform additional tasks such as SSL encryption to take load off of your web servers, thereby boosting their performance.
@@ -74,8 +72,9 @@ Make sure that port 80 is free in proxy server, because it should not be allocat
 
 You can verify it by using below command:
 
-> **netstat -tulnp**
-
+```bash
+netstat -tulnp
+```
 ![Check port 80 is free in proxy server by using netstat command](/img/How_To/How_to_configure_reverse_proxy/image1.webp)
 
 Here you will see there no service allocated to port 80
@@ -84,12 +83,14 @@ Enable forwarding option in **/etc/sysctl.conf file**
 
 Replace this line as**: net.ipv4.ip_forward=0 to net.ipv4.ip_forward=1**
 
-> **net.ipv4.ip_forward=1**
-
+```bash
+net.ipv4.ip_forward=1
+```
 Then add the Iptables rule to redirect the traffic from 80 to 8080:
 
-> **iptables -A PREROUTING -t nat -p tcp --dport 80 -j REDIRECT --to 8080**
-
+```bash
+iptables -A PREROUTING -t nat -p tcp --dport 80 -j REDIRECT --to 8080
+```
 In proxy block all websites except your website, so that the proxy does not to be an open proxy.
 
 See how to allow single website

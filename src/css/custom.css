@@ -32,3 +32,12 @@
 .hero--primary {
   --ifm-hero-text-color: #FFFFFF;
 }
+
+element {
+  margin-top: 5px;
+}
+
+.custom-navbar-logo {
+  height: 20px !important; /* Adjust as needed */
+  margin-top: 5px;
+}

@@ -9,7 +9,6 @@ keywords:
 ---
 
 ## Overview
-
 Use Categorize Websites to Manage Web-Site Categorization.
 
 Review and modify the categorisation of any website.
@@ -25,17 +24,14 @@ It will show you the details of the Total Number of Categories, the last updated
 ## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ## Go to the configure page
-
 ![clicking on configure in safesquid interface](/img/Configure/Custom_Settings/Categorize_WebSites/image1.webp)
 
 ## Go to Custom Settings: Categorize Websites.
 
 ## CATEGORY EDITOR
-
 Here you can edit or modify the previously existing category of any website.
 
 ### Search for category
-
 Here you can find the category of any website in which it is categorised.
 
 Enter the website/domain name in the search box and click on the search button, dialog box of Categories will appear below. In this dialog box, you will get a category list (comma separated) in which it is categorized.
@@ -43,7 +39,6 @@ Enter the website/domain name in the search box and click on the search button, 
 ![entering the website in the categorize web-sites section in custom settings](/img/Configure/Custom_Settings/Categorize_WebSites/image2.webp)
 
 ### Add your website to the custom category.
-
 ![adding your website and clicking on search](/img/Configure/Custom_Settings/Categorize_WebSites/image3.webp)
 
 Upload website files.

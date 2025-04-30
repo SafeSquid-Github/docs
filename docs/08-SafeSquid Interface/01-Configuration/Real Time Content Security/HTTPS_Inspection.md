@@ -12,7 +12,6 @@ keywords:
 ---
 
 ## Overview
-
 This section allows you to configure the overall operation to handle scanning of connections under HTTPS (HTTP over SSL).
 
 SSL (Secure Sockets Layer), is the standard security technology for encrypting a connection between a web server and a browser.
@@ -24,33 +23,21 @@ You must set this carefully, depending on the usage of web applications handling
 All HTTPS requests are matched with the rules defined under the HTTPS scanning policies and actions are taken based on the matching entry.
 
 ## HTTPS Inspection Features
-
 Having HTTPS inspection features some interesting things that you can do with this SafeSquid SWG
-
 -   Block access to consumer Google accounts
-
 -   Give Read-only access to the Facebook and Twitter sites. Users can able to login into their accounts but they cannot able to do post, comment, like, or chat.
-
 -   Enforce safe search or safety mode-based searches in Google, Bing, and Yahoo search engines, and, we can enforce in any websites that are offering safety mode-based search.
-
 -   Block images over Google
-
 -   Filter text and images over HTTP and HTTPS sites
-
 -   Allow specified users to access or log into specified HTTP and HTTPS sites and block others
-
 -   Can use Virus scanning for both HTTP and HTTPS sites.
-
 -   Blocking attachments to Gmail and Block Gmail ChatWU.
 
 ## Prerequisites
-
 ### Generate SSL certificates from self-service portal
-
 First, generate SSL certificates from the self-service portal before configuring HTTPS inspection.
 
 ### SSL Certs/Cache
-
 **Download**: Download the SafeSquid certificate.
 
 **Upload**: Upload the SafeSquid Certificate.
@@ -58,30 +45,22 @@ First, generate SSL certificates from the self-service portal before configuring
 **Cache Refresh**: Refresh the cache.
 
 ### Importing SafeSquid SSL certificate into your browser
-
 Install SafeSquid SSL certificates into the browsers. If you did not install a certificate into the browser and HTTPS inspection is enabled, then you will get an error while accessing the HTTPS websites.
 
 
 ## Enabling HTTPS inspection on the SafeSquid User Interface
-
-## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
-
+### [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 ### Go to Configure Page
-
 ![Goto configure.webp](/img/Configure/Real_Time_Content_Activity/HTTPS_Inspection/image1.webp)
 
 ### Go to Real-time content security
-
 ![Go to real time content security.webp](/img/Configure/Real_Time_Content_Activity/HTTPS_Inspection/image2.webp)
 
 ### Go to HTTPS Inspection
-
 ![HTTPS Inspection4.webp](/img/Configure/Real_Time_Content_Activity/HTTPS_Inspection/image3.webp)
 
 ### Global
-
 #### Enabled
-
 Enable or Disable this section.
 
 TRUE: Enable HTTPS inspection section.
@@ -97,7 +76,6 @@ FALSE: Disable HTTPS inspection section.
 ![HTTPS Inspection8.webp](/img/Configure/Real_Time_Content_Activity/HTTPS_Inspection/image7.webp)
 
 ### Inspection Policies
-
 Each CONNECT request is tested only once for the applicability of the following entries. The first matching entry is applied, and the rest are ignored.
 
 If the matching entry deems that a DeepScan should not be performed, the CONNECT request is handled WITHOUT inspecting the subsequent requests.
@@ -106,7 +84,9 @@ If, however, the matching entry deems a DeepScan should be performed, the connec
 
 If the remote web server fails to meet the desired standards, connection to that webserver is terminated.
 
-**Note**: DeepScan should only be performed on encrypted connections if the underlying application protocol is HTTP. Applications like Google Drive, Subversion Client, WinScp, etc., do not work if you attempt a DeepScan on them.
+:::note
+DeepScan should only be performed on encrypted connections if the underlying application protocol is HTTP. Applications like Google Drive, Subversion Client, WinScp, etc., do not work if you attempt a DeepScan on them.
+:::
 
 ![HTTPS Inspection9.webp](/img/Configure/Real_Time_Content_Activity/HTTPS_Inspection/image8.webp)
 
@@ -123,7 +103,6 @@ Enforce SSL scanning for all websites.
 Enable or Disable the above policies as per the requirement or add a new policy for the new requirement.
 
 #### Enabled
-
 Enable or Disable this entry
 
 **TRUE**: Enable this entry.
@@ -131,13 +110,11 @@ Enable or Disable this entry
 **FALSE**: Disable this entry.
 
 #### Comment
-
 For documentation and future references, explain the relevance of this entry with your policies.
 
 That is, by reading the policies, a future user can understand the purpose of that entry.
 
 #### Profiles
-
 Specify the Profiles applicable for this entry.
 
 This entry will be applicable only if the connection has any one of the specified profiles.
@@ -147,7 +124,6 @@ Leave it Blank, to apply for all connections irrespective of any applied profile
 To avoid application to a connection that has a profile, use a negated profile (!profile).
 
 #### DeepScan
-
 Decide if you want to enable scanning within encrypted SSL connections matching this entry.
 
 **TRUE**: Select this option to enable Deep Scanning.
@@ -155,7 +131,6 @@ Decide if you want to enable scanning within encrypted SSL connections matching 
 **FALSE**: Select this option to disable Deep Scanning.
 
 #### Block Access to Sites which do not have an SSL Certificate
-
 Decide whether Sites that do not have SSL certificates should be blocked or not.
 
 **TRUE**: This is the default and safe option.
@@ -163,7 +138,6 @@ Decide whether Sites that do not have SSL certificates should be blocked or not.
 **FALSE**: Select this option only if you want to allow SSL access to websites without SSL certificates.
 
 #### Acceptable Errors in SSL Verification
-
 SafeSquid verifies the SSL certificate to remote SSL web servers.
 
 You can specify here, the acceptable level of error.
@@ -171,7 +145,6 @@ You can specify here, the acceptable level of error.
 Only in specific or exceptional cases choose anything besides X509_V_OK.
 
 #### Block domain mismatch in the website SSL certificate
-
 Decide whether domain name mismatch is to be allowed or not.
 
 SafeSquid validates the DNS and Common Name in the SSL certificates supplied by the remote web server.
@@ -183,7 +156,6 @@ Only in exceptional cases set this as FALSE.
 **FALSE:** Select this option only if you want to allow SSL access to websites that are using certificates issued to domains other than the website.
 
 ### Example
-
 #### Rule#1
 
 I want to allow websites that are self-hosted with self-signed certificates.
@@ -193,15 +165,14 @@ Connection with profile "ALLOW SELF SIGNED CERT WEBSITES" will bypass SSL error 
 ![Slide1-HttpsInspection.webp](/img/Configure/Real_Time_Content_Activity/HTTPS_Inspection/image10.webp)
 
 ### Save Configuration
-
 ![Save config final.webp](/img/Configure/Real_Time_Content_Activity/HTTPS_Inspection/image11.webp)
 
 ### No configuration required in the Setup tab
-
-**Note:** In new versions of SafeSquid released after June 2017, the setup tab is removed. You will see only three subsections in the HTTPS inspection section.
+:::note
+In new versions of SafeSquid released after June 2017, the setup tab is removed. You will see only three subsections in the HTTPS inspection section.
+:::
 
 ### Setup
-
 List of Security Passphrase(s) or Server Policies required to generate or load an existing ROOT CA SSL Certificate (RCSC).
 
 The first matching entry below is used and the remaining is ignored.
@@ -223,7 +194,6 @@ Click on Add below, to add a new entry.
 ![Ssl-setup.jpg](/img/Configure/Real_Time_Content_Activity/HTTPS_Inspection/image12.webp)
 
 #### Enabled
-
 Enable or Disable this entry
 
 **TRUE:** Enable this entry.
@@ -231,17 +201,13 @@ Enable or Disable this entry
 **FALSE:** Disable this entry.
 
 #### Comment
-
 For documentation and future references, explain the relevance of this entry with your policies.
 
 #### Proxy Host
-
 Please enter the hostname of the proxy server as specified in the Startup Parameters.
 
 #### Encrypted Password
-
 Please enter the Encrypted password for disk-based caching of SSL certificates.
 
 #### SSL Cache Store Size
-
 Please enter the size of memory for SSL session information.

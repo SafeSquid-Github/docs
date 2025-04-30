@@ -10,7 +10,6 @@ keywords:
 ---
 
 ## Overview
-
 When any employee/user from your network leaked the confidential information intentionally or unintentionally, then what will happen? Huge loss to your organization.
 
 In your organization various mediums and modes comes into play for data leakage. Users can upload important document to internet, even though your content filtering software does not allow users to upload Microsoft Word and Microsoft XL files, users can act smart and creates an archive using those files and tries to upload achieved files. Sometimes policy in your organization is to not block archive files since network administrator/ manager uses archive files to transfer log files of large sizes.
@@ -25,7 +24,6 @@ To overcome such problems SafeSquid comes up with **Advanced DLP** solution em
 The Advanced DLP solution can be managed from SafeSquid Self Service portal from where you can create various keyword expression matches. SafeSquid SWG will download those keyword expressions and loads into memory. When any user tries to upload any archive file or write an email, SafeSquid SWG will analyze Post data and transmit it to the ClamAV daemon for Signatures verification. If the keyword expression matches with your email or file content then ClamAV daemon responds. SafeSquid will further take respective action based on policy you have created for those keywords matching.
 
 ## [Manage Keyword Signatures using Self Service portal](/docs/09-Profiling%20Engine/Application%20Signatures.md)
-
 ## Configure SafeSquid SWG for using Custom Signatures
 
 On configure page of SafeSquid interface open the Real time content security side menu. Click on Clam antivirus section to configure the policy.
@@ -52,15 +50,14 @@ Click on bottom left Icon to save the configuration.
 
 ![Save default policy in the subsection for virus signature detection.](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image6.webp)
 
-**Note:** Once you configured the policy as shown above go to Support page and Click on Refresh button for refreshing subscription details.
-
+:::note
+Once you configured the policy as shown above go to Support page and Click on Refresh button for refreshing subscription details.
+:::
 ## Testing Signature detection
-
 HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document -[ How To Enable HTTPS Inspection ](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
 
 ### Test using office documents
-
-Set proxy settings in client browser and open Gmail. Confirm the HTTPS traffic is verified/inspected by SafeSquid. Otherwise SafeSquid will not be able to block the mail which contains your mentioned keyword(s).
+Set proxy settings in client browser and open Gmail. Confirm the HTTPS traffic is verified/inspected by SafeSquid.Otherwise SafeSquid will not be able to block the mail which contains your mentioned keyword(s).
 
 ![Testing Signature detection that Block Emails or Files including archives or Social Posts using Keywords](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image7.webp)
 
@@ -75,13 +72,11 @@ Now try to attach your sample Microsoft file into mail. SafeSquid Should be able
 That's it. Your created signatures are in the action and your data is safe. 
 
 ### Test using archive files
-
 Now try to attach your archive file into your mail and you should see that archive file is also blocked by SafeSquid.
 
 ![Testing using archive files by default policy for virus signature detection.](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image10.webp)
 
 ### Test using emails
-
 Create an email draft using set of keywords for which you have created signatures.
 
 Before sending the mail SafeSquid will identify the keywords and will block the mail. You can see that **Save Failed** in gmail compose box.
@@ -93,7 +88,6 @@ You can observe on your browser, when you click on send button, then the mail w
 ![Test using emails by default policy for virus signature detection.](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image12.webp)
 
 ### Test using social media posts
-
 Open www.facebook.com and login with your credentials.
 
 Now try to post a status update using your keywords. When you click on submit button, you will not see your post on Facebook page.
@@ -111,31 +105,31 @@ Now try to post the comment, you will not be able to post any comments with thos
 You can perform same tests with any of the website by posting data with your specified keywords. You will not be able to post any important information having the keywords mentioned.
 
 ## Troubleshooting 
-
 ### Check SafeSquid logs
-
 You can check SafeSquid logs for troubleshooting, if things are not working as explained above.
 
 ![If default policy for virus signature detection is not working then refer SafeSquid logs for troubleshooting, ](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image16.webp)
 
 ### Check ClamAV daemon Status
-
 You can check whether ClamAV daemon is running or not using following command.
-**       netstat -lnp | grep clamd**
+```bash
+netstat -lnp | grep clamd
+```
 
 ![Check ClamAV daemon Status in proxy sever command line](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image17.webp)
 
 If you found that ClamAV daemon is not running then restart using following command.
-**    /etc/init.d/clamav-daemon restart**
-
+```bash
+/etc/init.d/clamav-daemon restart
+```
 ### Check Signatures File
 
 If ClamAV service is running then check whether you have signatures database file on disk or not using locate command.
-
+```
    updatedb && locate safesquid.ldb
    /var/lib/clamav/safesquid.ldb
    /var/lib/safesquid/content_signatures/safesquid.ldb
-
+```
 ### Check ANTIVIRUS profiles applicability. 
 
 ![Check ANTIVIRUS profiles applicability](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image18.webp)

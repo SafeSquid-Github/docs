@@ -10,10 +10,7 @@ keywords:
 ---
 
 ## Proxy Authentication
-
-Proxies can serve as access-control devices.
-
-HTTP defines a mechanism called proxy authentication that blocks requests for content until the user provides valid access-permission credentials to the proxy.
+Proxies can serve as access-control devices. HTTP defines a mechanism called proxy authentication that blocks requests for content until the user provides valid access-permission credentials to the proxy.
 
 ![proxy flow](/img/How_To/Setup_Authentication/image1.webp)
 
@@ -26,9 +23,7 @@ Once the credentials are obtained, the client resends the request, providing the
 If the credentials are valid, the proxy passes the original request along the chain; otherwise, another 407 reply is sent.
 
 ## There are 3 Ways how someone can Setup & use Authentication
-
 ### SafeSquid Users
-
 This is one of the simplest methods which one could use for authentication.
 
 Firstly, SafeSquid needs to be installed and running on the machine.
@@ -49,19 +44,15 @@ As soon as you click on the save button it will show a prompt for username and p
 
 That's how easy it is to authenticate in SafeSquid.
 
-Disadvantages:
+**Disadvantages:**
 
-It has a few drawbacks of itself.
+1. It has a few drawbacks of itself.
+2. It is not that secured since the password field is visible and the same password is set for all the users.
+3. Therefore, if you want to set different password then you must make new policy.
+4. Even though it is simple to configure it is an arduous work to manage it.
+5. It is suitable if the number of users is less than 10.
 
-It is not that secured since the password field is visible and the same password is set for all the users.
-
-Therefore, if you want to set different password then you must make new policy.
-
-Even though it is simple to configure it is an arduous work to manage it.
-
-It is suitable if the number of users is less than 10.
-
-**SafeSquid Linux Machine Users**
+### SafeSquid Linux Machine Users
 
 For this principle you will be making the users in the Linux machine instead of making them in the configure page.
 
@@ -89,17 +80,12 @@ As soon as you click on the save button it will show a prompt for username and p
 
 That's how easy it is to authenticate in safesquid through creating user in linux machine and using PAM Authentication.
 
-Disadvantage:
+**Disadvantage:**
 
-Even though it is more secured then the SafeSquid User one it is still difficult to manage the users in the linux machine.
-
-It is suitable for small organizations.
-
-
-
+1. Even though it is more secured then the SafeSquid User one it is still difficult to manage the users in the linux machine.
+2. It is suitable for small organizations.
 
 ##  Adding users using SafeSquid interface for authentication
-
 If you do not have an Active Directory (AD) server to integrate with SafeSquid LDAP, but you want authenticate users by assigning usernames and passwords to your users.
 
 ![clicking on configure in safesquid interface](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image1.webp)

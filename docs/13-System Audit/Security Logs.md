@@ -10,18 +10,26 @@ keywords:
 ---
 
 ## Overview
-
 Logs provide a timeline of events for the Linux operating system, applications and system, and are very useful and valuable troubleshooting tool when you encounter any problem. When any issue/problem occurs then system administrator will analyze the log files first.
 Most of the log files are stored in plain text form and are stored in the /var/log directory path.
 
 There are 2 type of logs which are essential with SafeSquid installed on your server. One is SafeSquid application log and other is safesquid activity log which are written in system logs.
 To view any log file you can use any one of the following commands:
-> less /var/log/logfilename
-> more -f /var/log/logfilename
->  /var/log/logfilename
-> tail -f /var/log/logfilename
-> grep -i error /var/log/logfilename
-
+```bash
+less /var/log/logfilename
+```
+```bash
+more -f /var/log/logfilename
+```
+```bash
+ /var/log/logfilename
+```
+```bash
+tail -f /var/log/logfilename
+```
+```bash
+grep -i error /var/log/logfilename
+```
 ## SafeSquid Application Logs
 
 SafeSquid application produces these logs. Logs contain all kinds of error messages, warnings or other events written by the SafeSquid. These messages can provide logical, high-level information that are connected to specific use cases. Each log message needs to provide useful information that helps you understand the behavior of SafeSquid.
@@ -94,8 +102,9 @@ Similarly, if you wished to view absolutely everything (and run the risk of gene
 If you wished to produce just debug logs you should set the LOGLEVEL to 134217728.
 If you wished to record all activities and debug information, you should set the LOGLEVEL to 268435455.
 
-**NOTE:** Adjusting this value requires a restart of SafeSquid service.
-
+:::note
+Adjusting this value requires a restart of SafeSquid service.
+:::
 This file stored all data related **to every request and response** processed by the SafeSquid. These logs will be useful for debugging purpose.
 
 [Access the SafeSquid  User Interface ](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
@@ -117,7 +126,6 @@ You can also search for particular string by using search bar. '"**Resume**" bu
  
 
 ### Extended logs 
-
 The extended.log (NCSA / Extended log format) records maximum details of each request handled by the proxy application. Extended logs will be helpful for generation of reports to analyze the user activities.
 
 **FORMAT / LEGEND:**
@@ -295,7 +303,6 @@ You can use **search option** to find information related to specific Time, 
  
 
 ### Performance logs 
-
 Performance logs will be helpful to analyze the performance of SafeSquid. 
 SafeSquid Performance logs provide performance metrics to identify any outage due to resource shortfall, or failure in Internet Connectivity, or surge in web-traffic, etc.
 SafeSquid performance log has been extended to make it easier for analysis with third-party software such as GNU Plot that analyses records on a progressive per line basis.

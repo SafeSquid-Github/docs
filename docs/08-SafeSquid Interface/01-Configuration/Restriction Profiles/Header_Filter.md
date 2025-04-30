@@ -10,7 +10,6 @@ keywords:
 ---
 
 ## Overview
-
 Control how SafeSquid modifies the HTTP header messages exchanged between your Internet Clients like web browsers and the requested web service.
 
 You can add a new header directive, delete a header directive, or modify an existing header directive.
@@ -28,7 +27,6 @@ Setting the Default Policy to Allow in the Global Sub-Section, permits all HTTP 
 Similarly setting the Default policy to Deny shall block all non-mandatory HTTP headers from being exchanged, unless a policy in the Allow list, explicitly permits.
 
 ## Global
-
 Here, you can control how the SafeSquid edits the HTTP header messages that pass between your browser and the Internet.
 You can increase internet usage privacy levels.
 
@@ -41,13 +39,11 @@ Apart from allowing or denying request or response headers, you can also use Ins
 This section analyzes:
 
 1. Request header patterns that are passed from browsers to webservers.
-
 2. Response header patterns that are coming from webservers to clients.
 
 ![](/img/Configure/Restriction_Profiles/Header_Filter/image1.webp)
 
 ### Enabled
-
 Enable or Disable the header filter section.
 
 **TRUE:** Enable header filter section.
@@ -55,7 +51,6 @@ Enable or Disable the header filter section.
 **FALSE:** Disable header filter section.
 
 ### Policy
-
 Select the default action to take, when no matching entry for a requested header is found.
 
 **ALLOW:** Allow everything Except rules defined under Deny subsection.
@@ -63,7 +58,6 @@ Select the default action to take, when no matching entry for a requested header
 **DENY:** Deny everything Except rules defined under Allow subsection.
 
 ## Allow
-
 When the Policy is Deny, rules defined under this sub-section, are exclusively allowed access.
 
 Here you can add a new allow entry, that would explicitly result in acceptance or allowance of header filter to all or a specific set of conditions.
@@ -71,7 +65,6 @@ Here you can add a new allow entry, that would explicitly result in acceptance o
 ![](/img/Configure/Restriction_Profiles/Header_Filter/image2.webp)
 
 ### Enabled
-
 Enable or Disable this entry.
 
 **TRUE:** Enable this entry.
@@ -79,11 +72,9 @@ Enable or Disable this entry.
 **FALSE:** Disable this entry.
 
 ### Comment
-
 For documentation and future references, explain the relevance of this entry with your policies.
 
 ### Profiles
-
 Specify the Profiles applicable for this entry.
 
 This entry will be applicable only if the connection has any one of the specified profiles.
@@ -93,7 +84,6 @@ Leave it Blank, to apply for all connections irrespective of any applied profile
 To avoid application to a connection that has a profile, use a negated profile (! profile).
 
 ### Type
-
 A regular expression matching the header type to which this entry applies.
 
 Headers are in the form of type and value.
@@ -103,7 +93,6 @@ Leave blank to Match everything.
 Example: X-GoogApps-Allowed-Domains.
 
 ### Value
-
 A regular expression matching the header values.
 
 Leave blank to Match everything.
@@ -111,7 +100,6 @@ Leave blank to Match everything.
 **Example:** text/html.
 
 ### Applies to
-
 This option is to select whether this entry applies to the server header, client header, or both.
 
 **CLIENT:** This entry will be applied only for request headers, sent by the client.
@@ -119,7 +107,6 @@ This option is to select whether this entry applies to the server header, client
 **SERVER:** This entry will be applied only for response headers, sent by the server.
 
 ### Example
-
 #### Rule#1
 
 I want to allow WebSockets for connections that are profiled as "ALLOW WEBSOCKET"
@@ -131,7 +118,6 @@ Using the Allow rule we can allow WebSocket's connections to a defined applicati
 ![](/img/Configure/Restriction_Profiles/Header_Filter/image3.webp)
 
 ## Deny
-
 When the Policy is Allow, rules defined under this sub-section, are denied access exclusively.
 
 Here you can add a new 'allow' entry, that would explicitly result in blocking or denying the header filter to all or a specific set of conditions.
@@ -139,7 +125,6 @@ Here you can add a new 'allow' entry, that would explicitly result in blocking o
 ![](/img/Configure/Restriction_Profiles/Header_Filter/image4.webp)
 
 ### Enabled
-
 Enable or Disable this entry.
 
 **TRUE:** Enable this entry.
@@ -147,11 +132,9 @@ Enable or Disable this entry.
 **FALSE:** Disable this entry.
 
 ### Comment
-
 For documentation and future references, explain the relevance of this entry with your policies.
 
 ### Profiles
-
 Specify the Profiles applicable for this entry.
 
 This entry will be applicable only if the connection has any one of the specified profiles.
@@ -161,7 +144,6 @@ Leave it Blank, to apply for all connections irrespective of any applied profile
 To avoid application to a connection that has a profile, use a negated profile (! profile).
 
 ### Type
-
 A regular expression matching the header type to which this entry applies.
 
 Headers are in the form of type and value.
@@ -171,7 +153,6 @@ Leave blank to Match everything.
 Example: X-GoogApps-Allowed-Domains.
 
 ### Value
-
 A regular expression matching the header value.
 
 Leave blank to Match everything.
@@ -179,7 +160,6 @@ Leave blank to Match everything.
 Example: text/html.
 
 ### Applies to
-
 This option is to select whether this entry applies to the server header, client header, or both.
 
 **CLIENT:** This entry will be applied only for request headers, sent by the client.
@@ -187,9 +167,7 @@ This option is to select whether this entry applies to the server header, client
 **SERVER:** This entry will be applied only for response headers, sent by the server.
 
 ### Example
-
 #### Rule#1
-
 I want to deny all WebSocket connections using the request headers with the header "WebSocket"
 
 For connections with the profile "REMOVE WEBSOCKETS" "websocket: upgrade" header will be removed from request headers, which will result in a WebSocket connection never being established.
@@ -197,7 +175,6 @@ For connections with the profile "REMOVE WEBSOCKETS" "websocket: upgrade" header
 ![](/img/Configure/Restriction_Profiles/Header_Filter/image5.webp)
 
 ### Insert
-
 In this sub-section, you can add the rules to modify the request and response headers.
 
 You can insert additional information in the headers sent by your browser.
@@ -205,7 +182,6 @@ You can insert additional information in the headers sent by your browser.
 ![](/img/Configure/Restriction_Profiles/Header_Filter/image6.webp)
 
 ### Enabled
-
 Enable or Disable this entry.
 
 **TRUE:** Enable this entry.
@@ -213,11 +189,9 @@ Enable or Disable this entry.
 **FALSE:** Disable this entry.
 
 ### Comment
-
 For documentation and future references, explain the relevance of this entry with your policies.
 
 ### Profiles
-
 Specify the Profiles applicable for this entry.
 
 This entry will be applicable only if the connection has any one of the specified profiles.
@@ -227,7 +201,6 @@ Leave it Blank, to apply for all connections irrespective of any applied profile
 To avoid application to a connection that has a profile, use a negated profile (! profile).
 
 ### Type
-
 A regular expression matching the header type to which this entry applies.
 
 Headers are in the form of type and value.
@@ -237,7 +210,6 @@ Leave blank to Match everything.
 Example: X-GoogApps-Allowed-Domains.
 
 ### Value
-
 A regular expression matching the header value.
 
 Leave blank to Match everything.
@@ -245,7 +217,6 @@ Leave blank to Match everything.
 Example: text/html.
 
 ### Applies to
-
 This option is to select whether this entry applies to the server header, client header, or both.
 
 **CLIENT:** This entry will be applied only for request headers, sent by the client.
@@ -253,9 +224,7 @@ This option is to select whether this entry applies to the server header, client
 **SERVER:** This entry will be applied only for response headers, sent by the server.
 
 ### Example
-
 #### Rule#1
-
 We want our users to use only our corporate Google account.
 
 When users try to log in using his/her personal Google account they should not be able to login.
@@ -267,7 +236,6 @@ Make sure that the list includes the domain you registered with Google Workspace
 ![](/img/Configure/Restriction_Profiles/Header_Filter/image7.webp)
 
 #### Rule#2
-
 We allow our users to watch YouTube during lunch hours, however, we do not want users to watch inappropriate content.
 
 We want to enforce YouTube strict mode for all users.
@@ -279,7 +247,6 @@ However as per Google, YouTube strict does not filter 100% of inappropriate cont
 ![](/img/Configure/Restriction_Profiles/Header_Filter/image8.webp)
 
 ## View headers
-
 In this sub-section, you can find the example headers with type and values.
 
 ![](/img/Configure/Restriction_Profiles/Header_Filter/image9.webp)

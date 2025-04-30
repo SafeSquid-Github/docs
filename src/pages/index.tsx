@@ -20,7 +20,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="docs/Getting Started/Getting_Started_with_SafeSquid_Secure_Web_Gateway">
+            to="docs/Getting Started/main/">
             Get Started
           </Link>
         </div>
