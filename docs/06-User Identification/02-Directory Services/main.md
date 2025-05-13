@@ -1,6 +1,6 @@
 ---
 title: Directory Services
-----
+---
 
 The **Directory Services** section in **SafeSquid** allows you to configure directory services for user authentication and management, integrating with existing identity management systems.
 
