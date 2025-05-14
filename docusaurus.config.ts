@@ -42,6 +42,12 @@ const config: Config = {
   ],
   plugins: [
     'docusaurus-plugin-image-zoom',
+     [
+        'docusaurus-pushfeedback',{
+            project: 'y2k6wr8viz',
+            buttonStyle: 'dark',
+        }
+    ]
   ],
   themeConfig: {
     image: '@site/static/img/favicon.ico',
@@ -61,7 +67,8 @@ const config: Config = {
         alt: 'SafeSquid Logo',
         src: 'img/SafeSquidBlue.png',   // for light mode
         srcDark: 'img/safesquidWhite.png', // for dark mode
-        className: 'custom-navbar-logo',
+        className: 'safesquid-navbar-logo',
+        href: 'https://www.safesquid.com/#home',
       },
       items: [
         // {to: '/blog', label: 'Blog', position: 'left'},
