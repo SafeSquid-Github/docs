@@ -6,7 +6,7 @@ const config: Config = {
   title: 'SafeSquid SWG Documentation',
   tagline: 'Search our knowledge base',
   favicon: 'img/favicon.ico',
-  url: 'http://docsnew.safesquid.com',
+  url: 'http://docs.safesquid.com',
   baseUrl: '/',
   trailingSlash: true,
   organizationName: 'SafeSquid-Github',
