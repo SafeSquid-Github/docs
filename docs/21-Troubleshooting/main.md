@@ -7,7 +7,7 @@ To identify the root cause of usability issues and performance bottlenecks, Safe
 The **troubleshooting** section helps identify and resolve common issues encountered during SafeSquid deployment and operation.
 
 ## Included Topics
-- [Activation Failure](/docs/21-Troubleshooting/Activation%20Failure.md): Troubleshoot activation failures in SafeSquid.
+<!-- - [Activation Failure](/docs/21-Troubleshooting/Activation%20Failure.md): Troubleshoot activation failures in SafeSquid. -->
 - [Basic SOP](/docs/21-Troubleshooting/Basic%20SOP.md): Review the standard operating procedures for SafeSquid.
 - [Blank Report Page](/docs/21-Troubleshooting/Blank%20Report%20Page.md): Resolve issues with blank report pages.
 - [Connection Failure on Websites](/docs/21-Troubleshooting/Connection%20Failure%20on%20Websites.md): Fix connection failures when accessing websites.
