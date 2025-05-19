@@ -42,12 +42,12 @@ const config: Config = {
   ],
   plugins: [
     'docusaurus-plugin-image-zoom',
-     [
-        'docusaurus-pushfeedback',{
-            project: 'y2k6wr8viz',
-            buttonStyle: 'dark',
-        }
-    ]
+    [
+      'docusaurus-pushfeedback', {
+        project: 'y2k6wr8viz',
+        buttonStyle: 'dark',
+      }
+    ],
   ],
   themeConfig: {
     image: '@site/static/img/favicon.ico',
@@ -71,7 +71,6 @@ const config: Config = {
         href: 'https://www.safesquid.com/#home',
       },
       items: [
-        // {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://www.safesquid.com/#home',
           label: 'HOME',
@@ -118,6 +117,7 @@ const config: Config = {
           position: 'left',
           label: 'DOCS',
         },
+        { to: '/blog', label: 'BLOG', position: 'left' },
         {
           href: 'https://help.safesquid.com/portal/en/community/safesquid-labs',
           label: 'FORUM',
