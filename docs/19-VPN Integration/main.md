@@ -1,5 +1,5 @@
 ---
-title: VPN Inegration
+title: VPN Integration
 Description: Learn how to configure and manage VPN settings for SafeSquid Web Security Clients via the Self-Service Portal, including steps to set and verify the FQDN of your SafeSquid server for remote policy enforcement.
 
 Keywords:
@@ -10,10 +10,15 @@ Keywords:
 - Configure FQDN for SafeSquid VPN  
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Directly exposing a SafeSquid proxy server hosted in the cloud to office or remote users is insecure and exposes critical infrastructure to external threats. Establishing a dedicated, encrypted WireGuard VPN tunnel enables secure transport of traffic from enterprise networks or remote endpoints to the cloud environment without public exposure. This configuration isolates the proxy server, limits attack surfaces, and enforces zero-trust connectivity using SafeSquid's application-layer inspection and access control mechanisms.
 THe following diagram depicts the working of VPN tunnel:
 ![](/img/wireguard/image1.webp)
 ## Prerequisites
+<Tabs>
+<TabItem value="Cloud VPS" label="Cloud VPS" default>
 
 **Cloud VPS (WireGuard + SafeSquid Host)**
 
@@ -22,6 +27,8 @@ THe following diagram depicts the working of VPN tunnel:
 -   UDP port 51820 open in the cloud firewall
 -   Root or sudo privileges
 -   curl utility installed
+</TabItem>
+<TabItem value="Office LAN" label="Office LAN or Remote Endpoint" default>
 
 **Office LAN or Remote Endpoint (WireGuard Client)**
 
@@ -30,33 +37,30 @@ THe following diagram depicts the working of VPN tunnel:
 -   Access to client configuration files
 -   Internet connectivity to initiate outbound VPN tunnel
 
+</TabItem>
+</Tabs>
 ## Network Topology Overview
+<Tabs>
+<TabItem value="Cloud Environment" label="Cloud Environment" default>
 
-### Cloud Environment
+  | Element                                | Address         | Description                                      |
+|----------------------------------------|-----------------|--------------------------------------------------|
+| Public IP                              | 203.0.113.10    | External IP of Cloud VPS                         |
+| Private Subnet                         | 10.0.0.0/24     | Internal cloud network                           |
+| WireGuard Server / SafeSquid Proxy IP  | 10.0.0.100      | Internal IP of cloud VPS running WireGuard and SafeSquid |
+| VPN Tunnel Subnet                      | 10.66.66.1/24   | IP pool for WireGuard interfaces                 |
 
-  ------------------------------------------------------------------------------------------------------------------
-  Element                                 Address         Description
-  --------------------------------------- --------------- ----------------------------------------------------------
-  Public IP                               203.0.113.10    External IP of Cloud VPS
+</TabItem>
+<TabItem value="Office Environment" label="Office Environment" default>
 
-  Private Subnet                          10.0.0.0/24     Internal cloud network
+  | Element               | Address         | Description                                               |
+|-----------------------|-----------------|-----------------------------------------------------------|
+| Office Subnet         | 10.200.2.0/24   | Internal network of office LAN                            |
+| WireGuard Client1 IP  | 10.200.2.100    | Office client behind NAT, initiates VPN tunnel to cloud   |
+| VPN Tunnel Subnet     | 10.66.66.2/24   | IP pool for WireGuard interfaces                          |
 
-  WireGuard Server / SafeSquid Proxy IP   10.0.0.100      Internal IP of cloud VPS running WireGuard and SafeSquid
-
-  VPN Tunnel Subnet                       10.66.66.1/24   IP pool for WireGuard interfaces
-  ------------------------------------------------------------------------------------------------------------------
-
-### Office Environment
-
-  ------------------------------------------------------------------------------------------------
-  Element                Address         Description
-  ---------------------- --------------- ---------------------------------------------------------
-  Office Subnet          10.200.2.0/24   Internal network of office LAN
-
-  WireGuard Client1 IP   10.200.2.100    Office client behind NAT, initiates VPN tunnel to cloud
-
-  VPN Tunnel Subnet      10.66.66.2/24   IP pool for WireGuard interfaces
-  ------------------------------------------------------------------------------------------------
+</TabItem>
+</Tabs>
 
 ## Setup Procedure
 
@@ -222,8 +226,8 @@ apt install iptables-persistent -y
 netfilter-persistent save
 ```
 ## Validate VPN Connectivity
-
-### Cloud VPS Ping Tests
+<Tabs>
+<TabItem value="Cloud VPS Ping Test" label="Cloud VPS Ping Test" default>
 
 Confirm tunnel and office endpoint reachability.
 
@@ -233,7 +237,8 @@ ping 10.66.66.2
 ```bash 
 ping 10.200.2.100
 ```
-### Office Client Ping Tests
+</TabItem>
+<TabItem value="Office Client Ping Tests" label="Office Client Ping Tests" default>
 
 Ensure reverse reachability to server and cloud LAN.
 
@@ -243,13 +248,17 @@ ping 10.66.66.1
 ```bash
 ping 10.0.0.100
 ```
-### Tunnel Status Inspection
+</TabItem>
+<TabItem value="Tunnel Status Inspection" label="Tunnel Status Inspection" default>
 
 Display active peers and session statistics.
 
 ```bash 
 wg show
 ```
+</TabItem>
+</Tabs>
+
 ## Post-Deployment Considerations
 
 ### 1. Multi-Client Deployment (Office & Remote Users)
@@ -296,7 +305,7 @@ SafeSquid requires directory services (e.g., Active Directory) for identity-base
 
 This guarantees seamless identity resolution and policy mapping inside the VPN-secured cloud perimeter.
 
-### 3. Proxy Cluster with Centralised Load Balancer
+### 3. Proxy Cluster with Centralized Load Balancer
 
 When deploying multiple SafeSquid instances as a cluster:
 
@@ -305,7 +314,7 @@ When deploying multiple SafeSquid instances as a cluster:
 -   Distributes requests to proxy nodes for inspection and filtering
 -   Routes sanitized output to the internet
 
-The architecture shown in below image maintains performance, simplifies scale-out, and centralizes VPN and external access controls.
+The architecture shown in maintains performance, simplifies scale-out, and centralizes VPN and external access controls.
 
 ![](/img/wireguard/image2.webp)
 

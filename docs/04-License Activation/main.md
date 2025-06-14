@@ -12,7 +12,7 @@ Keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## **Licensing Overview and Activation Purpose**
+## Licensing Overview and Activation Purpose
 
 SafeSquid requires valid licensing to enable full functionality and continuous availability. Two licensing options are available:
 
@@ -25,47 +25,34 @@ License activation is completed post-installation and is essential for activatin
 :::note
 Activating multiple SafeSquid instances using the same activation key enables synchronization of SSL certificates and configuration files across nodes.
 :::
-## **Readiness Checklist**
+## Readiness Checklist
 
-### **Client-Side Preparations**
+### Client-Side Preparations
 
 -   Ensure the SafeSquid server has unrestricted outbound Internet access.
-
 -   Allow traffic through the firewall to the following endpoints and ports:
 
 **Licensing and Update Services**
 
-  ---------------------------------------------------------------------------
-  Host                        Port   Purpose
-  --------------------------- ------ ----------------------------------------
-  api.safesquid.net           443    License activation
-
-  swgupdates2.safesquid.net   443    Subscription, malware definitions
-
-  swgupdates.safesquid.net    80     Seqrite updates
-
-  sslupdates.safesquid.com    443    SSL certificate updates
-
-  category.safesquid.net      443    Category DB updates
-
-  download.quickheal.com      80     Virus signature updates
-  ---------------------------------------------------------------------------
+  | Host                        | Port | Purpose                          |
+|-----------------------------|------|----------------------------------|
+| api.safesquid.net           | 443  | License activation               |
+| swgupdates2.safesquid.net   | 443  | Subscription, malware definitions |
+| swgupdates.safesquid.net    | 80   | Seqrite updates                  |
+| sslupdates.safesquid.com    | 443  | SSL certificate updates          |
+| category.safesquid.net      | 443  | Category DB updates              |
+| download.quickheal.com      | 80   | Virus signature updates          |
 
 **URL Categorisation Engines**
 
-  -----------------------------------------------------------------------------
-  Host                       Port   Path
-  -------------------------- ------ -------------------------------------------
-  prourl.itsecure.co.in      8080   /URLCategorizerService/URLCategorize
+ | Host                        | Port | Path                                      |
+|-----------------------------|------|-------------------------------------------|
+| prourl.itsecure.co.in       | 8080 | /URLCategorizerService/URLCategorize      |
+| encurl.itsecure.co.in       | 8080 | /URLCategorizerService/URLCategorize      |
+| klassify.itsecure.co.in     | 8080 | /URLCategorizerService/URLCategorize      |
+| prourl.itonlinesecure.in    | 8080 | /URLCategorizerService/URLCategorize      |
+| encurl.itonlinesecure.in    | 8080 | /URLCategorizerService/URLCategorize      |
 
-  encurl.itsecure.co.in      8080   /URLCategorizerService/URLCategorize
-
-  klassify.itsecure.co.in    8080   /URLCategorizerService/URLCategorize
-
-  prourl.itonlinesecure.in   8080   /URLCategorizerService/URLCategorize
-
-  encurl.itonlinesecure.in   8080   /URLCategorizerService/URLCategorize
-  -----------------------------------------------------------------------------
 
 -   Validate DNS resolution and establish successful HTTPS connections to each host.
 
@@ -73,14 +60,16 @@ Activating multiple SafeSquid instances using the same activation key enables sy
 
 -   Install and configure the SafeSquid service on the target system.
 
-## **Activation Procedure**
+## Activation Procedure
 
 ### Generate Activation Key
 
 #### Registration Process 
 
 ![showing dashboard of key.safesquid.com, Picture](/img/License_Activation/image1.webp)
-Visit <https://key.safesquid.com/>.
+
+Visit https://key.safesquid.com
+
 ![Picture 6, Picture](/img/License_Activation/image2.webp) 
 
 Enter your email address, First Name, Last Name, Captcha and then Click on "Sign Up." 
@@ -89,13 +78,13 @@ You'll receive an email to activate your account in your registered email addres
 
 ![showing how to sign up using your email, Picture](/img/License_Activation/image3.webp) 
 
-Click on "Click here to activate your account."  
+Click on "Click here to activate your account."
 
 ![showing how to sign up using your email, Picture](/img/License_Activation/image4.webp) 
 
-You'll be directed to https://accounts.safesquid.com/?success=  
+You'll be directed to https://accounts.safesquid.com/?success=
 
-Enter your new password in "New password ", "confirm password." 
+Enter your new password in "New password", "confirm password." 
 
 ![showing the user info created, Picture](/img/License_Activation/image5.webp) 
 
@@ -103,25 +92,24 @@ click on "Activate." 
 
 ![clicking on activate, Picture](/img/License_Activation/image6.webp) 
 
-Enter your username and password and click on "Sign In" .
+Enter your username and password and click on "Sign In".
 
 ![entering the username and password to get your activation key, Picture](/img/License_Activation/image7.webp) 
 
-Activation code will be generated, and you'll be directed to <https://key.safesquid.com/portal.html>
+Activation code will be generated, and you'll be directed to https://key.safesquid.com/portal.html
 
  Fill in the user info and contact information. 
 
 ![filling the user info and contact info, Picture](/img/License_Activation/image8.webp) 
 
-Click on "Save Profile".            
+Click on "Save Profile".
 
-   ![clicking on save profile button, Picture](/img/License_Activation/image9.webp)                 
+ ![clicking on save profile button, Picture](/img/License_Activation/image9.webp)
 
 Your activation key has been generated.  
 
 Click "close".
 
-![Rectangle 2, Shape](/img/License_Activation/image10.webp)
 ![clicking on close after generating the activation key, Picture](/img/License_Activation/image11.webp) 
 
 Page will be reloaded, and you'll be redirected to your home page. 
@@ -140,7 +128,7 @@ Do not change the activation key file name or contents.
 First, configure browsers or network clients to route HTTP/HTTPS traffic through the SafeSquid proxy.
 :::
 
-![uploading the activation key When your accessing the interface for the first time, Picture](/img/License_Activation/image13.webp)
+![uploading the activation key When accessing the interface for the first time, Picture](/img/License_Activation/image13.webp)
 
 ![selecting your activation key file and clicking on upload, Picture](/img/License_Activation/image14.webp) 
 
@@ -148,7 +136,7 @@ First, configure browsers or network clients to route HTTP/HTTPS traffic through
 
 ![waiting for page refresh, Picture](/img/License_Activation/image16.webp) 
 
-## **Validating Activation Success**
+## Validating Activation Success
 
 1.  Open a browser and go to: [**http://Safesquid.cfg/**](http://Safesquid.cfg/)
 
@@ -166,6 +154,7 @@ If these fields are present and valid, the license activation is confirmed.
 
 <Tabs>
 <TabItem value="Case 1" label="Case 1" default>
+
 **Case 1: Activation Key Not Detected By http://safesquid.cfg/**
 
 **Symptoms:** After uploading the activation key, the SafeSquid UI displays "Failed to set Subscription details."
@@ -193,11 +182,12 @@ Ensure a file named activation_key exists.
 ```
 </TabItem>
 <TabItem value="Case 2" label="Case 2" default>
+
 **Case 2: Subscription Server Unreachable**
 
 **Symptoms:** Post activation key upload, the browser shows "proxy server refusing connections."
 
-**Root Cause:**SafeSquid cannot connect to the subscription server due to network issues.
+**Root Cause:** SafeSquid cannot connect to the subscription server due to network issues.
 
 **Resolution:**
 
@@ -218,8 +208,9 @@ Ensure the server responds and DNS resolution is successful.
 ```bash
 /etc/init.d/safesquid start
 ```
-</TabItems>
+</TabItem>
 <TabItem value="Case 3" label="Case 3" default>
+
 **Case 3: Improper Service Restart**
 
 **Symptoms:**
