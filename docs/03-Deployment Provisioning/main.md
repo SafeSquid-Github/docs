@@ -48,20 +48,7 @@ Organizations deploying SafeSquid must align CPU, memory, and NIC density with t
 Organizations that prioritize zero downtime frequently deploy Active-Passive clusters. Failover incidents expose architectural weaknesses when passive nodes lack real-time sync, full compute parity, or resilient heartbeat protocols. Fail back often creates service gaps or DNS misroutes.
 
 **Diagram:**
-
-```
-            ┌─────────────────┐
-LAN --------│ Virtual IP (VIP)│
-            └───────┬─────────┘
-                    |
-      ┌─────────────┴───────────────┐
-      |                             |
-┌─────▼─────┐                 ┌─────▼─────┐
-│ Server A  │ --(Heartbeat)-->│ Server B  │
-│ (Active)  │                 │ (Passive) │
-└───────────┘                 └───────────┘
-
-```
+[Active-Passive Setup](/img/Deployment_Provisioning/image1.webp)
 
 **Hardware Specifications (Per Server in Pair):**
 
@@ -80,19 +67,7 @@ LAN --------│ Virtual IP (VIP)│
 Enterprises aiming for hardware efficiency frequently opt for Active-Active designs. However, node-level failures immediately force a single instance to absorb 100% traffic, often exceeding safe operating thresholds. Load balancer misrouting or stale health checks further degrade service continuity.
 
 **Diagram:**
-
-```
-            ┌─────────────────┐
-LAN --------│ Load Balancer   │
-            └───────┬─────────┘
-      ┌─────────────┴─────────┐
-      |                       |
-┌─────▼─────┐           ┌─────▼─────┐
-│ Server A  │           │ Server B  │
-│ (Active)  │           │ (Active)  │
-└───────────┘           └───────────┘
-
-```
+[Active-Active Setup](/img/Deployment_Provisioning/image2.webp)
 
 **Hardware Specifications (Per Server in Cluster):**
 

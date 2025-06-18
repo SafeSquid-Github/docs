@@ -96,6 +96,7 @@ SafeSquid provides extensive options for customization to meet specific organiza
 You may alter the dashboard, reporting interfaces, and analytics to suit user preferences and requirements. You can also [customize blocking templates](/docs/18-Custom%20Templates/main.md) to conform to organizational branding and communication styles. For specialized tasks and automation, administrators can use our comprehensive customisation library or create their custom bash scripts.
 
 ## [Troubleshooting](/docs/21-Troubleshooting/main.md)
+
 Troubleshooting is a cakewalk for any average Linux technician using the comprehensive SafeSquid Logs.
 
 You will find all the logs under **/var/log/safesquid/** directory.
