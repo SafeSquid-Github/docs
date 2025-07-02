@@ -12,63 +12,167 @@ Keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Overview
-You must Activate a SafeSquid Instance before using it to access the web.
+## Licensing Overview and Activation Purpose
 
-## Prerequisites
-1. You need to setup Safesquid in your system.
-2. You need to [configure your browser to use a proxy](/docs/17-Operational%20Modes/TCP%20Proxy.md).
+SafeSquid requires valid licensing to enable full functionality and continuous availability. Two licensing options are available:
 
-#First, register on the SafeSquid website to get the activation key. If you already have the activation key follow the below steps to activate SafeSquid.
-![uploading the activation key When your accessing the interface for thefirst time](/img/How_To/Activate_a_SafeSquid_Instance/image1.webp)
+-   **Free Licensing**: Always free; supports core functionality without time restriction.
 
-## Download Activation Key
-Go to the Self Service portal and download the activation key.
-![downloading activation key from key.safesquid.com](/img/Application_Eco-System/Manage_Key/image1.webp)
-## Upload Activation key
-[Access the SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
-![selecting your activation key file and clicking on upload](/img/How_To/Activate_a_SafeSquid_Instance/image2.webp)
-![clicking on restart](/img/How_To/Activate_a_SafeSquid_Instance/image3.webp)
-![waiting for page refresh](/img/How_To/Activate_a_SafeSquid_Instance/image4.webp)
+-   **Commercial Licensing**: Includes real-time threat intelligence updates, 365-day disaster recovery and backup, and email-based support.
 
-## Validate Product Activation
-![clicking on support to validate product activation](/img/How_To/Activate_a_SafeSquid_Instance/image5.webp)
-![showing activation details in licensedetails](/img/How_To/Activate_a_SafeSquid_Instance/image6.webp)
+License activation is completed post-installation and is essential for activating subscription-based features and ensuring platform synchronization.
 
-## Handling Validation Failure
+:::note
+Activating multiple SafeSquid instances using the same activation key enables synchronization of SSL certificates and configuration files across nodes.
+:::
+## Readiness Checklist
+
+### Client-Side Preparations
+
+-   Ensure the SafeSquid server has unrestricted outbound Internet access.
+-   Allow traffic through the firewall to the following endpoints and ports:
+
+**Licensing and Update Services**
+
+  | Host                        | Port | Purpose                          |
+|-----------------------------|------|----------------------------------|
+| api.safesquid.net           | 443  | License activation               |
+| swgupdates2.safesquid.net   | 443  | Subscription, malware definitions |
+| swgupdates.safesquid.net    | 80   | Seqrite updates                  |
+| sslupdates.safesquid.com    | 443  | SSL certificate updates          |
+| category.safesquid.net      | 443  | Category DB updates              |
+| download.quickheal.com      | 80   | Virus signature updates          |
+
+**URL Categorisation Engines**
+
+ | Host                        | Port | Path                                      |
+|-----------------------------|------|-------------------------------------------|
+| prourl.itsecure.co.in       | 8080 | /URLCategorizerService/URLCategorize      |
+| encurl.itsecure.co.in       | 8080 | /URLCategorizerService/URLCategorize      |
+| klassify.itsecure.co.in     | 8080 | /URLCategorizerService/URLCategorize      |
+| prourl.itonlinesecure.in    | 8080 | /URLCategorizerService/URLCategorize      |
+| encurl.itonlinesecure.in    | 8080 | /URLCategorizerService/URLCategorize      |
+
+
+-   Validate DNS resolution and establish successful HTTPS connections to each host.
+
+### SafeSquid-Side Setup
+
+-   Install and configure the SafeSquid service on the target system.
+
+## Activation Procedure
+
+### Generate Activation Key
+
+#### Registration Process 
+
+![showing dashboard of key.safesquid.com, Picture](/img/License_Activation/image1.webp)
+
+Visit https://key.safesquid.com
+
+![Picture 6, Picture](/img/License_Activation/image2.webp) 
+
+Enter your email address, First Name, Last Name, Captcha and then Click on "Sign Up." 
+
+You'll receive an email to activate your account in your registered email address. 
+
+![showing how to sign up using your email, Picture](/img/License_Activation/image3.webp) 
+
+Click on "Click here to activate your account."
+
+![showing how to sign up using your email, Picture](/img/License_Activation/image4.webp) 
+
+You'll be directed to https://accounts.safesquid.com/?success=
+
+Enter your new password in "New password", "confirm password." 
+
+![showing the user info created, Picture](/img/License_Activation/image5.webp) 
+
+click on "Activate." 
+
+![clicking on activate, Picture](/img/License_Activation/image6.webp) 
+
+Enter your username and password and click on "Sign In".
+
+![entering the username and password to get your activation key, Picture](/img/License_Activation/image7.webp) 
+
+Activation code will be generated, and you'll be directed to https://key.safesquid.com/portal.html
+
+ Fill in the user info and contact information. 
+
+![filling the user info and contact info, Picture](/img/License_Activation/image8.webp) 
+
+Click on "Save Profile".
+
+ ![clicking on save profile button, Picture](/img/License_Activation/image9.webp)
+
+Your activation key has been generated.  
+
+Click "close".
+
+![clicking on close after generating the activation key, Picture](/img/License_Activation/image11.webp) 
+
+Page will be reloaded, and you'll be redirected to your home page. 
+
+To download your activation key, click on "Download Key". 
+
+![clicking on download key option on the dashboard, Picture](/img/License_Activation/image12.webp)
+
+:::note
+Do not change the activation key file name or contents.
+:::
+
+### Upload the Activation key 
+
+:::note
+First, configure browsers or network clients to route HTTP/HTTPS traffic through the SafeSquid proxy.
+:::
+
+![uploading the activation key When accessing the interface for the first time, Picture](/img/License_Activation/image13.webp)
+
+![selecting your activation key file and clicking on upload, Picture](/img/License_Activation/image14.webp) 
+
+![clicking on restart, Picture](/img/License_Activation/image15.webp) 
+
+![waiting for page refresh, Picture](/img/License_Activation/image16.webp) 
+
+## Validating Activation Success
+
+1.  Open a browser and go to: [**http://Safesquid.cfg/**](http://Safesquid.cfg/)
+
+2.  Access the **Support** section from the menu.
+
+![clicking on support to validate product activation, Picture](/img/License_Activation/image17.webp)
+
+3.  Confirm the **Activation Details** section is populated.
+
+![showing activation details in license details, Picture](/img/License_Activation/image18.webp)
+
+If these fields are present and valid, the license activation is confirmed.
+
+## **Troubleshooting Activation Failures**
 
 <Tabs>
 <TabItem value="Case 1" label="Case 1" default>
-### Check for the activation_key file on the SafeSquid server.
 
-Run the below command and check for the file
+**Case 1: Activation Key Not Detected By http://safesquid.cfg/**
+
+**Symptoms:** After uploading the activation key, the SafeSquid UI displays "Failed to set Subscription details."
+
+**Root Cause:** The activation key file is either missing or improperly named.
+
+**Resolution:**
+
+1.  Verify the presence of the activation key file:
 
 ```bash
 ls -lrt /usr/local/safesquid/security/
 ```
-root@dev:~# ls -lrt /usr/local/safesquid/security/
+Ensure a file named activation_key exists.
 
-total 60
+2.  If absent or misnamed, re-upload the correct activation key file.
 
-drwxrwxr-- 2 ssquid root 4096 Jul 10 11:55 dns
-
--rw-rw-r-- 1 ssquid root 724 Jul 28 11:23 krb5.conf
-
--rw-rw-r-- 1 ssquid root 2111 Aug 3 18:52 activation_key
-
-drwxrwxr-- 2 ssquid root 12288 Aug 4 16:04 policies
-
-drwxrwxr-- 5 ssquid root 4096 Aug 4 16:09 ssl
-
--rw-rw-r-- 1 ssquid root 15744 Aug 5 09:51 activation_key.updates.backup
-
--rw-rw-r-- 1 ssquid root 15744 Aug 5 09:51 activation_key.updates
-
-If the file was not found, then upload your activation key again and click on restart.
-:::note
-Restart SafeSquid service from the SafeSquid Interface will work, only if the monit service is configured properly on the SafeSquid server.
-:::
-Otherwise, you can directly restart the SafeSquid service from the LINUX box by using the below commands
+3.  Restart the SafeSquid service:
 
 ```bash
 /etc/init.d/safesquid stop
@@ -78,40 +182,56 @@ Otherwise, you can directly restart the SafeSquid service from the LINUX box by 
 ```
 </TabItem>
 <TabItem value="Case 2" label="Case 2" default>
-## Check the connection to the Subscription server, by using the following commands
 
-root@dev:~# ping swgupdates2.safesquid.net
+**Case 2: Subscription Server Unreachable**
 
-PING swgupdates2.safesquid.net (104.236.27.61) 56(84) bytes of data.
+**Symptoms:** Post activation key upload, the browser shows "proxy server refusing connections."
 
-64 bytes from 104.236.27.61: icmp_seq=1 ttl=52 time=309 ms
+**Root Cause:** SafeSquid cannot connect to the subscription server due to network issues.
 
-64 bytes from 104.236.27.61: icmp_seq=2 ttl=52 time=228 ms
+**Resolution:**
 
---- swgupdates2.safesquid.net ping statistics ---
+1.  Test connectivity to the subscription server:
 
-2 packets transmitted, 2 received, 0% packet loss, time 1000ms
-
-rtt min/avg/max/mdev = 228.387/269.078/309.770/40.694 ms
-
+```bash
+ping swgupdates2.safesquid.net
+```
+```bash
 nslookup swgupdates2.safesquid.net
+```
+Ensure the server responds and DNS resolution is successful.
 
-Server: 127.0.0.1
+2.  If connectivity fails, check firewall settings and network configurations to allow access to the required hosts and ports.
 
-Address: 127.0.0.1#53
-
-Non-authoritative answer:
-
-Name: swgupdates2.safesquid.net
-
-Address: 104.236.27.61
-
-After uploading the activation key, the page shows showing proxy server refusing connections.
-
-SafeSquid restart was not done, start the SafeSquid from the server console by using the below command:
+3.  After resolving network issues, restart the SafeSquid service:
 
 ```bash
 /etc/init.d/safesquid start
+```
+</TabItem>
+<TabItem value="Case 3" label="Case 3" default>
+
+**Case 3: Improper Service Restart**
+
+**Symptoms:**
+
+-   Even after uploading the activation key, subscription details remain unset.
+
+-   The browser indicates the proxy server is refusing connections.
+
+**Root Cause:** SafeSquid service was not restarted correctly after activation key upload.
+
+**Resolution:**
+
+1.  Ensure the monit service is configured properly to manage SafeSquid.
+
+2.  If monit is not set up, manually restart the SafeSquid service:
+
+```bash
+/etc/init.d/safesquid stop**
+```
+```bash
+/etc/init.d/safesquid start**
 ```
 </TabItem>
 </Tabs>
