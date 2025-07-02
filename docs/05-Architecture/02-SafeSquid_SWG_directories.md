@@ -137,7 +137,7 @@ Contains a shared object (.so) and XML files for the Content Modifier (Content R
 ```
 Contains a shared object (.so) and XML files of the Ssqore module. Ssqore allows you to categorize the websites, depending on the potential nature of the content served by the website. Ssqore queries SafeSquid's Content Categorisation Service (CCS), to determine if a website belongs to one or more categories.
 
-## SqScan Ant-Malware
+## SqScan Anti-Malware
 ```bash
 /opt/safesquid/bin/modules/sqscan
 ```
