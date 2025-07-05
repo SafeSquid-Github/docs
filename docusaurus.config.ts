@@ -34,7 +34,7 @@ const config: Config = {
           filename: 'sitemap.xml',
         },
         gtag: {
-          trackingID: 'G-7HRTP2PKGG',
+          trackingID: 'G-ZVZHSKFGQF',
           anonymizeIP: true,
         },
       } as Preset.Options,
