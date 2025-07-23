@@ -23,7 +23,7 @@ In a typical organization setting, the amalgamation of [SafeSquid Application Ec
 ## Deployment Provisioning
 Engineered for adaptability, SafeSquid is a fully software-based open-architecture solution supporting non-proprietary hardware, platform-agnostic deployment, and seamless integration with all network solutions. SafeSquid SWG is compatible with standard Intel architecture server-class hardware, operable as a virtual guest on varied virtualization platforms, or configurable in private cloud settings.
 
-To cater to your organisation's web traffic load, estimate the Hardware Requirements optimal to deploy SafeSquid.
+To cater to your organization's web traffic load, estimate the Hardware Requirements optimal to deploy SafeSquid.
 
 | **CPU (cores)** | **RAM (GB)** | **HDD**  | **Max Concurrent Connections** | **Approx Users** |
 |----------------|-------------|---------|------------------------------|-----------------|
@@ -82,7 +82,7 @@ Furthermore, configure user verification via [basic authentication](/docs/06-Use
 Manually classify websites into custom categories on the SafeSquid Self-Service Portal or SafeSquid interface as per the business use case.
 
 ## Security Policies
-Achieve Zero-Trust Web Security strategy by enforcing the organisation's web usage policies using SafeSquid's Polymath Profiling Engine, and Advanced Traffic Flow Management.
+Achieve Zero-Trust Web Security strategy by enforcing the organization's web usage policies using SafeSquid's Polymath Profiling Engine, and Advanced Traffic Flow Management.
 
 ## [Reporting](/docs/13-System%20Audit/Real%20Time%20Statistics-Repoorting%20Module.md)
 SafeSquid offers in-depth reporting for process audit, system performance, and traffic forensic analysis. The reporting suite includes detailed web usage reports, threat prevention reports, system reports, and performance reports. An interactive real-time dashboard, also, offers customization, export, and distribution options to suit the organization\'s needs.

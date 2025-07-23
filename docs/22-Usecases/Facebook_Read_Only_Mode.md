@@ -14,9 +14,9 @@ Facebook is a social networking website that allows users to interact with other
 
 Facebook is not an evil of itself by any means. People are social animals, and the Social Network is indeed an intrinsic part of everyday life for about 800 million people around the world. A friend found his dogs within 6 hours of them going missing, through a chain of events started with a Facebook post, so it can certainly be a force for good.
 
-Numerous reports of cyberbullying, facebook stalking and the friend who got 'facebook fired' for posting something false/untrue, understandably put organisations and instituions on risk.
+Numerous reports of cyberbullying, facebook stalking and the friend who got 'facebook fired' for posting something false/untrue, understandably put organizations and institutions on risk.
 
-Unrestricted access to facebook is out of the question for many organisations, and no access at all is a blanket solution. Is there a middleground?
+Unrestricted access to facebook is out of the question for many organizations, and no access at all is a blanket solution. Is there a middle ground?
 
 Home users and IT managers using SafeSquid SWG Edition are able to switch Facebook into "read-only" mode.
 

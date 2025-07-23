@@ -19,7 +19,7 @@ SafeSquid's integrated on-the-wire malware scanner employs advanced heuristic te
 
 ### [ClamAV](https://www.clamav.net/)
 SafeSquid seamlessly integrates with the ClamAV engine for signature-based malware detection. Furthermore, its customisable
-configuration empowers security administrators to add PCRE keyword expressions sensitive to the organisation. Thus, enabling deep packet inspection for confidential information in archive files, emails, and Instant Messaging (IM) traffic.
+configuration empowers security administrators to add PCRE keyword expressions sensitive to the organization. Thus, enabling deep packet inspection for confidential information in archive files, emails, and Instant Messaging (IM) traffic.
 
 ### [Generic ICAP Threat Detection Interface](/docs/08-SafeSquid%20Interface/01-Configuration/Real%20Time%20Content%20Security/ICAP.md)
 SafeSquid facilitates simultaneous connection with various ICAP-based threat detection services for broader security coverage. With its Intelligent Threat Quarantine Mechanism, SafeSquid automatically isolates content flagged by ICAP services.

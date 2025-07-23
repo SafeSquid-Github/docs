@@ -87,7 +87,7 @@ Actively prevents the transfer of unsuitable content, and malware in all data ex
 
 ### User Privacy Protection
 
-Limit the tracking data received by remote websites as per the organisation's privacy protection policy.
+Limit the tracking data received by remote websites as per the organization's privacy protection policy.
 
 ### SSL Certificate Validation
 
