@@ -77,9 +77,9 @@ Cloud-integrated, real-time threat intelligence updates ensure the utmost releva
 
 Built-in scanner, and support for simultaneous integration with various ICAP services, ClamAV engine, and external third-party malware detection systems.
 
-### Customisable Web Categorisation
+### Customizable Web Categorization
 
-Ability to manually classify websites into predefined or custom categories, and integrate any third-party DNSBL service in addition to built-in categorized web categorisation
+Ability to manually classify websites into predefined or custom categories, and integrate any third-party DNSBL service in addition to built-in categorized web categorization
 
 ### Multimodal Deep Content Inspection
 
@@ -123,11 +123,11 @@ Open-architecture software appliance installable on any standard Linux OS, suita
 
 ### 15-minute setup
 
-SafeSquid Appliance Builder (SAB) is a Security-Enhanced Customised Ubuntu Linux ISO hardened and optimized for quick automatic setup.
+SafeSquid Appliance Builder (SAB) is a Security-Enhanced Customized Ubuntu Linux ISO hardened and optimized for quick automatic setup.
 
 ### On-The-Wire Security Neural Network
 
-SMP-Aware multithreaded architecture loads security processors, signatures, security heuristics, and policies into the shared memory of network service for optimized resource utilisation.
+SMP-Aware multithreaded architecture loads security processors, signatures, security heuristics, and policies into the shared memory of network service for optimized resource utilization.
 
 ### Diverse Caching Strategies
 
@@ -145,7 +145,7 @@ Utilizes Root DNS servers and internal network DNS services, offering significan
 
 Enhance performance and reliability by linking multiple Proxy nodes in a load-balanced or failover cluster.
 
-### Self-Heal Technologynp
+### Self-Heal Technology
 
 Proactively resolves potential problems with essential dependency files, ensuring continuous operation.
 

@@ -11,11 +11,11 @@ keywords:
 ## Overview
 Use Categorize Websites to Manage Web-Site Categorization.
 
-Review and modify the categorisation of any website.
+Review and modify the categorization of any website.
 
 You can also create new categories, and associate websites with those categories.
 
-To Modify a website's categorisation, you must first use the search box to view its existing categorisation.
+To Modify a website's categorization, you must first use the search box to view its existing categorization.
 
 It will show you the details of the Total Number of Categories, the last updated, and the last changed.
 
@@ -32,7 +32,7 @@ It will show you the details of the Total Number of Categories, the last updated
 Here you can edit or modify the previously existing category of any website.
 
 ### Search for category
-Here you can find the category of any website in which it is categorised.
+Here you can find the category of any website in which it is categorized.
 
 Enter the website/domain name in the search box and click on the search button, dialog box of Categories will appear below. In this dialog box, you will get a category list (comma separated) in which it is categorized.
 

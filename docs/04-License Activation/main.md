@@ -43,7 +43,7 @@ Activating multiple SafeSquid instances using the same activation key enables sy
 | category.safesquid.net      | 443  | Category DB updates              |
 | download.quickheal.com      | 80   | Virus signature updates          |
 
-**URL Categorisation Engines**
+**URL Categorization Engines**
 
  | Host                        | Port | Path                                      |
 |-----------------------------|------|-------------------------------------------|

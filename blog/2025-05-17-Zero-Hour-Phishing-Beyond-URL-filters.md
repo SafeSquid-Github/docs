@@ -94,4 +94,4 @@ By cutting the attacker off *at the point of exfiltration*—yet granting seaml
 
 ## Conclusion
 
-Legacy reputation and categorisation once promised “set‑and‑forget” protection. LURE flips that model on its head: the older and cleaner a domain looks, the **more** dangerous it can become. Controls that inspect present‑tense *behaviour*—not historical scores—close the gap.
+Legacy reputation and categorization once promised “set‑and‑forget” protection. LURE flips that model on its head: the older and cleaner a domain looks, the **more** dangerous it can become. Controls that inspect present‑tense *behavior*—not historical scores—close the gap.

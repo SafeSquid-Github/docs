@@ -11,7 +11,7 @@ The **troubleshooting** section helps identify and resolve common issues encount
 - [Basic SOP](/docs/21-Troubleshooting/Basic%20SOP.md): Review the standard operating procedures for SafeSquid.
 - [Blank Report Page](/docs/21-Troubleshooting/Blank%20Report%20Page.md): Resolve issues with blank report pages.
 - [Connection Failure on Websites](/docs/21-Troubleshooting/Connection%20Failure%20on%20Websites.md): Fix connection failures when accessing websites.
-- [Custom Categorisation Not Working](/docs/21-Troubleshooting/Custom%20Categorisation%20Not%20Working.md): Troubleshoot issues with custom website categorization.
+- [Custom Categorization Not Working](/docs/21-Troubleshooting/Custom%20Categorization%20Not%20Working.md): Troubleshoot issues with custom website categorization.
 - [Disk Space and RAM are Full](/docs/21-Troubleshooting/Disk%20Space%20and%20RAM%20are%20Full.md): Resolve issues related to full disk space or RAM.
 - [DNS Failure](/docs/21-Troubleshooting/DNS%20Failure.md): Fix DNS-related failures.
 - [Failed To Fetch LDAP Entries](/docs/21-Troubleshooting/Failed%20To%20Fetch%20LDAP%20Entries.md): Troubleshoot LDAP fetching issues.

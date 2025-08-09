@@ -131,11 +131,11 @@ Has a shared object (**.so**) and XML files for the Image Analyzer (Imgfilter) m
 ```
 Contains a shared object (.so) and XML files for the Content Modifier (Content Re-Write) module. The module uses regular expressions to modify web page content, files, client headers, and server headers in real time. It is designed to remove potentially harmful elements like ActiveX, JavaScript, or cookies from untrusted websites before delivering the content to users. This feature requires cautious implementation due to its powerful capabilities.
 
-## Ssqore Web Categorisation
+## Ssqore Web Categorization
 ```bash
 /opt/safesquid/bin/modules/ssqore
 ```
-Contains a shared object (.so) and XML files of the Ssqore module. Ssqore allows you to categorize the websites, depending on the potential nature of the content served by the website. Ssqore queries SafeSquid's Content Categorisation Service (CCS), to determine if a website belongs to one or more categories.
+Contains a shared object (.so) and XML files of the Ssqore module. Ssqore allows you to categorize the websites, depending on the potential nature of the content served by the website. Ssqore queries SafeSquid's Content Categorization Service (CCS), to determine if a website belongs to one or more categories.
 
 ## SqScan Anti-Malware
 ```bash

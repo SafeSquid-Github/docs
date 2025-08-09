@@ -16,10 +16,10 @@ Keywords:
 In a typical organization setting, the amalgamation of SafeSquid Application Eco-system constitutes the complete SWG solution.
 
 ## [Self-Service Portal](/docs/05-Architecture/Management_of_Self-Service_Portal.md)
-To manage properties associated with the activation key, like custom web categorisation, certificates, and subscription details, use the Self-Service portal.
+To manage properties associated with the activation key, like custom web categorization, certificates, and subscription details, use the Self-Service portal.
 
 ## Data-Feeds
-To ensure utmost relevance in security posture, SafeSquid offers cloud-integrated, real-time threat intelligence updates for Web Categorisation, Application Identification, SSL Security, Image Analysis, Malware Scanning, Geo-Location, etc.
+To ensure utmost relevance in security posture, SafeSquid offers cloud-integrated, real-time threat intelligence updates for Web Categorization, Application Identification, SSL Security, Image Analysis, Malware Scanning, Geo-Location, etc.
 
 ## Configuration Backup and Restore
 Cloud-backed backup acts as version control for configuration policies up to 365 days. SafeSquid's Integrated disaster recovery mechanism automatically recovers configuration settings upon activation of a replacement solution, minimizing manual intervention.
@@ -31,7 +31,7 @@ For DNS Security, SafeSquid blocks the DNS resolution of malicious domains by in
 A log aggregator server collects, stores, and manages logs from all your proxy nodes, providing centralized logging for monitoring and report creation. Reports offer insights into user activity, data usage summaries, activity details, and traffic analysis, aiding administrators in making informed decisions to enhance network security.
 
 ## Supporting Services
-Additional dependencies optimise SafeSquid for production use.
+Additional dependencies optimize SafeSquid for production use.
 
 ### Monit
 Monit continually monitors and optimises the system to ensure zero downtime and optimal performance. In the event of unexpected shutdowns or system failures, Monit restarts the SafeSquid service. Furthermore, Monit continuously optimises the processes and actively cleans up unnecessary or temporary files. Additionally, Monit fetches real-time threat intelligence updates. Whenever software upgrades are dropped in SafeSquid Interface, Monit upgrades SafeSquid on restart.

@@ -302,7 +302,7 @@ Open a web browser and navigate to `http://<server-ip>` to verify the documentat
   - Basic SOP.md
   - Blank Report Page.md
   - Connection Failure on Websites.md
-  - Custom Categorisation Not Working.md
+  - Custom Categorization Not Working.md
   - Disk Space and RAM are Full.md
   - DNS Failure.md
   - Failed To Fetch LDAP Entries.md
@@ -312,7 +312,7 @@ Open a web browser and navigate to `http://<server-ip>` to verify the documentat
   - main.md
   - Master Slave Configuration Not Working.md
   - No Tar-Ball Support.md
-  - Not Generating Perfromance Plot.md
+  - Not Generating Performance Plot.md
   - Product Failure.md
   - Proxy Server Refusing Connection Error.md
   - SafeSearch Not Working.md
