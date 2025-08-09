@@ -9,19 +9,27 @@ keywords:
 - block ip address safesquid
 ---
 
-## Overview
-Almost all the proxy applications restrict access based on the IP address. Most of the organizations network administrator would always prefer to block access to a specific address or range of addresses that he/she suspect belong to malicious individuals.
+## Overview 
 
-You can block access to a specific IP address or range of IP addresses to secured web access. SafeSquid SWG allows you to control single IP address or range of IP address using Access Restrictions section which is under Application Setup side menu.
+SafeSquid's Access Restriction section provides you an option to divide your users into specific user groups and use that user groups to define different set of Access Rules to that specific user groups. You want to define an access restriction to your users based on their role, then you can add the users into separate User Groups in Access Restriction section and use that User Groups to set the access rules.
 
-SafeSquid SWG won't let your current IP address get locked out, hence SafeSquid warns you and refuses your policy insert. If you're inside of a corporate intranet, be very careful about setting up your IP policies. The IP address you see on your own computer (like 192.168.0.10) generally bears no relationship to the IP address you'll actually appear as out on the internet. Your company likely proxies and/or NATs your address into a predictable set of outbound addresses which you'll likely need to ask your network team about.
+For example, in my organization I have to divide users into different groups such as HR TEAM, SALES TEAM, MANAGERS, GENERAL USERS...etc.
 
-A user whose access is restricted based on an access policy should get block template on browser.
+The access policies for that groups defined as follows:
+
+- Full internet access to the MANAGERS
+- Only Job Portals to the HR TEAM
+- Only Marketing Related websites to SALES TEAM
+- Deny total internet to the GENERAL USERS, they are allowed to access internal websites only.
+- Deny the access to consumer google accounts to ALL GROUPS
+
+So, I added those users or groups into separate User Groups in Access Restriction section of SafeSquid, and I used that User Groups to define the access policies mentioned same as above. You can also define the access policies based on user's network IP addresses.
 
 ## Prerequisites
-To check the scenario, make sure that your IP address is not already added inside the Access restrictions section.
+You must have integrated LDAP setup, if you want to create user groups based on LDAP users.
 
-## [Access the SafeSquid User interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+## Setup Guide
+### [Access the SafeSquid User interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ![clicking on configure in safesquid interface](/img/How_To/IP_based_authentication/image1.webp)
 

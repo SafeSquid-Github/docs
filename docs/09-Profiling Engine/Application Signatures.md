@@ -12,7 +12,7 @@ Keywords:
 - configure keyword filter SafeSquid  
 ---
 
-We're going to assume that you've an active SafeSquid account with atleast one Activation Key. If this is not completed yet, you can register at https://key.safesquid.com/
+We're going to assume that you've an active SafeSquid account with at-least one Activation Key. If this is not completed yet, you can register at https://key.safesquid.com/
 
 Login to the Self-Service Portal by visiting https://key.safesquid.com/ on your favorite browser.
 
@@ -30,7 +30,7 @@ To know more about this feature follow link [Block Emails or Files including arc
 
 
 ## Adding users using SafeSquid interface for authentication
-If you do not have an Active Directory (AD) server to integrate with SafeSquid LDAP, but you want authenticate users by assigning usernames and passwords to your users.
+If you do not have an Active Directory (AD) server to integrate with SafeSquid LDAP, but you want to authenticate users by assigning usernames and passwords to your users.
 
 ![clicking on configure in safesquid interface](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image1.webp)
 

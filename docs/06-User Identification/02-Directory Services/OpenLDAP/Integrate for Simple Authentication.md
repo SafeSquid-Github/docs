@@ -36,7 +36,7 @@ Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, passw
 ![going to integrate LDAP in application setup section](/img/How_To/Integrate_openLDAP_for_simple_authentication/image3.webp)
 
 ## Enable Integrate LDAP 
-![ensuring the LDAP section is enabled. by default it is set as false](/img/How_To/Integrate_openLDAP_for_simple_authentication/image4.webp)
+![ensuring the LDAP section is enabled. By default, it is set as false](/img/How_To/Integrate_openLDAP_for_simple_authentication/image4.webp)
 
 ![clicking on the global edit ](/img/How_To/Integrate_openLDAP_for_simple_authentication/image5.webp)
 

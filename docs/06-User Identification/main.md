@@ -1,29 +1,35 @@
 ---
 title: User Identification
 ---
+## Overview
+User identity drives policy enforcement, defines digital boundaries, and governs behavior. SafeSquid enables identity recognition through modular methods tailored to network architecture, trust design, and user mobility. Each method not only shapes access but also impacts the authentication experience.
 
-## [Setup User Identities](/docs/06-User%20Identification/Setup%20Authentication.md)
+### [IP-Based Recognition](/docs/06-User%20Identification/03-IP-Based%20Authentication/main.md)
+In static networks, identity begins with IP. SafeSquid maps static IP addresses to users or groups, validating identity by network origin. It requires no prompts, credentials, or interaction---identity is inferred and immediate. Ideal where user-device relationships remain constant.
 
-SafeSquid has a dynamic user and group identity management system with configurable identification options.
+### [OpenLDAP Integration](/docs/06-User%20Identification/02-Directory%20Services/OpenLDAP/main.md)
+As environments adopt directory services, OpenLDAP introduces structured identity. SafeSquid supports two authentication paths:
 
-### [Profile clients based on network identifiers](/docs/06-User%20Identification/03-Network%20Identifiers/IP-Based%20Authentication.md)
+-   **Kerberos SSO**
+    System login provides identity. No user prompts. SafeSquid reads the Kerberos ticket from the session and authenticates silently. Suitable for managed, domain-aware environments.
 
-In shared workstations, guest, and static IP networks, the access control policies are defined based on device-specific network signatures. Moreover, devices that do not support credential verification, like printers, and IoT devices, are identified based on IP address. It also enables you to secure varied network segments differently.
+-   **Simple**
+    Where SSO isn't feasible, SafeSquid prompts for credentials. User input is validated against OpenLDAP. Interaction is explicit, but effective for guest or unmanaged devices.
 
-### [Integrate your enterprise directory service](/docs/06-User%20Identification/02-Directory%20Services/main.md)
+### [Active Directory Integration](/docs/06-User%20Identification/02-Directory%20Services/Active%20Directory/main.md)
+For enterprise environments, Active Directory too offers seamless integration with:
 
-For enterprises with centralized user management infrastructure, connect your LDAP-based directory services, like [Microsoft® Windows Active Directory](/docs/06-User%20Identification/02-Directory%20Services/Active%20Directory/main.md) or [OpenLDAP](/docs/06-User%20Identification/02-Directory%20Services/OpenLDAP/main.md), with SafeSquid to authenticate users.
+-   **Kerberos SSO**
+-   **Simple**
 
-SafeSquid is also optimised to concurrently connect with multiple directory services. When credentials are entered, SafeSquid intelligently verifies the user from the appropriate directory service and efficiently caches user data.
+### Without Directory Services
+Where directories are absent, SafeSquid provides internal mechanisms:
 
-Furthermore, SafeSquid can be configured for [Kerberos-based authentication](/docs/06-User%20Identification/Kerberos%20SSO.md) for Single Sign On (SSO).
+-   [Credential-Based Authentication](/docs/06-User%20Identification/01-Browser%20Based%20Authentication.md)
+    User accounts and encrypted credentials are stored locally. SafeSquid presents a login prompt, validates inputs internally, and applies identity-based policies. Entirely self-contained.
 
-### [Create User Groups](/docs/06-User%20Identification/03-Network%20Identifiers/Network%20Identifiers.md)
+-   **PAM Authentication**
+    In Linux-based environments, SafeSquid leverages the Pluggable Authentication Module (PAM) framework for user identification. PAM enables SafeSquid to authenticate users through the host system's authentication stack, which may include system accounts, RADIUS, smartcards, biometric modules, or custom PAM configurations.
 
-For applying uniform security policies based on the specific roles, responsibilities, and risk profiles of different user sets, you can add user profiles to groups.
-
-On integrating your enterprise directory service, SafeSquid automatically extracts group membership information.
-
-## [Bypass Authentication for an application](/docs/06-User%20Identification/Bypass%20Authentication.md)
-
-Applications that do not support proxy authentication need to be bypassed to ensure no disruption for them while maintaining user authentication for other applications.
+### Multifactor Authentication
+For elevated security, SafeSquid combines identity sources. A typical flow begins with IP-based recognition---identifying the device---followed by a credential challenge through AD, OpenLDAP, PAM, or local store. Access is granted only when both factors align, ensuring dual-layer assurance without external token systems.
