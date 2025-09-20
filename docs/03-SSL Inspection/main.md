@@ -11,57 +11,58 @@ Keywords:
 - HTTPS scanning enterprise proxy  
 - enable SSL inspection SafeSquid  
 ---
+
 ## Overview
 
 Encrypted HTTPS traffic conceals malicious payloads, phishing attempts, and data leakage, bypassing traditional perimeter security. Enterprises need visibility into this traffic for enforcing web usage policies, malware scanning, and preventing data exfiltration. At the same time, privacy-sensitive domains (e.g., banking and healthcare) must remain uninspected to comply with regulations like GDPR and HIPAA.
 
 SafeSquid enables deep inspection of HTTPS traffic with minimal administrative overhead and no end-user disruption. It supports Zero-Trust architecture, granular policy-based bypass, and real-time threat prevention, delivering:
 
--   Comprehensive visibility into encrypted sessions.
--   Seamless user experience without certificate errors.
--   Granular control over bypass policies for compliance.
--   Enhanced security posture with contextual intelligence.
+- Comprehensive visibility into encrypted sessions.
+- Seamless user experience without certificate errors.
+- Granular control over bypass policies for compliance.
+- Enhanced security posture with contextual intelligence.
 
 ## How SafeSquid SSL Inspection Works
 
-1.  SafeSquid intercepts HTTPS CONNECT requests and establishes dual SSL tunnels:
+1. SafeSquid intercepts HTTPS CONNECT requests and establishes dual SSL tunnels:
 
-    -   Client ⇌ SafeSquid (using SafeSquid-generated certificate)
-    -   SafeSquid ⇌ Destination Server (using server's actual certificate)
+   - Client ⇌ SafeSquid (using SafeSquid-generated certificate)
+   - SafeSquid ⇌ Destination Server (using server's actual certificate)
 
-2.  Decrypts data streams to enforce security policies:
+2. Decrypts data streams to enforce security policies:
 
-    -   Malware scanning
-    -   Data Loss Prevention (DLP)
-    -   URL filtering and access control
+   - Malware scanning
+   - Data Loss Prevention (DLP)
+   - URL filtering and access control
 
-3.  Re-encrypts and forwards traffic back to clients.
+3. Re-encrypts and forwards traffic back to clients.
 
-4.  Key features include:
+4. Key features include:
 
-    -   On-the-fly TLS/SSL decryption.
-    -   Real-time SSL certificate validation and chain repair.
-    -   SNI-aware transparent proxying.
+   - On-the-fly TLS/SSL decryption.
+   - Real-time SSL certificate validation and chain repair.
+   - SNI-aware transparent proxying.
 
 ## Prerequisites
 
 ### Client-Side Preparations
 
--   Deploy SafeSquid Root CA certificate to all client systems and browsers.
--   Update endpoint security solutions to trust SafeSquid's MITM certificates.
--   Verify compatibility with applications enforcing SSL pinning.
+- Deploy SafeSquid Root CA certificate to all client systems and browsers.
+- Update endpoint security solutions to trust SafeSquid's MITM certificates.
+- Verify compatibility with applications enforcing SSL pinning.
 
 ### SafeSquid-Side Preparations
 
--   Generate or import enterprise-approved Root CA certificates.
--   Configure Trusted Root CA store for validating upstream certificates.
--   Prepare role-based policies for bypassing sensitive domains and services.
+- Generate or import enterprise-approved Root CA certificates.
+- Configure Trusted Root CA store for validating upstream certificates.
+- Prepare role-based policies for bypassing sensitive domains and services.
 
 ## Configuring HTTPS Inspection
 
 ### Generating SSL Certificates
 
-**[Access the Self-Service Portal](https://help.safesquid.com/portal/en/kb/articles/access-the-self-service-portal)**
+[**Access the Self-Service Portal**](https://help.safesquid.com/portal/en/kb/articles/access-the-self-service-portal)
 
 Log in to the Self-Service Portal - [https://key.safesquid.com](https://key.safesquid.com/) 
 
@@ -76,7 +77,9 @@ The Self-Service Portal for managing your SafeSquid deployments, facilitates eas
 Using Self-Signed Certificate. 
 
 :::note
+
 When you see the "Generate" button it means that SafeSquid's SSL certificate has not been generated yet. 
+
 :::
 
 ![clicking on generate, Picture](/img/SSL_Inspection/image3.webp) 
@@ -119,8 +122,7 @@ Generating SafeSquid certificate using an enterprise CA certificate which has a 
 
 From the Self-Service Portal 
 
-![Rectangle 1, Textbox](/img/SSL_Inspection/image15.webp)
-![clicking on download to download your self signed certificate, Picture](/img/SSL_Inspection/image16.webp)
+![Rectangle 1, Textbox](/img/SSL_Inspection/image15.webp) ![clicking on download to download your self signed certificate, Picture](/img/SSL_Inspection/image16.webp)
 
 ### Enabling SSL Inspection
 
@@ -148,8 +150,7 @@ Go to Configure Page 
 
  ![clicking on edit policy in global tab , Picture](/img/SSL_Inspection/image21.webp)![selecting true in drop down menu, Picture](/img/SSL_Inspection/image22.webp) ![clicking on save policy, Picture](/img/SSL_Inspection/image23.webp)
 
- 
-**Open Inspection Policies Tab**
+  **Open Inspection Policies Tab**
 
 Make sure all the policies should be Enabled as True. 
 
@@ -163,7 +164,6 @@ Make sure all the policies should be Enabled as True. 
 
 ![clicking on the save policy, Picture](/img/SSL_Inspection/image28.webp)
 
-
 **Save Configuration**
 
 Click on Save Configuration icon situated at bottom left corner. 
@@ -172,19 +172,19 @@ Click on Save Configuration icon situated at bottom left corner. 
 
 When you click on Save config, it will give a prompt for asking the confirmation to store your configuration into the cloud.  
 
--   Select Yes only in below cases: 
+- Select Yes only in below cases: 
 
-    -   If you want to use this same configuration in other SafeSquid instances. 
+  - If you want to use this same configuration in other SafeSquid instances. 
 
-    -   If your total configuration in all sections is completed and validated.  
+  - If your total configuration in all sections is completed and validated.  
 
--   Otherwise, select No and click on submit 
+- Otherwise, select No and click on submit 
 
 ## Bypass Inspection
 
 **To bypass HTTPS Inspection enabled SafeSquid default configuration, follow the below steps:**
 
-**[Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)**
+[**Access the SafeSquid User Interface**](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
 
 ![clicking on configure in safesquid interface, Picture](/img/SSL_Inspection/image30.webp) 
 
@@ -202,15 +202,15 @@ When you click on Save config, it will give a prompt for asking the confirmation
 
 ![clicking on save policy to save it, Picture](/img/SSL_Inspection/image35.webp) 
 
-**Edit policies and profiles to Enable as TRUE **
+\*\*Edit policies and profiles to Enable as TRUE \*\*
 
 ![editing the default policies to bypass ssl inspection for applications and categories, Picture](/img/SSL_Inspection/image36.webp) 
 
-**How to create new policy to bypass HTTPS Inspection **
+\*\*How to create new policy to bypass HTTPS Inspection \*\*
 
 ![example of how to create new policy to bypass SSL inspection, Picture](/img/SSL_Inspection/image37.webp) 
 
-**Go to Request Types **
+\*\*Go to Request Types \*\*
 
 ![going to request types in request types section in sidebar, Picture](/img/SSL_Inspection/image38.webp) 
 
@@ -224,7 +224,7 @@ When you click on Save config, it will give a prompt for asking the confirmation
 
  
 
-**Go to Access Policies **
+\*\*Go to Access Policies \*\*
 
 ![creating a new policy in access profiles, Picture](/img/SSL_Inspection/image42.webp) 
 
@@ -233,5 +233,7 @@ When you click on Save config, it will give a prompt for asking the confirmation
 ![click on save policy to save, Picture](/img/SSL_Inspection/image44.webp) 
 
 :::note
+
 Configure Proxy settings in drop box and upload/download files to validate the working
+
 :::
