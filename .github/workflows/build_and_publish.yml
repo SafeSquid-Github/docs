@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+      - dev
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,5 +30,12 @@ jobs:
       - run: mkdir -p /github/home/.ssh
       - run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > /github/home/.ssh/id_ed25519 && chmod 600 /github/home/.ssh/id_ed25519
 
-      # Use rsync to deploy the build directory
-      - run: rsync -avz --delete build/ -e "ssh -o StrictHostKeyChecking=no -i /github/home/.ssh/id_ed25519" ${{ vars.REMOTE_USER }}@${{ vars.REMOTE_HOST }}:${{ vars.REMOTE_PATH }}
+      # Deploy for main branch
+      - name: Deploy to production
+        if: github.ref == 'refs/heads/main'
+        run: rsync -avz --delete build/ -e "ssh -o StrictHostKeyChecking=no -i /github/home/.ssh/id_ed25519" ${{ vars.REMOTE_USER }}@${{ vars.REMOTE_HOST }}:${{ vars.REMOTE_PATH }}
+
+      # Deploy for dev branch
+      - name: Deploy to staging
+        if: github.ref == 'refs/heads/dev'
+        run: rsync -avz --delete build/ -e "ssh -o StrictHostKeyChecking=no -i /github/home/.ssh/id_ed25519" ${{ vars.REMOTE_USER }}@${{ vars.REMOTE_HOST }}:${{ vars.REMOTE_PATH_DEV }}
