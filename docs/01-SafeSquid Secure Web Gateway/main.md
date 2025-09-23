@@ -1,5 +1,5 @@
 ---
-title: Legacy Web Security vs Zero-Trust at Layer-7 | SafeSquid SWG
+title: Introducing SafeSquid Secure Web Gateway
 description: Why legacy firewalls and URL filters fail at Layer-7 and how Zero-Trust Web Security defends against phishing, malware, and data loss.
 Keywords: 
 - Web Security
