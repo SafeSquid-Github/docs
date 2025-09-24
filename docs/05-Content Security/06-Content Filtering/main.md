@@ -1,12 +1,6 @@
 ---
-title: Content Filtering
+title: Content Moderation
 description: Learn how to configure SafeSquid to filter inappropriate content, including pornography, by using custom categorization, image filters, and text analyzers.
-keywords:
-- content filtering safesquid
-- block inappropriate content safesquid
-- block pornographic content safesquid
-- image filter safesquid
-- text analyzer safesquid
 ---
 
 ## Overview
@@ -62,3 +56,13 @@ Read more about [Image Analyzer](/docs/11-Deep%20Content%20Security/02-Content%2
 
 ## Testing
 Access any pornographic content from your browser, then you will see the blocked template of SafeSquid. And Pornographic images will be blocked due to image analyzer.
+
+
+
+SafeSquid’s content moderation engine analyzes and filters web content in real-time to enforce compliance, safety, and productivity policies.
+
+## Included Modules
+- [Image Analyzer](/docs/11-Deep%20Content%20Security/02-Content%20Moderation/Image%20Analzer.md): Detects inappropriate or non-compliant visual content using AI-powered image analysis.
+- [Text Analyzer](/docs/11-Deep%20Content%20Security/02-Content%20Moderation/Text%20Analyzer.md): Scans and classifies textual content for profanity, hate speech, and policy violations.
+
+Use these tools to build a safer and policy-compliant browsing environment.

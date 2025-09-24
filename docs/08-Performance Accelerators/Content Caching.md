@@ -1,13 +1,12 @@
 ---
-title: Caching Specific Websites in SafeSquid  
+title: Content Caching
 Description: Learn how to cache specific websites using SafeSquid’s content caching feature to improve bandwidth efficiency, reduce latency, and accelerate web access for frequently visited content.
-
 Keywords:
-- SafeSquid website caching  
-- Configure cache in SafeSquid  
-- SafeSquid disk cache management  
-- Bandwidth optimization SafeSquid  
-- Cache specific URLs SafeSquid  
+  - SafeSquid website caching
+  - Configure cache in SafeSquid
+  - SafeSquid disk cache management
+  - Bandwidth optimization SafeSquid
+  - Cache specific URLs SafeSquid
 ---
 
 ## Overview

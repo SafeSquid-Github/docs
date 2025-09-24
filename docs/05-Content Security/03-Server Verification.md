@@ -1,12 +1,12 @@
 ---
-title: SSL Certificate Validation
+title: Server Certificate Validation
 description: Learn how to import SafeSquid SSL certificates into Chrome, Internet Explorer, and Firefox, and download them from the SafeSquid interface to enable seamless HTTPS inspection and secure encrypted web traffic.
 keywords:
-- SafeSquid SSL certificate
-- HTTPS inspection setup
-- import certificate Chrome Firefox
-- download SSL SafeSquid
-- enable HTTPS proxy
+  - SafeSquid SSL certificate
+  - HTTPS inspection setup
+  - import certificate Chrome Firefox
+  - download SSL SafeSquid
+  - enable HTTPS proxy
 ---
 
 ### Overview 

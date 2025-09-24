@@ -1,13 +1,12 @@
 ---
-title: Transparent Redirection with SafeSquid and WCCP  
+title: WCCP
 Description: Configure SafeSquid with Cisco WCCP to enable seamless transparent redirection, ensuring proxy-free client setups, load balancing, high availability, and scalable web traffic management.
-
 Keywords:
-- SafeSquid WCCP configuration  
-- Transparent proxy redirection  
-- Cisco WCCP with SafeSquid  
-- SafeSquid load balancing proxy  
-- High availability proxy setup  
+  - SafeSquid WCCP configuration
+  - Transparent proxy redirection
+  - Cisco WCCP with SafeSquid
+  - SafeSquid load balancing proxy
+  - High availability proxy setup
 ---
 ## GOAL
 Are you looking for Transparent redirection of traffic?

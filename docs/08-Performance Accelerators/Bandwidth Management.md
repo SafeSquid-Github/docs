@@ -1,13 +1,12 @@
 ---
-title: Configure Download and Upload Limits in SafeSquid  
+title: Bandwidth Management
 Description: Learn how to control download speed, maximum download size, and upload size for users using SafeSquid’s Limits feature, enhancing bandwidth management and enforcing secure data handling policies.
-
 Keywords:
-- SafeSquid download speed limit  
-- SafeSquid upload size restriction  
-- Bandwidth control SafeSquid  
-- Set file transfer limits SafeSquid  
-- SafeSquid HTTPS download control  
+  - SafeSquid download speed limit
+  - SafeSquid upload size restriction
+  - Bandwidth control SafeSquid
+  - Set file transfer limits SafeSquid
+  - SafeSquid HTTPS download control
 ---
 
 ## Overview

@@ -1,13 +1,12 @@
 ---
-title: Master-Slave Configuration in SafeSquid  
+title: Master-Slave
 Description: Learn how to configure SafeSquid in a master-slave architecture where a central master server synchronizes and manages multiple slave instances for centralized policy control and reporting.
-
 Keywords:
-- SafeSquid master-slave configuration  
-- Configure SafeSquid slave server  
-- Centralized policy management SafeSquid  
-- SafeSquid multi-instance setup  
-- SafeSquid synchronization  
+  - SafeSquid master-slave configuration
+  - Configure SafeSquid slave server
+  - Centralized policy management SafeSquid
+  - SafeSquid multi-instance setup
+  - SafeSquid synchronization
 ---
 
 ## What does Master/Slave mean?
