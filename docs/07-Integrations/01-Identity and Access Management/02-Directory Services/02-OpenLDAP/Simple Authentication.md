@@ -1,12 +1,12 @@
 ---
-title: Integrate OpenLDAP for Simple Authentication
+title: Simple Authentication
 description: Learn how to integrate OpenLDAP with SafeSquid for simple authentication, including configuration steps for LDAP server, user extraction, and testing.
 keywords:
-- openldap integration
-- simple authentication with openldap
-- safesquid ldap authentication
-- configure openldap for safesquid
-- openldap setup for safesquid
+  - openldap integration
+  - simple authentication with openldap
+  - safesquid ldap authentication
+  - configure openldap for safesquid
+  - openldap setup for safesquid
 ---
 
 ## Overview

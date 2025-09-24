@@ -1,5 +1,5 @@
 ---
-title: Browser-Based Authentication
+title: Local Credential Store
 description: Configure SafeSquid for browser-based user authentication without Active Directory using local credential storage.
 SEO keywords:
   - browser-based authentication

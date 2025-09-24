@@ -28,3 +28,5 @@ Content Caching leads to faster load times and reduced bandwidth usage at the co
 ## [Prefetch Content](/docs/14-Performance%20Optimisation/Pre%20Fetching.md)
 With the prefetching feature, virtually any file referenced in HTML can be pre-fetched, and cached, thus reducing resource retrievals and improving retrieval time. The Prefetching feature can be used as an 'internet accelerator'.
 
+
+Also, internalise DNS using Bind, etc

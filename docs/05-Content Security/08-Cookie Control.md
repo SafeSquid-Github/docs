@@ -1,12 +1,12 @@
 ---
-title: Cookie Filter
+title: Cookie Control
 description: Learn how to configure SafeSquid's cookie filter to manage cookie exchanges, block unwanted cookies, and ensure privacy for users.
 keywords:
-- cookie filter safesquid
-- block cookies safesquid
-- cookie management safesquid
-- restrict cookies safesquid
-- cookie filtering safesquid
+  - cookie filter safesquid
+  - block cookies safesquid
+  - cookie management safesquid
+  - restrict cookies safesquid
+  - cookie filtering safesquid
 ---
 
 ## Overview

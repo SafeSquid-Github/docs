@@ -1,3 +1,7 @@
+---
+title: Integrations
+---
+
 # Integrations
 
 With an Enterprise Ready Architecture, SafeSquid can easily integrate with your IAM systems, LDAP servers, ICAP servers, DLP systems, SIEMs, and SoC threat intelligence, to easily blend in your environment.

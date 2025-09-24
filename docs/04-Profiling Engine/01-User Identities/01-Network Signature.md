@@ -1,12 +1,12 @@
 ---
-title: IP Based Authentication
+title: Network Signature
 description: Learn how to configure IP-based authentication in SafeSquid to control web access based on IP addresses, ensuring secure access for trusted users and blocking suspicious addresses.
 keywords:
-- ip based authentication safesquid
-- safesquid ip access control
-- restrict ip access safesquid
-- safesquid authentication by ip
-- block ip address safesquid
+  - ip based authentication safesquid
+  - safesquid ip access control
+  - restrict ip access safesquid
+  - safesquid authentication by ip
+  - block ip address safesquid
 ---
 
 ## Overview

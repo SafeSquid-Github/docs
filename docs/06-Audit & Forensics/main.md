@@ -1,5 +1,5 @@
 ---
-title: System Audit
+title: Audit & Forensics
 ---
 
 ### Monitor SafeSquid health

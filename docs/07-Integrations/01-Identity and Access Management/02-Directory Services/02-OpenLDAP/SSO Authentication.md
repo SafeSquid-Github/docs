@@ -1,12 +1,12 @@
 ---
-title: Integrate OpenLDAP for SSO Authentication
+title: SSO Authentication
 description: Learn how to integrate OpenLDAP for Single Sign-On (SSO) authentication in SafeSquid. This guide covers configuring LDAP settings, creating user groups, and verifying SSO authentication.
 keywords:
-- OpenLDAP integration
-- SSO authentication
-- SafeSquid LDAP setup
-- LDAP configuration
-- SafeSquid authentication
+  - OpenLDAP integration
+  - SSO authentication
+  - SafeSquid LDAP setup
+  - LDAP configuration
+  - SafeSquid authentication
 ---
 
 ## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
