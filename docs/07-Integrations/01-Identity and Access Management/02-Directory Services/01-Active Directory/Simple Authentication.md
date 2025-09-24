@@ -1,12 +1,12 @@
 ---
-title: Integrate AD For Simple Authentication
+title: Simple Authentication
 description: Learn how to integrate Active Directory for simple authentication in SafeSquid, including configuration, enabling LDAP, and troubleshooting.
 keywords:
-- active directory integration
-- ldap authentication safesquid
-- simple authentication safesquid
-- ldap configuration
-- sso authentication safesquid
+  - active directory integration
+  - ldap authentication safesquid
+  - simple authentication safesquid
+  - ldap configuration
+  - sso authentication safesquid
 ---
 
 ##  Overview

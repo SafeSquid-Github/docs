@@ -8,21 +8,18 @@ Keywords:
 - SafeSquid self-service portal  
 - SafeSquid Web GUI access  
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## Licensing Overview and Activation Purpose
 
 SafeSquid requires valid licensing to enable full functionality and continuous availability. Two licensing options are available:
-
 - **Free Licensing**: Always free; supports core functionality without time restriction.
-
 - **Commercial Licensing**: Includes real-time threat intelligence updates, 365-day disaster recovery and backup, and email-based support.
 
-License activation is completed post-installation and is essential for activating subscription-based features and ensuring platform synchronization.
+License activation is completed after installation and is essential for activating subscription-based features and ensuring platform synchronisation.
 
-Activating multiple SafeSquid instances using the same activation key enables synchronization of SSL certificates and configuration files across nodes.
+Activating multiple SafeSquid instances using the same activation key enables synchronisation of SSL certificates and configuration files across nodes.
 
 ## Readiness Checklist
 

@@ -1,12 +1,12 @@
 ---
-title: Integrate AD for SSO Authentication
+title: SSO Authentication
 description: Learn how to integrate Active Directory for Single Sign-On (SSO) authentication in SafeSquid, including configuring LDAP, verifying user extraction, and troubleshooting.
 keywords:
-- active directory sso safesquid
-- integrate ldap with safesquid
-- kerberos authentication safesquid
-- sso setup safesquid
-- safequd active directory authentication
+  - active directory sso safesquid
+  - integrate ldap with safesquid
+  - kerberos authentication safesquid
+  - sso setup safesquid
+  - safequd active directory authentication
 ---
 
 ## Overview
