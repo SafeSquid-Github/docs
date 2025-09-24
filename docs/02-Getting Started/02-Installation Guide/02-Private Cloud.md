@@ -1,12 +1,12 @@
 ---
-title: Install Secure Web GateWay on Cloud
-Description: This documentation provides a detailed guide on deploying SafeSquid Secure Web Gateway in cloud environments. 
+title: Private Cloud
+Description: This documentation provides a detailed guide on deploying SafeSquid Secure Web Gateway in cloud environments.
 Keywords:
-- Install Secure Web Gateway on the cloud  
-- Cloud-based SWG deployment  
-- SafeSquid cloud SWG  
-- Cloud-agnostic web gateway  
-- Secure Web Gateway for remote workforce  
+  - Install Secure Web Gateway on the cloud
+  - Cloud-based SWG deployment
+  - SafeSquid cloud SWG
+  - Cloud-agnostic web gateway
+  - Secure Web Gateway for remote workforce
 ---
 
 ## Adapting IT Infrastructure for Cloud Security

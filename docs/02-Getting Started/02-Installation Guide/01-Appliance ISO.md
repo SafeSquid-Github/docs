@@ -1,12 +1,12 @@
 ---
-title: Install On Premise Secure Web Gateway
+title: Appliance ISO
 Description: This documentation explains how to quickly deploy SafeSquid Secure Web Gateway using the SafeSquid Appliance Builder (SAB), a pre-configured ISO that automates installation, system hardening, and setup across physical and virtual environments.
 Keywords:
-- SafeSquid Appliance Builder  
-- Install Secure Web Gateway ISO  
-- Secure Web Gateway automated installation  
-- SWG deployment on virtual machine  
-- SafeSquid ISO setup guide  
+  - SafeSquid Appliance Builder
+  - Install Secure Web Gateway ISO
+  - Secure Web Gateway automated installation
+  - SWG deployment on virtual machine
+  - SafeSquid ISO setup guide
 ---
 
 ## Installation Challenges
