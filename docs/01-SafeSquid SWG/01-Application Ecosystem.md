@@ -10,10 +10,9 @@ Keywords:
   - Web reporting and analytics
   - SafeSquid supporting services
 ---
-
 # Application Ecosystem
 
-Enterprises stitching together multiple security appliances inherit policy drift, inspection blind spots, and operational overhead; effective Layer-7 enforcement therefore demands a single, modular system that integrates cleanly, scales horizontally, and sustains line-rate performance.&#x20;
+Enterprises stitching together multiple security appliances inherit policy drift, inspection blind spots, and operational overhead; effective Layer-7 enforcement therefore demands a single, modular system that integrates cleanly, scales horizontally, and sustains line-rate performance.
 
 ## Typical High-Level Solution Architecture
 
@@ -24,19 +23,15 @@ SafeSquid’s Application Ecosystem meets this need through an enterprise-grade,
 
 
 - **Elastic scale:** Clustered proxies grow horizontally without policy drift.
-
 - **Unified L7 control:** Central policy engine delivers consistent outcomes
-
 - **Audit-ready operations:** Built-in reporting/forensics and versioned backups&#x20;
-
 - **Secure by design:** Selective TLS interception, true-MIME validation, and policy-aware DNS to expose intent and block abuse.
-
 ### Architectural Planes
 
 Enterprises struggle when a single change in one place breaks traffic in another, or when policy behaves differently across sites. SafeSquid splits responsibilities into planes so each solves a distinct problem without colliding with the others, simplifying scale, upgrades, and audit.
 
 - **Data plane**\
-  Modern HTTPS hides intent while users expect instant page loads. Blind pass-through misses attacks; heavy inspection adds latency. The SafeSquid Proxy Cluster sits in the path and resolves this tension: it validates TLS, decrypts selectively under policy, inspects HTTP semantics, scans the content exhanged, and enforces security policies. Nodes remain stateless and scale horizontally behind load balancers.
+  Modern HTTPS hides intent while users expect instant page loads. Blind pass-through misses attacks; heavy inspection adds latency. The SafeSquid Proxy Cluster sits in the path and resolves this tension: it validates TLS, decrypts selectively under policy, inspects HTTP semantics, scans the content exchanged, and enforces security policies. Nodes remain stateless and scale horizontally behind load balancers.
 
 - **Control plane**\
   The problem is sprawl: dozens of proxies, each with slightly different rules, and risky “all-or-nothing” pushes. The Policy Configuration Console becomes the source of truth. Teams author, simulate, review, and approve changes, then publish with staged rollouts and RBAC. Versioning and diffs make every change auditable and reversible, so updates move quickly without surprises in the data path.
@@ -46,72 +41,6 @@ Enterprises struggle when a single change in one place breaks traffic in another
 
 - **Observability plane**\
   Incident response and compliance fail when logs lack context or arrive late. Reporting & Forensics solves this by streaming structured telemetry (JSON/CEF/syslog) with evidence fields. Dashboards show health and policy outcomes in real time, while scheduled CSV/PDF reports satisfy audit cycles without manual exports.
-
-### Typical Web Traffic Flow via SafeSquid Proxy
-
-1. **Client -> Proxy**\
-   Client discovers the proxy (PAC/WPAD or WCCP/redirect) and opens TCP to the proxy VIP\
-   If proxy auth applies, negotiate 407/Proxy-Authenticate.
-
-2. **HTTPS CONNECT gate**\
-   For HTTPS, client issues CONNECT host:443. \
-   Policy decides: block, tunnel (splice), or intercept (bump/peek-and-bump).
-
-3. **Client-side TLS**\
-   Proxy presents a leaf certificate signed by the enterprise root CA and completes TLS with the client. Enforce client-side protocol, cipher/curve, and ALPN policy.
-
-4. **Policy-Aware DNS Resolution**\
-   Extract intended FQDN (from CONNECT target or SNI). Evaluate policy-aware DNS: category, geo-location/ASN, NRD status, and tunnelling patterns.
-
-5. **Server-side connect**\
-   Open TCP to the resolved destination (or parent proxy).&#x20;
-
-6. **Server-side TLS**\
-   Negotiate TLS (prefer HTTP/2 via ALPN). Validate certificate chain and hostname, check revocation (OCSP/CRL; CT if enabled), and enforce cipher/curve policy. Apply hard-fail or soft-fail per site class.
-
-7. **TLS Decryption**\
-   Decrypts the HTTP Communication
-
-8. **Request normalisation**\
-   Parse method, path, headers, cookies; decompress if needed (gzip/brotli); resolve absolute vs origin-form; apply header size and URI length limits; assign routing (direct/upstream).
-
-9. **Context Binding**\
-   Map the request to user/group (AD/LDAP/Kerberos SSO), device posture (managed/unmanaged, health), network signature, time, and session risk. Classify application and tenant using SNI/SAN, host/path patterns, headers, and cookies; confirm web category and server geo.
-
-10. **Deep content inspection**\
-    Verify **true-MIME** via magic bytes; parse containers (archives, OOXML, PDFs); extract embedded objects; enable **OCR** for images when DLP requires it. Run inline **AV heuristics**; invoke **ICAP REQMOD/RESPMOD** for sandbox detonation on suspicious objects; apply **DLP** on upload/download; enforce header/cookie governance (Secure/HttpOnly/SameSite, cookie scoping).
-
-
-
-    1. **Deep Content Inspection**\
-       Performs deep inspection of information exchanged in the HTTP protocol headers and the payload entities\
-       True-MIME type, Image, Malware\
-       Inspect magic bytes and container structure; flag MIME mismatches; extract embedded objects;&#x20;
-
-       OCR images for DLP.
-
-       Run AV heuristics; evaluate rules; call ICAP REQMOD/RESPMOD for sandboxing when objects look suspicious; enforce DLP on upload/download; apply header/cookie governance (Secure/HttpOnly/SameSite).
-
-       and \
-       **Web Categorisation, Application/Tenant Identification etc**\
-       Map request to user/group (AD/LDAP/Kerberos SSO), network signature, server location, time, and session risk.
-
-    2. **Policy Engine**\
-       Policy Decision and Enforcement\
-       Decide **allow / modify / step-up / isolate (RBI) / rate-limit / deny** with a reason code. Example modifications: strip risky JavaScript, add CSP/HSTS, block WebSockets, neutralize active content.
-
-    3. **Content Filtering**
-
-    4. **Forward and shape**
-
-       On allow, forward upstream, receive response, repeat response-side checks, apply caching directives, re-compress
-
-    5. **TLS Re-Encryption**\
-       re‑encrypts the HTTP communication
-
-11. **Telemetry**
-
-    Emit structured logs to Reporting/Forensics and SIEM: request\_id, user\_id, device\_id, policy\_id, decision, reason, tls\_version/cipher, sni/host, true\_mime, dest\_tenant, timings (p95 buckets), ICAP verdicts.
 
 ## Core Components
 

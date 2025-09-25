@@ -5,5 +5,4 @@ Description:
 Keywords:
 
 ---
-
 # SafeSquid Proxy Cluster
