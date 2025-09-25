@@ -1,13 +1,12 @@
 ---
-title: How to Configure Proxy in a Browser  
+title: TCP Proxy
 Description: Learn how to configure your web browser to use the SafeSquid proxy server, including detailed steps for setting proxy settings in Chrome and Firefox to access the SafeSquid WebGUI.
-
 Keywords:
-- Configure proxy in browser  
-- Set proxy in Chrome for SafeSquid  
-- Firefox manual proxy configuration  
-- SafeSquid browser setup  
-- Access SafeSquid WebGUI  
+  - Configure proxy in browser
+  - Set proxy in Chrome for SafeSquid
+  - Firefox manual proxy configuration
+  - SafeSquid browser setup
+  - Access SafeSquid WebGUI
 ---
 
 ## Overview

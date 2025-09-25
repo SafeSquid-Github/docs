@@ -1,112 +1,85 @@
 ---
-title: Deploy SafeSquid Behind Corporate Proxy  
-Description: Learn how to deploy SafeSquid Secure Web Gateway behind a corporate (parent) proxy, configure proxy chaining, enable HTTPS inspection, and forward client requests for seamless integration within enterprise network environments.
-
+title: Forward Proxy
+Description: Learn how to configure your web browser to use the SafeSquid proxy server, including detailed steps for setting proxy settings in Chrome and Firefox to access the SafeSquid WebGUI.
 Keywords:
-- Deploy SafeSquid behind proxy  
-- SafeSquid proxy chaining  
-- Configure parent-child proxy  
-- SafeSquid forwarding proxy setup  
-- SafeSquid behind corporate firewall  
+  - Configure proxy in browser
+  - Set proxy in Chrome for SafeSquid
+  - Firefox manual proxy configuration
+  - SafeSquid browser setup
+  - Access SafeSquid WebGUI
 ---
 
 ## Overview
-Use SafeSquid in front of the corporate proxy. A simple configuration in SafeSquid server, will forward all client requests to the forward proxy i.e. Parent Proxy.
+SafeSquid Proxy Service has a browser-based intrinsic WebGUI, that allows users to configure, and manage its various features. To access the Interface, you must configure your web browser to use the SafeSquid® proxy server. You should be able to access the WebGUI with the URL -- http://safesquid.cfg
 
-Example scenarios:
+## Set Proxy in Chromium-based browser Via System Settings
+Here we will configure a proxy in the Chrome browser
 
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image1.webp)
+### Open Chrome browser settings from the browser toolbar
+![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image1.webp)
 
-Here am using two proxy servers as SafeSquid only
+![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image2.webp)
 
-My client (Browser)## 's network IP - 192.168.0.27
+### Click on the System tab in Settings.
+![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image3.webp)
 
-My Child Proxy## 's network IP - 192.168.27.50 (with no direct internet Access)
+**OR**
 
-My Parent Proxy## 's network IP - 192.168.27.100
+### You can search "proxy" in the search bar.
+![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image4.webp)
 
-**Configuration on child proxy:**
+### Open the computer's proxy settings.
+![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image5.webp)
 
-1. Deploy SafeSquid proxy
-2. Enabling SSL inspection in SafeSquid
-3. Downloading ROOT CA certificate from SafeSquid
-4. Deploy certificate in client browsers.
-5. Enable forwarding to parent proxy using forwarding section
+**It will take you to your computer's proxy settings**
 
-**Configuration on Parent proxy:**
+### Turn on the "Use a proxy server" button
+![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image6.webp)
 
-Deploy SafeSquid, it is up and running, no extra configuration required in parent proxy
+![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image7.webp)
 
-## Prerequisites
-Enable HTTPS inspection on child proxy (if you want,on Parent proxy also). Check our document to configure HTTPS inspection on SafeSquid - [How to configure HTTPS inspection](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
+### Enter your proxy information i.e. IP address of your proxy server and Port number 8080
+![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image8.webp)
 
-Import SafeSquid child proxy ROOT CA in client browser
+Notice the next field: Here, you can input a list of domain names and IP addresses to connect to without a proxy. For instance, if you don't want to use proxies when connecting to
 
-Note: No configuration required on Parent Proxy server. Just deploy the parent proxy and make sure that it is up and running.
+infatica.io,
 
-## [Access The SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
-## Go to Configure
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image2.webp)
+192.158. 1.38, and
 
-## Go to Application Setup
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image3.webp)
+Any IP address that starts with 127.
 
-## Go to Proxy chain
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image4.webp)
+![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image9.webp)
 
-## Enable Global section 
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image5.webp)
+**OR**
 
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image6.webp)
+**You can leave it blank**
 
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image7.webp)
+### Click on save 
+![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image10.webp)
 
-## Go to Forwarding proxies
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image8.webp)
+## Configure proxy specifically for Mozilla Firefox
+Mozilla Firefox offers the option to configure a proxy specifically for the browser without affecting the system-wide settings. Here's how you can do it:
 
-## Add an entry 
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image9.webp)
+### Open Firefox and click on the menu button (three horizontal lines) in the top right corner
+![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image11.webp)
 
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image10.webp)
+### Click on settings
+![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image12.webp)
 
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image11.webp)
+### In the "General" section, Scroll down to the "Network Settings"
+![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image13.webp)
 
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image12.webp)
+### Click on the "Settings" button
+![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image14.webp)
 
-In the example: my upstream proxy ip: 192.168.27.100
+Now, you'll see options for configuring your proxy settings specifically for Firefox.
 
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image13.webp)
+### Select the "Manual proxy configuration" radio button
+![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image15.webp)
 
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image14.webp)
+### Enter the proxy server address and port number in the respective fields
+![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image16.webp)
 
-In example: my upstream proxy listening on port 8080
-
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image15.webp)
-
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image16.webp)
-
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image17.webp)
-
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image18.webp)
-
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image19.webp)
-
-## Testing 
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image20.webp)
-
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image21.webp)
-
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image22.webp)
-
-## Save configuration
-![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image23.webp)
-
-When you click on Save config, it will give a prompt for asking the confirmation to store your configuration into the cloud.
-
-Select Yes only in below cases:
-
-if you want to use this same configuration in other SafeSquid instances.
-
-if your total configuration in all sections is completed and validated.
-
-Otherwise select No and click on submit.
+### Click "OK" to save your changes
+![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image17.webp)

@@ -1,13 +1,12 @@
 ---
-title: Upgrade SafeSquid to a Newer Version  
+title: Upgrade SafeSquid
 Description: Learn how to upgrade SafeSquid Secure Web Gateway to the latest version using the Web GUI, including prerequisites, cleanup instructions, and step-by-step guidance on uploading and applying the new tarball package.
-
 Keywords:
-- Upgrade SafeSquid SWG  
-- SafeSquid tarball update  
-- Update SafeSquid from GUI  
-- SafeSquid version upgrade  
-- SafeSquid Monit service  
+  - Upgrade SafeSquid SWG
+  - SafeSquid tarball update
+  - Update SafeSquid from GUI
+  - SafeSquid version upgrade
+  - SafeSquid Monit service
 ---
 
 ## Overview

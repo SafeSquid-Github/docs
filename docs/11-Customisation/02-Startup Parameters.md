@@ -1,11 +1,11 @@
 ---
-title: SafeSquid Startup Parameters  
-description: Learn how to configure SafeSquid's startup parameters for optimal performance and reliability. Understand critical settings like LISTEN_IP, MASTER_IP, LOG_LEVEL, and threading to enhance your Secure Web Gateway's behavior.  
-keywords:  
-- SafeSquid configuration  
-- proxy server tuning  
-- SafeSquid LISTEN_IP  
-- LOG_LEVEL settings  
+title: Startup Parameters
+description: Learn how to configure SafeSquid's startup parameters for optimal performance and reliability. Understand critical settings like LISTEN_IP, MASTER_IP, LOG_LEVEL, and threading to enhance your Secure Web Gateway's behavior.
+keywords:
+  - SafeSquid configuration
+  - proxy server tuning
+  - SafeSquid LISTEN_IP
+  - LOG_LEVEL settings
 ---
 
 ## Overview

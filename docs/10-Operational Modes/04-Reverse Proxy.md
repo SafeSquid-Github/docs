@@ -1,13 +1,12 @@
 ---
-title: Configure SafeSquid as a Reverse Proxy  
+title: Reverse Proxy
 Description: Learn how to configure SafeSquid as a reverse proxy to optimize website performance, enable SSL termination, enhance security, and provide caching, all without requiring client-side proxy configuration.
-
 Keywords:
-- SafeSquid reverse proxy setup  
-- Configure SafeSquid SSL termination  
-- SafeSquid web acceleration  
-- Reverse proxy caching SafeSquid  
-- SafeSquid reverse proxy authentication  
+  - SafeSquid reverse proxy setup
+  - Configure SafeSquid SSL termination
+  - SafeSquid web acceleration
+  - Reverse proxy caching SafeSquid
+  - SafeSquid reverse proxy authentication
 ---
 
 ## Overview
