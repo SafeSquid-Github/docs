@@ -12,7 +12,7 @@ keywords:
   - SafeSquid Update
 ---
 
-## Upgrade SafeSquid Secure Web Gateway
+## Overview
 
 You can upgrade your SafeSquid Secure Web Gateway through two different mechanisms depending on your system and version requirements.
 
