@@ -36,7 +36,7 @@ Ubuntu **20.04 LTS** includes:
 - Kernel up to **5.15**
 - glibc **2.31**
 
-These versions are **too old** for the new SafeSquid binary, which requires newer kernel APIs and library functions available only in **Ubuntu 24.04 LTS**.
+These versions are **too old** for SafeSquid verion 2025.1001.1232.3, which requires newer kernel APIs and library functions available only in **Ubuntu 24.04 LTS**.
 Attempting to install the new version on 20.04 will cause dependency and runtime failures.
 
 ---
