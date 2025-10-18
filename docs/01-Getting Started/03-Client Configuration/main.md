@@ -1,52 +1,45 @@
 ---
-title: Access The SafeSquid User Interface  
-description: Learn how to access and configure the SafeSquid WebGUI for managing your Secure Web Gateway. This guide walks you through setting proxy settings, navigating to the dashboard, and accessing critical configuration features.  
-keywords:  
-- SafeSquid WebGUI  
-- access SafeSquid interface  
-- proxy configuration  
-- safesquid.cfg login  
-- browser proxy settings  
+title: "Client Configuration Overview"
+description: "Comprehensive client-side proxy configuration methods for SafeSquid SWG deployment across desktop and enterprise environments"
+keywords:
+  - SafeSquid client configuration
+  - proxy browser setup
+  - PAC file configuration
+  - enterprise proxy deployment
+  - system-wide proxy settings
+  - application proxy configuration
 ---
 
-# Main
+# Client Configuration Overview
 
-After Client configuration, you will be able to access the safesquid Interface
+## Comprehensive Proxy Configuration Methods for Enterprise Deployment
 
-## Overview
+SafeSquid SWG client configuration provides multiple deployment approaches enabling organizations to implement secure web gateway policies across diverse endpoint environments. The configuration methods range from manual browser settings to automated enterprise deployment, ensuring comprehensive security coverage while maintaining operational flexibility. This section covers all client-side configuration approaches for desktop and enterprise server environments, providing step-by-step implementation guidance and troubleshooting support for each deployment method.
 
-SafeSquid Proxy Service has a browser-based intrinsic WebGUI, that allows users to configure, and manage its various features. To access the Interface, you must configure your web browser to use the SafeSquid® proxy server. You should be able to access the WebGUI with the [http://Safesquid.cfg/](http://Safesquid.cfg/)
+## Manual Browser Configuration Methods
 
-## Prerequisites
+### [Explicit Proxy Configuration](01-Explicit%20Proxy.md)
+Organizations require manual proxy configuration for controlled environments where users configure browsers to route traffic through SafeSquid for policy enforcement and threat protection. Explicit Proxy Configuration provides step-by-step browser setup procedures across Windows, Linux, and macOS platforms, enabling granular control over proxy usage while ensuring comprehensive security monitoring. This manual approach ensures precise configuration control while supporting diverse browser environments and user preferences. Configure explicit proxy settings following platform-specific procedures to enable secure web gateway connectivity and policy enforcement.
 
-To access the SafeSquid User Interface, you must configure your web browser to use the SafeSquid proxy server. We recommend you configure SafeSquid Proxy into Google Chrome or Mozilla Firefox Browser.
+## Automated Configuration Methods
 
-For more details - [How to set the proxy in the browser](/docs/17-Operational%20Modes/TCP%20Proxy.md)
+### [PAC File Configuration](02-PAC%20File.md)
+Organizations need automated proxy configuration to reduce deployment complexity and enable dynamic traffic routing without manual browser configuration for each endpoint. PAC File Configuration enables automatic proxy selection through JavaScript-based configuration files, providing intelligent traffic routing, load balancing, and failover capabilities across proxy clusters. This automated approach eliminates manual configuration overhead while enabling sophisticated routing logic and centralized management. Deploy PAC files following browser-specific configuration procedures to enable automatic proxy selection and dynamic traffic management.
 
-You can configure SafeSquid to permit access to the User Interface by only security administrators.
+### [System-Wide Proxy Settings](03-System-Wide%20Proxy.md)
+Organizations require operating system-level proxy configuration to ensure all applications route traffic through SafeSquid without individual application configuration for comprehensive security coverage. System-Wide Proxy Settings enable OS-level proxy configuration affecting all network applications, providing universal traffic routing through SafeSquid while eliminating application-specific configuration requirements. This system-level approach ensures comprehensive application coverage while simplifying deployment and maintenance across diverse application environments. Configure system-wide proxy settings following OS-specific procedures to enable universal application routing through SafeSquid.
 
-## Configure proxy setting in the browser
+## Enterprise Deployment Methods
 
-![](/img/How_To/Access_The_SafeSquid_User_Interface/image1.webp)
+### [Enterprise Deployment](04-Enterprise%20Deployment.md)
+Organizations need centralized proxy configuration management for large-scale deployments requiring automated policy distribution and consistent configuration across thousands of endpoints. Enterprise Deployment enables centralized proxy configuration through Group Policy Objects, Active Directory integration, and configuration management tools, providing automated deployment, policy enforcement, and centralized management capabilities. This enterprise approach ensures consistent configuration deployment while enabling automated updates, rollback capabilities, and centralized monitoring across large-scale environments. Deploy enterprise proxy configuration using centralized management tools to enable automated policy distribution and consistent security enforcement.
 
-## Access the Interface at: [http://safesquid.cfg/](http://safesquid.cfg/)
+## Application-Specific Configuration
 
-![accessing the safesquid interface at http://safesquid.cfg/](/img/How_To/Access_The_SafeSquid_User_Interface/image2.webp)
+### [Application-Specific Configuration](05-Application-Specific%20Configuration.md)
+Organizations require specialized proxy configuration for non-browser applications including email clients, development tools, and command-line utilities to ensure comprehensive security coverage across all network applications. Application-Specific Configuration provides detailed setup procedures for email clients, development tools, and command-line applications, enabling comprehensive proxy coverage while maintaining application functionality and performance. This specialized approach ensures complete application coverage while providing detailed configuration guidance for diverse application types and environments. Configure application-specific proxy settings following detailed procedures to enable comprehensive security coverage across all network applications.
 
-The main page or starting page of the interface displays the dashboard of SafeSquid.
+## Troubleshooting and Support
 
-When you access the SafeSquid interface for the first time, it will prompt you to upload your activation.
-
-![dashboard of Safesquid Interface](/img/How_To/Access_The_SafeSquid_User_Interface/image3.webp)
-
-
-
-
-
-## [Access the SafeSquid User Interface](https://app.dhub.dev/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
-
-SafeSquid has an intrinsic Web-based UI, that will enable you to manage your instance, configure policies, fine-tune the features, and monitor your secure web gateway. First, create a policy on the top to allow at least one admin account to access the configuration portal to avoid lockout when configuring policies.
-
-## Leverage Proxy Auto-Configuration (PAC)
-
-SafeSquid supports PAC files to enable automatic traffic distribution across proxy clusters.
+### [Troubleshooting Client Configuration](06-Troubleshooting%20Client%20Configuration.md)
+Organizations encounter common client configuration issues requiring systematic diagnostic procedures and resolution steps to maintain reliable proxy connectivity and security enforcement. Troubleshooting Client Configuration provides comprehensive diagnostic procedures, common issue resolution steps, and verification methods for client-side proxy configuration problems, enabling rapid issue resolution while maintaining security enforcement. This troubleshooting approach ensures reliable proxy operation while providing systematic diagnostic procedures and resolution guidance for common configuration issues. Resolve client configuration issues using systematic diagnostic procedures and resolution steps to maintain reliable SafeSquid connectivity and security enforcement.
