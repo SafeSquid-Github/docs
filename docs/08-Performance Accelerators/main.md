@@ -1,32 +1,43 @@
 ---
-title: Performance Optimisation
+title: "Performance Accelerators Overview"
+description: "Advanced performance optimization through intelligent caching, prefetching, bandwidth management, and WCCP integration for enterprise web security"
+keywords:
+  - SafeSquid performance optimization
+  - web caching SafeSquid
+  - bandwidth management proxy
+  - WCCP integration SafeSquid
+  - content prefetching
+  - proxy performance tuning
+  - web acceleration
+  - cache optimization
 ---
-## [Integrate with Web Cache Communication Protocol (WCCP)](/docs/14-Performance%20Optimisation/WCCP%20Integration.md)
-For WCCP-enabled routers, SafeSquid can be configured to participate in transparent redirection.
 
-## Prioritise mission-critical traffic
-Mission-critical applications and services are vital for business continuity. By prioritizing mission-critical traffic, the applications get the necessary bandwidth and low latency to perform optimally.
+# Performance Accelerators Overview
 
-### Segregate network channels for an application
-Provisioning dedicated pathways for mission-critical applications reduces the risk of network congestion. Additionally, the implementation of QoS policies ensures that high-priority traffic gets the required resources and treatment.
+## Intelligent Performance Optimization Replaces Basic Proxy Functionality
 
-### [Manage Bandwidth](/docs/14-Performance%20Optimisation/Bandwidth%20Management.md)
-In the event of a network disruption or disaster, managing bandwidth ensures that essential services and applications continue to operate, supporting business continuity and disaster recovery efforts.
+SafeSquid's Performance Accelerators framework transforms traditional proxy operations into high-performance web acceleration through intelligent caching, predictive prefetching, bandwidth management, and WCCP integration. The system analyzes user behavior patterns, content popularity, and network conditions to optimize web delivery while maintaining security policies and reducing bandwidth consumption. This comprehensive acceleration approach ensures enterprise-grade performance while supporting complex security requirements and high-traffic environments.
 
-To avoid degraded user experience due to network congestion, efficient allocation of network resources is essential. With SafeSquid, you can [set boundaries on the size and volume of data transfers](/docs/14-Performance%20Optimisation/Bandwidth%20Management.md).
+## Predictive Content Delivery Prevents Performance Bottlenecks
 
-## Setup Captive Portal
-Captive portals are typically used by business centres, airports, hotel lobbies, coffee shops, and other venues that offer Wi-Fi hot spots for Internet users. To secure public or guest Wi-Fi networks, the Internet clients are redirected to a captive portal. Here, the users are requested to reveal their identity for web access. SafeSquid correlates the user identity with the client IP for applying the access policies.
+Traditional proxy solutions create performance bottlenecks through sequential request processing and limited caching capabilities, resulting in increased latency and bandwidth consumption. SafeSquid's Performance Accelerators employ predictive algorithms to anticipate user needs, prefetch popular content, and optimize delivery patterns based on usage analytics and content characteristics. This proactive approach ensures optimal performance while reducing server load and improving user experience through intelligent content management.
 
-## Multi-homing your network
-Using multiple Internet Service Providers (ISPs) minimises the risk of downtime due to outages at the internet provider. Splitting load between different ISPs allows you to manage bandwidth more effectively by leveraging the combined capacity of multiple ISPs.
+## Intelligent Content Caching
 
+### Content Caching: [Content Caching](01-Content Caching.md)
+Organizations face bandwidth constraints and latency issues when users repeatedly access the same web content, resulting in increased costs and poor user experience. Content Caching enables SafeSquid to store frequently accessed web content locally, serving cached copies instead of fetching fresh content from origin servers. This caching mechanism reduces bandwidth consumption, improves response times, and decreases server load while maintaining content freshness through intelligent cache management. Configure content caching in SafeSquid's Application Setup to enable intelligent content storage and delivery optimization.
 
-## [Caching Specific websites](/docs/14-Performance%20Optimisation/Content%20Caching.md)
-Content Caching leads to faster load times and reduced bandwidth usage at the cost of increased management complexity and potential staleness of cached content. SafeSquid offers a neat, efficient, and manageable solution to only store content from frequently accessed websites.
+## Predictive Content Prefetching
 
-## [Prefetch Content](/docs/14-Performance%20Optimisation/Pre%20Fetching.md)
-With the prefetching feature, virtually any file referenced in HTML can be pre-fetched, and cached, thus reducing resource retrievals and improving retrieval time. The Prefetching feature can be used as an 'internet accelerator'.
+### Pre Fetching: [Pre Fetching](02-Pre Fetching.md)
+Users experience delays when accessing web content that requires multiple round trips or contains embedded resources that load sequentially, creating poor user experience and reduced productivity. Pre Fetching enables SafeSquid to anticipate user needs and proactively fetch content before explicit requests, reducing perceived latency and improving browsing experience through intelligent prediction algorithms. This prefetching capability ensures faster content delivery while optimizing bandwidth usage and server resources. Configure prefetching rules in SafeSquid's Application Setup to enable predictive content delivery and performance optimization.
 
+## WCCP Integration and Load Balancing
 
-Also, internalise DNS using Bind, etc
+### WCCP: [WCCP](03-WCCP.md)
+Enterprise networks require seamless integration with existing routing infrastructure to enable transparent proxy deployment and load distribution across multiple proxy instances. WCCP integration enables SafeSquid to participate in Web Cache Communication Protocol for automatic traffic redirection, load balancing, and failover management through router-based traffic steering. This integration capability ensures transparent proxy operation while providing scalability and high availability through intelligent traffic distribution. Configure WCCP integration in SafeSquid's network settings to enable seamless router integration and transparent proxy deployment.
+
+## Bandwidth Management and Traffic Control
+
+### Bandwidth Management: [Bandwidth Management](04-Bandwidth Management.md)
+Organizations need granular control over bandwidth allocation and usage patterns to ensure fair resource distribution, prevent network congestion, and optimize performance for critical applications. Bandwidth Management enables SafeSquid to implement comprehensive traffic shaping, rate limiting, and priority-based bandwidth allocation through intelligent traffic analysis and policy enforcement. This management capability ensures optimal network utilization while supporting quality of service requirements and preventing bandwidth abuse. Configure bandwidth management policies in SafeSquid's Application Setup to implement comprehensive traffic control and resource optimization.

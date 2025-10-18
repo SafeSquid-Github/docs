@@ -1,19 +1,48 @@
 ---
-title: Operational Nodes
+title: "Operational Modes Overview"
+description: "Comprehensive proxy deployment configurations including forward, transparent, TCP, reverse proxy, and proxy chaining for enterprise network architectures"
+keywords:
+  - SafeSquid operational modes
+  - forward proxy configuration
+  - transparent proxy deployment
+  - reverse proxy SafeSquid
+  - proxy chaining
+  - TCP proxy mode
+  - enterprise proxy deployment
+  - network architecture proxy
 ---
 
-## Configure Proxy on Internet Clients
-An explicit proxy can be configured globally at the system level on any Windows, Linux, Mac, or Android device. Only specific applications, like [browsers](/docs/17-Operational%20Modes/TCP%20Proxy.md), or remote desktop applications can also be configured to route the
-traffic via the proxy.
+# Operational Modes Overview
 
-## Configure proxy operational mode
-With a range of versatile Proxy Operational configuration settings, SafeSquid can cater to diverse network requirements.
+## Flexible Proxy Deployment Adapts to Enterprise Network Architectures
 
-### [Configure SafeSquid as Forward Proxy](/docs/17-Operational%20Modes/Forward%20Proxy.md)
-As a forward proxy, SafeSquid acts as an intermediary for requests from clients seeking resources from other servers, enabling organizations to protect internet users. Here, client applications are explicitly set to use a specified proxy server.
+SafeSquid's Operational Modes framework provides comprehensive deployment flexibility through multiple proxy configurations including forward, transparent, TCP, reverse proxy, and proxy chaining capabilities. The system adapts to diverse network architectures, security requirements, and operational needs while maintaining consistent policy enforcement and threat protection across all deployment scenarios. This flexible deployment approach ensures SafeSquid integrates seamlessly into existing infrastructure while providing optimal security and performance for specific organizational requirements.
 
-### [Configure SafeSquid as Reverse Proxy](/docs/17-Operational%20Modes/Reverse%20Proxy.md)
-As a reverse proxy, SafeSquid sits between external clients and internal servers, intercepting requests from clients and forwarding them to the appropriate server, enabling organizations to protect web resources.
+## Transparent Security Integration Replaces Complex Client Configuration
 
-### [Configure SafeSquid as a Transparent Proxy](/docs/17-Operational%20Modes/Transparent%20Proxy.md)
-To facilitate proxy-unaware applications, seamlessly redirect traffic by configuring SafeSquid as a [Transparent Proxy](/docs/17-Operational%20Modes/Transparent%20Proxy.md). As no configuration is required, deployment is quick and easy.
+Traditional proxy deployments require extensive client-side configuration and user training, creating deployment complexity and user resistance that limits security adoption. SafeSquid's Operational Modes enable transparent integration through transparent proxy deployment, automatic traffic interception, and seamless user experience without requiring client configuration changes. This transparent approach ensures rapid deployment and user adoption while maintaining comprehensive security coverage and policy enforcement across all network traffic.
+
+## Client-Configured Proxy Deployment
+
+### Forward Proxy: [Forward Proxy](01-Forward Proxy.md)
+Organizations require explicit proxy configuration for controlled environments where users can configure browsers to route traffic through security gateways for policy enforcement and threat protection. Forward Proxy enables SafeSquid to operate as a traditional proxy server requiring explicit client configuration through browser settings, PAC files, or system-level proxy configuration. This deployment mode provides granular control over proxy usage while enabling comprehensive policy enforcement and security monitoring. Configure forward proxy settings in SafeSquid's network configuration to enable explicit proxy deployment with client-side configuration requirements.
+
+## Transparent Traffic Interception
+
+### Transparent Proxy: [Transparent Proxy](02-Transparent Proxy.md)
+Organizations need seamless proxy deployment without requiring client configuration changes to ensure rapid adoption and comprehensive traffic coverage across all devices and applications. Transparent Proxy enables SafeSquid to intercept web traffic automatically through network-level redirection, providing seamless security enforcement without client-side configuration or user awareness. This transparent deployment ensures comprehensive traffic coverage while maintaining user experience and eliminating configuration complexity. Configure transparent proxy deployment in SafeSquid's network settings to enable automatic traffic interception and seamless security enforcement.
+
+## TCP-Level Proxy Operations
+
+### TCP Proxy: [TCP Proxy](03-TCP Proxy.md)
+Organizations require proxy functionality for non-HTTP protocols and applications that need TCP-level inspection and control for comprehensive security coverage across all network protocols. TCP Proxy enables SafeSquid to operate at the TCP layer, providing protocol-agnostic proxy functionality for applications requiring TCP-level inspection, control, and security enforcement. This TCP-level capability ensures comprehensive protocol coverage while maintaining security policies and threat protection across diverse application types. Configure TCP proxy mode in SafeSquid's network settings to enable protocol-agnostic proxy functionality and comprehensive security coverage.
+
+## Server-Side Proxy Deployment
+
+### Reverse Proxy: [Reverse Proxy](04-Reverse Proxy.md)
+Organizations need to protect internal web servers and applications from direct internet access while providing secure external access through authentication, SSL termination, and load balancing capabilities. Reverse Proxy enables SafeSquid to operate as a server-side proxy, protecting internal resources while providing secure external access through SSL termination, authentication, and traffic management. This reverse proxy deployment ensures internal server protection while enabling secure external access and comprehensive security enforcement. Configure reverse proxy settings in SafeSquid's network configuration to enable server-side protection and secure external access.
+
+## Multi-Tier Proxy Architecture
+
+### Proxy Chain: [Proxy Chain](05-Proxy Chain.md)
+Enterprise environments require multi-tier proxy architectures for hierarchical security enforcement, load distribution, and specialized processing across different network segments and security zones. Proxy Chain enables SafeSquid to operate as part of multi-tier proxy architectures, providing hierarchical security enforcement, load distribution, and specialized processing capabilities through intelligent traffic routing and policy coordination. This chaining capability ensures comprehensive security coverage while supporting complex enterprise architectures and specialized security requirements. Configure proxy chaining in SafeSquid's network settings to enable multi-tier proxy deployment and hierarchical security enforcement.

@@ -1,49 +1,70 @@
 ---
-title: Deep Content Security
+title: "Content Security Overview"
+description: "Comprehensive web content protection through real-time threat detection, access control, and data protection mechanisms"
+keywords:
+  - SafeSquid content security
+  - web content filtering
+  - malware detection SafeSquid
+  - data leakage prevention
+  - content modification proxy
+  - real-time content analysis
+  - web security policies
+  - content inspection engine
 ---
 
-## [Integrate with a DNS Blacklisting service (DNSBL)](https://help.safesquid.com/portal/en/kb/articles/dns-blacklist)
-DNS tunnelling attacks evade the legacy HTTP-based security solutions as the exploit is carried out via DNS queries, which are traditionally perceived as non-threatful. Integrating with a customisable DNSBL server enables your Security Operations Centre (SOC) to effectively block domains at the DNS level.
+# Content Security Overview
 
-## Filter IP based on geolocation
-To defend against state-sponsored cyberattacks and regional malware outbreaks, SafeSquid's Geo-IP can block traffic from specific geographical regions.
+## Multi-Layer Content Protection Replaces Basic URL Filtering
 
-## Enforce Content Security Policy (CSP)
-By restricting the sources of executable scripts and resources, enforcing CSP at the secure web gateway mitigates the risk of Cross-Site Scripting (XSS) and other injection attacks.
+SafeSquid's Content Security framework provides comprehensive protection against web-based threats through real-time content analysis, malware detection, and intelligent filtering mechanisms. The system examines DNS queries, server responses, file content, and data patterns to identify and block malicious content before it reaches enterprise networks. This multi-dimensional approach ensures protection against sophisticated threats that bypass traditional security controls while maintaining performance and user experience.
 
-## Configure Antivirus Engines
-To block virus uploads and downloads, SafeSquid offers diverse antivirus setups to ensure comprehensive protection against various threats. To defend against Zero-Day malware, we recommend minimising the vulnerability window using a multi-layered antivirus scanning approach.
+## Real-Time Threat Detection Prevents Advanced Attacks
 
-### [SqScan](/docs/08-SafeSquid%20Interface/01-Configuration/Real%20Time%20Content%20Security/SqScan.md)
-SafeSquid's integrated on-the-wire malware scanner employs advanced heuristic techniques to evaluate and sanitize all payloads, including those that are compressed or encrypted.
+Modern web threats employ sophisticated evasion techniques including domain generation algorithms, encrypted payloads, and legitimate-looking content distribution networks. SafeSquid's Content Security engine performs real-time analysis of web traffic patterns, content signatures, and behavioral indicators to detect and prevent advanced persistent threats, malware distribution, and data exfiltration attempts. This proactive defense mechanism provides enterprise-grade protection against zero-day threats and sophisticated attack campaigns.
 
-### [ClamAV](https://www.clamav.net/)
-SafeSquid seamlessly integrates with the ClamAV engine for signature-based malware detection. Furthermore, its customisable
-configuration empowers security administrators to add PCRE keyword expressions sensitive to the organization. Thus, enabling deep packet inspection for confidential information in archive files, emails, and Instant Messaging (IM) traffic.
+## DNS-Based Threat Prevention
 
-### [Generic ICAP Threat Detection Interface](/docs/08-SafeSquid%20Interface/01-Configuration/Real%20Time%20Content%20Security/ICAP.md)
-SafeSquid facilitates simultaneous connection with various ICAP-based threat detection services for broader security coverage. With its Intelligent Threat Quarantine Mechanism, SafeSquid automatically isolates content flagged by ICAP services.
+### DNS Blacklisting: [DNS Blacklisting](01-DNS Blacklisting.md)
+Organizations face constant threats from malicious domains that distribute malware, host phishing sites, or facilitate command-and-control communications. DNS Blacklisting enables SafeSquid to query DNS-based blacklist services to identify and block access to dangerous domains before establishing connections. This proactive approach prevents users from accessing malicious websites while reducing bandwidth consumption and security risks. Configure DNS blacklist services in Real-time Content Security settings to enable automatic threat domain blocking.
 
-## [Filter inappropriate content](https://help.safesquid.com/portal/en/kb/articles/content-filtering)
-SafeSquid's Content Analyser has a keyword scoring system to thoroughly inspect all textual, and multimedia content in real-time to prevent exposure to unsuitable materials such as pornography or violence.
-Furthermore, you can utilise Perl Compatible Regular Expressions for sophisticated keyword detection in content filtering. User-adjustable settings allow fine-tuning the sensitivity of the content detection system. The [image-filtering](https://help.safesquid.com/portal/en/kb/articles/image-analyzer) AI systems update in real time for up-to-date and effective visual
-content analysis.
+## Access Control and Policy Enforcement
 
-## [Protect user privacy](https://help.safesquid.com/portal/en/kb/articles/block-third-party-cookies)
-Websites generally use third-party cookies for tracking user activity.
-[Blocking third-party cookies](https://help.safesquid.com/portal/en/kb/articles/block-third-party-cookies) is essential for user privacy and security. SafeSquid offers you a user-configurable option to limit the tracking data received by remote websites, bolstering user privacy.
+### Access Restriction: [Access Restriction](02-Access Restriction.md)
+Enterprise environments require granular control over web access based on user identity, time, location, and content type to enforce security policies and compliance requirements. Access Restriction enables SafeSquid to implement comprehensive access control policies using user authentication, IP-based rules, time-based restrictions, and content-based filtering. This system provides flexible policy enforcement that adapts to organizational requirements while maintaining security boundaries. Configure access policies in the Access Restriction section to implement identity-driven web security controls.
 
+### Server Verification: [Server Verification](03-Server Verification.md)
+Organizations need assurance that web servers are legitimate and properly configured to prevent man-in-the-middle attacks and certificate-based threats. Server Verification enables SafeSquid to validate server certificates, check certificate revocation status, and verify server identity through multiple validation mechanisms. This verification process ensures secure communications while preventing access to compromised or malicious servers. Enable server verification in SSL Inspection settings to implement comprehensive certificate validation and trust management.
 
+## URL Redirection and Content Modification
 
-# Web Access Control in SafeSquid
+### URL Redirection: [URL Redirection](04-URL Redirection/main.md)
+Organizations require intelligent URL redirection capabilities to enforce safe search policies, redirect malicious URLs, and implement content modification for enhanced security. URL Redirection enables SafeSquid to intercept and modify web requests based on predefined rules, redirecting users to safe alternatives or modified content versions. This capability ensures users access appropriate content while maintaining security policies and compliance requirements. Configure redirection rules in the URL Redirection section to implement intelligent content steering and policy enforcement.
 
-Web Access Control in **SafeSquid** provides comprehensive tools for managing, restricting, and controlling user access to web resources.
+## Advanced Malware Detection
 
-## Included Features
-- [URL Redirection](/docs/10-Web%20Access%20Control/01-URL%20Redirection/main.md): Configure custom URL redirection rules for better user navigation and access control.
-- [Content Filtering](/docs/10-Web%20Access%20Control/Content%20Filtering.md): Block or allow web content based on categories, keywords, or domains.
-- [Cookie Control](/docs/10-Web%20Access%20Control/Cookie%20Control.md): Manage and block cookies to protect user privacy and prevent tracking.
-- [DNS Blacklisting](/docs/10-Web%20Access%20Control/DNS%20Blacklisting.md): Block access to malicious or undesired domains at the DNS level.
-- [Header Obfuscation](/docs/10-Web%20Access%20Control/Header%20Obfuscation.md): Enhance privacy by modifying HTTP headers to prevent fingerprinting.
+### Malware Detection: [Malware Detection](05-Malware Detection/main.md)
+Modern malware employs sophisticated evasion techniques including polymorphic code, encrypted payloads, and legitimate-looking distribution methods that bypass traditional signature-based detection. Malware Detection enables SafeSquid to identify and block malicious content through multiple detection engines including ClamAV integration, behavioral analysis, and custom scanning mechanisms. This comprehensive approach provides protection against known and unknown malware while maintaining performance through intelligent scanning strategies. Configure malware detection engines in the Malware Detection section to implement comprehensive threat prevention.
 
-These features enable precise, policy-driven control over user browsing activities.
+## Content Analysis and Filtering
+
+### Content Filtering: [Content Filtering](06-Content Filtering/main.md)
+Organizations need granular control over web content based on text analysis, image recognition, and content characteristics to enforce productivity and security policies. Content Filtering enables SafeSquid to analyze web content using text analyzers, image analyzers, and content classification engines to identify and control inappropriate or dangerous content. This filtering capability provides comprehensive content control while maintaining user experience through intelligent analysis and policy enforcement. Configure content filtering rules in the Content Filtering section to implement comprehensive content analysis and control.
+
+## Privacy and Data Protection
+
+### Header Obfuscation: [Header Obfuscation](07-Header Obfuscation.md)
+Web browsers transmit detailed information about user systems, browsers, and configurations that can be exploited for tracking, fingerprinting, and targeted attacks. Header Obfuscation enables SafeSquid to modify or remove HTTP headers that reveal sensitive information about client systems and user behavior. This privacy enhancement prevents information leakage while maintaining web functionality and compatibility. Configure header modification rules in the Header Obfuscation section to implement comprehensive privacy protection.
+
+### Cookie Control: [Cookie Control](08-Cookie Control.md)
+Web cookies enable tracking, session management, and personalization but also create privacy risks and potential security vulnerabilities through malicious or excessive cookie usage. Cookie Control enables SafeSquid to manage cookie behavior by blocking, modifying, or filtering cookies based on security policies and privacy requirements. This control mechanism ensures appropriate cookie usage while preventing tracking and maintaining security boundaries. Configure cookie policies in the Cookie Control section to implement comprehensive cookie management and privacy protection.
+
+### Data Leakage Prevention: [Data Leakage Prevention](09-Data Leakage Prevention.md)
+Organizations face constant risks of sensitive data exposure through web uploads, email attachments, cloud storage, and other data transmission methods that bypass traditional security controls. Data Leakage Prevention enables SafeSquid to monitor and control data transmission through content analysis, pattern recognition, and policy enforcement to prevent unauthorized data exfiltration. This protection mechanism ensures sensitive information remains within organizational boundaries while maintaining legitimate business operations. Configure DLP policies in the Data Leakage Prevention section to implement comprehensive data protection and compliance enforcement.
+
+### Elevated Privacy: [Elevated Privacy](10-Elevated Privacy.md)
+High-security environments require enhanced privacy protection to prevent information leakage, user tracking, and behavioral analysis that could compromise operational security. Elevated Privacy enables SafeSquid to implement comprehensive privacy controls including header modification, cookie blocking, referrer filtering, and user agent obfuscation to minimize digital footprint and tracking capabilities. This enhanced privacy mode ensures maximum protection for sensitive operations while maintaining web functionality. Enable elevated privacy settings in the Privacy Controls section to implement comprehensive privacy protection for high-security environments.
+
+## Content Modification and Customization
+
+### Content Modifier: [Content Modifier](11-Content Modifier.md)
+Organizations require the ability to modify web content for security enhancement, policy enforcement, or customization purposes without affecting core functionality or user experience. Content Modifier enables SafeSquid to intercept and modify web content including HTML, JavaScript, CSS, and other web resources to implement security enhancements, policy enforcement, or organizational customization. This modification capability provides flexible content control while maintaining web functionality and user experience. Configure content modification rules in the Content Modifier section to implement comprehensive content customization and security enhancement.
