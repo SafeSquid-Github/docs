@@ -1,5 +1,7 @@
 # Documentation Agent Guide
 
+**RULE: No files or folders should have space in their name. Always use underscores (_). Example: getting_started, not Getting Started or getting started.**
+
 This guide provides comprehensive instructions for AI agents working with the SafeSquid SWG documentation project. It covers research, writing, editing, and publishing procedures to maintain high-quality technical documentation.
 
 ## Agent Scope and Limitations
