@@ -36,7 +36,7 @@ Researchers at Palo Alto Networks observed **5 million** such parked domain
 
 ### 3 **Strategic Ageing: Manufacture Trust**
 
-Weekly re‑crawls cement the harmless label. Organisations that block Newly Registered Domains (NRDs) usually whitelist anything older than 30 days, so the site now bypasses those controls. TechRadar reports strategically aged domains are **three times** more likely to become malicious than NRDs.
+Weekly re‑crawls cement the harmless label. Organizations that block Newly Registered Domains (NRDs) usually whitelist anything older than 30 days, so the site now bypasses those controls. TechRadar reports strategically aged domains are **three times** more likely to become malicious than NRDs.
 
 ### 4 **Zero‑Hour Activation: Flip to Malicious**
 
@@ -94,4 +94,4 @@ By cutting the attacker off *at the point of exfiltration*—yet granting seaml
 
 ## Conclusion
 
-Legacy reputation and categorisation once promised “set‑and‑forget” protection. LURE flips that model on its head: the older and cleaner a domain looks, the **more** dangerous it can become. Controls that inspect present‑tense *behaviour*—not historical scores—close the gap.
+Legacy reputation and categorization once promised “set‑and‑forget” protection. LURE flips that model on its head: the older and cleaner a domain looks, the **more** dangerous it can become. Controls that inspect present‑tense *behavior*—not historical scores—close the gap.
