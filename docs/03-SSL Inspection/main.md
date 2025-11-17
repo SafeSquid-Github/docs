@@ -62,7 +62,7 @@ SafeSquid enables deep inspection of HTTPS traffic with minimal administrative o
 
 ### Generating SSL Certificates
 
-[**Access the Self-Service Portal**](https://help.safesquid.com/portal/en/kb/articles/access-the-self-service-portal)
+[**Access the Self-Service Portal**](/docs/02-SafeSquid%20SWG/04-Self-Service%20Portal.md)
 
 Log in to the Self-Service Portal - [https://key.safesquid.com](https://key.safesquid.com/) 
 
