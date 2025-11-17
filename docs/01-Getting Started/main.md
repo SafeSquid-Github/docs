@@ -39,7 +39,7 @@ To generate the product activation key, create an account on the SafeSquid Self-
 
 You can set up your secure web gateway using different installation mechanisms based on your deployment plan.
 
-### [SafeSquid Appliance Builder (Recommended)](/docs/03-Installation/02-On-Premise/main.md)
+### [SafeSquid Appliance Builder (Recommended)](/docs/01-Getting%20Started/main/#safesquid/main.md/)
 
 [SafeSquid Appliance Builder(SAB)](https://downloads.safesquid.com/appliance/safesquid.iso) is a security-enhanced ISO of the latest minimal Ubuntu LTS. On booting from the SAB ISO, Ubuntu is automatically installed, and SafeSquid SWG is downloaded and deployed with all necessary dependency libraries, and services. Using the SAB ISO, you may [create a virtual appliance on any virtualization infrastructure or create a hardware appliance on standard Intel Server hardware.](/docs/03-Installation/02-On-Premise/main.md)
 
@@ -49,7 +49,7 @@ To setup SafeSquid SWG on your preferred Cloud PaaS platform or your private clo
 
 ### Building from source
 
-If you want to setup SafeSquid on already existing infrastructure or if you want to use another Operating System in the Linux family other than Ubuntu, you can use the [TAR package](https://downloads.safesquid.com/appliance/binary/safesquid-2024.0715.1656.3-swg-concept.tar.gz). You will need to make some additional configurations, like [Monit](/docs/13-System%20Audit/Monit.md) and [BIND9](/docs/14-Performance%20Optimisation/01-Internalisae%20DNS/Bind.md) services used by SafeSquid.
+If you want to setup SafeSquid on already existing infrastructure or if you want to use another Operating System in the Linux family other than Ubuntu, you can use the [TAR package](https://downloads.safesquid.com/appliance/binary/safesquid-2024.0715.1656.3-swg-concept.tar.gz). You will need to make some additional configurations, like [Monit](/docs/02-SafeSquid SWG/09-Supporting%20Services/01-Monit.md/) and [BIND9](/docs/02-SafeSquid SWG/09-Supporting%20Services/02-Bind.md/) services used by SafeSquid.
 
 ## Activate your SafeSquid
 
