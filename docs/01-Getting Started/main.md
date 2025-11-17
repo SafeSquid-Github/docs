@@ -67,9 +67,9 @@ The same key must be uploaded on every SafeSquid instance in the proxy cluster t
 
 ## SSL Inspection
 
-Since most of the web traffic is now encrypted, [enable HTTPS Inspection](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md) to safeguard from hidden threats.
+Since most of the web traffic is now encrypted, [enable HTTPS Inspection](/docs/03-SSL%20Inspection/main.md) to safeguard from hidden threats.
 
-On the [Self-Service Portal](/docs/05-Architecture/Management_of_Self-Service_Portal.md), configure your Enterprise CA (Certificate Authority) as the Root SSL certificate. If you do not have an Enterprise CA, generate SafeSquid 's Self-Signed Certificate. Import the Root SSL certificate into client browsers' trusted authorities.
+On the [Self-Service Portal](/docs/02-SafeSquid%20SWG/04-Self-Service%20Portal.md), configure your Enterprise CA (Certificate Authority) as the Root SSL certificate. If you do not have an Enterprise CA, generate SafeSquid 's Self-Signed Certificate. Import the Root SSL certificate into client browsers' trusted authorities.
 
 ## User Authentication
 
