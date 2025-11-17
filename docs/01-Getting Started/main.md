@@ -19,7 +19,7 @@ Learn more [about SafeSquid SWG!](/docs/01-About%20SafeSquid%20SWG/main.md)
 
 ![Solution Architecture](/img/Getting-Started/Getting_Started_with_SafeSquid_Secure_Web_Gateway/image1.webp)
 
-In a typical organization setting, the amalgamation of [SafeSquid Application Eco-system](/docs/02-SafeSquid SWG/01-Application Ecosystem.md) constitutes the complete SWG solution.
+In a typical organization setting, the amalgamation of [SafeSquid Application Eco-system](/docs/02-SafeSquidSWG/01-ApplicationEcosystem.md) constitutes the complete SWG solution.
 
 ## Hardware Provisioning
 
