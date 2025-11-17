@@ -75,9 +75,9 @@ On the [Self-Service Portal](/docs/02-SafeSquid%20SWG/04-Self-Service%20Portal.m
 
 SafeSquid SWG has a robust user and group identity management system, with multiple authentication options.
 
-You can set up user authentication based on [device-specific network identifiers](/docs/06-User%20Identification/03-Network%20Identifiers/main.md), or your preferred credential verification system. Integrate with enterprise-grade directory services like [Microsoft® Windows Active Directory](/docs/06-User%20Identification/02-Directory%20Services/Active%20Directory/main.md),and [OpenLDAP](/docs/06-User%20Identification/02-Directory%20Services/OpenLDAP/main.md).
+You can set up user authentication based on [device-specific network identifiers](/docs/06-User%20Identification/03-Network%20Identifiers/main.md), or your preferred credential verification system. Integrate with enterprise-grade directory services like [Microsoft® Windows Active Directory](/docs/06-User%20Identification/02-Directory%20Services/Active%20Directory/main.md),and [OpenLDAP](/docs/07-Integrations/01-Identity%20and%20Access%20Management/02-Directory%20Services/02-OpenLDAP).
 
-Furthermore, configure user verification via [basic authentication](/docs/06-User%20Identification/Browser%20Based%20Authentication.md) or [Kerberos (SSO)](/docs/06-User%20Identification/Kerberos%20SSO.md) for seamless domain network access.
+Furthermore, configure user verification via [basic authentication](/docs/07-Integrations/01-Identity%20and%20Access%20Management/02-Directory%20Services/02-OpenLDAP/Simple%20Authentication.md) or [Kerberos (SSO)](/docs/07-Integrations/01-Identity%20and%20Access%20Management/02-Directory%20Services/02-OpenLDAP/SSO%20Authentication.md) for seamless domain network access.
 
 ## [Custom Categories](/docs/09-Profiling%20Engine/Website%20Categorization.md)
 
