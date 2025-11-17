@@ -49,7 +49,7 @@ To setup SafeSquid SWG on your preferred Cloud PaaS platform or your private clo
 
 ### Building from source
 
-If you want to setup SafeSquid on already existing infrastructure or if you want to use another Operating System in the Linux family other than Ubuntu, you can use the [TAR package](https://downloads.safesquid.com/appliance/binary/safesquid-2024.0715.1656.3-swg-concept.tar.gz). You will need to make some additional configurations, like [Monit](/docs/02-SafeSquid SWG/09-Supporting%20Services/01-Monit.md/) and [BIND9](/docs/02-SafeSquid SWG/09-Supporting%20Services/02-Bind.md/) services used by SafeSquid.
+If you want to setup SafeSquid on already existing infrastructure or if you want to use another Operating System in the Linux family other than Ubuntu, you can use the [TAR package](https://downloads.safesquid.com/appliance/binary/safesquid-2024.0715.1656.3-swg-concept.tar.gz). You will need to make some additional configurations, like [Monit](/docs/02-SafeSquid%20SWG/09-Supporting%20Services/01-Monit.md) and [BIND9](/docs/02-SafeSquid%20SWG/09-Supporting%20Services/02-Bind.md) services used by SafeSquid.
 
 ## Activate your SafeSquid
 
