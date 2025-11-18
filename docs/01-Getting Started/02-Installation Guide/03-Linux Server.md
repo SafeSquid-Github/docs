@@ -42,7 +42,7 @@ SafeSquid can also be installed on any other Linux operating system like Red-Hat
 
 ## Prerequisites
 
-For SafeSquid to work smoothly, configure [Monit](/docs/13-System%20Audit/Monit.md) for service monitoring and [bind](/docs/14-Performance%20Optimisation/01-Internalisae%20DNS/Bind.md) for internalise DNS.
+For SafeSquid to work smoothly, configure [Monit](/docs/02-SafeSquid%20SWG/09-Supporting%20Services/01-Monit.md) for service monitoring and [bind](/docs/02-SafeSquid%20SWG/09-Supporting%20Services/02-Bind.md) for internalise DNS.
 
 ## Download Latest Version in Linux Server
 
