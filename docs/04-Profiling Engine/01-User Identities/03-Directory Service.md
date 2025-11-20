@@ -6,7 +6,7 @@ The **Directory Services** section in **SafeSquid** allows you to configure dire
 
 ## Included Topics
 
-- [Active Directory](/docs/06-User%20Identification/02-Directory%20Services/Active%20Directory/main.md): Configure and integrate Active Directory for centralized user management and authentication.
+- [Active Directory](../../06-User_Identification/02-Directory_Services/Active_Directory/main.md): Configure and integrate Active Directory for centralized user management and authentication.
 - [OpenLDAP](/docs/06-User%20Identification/02-Directory%20Services/OpenLDAP/main.md): Set up and configure OpenLDAP for user authentication and directory management.
 
 These configurations enable seamless user authentication and policy enforcement, leveraging existing directory services.
