@@ -35,7 +35,7 @@ We will use SafeSquid SWG server in further discussion because it supports SSL I
 SafeSquid SWG bydefault have some rules which offers SafeSearch for primarily used search engines like Google, Yahoo, Bing. You just need to enable (if disabled) the SafeSearch policies in Policies and Profiles section.
 
 ## Prerequisites
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to Enable HTTPS Inspection](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to Enable HTTPS Inspection](/docs/03-SSL%20Inspection/main.md)
 
 ## Google SafeSearch
 Filter explicit search results on Google search engine, like pornographic images, videos, and websites from Google Search results. Try disabling Google SafeSearch and you will not be able to as SafeSquid forcefully enforces it.
