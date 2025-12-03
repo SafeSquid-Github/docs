@@ -91,7 +91,7 @@ Installation completes if you did not get any error.
 You can check if any of the dependencies missing for SafeSquid by using the "ldd" command as shown below.
 
 ```bash npm2yarn
-dd /opt/safesquid/bin/safesquid
+ldd /opt/safesquid/bin/safesquid
 ```
 
 Output for the above command is shown below.
