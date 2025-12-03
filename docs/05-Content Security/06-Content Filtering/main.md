@@ -7,7 +7,7 @@ description: Learn how to configure SafeSquid to filter inappropriate content, i
 Prevent the users to access the inappropriate content like pornography.
 
 ## Prerequisites
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection](/docs/03-SSL%20Inspection/main.md)
 
 ## Select the Filters to block 
 To block inappropriate content from web, SafeSquid provides different types of filters.
