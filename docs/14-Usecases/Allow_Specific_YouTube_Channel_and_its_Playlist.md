@@ -22,7 +22,7 @@ Only a few of the specified YouTube channels and their playlists should be allow
 You can achieve this by creating a policy in the Request Profiles Section and binding it with policies in the Access Profiles Section.
 
 ## Prerequisites
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](/docs/03-SSL%20Inspection/main.md)
 
 You need the YouTube **Channel-ID** and **List-ID** of the playlist you want to allow. You have to extract the Channel-ID and List-ID of the playlist from the YouTube URL before creating rules in SafeSquid.
 

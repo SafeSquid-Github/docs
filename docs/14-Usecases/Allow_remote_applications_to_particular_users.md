@@ -15,7 +15,7 @@ For security reasons, you blocked all the traffic to all users. However, some o
 When a user tries to access remote application software, First SafeSquid checks for that user and decides whether this user is allowed to access the remote application or not, if yes then SafeSquid gives access to that user, and before giving the access it will check for user-agent or website which you added in Custom Settings > Request types section. If access is allowed to both users and the application, then only the user can able to access that application. If the user **Samidha wants access** to the **XYZ** application but is trying to access the **ABC** application, SafeSquid will block the user Samidha.
 
 ## How to Allow Remote Applications?
-Follow the Link: [Allow anydesk](/docs/22-Usecases/Allow_anydesk.md)
+Follow the Link: [Allow anydesk](/docs/14-Usecases/Allow_anydesk.md)
 
 ## How to create policy without Application Signature
 1.  Remote applications are already categorized in the SafeSquid Application Signatures. First, you need to check whether the Application is categorized or not.
