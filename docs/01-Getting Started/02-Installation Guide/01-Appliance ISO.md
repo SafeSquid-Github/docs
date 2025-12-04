@@ -336,4 +336,4 @@ You land into console where SafeSquid SWG will be seen as shown below after succ
 
 ## Post-Installation Checklist and Recommendations
 
-The SafeSquid instance can now be activated from the product interface. [To access the product interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md), SafeSquid® [proxy server must be configured on the web-browser](/docs/17-Operational%20Modes/TCP%20Proxy.md). Post activation, [setup SSL Inspection](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md) and configure policies as per the enterprise's requirements.
+The SafeSquid instance can now be activated from the product interface. [To access the product interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md), SafeSquid® [proxy server must be configured on the web-browser](/docs/17-Operational%20Modes/TCP%20Proxy.md). Post activation, [setup SSL Inspection](/docs/03-SSL%20Inspection/main.md) and configure policies as per the enterprise's requirements.
