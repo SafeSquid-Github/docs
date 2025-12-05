@@ -16,7 +16,7 @@ keywords:
 
 You can setup your secure web gateway using different installation mechanisms based on your deployment plan.
 
-### [SafeSquid Appliance Builder (Recommended)](/docs/03-Installation/02-On-Premise/main.md)
+### [SafeSquid Appliance Builder (Recommended)](/docs/01-Getting%20Started/02-Installation%20Guide/03-Linux%20Server.md)
 
 [SafeSquid Appliance Builder (SAB)](https://downloads.safesquid.com/appliance/safesquid.iso) is a security-enhanced Ubuntu Linux ISO, customised for SafeSquid installation on any physical or virtual hardware within 15 minutes. SAB automatically configures dependency libraries, services, and custom partitioning. On booting from the SAB ISO, Ubuntu is automatically installed, and SafeSquid SWG is downloaded and deployed with all necessary dependency libraries, and services.
 
