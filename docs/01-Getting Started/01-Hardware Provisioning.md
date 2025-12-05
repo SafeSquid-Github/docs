@@ -68,7 +68,7 @@ Enterprises aiming for hardware efficiency frequently opt for Active-Active desi
 
 **Diagram:**&#x20;
 
-![](/static/img/Deployment_Provisioning/image2.webp)
+![](/img/Deployment_Provisioning/image2.webp)
 
 **Hardware Specifications (Per Server in Cluster):**
 
