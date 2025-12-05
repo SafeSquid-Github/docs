@@ -49,7 +49,7 @@ Organizations that prioritize zero downtime frequently deploy Active-Passive clu
 
 **Diagram:**&#x20;
 
-![](/static/img/Deployment_Provisioning/image1.webp)
+![](/img/Deployment_Provisioning/image1.webp)
 
 **Hardware Specifications (Per Server in Pair):**
 
