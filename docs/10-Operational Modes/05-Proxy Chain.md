@@ -37,7 +37,7 @@ My Parent Proxy## 's network IP - 192.168.27.100
 Deploy SafeSquid, it is up and running, no extra configuration required in parent proxy
 
 ## Prerequisites
-Enable HTTPS inspection on child proxy (if you want,on Parent proxy also). Check our document to configure HTTPS inspection on SafeSquid - [How to configure HTTPS inspection](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
+Enable HTTPS inspection on child proxy (if you want,on Parent proxy also). Check our document to configure HTTPS inspection on SafeSquid - [How to configure HTTPS inspection](/docs/03-SSL%20Inspection/main.md)
 
 Import SafeSquid child proxy ROOT CA in client browser
 
