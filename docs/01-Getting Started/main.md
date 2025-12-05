@@ -13,7 +13,7 @@ keywords:
 
 SafeSquid is the world's most advanced HTTP Proxy Server, specifically designed for Application Layer Security. The purpose-oriented architecture promises scalable performance while ensuring comprehensive mitigation of Layer 7 threats. SafeSquid-based Secure Web Gateway (SWG) shields enterprises from advanced cyber‑threats by delivering robust perimeter-level application layer security.
 
-Learn more [about SafeSquid SWG!](/docs/01-About%20SafeSquid%20SWG/main.md)
+Learn more [about SafeSquid SWG!](/docs/02-SafeSquid%20SWG/main.md)
 
 ## Typical High-Level Solution Architecture
 
@@ -53,7 +53,7 @@ If you want to setup SafeSquid on already existing infrastructure or if you want
 
 ## Activate your SafeSquid
 
-After successful installation, you must [activate your SafeSquid instance](/docs/04-License%20Activation/main.md).
+After successful installation, you must [activate your SafeSquid instance](/docs/01-Getting%20Started/04-License%20Activation.md).
 
 Configure your browser to use SafeSquid as the HTTP(S) proxy, access SafeSquid Interface [http://safesquid.cfg/](http://safesquid.cfg/), and upload the activation key.
 
@@ -87,7 +87,7 @@ Manually classify websites into custom categories on the SafeSquid Self-Service 
 
 Achieve Zero-Trust Web Security strategy by enforcing the organization's web usage policies using SafeSquid's Polymath Profiling Engine, and Advanced Traffic Flow Management.
 
-## [Reporting](/docs/13-System%20Audit/Real%20Time%20Statistics-Repoorting%20Module.md)
+## [Reporting](/docs/06-Audit%20&%20Forensics/01-Reporting%20Module.md)
 
 SafeSquid offers in-depth reporting for process audit, system performance, and traffic forensic analysis. The reporting suite includes detailed web usage reports, threat prevention reports, system reports, and performance reports. An interactive real-time dashboard, also, offers customization, export, and distribution options to suit the organization's needs.
 
@@ -99,9 +99,9 @@ Integrate with existing security infrastructure, such as firewalls, endpoint pro
 
 SafeSquid provides extensive options for customization to meet specific organizational demands and user experiences.
 
-You may alter the dashboard, reporting interfaces, and analytics to suit user preferences and requirements. You can also [customize blocking templates](/docs/18-Custom%20Templates/main.md) to conform to organizational branding and communication styles. For specialized tasks and automation, administrators can use our comprehensive customisation library or create their custom bash scripts.
+You may alter the dashboard, reporting interfaces, and analytics to suit user preferences and requirements. You can also [customize blocking templates](/docs/11-Customisation/01-Custom%20Templates.md) to conform to organizational branding and communication styles. For specialized tasks and automation, administrators can use our comprehensive customisation library or create their custom bash scripts.
 
-## [Troubleshooting](/docs/21-Troubleshooting/main.md)
+## [Troubleshooting](/docs/13-Troubleshooting/main.md)
 
 Troubleshooting is a cakewalk for any average Linux technician using the comprehensive SafeSquid Logs.
 
