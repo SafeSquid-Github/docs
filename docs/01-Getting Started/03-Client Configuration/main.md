@@ -41,5 +41,5 @@ Organizations require specialized proxy configuration for non-browser applicatio
 
 ## Troubleshooting and Support
 
-### [Troubleshooting Client Configuration](06-Troubleshooting%20Client%20Configuration.md)
+### [Troubleshooting Client Configuration](/docs/13-Troubleshooting/main.md)
 Organizations encounter common client configuration issues requiring systematic diagnostic procedures and resolution steps to maintain reliable proxy connectivity and security enforcement. Troubleshooting Client Configuration provides comprehensive diagnostic procedures, common issue resolution steps, and verification methods for client-side proxy configuration problems, enabling rapid issue resolution while maintaining security enforcement. This troubleshooting approach ensures reliable proxy operation while providing systematic diagnostic procedures and resolution guidance for common configuration issues. Resolve client configuration issues using systematic diagnostic procedures and resolution steps to maintain reliable SafeSquid connectivity and security enforcement.
