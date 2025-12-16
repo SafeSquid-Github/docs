@@ -43,7 +43,7 @@ Import SafeSquid child proxy ROOT CA in client browser
 
 Note: No configuration required on Parent Proxy server. Just deploy the parent proxy and make sure that it is up and running.
 
-## [Access The SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+## [Access The SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 ## Go to Configure
 ![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image2.webp)
 

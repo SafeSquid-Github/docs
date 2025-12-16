@@ -9,7 +9,7 @@ keywords:
   - SafeSquid authentication
 ---
 
-## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+## [Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 ## Enable Authentication
 ### Click on configure
 ![Click on configure](/img/How_To/Enable_authentication_for_LDAP_users/image1.webp)

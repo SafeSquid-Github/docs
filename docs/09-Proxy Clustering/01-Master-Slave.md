@@ -22,7 +22,7 @@ The master server does not have its own managed computers, but it indirectly man
 SafeSquid should be installed and activated using same product activation key on all the machines (master as well as slave)
 
 ## Master Slave configuration
-## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+## [Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 ## Configuration on Slave Server
 ## Go to Support
 ![clicking on support in safesquid interface in top right corner ](/img/How_To/Master_Slave_configuration/image1.webp)

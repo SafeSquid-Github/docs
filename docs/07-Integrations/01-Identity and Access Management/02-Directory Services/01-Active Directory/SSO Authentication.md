@@ -47,7 +47,7 @@ Time Synchronization of AD server and Proxy server should be same. Verify it usi
 
 Once you complete all the above steps correctly then you are ready for SSO Configuration.
 
-## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+## [Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 
 ![clicking on configure in safesquid interface](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image1.webp)
 

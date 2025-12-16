@@ -15,7 +15,7 @@ Here I am integrating my Active Directory with following information.
 ## Prerequisites
 Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, password, base dn, domain ) in configuration are correct. If any value is wrong SafeSquid will fail to fetch the entries.
 
-## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+## [Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 
 ## Go to configure Page
 ![Access configure page to Integrate OpenLDAP with safesquid](/img/How_To/Integrate_OpenLDAP_With_SafeSquid/image1.webp)
