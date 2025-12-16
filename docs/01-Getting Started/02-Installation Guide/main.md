@@ -24,6 +24,6 @@ You can setup your secure web gateway using different installation mechanisms ba
 
 With the rise of distributed workforces, backchanneling all traffic to an on-premise solution is not efficient. To setup SafeSquid SWG on your preferred Cloud PaaS platform or your private cloud infrastructure, use the SafeSquid cloud image or [cloud-init script](https://raw.githubusercontent.com/SafeSquid-Github/safesquid_cloud-init/main/safesquid_cloud-init.yaml).
 
-### [Install using SafeSquid TAR file](/docs/03-Installation/03-Manual/main.md)
+### [Install using SafeSquid TAR file](/docs/01-Getting%20Started/02-Installation%20Guide/03-Linux%20Server.md)
 
 If you want to setup SafeSquid on already existing infrastructure or if you want to use another Operating System in the Linux family other than Ubuntu, you can [download the SafeSquid tarball](https://downloads.safesquid.com/appliance/binary/) and manually install it. You will need to partition the disks appropriately, fine-tune some of the features, and make some additional configurations to services used by SafeSquid, like [Monit](/docs/06-Audit%20&%20Forensics/04-Monit.md) and [BIND9](/docs/02-SafeSquid%20SWG/09-Supporting%20Services/02-Bind.md).

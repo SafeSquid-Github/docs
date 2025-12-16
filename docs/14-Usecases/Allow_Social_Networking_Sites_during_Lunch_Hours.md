@@ -19,7 +19,7 @@ HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check o
 
 Make sure the SScore section is enabled as TRUE (Application setup >> Score)
 
-# [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+# [Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 ![Select Configure section to allow social networking sites in lunch hours](/img/How_To/Allow_Social_Networking_Sites_during_Lunch_Hours/image1.webp)
 
 Click on the Search Icon situated in the bottom right corner of SafeSquid WebGUI to find the keyword or profile name.

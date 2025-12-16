@@ -21,7 +21,7 @@ Remote applications like Anydesk® and Ammyadmin™ do not support SSO authentic
 
 Remote applications like **Remote desktop applications, Download managers**, etc. (Anydesk and Teamviewer®) should get automatically blocked if HTTPS inspection is enabled. No need to configure any policy for blocking purposes.
 
-## [Access the SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+## [Access the SafeSquid interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 ## Go to configure page
 ![Go to configure page to Allow anydesk](/img/How_To/Allow_anydesk/image1.webp)
 

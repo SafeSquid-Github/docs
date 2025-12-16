@@ -31,7 +31,7 @@ Read more about [the SafeSquid Statistics Page.](/docs/13-System%20Audit/Real%20
 
 ## Steps
 
-1.  [Access the SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+1.  [Access the SafeSquid interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 2.  Go to configure page
 
 ![click on configure in SafeSquid Interface](/img/Troubleshooting/White_listed_website_is_blocked/image1.webp)
