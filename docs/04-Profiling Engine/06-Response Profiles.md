@@ -24,7 +24,7 @@ You can manage Profiling based on the following parameters present in the respon
 3. Content-Length
 4. Response header pattern, etc.,
 
-## [Access SafeSquid interface](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface)
+## [Access SafeSquid interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 
 ## Go to configure page
 

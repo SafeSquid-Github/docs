@@ -27,7 +27,7 @@ Time Profiler Enables you to allow or block the categories, and websites based o
 
 ## Enabling the Time Profiler section on the SafeSquid User Interface
 
-### [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+### [Access SafeSquid interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 
 ### Go to the configure page.
 

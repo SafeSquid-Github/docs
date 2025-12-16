@@ -25,7 +25,7 @@ By using this section Make the social networks (Facebook, Twitter) for read-only
 
 This section helps you to enforce the safe search for Google, Yahoo, and YouTube.
 
-## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+## [Access SafeSquid interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 
 ## Go to the configure page
 

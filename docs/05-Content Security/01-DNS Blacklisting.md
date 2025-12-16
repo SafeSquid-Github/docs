@@ -16,7 +16,7 @@ Before establishing a connection with "www.example.com", SafeSquid performs a DN
 
 SafeSquid caches the DNS query results for efficiency.
 
-## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+## [Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 ## Go to Configure Page
 ![Goto configure.webp](/img/Configure/Real_Time_Content_Activity/DNS_blacklist/image1.webp)
 

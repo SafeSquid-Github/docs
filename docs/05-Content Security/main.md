@@ -24,7 +24,8 @@ Modern web threats employ sophisticated evasion techniques including domain gene
 
 ## DNS-Based Threat Prevention
 
-### DNS Blacklisting: [DNS Blacklisting](01-DNS Blacklisting.md)
+### DNS Blacklisting: [DNS Blacklisting](/docs/05-Content%20Security/01-DNS%20Blacklisting.md)
+
 Organizations face constant threats from malicious domains that distribute malware, host phishing sites, or facilitate command-and-control communications. DNS Blacklisting enables SafeSquid to query DNS-based blacklist services to identify and block access to dangerous domains before establishing connections. This proactive approach prevents users from accessing malicious websites while reducing bandwidth consumption and security risks. Configure DNS blacklist services in Real-time Content Security settings to enable automatic threat domain blocking.
 
 ## Access Control and Policy Enforcement
