@@ -78,7 +78,7 @@ timeline
     2018 : 1st to detect file extension spoofing in real time to stop data leaks
     2020 : 1st to trigger automatic native browser sandboxing from the proxy
     2022 : 1st with SSL session caching to slash handshake latency in SWGs
- ```
+```
 Pioneering solutions to mitigate web-based threats, yet unaddressed by alternatives, highlight SafeSquid's evolution since its maiden release. A dedicated team of security experts and technology specialists ensure its constant evolution and enables you to meet new challenges.
 
 SafeSquid Secure Web Gateway (SWG) is the latest generation in this product family to safeguard internet users and internal web applications. Combined with proven HTTP Proxy technology, an innovative set of security features, and a state-of-the-art implementation architecture, SafeSquid SWG provides the fullest capabilities for gateway-level access control and deep content security within a unified, highly customizable platform.
