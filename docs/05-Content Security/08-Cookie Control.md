@@ -24,7 +24,7 @@ You can also disable the users from logging into their personal accounts.
 
 Users can query the search engines (google, yahoo) but they are not able to login to their personal accounts (Gmail, shopping websites, trading websites).
 
-## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+## [Access SafeSquid interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 ## Go to configure page
 ![](/img/Configure/Restriction_Profiles/Cookie_Filter/image1.webp)
 
