@@ -20,7 +20,7 @@ This article will help you with Installation of SafeSquid SSL Certificate into M
 ![](/img/Importing_SSL_Certificate_Into_Firefox/image8.webp)
 ![](/img/Importing_SSL_Certificate_Into_Firefox/image9.webp)
 ## Testing
-Note: Make sure you must have enabled HTTPS inspection in SafeSquid User Interface before testing.
+Note: Make sure you must have [enabled HTTPS inspection](/docs/03-SSL%20Inspection/main.md) in SafeSquid User Interface before testing.
 While accessing any HTTPS website you can click on Lock icon before website URL in the address bar. It will display the Certificate Authority verified by SafeSquid.
 ![](/img/Importing_SSL_Certificate_Into_Firefox/image10.webp)
 
