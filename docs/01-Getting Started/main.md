@@ -39,7 +39,7 @@ To generate the product activation key, create an account on the SafeSquid Self-
 
 You can set up your secure web gateway using different installation mechanisms based on your deployment plan.
 
-### [SafeSquid Appliance Builder (Recommended)](/docs/01-Getting%20Started/main.md)
+### [SafeSquid Appliance Builder (Recommended)](/docs/01-Getting%20Started/04-Installation%20Guide/01-SafeSquid%20Appliance%20Builder.md)
 
 [SafeSquid Appliance Builder(SAB)](https://downloads.safesquid.com/appliance/safesquid.iso) is a security-enhanced ISO of the latest minimal Ubuntu LTS. On booting from the SAB ISO, Ubuntu is automatically installed, and SafeSquid SWG is downloaded and deployed with all necessary dependency libraries, and services. Using the SAB ISO, you may [create a virtual appliance on any virtualization infrastructure or create a hardware appliance on standard Intel Server hardware.](/docs/01-Getting%20Started/04-Installation%20Guide/03-Linux%20Server.md)
 
