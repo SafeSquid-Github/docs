@@ -1,5 +1,5 @@
 ---
-title: Appliance ISO
+title: SafeSquid Appliance Builder
 Description: This documentation explains how to quickly deploy SafeSquid Secure Web Gateway using the SafeSquid Appliance Builder (SAB), a pre-configured ISO that automates installation, system hardening, and setup across physical and virtual environments.
 Keywords:
   - SafeSquid Appliance Builder
