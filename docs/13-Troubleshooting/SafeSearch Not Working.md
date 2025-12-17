@@ -15,7 +15,7 @@ Test your configuration once. All required entries must be enabled.
 
 Then test your HTTPS Inspection enabled or not. If if not enabled see our document - [How to configure HTTPS inspection](/docs/03-SSL%20Inspection/main.md)
 
-Then check the SSL certificate in the browser. - [Testing the SSL Certificate (in Firefox)](/docs/12-Server%20Security/SSL%20Certificate%20Validation.md)
+Then check the SSL certificate in the browser. - [Testing the SSL Certificate (in Firefox)](/docs/03-SSL%20Inspection/Testing%20SSL%20Certificate%20In%20Firefox.md)
 
 Removes the cache and restart the browser and test it again.
 
