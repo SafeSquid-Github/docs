@@ -127,4 +127,4 @@ DR readiness requires deploying a separate SafeSquid stack in a distant geograph
 
 ## Next Steps: Transition to SafeSquid Installation
 
-Once hardware, network, and storage prerequisites align with organisational load and resilience goals, the environment is ready for the [SafeSquid installation phase](/docs/01-Getting%20Started/02-Installation%20Guide/main.md). The next step involves preparing the operating system, deploying SafeSquid packages, and configuring policy, proxy, and access control components.
+Once hardware, network, and storage prerequisites align with organisational load and resilience goals, the environment is ready for the [SafeSquid installation phase](/docs/01-Getting%20Started/04-Installation%20Guide/main.md). The next step involves preparing the operating system, deploying SafeSquid packages, and configuring policy, proxy, and access control components.

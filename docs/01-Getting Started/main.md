@@ -41,7 +41,7 @@ You can set up your secure web gateway using different installation mechanisms b
 
 ### [SafeSquid Appliance Builder (Recommended)](/docs/01-Getting%20Started/main.md)
 
-[SafeSquid Appliance Builder(SAB)](https://downloads.safesquid.com/appliance/safesquid.iso) is a security-enhanced ISO of the latest minimal Ubuntu LTS. On booting from the SAB ISO, Ubuntu is automatically installed, and SafeSquid SWG is downloaded and deployed with all necessary dependency libraries, and services. Using the SAB ISO, you may [create a virtual appliance on any virtualization infrastructure or create a hardware appliance on standard Intel Server hardware.](/docs/01-Getting%20Started/02-Installation%20Guide/03-Linux%20Server.md)
+[SafeSquid Appliance Builder(SAB)](https://downloads.safesquid.com/appliance/safesquid.iso) is a security-enhanced ISO of the latest minimal Ubuntu LTS. On booting from the SAB ISO, Ubuntu is automatically installed, and SafeSquid SWG is downloaded and deployed with all necessary dependency libraries, and services. Using the SAB ISO, you may [create a virtual appliance on any virtualization infrastructure or create a hardware appliance on standard Intel Server hardware.](/docs/01-Getting%20Started/04-Installation%20Guide/03-Linux%20Server.md)
 
 ### SafeSquid On Cloud
 
@@ -53,7 +53,7 @@ If you want to setup SafeSquid on already existing infrastructure or if you want
 
 ## Activate your SafeSquid
 
-After successful installation, you must [activate your SafeSquid instance](/docs/01-Getting%20Started/04-License%20Activation.md).
+After successful installation, you must [activate your SafeSquid instance](/docs/01-Getting520Started/05-License%20Activation.md).
 
 Configure your browser to use SafeSquid as the HTTP(S) proxy, access SafeSquid Interface [http://safesquid.cfg/](http://safesquid.cfg/), and upload the activation key.
 
