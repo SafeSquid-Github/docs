@@ -19,4 +19,4 @@ Note: You can configure SafeSquid to permit access of the User Interface by only
 ## Main page or starting page of interface displays the dashboard of SafeSquid.
 ## When you access the SafeSquid interface for the first time, it will prompt you with upload your activation.
 ![](/img/How_To/Access_The_SafeSquid_User_Interface/image3.webp)
-If you get the SafeSquid template showing Access Denied then follow the instructions - [Avoid Locking Yourself When You Are Configuring Policies in Access Restrictions]()
+If you get the SafeSquid template showing Access Denied then follow the instructions - Avoid Locking Yourself When You Are Configuring Policies in Access Restrictions
