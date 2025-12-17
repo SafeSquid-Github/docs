@@ -39,7 +39,7 @@ I Am saving this file with name:
 
 I will use this file in the below configuration
 
-## [Access the SafeSquid user interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+## [Access the SafeSquid user interface](/ddocs/01-Getting%20Started/Access%20the%20SafeSquid%29Interface.md)
 ### Go to Configure Page
 ![Clicking on configure in SafeSquid interface](/img/How_To/Create_Custom_Templates/image2.webp)
 

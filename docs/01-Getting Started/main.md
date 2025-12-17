@@ -53,7 +53,7 @@ If you want to setup SafeSquid on already existing infrastructure or if you want
 
 ## Activate your SafeSquid
 
-After successful installation, you must [activate your SafeSquid instance](/docs/01-Getting520Started/05-License%20Activation.md).
+After successful installation, you must [activate your SafeSquid instance](/docs/01-Getting%20Started/05-License%20Activation.md).
 
 Configure your browser to use SafeSquid as the HTTP(S) proxy, access SafeSquid Interface [http://safesquid.cfg/](http://safesquid.cfg/), and upload the activation key.
 
