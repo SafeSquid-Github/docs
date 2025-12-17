@@ -5,7 +5,7 @@ Keywords:
   
 ---
 
-### Generate Activation Key
+## Generate Activation Key
 
 #### Registration Process 
 
