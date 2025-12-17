@@ -13,7 +13,7 @@ Keywords:
 This can be achieved using SafeSquid limits feature, there you will find an option to set up the limit for downloading speed for users.
 
 ### Prerequisites
-If you are downloading files from HTTPS websites, then make sure that [HTTPS Inspection](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md) in SafeSquid is enabled
+If you are downloading files from HTTPS websites, then make sure that [HTTPS Inspection](/docs/03-SSL%20Inspection/main.md) in SafeSquid is enabled
 
 ### Setup Download Rate
 ![clicking on edit policies and editing the first entry in speed limits section ](/img/How_To/Setup_Download_Speed_At_Which_the_files_need_to_download/image1.webp)
