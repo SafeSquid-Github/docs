@@ -48,7 +48,7 @@ Modern malware employs sophisticated evasion techniques including polymorphic co
 
 ## Content Analysis and Filtering
 
-### [Content Filtering](/docs/05-Content%20Security/06-Content%20Filtering/main.md)
+### [Content Filtering](/docs/05-Content%20Security/06-Content%20Moderation/main.md)
 Organizations need granular control over web content based on text analysis, image recognition, and content characteristics to enforce productivity and security policies. Content Filtering enables SafeSquid to analyze web content using text analyzers, image analyzers, and content classification engines to identify and control inappropriate or dangerous content. This filtering capability provides comprehensive content control while maintaining user experience through intelligent analysis and policy enforcement. Configure content filtering rules in the Content Filtering section to implement comprehensive content analysis and control.
 
 ## Privacy and Data Protection
