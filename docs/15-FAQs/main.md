@@ -80,7 +80,7 @@ If you configured SafeSquid, will block all social networking sites by default.
 
 You can allow those sites for specific time say in between LUNCH hour.
 
-Allow social networking sites in lunch hours follow -- [LINK](/docs/22-Usecases/Allow_Social_Networking_Sites_during_Lunch_Hours.md)
+Allow social networking sites in lunch hours follow -- [LINK](/docs/14-Usecases/Allow_Social_Networking_Sites_during_Lunch_Hours.md)
 
 Facebook is a social networking website that allows users to interact with other users in a multimedia environment on the Web. Facebook users can install and use applications to enhance their experience. Many organizations want to allow Facebook access to maintain morale, increase retention, and boost hiring, but they also want to control access to it.
 

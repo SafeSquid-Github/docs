@@ -15,7 +15,7 @@ Use 'Content modifier' to remove or modify contents like ActiveX, JavaScript, an
 It enables you to modify the contents of web pages, files, the client header, and the server header in real time.
 
 ## Enabling the Content modifier section on the SafeSquid User Interface
-## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+## [Access SafeSquid interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 ## Go to Configure Page
 ![Goto configure.webp](/img/Configure/Real_Time_Content_Activity/Content_modifier/image1.webp)
 

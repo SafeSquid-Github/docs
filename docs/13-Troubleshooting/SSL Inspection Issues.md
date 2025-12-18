@@ -34,9 +34,9 @@ Keywords:
 
 ## Troubleshooting
 ###  Case 1: Check whether the SSL certificate was properly imported inside the browser or not.
-Follow the [Import your SSL certificate into Internet Explorer or Chrome browser.](https://help.safesquid.com/portal/en/kb/articles/importing-your-ssl-certificate-into-internet-explorer-or-chrome)
+Follow the [Import your SSL certificate into Firefox browser.](/docs/03-SSL%20Inspection/Import%20SSL%20Certificate%20Into%20Firefox%20Browser.md)
 
-Follow the [Import your SSL certificate into the Firefox browser](https://help.safesquid.com/portal/en/kb/articles/importing-your-ssl-certificate-into-firefox)
+Follow the [Import your SSL certificate into Internet Explorer or Chrome browser.](/docs/05-Content%20Security/03-Server%20Verification.md)
 
 ###  Case 2: Check SSL Certs/Cache if you face the issue mentioned below
 SafeSquid certificate imported inside the browser but still shows the error. A secured connection fails when you try to access HTTPS websites.

@@ -12,7 +12,7 @@ keywords:
 ## Overview
 This article helps you to understand, how to generate Performance plot from SafeSquid User Interface
 
-## [Access The SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+## [Access The SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 click on **Support**, you will see below page
 
 ## Generate Performance Plot

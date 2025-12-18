@@ -52,7 +52,7 @@ ls -lrt /usr/local/safesquid/security/
 If the file was not found, then upload your activation key again and click on restart
 
 :::note
-Restart SafeSquid service from the SafeSquid Interface will work, only if the [monit service](/docs/13-System%20Audit/Monit.md) is configured properly on the SafeSquid server.
+Restart SafeSquid service from the SafeSquid Interface will work, only if the [monit service](/docs/02-SafeSquid%20SWG/09-Supporting%20Services/01-Monit.md) is configured properly on the SafeSquid server.
 :::
 
 Otherwise, you can directly restart the SafeSquid service from LINUX box by using below commands

@@ -25,7 +25,7 @@ Here I am integrating my Active Directory with following information. 
 - Username : administrator@safesquid.test
 
 
-### [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+### [Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 ![Application Setup](/img/How_To/Integrate_Active_Directory_For_Simple_Authentication/image1.webp)
 
 ### Go to Application Setup

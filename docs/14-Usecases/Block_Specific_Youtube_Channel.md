@@ -17,7 +17,7 @@ Blocking of Specific YouTube channel and allowing all the other YouTube videos i
 :::
 
 ## Prerequisites
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](/docs/03-SSL%20Inspection/main.md)
 
 You need the YouTube **Channel-ID** and **List-ID**. You have to extract Channel-ID and List-ID from YouTube URL before creating rules in SafeSquid.
 

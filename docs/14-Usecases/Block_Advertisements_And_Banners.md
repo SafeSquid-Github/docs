@@ -24,9 +24,9 @@ Security was the main reason for blocking of Ads. Blocking of Ads include quicke
 SafeSquid Secured web gateway (SWG) blocks all types of annoying ads and banners. So that you can save much bandwidth and access the web pages without any distractions.
 
 ## Prerequisites
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](/docs/03-SSL%20Inspection/main.md)
 
-## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+## [Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 ![click on configure in safesquid interface](/img/How_To/Block_Advertisements_And_Banners/image1.webp)
 
 ![click on search in access profiles](/img/How_To/Block_Advertisements_And_Banners/image2.webp)

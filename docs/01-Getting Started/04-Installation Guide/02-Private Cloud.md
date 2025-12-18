@@ -74,7 +74,7 @@ There are 4 ways to deploy SafeSquid Secure Web Gateway on cloud platforms.
 
 ### Deployment on Existing VM
 
-#### [SafeSquid Appliance Builder](/docs/03-Installation/02-On-Premise/main.md)
+#### [SafeSquid Appliance Builder](/docs/01-Getting%20Started/04-Installation%20Guide/01-SafeSquid%20Appliance%20Builder.md)
 
 SAB is an ISO of the latest minimal Ubuntu LTS 20.04, designed to simplify deployment in environments where full automation is not feasible. SAB automates the installation of Ubuntu, followed by downloading and deploying SafeSquid SWG, streamlining the setup process.
 

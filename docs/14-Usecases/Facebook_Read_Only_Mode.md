@@ -31,9 +31,9 @@ SafeSquid allows you to give full Facebook access to your social media group, pa
 4. Block Facebook chat.
 
 ## Prerequisites
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](/docs/03-SSL%20Inspection/main.md)
 
-## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+## [Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 ![Access safesquid user interface to enable Facebook read only mode](/img/How_To/Facebook_Read_Only_Mode/image1.webp)
 
 ![Search 'FACEBOOK READ ONLY MODE' in search section](/img/How_To/Facebook_Read_Only_Mode/image2.webp)

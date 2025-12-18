@@ -12,7 +12,7 @@ Keywords:
 ## Overview
 Content Caching improves bandwidth efficiency. A page or file, when requested by a user, is served to the user and a copy of it is also maintained locally in the cache. So, when a request is made to fetch the same page or file, it is served with the local copy, instead of 'a fresh fetch'. SafeSquid has a very neat, efficient and manageable Content Caching system.
 
-### [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+### [Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 ![clicking on configure in safesquid interface](/img/How_To/Caching_Specific_websites/image1.webp)
 
 ### Go to Access policies under Restriction Policies

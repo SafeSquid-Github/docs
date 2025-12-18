@@ -24,14 +24,14 @@ Note: Whitelist category means the category that we have to allow. The blacklist
 ## Solution
 Make sure that the **sscore** section is enabled. And the categorization engine is loaded successfully. You can check this from the SafeSquid Statistics page from the interface.
 
-Read more about [the SafeSquid Statistics Page.](/docs/13-System%20Audit/Real%20Time%20Statistics-Repoorting%20Module.md)
+Read more about [the SafeSquid Statistics Page.](/docs/06-Audit%20&%20Forensics/01-Reporting%20Module.md)
 
 **You need to add your corporate website to the whitelist category from the Categorize Web-sites section under Custom Settings from SafeSquid UI.**
 
 
 ## Steps
 
-1.  [Access the SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+1.  [Access the SafeSquid interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 2.  Go to configure page
 
 ![click on configure in SafeSquid Interface](/img/Troubleshooting/White_listed_website_is_blocked/image1.webp)

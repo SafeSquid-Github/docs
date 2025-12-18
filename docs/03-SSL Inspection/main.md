@@ -62,7 +62,7 @@ SafeSquid enables deep inspection of HTTPS traffic with minimal administrative o
 
 ### Generating SSL Certificates
 
-[**Access the Self-Service Portal**](https://help.safesquid.com/portal/en/kb/articles/access-the-self-service-portal)
+[**Access the Self-Service Portal**](/docs/02-SafeSquid%20SWG/04-Self-Service%20Portal.md)
 
 Log in to the Self-Service Portal - [https://key.safesquid.com](https://key.safesquid.com/) 
 
@@ -126,7 +126,7 @@ From the Self-Service Portal 
 
 ### Enabling SSL Inspection
 
-[**Access the SafeSquid interface**](https://help.safesquid.com/portal/en/kb/articles/access-the-safesquid-user-interface) 
+[**Access the SafeSquid interface**](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md) 
 
 Go to Configure Page 
 
@@ -184,7 +184,7 @@ When you click on Save config, it will give a prompt for asking the confirmation
 
 **To bypass HTTPS Inspection enabled SafeSquid default configuration, follow the below steps:**
 
-[**Access the SafeSquid User Interface**](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+[**Access the SafeSquid User Interface**](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 
 ![clicking on configure in safesquid interface, Picture](/img/SSL_Inspection/image30.webp) 
 

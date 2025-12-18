@@ -56,7 +56,7 @@ Same policy configuration as well as SSL configuration on new appliance or multi
 Your monit service must be up and running. Monit service is required to start SafeSquid service automatically.
 
 ## Configure Cloud Restore
-## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+## [Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 ![Access the SafeSquid User Interface to configure cloud restore](/img/How_To/Setup_Cloud_Restore/image1.webp)
 
 ![verify same Activation key before configure cloud restore ](/img/How_To/Setup_Cloud_Restore/image2.webp)

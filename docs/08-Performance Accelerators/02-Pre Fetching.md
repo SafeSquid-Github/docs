@@ -14,7 +14,7 @@ The Prefetching feature can be used as an 'internet accelerator'. It allows virt
 
 Prefetching is a good way to improve retrieval time. It reduces resource retrievals and improves retrieval time. The target range is wider than that of both, mirroring and caching.
 
-### [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+### [Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 ### Go to configure
 ![clicking on configure in safesquid interface](/img/How_To/Prefetch_embedded_images/image1.webp)
 

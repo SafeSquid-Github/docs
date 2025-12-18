@@ -25,7 +25,7 @@ Keywords:
 
 When you can access https://www.facebook.com/ via proxy by enabling the HTTPS inspection section that means your HTTPS configuration is proper with the proper configuration of SSL certificate inside the browser.
 
-If your HTTPS inspection section is not properly configured follow the link - [Configure HTTPS Inspection](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
+If your HTTPS inspection section is not properly configured follow the link - [Configure HTTPS Inspection](/docs/03-SSL%20Inspection/main.md)
 
 But you are not able to log in on https://www.facebook.com/ which means your Cookie Filter section is enabled with global TRUE.
 
@@ -35,7 +35,7 @@ Make sure the policy under Privacy Control > Cookie filter > Deny should be with
 
 Make sure the website you are accessing is an HTTP or HTTPS website.
 
-If the website you are accessing is HTTPS you must configure HTTPS sections properly. Follow the link [to Configure the HTTPS Inspection](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
+If the website you are accessing is HTTPS you must configure HTTPS sections properly. Follow the link [to Configure the HTTPS Inspection](/docs/03-SSL%20Inspection/main.md)
 
 Suppose you are not able to log in to https://stackoverflow.com/ via Facebook or Google credentials that means your Elevated Privacy section is enabled with global TRUE.
 

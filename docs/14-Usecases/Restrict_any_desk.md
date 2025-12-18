@@ -9,7 +9,7 @@ keywords:
 - block remote access anydesk safesquid
 ---
 
-## [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+## [Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 ## Go to configure page
 ![Go to configure page to Restict anydesk](/img/How_To/Restrict_any_desk/image1.webp)
 

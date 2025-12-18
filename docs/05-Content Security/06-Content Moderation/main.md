@@ -7,7 +7,7 @@ description: Learn how to configure SafeSquid to filter inappropriate content, i
 Prevent the users to access the inappropriate content like pornography.
 
 ## Prerequisites
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection](/docs/03-SSL%20Inspection/main.md)
 
 ## Select the Filters to block 
 To block inappropriate content from web, SafeSquid provides different types of filters.
@@ -42,7 +42,7 @@ Make the Global Section Enabled to TRUE.
 
 Then click on Filtering Policies and Enable policy to Enable as TRUE
 
-Read more about [How to block inappropriate images by using Image Analyzer](/docs/11-Deep%20Content%20Security/02-Content%20Moderation/Image%20Analzer.md)
+Read more about [How to block inappropriate images by using Image Analyzer](/docs/05-Content%20Security/06-Content%20Moderation/Image%20Analzer.md)
 
 ## Text Analyzer
 You have to just check the default section is enable or not.By default it should be Enable as FALSE
@@ -52,7 +52,7 @@ Make the Global Section Enabled to TRUE.
 Then click on Filtering Policies and Enable policies to Enable as TRUE.
 
 
-Read more about [Image Analyzer](/docs/11-Deep%20Content%20Security/02-Content%20Moderation/Image%20Analzer.md) and [Text Analyzer](/docs/11-Deep%20Content%20Security/02-Content%20Moderation/Text%20Analyzer.md)
+Read more about [Image Analyzer](/docs/05-Content%20Security/06-Content%20Moderation/Image%20Analzer.md) and [Text Analyzer](/docs/05-Content%20Security/06-Content%20Moderation/Text%20Analyzer.md)
 
 ## Testing
 Access any pornographic content from your browser, then you will see the blocked template of SafeSquid. And Pornographic images will be blocked due to image analyzer.
@@ -62,7 +62,7 @@ Access any pornographic content from your browser, then you will see the blocked
 SafeSquid’s content moderation engine analyzes and filters web content in real-time to enforce compliance, safety, and productivity policies.
 
 ## Included Modules
-- [Image Analyzer](/docs/11-Deep%20Content%20Security/02-Content%20Moderation/Image%20Analzer.md): Detects inappropriate or non-compliant visual content using AI-powered image analysis.
-- [Text Analyzer](/docs/11-Deep%20Content%20Security/02-Content%20Moderation/Text%20Analyzer.md): Scans and classifies textual content for profanity, hate speech, and policy violations.
+- [Image Analyzer](/docs/05-Content%20Security/06-Content%20Moderation/Image%20Analzer.md): Detects inappropriate or non-compliant visual content using AI-powered image analysis.
+- [Text Analyzer](/docs/05-Content%20Security/06-Content%20Moderation/Text%20Analyzer.md): Scans and classifies textual content for profanity, hate speech, and policy violations.
 
 Use these tools to build a safer and policy-compliant browsing environment.

@@ -23,10 +23,10 @@ In the given example you should get only access to the SafeSquid page on Faceboo
 In the same way, you can create a policy to allow a specific page (only your company) page on Facebook.
 
 ## Prerequisites
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](/docs/03-SSL%20Inspection/main.md)
 
 ## Steps
-[Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+[Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 
 ![Select Configure section from safesquid user interface to allow only specific page of Facebook ](/img/How_To/Allowing_Specific_Page_on_Facebook/image1.webp)
 

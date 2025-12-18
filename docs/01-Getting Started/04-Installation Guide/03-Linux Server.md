@@ -42,7 +42,7 @@ SafeSquid can also be installed on any other Linux operating system like Red-Hat
 
 ## Prerequisites
 
-For SafeSquid to work smoothly, configure [Monit](/docs/13-System%20Audit/Monit.md) for service monitoring and [bind](/docs/14-Performance%20Optimisation/01-Internalisae%20DNS/Bind.md) for internalise DNS.
+For SafeSquid to work smoothly, configure [Monit](/docs/02-SafeSquid%20SWG/09-Supporting%20Services/01-Monit.md) for service monitoring and [bind](/docs/02-SafeSquid%20SWG/09-Supporting%20Services/02-Bind.md) for internalise DNS.
 
 ## Download Latest Version in Linux Server
 
@@ -91,7 +91,7 @@ Installation completes if you did not get any error.
 You can check if any of the dependencies missing for SafeSquid by using the "ldd" command as shown below.
 
 ```bash npm2yarn
-dd /opt/safesquid/bin/safesquid
+ldd /opt/safesquid/bin/safesquid
 ```
 
 Output for the above command is shown below.
@@ -194,4 +194,4 @@ By default, SafeSquid will listen on PORT 8080. If you observe SafeSquid is list
 
 This installation does not include the Monit and Bind configurations.
 
-Make some additional configurations to services used by SafeSquid, for [Monit](/docs/13-System%20Audit/Monit.md) and [BIND9](/docs/14-Performance%20Optimisation/01-Internalisae%20DNS/Bind.md).
+Make some additional configurations to services used by SafeSquid, for [Monit](/docs/02-SafeSquid%20SWG/09-Supporting%20Services/01-Monit.md) and [BIND9](/docs/02-SafeSquid%20SWG/09-Supporting%20Services/02-Bind.md).

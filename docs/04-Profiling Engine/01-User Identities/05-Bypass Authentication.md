@@ -15,7 +15,7 @@ Stark tech has 200 employees. Star tech need to use proxy authentication to trac
 
 ## How SafeSquid bypass Authentication?
 
-### [Access the SafeSquid User Interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+### [Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 
 ![clicking on configure in safesquid intgerface](/img/How_To/Bypass_Authentication/image1.webp)
 

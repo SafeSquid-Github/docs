@@ -31,7 +31,7 @@ You must have integrated LDAP setup, if you want to create user groups based on 
 
 ## Setup Guide
 
-### [Access the SafeSquid User interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+### [Access the SafeSquid User interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 
 ![clicking on configure in safesquid interface](/img/How_To/IP_based_authentication/image1.webp)
 

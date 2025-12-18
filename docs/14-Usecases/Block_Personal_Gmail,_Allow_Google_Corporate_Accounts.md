@@ -17,7 +17,7 @@ As an administrator, you may want to prevent users from signing into Google serv
 SafeSquid Secure Web Gateway (SWG) allows you to access corporate account only and block personal gmail account.
 
 ## Policy Creation
-To solve problem of personal Gmail blocking. We need to manipulate headers of Gmail so that only specific domain (corporate domains) is/are allowed and rest are denied (this includes personal Gmail). Also, as Gmail is HTTPS website, we need to make sure [HTTPS Inspection is enabled.](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
+To solve problem of personal Gmail blocking. We need to manipulate headers of Gmail so that only specific domain (corporate domains) is/are allowed and rest are denied (this includes personal Gmail). Also, as Gmail is HTTPS website, we need to make sure [HTTPS Inspection is enabled.](docs\03-SSL%20Inspection/main.md)
 
 We can achieve the above by following steps --
 
@@ -44,7 +44,7 @@ Click on **Restriction Policies** (Left Side Panel).
 
 Click on **Privacy Control** submenu.
 
-Click on [Header Filter](/docs/10-Web%20Access%20Control/Header%20Obfuscation.md) section. Make Sure Global part of this section is Enabled as True.
+Click on [Header Filter](/docs/05-Content%20Security/07-Header%20Obfuscation.md) section. Make Sure Global part of this section is Enabled as True.
 
 ![going to header filter under Restriction Policies ](/img/How_To/Block_Personal_Gmail,_Allow_Google_Corporate_Accounts/image3.webp)
 

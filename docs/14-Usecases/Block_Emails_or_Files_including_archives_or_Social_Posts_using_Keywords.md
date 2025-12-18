@@ -23,7 +23,7 @@ To overcome such problems SafeSquid comes up with **Advanced DLP** solution em
 
 The Advanced DLP solution can be managed from SafeSquid Self Service portal from where you can create various keyword expression matches. SafeSquid SWG will download those keyword expressions and loads into memory. When any user tries to upload any archive file or write an email, SafeSquid SWG will analyze Post data and transmit it to the ClamAV daemon for Signatures verification. If the keyword expression matches with your email or file content then ClamAV daemon responds. SafeSquid will further take respective action based on policy you have created for those keywords matching.
 
-## [Manage Keyword Signatures using Self Service portal](/docs/09-Profiling%20Engine/Application%20Signatures.md)
+## [Manage Keyword Signatures using Self Service portal](/docs/04-Profiling%20Engine/03-Application%20Signatures.md)
 ## Configure SafeSquid SWG for using Custom Signatures
 
 On configure page of SafeSquid interface open the Real time content security side menu. Click on Clam antivirus section to configure the policy.
@@ -54,7 +54,7 @@ Click on bottom left Icon to save the configuration.
 Once you configured the policy as shown above go to Support page and Click on Refresh button for refreshing subscription details.
 :::
 ## Testing Signature detection
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document -[ How To Enable HTTPS Inspection ](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md)
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document -[ How To Enable HTTPS Inspection ](/docs/03-SSL%20Inspection/main.md)
 
 ### Test using office documents
 Set proxy settings in client browser and open Gmail. Confirm the HTTPS traffic is verified/inspected by SafeSquid.Otherwise SafeSquid will not be able to block the mail which contains your mentioned keyword(s).

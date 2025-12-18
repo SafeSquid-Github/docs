@@ -25,7 +25,7 @@ To Modify a website's categorization, you must first use the search box to view 
 
 It will show you the details of the Total Number of Categories, the last updated, and the last changed.
 
-## [Access SafeSquid interface](/docs/08-SafeSquid%20Interface/Accessing%20the%20SafeSquid%20Interface.md)
+## [Access SafeSquid interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 
 ## Go to the configure page
 
