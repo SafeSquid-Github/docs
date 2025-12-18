@@ -30,7 +30,7 @@ If you are downloading files from HTTPS websites, then make sure that [HTTPS Ins
 This can be achieved using SafeSquid limits feature, there you will find an option to set up the limit on the Download size for users.
 
 ### Prerequisites
-If you are downloading files from HTTPS websites, then make sure that [HTTPS Inspection](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md) in SafeSquid is enabled
+If you are downloading files from HTTPS websites, then make sure that [HTTPS Inspection](/docs/03-SSL%20Inspection/main.md) in SafeSquid is enabled
 
 ### Setup Maximum Download Size
 ![Edit second entry in policy under Configuration Section to Setup Maximum limit on the Download size](/img/How_To/Setup_Maximum_limit_on_the_Download_size/image1.webp)
@@ -46,7 +46,7 @@ If you are downloading files from HTTPS websites, then make sure that [HTTPS Ins
 This can be achieved using SafeSquid limits feature, there you will find an option to set up the limit on the Download size for users.
 
 ### Prerequisites
-If you are downloading files from HTTPS websites, then make sure that [HTTPS Inspection](/docs/07-SSL%20Inspection/Setup%20SSL%20Inspection.md) in SafeSquid is enabled
+If you are downloading files from HTTPS websites, then make sure that [HTTPS Inspection](/docs/03-SSL%20Inspection/main.md) in SafeSquid is enabled
 
 ### Setup Maximum Upload Size
 ![Setup Maximum limit on the Upload size in Speed Limits section](/img/How_To/Setup_Maximum_limit_on_the_Upload_size/image1.webp)

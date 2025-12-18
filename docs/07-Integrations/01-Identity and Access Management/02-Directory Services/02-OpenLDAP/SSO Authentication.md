@@ -26,7 +26,7 @@ Dont change Anything in Global Section
 
 ![safesquid comes with some default entries under allow list. You can edit or create a new entry as per your requirement](/img/How_To/Enable_authentication_for_LDAP_users/image5.webp)
 
-See the working of each Entry [here](https://help.safesquid.com/portal/en/kb/articles/working-of-default-entries-in-access-restrictions)
+See the working of each Entry [here](/docs/14-Usecases/working-of-default-entries-in-access-restrictions.md)
 
 ![default entry given for adding LDAP users into a single user group](/img/How_To/Enable_authentication_for_LDAP_users/image6.webp)
 
