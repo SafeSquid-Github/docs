@@ -115,4 +115,8 @@ After login, re-enter the current password, then set and confirm a new password.
 ---
 
 ## Post-Installation Checklist and Recommendations
-The SafeSquid instance can now be activated from the product interface. To access the product interface, SafeSquid® proxy server must be configured on the web-browser. Post activation, setup SSL Inspection and configure policies as per the enterprise’s requirements.
+* To access the product interface, SafeSquid® [proxy server must be configured on the web-browser](/docs/01-Getting%20Started/03-Client%20Configuration/01-Explicit%20Proxy.md).
+* The SafeSquid instance can now be activated from the [product interface](/docs/01-Getting%20Started/05-License%20Activation.md). 
+* Post activation, [setup SSL Inspection](/docs/03-SSL%20Inspection/main.md) and configure policies as per the enterprise’s requirements.
+* Installing SafeSquid's certificate in your clients desktop.
+* Configure your proxy server to setup SSH key based login.
