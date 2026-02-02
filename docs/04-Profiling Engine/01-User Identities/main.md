@@ -1,5 +1,14 @@
 ---
 title: User Identification
+description: Configure user identity recognition methods in SafeSquid including IP-based authentication, directory service integration, and credential management for policy enforcement.
+keywords:
+  - SafeSquid user identification
+  - proxy user authentication
+  - IP-based authentication
+  - directory service integration
+  - Kerberos SSO proxy
+  - LDAP authentication proxy
+  - network signature authentication
 ---
 
 ## Overview

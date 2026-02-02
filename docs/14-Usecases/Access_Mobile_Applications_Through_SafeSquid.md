@@ -2,11 +2,11 @@
 title: Access Mobile Applications Through SafeSquid
 description: Learn how to manage and control internet access for mobile applications through SafeSquid Secure Web Gateway, including scenarios where proxy enforcement and firewall restrictions are required.
 keywords:
-- mobile proxy settings safesquid
-- block mobile apps proxy
-- allow mobile apps through safesquid
-- safesquid mobile application access
-- proxy configuration for mobile devices
+  - mobile proxy settings safesquid
+  - block mobile apps proxy
+  - allow mobile apps through safesquid
+  - safesquid mobile application access
+  - proxy configuration for mobile devices
 ---
 
 ## Overview

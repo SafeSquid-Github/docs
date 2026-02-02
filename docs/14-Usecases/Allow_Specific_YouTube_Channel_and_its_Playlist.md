@@ -2,11 +2,11 @@
 title: Allow Specific YouTube Channel and its Playlist
 description: Learn how to configure SafeSquid to block YouTube access for students while allowing specific channels and playlists for educational purposes.
 keywords:
-- allow specific youtube channel safesquid
-- safesquid youtube playlist access
-- block youtube except channels safesquid
-- youtube channel policy safesquid
-- safesquid content filtering youtube
+  - allow specific youtube channel safesquid
+  - safesquid youtube playlist access
+  - block youtube except channels safesquid
+  - youtube channel policy safesquid
+  - safesquid content filtering youtube
 ---
 
 ## Client Scenario

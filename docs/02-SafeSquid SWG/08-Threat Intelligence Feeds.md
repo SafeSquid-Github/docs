@@ -1,10 +1,10 @@
 ---
 title: Threat Intelligence Feeds
-Description: 
+description:
 
-Keywords:
-- Secure Web Gateway Components
-- Threat Intelligence Feeds
+keywords:
+  - Secure Web Gateway Components
+  - Threat Intelligence Feeds
 ---
 
 # Threat Intelligence Feeds

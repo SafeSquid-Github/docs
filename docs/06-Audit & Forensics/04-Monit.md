@@ -2,12 +2,12 @@
 title: Monit
 description: Learn how to install, configure, and verify Monit for SafeSquid to ensure automatic monitoring and restarting of the proxy service.
 keywords:
-- monit safesquid setup
-- safesquid monit service
-- monit auto restart safesquid
-- safesquid monitoring daemon
-- safesquid high availability
-- monit startup configuration
+  - monit safesquid setup
+  - safesquid monit service
+  - monit auto restart safesquid
+  - safesquid monitoring daemon
+  - safesquid high availability
+  - monit startup configuration
 ---
 
 ## Installation and configuration of Monit Service

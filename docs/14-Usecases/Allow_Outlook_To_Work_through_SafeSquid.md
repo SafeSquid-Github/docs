@@ -2,11 +2,11 @@
 title: Allow Outlook to Work Through SafeSquid
 description: Learn how to configure SafeSquid and system firewall rules to allow Microsoft Outlook to function properly in environments where proxy authentication and SSL inspection are enabled.
 keywords:
-- allow outlook through proxy
-- safesquid outlook configuration
-- iptables rules for outlook
-- outlook with SSL inspection
-- safesquid authentication settings
+  - allow outlook through proxy
+  - safesquid outlook configuration
+  - iptables rules for outlook
+  - outlook with SSL inspection
+  - safesquid authentication settings
 ---
 
 Many times, our team has been reported saying that MS Outlook isn't working when we enable authentication (Negotiate or basic) and/or SSL inspection. Remember that SafeSquid is generally deployed in an environment that has a firewall in front, that allows only 80 and 443 traffic from SafeSquid through it and blocks the rest.
@@ -31,11 +31,11 @@ This rule is to allow the incoming ping requests to the server
 ```bash
 iptables -A INPUT -p icmp -m comment --comment "Allow Ping to work as expected" -j ACCEPT
 ```
-This rule is to allow the incoming connections on the following ports to the server, 22(SSH), **25(SMTP), 53(DNS), 110(POP), 389(LDAP), 587(SMTPS), 636(LDAPS), 953(RNDC), 993(IMAPS), 995(POP3S) 
+This rule is to allow the incoming connections on the following ports to the server, 22(SSH), **25(SMTP), 53(DNS), 110(POP), 389(LDAP), 587(SMTPS), 636(LDAPS), 953(RNDC), 993(IMAPS), 995(POP3S)
 ```bash
 iptables -A INPUT -p tcp -m multiport --dports 22,25,53,110,389,465,587,636,953,993,995 -j ACCEPT
 ```
-This rule is to allow the incoming connections on the following ports to the server, 1023(Reserved), **3268(MSGC), 3269(MSGCS), 5222(XMPP client connections), 5269(XMPP server-to-server), 5280(XMPP over synchronous HTTP), 8080(SafeSquid port) 
+This rule is to allow the incoming connections on the following ports to the server, 1023(Reserved), **3268(MSGC), 3269(MSGCS), 5222(XMPP client connections), 5269(XMPP server-to-server), 5280(XMPP over synchronous HTTP), 8080(SafeSquid port)
 ```bash
 iptables -A INPUT -p tcp -m multiport --dports 1023,3268,3269,5222,5269,5280,8080 -j ACCEPT
 ```
@@ -58,7 +58,7 @@ This rule is to allow the ping outside from the server
 ```bash
 iptables -A FORWARD -p icmp -m comment --comment "Allow Ping to work as expected" -j ACCEPT
 ```
-This rule is to allow the connections on the following ports from the server, 22(SSH), 25(SMTP), **53(DNS), 110(POP), 389(LDAP), 587(SMTPS), 636(LDAPS), 953(RNDC), 993(IMAPS), 995(POP3S) 
+This rule is to allow the connections on the following ports from the server, 22(SSH), 25(SMTP), **53(DNS), 110(POP), 389(LDAP), 587(SMTPS), 636(LDAPS), 953(RNDC), 993(IMAPS), 995(POP3S)
 iptables -A FORWARD -p tcp -m multiport --dports 22,25,53,110,389,465,587,636,953,993,995 -j ACCEPT**
 
 This rule is to allow the connections on the following ports from the server, 1023(Reserved), 3268(MSGC), 3269(MSGCS), 5222(XMPP client connections), 5269(XMPP server-to-server), 5280(XMPP over synchronous HTTP), 8080(SafeSquid port)**

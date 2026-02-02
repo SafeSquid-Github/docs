@@ -2,11 +2,11 @@
 title: Performance Plot
 description: Step-by-step guide on generating, customizing, and saving performance plots directly from the SafeSquid proxy server interface.
 keywords:
-- safesquid performance plot
-- generate performance graph
-- safesquid proxy stats
-- network traffic graph safesquid
-- proxy server analytics
+  - safesquid performance plot
+  - generate performance graph
+  - safesquid proxy stats
+  - network traffic graph safesquid
+  - proxy server analytics
 ---
 
 ## Overview

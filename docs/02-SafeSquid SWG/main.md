@@ -1,23 +1,23 @@
 ---
 title: Introducing SafeSquid Secure Web Gateway
 description: Why legacy firewalls and URL filters fail at Layer-7 and how Zero-Trust Web Security defends against phishing, malware, and data loss.
-Keywords: 
-- Web Security
-- Zero-Trust Web Security
-- Web Proxy
-- Secure Web Gateway 
-- SafeSquid SWG 
-- Layer 7 Security
-- Enterprise Proxy Server
-- Application Layer Firewall (ALF)
-- Zero-Hour Phishing
-- Ransomware
-- DNS Tunneling
-- Data Leakage Prevention
-- Cross-Site Attacks (XSS)
-- Cyberslacking
-- Deep Content Inspection
-- Homograph detection
+keywords:
+  - Web Security
+  - Zero-Trust Web Security
+  - Web Proxy
+  - Secure Web Gateway
+  - SafeSquid SWG
+  - Layer 7 Security
+  - Enterprise Proxy Server
+  - Application Layer Firewall
+  - Zero-Hour Phishing
+  - Ransomware
+  - DNS Tunneling
+  - Data Leakage Prevention
+  - Cross-Site Attacks
+  - Cyberslacking
+  - Deep Content Inspection
+  - Homograph detection
 ---
 # Introducing SafeSquid® SWG
 
@@ -50,7 +50,7 @@ Traditional security models typically grant trust once—at the point of authent
 Zero Trust redefines trust as a transient, context-dependent attribute that must be continually re-evaluated. Each access request is independently assessed, not just based on credentials, but on the current state of the user, device, network, and application. This mirrors human trust models, where confidence in someone's actions is earned incrementally and can be revoked instantly upon signs of deception or anomaly.
 
 At the Application Layer, this means:
-1. **Never trust, always verify every web transaction** to ensure no content is exhanged unless explicitly authorised.
+1. **Never trust, always verify every web transaction** to ensure no content is exchanged unless explicitly authorised.
 2. Policy decisions are context-driven, evaluating multiple risk factors—including user identity, client application, destination website, server location, content exchanged, behavioural patterns—ensuring **least privilege access**
 3. The **Adaptive Trust Assessment Framework** must continuously analyse telemetry and adjusts policy enforcement when anomalies occur.
 4. **Assume Breach**, as compromise is a matter of *when*, not *if*. Reactive web security controls must be enforced to contain threats, limit lateral movement, and tightly control egress traffic in the event of an incident.
@@ -129,7 +129,7 @@ At a high level, the SafeSquid SWG solution consists of the following core compo
 For production use, deploy SafeSquid with Supporting Services for high availability, monitoring and performance enhancement.
 ### Key Capabilities
 
-Built on a modular proxy architecture, SafeSquid SWG is a fully software-based solution offering unmatched flexibility in configuration and deployment—suitable for enterprises, ISPs, critcal infrastructure, educational institutions, and government organizations.
+Built on a modular proxy architecture, SafeSquid SWG is a fully software-based solution offering unmatched flexibility in configuration and deployment—suitable for enterprises, ISPs, critical infrastructure, educational institutions, and government organizations.
 
 1. **Zero-Trust Web Access**\
    Traditional access models grant broad permissions once a user is authenticated, creating opportunities for lateral movement, shadow IT usage, and accidental or malicious misuse. Instead of binary “allow/deny” decisions, SafeSquid enforces fine-grained, identity-aware, and context-driven rules that continuously validates each web transaction.

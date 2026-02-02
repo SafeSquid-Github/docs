@@ -1,5 +1,13 @@
 ---
 title: FAQ
+description: Frequently asked questions about SafeSquid Secure Web Gateway covering installation, configuration, licensing, and troubleshooting common issues.
+keywords:
+  - SafeSquid FAQ
+  - SafeSquid questions
+  - SafeSquid help
+  - SafeSquid troubleshooting
+  - SafeSquid support
+  - SWG frequently asked questions
 ---
 
 ## What is SafeSquid for Windows?

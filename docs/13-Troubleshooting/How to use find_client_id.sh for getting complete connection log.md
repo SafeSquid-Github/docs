@@ -1,3 +1,15 @@
+---
+title: Using find_client_id.sh for Connection Logs
+description: Use the find_client_id.sh script to extract complete connection details from SafeSquid logs for troubleshooting and forensic analysis.
+keywords:
+  - SafeSquid connection logs
+  - find_client_id.sh script
+  - SafeSquid log analysis
+  - proxy troubleshooting tools
+  - connection forensics
+  - SafeSquid debugging
+---
+
 # How To Use find\_client\_id.sh for Getting Complete Connection Log
 
 ## Overview

@@ -1,11 +1,11 @@
 ---
 title: Integrated DNS Security
-Description: 
+description:
 
-Keywords:
-- Secure Web Gateway Components
-- Integrated DNS Security
-- DNSBL Service
+keywords:
+  - Secure Web Gateway Components
+  - Integrated DNS Security
+  - DNSBL Service
 ---
 
 # Integrated DNS Security

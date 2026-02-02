@@ -1,13 +1,13 @@
 ---
-title: Custom Templates  
-Description: Learn how to create and configure custom templates in SafeSquid to personalize error messages, display company branding, or replace blocked content with dynamic responses using HTML, images, or executable files.
+title: Custom Templates
+description: Learn how to create and configure custom templates in SafeSquid to personalize error messages, display company branding, or replace blocked content with dynamic responses using HTML, images, or executable files.
 
-Keywords:
-- SafeSquid custom templates  
-- SafeSquid template configuration  
-- SafeSquid error page customization  
-- Create HTML template SafeSquid  
-- SafeSquid UI template management  
+keywords:
+  - SafeSquid custom templates
+  - SafeSquid template configuration
+  - SafeSquid error page customization
+  - Create HTML template SafeSquid
+  - SafeSquid UI template management
 ---
 
 ## Overview
@@ -72,6 +72,6 @@ You must edit the original entry, because the entries in template section are pr
 ## Testing
 ![Testing the template](/img/How_To/Create_Custom_Templates/image13.webp)
 
-## Saving the Configuration 
+## Saving the Configuration
 ![clicking on save config to save the policy](/img/How_To/Create_Custom_Templates/image14.webp)
 

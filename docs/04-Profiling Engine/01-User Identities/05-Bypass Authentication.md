@@ -2,11 +2,11 @@
 title: Bypass Authentication
 description: Learn how to bypass authentication for specific applications like Dropbox in SafeSquid, allowing automatic updates and ensuring secure internet usage tracking.
 keywords:
-- bypass authentication safesquid
-- safesquid proxy authentication bypass
-- bypass proxy authentication dropbox
-- safesquid authentication policy
-- allow application without authentication safesquid
+  - bypass authentication safesquid
+  - safesquid proxy authentication bypass
+  - bypass proxy authentication dropbox
+  - safesquid authentication policy
+  - allow application without authentication safesquid
 ---
 
 ## Business challenge

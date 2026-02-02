@@ -1,17 +1,17 @@
 ---
-title: Website Not Accessible 
-Description: Learn how to troubleshoot and fix website connection failures through SafeSquid proxy, including DNS resolution issues, port connectivity, and internal network DNS misconfigurations.  
-Keywords:  
-- SafeSquid connection failed  
-- website not loading through proxy  
-- SafeSquid DNS troubleshooting  
-- telnet SafeSquid port check  
-- SafeSquid unable to connect to website  
-- proxy website connection failure  
-- SafeSquid no route to host  
-- nslookup proxy connection issue  
-- bind9 DNS configuration SafeSquid  
-- conditional DNS forwarding  
+title: Website Not Accessible
+description: Learn how to troubleshoot and fix website connection failures through SafeSquid proxy, including DNS resolution issues, port connectivity, and internal network DNS misconfigurations.
+keywords:
+  - SafeSquid connection failed
+  - website not loading through proxy
+  - SafeSquid DNS troubleshooting
+  - telnet SafeSquid port check
+  - SafeSquid unable to connect to website
+  - proxy website connection failure
+  - SafeSquid no route to host
+  - nslookup proxy connection issue
+  - bind9 DNS configuration SafeSquid
+  - conditional DNS forwarding
 ---
 
 ## Issues

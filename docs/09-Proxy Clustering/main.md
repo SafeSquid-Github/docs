@@ -1,5 +1,13 @@
 ---
 title: Proxy Clustering
+description: Configure SafeSquid proxy clustering for high availability, failover redundancy, and distributed enterprise deployments using master-slave and configuration sync capabilities.
+keywords:
+  - SafeSquid proxy clustering
+  - SafeSquid high availability
+  - SafeSquid master-slave setup
+  - proxy failover configuration
+  - distributed proxy deployment
+  - SafeSquid configuration sync
 ---
 
 This section outlines the clustering capabilities in **SafeSquid** to support high availability and scalability in enterprise environments.

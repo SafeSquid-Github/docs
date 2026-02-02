@@ -1,12 +1,12 @@
 ---
-title: Reporting Module 
+title: Reporting Module
 description: Learn how to effectively use SafeSquid's real-time dashboard reporting, filter data, and drill down into transactions for deep network analysis.
 keywords:
-- safesquid dashboard
-- safesquid reporting
-- realtime proxy reports
-- safesquid analytics
-- proxy traffic monitoring
+  - safesquid dashboard
+  - safesquid reporting
+  - realtime proxy reports
+  - safesquid analytics
+  - proxy traffic monitoring
 ---
 
 ## Overview
@@ -16,23 +16,23 @@ SafeSquid provides you report based on last **1000 transactions** by default.Saf
 
 The dashboard displays the following activities based on the last 1000 transactions:
 
-1. IP Address  
-2. Upload Content  
-3. User Name  
-4. Download Content  
-5. User Group  
-6. Block Websites  
-7. Websites  
-8. Security Breaches  
-9. Domains  
-10. Connection Failed  
-11. IP Address  
-12. DNS Failed  
-13. User Name  
-14. Bypass Websites  
-15. User Group  
-16. Profiles  
-17. Application Signature  
+1. IP Address
+2. Upload Content
+3. User Name
+4. Download Content
+5. User Group
+6. Block Websites
+7. Websites
+8. Security Breaches
+9. Domains
+10. Connection Failed
+11. IP Address
+12. DNS Failed
+13. User Name
+14. Bypass Websites
+15. User Group
+16. Profiles
+17. Application Signature
 18. Categories
 
 ![Detailed real-time reporting SafeSquid Dashboard](/img/How_To/Reporting_(Dashboard)/image1.webp)

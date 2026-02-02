@@ -2,11 +2,11 @@
 title: Facebook Read Only Mode
 description: Learn how to configure SafeSquid to switch Facebook into read-only mode, allowing controlled access while preventing actions like commenting and sharing.
 keywords:
-- facebook read only mode safesquid
-- safesquid facebook access control
-- restrict facebook actions safesquid
-- safesquid social media filtering
-- facebook read only access safesquid
+  - facebook read only mode safesquid
+  - safesquid facebook access control
+  - restrict facebook actions safesquid
+  - safesquid social media filtering
+  - facebook read only access safesquid
 ---
 
 ## Overview

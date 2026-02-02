@@ -2,10 +2,10 @@
 title: Allow Remote Applications to Particular Users
 description: Learn how to allow specific users in your network to access remote applications securely using SafeSquid, including how to create policies without application signatures.
 keywords:
-- remote application access safesquid
-- safesquid user access control
-- safesquid policy creation
-- network access policy safesquid
+  - remote application access safesquid
+  - safesquid user access control
+  - safesquid policy creation
+  - network access policy safesquid
 ---
 
 ## Overview

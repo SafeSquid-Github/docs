@@ -1,16 +1,16 @@
 ---
 title: Request Profiles
-Description: Learn how to use the Request Types section in SafeSquid to create precise, profile-based rules for web access control, enforce safe search, manage social media permissions, and bypass HTTPS inspection.  
-Keywords:  
-- SafeSquid request types  
-- configure request profiles SafeSquid  
-- SafeSquid block websites  
-- SafeSquid allow request by method  
-- SafeSquid user agent filtering  
-- SafeSquid smart TLD  
-- SafeSquid enforce safe search  
-- bypass HTTPS inspection SafeSquid  
-- hostname based filtering SafeSquid  
+description: Learn how to use the Request Types section in SafeSquid to create precise, profile-based rules for web access control, enforce safe search, manage social media permissions, and bypass HTTPS inspection.
+keywords:
+  - SafeSquid request types
+  - configure request profiles SafeSquid
+  - SafeSquid block websites
+  - SafeSquid allow request by method
+  - SafeSquid user agent filtering
+  - SafeSquid smart TLD
+  - SafeSquid enforce safe search
+  - bypass HTTPS inspection SafeSquid
+  - hostname based filtering SafeSquid
 ---
 
 ## Overview

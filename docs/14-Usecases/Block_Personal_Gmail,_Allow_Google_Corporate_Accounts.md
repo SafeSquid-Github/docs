@@ -2,11 +2,11 @@
 title: Block Personal Gmail, Allow Google Corporate Accounts
 description: Learn how to configure SafeSquid to block personal Gmail accounts while allowing only Google corporate accounts, enhancing productivity and data security.
 keywords:
-- block personal gmail safesquid
-- allow google corporate accounts safesquid
-- block personal gmail accounts
-- corporate email restriction safesquid
-- safe web gateway gmail restriction
+  - block personal gmail safesquid
+  - allow google corporate accounts safesquid
+  - block personal gmail accounts
+  - corporate email restriction safesquid
+  - safe web gateway gmail restriction
 ---
 ## Overview
 Nowadays emails are used very frequently to exchange information between people using electronic devices. In some organization personal emails in the office network are not allowed. Personal emails are blocked to avoid spending of productive time by employees. Allowing personal emails can also lead a path for leakage of confidential information. Nowadays some of the organization emails are via Google Corporate domains. Google corporate account allows organization to have their mailing server along with the additional Gmail features personalized for the organization with complete control. So, we currently cannot block Gmail.

@@ -2,10 +2,10 @@
 title: SafeSquid Use Cases
 description: This document outlines various use cases and configurations for SafeSquid Secure Web Gateway (SWG), detailing how to configure and manage specific use cases to ensure security and productivity within your organization.
 keywords:
-- SafeSquid use cases
-- SafeSquid configurations
-- Secure Web Gateway policies
-- SafeSquid administration
+  - SafeSquid use cases
+  - SafeSquid configurations
+  - Secure Web Gateway policies
+  - SafeSquid administration
 ---
 
 ## Overview

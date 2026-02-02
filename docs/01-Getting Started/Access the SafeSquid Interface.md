@@ -1,8 +1,13 @@
 ---
 title: Access the SafeSquid Interface
-Description: Learn how to Access the safesquid web Interface.
-Keywords:
-  
+description: Configure browser proxy settings to access the SafeSquid WebGUI for configuration and management of security policies.
+keywords:
+  - SafeSquid WebGUI
+  - SafeSquid interface access
+  - SafeSquid configuration portal
+  - proxy browser configuration
+  - safesquid.cfg access
+  - SafeSquid management console
 ---
 
 

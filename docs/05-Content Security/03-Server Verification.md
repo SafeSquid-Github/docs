@@ -9,7 +9,7 @@ keywords:
   - enable HTTPS proxy
 ---
 
-### Overview 
+### Overview
 You would need to install SafeSquid SSL certificate in IE or Chrome browsers to allow users to seamlessly browse HTTPS sites.
 
 This article will help you with installation of SafeSquid SSL Certificate on IE or Chrome browser. This may vary depends on your browser versions.
@@ -27,7 +27,7 @@ Open the SafeSquid SSL certificate downloaded from SSL inspection section or fro
 
 ![clicking on install certificate](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image2.webp)
 
-### Select Store Location 
+### Select Store Location
 
 ![clicking on next](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image3.webp)
 

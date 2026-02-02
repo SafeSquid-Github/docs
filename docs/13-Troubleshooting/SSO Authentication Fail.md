@@ -1,12 +1,12 @@
 ---
-title: SSO Authentication Fail  
-Description: Troubleshoot SSP authentication failures and fix application compatibility issues caused by proxy authentication in SafeSquid. Learn how to verify Kerberos, DNS stub zones, and bypass authentication for unsupported apps.  
-Keywords:  
-- SafeSquid SSP fail  
-- SSO authentication error  
-- Kerberos troubleshooting  
-- proxy authentication bypass  
-- application login issues  
+title: SSO Authentication Fail
+description: Troubleshoot SSP authentication failures and fix application compatibility issues caused by proxy authentication in SafeSquid. Learn how to verify Kerberos, DNS stub zones, and bypass authentication for unsupported apps.
+keywords:
+  - SafeSquid SSP fail
+  - SSO authentication error
+  - Kerberos troubleshooting
+  - proxy authentication bypass
+  - application login issues
 ---
 
 ## Troubleshooting
@@ -39,7 +39,7 @@ The file with stub zone will be created with the name: **safesquid.dns.conf**
 
 At path**:/usr/local/safesquid/security/dns**
 
-Run command: 
+Run command:
 ```bash
 cat safesquid.dns.conf
 ```
@@ -52,7 +52,7 @@ cat safesquid.dns.conf
   -----------------------------------------------------------------------
 ```
 Also, it will automatically copy at given path**:/etc/bind/**
-Run command: 
+Run command:
 ```bash
 cat safesquid.dns.conf
 ```
@@ -73,7 +73,7 @@ First, remove all the given files from the above-given path.
 
 Start monit service and repeat all the steps and capture logs
 
-Command: 
+Command:
 ```bash
 tail -F /var/log/safesquid/native/safesquid.log
 ```

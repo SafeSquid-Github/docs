@@ -2,11 +2,11 @@
 title: Block Inappropriate Images by Using Image Analyzer
 description: Learn how to configure SafeSquid to block inappropriate images in real time using the Image Analyzer, ensuring a safe browsing environment.
 keywords:
-- block inappropriate images safesquid
-- image analyzer safesquid
-- content filtering safesquid
-- block pornographic images safesquid
-- real-time image filtering safesquid
+  - block inappropriate images safesquid
+  - image analyzer safesquid
+  - content filtering safesquid
+  - block pornographic images safesquid
+  - real-time image filtering safesquid
 ---
 
 ## Overview

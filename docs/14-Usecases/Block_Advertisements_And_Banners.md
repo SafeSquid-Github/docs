@@ -2,11 +2,11 @@
 title: Block Advertisements And Banners
 description: Learn how to configure SafeSquid to block advertisements and banners, improving web page load time and security while reducing distractions and bandwidth usage.
 keywords:
-- block advertisements safesquid
-- block banners safesquid
-- secure web gateway ads blocking
-- safesquid ad blocking configuration
-- ads and banners blocking safesquid
+  - block advertisements safesquid
+  - block banners safesquid
+  - secure web gateway ads blocking
+  - safesquid ad blocking configuration
+  - ads and banners blocking safesquid
 ---
 
 ## Client Scenario

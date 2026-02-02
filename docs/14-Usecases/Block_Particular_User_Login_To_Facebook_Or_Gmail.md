@@ -2,11 +2,11 @@
 title: Block Particular User Login to Facebook or Gmail
 description: Learn how to configure SafeSquid to block specific users from logging into Facebook or Gmail, ensuring secure and controlled access for your organization.
 keywords:
-- block user login facebook gmail safesquid
-- restrict facebook login safesquid
-- block gmail login safesquid
-- user login restriction safesquid
-- safe access control safesquid
+  - block user login facebook gmail safesquid
+  - restrict facebook login safesquid
+  - block gmail login safesquid
+  - user login restriction safesquid
+  - safe access control safesquid
 ---
 
 ## Overview
@@ -36,7 +36,7 @@ HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check o
 
 ![click on submit to save the policy](/img/How_To/Block_Particular_User_Login_To_Facebook_Or_Gmail/image8.webp)
 
-## Go to Rewrite Policies and make it Enable 
+## Go to Rewrite Policies and make it Enable
 ![going in "Rewriting policies " to enable "BLOCK PARTICULAR USER LOGIN" policy](/img/How_To/Block_Particular_User_Login_To_Facebook_Or_Gmail/image9.webp)
 
 ![editing the policy](/img/How_To/Block_Particular_User_Login_To_Facebook_Or_Gmail/image10.webp)

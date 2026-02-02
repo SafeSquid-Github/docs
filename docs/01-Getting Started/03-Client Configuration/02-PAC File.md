@@ -60,7 +60,7 @@ function FindProxyForURL(url, host) {
         host == "localhost") {
         return "DIRECT";
     }
-    
+
     // Use SafeSquid proxy for external traffic
     return "PROXY 192.168.1.100:8080; PROXY 192.168.1.101:8080";
 }

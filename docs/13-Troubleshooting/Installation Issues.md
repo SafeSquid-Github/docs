@@ -1,12 +1,12 @@
 ---
-title: Troubleshooting Installation Issues  
-description: A detailed troubleshooting guide for resolving common SafeSquid installation problems such as network misconfiguration, ISO failures, and system requirements.  
-keywords:  
-- safesquid installation troubleshooting  
-- safesquid installer errors  
-- safesquid sab iso failed  
-- safesquid network configuration  
-- safesquid bad archive mirror  
+title: Troubleshooting Installation Issues
+description: A detailed troubleshooting guide for resolving common SafeSquid installation problems such as network misconfiguration, ISO failures, and system requirements.
+keywords:
+  - safesquid installation troubleshooting
+  - safesquid installer errors
+  - safesquid sab iso failed
+  - safesquid network configuration
+  - safesquid bad archive mirror
 ---
 
 A comprehensive guide for troubleshooting common issues encountered during the installation of SafeSquid.

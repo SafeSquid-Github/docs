@@ -2,11 +2,11 @@
 title: Block Emails or Files including Archives or Social Posts using Keywords
 description: Learn how to configure SafeSquid to block emails, files, archives, and social media posts containing specific keywords, enhancing data leakage protection.
 keywords:
-- block emails using keywords safesquid
-- block archives using keywords safesquid
-- content filtering safesquid
-- data leakage protection safesquid
-- block social media posts safesquid
+  - block emails using keywords safesquid
+  - block archives using keywords safesquid
+  - content filtering safesquid
+  - data leakage protection safesquid
+  - block social media posts safesquid
 ---
 
 ## Overview

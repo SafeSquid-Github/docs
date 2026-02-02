@@ -1,12 +1,12 @@
 ---
-title: SafeSearch Not Working  
-Description: Troubleshoot Safe Search issues in SafeSquid when inappropriate content is accessible despite enabling all Safe Search entries. Includes HTTPS Inspection validation, SSL certificate checks, and policy verification.  
-Keywords:  
-- SafeSquid Safe Search  
-- HTTPS inspection troubleshooting  
-- SSL certificate check  
-- block pornography policy  
-- inappropriate content search  
+title: SafeSearch Not Working
+description: Troubleshoot Safe Search issues in SafeSquid when inappropriate content is accessible despite enabling all Safe Search entries. Includes HTTPS Inspection validation, SSL certificate checks, and policy verification.
+keywords:
+  - SafeSquid Safe Search
+  - HTTPS inspection troubleshooting
+  - SSL certificate check
+  - block pornography policy
+  - inappropriate content search
 ---
 
 You have enabled all the entries required for Safe Searches, but you are able to access the in appropriate content through search engines, then follow the below steps to Troubleshoot

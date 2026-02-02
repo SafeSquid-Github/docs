@@ -1,8 +1,8 @@
 ---
 title: SafeSquid Proxy Cluster
-Description: 
+description:
 
-Keywords:
+keywords:
 
 ---
 # SafeSquid Proxy Cluster

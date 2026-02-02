@@ -1,12 +1,13 @@
 ---
 title: License Activation
-Description: Learn how to activate your SafeSquid Secure Web Gateway instance using an activation key via the web GUI. 
-Keywords:
-- Activate SafeSquid instance  
-- SafeSquid product activation  
-- SafeSquid activation key upload  
-- SafeSquid self-service portal  
-- SafeSquid Web GUI access  
+description: Activate SafeSquid Secure Web Gateway instances using activation keys via the WebGUI for enabling subscription features and platform synchronization.
+keywords:
+  - SafeSquid license activation
+  - SafeSquid product activation
+  - SafeSquid activation key upload
+  - SafeSquid self-service portal
+  - SafeSquid WebGUI access
+  - SWG license management
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

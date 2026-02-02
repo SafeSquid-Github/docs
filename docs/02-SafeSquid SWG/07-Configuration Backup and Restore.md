@@ -1,10 +1,10 @@
 ---
 title: Configuration Backup and Restore
-Description: 
+description:
 
-Keywords:
-- Secure Web Gateway Components
-- Configuration Backup and Restore
+keywords:
+  - Secure Web Gateway Components
+  - Configuration Backup and Restore
 ---
 
 # Configuration Backup and Restore

@@ -1,7 +1,7 @@
 ---
 title: Web Categorisation
-Description: Learn how to manage and customize website categorization in SafeSquid Secure Web Gateway using the Category Editor under Custom Settings. Modify, create, and audit category assignments for enhanced web control and policy enforcement.
-Keywords:
+description: Learn how to manage and customize website categorization in SafeSquid Secure Web Gateway using the Category Editor under Custom Settings. Modify, create, and audit category assignments for enhanced web control and policy enforcement.
+keywords:
   - SafeSquid website categorization
   - SafeSquid categorize websites
   - SafeSquid category editor

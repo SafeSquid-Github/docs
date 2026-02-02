@@ -2,18 +2,18 @@
 title: Restrict AnyDesk
 description: Learn how to configure SafeSquid to restrict access to AnyDesk by setting up policies and proxy configurations, ensuring secure network access.
 keywords:
-- restrict anydesk safesquid
-- safesquid block anydesk
-- configure anydesk restriction safesquid
-- safesquid remote desktop control
-- block remote access anydesk safesquid
+  - restrict anydesk safesquid
+  - safesquid block anydesk
+  - configure anydesk restriction safesquid
+  - safesquid remote desktop control
+  - block remote access anydesk safesquid
 ---
 
 ## [Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 ## Go to configure page
 ![Go to configure page to Restict anydesk](/img/How_To/Restrict_any_desk/image1.webp)
 
-## Go to Real time content security 
+## Go to Real time content security
 ![Select HTTPS Inspection option in Real time content security section to Restrict anydesk](/img/How_To/Restrict_any_desk/image2.webp)
 
 ![Enabled Global section as true to restrict anydesk and to edit Inspection policy](/img/How_To/Restrict_any_desk/image3.webp)

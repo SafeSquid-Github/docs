@@ -1,3 +1,15 @@
+---
+title: SafeSquid Appliance Builder
+description: Deploy SafeSquid Secure Web Gateway in 15 minutes using SafeSquid Appliance Builder (SAB), a security-enhanced Debian Linux ISO with automated installation and configuration.
+keywords:
+  - SafeSquid Appliance Builder
+  - SAB installation
+  - SafeSquid ISO deployment
+  - automated SWG installation
+  - SafeSquid virtual appliance
+  - secure web gateway deployment
+---
+
 # Install SafeSquid Secure Web Gateway using SafeSquid Appliance Builder
 
 ## Problem
@@ -116,7 +128,7 @@ After login, re-enter the current password, then set and confirm a new password.
 
 ## Post-Installation Checklist and Recommendations
 * To access the product interface, SafeSquid® [proxy server must be configured on the web-browser](/docs/01-Getting%20Started/03-Client%20Configuration/01-Explicit%20Proxy.md).
-* The SafeSquid instance can now be activated from the [product interface](/docs/01-Getting%20Started/05-License%20Activation.md). 
+* The SafeSquid instance can now be activated from the [product interface](/docs/01-Getting%20Started/05-License%20Activation.md).
 * Post activation, [setup SSL Inspection](/docs/03-SSL%20Inspection/main.md) and configure policies as per the enterprise’s requirements.
 * Installing SafeSquid's certificate in your clients desktop.
 * Configure your proxy server to setup SSH key based login.

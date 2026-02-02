@@ -1,7 +1,7 @@
 ---
 title: Proxy Chain
-Description: Learn how to deploy SafeSquid Secure Web Gateway behind a corporate (parent) proxy, configure proxy chaining, enable HTTPS inspection, and forward client requests for seamless integration within enterprise network environments.
-Keywords:
+description: Learn how to deploy SafeSquid Secure Web Gateway behind a corporate (parent) proxy, configure proxy chaining, enable HTTPS inspection, and forward client requests for seamless integration within enterprise network environments.
+keywords:
   - Deploy SafeSquid behind proxy
   - SafeSquid proxy chaining
   - Configure parent-child proxy
@@ -53,7 +53,7 @@ Note: No configuration required on Parent Proxy server. Just deploy the parent p
 ## Go to Proxy chain
 ![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image4.webp)
 
-## Enable Global section 
+## Enable Global section
 ![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image5.webp)
 
 ![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image6.webp)
@@ -63,7 +63,7 @@ Note: No configuration required on Parent Proxy server. Just deploy the parent p
 ## Go to Forwarding proxies
 ![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image8.webp)
 
-## Add an entry 
+## Add an entry
 ![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image9.webp)
 
 ![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image10.webp)
@@ -90,7 +90,7 @@ In example: my upstream proxy listening on port 8080
 
 ![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image19.webp)
 
-## Testing 
+## Testing
 ![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image20.webp)
 
 ![](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image21.webp)

@@ -2,11 +2,11 @@
 title: DNS Blacklisting
 description: Learn how to configure SafeSquid to use DNS Blacklist (DNSBL) services to block access to dangerous websites based on DNS queries and blacklist services.
 keywords:
-- dns blacklist safesquid
-- block websites dnsbl safesquid
-- dns blacklist configuration safesquid
-- dns filtering safesquid
-- block dangerous websites safesquid
+  - dns blacklist safesquid
+  - block websites dnsbl safesquid
+  - dns blacklist configuration safesquid
+  - dns filtering safesquid
+  - block dangerous websites safesquid
 ---
 
 ## Overview

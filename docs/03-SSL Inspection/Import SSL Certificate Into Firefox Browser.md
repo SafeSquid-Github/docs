@@ -1,6 +1,12 @@
 ---
 title: Importing Your SSL Certificate Into Firefox
-description: Learn how to Importing Your SSL Certificate Into Firefox.
+description: Install SafeSquid SSL certificate in Mozilla Firefox browser to enable seamless HTTPS browsing with SSL inspection.
+keywords:
+  - SafeSquid SSL certificate Firefox
+  - import certificate Firefox
+  - Firefox SSL configuration
+  - HTTPS inspection certificate
+  - browser certificate installation
 ---
 
 ## Overview
@@ -10,11 +16,11 @@ This article will help you with Installation of SafeSquid SSL Certificate into M
 ![](/img/Importing_SSL_Certificate_Into_Firefox/image1.webp)
 ## Select Settings
 ![](/img/Importing_SSL_Certificate_Into_Firefox/image2.webp)
-## Open Privacy & Security Section 
+## Open Privacy & Security Section
 ![](/img/Importing_SSL_Certificate_Into_Firefox/image3.webp)
 ![](/img/Importing_SSL_Certificate_Into_Firefox/image4.webp)
 ![](/img/Importing_SSL_Certificate_Into_Firefox/image5.webp)
-## Import Certificate 
+## Import Certificate
 ![](/img/Importing_SSL_Certificate_Into_Firefox/image6.webp)
 ![](/img/Importing_SSL_Certificate_Into_Firefox/image7.webp)
 ![](/img/Importing_SSL_Certificate_Into_Firefox/image8.webp)

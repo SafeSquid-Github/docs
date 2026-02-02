@@ -2,16 +2,16 @@
 title: Data Leakage Prevention
 description: Learn how SafeSquid protects organizations against insider threats and data leakage with DLP, virus scanning, real-time monitoring, and role-based access control.
 keywords:
-- insider threats protection
-- data leakage prevention
-- safesquid DLP
-- internal data breach defense
-- endpoint protection
-- content filtering
-- in-memory virus scanning
-- safesquid role-based access
-- user activity monitoring
-- insider risk management
+  - insider threats protection
+  - data leakage prevention
+  - safesquid DLP
+  - internal data breach defense
+  - endpoint protection
+  - content filtering
+  - in-memory virus scanning
+  - safesquid role-based access
+  - user activity monitoring
+  - insider risk management
 ---
 
 ## Overview

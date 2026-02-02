@@ -1,7 +1,7 @@
 ---
 title: Forward Proxy
-Description: Learn how to configure your web browser to use the SafeSquid proxy server, including detailed steps for setting proxy settings in Chrome and Firefox to access the SafeSquid WebGUI.
-Keywords:
+description: Learn how to configure your web browser to use the SafeSquid proxy server, including detailed steps for setting proxy settings in Chrome and Firefox to access the SafeSquid WebGUI.
+keywords:
   - Configure proxy in browser
   - Set proxy in Chrome for SafeSquid
   - Firefox manual proxy configuration
@@ -55,7 +55,7 @@ Any IP address that starts with 127.
 
 **You can leave it blank**
 
-### Click on save 
+### Click on save
 ![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image10.webp)
 
 ## Configure proxy specifically for Mozilla Firefox

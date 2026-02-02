@@ -1,14 +1,14 @@
 ---
-title: SafeSquid SWG Directories  
-Description: Get a comprehensive overview of SafeSquid's directory structure, including installation, configuration, modules, logs, and performance tuning folders essential for managing, monitoring, and customizing Secure Web Gateway operations on Linux systems.
+title: SafeSquid SWG Directories
+description: Get a comprehensive overview of SafeSquid's directory structure, including installation, configuration, modules, logs, and performance tuning folders essential for managing, monitoring, and customizing Secure Web Gateway operations on Linux systems.
 
-Keywords:
-- SafeSquid directory structure  
-- SafeSquid configuration files  
-- SafeSquid log management  
-- SafeSquid modules and plugins  
-- SafeSquid performance tuning  
-- SafeSquid SSL and DLP directories  
+keywords:
+  - SafeSquid directory structure
+  - SafeSquid configuration files
+  - SafeSquid log management
+  - SafeSquid modules and plugins
+  - SafeSquid performance tuning
+  - SafeSquid SSL and DLP directories
 ---
 
 # SafeSquid SWG Directories
@@ -480,7 +480,7 @@ Log rotation renames **performance.log** to a time-stamped file (**XXXX-performa
 Below is the heading/legend for the Performance Log file-
 
 ```
-Time Stamp (YYYYMMDDhhmmss) , Elapsed Time , Client Connections Handled , Client Connections Closed , Client Transactions Handled , Client Connections in Pool , Spare Client Threads , Client Threads in Use , Client Threads in Waiting , Threads Starting up , Threads Reserved for Prefetching , Threading Errors , Outbound Connections created , Outbound Connections Failed , Outbound Connection Pool Reused , Outbound Connections in Pool , Bytes in (KBytes) , Bytes Out (KBytes) , Caching Objects Created in Memory , Caching Objects Removed from Memory , DNS Queries Reused , New DNS Queries , DNS Query failures , Total System Memory (KBytes) , Free System Memory (KBytes) , SafeSquid Virtual Memory (KBytes) , SafeSquid Resident Memory (KBytes) , SafeSquid Shared Memory (KBytes) , SafeSquid Code Memory (KBytes) , SafeSquid Data Memory (KBytes) , SafeSquid Library Memory (KBytes) , Connections Handled Delta , Connections Closed Delta , Transactions Handled Delta , Client Pool Delta , Spare Threads Delta , Active Threads Delta , Threads Waiting Delta , Threads Starting up Delta , Threads Prefetching Delta , Threading Errors Delta , Outbound Connections created Delta , Outbound Connections Failed Delta , Outbound Connection Pool Reused Delta , Outbound Connections in Pool Delta , Bytes in (KBytes) Delta , Bytes Out (KBytes) Delta , Caching Objects Created in Memory Delta , Caching Objects Removed from Memory Delta , DNS Queries Reused Delta , New DNS Queries Delta , DNS Query failures Delta, load avg.(1 min), load avg.(5 min), load avg.(15 min), Running Processes, Waiting Processes, User Time, System Time, Total (user + system) Time , User Time Delta , System Time Delta , Total Time Delta 
+Time Stamp (YYYYMMDDhhmmss) , Elapsed Time , Client Connections Handled , Client Connections Closed , Client Transactions Handled , Client Connections in Pool , Spare Client Threads , Client Threads in Use , Client Threads in Waiting , Threads Starting up , Threads Reserved for Prefetching , Threading Errors , Outbound Connections created , Outbound Connections Failed , Outbound Connection Pool Reused , Outbound Connections in Pool , Bytes in (KBytes) , Bytes Out (KBytes) , Caching Objects Created in Memory , Caching Objects Removed from Memory , DNS Queries Reused , New DNS Queries , DNS Query failures , Total System Memory (KBytes) , Free System Memory (KBytes) , SafeSquid Virtual Memory (KBytes) , SafeSquid Resident Memory (KBytes) , SafeSquid Shared Memory (KBytes) , SafeSquid Code Memory (KBytes) , SafeSquid Data Memory (KBytes) , SafeSquid Library Memory (KBytes) , Connections Handled Delta , Connections Closed Delta , Transactions Handled Delta , Client Pool Delta , Spare Threads Delta , Active Threads Delta , Threads Waiting Delta , Threads Starting up Delta , Threads Prefetching Delta , Threading Errors Delta , Outbound Connections created Delta , Outbound Connections Failed Delta , Outbound Connection Pool Reused Delta , Outbound Connections in Pool Delta , Bytes in (KBytes) Delta , Bytes Out (KBytes) Delta , Caching Objects Created in Memory Delta , Caching Objects Removed from Memory Delta , DNS Queries Reused Delta , New DNS Queries Delta , DNS Query failures Delta, load avg.(1 min), load avg.(5 min), load avg.(15 min), Running Processes, Waiting Processes, User Time, System Time, Total (user + system) Time , User Time Delta , System Time Delta , Total Time Delta
 ```
 
 ## Privacy logs

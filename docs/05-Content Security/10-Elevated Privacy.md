@@ -2,16 +2,16 @@
 title: Elevated Privacy
 description: Learn how SafeSquid's Elevated Privacy module blocks third-party cookies, hides HTTP referrers, and anonymizes user-agent data to defend against online tracking and preserve user privacy.
 keywords:
-- elevated privacy
-- third-party cookies blocking
-- block third-party tracking
-- referrer header removal
-- anonymize user agent
-- SafeSquid privacy policy
-- enforce privacy profiles
-- hide referrer and user-agent
-- privacy levels safesquid
-- paranoid privacy mode
+  - elevated privacy
+  - third-party cookies blocking
+  - block third-party tracking
+  - referrer header removal
+  - anonymize user agent
+  - SafeSquid privacy policy
+  - enforce privacy profiles
+  - hide referrer and user-agent
+  - privacy levels safesquid
+  - paranoid privacy mode
 ---
 
 ## Overview

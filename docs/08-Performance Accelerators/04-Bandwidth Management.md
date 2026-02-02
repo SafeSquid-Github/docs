@@ -1,7 +1,7 @@
 ---
 title: Bandwidth Management
-Description: Learn how to control download speed, maximum download size, and upload size for users using SafeSquid’s Limits feature, enhancing bandwidth management and enforcing secure data handling policies.
-Keywords:
+description: Learn how to control download speed, maximum download size, and upload size for users using SafeSquid’s Limits feature, enhancing bandwidth management and enforcing secure data handling policies.
+keywords:
   - SafeSquid download speed limit
   - SafeSquid upload size restriction
   - Bandwidth control SafeSquid

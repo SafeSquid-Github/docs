@@ -2,11 +2,11 @@
 title: Access Remote Desktop Applications Through SafeSquid
 description: Understand how remote desktop applications like AnyDesk, TeamViewer, and AmmyAdmin interact with SafeSquid in different network scenarios and how to effectively block or allow access using HTTPS inspection and access profiles.
 keywords:
-- block remote desktop apps proxy
-- safesquid https inspection
-- allow anydesk through proxy
-- teamviewer proxy blocking
-- safesquid access profiles
+  - block remote desktop apps proxy
+  - safesquid https inspection
+  - allow anydesk through proxy
+  - teamviewer proxy blocking
+  - safesquid access profiles
 ---
 
 ## Case 1: There is no direct Internet access to the client Machine

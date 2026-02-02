@@ -1,5 +1,12 @@
 ---
 title: Directory Services
+description: Configure SafeSquid integration with Active Directory and OpenLDAP for centralized user authentication and identity-based policy enforcement.
+keywords:
+  - SafeSquid directory services
+  - Active Directory authentication
+  - OpenLDAP integration
+  - centralized user management
+  - LDAP proxy authentication
 ---
 
 The **Directory Services** section in **SafeSquid** allows you to configure directory services for user authentication and management, integrating with existing identity management systems.

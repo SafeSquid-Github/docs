@@ -1,16 +1,16 @@
 ---
-title: Time Profiles 
-Description: Learn how to configure SafeSquid’s Time Profiler to implement time-based internet access control using customizable time ranges such as month, day, weekday, hour, and minute.  
-Keywords:  
-- SafeSquid time profiler  
-- SafeSquid time-based access control  
-- SafeSquid internet scheduling  
-- SafeSquid weekday access policies  
-- SafeSquid hour range filtering  
-- SafeSquid minute range web control  
-- SafeSquid access policies by time  
-- SafeSquid time match modes  
-- SafeSquid allranges vs absolutetime  
+title: Time Profiles
+description: Learn how to configure SafeSquid’s Time Profiler to implement time-based internet access control using customizable time ranges such as month, day, weekday, hour, and minute.
+keywords:
+  - SafeSquid time profiler
+  - SafeSquid time-based access control
+  - SafeSquid internet scheduling
+  - SafeSquid weekday access policies
+  - SafeSquid hour range filtering
+  - SafeSquid minute range web control
+  - SafeSquid access policies by time
+  - SafeSquid time match modes
+  - SafeSquid allranges vs absolutetime
 ---
 
 ## Overview

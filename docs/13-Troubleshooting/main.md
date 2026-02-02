@@ -51,7 +51,7 @@ Administrators encounter LDAP connectivity problems that prevent user authentica
 ### [Disk Space and RAM are Full](/docs/13-Troubleshooting/Disk%20Space%20and%20RAM%20are%20Full.md)
 Organizations experience performance degradation and system failures due to insufficient disk space or memory resources that prevent proper SafeSquid operation and log generation. Disk Space and RAM are Full provides diagnostic procedures and resolution steps for resource-related problems including disk space management, memory optimization, and log cleanup procedures. This guide ensures optimal system performance while providing systematic procedures for resolving resource-related issues. Follow Disk Space and RAM are Full procedures to diagnose and resolve system resource problems.
 
-### [Not Generating Performance Plot](/docs/13-Troubleshooting/Not%20Generating%20Perfromance%20Plot.md)
+### [Not Generating Performance Plot](/docs/13-Troubleshooting/Not%20Generating%20Performance%20Plot.md)
 Administrators encounter issues with performance monitoring and reporting when SafeSquid fails to generate performance plots due to configuration problems, resource constraints, or service failures. Not Generating Performance Plot provides diagnostic procedures and resolution steps for performance monitoring issues including configuration validation, service troubleshooting, and resource optimization procedures. This troubleshooting guide ensures reliable performance monitoring while providing systematic procedures for resolving monitoring-related problems. Reference Not Generating Performance Plot documentation to resolve performance monitoring and reporting issues.
 
 ## Network and Connectivity Issues

@@ -97,7 +97,7 @@ class safesquid_proxy {
     ensure  => present,
     content => template('safesquid_proxy/environment.erb'),
   }
-  
+
   file { '/etc/profile.d/proxy.sh':
     ensure  => present,
     content => template('safesquid_proxy/proxy.sh.erb'),
@@ -127,7 +127,7 @@ class safesquid_proxy {
         - "http_proxy=http://192.168.1.100:8080"
         - "https_proxy=http://192.168.1.100:8443"
         - "no_proxy=localhost,127.0.0.1,*.local"
-      
+
     - name: Configure APT proxy
       lineinfile:
         path: /etc/apt/apt.conf.d/95proxies

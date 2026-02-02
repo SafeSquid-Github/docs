@@ -1,7 +1,7 @@
 ---
 title: Application Ecosystem
-Description: Explore the SafeSquid Application Eco-System, a comprehensive framework that integrates data feeds, DNSBL, reporting, backups, and supporting services like Monit and BIND to deliver a fully functional, cloud-connected Secure Web Gateway solution.
-Keywords:
+description: Explore the SafeSquid Application Eco-System, a comprehensive framework that integrates data feeds, DNSBL, reporting, backups, and supporting services like Monit and BIND to deliver a fully functional, cloud-connected Secure Web Gateway solution.
+keywords:
   - Secure Web Gateway Components
   - Secure Web Gateway Architecture
   - SafeSquid Application Eco-System

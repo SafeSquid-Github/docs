@@ -1,15 +1,15 @@
 ---
 title: SSL Inspection
-Description: Learn how to configure HTTPS inspection in SafeSquid to decrypt and analyze encrypted traffic for enhanced web security, malware detection, and policy enforcement.  
-Keywords:  
-- SafeSquid HTTPS inspection  
-- SSL inspection SafeSquid  
-- decrypt HTTPS traffic SafeSquid  
-- SafeSquid web proxy HTTPS  
-- web filtering encrypted traffic  
-- SSL certificate configuration SafeSquid  
-- HTTPS scanning enterprise proxy  
-- enable SSL inspection SafeSquid  
+description: Configure HTTPS inspection in SafeSquid to decrypt and analyze encrypted traffic for enhanced web security, malware detection, and policy enforcement.
+keywords:
+  - SafeSquid HTTPS inspection
+  - SSL inspection SafeSquid
+  - decrypt HTTPS traffic SafeSquid
+  - SafeSquid web proxy HTTPS
+  - web filtering encrypted traffic
+  - SSL certificate configuration SafeSquid
+  - HTTPS scanning enterprise proxy
+  - enable SSL inspection SafeSquid
 ---
 
 ## Overview

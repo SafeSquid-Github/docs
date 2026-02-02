@@ -1,13 +1,13 @@
 ---
-title: Disaster Recovery 
-Description: Learn how to use SafeSquid’s Cloud Restore feature for disaster recovery, enabling fast and efficient restoration of configuration files and SSL certificates using the same activation key after system failure or in cluster deployments.
+title: Disaster Recovery
+description: Learn how to use SafeSquid’s Cloud Restore feature for disaster recovery, enabling fast and efficient restoration of configuration files and SSL certificates using the same activation key after system failure or in cluster deployments.
 
-Keywords:
-- SafeSquid disaster recovery  
-- SafeSquid cloud restore  
-- Restore SafeSquid configuration  
-- SafeSquid backup and recovery  
-- SafeSquid SSL recovery  
+keywords:
+  - SafeSquid disaster recovery
+  - SafeSquid cloud restore
+  - Restore SafeSquid configuration
+  - SafeSquid backup and recovery
+  - SafeSquid SSL recovery
 ---
 
 ## Overview
@@ -44,7 +44,7 @@ Same policy configuration as well as SSL configuration on new appliance or multi
 4.  Bob is now creating new appliance freshly and activate product using same activation key.
 5.  He wants to take recovery of configuration on this new appliance. So, he clicks **on Cloud Restore option** from **SafeSquid Interface**.
 6.  As soon as he clicks on cloud restore option from new appliance SafeSquid is prompting "You can get configuration file and SSL certificate shared with activation key".
-7.  Bob clicks on Restore button and he should find one more prompt to Restore Configuration 
+7.  Bob clicks on Restore button and he should find one more prompt to Restore Configuration
 **downloaded:/usr/local/safesquid/security/policies/config.xml**
 
 **downloaded:/usr/local/safesquid/security/ssl/ROOT_X509File.cer downloaded:/usr/local/safesquid/security/ssl/ROOT_PrivateKeyFile.pem**

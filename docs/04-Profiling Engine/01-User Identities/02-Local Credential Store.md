@@ -1,11 +1,13 @@
 ---
 title: Local Credential Store
 description: Configure SafeSquid for browser-based user authentication without Active Directory using local credential storage.
-SEO keywords:
+keywords:
   - browser-based authentication
   - SafeSquid user login
   - local credential proxy
   - SafeSquid access control
+  - local user authentication
+  - credential management
 ---
 
 import Tabs from '@theme/Tabs';

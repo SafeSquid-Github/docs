@@ -2,11 +2,11 @@
 title: Standard Operating Procedure (SOP)
 description: Step-by-step SOP for diagnosing and resolving proxy errors, DNS issues, SSL failures, and connection blocks using SafeSquid logs and Linux utilities.
 keywords:
-- safesquid troubleshooting guide
-- safesquid connection errors
-- safesquid logs analysis
-- troubleshoot safesquid proxy issues
-- diagnose dns ssl curl safesquid
+  - safesquid troubleshooting guide
+  - safesquid connection errors
+  - safesquid logs analysis
+  - troubleshoot safesquid proxy issues
+  - diagnose dns ssl curl safesquid
 ---
 ## Purpose
 

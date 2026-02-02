@@ -2,11 +2,11 @@
 title: DNS Failure
 description: Step-by-step troubleshooting process for resolving DNS lookup failures in SafeSquid when accessing web resources via proxy.
 keywords:
-- safesquid dns failure
-- dns lookup failed via proxy
-- dns resolution error safesquid
-- troubleshoot dns proxy error
-- safesquid nslookup fails
+  - safesquid dns failure
+  - dns lookup failed via proxy
+  - dns resolution error safesquid
+  - troubleshoot dns proxy error
+  - safesquid nslookup fails
 ---
 
 ## Issue

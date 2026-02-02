@@ -1,7 +1,7 @@
 ---
 title: Master-Slave
-Description: Learn how to configure SafeSquid in a master-slave architecture where a central master server synchronizes and manages multiple slave instances for centralized policy control and reporting.
-Keywords:
+description: Learn how to configure SafeSquid in a master-slave architecture where a central master server synchronizes and manages multiple slave instances for centralized policy control and reporting.
+keywords:
   - SafeSquid master-slave configuration
   - Configure SafeSquid slave server
   - Centralized policy management SafeSquid
@@ -27,7 +27,7 @@ SafeSquid should be installed and activated using same product activation key on
 ## Go to Support
 ![clicking on support in safesquid interface in top right corner ](/img/How_To/Master_Slave_configuration/image1.webp)
 
-## Go to Startup params 
+## Go to Startup params
 ![clicking on start up params](/img/How_To/Master_Slave_configuration/image2.webp)
 
 ![clicking on edit button](/img/How_To/Master_Slave_configuration/image3.webp)
@@ -42,8 +42,8 @@ SafeSquid should be installed and activated using same product activation key on
 
 ![clicking on yes for backup current configuration to cloud](/img/How_To/Master_Slave_configuration/image8.webp)
 
-## Configuration on Master Server if authentication is Enabled 
-## Go to Access Restriction under Application Setup 
+## Configuration on Master Server if authentication is Enabled
+## Go to Access Restriction under Application Setup
 
 ![Going to Access Restriction under Application Setup](/img/How_To/Master_Slave_configuration/image9.webp)
 

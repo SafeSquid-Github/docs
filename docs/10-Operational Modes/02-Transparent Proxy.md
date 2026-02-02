@@ -1,7 +1,7 @@
 ---
 title: Transparent Proxy
-Description: Understand how to deploy and configure SafeSquid in transparent proxy mode to intercept HTTP/HTTPS traffic without client-side configuration, enabling seamless policy enforcement, filtering, and SSL inspection.
-Keywords:
+description: Understand how to deploy and configure SafeSquid in transparent proxy mode to intercept HTTP/HTTPS traffic without client-side configuration, enabling seamless policy enforcement, filtering, and SSL inspection.
+keywords:
   - SafeSquid transparent proxy
   - Configure SafeSquid inline proxy
   - HTTP/HTTPS interception SafeSquid

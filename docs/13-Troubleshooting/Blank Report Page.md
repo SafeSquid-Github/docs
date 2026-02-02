@@ -1,5 +1,12 @@
 ---
-title: Not Displaying Anything on Report Page
+title: Blank Report Page
+description: Troubleshoot blank or empty report pages in SafeSquid reporting module caused by database sync delays, service issues, or configuration problems.
+keywords:
+  - SafeSquid blank report page
+  - reporting module troubleshooting
+  - dashboard display issues
+  - report page not loading
+  - SafeSquid database sync
 ---
 ## ISSUE
 Custom group name is taking time to update on Dashboard.

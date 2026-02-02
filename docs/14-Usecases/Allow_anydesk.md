@@ -2,11 +2,11 @@
 title: Allow Anydesk
 description: Learn how to configure SafeSquid to securely allow access to Anydesk and other remote desktop applications while maintaining granular control through user profiles, SSL inspection bypass, and request type filters.
 keywords:
-- Allow Anydesk SafeSquid
-- bypass SSL inspection Anydesk
-- SafeSquid remote desktop access
-- SafeSquid user-agent filtering
-- SafeSquid access profile configuration
+  - Allow Anydesk SafeSquid
+  - bypass SSL inspection Anydesk
+  - SafeSquid remote desktop access
+  - SafeSquid user-agent filtering
+  - SafeSquid access profile configuration
 ---
 
 ## Overview

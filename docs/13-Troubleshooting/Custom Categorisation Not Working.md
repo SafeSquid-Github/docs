@@ -2,11 +2,11 @@
 title: Custom Categorization Not Working
 description: Resolve issues related to updating whitelist or blacklist categories in SafeSquid by troubleshooting categorization engine connectivity and configuration.
 keywords:
-- safesquid category update failed
-- safesquid categorization engine issue
-- safesquid category server connection
-- whitelist not updating safesquid
-- blacklist update issue safesquid
+  - safesquid category update failed
+  - safesquid categorization engine issue
+  - safesquid category server connection
+  - whitelist not updating safesquid
+  - blacklist update issue safesquid
 ---
 
 ## Issues

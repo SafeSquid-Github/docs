@@ -22,7 +22,7 @@ In given example we are integrating an Active Directory for SSO authentication.
 
 **User Name**: administrator@safesquid.test (**User name should be any user from AD having administrative permissions**)
 
-Monit service must be Up. 
+Monit service must be Up.
 Verify it using command:
 
 ```bash
@@ -37,11 +37,11 @@ Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, passw
 
 **Step 1**: Specify Name Server Addresses.
 
-**Step 2**: Specify Time Synchronization Server. 
+**Step 2**: Specify Time Synchronization Server.
 :::note
 Time Synchronization of AD server and Proxy server should be same. Verify it using "date" command
 :::
-**Step 3**: Add DNS entry of SafeSquid server in your Active Directory Server. 
+**Step 3**: Add DNS entry of SafeSquid server in your Active Directory Server.
 
 **Step 4**: Make sure that your AD Domain must be resolvable from all clients and SafeSquid Server. For troubleshooting.
 

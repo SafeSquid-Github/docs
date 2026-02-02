@@ -86,7 +86,7 @@ If you want to leave this field blank make sure that the user or IP address from
 
 ![default entry to authenticate all users from AD which are not added in earlier entries](/img/How_To/Enable_authentication_for_LDAP_users/image32.webp)
 
-### Verifying SSO Authentication 
+### Verifying SSO Authentication
 ![clicking on reports in the safesquid dashboard](/img/How_To/Enable_authentication_for_LDAP_users/image33.webp)
 
 ![clicking on detailed logs](/img/How_To/Enable_authentication_for_LDAP_users/image34.webp)

@@ -1,7 +1,7 @@
 ---
 title: Pre-Fetching
-Description: Learn how to configure SafeSquid's prefetching feature to accelerate web access by preloading and caching embedded resources like images, improving response time and reducing redundant network requests.
-Keywords:
+description: Learn how to configure SafeSquid's prefetching feature to accelerate web access by preloading and caching embedded resources like images, improving response time and reducing redundant network requests.
+keywords:
   - SafeSquid prefetch embedded images
   - SafeSquid internet accelerator
   - Prefetch HTML content SafeSquid

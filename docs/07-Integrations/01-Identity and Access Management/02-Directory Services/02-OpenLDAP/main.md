@@ -1,3 +1,15 @@
+---
+title: OpenLDAP Integration
+description: Integrate OpenLDAP directory services with SafeSquid for centralized user authentication, group-based access policies, and identity management.
+keywords:
+  - SafeSquid OpenLDAP integration
+  - LDAP authentication proxy
+  - OpenLDAP user authentication
+  - directory service integration
+  - centralized user management
+  - LDAP group policies
+---
+
 # Integrate OpenLDAP with SafeSquid
 
 ## Overview
@@ -26,7 +38,7 @@ Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, passw
 ## Go to Integrate LDAP
 ![Go to Integrate LDAP section to integrate OpenLDAP with safesquid](/img/How_To/Integrate_OpenLDAP_With_SafeSquid/image3.webp)
 
-## Enable Integrate LDAP 
+## Enable Integrate LDAP
 ![Enable global section as True in Integrate LDAP section to integrate OpenLDAP with safesquid](/img/How_To/Integrate_OpenLDAP_With_SafeSquid/image4.webp)
 
 ![Enable global section as True in Integrate LDAP section to integrate OpenLDAP with safesquid](/img/How_To/Integrate_OpenLDAP_With_SafeSquid/image5.webp)
@@ -67,10 +79,10 @@ Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, passw
 
 ![Click on LDAP entires to check fetched entries from LDAP server](/img/How_To/Integrate_OpenLDAP_With_SafeSquid/image22.webp)
 
-## Test User extraction 
+## Test User extraction
 ![Result of user extraction ](/img/How_To/Integrate_OpenLDAP_With_SafeSquid/image23.webp)
 
-## Save Configuration 
+## Save Configuration
 ![Save Configuration of policy of integrate OpenLDAP with safesquid](/img/How_To/Integrate_OpenLDAP_With_SafeSquid/image24.webp)
 
 When you click on Save config, it will give a prompt for asking the confirmation to store your configuration into the cloud.

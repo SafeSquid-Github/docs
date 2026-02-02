@@ -2,16 +2,16 @@
 title: Text Analyzer
 description: Learn how to configure and use SafeSquid's Text Analyzer module to restrict access to websites containing inappropriate or unclassified content using a keyword-based scoring system.
 keywords:
-- safesquid text analyzer
-- block inappropriate web content
-- content-based filtering
-- keyword scoring filter
-- real-time text analysis safesquid
-- web page keyword filtering
-- safe web browsing policies
-- mime type content blocking
-- block unclassified websites
-- safesquid content filter policy
+  - safesquid text analyzer
+  - block inappropriate web content
+  - content-based filtering
+  - keyword scoring filter
+  - real-time text analysis safesquid
+  - web page keyword filtering
+  - safe web browsing policies
+  - mime type content blocking
+  - block unclassified websites
+  - safesquid content filter policy
 ---
 
 ## Overview

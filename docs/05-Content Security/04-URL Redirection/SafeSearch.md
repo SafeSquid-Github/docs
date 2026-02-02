@@ -2,11 +2,11 @@
 title: Enforce SafeSearch
 description: Learn how to configure SafeSquid to enforce SafeSearch on popular search engines like Google, Yahoo, and Bing, blocking explicit content from search results.
 keywords:
-- enforce safesearch safesquid
-- google safesearch safesquid
-- yahoo safesearch safesquid
-- bing safesearch safesquid
-- filter explicit content safesquid
+  - enforce safesearch safesquid
+  - google safesearch safesquid
+  - yahoo safesearch safesquid
+  - bing safesearch safesquid
+  - filter explicit content safesquid
 ---
 
 ## Overview
@@ -43,5 +43,5 @@ Filter explicit search results on Google search engine, like pornographic images
 ## Yahoo SafeSearch
 Filter explicit search results on Yahoo search engine, like pornographic images, videos, and websites from Yahoo Search results. Try disabling Yahoo SafeSearch and you will not be able to as SafeSquid forcefully enforces it.
 
-## Bing SafeSearch 
+## Bing SafeSearch
 Filter explicit search results on Bing search engine, like pornographic images, videos, and websites from Bing Search results. Try disabling Bing SafeSearch and you will not be able to as SafeSquid forcefully enforces it.

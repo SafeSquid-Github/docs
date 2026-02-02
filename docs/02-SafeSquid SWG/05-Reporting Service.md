@@ -1,10 +1,10 @@
 ---
 title: Reporting & Forensics
-Description: 
+description:
 
-Keywords:
-- Secure Web Gateway Components
-- Reporting
+keywords:
+  - Secure Web Gateway Components
+  - Reporting
 ---
 
 # Reporting Service

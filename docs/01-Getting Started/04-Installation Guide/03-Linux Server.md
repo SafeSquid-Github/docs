@@ -1,7 +1,7 @@
 ---
 title: Linux Server
-Description: Learn how to install SafeSquid Secure Web Gateway using a TAR file on RedHat, CentOS, SuSe, and other Linux distributions.
-Keywords:
+description: Learn how to install SafeSquid Secure Web Gateway using a TAR file on RedHat, CentOS, SuSe, and other Linux distributions.
+keywords:
   - Install SafeSquid using TAR file
   - SafeSquid on CentOS/RedHat/SuSe
   - Manual SafeSquid installation Linux
@@ -179,7 +179,7 @@ Further you need to Start the SafeSquid service by using the command below.
 You can check whether SafeSquid service is running or not by using these commands.
 
 ```bash npm2yarn
-pidof safesquid 
+pidof safesquid
 ```
 
 OR

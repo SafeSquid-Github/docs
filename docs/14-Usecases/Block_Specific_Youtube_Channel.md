@@ -2,11 +2,11 @@
 title: Block Specific YouTube Channel
 description: Learn how to block a specific YouTube channel, such as T-Series, using SafeSquid by creating policies based on Channel-ID and List-ID for targeted video restriction.
 keywords:
-- block specific youtube channel safesquid
-- safesquid youtube video restriction
-- youtube channel blocking safesquid
-- safesquid block youtube content
-- youtube category restriction safesquid
+  - block specific youtube channel safesquid
+  - safesquid youtube video restriction
+  - youtube channel blocking safesquid
+  - safesquid block youtube content
+  - youtube category restriction safesquid
 ---
 
 ## Overview

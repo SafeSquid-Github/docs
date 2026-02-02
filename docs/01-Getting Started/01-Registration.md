@@ -1,10 +1,14 @@
 ---
 title: Registration
-Description: Pre-requirements for safesquid Installation
-Keywords:
-  
+description: Register for a SafeSquid account and generate an activation key through the Self-Service Portal to enable SafeSquid SWG deployment.
+keywords:
+  - SafeSquid registration
+  - SafeSquid activation key
+  - SafeSquid account creation
+  - SafeSquid Self-Service Portal
+  - SafeSquid license key
+  - SWG registration
 ---
-## Overview
 
 ## Generate Activation Key
 

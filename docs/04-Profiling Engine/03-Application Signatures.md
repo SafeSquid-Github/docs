@@ -1,15 +1,15 @@
 ---
 title: Application Signatures
-Description: Learn how to manage keyword signatures via the SafeSquid Self-Service Portal for advanced content filtering, and how to add users directly from the SafeSquid interface for standalone authentication.  
-Keywords:  
-- SafeSquid keyword signature management  
-- content filtering SafeSquid  
-- block keywords SafeSquid proxy  
-- manage signatures SafeSquid  
-- SafeSquid user authentication  
-- add users SafeSquid proxy  
-- keyword-based DLP SafeSquid  
-- configure keyword filter SafeSquid  
+description: Learn how to manage keyword signatures via the SafeSquid Self-Service Portal for advanced content filtering, and how to add users directly from the SafeSquid interface for standalone authentication.
+keywords:
+  - SafeSquid keyword signature management
+  - content filtering SafeSquid
+  - block keywords SafeSquid proxy
+  - manage signatures SafeSquid
+  - SafeSquid user authentication
+  - add users SafeSquid proxy
+  - keyword-based DLP SafeSquid
+  - configure keyword filter SafeSquid
 ---
 
 We're going to assume that you've an active SafeSquid account with at-least one Activation Key. If this is not completed yet, you can register at [https://key.safesquid.com/](https://key.safesquid.com/)

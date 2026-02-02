@@ -1,16 +1,16 @@
 ---
 title: SafeSquid Ubuntu OS Upgrade from 20.04 to 24.04 Guide
-Description: Step-by-step, non-interactive guide to upgrade **SafeSquid Secure Web Gateway** from **Ubuntu 20.04 LTS to 24.04 LTS**, including **prerequisites, system checks, OS upgrade, DNS configuration, Netplan update, SafeSquid installation, and post-upgrade verification**. Ensures compatibility, security, and service continuity.
+description: Step-by-step, non-interactive guide to upgrade **SafeSquid Secure Web Gateway** from **Ubuntu 20.04 LTS to 24.04 LTS**, including **prerequisites, system checks, OS upgrade, DNS configuration, Netplan update, SafeSquid installation, and post-upgrade verification**. Ensures compatibility, security, and service continuity.
 
-Keywords:  
-- SafeSquid upgrade guide  
-- Upgrade Ubuntu for SafeSquid  
-- SafeSquid 2025 installation  
-- SWG OS compatibility  
-- Non-interactive SafeSquid upgrade  
-- SafeSquid service continuity  
-- SafeSquid system prerequisites  
-- SafeSquid DNS and Netplan setup
+keywords:
+  - SafeSquid upgrade guide
+  - Upgrade Ubuntu for SafeSquid
+  - SafeSquid 2025 installation
+  - SWG OS compatibility
+  - Non-interactive SafeSquid upgrade
+  - SafeSquid service continuity
+  - SafeSquid system prerequisites
+  - SafeSquid DNS and Netplan setup
 ---
 ## Overview
 
@@ -79,14 +79,14 @@ If you see this, you can proceed safely with the upgrade process
 ---
 
 1. **Free Storage in `/root`:**
-    
+
     The `/root` partition must have **more than 15 GB of free space** to accommodate upgrade files, temporary packages, and extracted data.
-    
+
     Check available space:
-    
+
 
 ```bash
-df -h 
+df -h
 ```
 
 **Expected output for sufficient free space:**
@@ -111,7 +111,7 @@ tmpfs                                          392M  8.0K  392M   1% /run/user/0
 ```
 
 > Note: If free space is below 15 GB, clean up unnecessary files or resize the /root partition before proceeding.
-> 
+>
 
 ---
 
@@ -129,7 +129,7 @@ lsb_release -a
 **Expected Output:**
 
 ```
-Description:    Ubuntu 20.04 LTS
+description:    Ubuntu 20.04 LTS
 ```
 
 If the version shows **18.04**, perform an upgrade to **20.04** first before continuing.
@@ -163,7 +163,7 @@ do-release-upgrade -f DistUpgradeViewNonInteractive
 - `apt autoremove` clears unused dependencies to prevent clutter.
 - `apt-get clean`: Removes cached packages to free space and avoid conflicts.
 - `apt update && apt upgrade -y`: Ensures the system is fully patched before upgrading.
-- `do-release-upgrade -f DistUpgradeViewNonInteractive`: Initiates the upgrade to Ubuntu 22.04 in non-interactive mode, 
+- `do-release-upgrade -f DistUpgradeViewNonInteractive`: Initiates the upgrade to Ubuntu 22.04 in non-interactive mode,
 This upgrades Ubuntu to the next LTS version **without stopping to ask questions**, ensuring a fully automated process suitable for remote servers or critical systems.
 
 **After completion:**
@@ -223,7 +223,7 @@ SafeSquid, during its operation, creates or modifies `/etc/bind/named.conf.appli
 
 These options cause conflicts when starting bind9 service.
 
-The reason SafeSquid does this is to **ensure Active Directory (AD) integration works smoothly**, as these options control DNS validation and caching behavior, which are critical for resolving AD domain controllers and Kerberos services.  
+The reason SafeSquid does this is to **ensure Active Directory (AD) integration works smoothly**, as these options control DNS validation and caching behavior, which are critical for resolving AD domain controllers and Kerberos services.
 
 **Commands:**
 
@@ -347,7 +347,7 @@ lsb_release -a
 **Expected:**
 
 ```
-Description:    Ubuntu 24.04 LTS
+description:    Ubuntu 24.04 LTS
 ```
 
 ---

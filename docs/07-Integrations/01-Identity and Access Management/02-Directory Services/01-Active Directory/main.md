@@ -1,12 +1,12 @@
 ---
-title: Active Directory 
+title: Active Directory
 description: Learn how to integrate Active Directory with SafeSquid, set up users, and configure LDAP for user authentication.
 keywords:
-- active directory integration
-- ldap integration with safesquid
-- add users to active directory
-- integrate ldap with safesquid
-- ldap configuration for safesquid
+  - active directory integration
+  - ldap integration with safesquid
+  - add users to active directory
+  - integrate ldap with safesquid
+  - ldap configuration for safesquid
 ---
 
 ## Overview

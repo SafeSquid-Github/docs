@@ -1,12 +1,12 @@
 ---
-title: Product Activation Failure  
-description: Troubleshoot SafeSquid product activation issues including failed subscription details, UI errors, and proxy server connection problems. Follow step-by-step solutions for proper activation key handling, SafeSquid restarts, and connectivity to the subscription server.  
-keywords:  
-- safesquid activation failed  
-- activation_key upload error  
-- safesquid proxy server refusing connections  
-- safesquid subscription not showing  
-- troubleshoot safesquid product activation  
+title: Product Activation Failure
+description: Troubleshoot SafeSquid product activation issues including failed subscription details, UI errors, and proxy server connection problems. Follow step-by-step solutions for proper activation key handling, SafeSquid restarts, and connectivity to the subscription server.
+keywords:
+  - safesquid activation failed
+  - activation_key upload error
+  - safesquid proxy server refusing connections
+  - safesquid subscription not showing
+  - troubleshoot safesquid product activation
 ---
 
 ## Issues

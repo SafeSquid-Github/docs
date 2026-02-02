@@ -2,11 +2,11 @@
 title: Security Logs
 description: A comprehensive guide to understanding and analyzing SafeSquid proxy logs, including native logs, extended logs, performance metrics, and system integration logs.
 keywords:
-- safesquid logs
-- safesquid troubleshooting
-- safesquid native logs
-- safesquid extended logs
-- safesquid performance log analysis
+  - safesquid logs
+  - safesquid troubleshooting
+  - safesquid native logs
+  - safesquid extended logs
+  - safesquid performance log analysis
 ---
 
 ## Overview
@@ -359,7 +359,7 @@ The details of the fields in performance.log are as follows:
   Threads Reserved for Prefetching            Threads reserved by SafeSquid, to service pre-fetching demands. Example> Log line1 reports that at present 0 thread is used for pre-fetching.
 
   Threading Errors                            Total number of events when SafeSquid could not produce a thread due to system failure or MAXTHREADS limitation.
-                                              Example> Log line1 reports that since start of the process 0 threading errors occured.
+                                              Example> Log line1 reports that since start of the process 0 threading errors occurred.
 
   Outbound Connections created                Total New connections created by SafeSquid to various remote webservers to service a client request.
                                               Example> Log line1 shows total 13640 new connections created by SafeSquid.

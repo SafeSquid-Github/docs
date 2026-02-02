@@ -1,13 +1,13 @@
 ---
-title: Upgrade SafeSquid to a Newer Version  
-Description: Learn how to upgrade SafeSquid Secure Web Gateway to the latest version using the Web GUI, including prerequisites, cleanup instructions, and step-by-step guidance on uploading and applying the new tarball package.
+title: Upgrade SafeSquid to a Newer Version
+description: Learn how to upgrade SafeSquid Secure Web Gateway to the latest version using the Web GUI, including prerequisites, cleanup instructions, and step-by-step guidance on uploading and applying the new tarball package.
 
-Keywords:
-- Upgrade SafeSquid SWG  
-- SafeSquid tarball update  
-- Update SafeSquid from GUI  
-- SafeSquid version upgrade  
-- SafeSquid Monit service  
+keywords:
+  - Upgrade SafeSquid SWG
+  - SafeSquid tarball update
+  - Update SafeSquid from GUI
+  - SafeSquid version upgrade
+  - SafeSquid Monit service
 ---
 
 ## Overview
@@ -46,7 +46,7 @@ Further delete all the files from the folder by using the command:
 ```bash
 rm -rf *
 ```
-## Steps 
+## Steps
 ### [Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
 
 ![your current version of safesquid will be shown in the right hand bottom corner in the safesquid interface](/img/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image1.webp)

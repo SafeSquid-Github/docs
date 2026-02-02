@@ -1,7 +1,7 @@
 ---
 title: Configuration Sync
-Description: Discover how to enable configuration synchronization across a SafeSquid proxy cluster to ensure consistent policy deployment, reduce administrative overhead, and improve system reliability and security.
-Keywords:
+description: Discover how to enable configuration synchronization across a SafeSquid proxy cluster to ensure consistent policy deployment, reduce administrative overhead, and improve system reliability and security.
+keywords:
   - SafeSquid configuration sync
   - Proxy cluster synchronization
   - SafeSquid master-slave sync

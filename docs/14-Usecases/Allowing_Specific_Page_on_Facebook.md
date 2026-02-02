@@ -2,11 +2,11 @@
 title: Allow Specific Page on Facebook
 description: Learn how to configure SafeSquid to allow access to specific Facebook pages while blocking the rest, enabling you to control social media usage in your organization.
 keywords:
-- allow specific facebook page safesquid
-- safesquid block facebook except page
-- facebook page access safesquid
-- safesquid social media filtering
-- specific facebook page access policy
+  - allow specific facebook page safesquid
+  - safesquid block facebook except page
+  - facebook page access safesquid
+  - safesquid social media filtering
+  - specific facebook page access policy
 ---
 
 ## Overview

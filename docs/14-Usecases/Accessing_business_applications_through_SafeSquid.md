@@ -1,5 +1,12 @@
 ---
 title: Accessing Business Applications Through SafeSquid
+description: Troubleshoot and configure SafeSquid to allow business applications by identifying blocked URLs, authentication issues, and SSL inspection requirements.
+keywords:
+  - SafeSquid business applications
+  - application proxy troubleshooting
+  - URL whitelist configuration
+  - enterprise application access
+  - proxy application compatibility
 ---
 There have been several instances where it has been reported that certain applications that the organizations use do not work through SafeSquid. This article describes a generalized way of identifying what is wrong with the application and solving it.
 
