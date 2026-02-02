@@ -12,58 +12,50 @@ keywords:
 
 ## Generate Activation Key
 
-### Registration Process 
+### Registration Process
 
-![showing dashboard of key.safesquid.com, Picture](/img/License_Activation/image1.webp)
+1. Visit [https://key.safesquid.com](https://key.safesquid.com)
 
-### Visit [https://key.safesquid.com](https://key.safesquid.com)
+   ![SafeSquid Self-Service Portal dashboard](/img/License_Activation/image1.webp)
 
-![Picture 6, Picture](/img/License_Activation/image2.webp) 
+2. Enter email address, First Name, Last Name, and Captcha, then click **Sign Up**.
 
-### Enter your email address, First Name, Last Name, Captcha and then Click on "Sign Up." 
+   ![Sign up form](/img/License_Activation/image2.webp)
 
-### You'll receive an email to activate your account in your registered email address. 
+3. Check the registered email inbox for an activation email.
 
-![showing how to sign up using your email, Picture](/img/License_Activation/image3.webp) 
+   ![Email signup confirmation](/img/License_Activation/image3.webp)
 
-### Click on "Click here to activate your account."
+4. Click **Click here to activate your account** in the email.
 
-![showing how to sign up using your email, Picture](/img/License_Activation/image4.webp) 
+   ![Account activation link](/img/License_Activation/image4.webp)
 
-### You'll be directed to [https://accounts.safesquid.com/?success=](https://accounts.safesquid.com/?success=)
+5. Enter and confirm a new password on the activation page.
 
-### Enter your new password in "New password", "confirm password." 
+   ![Password setup form](/img/License_Activation/image5.webp)
 
-![showing the user info created, Picture](/img/License_Activation/image5.webp) 
+6. Click **Activate**.
 
-### click on "Activate." 
+   ![Activate button](/img/License_Activation/image6.webp)
 
-![clicking on activate, Picture](/img/License_Activation/image6.webp) 
+7. Enter username and password, then click **Sign In**.
 
-### Enter your username and password and click on "Sign In".
+   ![Sign in form](/img/License_Activation/image7.webp)
 
-![entering the username and password to get your activation key, Picture](/img/License_Activation/image7.webp) 
+8. The activation code generates automatically. Fill in user info and contact information.
 
-### Activation code will be generated, and you'll be directed to [https://key.safesquid.com/portal.html](https://key.safesquid.com/portal.html)
+   ![User profile form](/img/License_Activation/image8.webp)
 
- ### Fill in the user info and contact information. 
+9. Click **Save Profile**.
 
-![filling the user info and contact info, Picture](/img/License_Activation/image8.webp) 
+   ![Save profile button](/img/License_Activation/image9.webp)
 
-### Click on "Save Profile".
+10. The activation key is now generated. Click **Close**.
 
- ![clicking on save profile button, Picture](/img/License_Activation/image9.webp)
+    ![Activation key generated](/img/License_Activation/image11.webp)
 
-### Your activation key has been generated.  
+11. Click **Download Key** to download the activation key file.
 
-### Click "close".
+    ![Download key button](/img/License_Activation/image12.webp)
 
-![clicking on close after generating the activation key, Picture](/img/License_Activation/image11.webp) 
-
-### Page will be reloaded, and you'll be redirected to your home page. 
-
-### To download your activation key, click on "Download Key". 
-
-![clicking on download key option on the dashboard, Picture](/img/License_Activation/image12.webp)
-
-### Do not change the activation key file name or contents.
+> **Important:** Do not modify the activation key file name or contents.

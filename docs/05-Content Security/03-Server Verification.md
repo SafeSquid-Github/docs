@@ -1,6 +1,6 @@
 ---
 title: Server Verification
-description: Learn how to import SafeSquid SSL certificates into Chrome, Internet Explorer, and Firefox, and download them from the SafeSquid interface to enable seamless HTTPS inspection and secure encrypted web traffic.
+description: Import SafeSquid SSL certificates into Chrome, Internet Explorer, and Firefox to enable seamless HTTPS inspection and secure encrypted web traffic.
 keywords:
   - SafeSquid SSL certificate
   - HTTPS inspection setup
@@ -9,47 +9,46 @@ keywords:
   - enable HTTPS proxy
 ---
 
-### Overview
-You would need to install SafeSquid SSL certificate in IE or Chrome browsers to allow users to seamlessly browse HTTPS sites.
+## Overview
 
-This article will help you with installation of SafeSquid SSL Certificate on IE or Chrome browser. This may vary depends on your browser versions.
+SafeSquid SSL certificate installation in IE or Chrome browsers enables seamless HTTPS browsing. This guide covers SSL certificate installation for IE and Chrome browsers. Steps may vary depending on browser versions.
 
 :::note
-If you want to use SafeSquid web security client then no need to import your certificates into Chrome or IE.
+SafeSquid web security client users do not need to manually import certificates into Chrome or IE.
 :::
-### Open Certificate
 
-Open the SafeSquid SSL certificate downloaded from SSL inspection section or from https://key.safesquid.com/portal.html
+## Import Certificate into Chrome or Internet Explorer
 
-![opening downloaded safesquid certificate](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image1.webp)
+1. Open the SafeSquid SSL certificate downloaded from the SSL Inspection section or from [https://key.safesquid.com/portal.html](https://key.safesquid.com/portal.html).
 
-### Click on Install Certificate
+   ![Opening downloaded SafeSquid certificate](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image1.webp)
 
-![clicking on install certificate](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image2.webp)
+2. Click **Install Certificate**.
 
-### Select Store Location
+   ![Install certificate button](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image2.webp)
 
-![clicking on next](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image3.webp)
+3. Select the store location and click **Next**.
 
-### Select Certificate store
+   ![Store location selection](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image3.webp)
 
-![clicking on browse](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image4.webp)
+4. Click **Browse** to select the certificate store.
 
-### Select the Trusted Root Certification Authorities and Click on OK button to continue.
+   ![Browse certificate store](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image4.webp)
 
-![clicking on OK](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image5.webp)
+5. Select **Trusted Root Certification Authorities** and click **OK**.
 
-### Click on Next button to continue with importing of SSL certificate.
+   ![Trusted Root Certification Authorities selection](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image5.webp)
 
-![clicking on next](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image6.webp)
+6. Click **Next** to continue with the SSL certificate import.
 
-### Click on Finish button to complete the process.
+   ![Continue import](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image6.webp)
 
-![clicking on finish](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image7.webp)
+7. Click **Finish** to complete the import process.
 
-### Message will be displayed on the screen for import successful
+   ![Finish import](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image7.webp)
 
-![clicking on OK](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image8.webp)
+8. A confirmation message displays indicating successful import.
 
-![clicking on OK ](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image9.webp)
+   ![Import successful confirmation](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image8.webp)
 
+   ![Import complete](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image9.webp)

@@ -1,6 +1,6 @@
 ---
 title: Pre-Fetching
-description: Learn how to configure SafeSquid's prefetching feature to accelerate web access by preloading and caching embedded resources like images, improving response time and reducing redundant network requests.
+description: Configure SafeSquid prefetching to accelerate web access by preloading and caching embedded resources like images, improving response time and reducing redundant network requests.
 keywords:
   - SafeSquid prefetch embedded images
   - SafeSquid internet accelerator
@@ -10,34 +10,53 @@ keywords:
 ---
 
 ## Overview
-The Prefetching feature can be used as an 'internet accelerator'. It allows virtually any file referenced in HTML to be pre-fetched, not just images, and cached.
 
-Prefetching is a good way to improve retrieval time. It reduces resource retrievals and improves retrieval time. The target range is wider than that of both, mirroring and caching.
+Prefetching acts as an internet accelerator by pre-fetching and caching files referenced in HTML (not just images). This improves retrieval time and reduces resource requests, with a wider target range than mirroring and caching alone.
 
-### [Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
-### Go to configure
-![clicking on configure in safesquid interface](/img/How_To/Prefetch_embedded_images/image1.webp)
+## Configure Prefetching
 
-### Go to Prefetching under Application Setup
-![going to prefetching in application setup section](/img/How_To/Prefetch_embedded_images/image2.webp)
+1. Access the [SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md) and click **Configure**.
 
-![making sure the global section is true in enabled field](/img/How_To/Prefetch_embedded_images/image3.webp)
+   ![Configure page](/img/How_To/Prefetch_embedded_images/image1.webp)
 
-### Go to Prefetch
-![Go to prefetch tab](/img/How_To/Prefetch_embedded_images/image4.webp)
+2. Navigate to **Prefetching** under Application Setup.
 
-![clicking on add new to create a new policy](/img/How_To/Prefetch_embedded_images/image5.webp)
+   ![Prefetching section](/img/How_To/Prefetch_embedded_images/image2.webp)
 
-![giving appropriate comment for future reference](/img/How_To/Prefetch_embedded_images/image6.webp)
+3. Ensure **Global** section has **Enabled** set to **True**.
 
-![specifying the html tag that should be analyzed for prefetchable URLs](/img/How_To/Prefetch_embedded_images/image7.webp)
+   ![Global enabled](/img/How_To/Prefetch_embedded_images/image3.webp)
 
-![specifying the attribute of the html tag, holding the URL to be prefetched](/img/How_To/Prefetch_embedded_images/image8.webp)
+4. Click the **Prefetch** tab.
 
-![specifying the regular expression to evaluate the URL discovered in the tag attribute](/img/How_To/Prefetch_embedded_images/image9.webp)
+   ![Prefetch tab](/img/How_To/Prefetch_embedded_images/image4.webp)
 
-![clicking on save policy to save it](/img/How_To/Prefetch_embedded_images/image10.webp)
+5. Click **Add New** to create a new policy.
 
-![clicking on save config to save the policy](/img/How_To/Prefetch_embedded_images/image11.webp)
+   ![Add new policy](/img/How_To/Prefetch_embedded_images/image5.webp)
 
-![](/img/How_To/Prefetch_embedded_images/image12.webp)
+6. Enter an appropriate comment for future reference.
+
+   ![Policy comment](/img/How_To/Prefetch_embedded_images/image6.webp)
+
+7. Specify the HTML tag to analyze for prefetchable URLs.
+
+   ![HTML tag specification](/img/How_To/Prefetch_embedded_images/image7.webp)
+
+8. Specify the attribute of the HTML tag holding the URL to prefetch.
+
+   ![Tag attribute](/img/How_To/Prefetch_embedded_images/image8.webp)
+
+9. Specify the regular expression to evaluate discovered URLs in the tag attribute.
+
+   ![URL regex](/img/How_To/Prefetch_embedded_images/image9.webp)
+
+10. Click **Save Policy**.
+
+    ![Save policy](/img/How_To/Prefetch_embedded_images/image10.webp)
+
+11. Click **Save Config** to apply the configuration.
+
+    ![Save config](/img/How_To/Prefetch_embedded_images/image11.webp)
+
+    ![Configuration saved](/img/How_To/Prefetch_embedded_images/image12.webp)

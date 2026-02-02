@@ -202,15 +202,15 @@ When you click on Save config, it will give a prompt for asking the confirmation
 
 ![clicking on save policy to save it, Picture](/img/SSL_Inspection/image35.webp) 
 
-\*\*Edit policies and profiles to Enable as TRUE \*\*
+**Edit policies and profiles to Enable as TRUE **
 
 ![editing the default policies to bypass ssl inspection for applications and categories, Picture](/img/SSL_Inspection/image36.webp) 
 
-\*\*How to create new policy to bypass HTTPS Inspection \*\*
+**How to create new policy to bypass HTTPS Inspection **
 
 ![example of how to create new policy to bypass SSL inspection, Picture](/img/SSL_Inspection/image37.webp) 
 
-\*\*Go to Request Types \*\*
+**Go to Request Types **
 
 ![going to request types in request types section in sidebar, Picture](/img/SSL_Inspection/image38.webp) 
 
@@ -224,7 +224,7 @@ When you click on Save config, it will give a prompt for asking the confirmation
 
  
 
-\*\*Go to Access Policies \*\*
+**Go to Access Policies **
 
 ![creating a new policy in access profiles, Picture](/img/SSL_Inspection/image42.webp) 
 

@@ -1,6 +1,6 @@
 ---
 title: Forward Proxy
-description: Learn how to configure your web browser to use the SafeSquid proxy server, including detailed steps for setting proxy settings in Chrome and Firefox to access the SafeSquid WebGUI.
+description: Configure web browsers to use SafeSquid proxy server, including detailed steps for Chrome and Firefox proxy settings to access the SafeSquid WebGUI.
 keywords:
   - Configure proxy in browser
   - Set proxy in Chrome for SafeSquid
@@ -10,76 +10,74 @@ keywords:
 ---
 
 ## Overview
-SafeSquid Proxy Service has a browser-based intrinsic WebGUI, that allows users to configure, and manage its various features. To access the Interface, you must configure your web browser to use the SafeSquid® proxy server. You should be able to access the WebGUI with the URL -- http://safesquid.cfg
 
-## Set Proxy in Chromium-based browser Via System Settings
-Here we will configure a proxy in the Chrome browser
+SafeSquid Proxy Service provides a browser-based WebGUI for configuration and management. Access requires configuring web browsers to use the SafeSquid proxy server. The WebGUI is accessible at: `http://safesquid.cfg`
 
-### Open Chrome browser settings from the browser toolbar
-![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image1.webp)
+## Configure Proxy in Chrome (System Settings)
 
-![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image2.webp)
+1. Open Chrome browser settings from the toolbar.
 
-### Click on the System tab in Settings.
-![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image3.webp)
+   ![Chrome menu](/img/How_To/How_To_configure_Proxy_In_a_Browser/image1.webp)
 
-**OR**
+   ![Settings option](/img/How_To/How_To_configure_Proxy_In_a_Browser/image2.webp)
 
-### You can search "proxy" in the search bar.
-![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image4.webp)
+2. Click the **System** tab in Settings, or search for "proxy" in the search bar.
 
-### Open the computer's proxy settings.
-![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image5.webp)
+   ![System tab](/img/How_To/How_To_configure_Proxy_In_a_Browser/image3.webp)
 
-**It will take you to your computer's proxy settings**
+   ![Search proxy](/img/How_To/How_To_configure_Proxy_In_a_Browser/image4.webp)
 
-### Turn on the "Use a proxy server" button
-![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image6.webp)
+3. Click **Open your computer's proxy settings**.
 
-![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image7.webp)
+   ![Proxy settings link](/img/How_To/How_To_configure_Proxy_In_a_Browser/image5.webp)
 
-### Enter your proxy information i.e. IP address of your proxy server and Port number 8080
-![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image8.webp)
+4. Enable **Use a proxy server**.
 
-Notice the next field: Here, you can input a list of domain names and IP addresses to connect to without a proxy. For instance, if you don't want to use proxies when connecting to
+   ![Enable proxy](/img/How_To/How_To_configure_Proxy_In_a_Browser/image6.webp)
 
-infatica.io,
+   ![Proxy toggle](/img/How_To/How_To_configure_Proxy_In_a_Browser/image7.webp)
 
-192.158. 1.38, and
+5. Enter the proxy server IP address and port **8080**.
 
-Any IP address that starts with 127.
+   ![Proxy address and port](/img/How_To/How_To_configure_Proxy_In_a_Browser/image8.webp)
 
-![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image9.webp)
+6. (Optional) Enter domains and IP addresses to bypass the proxy in the exclusion field:
+   - Example: `infatica.io`, `192.158.1.38`, addresses starting with `127.`
 
-**OR**
+   ![Proxy bypass list](/img/How_To/How_To_configure_Proxy_In_a_Browser/image9.webp)
 
-**You can leave it blank**
+7. Click **Save**.
 
-### Click on save
-![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image10.webp)
+   ![Save settings](/img/How_To/How_To_configure_Proxy_In_a_Browser/image10.webp)
 
-## Configure proxy specifically for Mozilla Firefox
-Mozilla Firefox offers the option to configure a proxy specifically for the browser without affecting the system-wide settings. Here's how you can do it:
+## Configure Proxy in Firefox
 
-### Open Firefox and click on the menu button (three horizontal lines) in the top right corner
-![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image11.webp)
+Firefox allows browser-specific proxy configuration without affecting system-wide settings.
 
-### Click on settings
-![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image12.webp)
+1. Open Firefox and click the **menu button** (three horizontal lines) in the top right corner.
 
-### In the "General" section, Scroll down to the "Network Settings"
-![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image13.webp)
+   ![Firefox menu](/img/How_To/How_To_configure_Proxy_In_a_Browser/image11.webp)
 
-### Click on the "Settings" button
-![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image14.webp)
+2. Click **Settings**.
 
-Now, you'll see options for configuring your proxy settings specifically for Firefox.
+   ![Firefox settings](/img/How_To/How_To_configure_Proxy_In_a_Browser/image12.webp)
 
-### Select the "Manual proxy configuration" radio button
-![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image15.webp)
+3. Scroll down to **Network Settings** in the General section.
 
-### Enter the proxy server address and port number in the respective fields
-![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image16.webp)
+   ![Network Settings](/img/How_To/How_To_configure_Proxy_In_a_Browser/image13.webp)
 
-### Click "OK" to save your changes
-![](/img/How_To/How_To_configure_Proxy_In_a_Browser/image17.webp)
+4. Click the **Settings** button.
+
+   ![Settings button](/img/How_To/How_To_configure_Proxy_In_a_Browser/image14.webp)
+
+5. Select **Manual proxy configuration**.
+
+   ![Manual proxy option](/img/How_To/How_To_configure_Proxy_In_a_Browser/image15.webp)
+
+6. Enter the proxy server address and port number.
+
+   ![Proxy details](/img/How_To/How_To_configure_Proxy_In_a_Browser/image16.webp)
+
+7. Click **OK** to save changes.
+
+   ![Save Firefox settings](/img/How_To/How_To_configure_Proxy_In_a_Browser/image17.webp)

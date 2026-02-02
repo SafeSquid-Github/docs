@@ -1,6 +1,6 @@
 ---
 title: Content Caching
-description: Learn how to cache specific websites using SafeSquid’s content caching feature to improve bandwidth efficiency, reduce latency, and accelerate web access for frequently visited content.
+description: Configure SafeSquid content caching to improve bandwidth efficiency, reduce latency, and accelerate web access for frequently visited content.
 keywords:
   - SafeSquid website caching
   - Configure cache in SafeSquid
@@ -10,49 +10,91 @@ keywords:
 ---
 
 ## Overview
-Content Caching improves bandwidth efficiency. A page or file, when requested by a user, is served to the user and a copy of it is also maintained locally in the cache. So, when a request is made to fetch the same page or file, it is served with the local copy, instead of 'a fresh fetch'. SafeSquid has a very neat, efficient and manageable Content Caching system.
 
-### [Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
-![clicking on configure in safesquid interface](/img/How_To/Caching_Specific_websites/image1.webp)
+Content Caching improves bandwidth efficiency by storing local copies of requested pages and files. Subsequent requests for the same content are served from the local cache instead of fetching fresh copies. SafeSquid provides an efficient and manageable Content Caching system.
 
-### Go to Access policies under Restriction Policies
-![showing of default policies in access profiles](/img/How_To/Caching_Specific_websites/image2.webp)
+## Configure Content Caching
 
-![creating a new policy by clicking on add new ](/img/How_To/Caching_Specific_websites/image3.webp)
+### Create Access Policy
 
-![giving comment for reference](/img/How_To/Caching_Specific_websites/image4.webp)
+1. Access the [SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md) and click **Configure**.
 
-![selecting the desired categories in categories drop down](/img/How_To/Caching_Specific_websites/image5.webp)
+   ![Configure page](/img/How_To/Caching_Specific_websites/image1.webp)
 
-![selecting action as allow](/img/How_To/Caching_Specific_websites/image6.webp)
+2. Navigate to **Access Policies** under Restriction Policies.
 
-![giving unique name for the policy in Added Profiles](/img/How_To/Caching_Specific_websites/image7.webp)
+   ![Access Policies section](/img/How_To/Caching_Specific_websites/image2.webp)
 
-![clicking on save policy](/img/How_To/Caching_Specific_websites/image8.webp)
+3. Click **Add New** to create a new policy.
 
-### Go to Caching under Application Setup
-![going to caching under application setup in sidebar](/img/How_To/Caching_Specific_websites/image9.webp)
+   ![Add new policy](/img/How_To/Caching_Specific_websites/image3.webp)
 
-### Go to Store
-![clicking on store in caching](/img/How_To/Caching_Specific_websites/image10.webp)
+4. Enter a descriptive comment for reference.
 
-![clicking on clone button to clone the already created policy](/img/How_To/Caching_Specific_websites/image11.webp)
+   ![Policy comment](/img/How_To/Caching_Specific_websites/image4.webp)
 
-![By clicking clone button it will create a duplicate policy](/img/How_To/Caching_Specific_websites/image12.webp)
+5. Select the desired categories from the **Categories** dropdown.
 
-![clicking on edit policy ](/img/How_To/Caching_Specific_websites/image13.webp)
+   ![Select categories](/img/How_To/Caching_Specific_websites/image5.webp)
 
-![selecting enabled as true](/img/How_To/Caching_Specific_websites/image14.webp)
+6. Set **Action** to **Allow**.
 
-![giving appropriate comment for the future reference ](/img/How_To/Caching_Specific_websites/image15.webp)
+   ![Set action](/img/How_To/Caching_Specific_websites/image6.webp)
 
-![selecting the desired profile in profiles drop down menu](/img/How_To/Caching_Specific_websites/image16.webp)
+7. Assign a unique name in **Added Profiles**.
 
-![clicking on save policy to save it](/img/How_To/Caching_Specific_websites/image17.webp)
+   ![Added Profiles](/img/How_To/Caching_Specific_websites/image7.webp)
 
-![clicking on global save policy to save it globally](/img/How_To/Caching_Specific_websites/image18.webp)
+8. Click **Save Policy**.
 
-### Go to Manage cached Objects
-![clicking on Manage cached objects in caching section](/img/How_To/Caching_Specific_websites/image19.webp)
+   ![Save policy](/img/How_To/Caching_Specific_websites/image8.webp)
 
-![it will show all those websites under disk cache ](/img/How_To/Caching_Specific_websites/image20.webp)
+### Configure Caching Store
+
+9. Navigate to **Caching** under Application Setup.
+
+   ![Caching section](/img/How_To/Caching_Specific_websites/image9.webp)
+
+10. Click the **Store** tab.
+
+    ![Store tab](/img/How_To/Caching_Specific_websites/image10.webp)
+
+11. Click **Clone** to duplicate an existing policy.
+
+    ![Clone policy](/img/How_To/Caching_Specific_websites/image11.webp)
+
+    ![Duplicated policy](/img/How_To/Caching_Specific_websites/image12.webp)
+
+12. Click **Edit Policy** on the cloned entry.
+
+    ![Edit policy](/img/How_To/Caching_Specific_websites/image13.webp)
+
+13. Set **Enabled** to **True**.
+
+    ![Enable policy](/img/How_To/Caching_Specific_websites/image14.webp)
+
+14. Add an appropriate comment for future reference.
+
+    ![Policy comment](/img/How_To/Caching_Specific_websites/image15.webp)
+
+15. Select the profile created earlier from the **Profiles** dropdown.
+
+    ![Select profile](/img/How_To/Caching_Specific_websites/image16.webp)
+
+16. Click **Save Policy**.
+
+    ![Save caching policy](/img/How_To/Caching_Specific_websites/image17.webp)
+
+17. Click **Save** to apply the configuration globally.
+
+    ![Global save](/img/How_To/Caching_Specific_websites/image18.webp)
+
+## Verification
+
+18. Navigate to **Manage Cached Objects** in the Caching section.
+
+    ![Manage Cached Objects](/img/How_To/Caching_Specific_websites/image19.webp)
+
+19. Verify cached websites appear under disk cache.
+
+    ![Disk cache contents](/img/How_To/Caching_Specific_websites/image20.webp)

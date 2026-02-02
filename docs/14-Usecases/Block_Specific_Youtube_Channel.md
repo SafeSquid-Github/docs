@@ -1,6 +1,6 @@
 ---
 title: Block Specific YouTube Channel
-description: Learn how to block a specific YouTube channel, such as T-Series, using SafeSquid by creating policies based on Channel-ID and List-ID for targeted video restriction.
+description: Block a specific YouTube channel using SafeSquid by creating policies based on Channel-ID and List-ID for targeted video restriction.
 keywords:
   - block specific youtube channel safesquid
   - safesquid youtube video restriction
@@ -10,115 +10,98 @@ keywords:
 ---
 
 ## Overview
-Prevent users to access specific YouTube Channel like 'T-Series'.
+
+Block access to specific YouTube channels (e.g., T-Series) while allowing other YouTube content.
 
 :::note
-Blocking of Specific YouTube channel and allowing all the other YouTube videos is a hypothetical scenario. YouTube website is not designed for such hypothetical situation. However, this how-to will demonstrate to block a specific YouTube Channel and one of its playlist videos.
+Blocking specific YouTube channels while allowing other videos is a hypothetical scenario. YouTube is not designed for such use cases. This guide demonstrates blocking a specific channel and its playlist videos.
 :::
 
 ## Prerequisites
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - [How to enable HTTPS Inspection.](/docs/03-SSL%20Inspection/main.md)
 
-You need the YouTube **Channel-ID** and **List-ID**. You have to extract Channel-ID and List-ID from YouTube URL before creating rules in SafeSquid.
+- HTTPS Inspection must be enabled in SafeSquid. See [How to enable HTTPS Inspection](/docs/03-SSL%20Inspection/main.md).
+- Extract the YouTube **Channel-ID** and **List-ID** from the target channel URL.
 
-## Policy Creation
-We can achieve the above by following steps --
+## Extract Channel-ID and List-ID
 
-### Extract Channel-ID from YouTube Channel
+1. Open the YouTube channel to block (e.g., T-Series).
 
-1. Open the YouTube channel you want to block. Here T-Series channel is taken as an example.
+2. Extract the **Channel-ID** from the URL (the portion after `channel/`):
+   - URL: `https://www.youtube.com/channel/UCq-Fj5jknLsUf-MWSy4_brA`
+   - **Channel-ID:** `UCq-Fj5jknLsUf-MWSy4_brA`
 
-Here you will get Channel-ID from the referrer URL. **Channel-ID** is the preceding portion of the URL after **'channel/**' part. Save this part on notepad for reference.
+   ![Extract Channel-ID from YouTube Channel](/img/How_To/Block_Specific_Youtube_Channel/image1.webp)
 
-T-Series Channel URL: https://www.youtube.com/channel/UCq-Fj5jknLsUf-MWSy4_brA
+3. Click **PLAY ALL** on the channel page to access a playlist.
 
-**Channel-ID: UCq-Fj5jknLsUf-MWSy4_brA**
+4. Extract the **List-ID** from the playlist URL (the portion after `&list=`):
+   - URL: `https://www.youtube.com/watch?v=IgKdXLfxgQQ&list=PL9bw4S5ePsEE2KMw53rY40A00t4I-otqy`
+   - **List-ID:** `PL9bw4S5ePsEE2KMw53rY40A00t4I-otqy`
 
-For **List-ID** extraction click on **PLAY ALL** link on the page as shown below.
+   ![Extract List-ID from YouTube Channel](/img/How_To/Block_Specific_Youtube_Channel/image2.webp)
 
-![Extract Channel-ID from YouTube Channel to block specific YouTube channel](/img/How_To/Block_Specific_Youtube_Channel/image1.webp)
+   ![List-ID in subsequent videos](/img/How_To/Block_Specific_Youtube_Channel/image3.webp)
 
-### Extract List-ID from YouTube Channel
+## Create Request Types Policy
 
-2. Extract **List-ID** from any of the subsequent URL.
+5. Open SafeSquid WebGUI and click **Configure**.
 
-**List-ID** is the preceding portion of the URL after **'&list=**' part. Save this part on notepad for reference.
+   ![SafeSquid Configure section](/img/How_To/Block_Specific_Youtube_Channel/image4.webp)
 
-T-Series Channel subsequent URL: https://www.youtube.com/watch?v=IgKdXLfxgQQ&list=PL9bw4S5ePsEE2KMw53rY40A00t4I-otqy
+6. Click **Custom Settings** to open the Request Types section.
 
-**List-ID: PL9bw4S5ePsEE2KMw53rY40A00t4I-otqy**
+   ![Custom Settings menu](/img/How_To/Block_Specific_Youtube_Channel/image5.webp)
 
-![Extract List-ID from YouTube Channel to block specific YouTube channel](/img/How_To/Block_Specific_Youtube_Channel/image2.webp)
+7. Ensure the **Global** setting in Request Types is set to **True**.
 
-You will find every Video in the list contain List-ID of the channel.
+   ![Enable Global Request Types](/img/How_To/Block_Specific_Youtube_Channel/image6.webp)
 
-T-Series Channel subsequent URL: https://www.youtube.com/watch?v=IgKdXLfxgQQ&list=PL9bw4S5ePsEE2KMw53rY40A00t4I-otqy
+8. Click the **Request Types** tab to create a new policy.
 
-**List-ID: PL9bw4S5ePsEE2KMw53rY40A00t4I-otqy**
+   ![Request Types tab](/img/How_To/Block_Specific_Youtube_Channel/image7.webp)
 
-![Extract List-ID from any of the subsequent YouTube Channel to block specific YouTube channel](/img/How_To/Block_Specific_Youtube_Channel/image3.webp)
+9. Create a new Request Profile named **T-SERIES CHANNEL** in the Added Request Types field.
 
-3. After extracting the Channel-ID and List-ID we have create policies in SafeSquid.
+   ![Create T-SERIES CHANNEL profile](/img/How_To/Block_Specific_Youtube_Channel/image8.webp)
 
-Go to SafeSquid Web-GUI and click on Configure to create Policies.
+10. Add the Channel-ID and List-ID to the **File** field using the format:
+    ```
+    (UCq-Fj5jknLsUf-MWSy4_brA|PL9bw4S5ePsEE2KMw53rY40A00t4I-otqy)
+    ```
+    Save the policy.
 
-![Go to configure section under safesquid web interface to block specific YouTube channel](/img/How_To/Block_Specific_Youtube_Channel/image4.webp)
+    ![Add Channel-ID and List-ID](/img/How_To/Block_Specific_Youtube_Channel/image9.webp)
 
-### Create Policy in Request Types Section
+## Create Access Profiles Policy
 
-4. Click on Custom Settings to open Request Types Section.
+11. Navigate to the **Access Profiles** section.
 
-![Select custom setting to open Request types section under safesquid web interface to block specific YouTube channel](/img/How_To/Block_Specific_Youtube_Channel/image5.webp)
+    ![Access Profiles section](/img/How_To/Block_Specific_Youtube_Channel/image10.webp)
 
-6. Make sure the Global of Request Types Section is Enabled to True.
+12. Edit the default policy **BLOCK YOUTUBE CHANNELS**:
+    - Select **T-SERIES CHANNEL** in the Request Types field
+    - Set Action to **DO_NOT_BYPASS**
 
-![Enabled Global Request types as True to block specific YouTube channel](/img/How_To/Block_Specific_Youtube_Channel/image6.webp)
+    ![Configure Access Profile](/img/How_To/Block_Specific_Youtube_Channel/image11.webp)
 
-7. Click on Request Types tab to create new policy.
+13. Save the policy.
 
-![Select Request types to create new policy to block specific YouTube channel](/img/How_To/Block_Specific_Youtube_Channel/image7.webp)
+    ![Save policy](/img/How_To/Block_Specific_Youtube_Channel/image12.webp)
 
-8. Add YouTube Channels in Request Types Field. Create new Request Profile as **T-SERIES CHANNEL** in Added Request Types Field.
+## Verification
 
-![Create new Request Profile as T-SERIES CHANNEL in Added Request Types Field to block specific youtube channel](/img/How_To/Block_Specific_Youtube_Channel/image8.webp)
+14. Access the T-Series channel URL: `https://www.youtube.com/channel/UCq-Fj5jknLsUf-MWSy4_brA`
 
-9. You have to add Channel-ID and List-Id in File Field. You have already saved them in notepad for your reference. Refer to Channel-ID extraction and List-Id extraction.
+    The channel displays the Access Blocked template.
 
-Here for T-Series channel we added **(UCq-Fj5jknLsUf-MWSy4_brA|PL9bw4S5ePsEE2KMw53rY40A00t4I-otqy)** in File Field.
+    ![Channel blocked](/img/How_To/Block_Specific_Youtube_Channel/image13.webp)
 
-Save the Policy created.
+15. Access any T-Series playlist video to confirm blocking.
 
-![Add and save channel ID and List ID in policy to block specific youtube channel](/img/How_To/Block_Specific_Youtube_Channel/image9.webp)
-
-### Create Policy in Access Profiles Section
-
-10. Go to Access Profiles section.
-
-![Create policy in access profile section to block specific YouTube channel](/img/How_To/Block_Specific_Youtube_Channel/image10.webp)
-
-11. Edit the Default Policy already created in SafeSquid named **BLOCK YOUTUBE CHANNELS**. Select **T-SERIES CHANNEL** in Request Types Field. Set Action Field as **DO_NOT_BYPASS.**
-
-![Edit T-series channel in request types field and set action field as DO not bypass to block specific youtube channel ](/img/How_To/Block_Specific_Youtube_Channel/image11.webp)
-
-12. Save the policy created in Access Restrictions.
-
-![Save Block YouTube Channels policy to block specific YouTube channel ](/img/How_To/Block_Specific_Youtube_Channel/image12.webp)
-
-## Test the YouTube Channel Blocked
-13. Now try to open the YouTube Channel of T-Series https://www.youtube.com/channel/UCq-Fj5jknLsUf-MWSy4_brA.
-
-All the YouTube channel of T-series will be blocked and Access block Template will be shown.
-
-![Test result of the YouTube Channel Blocked](/img/How_To/Block_Specific_Youtube_Channel/image13.webp)
-
-If you try to open any of the subsequent YouTube videos of T-Series Channel like https://www.youtube.com/watch?v=IgKdXLfxgQQ&list=PL9bw4S5ePsEE2KMw53rY40A00t4I-otqy.
-
-It will be blocked and Access block Template will be shown.
-
-![Blocked and Access block Template will be shown](/img/How_To/Block_Specific_Youtube_Channel/image14.webp)
+    ![Playlist video blocked](/img/How_To/Block_Specific_Youtube_Channel/image14.webp)
 
 :::note
-This configuration will work only for videos sourced from the channel page and not from the feeds links or YouTube Videos embedded in website.
+This configuration blocks videos accessed from the channel page only. Videos from feed links or embedded YouTube videos are not blocked.
 
-To block every video of any specific YouTube Channel you have to insert List-ID's (of every playlist in that channel) and file part (of each individual unlisted videos) of URL in the File field of Request Types Section.
+To block all videos from a channel, add all playlist List-IDs and individual video file portions to the Request Types File field.
 :::

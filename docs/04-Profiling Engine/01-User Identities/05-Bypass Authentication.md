@@ -1,6 +1,6 @@
 ---
 title: Bypass Authentication
-description: Learn how to bypass authentication for specific applications like Dropbox in SafeSquid, allowing automatic updates and ensuring secure internet usage tracking.
+description: Bypass authentication for specific applications like Dropbox in SafeSquid, allowing automatic updates while maintaining secure internet usage tracking.
 keywords:
   - bypass authentication safesquid
   - safesquid proxy authentication bypass
@@ -9,52 +9,73 @@ keywords:
   - allow application without authentication safesquid
 ---
 
-## Business challenge
+## Business Challenge
 
-Stark tech has 200 employees. Star tech need to use proxy authentication to track employees Internet usage. The issue faced by Stark tech for automatic updates (AV, MS, etc), which can't get out because of the proxy authentication. Since for user identification they have enabled authentication. For certain applications (like dropbox) which does not support proxy authentication, they want to bypass authentication for that application.
+An organization with 200 employees uses proxy authentication to track internet usage. Automatic updates (antivirus, Microsoft, etc.) fail because they cannot authenticate. Applications like Dropbox that do not support proxy authentication require authentication bypass.
 
-## How SafeSquid bypass Authentication?
+## Solution
 
-### [Access the SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md)
+SafeSquid allows bypassing authentication for specific applications while maintaining tracking for other traffic.
 
-![clicking on configure in safesquid intgerface](/img/How_To/Bypass_Authentication/image1.webp)
+## Setup Guide
 
-![clicking on search](/img/How_To/Bypass_Authentication/image2.webp)
+1. Access the [SafeSquid User Interface](/docs/01-Getting%20Started/Access%20the%20SafeSquid%20Interface.md) and click **Configure**.
 
-### Search policy: "BYPASS AUTHENTICATION" to Search
+   ![SafeSquid Configure](/img/How_To/Bypass_Authentication/image1.webp)
 
-![searching for "BYPASS AUTHENTICATION" policy](/img/How_To/Bypass_Authentication/image3.webp)
+2. Click **Search**.
 
-### Edit policy to Enable as TRUE (Access Restrictions)
+   ![Search function](/img/How_To/Bypass_Authentication/image2.webp)
 
-![clicking on edit to edit the policy](/img/How_To/Bypass_Authentication/image4.webp)
+3. Search for **BYPASS AUTHENTICATION**.
 
-![edit policy to bypass authentication for applications and for categories](/img/How_To/Bypass_Authentication/image5.webp)
+   ![Search results](/img/How_To/Bypass_Authentication/image3.webp)
 
-![cliking on add new to create a new policy as an example to bypass authentication](/img/How_To/Bypass_Authentication/image6.webp)
+4. Edit the policy and set **Enabled** to **TRUE**.
 
-### How to create new policy to bypass authentication for dropbox?
+   ![Edit policy](/img/How_To/Bypass_Authentication/image4.webp)
 
-![creating an example of dropbox](/img/How_To/Bypass_Authentication/image6.webp)
+   ![Enable bypass authentication](/img/How_To/Bypass_Authentication/image5.webp)
 
-### Go to Request Types
+## Create Custom Bypass Policy (Example: Dropbox)
 
-![going to request types](/img/How_To/Bypass_Authentication/image7.webp)
+5. Click **Add New** to create a custom bypass policy.
 
-![clicking on add new to add a new request type](/img/How_To/Bypass_Authentication/image8.webp)
+   ![Add new policy](/img/How_To/Bypass_Authentication/image6.webp)
 
-![creating a policy as an example to bypass HTTPS inspection for DROPBOX](/img/How_To/Bypass_Authentication/image9.webp)
+6. Navigate to **Request Types** section.
 
-![setting smart TLD as true to match all the dropbox websites](/img/How_To/Bypass_Authentication/image10.webp)
+   ![Request Types section](/img/How_To/Bypass_Authentication/image7.webp)
 
-![giving a unique name for the policy in added request type](/img/How_To/Bypass_Authentication/image11.webp)
+7. Click **Add New** to create a new request type.
 
-### Go to Access Profiles
+   ![Add new request type](/img/How_To/Bypass_Authentication/image8.webp)
 
-![for binding the created request type, go to access profiles in Restriction policies section](/img/How_To/Bypass_Authentication/image12.webp)
+8. Create a policy for Dropbox:
+   - Enter the domain pattern for Dropbox
+   - Set **Smart TLD** to **True** to match all Dropbox domains
 
-![creating a policy which will bind the created requst type by adding that in request type and giving a name for the policy in added profiles and writing relevant comment ](/img/How_To/Bypass_Authentication/image13.webp)
+   ![Dropbox policy configuration](/img/How_To/Bypass_Authentication/image9.webp)
 
-![creating a policy which will bind the created requst type by adding that in request type and giving a name for the policy in added profiles and writing relevant comment ](/img/How_To/Bypass_Authentication/image14.webp)
+   ![Smart TLD setting](/img/How_To/Bypass_Authentication/image10.webp)
 
-![clicking on save policy to save the policy](/img/How_To/Bypass_Authentication/image15.webp)
+9. Assign a unique name in the **Added Request Type** field.
+
+   ![Request type name](/img/How_To/Bypass_Authentication/image11.webp)
+
+10. Navigate to **Access Profiles** under Restriction Policies.
+
+    ![Access Profiles section](/img/How_To/Bypass_Authentication/image12.webp)
+
+11. Create a policy binding the request type:
+    - Add the created request type to **Request Types** field
+    - Assign a name in **Added Profiles**
+    - Add a descriptive comment
+
+    ![Bind request type](/img/How_To/Bypass_Authentication/image13.webp)
+
+    ![Policy configuration](/img/How_To/Bypass_Authentication/image14.webp)
+
+12. Click **Save Policy**.
+
+    ![Save policy](/img/How_To/Bypass_Authentication/image15.webp)

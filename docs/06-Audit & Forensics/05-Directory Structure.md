@@ -87,7 +87,7 @@ SafeSquid uses **pam\_unix.so** and **pam\_permit.so** files.
 /etc/sysctl.conf
 ```
 
-Contains the system tuning parameters, to increase the performance. SafeSquid modifies and saves this file for setting system variables. This file is a preload /configuration file that is used to modify kernel parameters at runtime. These parameters are listed under the\*\*/proc/sys\*\* directory.
+Contains the system tuning parameters, to increase the performance. SafeSquid modifies and saves this file for setting system variables. This file is a preload /configuration file that is used to modify kernel parameters at runtime. These parameters are listed under the**/proc/sys** directory.
 
 SafeSquid optimizes various Linux networking and system settings such as:
 
@@ -423,7 +423,7 @@ The SafeSquid service periodically checks and downloads the latest versions of t
 /var/lib/safesquid/ssqore
 ```
 
-Contains essential library files for the proper execution of the **Ssqore** module. All the Ssqore signatures are stored in the **parental\_sig** subfolder. SafeSquid service checks and downloads the latest **libbdupdatesdk.so** file and stores into \*\*an \*\*update subfolder on an hourly basis.
+Contains essential library files for the proper execution of the **Ssqore** module. All the Ssqore signatures are stored in the **parental\_sig** subfolder. SafeSquid service checks and downloads the latest **libbdupdatesdk.so** file and stores into **an **update subfolder on an hourly basis.
 
 ## Sqscan Dependency Files and Anti-Malware Signature Storage
 
