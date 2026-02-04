@@ -1,0 +1,40 @@
+---
+title: URL Redirection
+description: Configure URL redirection policies in SafeSquid to redirect websites, enforce safe search, and implement content steering for security and compliance.
+keywords:
+  - SafeSquid URL redirection
+  - proxy URL rewriting
+  - safe search enforcement
+  - website redirection policies
+  - content steering proxy
+  - URL filtering SafeSquid
+---
+
+## Redirect one website to another
+### [Access the SafeSquid User Interface ](/docs/SafeSquid%20SWG/Configuration%20Portal)
+SafeSquid includes sample policies to support policy creation. The sample policy "Enable interface access through authentication" is already present. Enable those policies to make them applicable.
+
+Click on 'Configure' which is at top right of the SafeSquid Interface.
+
+On the left side bar of SafeSquid Interface click on** Real Time Content Security   >> Redirect**
+
+Make the Global Section Enabled to TRUE.
+
+![Global Section Enabled to TRUE to access the SafeSquid User Interface ](/img/How_To/Redirect_One_Website_To_Another_Website/image1.webp)
+
+Click Redirection Policies to see default policies, then add a new policy.
+
+![Default policies in Redirection Policies section](/img/How_To/Redirect_One_Website_To_Another_Website/image2.webp)
+
+Create a policy as shown:
+
+![Policy to Redirect One Website To Another Website](/img/How_To/Redirect_One_Website_To_Another_Website/image3.webp)
+
+Click on save (Save button is placed at right bottom)
+
+### Verify redirect
+In this the URL value 'rediff.com' is redirect to 'SafeSquid.com' and the port to redirect to 80.
+
+In a browser, open https://www.rediff.com/, it must redirect to SafeSquid.com; verify in SafeSquid under Native logs on SafeSquid interface Reports >> Native logs as like below.
+
+![Verify Redirect One Website To Another Website in Native logs on](/img/How_To/Redirect_One_Website_To_Another_Website/image4.webp)

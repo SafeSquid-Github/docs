@@ -44,8 +44,6 @@ The SafeSquid SWG documentation is a comprehensive knowledge base for SafeSquid 
 docs/
 ├── docs/                    # Main documentation content
 │   ├── 01-Getting Started/ # Basic setup and installation
-│   ├── 02-SafeSquid SWG/   # Core application features
-│   ├── 03-SSL Inspection/  # Security configurations
 │   ├── ...                 # Additional feature sections
 │   └── 15-FAQs/           # Frequently asked questions
 ├── blog/                   # Security-related blog posts
@@ -66,7 +64,7 @@ docs/
 
 ### Mandatory Document Structure
 
-All how-to documents must include the following sections in this exact order:
+All how-to documents must include the following structure in this exact order. These are content and flow requirements—**do not use them as verbatim section headings**. Use specific, actionable headings that state the key point directly (see "Headings = bottomline" under Writing Style Requirements).
 
 #### 1. Problem Statement
 - **Security Challenge**: Briefly describe the security or operational challenge this feature addresses
@@ -108,8 +106,8 @@ All how-to documents must include the following sections in this exact order:
 
 #### Documentation Style Guide
 
-**PBAC Methodology**: Follow Problem → Benefit → Advantage → Call-To-Action structure
-- Focus heavily on the problem statement
+**PBAC Methodology**:
+- Focus 90% on the problem, and 10% on the rest
 - Use narrative style to tell the story of the problem & solution in natural deducing flow
 - Cover all cases to avoid ambiguity
 
@@ -188,41 +186,6 @@ Code blocks with syntax highlighting
 - **Mandatory**: Add screenshots & logs tied to each feature
 - Use diagrams wherever possible to illustrate complex concepts
 - Include interface screenshots for verification steps
-
-### Content Categories
-
-#### Installation and Setup Guides
-- Hardware requirements and provisioning
-- Step-by-step installation procedures
-- Initial configuration steps
-- Verification and testing procedures
-- **Must include**: Problem statement, benefits, prerequisites, call-to-action, verification, troubleshooting
-
-#### Configuration Documentation
-- Feature-specific setup procedures
-- Policy configuration examples
-- Integration guides for third-party systems
-- Best practice recommendations
-- **Must include**: Problem statement, benefits, prerequisites, call-to-action, verification, troubleshooting
-
-#### Troubleshooting Guides
-- Common issues and solutions
-- Diagnostic procedures
-- Performance troubleshooting
-- Security-related problems
-- **Must include**: Problem statement, benefits, prerequisites, call-to-action, verification, troubleshooting
-
-#### Use Case Documentation
-- Real-world implementation scenarios
-- Industry-specific configurations
-- Integration patterns
-- Case studies and examples
-- **Must include**: Problem statement, benefits, prerequisites, call-to-action, verification, troubleshooting
-
-### Competitive Positioning
-- Reference competitor solutions where relevant (Palo Alto Networks, Cato Networks, Netskope, Zscaler, Cisco, Forcepoint, Broadcom, Trend Micro, Sophos, Barracuda, Checkpoint, Versa, Cloudflare, Fortinet, HPE)
-- Highlight SafeSquid SWG advantages over competitors
-- Position features in context of market alternatives
 
 ## Content Creation Workflow
 
@@ -305,7 +268,7 @@ Brief introduction explaining the section's scope and purpose.
 
 #### Content Validation
 - [ ] All frontmatter is complete and accurate
-- [ ] Document follows mandatory structure (Problem Statement, Benefits, Prerequisites, Call-to-Action, Verification, Troubleshooting)
+- [ ] Document follows mandatory structure ( content blocks in order; headings need not be verbatim—use specific, bottom-line headings)
 - [ ] All headings are properly formatted and state key points directly
 - [ ] Code examples are tested and functional
 - [ ] Links are valid and point to correct resources
@@ -451,26 +414,6 @@ npm audit fix
 - Address reported issues promptly
 - Schedule regular content reviews and updates
 - Maintain documentation freshness and accuracy
-
-## Additional Resources
-
-### Documentation Templates
-- Installation guide template
-- Configuration reference template
-- Troubleshooting guide template
-- Use case scenario template
-
-### Writing Tools and Resources
-- Markdown editors for authoring
-- Screenshot capture tools for visual documentation
-- Diagram creation tools for technical illustrations
-- Code syntax highlighting reference
-
-### Support and Contact Information
-- SafeSquid technical support: help.safesquid.com
-- Community forum for discussions
-- Emergency documentation contacts
-- Escalation procedures for critical issues
 
 ---
 

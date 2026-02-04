@@ -7,7 +7,7 @@ keywords:
   - SafeSquid account creation
   - SafeSquid Self-Service Portal
   - SafeSquid license key
-  - SWG registration
+  - SafeSquid SWG registration
 ---
 
 ## Generate Activation Key

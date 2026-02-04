@@ -7,7 +7,7 @@ keywords:
   - SafeSquid activation key upload
   - SafeSquid self-service portal
   - SafeSquid WebGUI access
-  - SWG license management
+  - SafeSquid SWG license management
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,18 +15,18 @@ import TabItem from '@theme/TabItem';
 ## Licensing Overview and Activation Purpose
 
 SafeSquid requires valid licensing to enable full functionality and continuous availability. Two licensing options are available:
-- **Free Licensing**: Always free; supports core functionality without time restriction.
-- **Commercial Licensing**: Includes real-time threat intelligence updates, 365-day disaster recovery and backup, and email-based support.
+- **Free Licensing**: Always free; supports core functionality without time restriction
+- **Commercial Licensing**: Includes real-time threat intelligence updates, 365-day disaster recovery and backup, and email-based support
 
-License activation is completed after installation and is essential for activating subscription-based features and ensuring platform synchronisation.
+License activation is completed after installation and is essential for activating subscription-based features and ensuring platform synchronization.
 
-Activating multiple SafeSquid instances using the same activation key enables synchronisation of SSL certificates and configuration files across nodes.
+Activating multiple SafeSquid instances using the same activation key enables synchronization of SSL certificates and configuration files across nodes.
 
 ## Readiness Checklist
 
-### Client-Side Preparations
+### Client-side preparations
 
-- Ensure the SafeSquid server has unrestricted outbound Internet access.
+- Ensure the SafeSquid server has unrestricted outbound Internet access
 - Allow traffic through the firewall to the following endpoints and ports:
 
 **Licensing and Update Services**
@@ -50,25 +50,25 @@ Activating multiple SafeSquid instances using the same activation key enables sy
 | prourl.itonlinesecure.in | 8080 | /URLCategorizerService/URLCategorize |
 | encurl.itonlinesecure.in | 8080 | /URLCategorizerService/URLCategorize |
 
-- Validate DNS resolution and establish successful HTTPS connections to each host.
+- Validate DNS resolution and establish successful HTTPS connections to each host
 
-### SafeSquid-Side Setup
+### SafeSquid-side setup
 
-- Install and configure the SafeSquid service on the target system.
+- Install and configure the SafeSquid service on the target system
 
 ## Activation Procedure
 
-### Upload the Activation key 
+### Upload the activation key 
 
 First, configure browsers or network clients to route HTTP/HTTPS traffic through the SafeSquid proxy.
 
 ![uploading the activation key When accessing the interface for the first time, Picture](/img/License_Activation/image13.webp)
 
-![selecting your activation key file and clicking on upload, Picture](/img/License_Activation/image14.webp) 
+![selecting your activation key file and clicking on upload, Picture](/img/License_Activation/image14.webp)
 
-![clicking on restart, Picture](/img/License_Activation/image15.webp) 
+![clicking on restart, Picture](/img/License_Activation/image15.webp)
 
-![waiting for page refresh, Picture](/img/License_Activation/image16.webp) 
+![waiting for page refresh, Picture](/img/License_Activation/image16.webp)
 
 ## Validating Activation Success
 
@@ -83,6 +83,14 @@ First, configure browsers or network clients to route HTTP/HTTPS traffic through
 ![showing activation details in license details, Picture](/img/License_Activation/image18.webp)
 
 If these fields are present and valid, the license activation is confirmed.
+
+## Solution Verification
+
+- **Interface Checks**: Support → Activation Details shows product type, expiry (if applicable), and subscription status. Screenshot above (image17, image18) confirms the section.
+- **Log Analysis**: After activation, SafeSquid logs should show successful contact with licensing endpoints; failures appear as connection or subscription errors.
+- **Performance Validation**: Threat and category updates should run; [Reporting](/docs/Audit%20&%20Forensics/Reporting%20Module) and other subscription features are available.
+
+**Related**: [Registration](/docs/Getting%20Started/Registration), [Deployment Planning](/docs/Getting%20Started/Deployment%20Planning), [Installation Guide](/docs/Getting%20Started/Installation%20Guide/main), [Client Configuration](/docs/Getting%20Started/Client%20Configuration/main), [Troubleshooting](/docs/Troubleshooting/main)
 
 ## **Troubleshooting Activation Failures**
 
@@ -152,9 +160,9 @@ If these fields are present and valid, the license activation is confirmed.
 
     **Symptoms:**
 
-    - Even after uploading the activation key, subscription details remain unset.
+    - Even after uploading the activation key, subscription details remain unset
 
-    - The browser indicates the proxy server is refusing connections.
+    - The browser indicates the proxy server is refusing connections
 
     **Root Cause:** SafeSquid service was not restarted correctly after activation key upload.
 
