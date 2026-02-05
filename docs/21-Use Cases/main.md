@@ -49,3 +49,9 @@ This document outlines use cases and configurations for SafeSquid SWG. Each sect
     - Restrict AnyDesk usage based on security policies
 18. **[YouTube API Integration With SafeSquid To Allow Specific YouTube Videos](/docs/Use%20Cases/YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos)**
     - Integrate YouTube API with SafeSquid to filter and allow specific YouTube content
+19. **[Native Sandboxing](01-Native%20Sandboxing.md)**
+    - Use SafeSquid's native sandboxing to isolate and inspect suspicious web content before it reaches users
+20. **[Elevated Privacy](02-Elevated%20Privacy.md)**
+    - Block third-party cookies, hide referrers, and anonymize user-agent data to defend against tracking and preserve user privacy
+21. **[Working of Default Entries in Access Restrictions](working-of-default-entries-in-access-restrictions.md)**
+    - Understand how default access restriction policies control web access for users, groups, and applications

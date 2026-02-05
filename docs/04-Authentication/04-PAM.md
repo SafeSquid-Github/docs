@@ -12,4 +12,4 @@ keywords:
 
 ## Overview
 
-SafeSquid supports PAM (Pluggable Authentication Modules) for flexible system-level authentication integration.
+SafeSquid supports PAM (Pluggable Authentication Modules) for flexible system-level authentication integration. This page will cover configuring PAM as an authentication method in SafeSquid and linking to the system PAM stack. For other auth methods, see [Authentication](../main.md) and [Directory Services](03-Directory%20Services/main.md).

@@ -10,31 +10,14 @@ keywords:
   - URL filtering SafeSquid
 ---
 
-## Redirect one website to another
-### [Access the SafeSquid User Interface ](/docs/SafeSquid%20SWG/Configuration%20Portal)
-SafeSquid includes sample policies to support policy creation. The sample policy "Enable interface access through authentication" is already present. Enable those policies to make them applicable.
+# URL Redirection
 
-Click on 'Configure' which is at top right of the SafeSquid Interface.
+URL redirection lets SafeSquid send users to a different URL than the one requested. Use it to enforce safe search, steer traffic for compliance, or redirect specific sites to an alternative destination.
 
-On the left side bar of SafeSquid Interface click on** Real Time Content Security   >> Redirect**
+## Documents in this section
 
-Make the Global Section Enabled to TRUE.
+### [Enforce SafeSearch](SafeSearch.md)
+Search engines return explicit content when SafeSearch is not enforced. SafeSquid appends SafeSearch parameters to Google, Yahoo, and Bing queries so users cannot disable filtering. Enable SafeSearch policies for consistent content filtering across search traffic.
 
-![Global Section Enabled to TRUE to access the SafeSquid User Interface ](/img/How_To/Redirect_One_Website_To_Another_Website/image1.webp)
-
-Click Redirection Policies to see default policies, then add a new policy.
-
-![Default policies in Redirection Policies section](/img/How_To/Redirect_One_Website_To_Another_Website/image2.webp)
-
-Create a policy as shown:
-
-![Policy to Redirect One Website To Another Website](/img/How_To/Redirect_One_Website_To_Another_Website/image3.webp)
-
-Click on save (Save button is placed at right bottom)
-
-### Verify redirect
-In this the URL value 'rediff.com' is redirect to 'SafeSquid.com' and the port to redirect to 80.
-
-In a browser, open https://www.rediff.com/, it must redirect to SafeSquid.com; verify in SafeSquid under Native logs on SafeSquid interface Reports >> Native logs as like below.
-
-![Verify Redirect One Website To Another Website in Native logs on](/img/How_To/Redirect_One_Website_To_Another_Website/image4.webp)
+### [Redirect One Website to Another](01-Redirect_One_Website_to_Another.md)
+Organizations need to send traffic from one URL to another for branding, blocking, or compliance. This document covers enabling the Redirect section, creating redirection policies in Real Time Content Security, and verifying redirects in Native logs. Use it to configure and validate URL-to-URL redirection.

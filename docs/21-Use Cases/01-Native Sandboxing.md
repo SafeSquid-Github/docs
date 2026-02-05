@@ -15,4 +15,4 @@ keywords:
 
 ## Overview
 
-SafeSquid's native sandboxing provides built-in isolation capabilities for inspecting suspicious web content before it reaches end users.
+SafeSquid's native sandboxing provides built-in isolation capabilities for inspecting suspicious web content before it reaches end users. This page will cover enabling the feature, configuring sandbox boundaries, and verifying isolated execution.

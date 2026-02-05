@@ -24,20 +24,23 @@ Traditional proxy solutions create performance bottlenecks through sequential re
 
 ## Intelligent Content Caching
 
-### Content Caching: [Content Caching](01-Content Caching.md)
+### Content Caching: [Content Caching](01-Caching.md)
 Organizations face bandwidth constraints and latency issues when users repeatedly access the same web content, resulting in increased costs and poor user experience. Content Caching enables SafeSquid to store frequently accessed web content locally, serving cached copies instead of fetching fresh content from origin servers. This caching mechanism reduces bandwidth consumption, improves response times, and decreases server load while maintaining content freshness through intelligent cache management. Configure content caching in SafeSquid's Application Setup to enable intelligent content storage and delivery optimization.
 
 ## Predictive Content Prefetching
 
-### Pre Fetching: [Pre Fetching](02-Pre Fetching.md)
+### Pre Fetching: [Pre Fetching](02-Pre%20Fetching.md)
 Users experience delays when accessing web content that requires multiple round trips or contains embedded resources that load sequentially, creating poor user experience and reduced productivity. Pre Fetching enables SafeSquid to anticipate user needs and proactively fetch content before explicit requests, reducing perceived latency and improving browsing experience through intelligent prediction algorithms. This prefetching capability ensures faster content delivery while optimizing bandwidth usage and server resources. Configure prefetching rules in SafeSquid's Application Setup to enable predictive content delivery and performance optimization.
+
+## Bandwidth Management and Traffic Control
+
+### Bandwidth Management: [Bandwidth Management](03-Manage%20Bandwidth.md)
+Organizations need granular control over bandwidth allocation and usage patterns to ensure fair resource distribution, prevent network congestion, and optimize performance for critical applications. Bandwidth Management enables SafeSquid to control download speed, maximum download size, and upload size per user through the Limits feature. Configure bandwidth and data-handling policies in SafeSquid's Application Setup to implement traffic control and resource optimization.
+
+### Speed Limits: [Speed Limits](04-Speed%20Limits.md)
+Per-user or per-group bandwidth consumption must be capped to prevent abuse and ensure fair sharing. Speed Limits allow administrators to control download and upload speeds for individual users, groups, or content types. Configure speed limits in SafeSquid to enforce connection-level rate limits.
 
 ## WCCP Integration and Load Balancing
 
 ### WCCP: [WCCP](05-WCCP.md)
 Enterprise networks require seamless integration with existing routing infrastructure to enable transparent proxy deployment and load distribution across multiple proxy instances. WCCP integration enables SafeSquid to participate in Web Cache Communication Protocol for automatic traffic redirection, load balancing, and failover management through router-based traffic steering. This integration capability ensures transparent proxy operation while providing scalability and high availability through intelligent traffic distribution. Configure WCCP integration in SafeSquid's network settings to enable router integration and transparent proxy deployment.
-
-## Bandwidth Management and Traffic Control
-
-### Bandwidth Management: [Bandwidth Management](04-Bandwidth Management.md)
-Organizations need granular control over bandwidth allocation and usage patterns to ensure fair resource distribution, prevent network congestion, and optimize performance for critical applications. Bandwidth Management enables SafeSquid to implement comprehensive traffic shaping, rate limiting, and priority-based bandwidth allocation through intelligent traffic analysis and policy enforcement. This management capability ensures optimal network utilization while supporting quality of service requirements and preventing bandwidth abuse. Configure bandwidth management policies in SafeSquid's Application Setup to implement traffic control and resource optimization.

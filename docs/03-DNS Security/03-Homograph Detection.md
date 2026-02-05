@@ -13,4 +13,4 @@ keywords:
 
 ## Homograph detection blocks IDN impersonation
 
-Homograph detection identifies and blocks Internationalized Domain Name (IDN) attacks. Attackers use visually similar characters from different scripts to impersonate legitimate domains.
+Homograph detection identifies and blocks Internationalized Domain Name (IDN) attacks. Attackers use visually similar characters from different scripts to impersonate legitimate domains. This page will cover enabling homograph detection in DNS Security and configuring allowed or blocked IDN patterns.
