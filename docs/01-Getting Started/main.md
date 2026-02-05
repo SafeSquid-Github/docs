@@ -1,108 +1,69 @@
 ---
 title: Getting Started
-description: "Get started with SafeSquid SWG: registration, deployment planning, installation, and client configuration for application-layer web security."
+description: Get SafeSquid Secure Web Gateway running in 15 minutes — free, no agents, no credit card.
 keywords:
   - SafeSquid
   - Secure Web Gateway
-  - HTTP Proxy Server
-  - Application Layer Security
-  - Zero-Trust Web Security
+  - getting started
+  - quick start
 ---
+
+# Getting Started
 
 ## Welcome to SafeSquid!
 
-SafeSquid is the world's most advanced HTTP Proxy Server, specifically designed for Application Layer Security. The purpose-oriented architecture promises scalable performance while ensuring comprehensive mitigation of Layer 7 threats. SafeSquid-based Secure Web Gateway (SWG) shields enterprises from advanced cyber‑threats by delivering robust perimeter-level application layer security.
+SafeSquid is the world's most advanced HTTP Proxy Server, designed specifically for Application Layer Security. The purpose-oriented architecture delivers scalable performance while ensuring comprehensive mitigation of Layer 7 threats. SafeSquid-based Secure Web Gateway (SWG) shields enterprises from advanced cyber‑threats by delivering robust perimeter-level application layer security.
 
-Learn more [about SafeSquid SWG!](/docs/SafeSquid%20SWG/main)
+Learn more [about SafeSquid SWG](/docs/SafeSquid%20SWG/main).
 
-## In this section
-
-1. **[Registration](/docs/Getting%20Started/Registration)** — Create an account and obtain your activation key.
-2. **[Deployment Planning](/docs/Getting%20Started/Deployment%20Planning)** (includes Hardware Provisioning) — Size infrastructure, plan network and storage, and prepare the environment.
-3. **[Installation Guide](/docs/Getting%20Started/Installation%20Guide/main)** — Install SafeSquid via Appliance Builder, Private Cloud, or Linux Server.
-4. **[Client Configuration](/docs/Getting%20Started/Client%20Configuration/main)** — Configure browsers and clients to use SafeSquid (explicit proxy, PAC, system-wide, enterprise).
-5. **[License Activation](/docs/Getting%20Started/License%20Activation)** — Activate your SafeSquid instance with your activation key.
-
-## Typical High-Level Solution Architecture
-
-![Solution Architecture](/img/Getting-Started/Getting_Started_with_SafeSquid_Secure_Web_Gateway/image1.webp)
-
-In a typical organization setting, the amalgamation of [SafeSquid Application Eco-system](/docs/SafeSquid%20SWG/Application%20Ecosystem) constitutes the complete SWG solution.
-
-## Get activation key
-
-The product activation key is the unique secret required to activate and validate the authenticity of your SafeSquid.
-
-To generate the product activation key, create an account on the SafeSquid Self-Service portal. Registration is free and quick and does not require credit card details. Using a business email unlocks enterprise account benefits, like team onboarding and POC support. After registration, download the activation key.
-
-## Installation
-
-You can set up your secure web gateway using different installation mechanisms based on your deployment plan.
-
-### [SafeSquid Appliance Builder (Recommended)](/docs/Getting%20Started/Installation%20Guide/SafeSquid%20Appliance%20Builder)
-
-[SafeSquid Appliance Builder(SAB)](https://downloads.safesquid.com/appliance/safesquid.iso) is a security-enhanced ISO of the latest minimal Ubuntu LTS. On booting from the SAB ISO, Ubuntu is automatically installed, and SafeSquid SWG is downloaded and deployed with all necessary dependency libraries, and services. Using the SAB ISO, you may [create a virtual appliance on any virtualization infrastructure or create a hardware appliance on standard Intel Server hardware.](/docs/Getting%20Started/Installation%20Guide/Linux%20Server)
-
-### SafeSquid On Cloud
-
-To setup SafeSquid SWG on your preferred Cloud PaaS platform or your private cloud infrastructure, use our [cloud-init script](https://raw.githubusercontent.com/SafeSquid-Github/safesquid_cloud-init/main/safesquid_cloud-init.yaml).
-
-### Building from source
-
-If you want to setup SafeSquid on already existing infrastructure or if you want to use another Operating System in the Linux family other than Ubuntu, you can use the [TAR package](https://downloads.safesquid.com/appliance/binary/safesquid-2024.0715.1656.3-swg-concept.tar.gz). You will need to make some additional configurations, like [Monit](/docs/SafeSquid%20SWG/Supporting%20Services/Monit) and [BIND9](/docs/SafeSquid%20SWG/Supporting%20Services/Bind) services used by SafeSquid.
-
-## Activate your SafeSquid
-
-After successful installation, you must [activate your SafeSquid instance](/docs/Getting%20Started/License%20Activation).
-
-Configure your browser to use SafeSquid as the HTTP(S) proxy, access SafeSquid Interface [http://safesquid.cfg/](http://safesquid.cfg/), and upload the activation key.
-
-You can validate the activation under the license details section under the Support tab on the Interface.
-
-:::note
-
-The same key must be uploaded on every SafeSquid instance in the proxy cluster to ensure seamless synchronization between them.
-
+:::info What You'll Need
+- A server or VM — minimum 4 CPU cores, 8 GB RAM, 2 NICs
+- Internet connectivity for downloads and license activation
+- A browser on a machine that can reach the server
 :::
 
-## SSL Inspection
+## Steps to a Working SWG
 
-Since most of the web traffic is now encrypted, [enable HTTPS Inspection](/docs/SSL%20Inspection/main) to safeguard from hidden threats.
+1. **[Plan your deployment](/docs/Getting%20Started/Deployment%20Planning)** — Size hardware, plan network topology, and prepare your environment.
+2. **[Register and get your activation key](/docs/Getting%20Started/Register)** — Create an account on the Self-Service Portal and download your key.
+3. **[Install SafeSquid](/docs/Getting%20Started/Install%20SafeSquid/main)** — Deploy using the Appliance Builder ISO, cloud-init, or a TAR package.
+4. **[Activate your license](/docs/Getting%20Started/Activate)** — Upload your activation key and verify the license.
+5. **[Connect your client](/docs/Getting%20Started/Connect%20Your%20Client/main)** — Configure a browser or deploy proxy settings across your environment.
 
-On the [Self-Service Portal](/docs/SafeSquid%20SWG/Self-Service%20Portal), configure your Enterprise CA (Certificate Authority) as the Root SSL certificate. If you do not have an Enterprise CA, generate SafeSquid 's Self-Signed Certificate. Import the Root SSL certificate into client browsers' trusted authorities.
+:::tip Not sure which installation method to choose?
+Most users should start with the **Appliance Builder (SAB)** — it's the fastest way to a production-ready setup. See the **[Installation](/docs/Getting%20Started/Install%20SafeSquid/main)** page for a full comparison.
+:::
 
-## User Authentication
+## Solution Architecture
 
-SafeSquid SWG has a robust user and group identity management system, with multiple authentication options.
+![Solution Architecture](/img/Getting-Started/Getting_Started_with_SafeSquid_Secure_Web_Gateway/image1.webp)
+*The amalgamation of the SafeSquid Application Eco-system constitutes the complete SWG solution.*
 
-You can set up user authentication based on [device-specific network identifiers](/docs/Authentication/Network%20Signature), or your preferred credential verification system. Integrate with enterprise-grade directory services like [Microsoft® Windows Active Directory](/docs/Authentication/Directory%20Services/Active%20Directory/main),and [OpenLDAP](/docs/Authentication/Directory%20Services/OpenLDAP/main).
+## After Setup
 
-Furthermore, configure user verification via [basic authentication](/docs/Authentication/Directory%20Services/OpenLDAP/Simple%20Authentication) or [Kerberos (SSO)](/docs/Authentication/Directory%20Services/OpenLDAP/SSO%20Authentication) for seamless domain network access.
+Once your gateway is running:
 
-## [Custom Categories](/docs/Profiling%20Engine/Web%20Categorization)
+- **[Verify your setup](/docs/Getting%20Started/Verify%20Your%20Setup)** — Run quick smoke tests to confirm everything works end-to-end.
+- **[Next Steps](/docs/Getting%20Started/Next%20Steps)** — SSL inspection, authentication, security policies, and scaling.
 
-Manually classify websites into custom categories on the SafeSquid Self-Service Portal or SafeSquid interface as per the business use case.
+### Essential Configuration
 
-## Security Policies
+| Feature | Why It Matters |
+|---------|---------------|
+| **[SSL Inspection](/docs/SSL%20Inspection/main)** | Most web traffic is encrypted. Enable HTTPS inspection so SafeSquid can see and filter content. |
+| **[Authentication](/docs/Authentication/main)** | Connect Active Directory, OpenLDAP, or use network-based identity so policies apply per user. |
+| **[Custom Categories](/docs/Profiling%20Engine/Web%20Categorization)** | Classify websites into custom categories on the Self-Service Portal or SafeSquid interface. |
+| **[Security Policies](/docs/Profiling%20Engine/main)** | Enforce Zero-Trust Web Security using SafeSquid's Polymath Profiling Engine. |
+| **[Reporting](/docs/Audit%20&%20Forensics/main)** | In-depth forensics, usage reports, threat prevention reports, and real-time dashboards. |
 
-Achieve Zero-Trust Web Security strategy by enforcing the organization's web usage policies using SafeSquid's Polymath Profiling Engine, and Advanced Traffic Flow Management.
+### Integration
 
-## [Reporting](/docs/Audit%20&%20Forensics/Reporting%20Module)
+SafeSquid integrates with existing security infrastructure — firewalls, endpoint protection, third-party malware detection systems (ICAP), DLP systems, and SIEM platforms. See [Integrations](/docs/Integrations/main).
 
-SafeSquid offers in-depth reporting for process audit, system performance, and traffic forensic analysis. The reporting suite includes detailed web usage reports, threat prevention reports, system reports, and performance reports. An interactive real-time dashboard, also, offers customization, export, and distribution options to suit the organization's needs.
+### Customisation
 
-## Integrate with other security systems
+Alter dashboards, reporting interfaces, and [blocking templates](/docs/Customisation/Custom%20Templates) to match organizational branding. Administrators can also create custom bash scripts for specialized automation. See [Customisation](/docs/Customisation/main).
 
-Integrate with existing security infrastructure, such as firewalls, endpoint protection platforms, third-party malware detection systems, and SIEM systems, for a cohesive security posture.
+## Troubleshooting
 
-## Customization
-
-SafeSquid provides extensive options for customization to meet specific organizational demands and user experiences.
-
-You may alter the dashboard, reporting interfaces, and analytics to suit user preferences and requirements. You can also [customize blocking templates](/docs/Customisation/Custom%20Templates) to conform to organizational branding and communication styles. For specialized tasks and automation, administrators can use our comprehensive customization library or create their custom bash scripts.
-
-## [Troubleshooting](/docs/Troubleshooting/main)
-
-Troubleshooting is a cakewalk for any average Linux technician using the comprehensive SafeSquid Logs.
-
-You will find all the logs under **/var/log/safesquid/** directory. Tweak the LOGLEVEL to control the depth of logging required. In addition to this, you will find prompt assistance from the SafeSquid Community at any time.
+All logs are under `/var/log/safesquid/`. Adjust `LOGLEVEL` to control verbosity. For detailed guidance, see [Troubleshooting](/docs/Troubleshooting/main).

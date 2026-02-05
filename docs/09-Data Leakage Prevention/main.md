@@ -1,55 +1,126 @@
 ---
 title: Data Leakage Prevention
-description: Learn how SafeSquid protects organizations against insider threats and data leakage with DLP, virus scanning, real-time monitoring, and role-based access control.
+description: Protect against data exfiltration with SafeSquid's DLP engine — content analysis, request profiling, and compliance templates for regulatory requirements.
 keywords:
-  - insider threats protection
   - data leakage prevention
-  - safesquid DLP
-  - internal data breach defense
-  - endpoint protection
+  - SafeSquid DLP
+  - insider threat protection
   - content filtering
-  - in-memory virus scanning
-  - safesquid role-based access
-  - user activity monitoring
-  - insider risk management
+  - compliance templates
+  - sensitive data detection
+  - PCI HIPAA GDPR
 ---
 
-## Insider threats and data loss demand gateway controls
+# Data Leakage Prevention
 
-Surveys of IT security professionals show that many organizations have major gaps in protecting against insider threats. Not all data loss comes from external attacks. Inadvertent disclosure or mishandling of confidential data by employees is a significant factor. Weak IT security across devices invites hackers and fraudsters. Data loss ranks as the top concern; common insider issues include data leaks (63%), inadvertent breaches (57%), and malicious breaches (53%). The role of insiders in corporate vulnerability is large and growing.
+## Multi-layered protection against data exfiltration
 
-Insiders include both malicious actors and inattentive or complacent employees with no malicious intent.
+Data loss ranks as the top security concern for organizations. Whether from malicious insiders, careless employees, or compromised accounts, sensitive data leaving the network represents significant risk. SafeSquid's DLP capabilities address data leakage through multiple layers of inspection and control.
 
-Internal attacks include data leakage, intellectual property theft, and data corruption or loss.
+## DLP Components
 
-SafeSquid mitigates insider threats with advanced security and risk-management solutions.
+| Component | Function | Documentation |
+|-----------|----------|---------------|
+| **Text Analyser** | Score text content using signatures, heuristics, and pattern matching | [Text Analyser](/docs/Profiling%20Engine/Content%20Analyser/Text%20Analyser) |
+| **Image Analyser** | Analyze images in real-time for inappropriate content | [Image Analyser](/docs/Profiling%20Engine/Content%20Analyser/Image%20Analyser%20AI) |
+| **Request Profiles** | Classify traffic by destination, application, and behavior | [Request Profiles](/docs/Profiling%20Engine/Request%20Profiles) |
+| **Compliance Templates** | Pre-built patterns for PCI-DSS, HIPAA, GDPR | [Compliance Templates](01-Compliance%20Templates.md) |
+| **ICAP Integration** | External DLP and antivirus via ICAP protocol | [Malware Scanners](/docs/Malware%20Scanners/main) |
 
-SafeSquid's DLP module addresses data leakage. The DLP module restricts users from downloading or uploading specific file types. In-memory virus scanners such as SqScan block virus-infected uploads and downloads. Role-based access keeps the organization protected from internal attacks.
+## Using Request Profiles for DLP
 
-## Capabilities provided by SafeSquid
+Request Profiles classify traffic by destination, enabling targeted DLP enforcement. Instead of scanning all traffic, apply DLP rules only to high-risk channels.
 
-**Data loss prevention**
+### Pattern: Targeted DLP Enforcement
 
-Data loss prevention (DLP) ensures that end users do not send sensitive or critical information outside the corporate network. DLP software lets network administrators control what data end users can transfer. Studies show that internal data leakage often outweighs external leakage. Insider threat is hard to guard when someone uses legitimate access for improper purposes. DLP detects files containing confidential information and prevents them from leaving via the network.
+1. **Create Request Profile** for high-risk destinations (e.g., personal cloud storage)
+   - Host pattern: `dropbox\.com|drive\.google\.com` (personal accounts)
+   - Added Profile: `PERSONAL_CLOUD`
 
-Below are general statistics regarding data leakage.
+2. **Create Text Analyser rule** that triggers only for the profile
+   - Profiles: `PERSONAL_CLOUD`
+   - Keywords: Credit card or PII patterns
+   - Action: Block
 
-![Data leak statistics](/img/How_To/Defend_Against_Internal_Threats_And_Data_Leakage/image1.webp)
+3. **Result:** Sensitive data detection only on risky channels, reducing false positives
 
-**In-memory virus scanning**
+### Example: Block Credit Cards to Personal Email
 
-Malware reaches systems mainly through the Internet and the web. No single method fully secures a computer. Multiple layers of defense reduce the chance of compromise.
+```
+Request Profile:
+- Host Name: mail\.google\.com|mail\.yahoo\.com|outlook\.live\.com
+- Added Profile: PERSONAL_WEBMAIL
 
-Administrators can integrate different virus scanners in the ICAP module. By default SafeSquid includes the SqScan virus engine, which blocks uploads and downloads of infected files.
+Text Analyser:
+- Profiles: PERSONAL_WEBMAIL
+- Keywords: (?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})
+- Score: 100
+- Threshold: 100
+- Action: Block
+```
 
-**Role-based access**
+### Example: Detect Large Uploads to File Sharing
 
-Large networks have many users; provisioning correct access for everyone is difficult. Granting full access to all users causes backlogs, long waits, bandwidth loss, and unnecessary rights that increase breach risk.
+```
+Request Profile:
+- Host Name: wetransfer\.com|sendspace\.com|mediafire\.com
+- Method: POST, PUT
+- Minimum Post Data Size: 5242880 (5 MB)
+- Added Profile: LARGE_UPLOAD_FILESHARE
 
-SafeSquid supports role-based access for provisioning. Administrators restrict user access by role and can integrate any centralized user management system with SafeSquid.
+Access Restriction:
+- Profiles: LARGE_UPLOAD_FILESHARE
+- Action: Block or require approval
+```
 
-**Real-time monitoring**
+## Protection Layers
 
-Real-time monitoring (e.g. SafeSquid Reporting Module) provides visibility into the system and alerts when conditions look wrong.
+| Layer | Capability | Detects |
+|-------|------------|---------|
+| **Destination** | Request Profiles | Where data is going (cloud, email, social) |
+| **Content** | Text Analyser | What the data contains (PII, secrets, keywords) |
+| **Visual** | Image Analyser | Inappropriate images, sensitive screenshots |
+| **File Type** | MIME Filtering | Prohibited file formats (executables, archives) |
+| **Size** | Upload Limits | Unusually large transfers |
+| **Identity** | Role-Based Access | Who is attempting the transfer |
 
-Example: if four new users were granted access to a critical application in one week, the administrator can be alerted. Real-time monitoring surfaces such events so the administrator can investigate and mitigate breach risk.
+## Common DLP Scenarios
+
+### Block Credit Card Uploads to Personal Cloud
+1. Create Request Profile for personal cloud services
+2. Create Text Analyser rule with credit card patterns for that profile
+3. Block and log matches
+
+### Detect Source Code Exfiltration
+1. Create patterns for code syntax (`function`, `class`, `import`)
+2. Combine with Request Profiles for file sharing sites
+3. Alert security team on matches above threshold
+
+### Prevent Medical Record Leakage
+1. Use HIPAA compliance templates (SSN, MRN, PHI keywords)
+2. Apply to all outbound traffic or specific high-risk channels
+3. Block and generate compliance report
+
+## Deployment Approach
+
+### Phase 1: Visibility
+Enable Request Profiles and logging to understand baseline activity. Identify high-risk channels and user behaviors.
+
+### Phase 2: Detection
+Configure Text Analyser with [Compliance Templates](01-Compliance%20Templates.md). Run in logging mode to assess detection accuracy.
+
+### Phase 3: Enforcement
+Enable blocking for high-confidence detections. Start with most sensitive data categories (PCI, PHI) and expand coverage.
+
+### Phase 4: Reporting
+Configure regular DLP reports for compliance audits. Track trends via [Reporting Module](/docs/Audit%20&%20Forensics/Reporting%20Module).
+
+## On-Premises Advantage
+
+All DLP processing occurs on-premises:
+- Sensitive content never transmitted to external services
+- Full log ownership for audit requirements
+- No dependency on cloud availability
+- Compliant with data residency regulations
+
+**Related**: [Compliance Templates](01-Compliance%20Templates.md), [Text Analyser](/docs/Profiling%20Engine/Content%20Analyser/Text%20Analyser), [Image Analyser](/docs/Profiling%20Engine/Content%20Analyser/Image%20Analyser%20AI), [Request Profiles](/docs/Profiling%20Engine/Request%20Profiles), [Access Restriction](/docs/Access%20Restriction/main)

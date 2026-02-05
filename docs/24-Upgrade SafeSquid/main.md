@@ -55,4 +55,4 @@ It’s the ideal option for keeping your deployment current without altering the
 - [OS Upgrade Guide →](/docs/Upgrade%20SafeSquid/OS%20Upgrade/main)
 - [Version Upgrade Guide →](/docs/Upgrade%20SafeSquid/Version%20Upgrade/main)
 
-For installation instructions, see the [Installation Section](/docs/Getting%20Started/Installation%20Guide/main).
+For installation instructions, see the [Installation Section](/docs/Getting%20Started/Install%20SafeSquid/main).

@@ -221,3 +221,96 @@ This is useful to remove authentication or bypass SSL inspection only for a spec
 **Example:** When google.com is blocked organization-wide, allow only Google Keep while keeping other Google services blocked. Using Google Keep's host name, create a Request profile for Google Keep. That Request type allows access to Google Keep while other Google services remain blocked.
 
 ![showing rule created for google keep](/img/Configure/Custom_Settings/Request_Types/image8.webp)
+
+---
+
+## User Activity Visibility
+
+Request Profiles enable visibility into user activity patterns. Create profiles to classify traffic by service, application, or behavior.
+
+### Cloud Storage Services
+
+Track uploads and downloads to cloud storage:
+
+| Service | Host Pattern | Profile Tag |
+|---------|--------------|-------------|
+| Google Drive | `drive\.google\.com\|docs\.google\.com` | `CLOUD_GDRIVE` |
+| Dropbox | `dropbox\.com\|dropboxapi\.com` | `CLOUD_DROPBOX` |
+| OneDrive | `onedrive\.live\.com\|sharepoint\.com` | `CLOUD_ONEDRIVE` |
+| Box | `box\.com\|boxcloud\.com` | `CLOUD_BOX` |
+| iCloud | `icloud\.com` | `CLOUD_ICLOUD` |
+
+**Tip:** Use Method GET for downloads, POST/PUT for uploads to distinguish activity type.
+
+### Social Media Platforms
+
+Monitor social media usage and distinguish browsing from posting:
+
+| Platform | Host Pattern | Profile Tag |
+|----------|--------------|-------------|
+| Facebook | `facebook\.com` | `SOCIAL_FACEBOOK` |
+| Twitter/X | `twitter\.com\|x\.com` | `SOCIAL_TWITTER` |
+| LinkedIn | `linkedin\.com` | `SOCIAL_LINKEDIN` |
+| Instagram | `instagram\.com` | `SOCIAL_INSTAGRAM` |
+
+### Webmail Services
+
+Track webmail usage:
+
+| Service | Host Pattern | Profile Tag |
+|---------|--------------|-------------|
+| Gmail | `mail\.google\.com` | `WEBMAIL_GMAIL` |
+| Outlook | `outlook\.live\.com\|outlook\.office\.com` | `WEBMAIL_OUTLOOK` |
+| Yahoo Mail | `mail\.yahoo\.com` | `WEBMAIL_YAHOO` |
+| ProtonMail | `mail\.protonmail\.com` | `WEBMAIL_PROTON` |
+
+### Desktop Applications
+
+Identify applications by User Agent:
+
+| Application | User Agent Pattern | Profile Tag |
+|-------------|-------------------|-------------|
+| Microsoft Teams | `Teams\|SkypeSpaces` | `APP_TEAMS` |
+| Slack | `Slack` | `APP_SLACK` |
+| Zoom | `Zoom` | `APP_ZOOM` |
+| Webex | `Webex\|Cisco` | `APP_WEBEX` |
+| VS Code | `VSCode\|Visual.Studio.Code` | `APP_VSCODE` |
+
+### AI Tools
+
+Track AI assistant usage:
+
+| Service | Host Pattern | Profile Tag |
+|---------|--------------|-------------|
+| ChatGPT | `chat\.openai\.com\|chatgpt\.com` | `AI_CHATGPT` |
+| Claude | `claude\.ai` | `AI_CLAUDE` |
+| Gemini | `gemini\.google\.com` | `AI_GEMINI` |
+| Copilot | `copilot\.microsoft\.com` | `AI_COPILOT` |
+
+### Large File Transfers
+
+Detect large uploads by combining method and size:
+
+- **Method:** POST or PUT
+- **Content Type:** `application/octet-stream|multipart/form-data`
+- **Minimum Post Data Size:** 1048576 (1 MB)
+- **Added Profile:** `LARGE_FILE_UPLOAD`
+
+### Profile Priority
+
+Profiles are evaluated top-to-bottom. Order entries from most specific to most general:
+
+1. Specific application endpoints
+2. Service-level patterns
+3. Category-level patterns
+4. Catch-all patterns
+
+### Best Practices
+
+1. **Use meaningful names** — Profile tags should be self-documenting
+2. **Group by category** — `CLOUD_*`, `SOCIAL_*`, `WEBMAIL_*`
+3. **Separate read/write** — Distinguish GET (read) from POST/PUT (write)
+4. **Regular review** — Update patterns as new services emerge
+5. **Combine with DLP** — Use profiles to trigger [Data Leakage Prevention](/docs/Data%20Leakage%20Prevention/main) policies
+
+**Related**: [Data Leakage Prevention](/docs/Data%20Leakage%20Prevention/main), [Access Restriction](/docs/Access%20Restriction/main), [Reporting Module](/docs/Audit%20&%20Forensics/Reporting%20Module)
