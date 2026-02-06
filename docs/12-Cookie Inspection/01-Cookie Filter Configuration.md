@@ -1,6 +1,6 @@
 ---
 title: Cookie Filter Configuration and Reference
-description: Configure and reference SafeSquid cookie filter: Global, Allow, and Deny rules, expiry and profile options, and solution verification.
+description: "Configure and reference SafeSquid cookie filter: Global, Allow, and Deny rules, expiry and profile options, and solution verification."
 keywords:
   - cookie filter configuration SafeSquid
   - cookie allow deny rules

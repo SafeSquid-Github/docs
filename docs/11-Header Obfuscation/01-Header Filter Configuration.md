@@ -1,6 +1,6 @@
 ---
 title: Header Filter Configuration and Reference
-description: Configure SafeSquid header filter: Global, Allow, Deny, Insert rules, and solution verification.
+description: "Configure SafeSquid header filter: Global, Allow, Deny, Insert rules, and solution verification."
 keywords:
   - header filter configuration SafeSquid
   - header allow deny insert

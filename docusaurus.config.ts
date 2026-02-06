@@ -12,11 +12,6 @@ const config: Config = {
   organizationName: 'SafeSquid-Github',
   projectName: 'docs',
   onBrokenLinks: 'warn',
-  markdown: {
-    hooks: {
-      onBrokenMarkdownLinks: 'warn',
-    },
-  },
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
