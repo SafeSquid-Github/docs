@@ -1,11 +1,11 @@
 ---
 title: Integrated DNS Security
-description:
-
+description: DNS security integration with DNSBL service to block malicious domain resolution and protect against DNS-based threats in SafeSquid.
 keywords:
   - Secure Web Gateway Components
   - Integrated DNS Security
   - DNSBL Service
+  - DNS threat protection
 ---
 
 # Integrated DNS Security

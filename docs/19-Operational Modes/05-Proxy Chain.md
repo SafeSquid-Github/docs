@@ -1,0 +1,132 @@
+---
+title: Proxy Chain
+description: Deploy SafeSquid behind a parent proxy with proxy chaining, HTTPS inspection, and request forwarding for enterprise integration.
+keywords:
+  - Deploy SafeSquid behind proxy
+  - SafeSquid proxy chaining
+  - Configure parent-child proxy
+  - SafeSquid forwarding proxy setup
+  - SafeSquid behind corporate firewall
+---
+
+## Overview
+Use SafeSquid in front of the corporate proxy. A simple configuration in SafeSquid server, will forward all client requests to the forward proxy i.e. Parent Proxy.
+
+Traffic flows from the client through the child SafeSquid to the parent proxy, then to the internet:
+
+```mermaid
+flowchart LR
+  Client[Client browser]
+  Child[Child SafeSquid]
+  Parent[Parent proxy]
+  Internet[Internet]
+  Client --> Child
+  Child --> Parent
+  Parent --> Internet
+```
+
+Example scenarios:
+
+![Proxy chain scenario: client, child proxy, and parent proxy network layout](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image1.webp)
+
+Here am using two proxy servers as SafeSquid only
+
+My client (Browser)## 's network IP - 192.168.0.27
+
+My Child Proxy## 's network IP - 192.168.27.50 (with no direct internet Access)
+
+My Parent Proxy## 's network IP - 192.168.27.100
+
+**Configuration on child proxy:**
+
+1. Deploy SafeSquid proxy
+2. Enabling SSL inspection in SafeSquid
+3. Downloading ROOT CA certificate from SafeSquid
+4. Deploy certificate in client browsers.
+5. Enable forwarding to parent proxy using forwarding section
+
+**Configuration on Parent proxy:**
+
+Deploy SafeSquid, it is up and running, no extra configuration required in parent proxy
+
+## Prerequisites
+Enable HTTPS inspection on child proxy (if you want,on Parent proxy also). Check our document to configure HTTPS inspection on SafeSquid - [How to configure HTTPS inspection](/docs/SSL%20Inspection/main)
+
+Import SafeSquid child proxy ROOT CA in client browser
+
+Note: No configuration required on Parent Proxy server. Just deploy the parent proxy and make sure that it is up and running.
+
+## [Access The SafeSquid User Interface](/docs/SafeSquid%20SWG/Configuration%20Portal)
+## Go to Configure
+![Configure page in SafeSquid interface](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image2.webp)
+
+## Go to Application Setup
+![Application Setup section in sidebar](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image3.webp)
+
+## Go to Proxy chain
+![Proxy chain section in Application Setup](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image4.webp)
+
+## Enable Global section
+![Enable Global section for proxy chain](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image5.webp)
+
+![Global proxy chain toggle and options](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image6.webp)
+
+![Saving Global proxy chain configuration](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image7.webp)
+
+## Go to Forwarding proxies
+![Forwarding proxies section](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image8.webp)
+
+## Add an entry
+![Add new forwarding proxy entry](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image9.webp)
+
+![Forwarding proxy form with comment field](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image10.webp)
+
+![Entering parent proxy host or IP](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image11.webp)
+
+![Forwarding proxy entry with IP 192.168.27.100](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image12.webp)
+
+In the example: my upstream proxy ip: 192.168.27.100
+
+![Entering parent proxy port](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image13.webp)
+
+![Forwarding proxy port 8080 configured](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image14.webp)
+
+In example: my upstream proxy listening on port 8080
+
+![Submit forwarding proxy entry](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image15.webp)
+
+![Forwarding proxy list with new entry](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image16.webp)
+
+![Save configuration button](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image17.webp)
+
+![Save conf confirmation](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image18.webp)
+
+![Configuration saved successfully](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image19.webp)
+
+## Testing
+![Testing proxy chain connectivity](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image20.webp)
+
+![Proxy chain test result or log](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image21.webp)
+
+![Verifying traffic through parent proxy](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image22.webp)
+
+## Save configuration
+![Save configuration to apply proxy chain settings](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image23.webp)
+
+When you click on Save config, it will give a prompt for asking the confirmation to store your configuration into the cloud.
+
+Select Yes only in below cases:
+
+if you want to use this same configuration in other SafeSquid instances.
+
+if your total configuration in all sections is completed and validated.
+
+Otherwise select No and click on submit.
+
+## Solution Verification
+
+- **Interface Checks**: In [Configuration Portal](/docs/SafeSquid%20SWG/Configuration%20Portal), open Application Setup → Proxy chain. Confirm Global is enabled and the forwarding proxy entry shows the correct parent IP and port.
+- **Log Analysis**: Check SafeSquid access logs for requests showing the parent proxy as upstream; connection failures to the parent appear in logs with connect errors.
+- **Performance Validation**: From a client behind the child proxy, browse an external site; traffic should succeed and appear in both child and parent proxy logs.
+
+**Related**: [Forward Proxy](01-Forward%20Proxy.md), [SSL Inspection](/docs/SSL%20Inspection/main), [Troubleshooting](/docs/Troubleshooting/main)

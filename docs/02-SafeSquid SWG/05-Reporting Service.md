@@ -1,10 +1,11 @@
 ---
 title: Reporting & Forensics
-description:
-
+description: Centralized log aggregation and reporting for SafeSquid proxy nodes providing user activity insights, traffic analysis, and forensic capabilities.
 keywords:
   - Secure Web Gateway Components
   - Reporting
+  - SafeSquid logging
+  - proxy forensics
 ---
 
 # Reporting Service
