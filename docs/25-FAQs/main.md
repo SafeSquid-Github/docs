@@ -1,5 +1,6 @@
 ---
-title: FAQ
+title: FAQs
+slug: /FAQs
 description: Frequently asked questions about SafeSquid Secure Web Gateway covering installation, configuration, licensing, and troubleshooting common issues.
 keywords:
   - SafeSquid FAQ
@@ -9,6 +10,24 @@ keywords:
   - SafeSquid support
   - SafeSquid SWG FAQ
 ---
+
+# FAQs
+
+This section answers common questions about SafeSquid SWG: installation, activation, licensing, proxy modes, reporting, transparent proxy, WCCP, DLP, SafeSearch, and troubleshooting. Use the list below to jump to a topic.
+
+## FAQ index
+
+- [What is SafeSquid for Windows?](#what-is-safesquid-for-windows)
+- [Where to get a product activation key](#where-to-get-a-product-activation-key)
+- [What is SafeSquid Self Service portal?](#what-is-safesquid-self-service-portal)
+- [Who has access to the SafeSquid Web GUI](#who-has-access-to-the-safesquid-web-gui)
+- [How to confirm SafeSquid is activated](#how-to-confirm-safesquid-is-activated)
+- [Where to get license details](#where-to-get-license-details)
+- [Why does "Proxy Access Denied" appear?](#why-does-proxy-access-denied-appear)
+- [Does SafeSquid supports transparent proxy?](#does-safesquid-supports-transparent-proxy)
+- [When to enable WCCP](#when-to-enable-wccp)
+- [How does SafeSquid licensing work?](#how-does-safesquid-licensing-work)
+- [How to purchase SafeSquid SWG](#how-to-purchase-safesquid-swg)
 
 ## What is SafeSquid for Windows?
 SafeSquid for Windows is content filtering proxy server. SafeSquid for Linux has been natively ported for use on Microsoft Windows platform, and distributed as SafeSquid for Windows. It provides total access control, Total Content Control & Total Internet Security. SafeSquid for Windows can be installed on any desktop/server having Microsoft Windows based 64-bit Operating Systems.
@@ -23,7 +42,7 @@ The SafeSquid Self-Service Portal is the cloud-based management console for Safe
 
 The SafeSquid Self-Service Portal manages the activities like, SafeSquid cloud-backed features, Custom Web Categorization, Web Security Clients for Roaming users (VPN), Confidential Data Signatures, Subscription management, etc.
 
-Read more about Management of Self-Service Portal
+Read more: [Self-Service Portal](../02-SafeSquid_SWG/04-Self-Service_Portal.md).
 
 ## Who has access to the SafeSquid Web GUI
 SafeSquid has an intrinsic Web GUI, that enables administrators to manage the installation, setup required policies, and monitor the secure web gateway.
@@ -36,7 +55,7 @@ If all websites are accessible through the browser, the product is activated.
 ## Where to get license details
 After successful activation, license details appear on the Support page of the SafeSquid Web GUI.
 
-For more details follow- LINK
+For more details see the [Support page](../15-Audit_Forensics/main.md) (license details after activation) or [Activate](../01-Getting_Started/04-Activate.md).
 
 ## Why does "Proxy Access Denied" appear?
 "Proxy Access Denied" appears when access restriction policies are misconfigured or the administrator has not granted SafeSquid Interface access.
@@ -82,11 +101,11 @@ Preventing access to porn sites
 ## Preventing access to social networking sites
 Yes. SafeSquid can prevent users from accessing social networking sites. When configured, SafeSquid blocks all social networking sites by default. Administrators can allow those sites for specific times (e.g. lunch hour).
 
-Allow social networking sites in lunch hours follow -- [LINK](/docs/Use%20Cases/Allow_Social_Networking_Sites_during_Lunch_Hours)
+Allow social networking sites in lunch hours: [Allow Social Networking Sites During Lunch Hours](../21-Use_Cases/Allow_Social_Networking_Sites_during_Lunch_Hours.md).
 
 Facebook is a social networking website that allows users to interact with other users in a multimedia environment on the Web. Facebook users can install and use applications to enhance their experience. Many organizations want to allow Facebook access to maintain morale, increase retention, and boost hiring, but they also want to control access to it.
 
-SafeSquid allows full Facebook access for a social media group, partial access to a customer service group, and read-only access to other groups. Access to Facebook can also assigned by time of day, so permissions could relax during lunch or after business hours. For more details follow - LINK
+SafeSquid allows full Facebook access for a social media group, partial access to a customer service group, and read-only access to other groups. Access to Facebook can also be assigned by time of day. For more details: [Facebook Read-Only Mode](../21-Use_Cases/Facebook_Read_Only_Mode.md), [Allow Specific Page on Facebook](../21-Use_Cases/Allowing_Specific_Page_on_Facebook.md).
 
 ## Preventing users from uploading confidential data
 Yes. SafeSquid can prevent users from uploading confidential data. When an organization has confidential information and an internal user leaks it intentionally or unintentionally, productivity loss can be large.
@@ -109,14 +128,14 @@ SafeSquid DLP section is nothing but **Data Loss Prevention module**, used to pr
 It is possible by blocking the specific file types or file extensions based on Content type and extension of file types.
 
 ## Can I prevent users to use anonymous proxy?
-Yes you can prevent users from using anonymous proxy using SafeSquid.
+Yes. SafeSquid can prevent users from using anonymous proxy.
 
-An anonymous proxy will allow users to surf the web anonymously, since it tunnels your data through servers that spread out across the globe and involve other IP addresses.
+An anonymous proxy will allow users to surf the web anonymously, since it tunnels traffic through servers that spread out across the globe and involve other IP addresses.
 
-Anonymous Proxy service enhances your security and lets your users access some restricted websites online.
+Anonymous Proxy service can enhance security and lets users access some restricted websites online.
 
 
-For more detail follow -- How to block anonymous proxies
+For more detail: [Access Restriction](../08-Access_Restriction/main.md) and [Use Cases](../21-Use_Cases/main.md) for blocking anonymous proxies and application control.
 
 
 ## Should third-party cookies be blocked?
@@ -149,7 +168,8 @@ SafeSquid reporting supports export to PDF and Excel. Open the SafeSquid interfa
 ## Can reports be generated for specific dates?
 Yes. SafeSquid has a reporting module that reduces processing time and provides detailed reports, hour-wise reports, filtering options, deeper data analysis, an automated data mining engine, and export to PDF and Excel.
 
-My SafeSquid becomes very slow after it has been running for some time? Why?
+## Why does SafeSquid become slow after running for some time?
+Slowness after sustained operation is often due to resource exhaustion (disk, memory, or connection state). Check disk space and RAM (see [Disk space and RAM are full](../23-Troubleshooting/Disk_Space_and_RAM_are_Full.md)), clear or rotate logs, and review the [Performance Plot](../15-Audit_Forensics/03-Performance_Plot.md) and [Support](../15-Audit_Forensics/main.md) page for resource usage. Restart the proxy after freeing resources if needed.
 
 ## How does SafeSquid licensing work?
 SafeSquid SWG is available with annual subscription.

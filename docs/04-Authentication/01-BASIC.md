@@ -13,25 +13,33 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Overview
+:::info CISO takeaway
+**Risk:** Without user identity, access policies cannot be enforced per user; anonymous proxy access increases misuse and complicates audit. **Control:** Local credential store (BASIC) provides browser-prompt authentication and user-level policies without a directory. **Evidence:** Identity and access logs record authenticated usernames; policies tie to user identity for audit trail.
+:::
 
-Organizations without Active Directory often struggle to enforce identity-based web access due to the absence of centralized directory services. SafeSquid enables authentication via browser prompts by assigning usernames and passwords stored locally. This configuration eliminates LDAP dependency, simplifies access control, and enforces user-level policies using HTTP Basic Authentication integrated into SafeSquid’s credential manager.
+## Problem: Identity-based access without a directory
 
-## Requirements Overview
+Organizations without Active Directory need identity-based web access control. Absence of centralized directory prevents per-user policies and audit attribution. SafeSquid local credential store (BASIC) enables authentication via browser prompts with usernames and passwords stored in SafeSquid. User-level policies and logs then support accountability and compliance.
 
-### User-Side Requirements
+## Key benefits
+
+Eliminates LDAP dependency for small or isolated environments. Access control and logging apply per user. HTTP Basic Authentication is integrated into SafeSquid credential manager. No directory infrastructure is required. Supports audit evidence for user-level access (e.g. SOC 2, ISO 27001 A.9); identity and access logs show authenticated usernames for auditors. **Limitation:** Credentials are stored in SafeSquid; no SSO or directory-backed MFA. Use when a directory is not available; for centralized identity, use [Directory Services](03-Directory_Services/main.md).
+
+## Prerequisites
+
+### Client-side
 
 - Modern browser with HTTP Basic Authentication support
-- Pre-configured proxy in browser settings (manual or via PAC file)
+- Proxy configured in browser (manual or via PAC file)
 
-### SafeSquid-Side Preparation
+### SafeSquid-side
 
 - SafeSquid deployed and operational on internal network
-- Admin access to SafeSquid's configuration interface
+- Admin access to SafeSquid configuration interface
 - "Enable Authentication" set in access profiles
 - Policy management interface available via HTTP/HTTPS
 
-## Setup Browser Authentication
+## Call to action: Setup browser authentication
 
 1. **Ensure SafeSquid is Installed and Running**\
    Access the SafeSquid configuration interface at `http://safesquid.cfg/` through a browser using the SafeSquid proxy.
@@ -46,9 +54,9 @@ Organizations without Active Directory often struggle to enforce identity-based 
    ![Making the PAM authentication false and adding username and password in the username password field](/img/How_To/Setup_Authentication/image3.webp)
 
 4. **Save the Configuration**\
-   Click the checkmark to save the rule. A browser prompt will now appear asking for username and password when accessing the internet.
+   Click the checkmark to save the rule. A browser prompt will appear for username and password when accessing the internet.
 
-## Add User
+## Call to action: Add user
 
 <Tabs>
   <TabItem
@@ -73,8 +81,8 @@ Organizations without Active Directory often struggle to enforce identity-based 
     ![Configuration saved for BASIC authentication](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image14.webp)
   </TabItem>
 
-  <TabItem value="From Linux Terminal" label="From Linux Terminal" default>
-    Instead of using the SafeSquid configuration interface, users can also be created directly on the Linux machine where SafeSquid is installed:
+  <TabItem value="From Linux Terminal" label="From Linux Terminal">
+    Alternatively, create users on the Linux host where SafeSquid is installed:
 
     1. **Create a New User**\
        Run the following command in terminal:
@@ -94,21 +102,24 @@ Organizations without Active Directory often struggle to enforce identity-based 
   </TabItem>
 </Tabs>
 
-## Authentication Verification
+## Verification and Evidence
 
-- Attempt to browse any external site
-- Username/password prompt should appear
-- Enter credentials as configured
-- Access granted if authentication is successful
+- Browse an external site; username/password prompt should appear.
+- Enter configured credentials; access is granted when authentication succeeds.
+- **Interface:** Access Restrictions → Allow List shows the rule with authentication enabled and credentials or PAM set to FALSE.
+- **Logs:** Check `identity.log` or `access.log` for authenticated username entries. Use these logs to demonstrate user-level access for audit.
 
-### Log Verification
+## Troubleshooting
 
-Check `identity.log` or `access.log` for user authentication entries.
+| Issue | Symptom | Likely cause | Resolution |
+|-------|---------|--------------|------------|
+| No login prompt | Direct access granted | Authentication not enabled in access rule | Set PAM to FALSE and add credentials in the rule |
+| Login fails | Repeated prompts | Incorrect credentials or misconfigured rule | Verify username/password and rule configuration |
+| Rule not enforced | Open access for all | IP mismatch or missing fields | Ensure IP and access permissions match the client |
 
-## Issue Resolution Matrix
+## Next steps
 
-| Issue             | Symptom               | Likely Cause                                | Resolution                                    |
-| ----------------- | --------------------- | ------------------------------------------- | --------------------------------------------- |
-| No login prompt   | Direct access granted | Auth not enabled in access rule             | Enable PAM to `FALSE` and add credentials     |
-| Login fails       | Repeated prompts      | Incorrect credentials or misconfigured rule | Verify username/password fields               |
-| Rule not enforced | Open access for all   | IP mismatch or missing fields               | Ensure IP and access permissions are accurate |
+- [Network Signature](02-Network_Signature.md) for IP-based policy without login.
+- [Directory Services](03-Directory_Services/main.md) for Active Directory or OpenLDAP.
+- [PAM Authentication](04-PAM.md) for OS credential integration.
+- [Bypass Authentication](05-Bypass_Authentication.md) for exempt destinations or request types.

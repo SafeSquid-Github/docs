@@ -2,18 +2,25 @@
 
 **RULE: No files or folders should have space in their name. Always use underscores (_). Example: getting_started, not Getting Started or getting started.**
 
-This guide provides comprehensive instructions for AI agents working with the SafeSquid SWG documentation project. It covers research, writing, editing, and publishing procedures to maintain high-quality technical documentation.
+This guide defines how AI agents create and maintain CISO-grade, enterprise documentation for SafeSquid SWG.
+
+## Operating Principles
+
+**Content-first. Infrastructure-never.**
+
+**CRITICAL**: This agent exists only for documentation and content creation.
 
 ## Agent Scope and Limitations
 
-**CRITICAL**: This agent is designed exclusively for content creation and documentation writing. The agent should:
+The agent should:
 
 ✅ **DO:**
 - Create and edit documents in the `docs/` folder
 - Create and edit blog posts in the `blog/` folder
-- Research and write technical content
+- Research and write technically precise content
 - Follow documentation guidelines and standards
 - Update existing documentation files
+- Add diagrams, screenshots, and log evidence
 
 ❌ **DO NOT:**
 - Build or modify the Docusaurus project infrastructure
@@ -21,6 +28,12 @@ This guide provides comprehensive instructions for AI agents working with the Sa
 - Modify build scripts or deployment processes
 - Alter the project structure outside of content folders
 - Install dependencies or run build commands
+
+## Naming and Path Rules
+
+- No spaces in file or folder names.
+- Use **snake_case** for folders and doc names: `getting_started`, `ssl_inspection`, `audit_and_forensics`.
+- Use predictable asset names: `feature-short_description.webp`.
 
 ## Project Overview
 
@@ -39,17 +52,39 @@ The SafeSquid SWG documentation is a comprehensive knowledge base for SafeSquid 
 - **Content Scope**: 15+ major sections covering everything from installation to advanced security features
 - **Competitive Landscape**: Positioned against Palo Alto Networks, Cato Networks, Netskope, Zscaler, Cisco, Forcepoint, Broadcom, Trend Micro, Sophos, Barracuda, Checkpoint, Versa, Cloudflare, Fortinet, HPE
 
+### Audience and CISO-Grade Content Bar
+
+**Primary audience**: CISOs and security leadership first; then security architects, compliance and risk teams, and operations. Write as if the CISO is the reader in the room.
+
+**Top 1% bar**: Content must be usable by CISOs to:
+- Justify control choices and investment (risk reduction, compliance, resilience)
+- Support audits and evidence requests (what to configure, what to log, how to prove it)
+- Brief the board or executives (clear problem → impact → control → outcome)
+- Compare solutions (capabilities, trade-offs, and where SafeSquid fits)
+
+**Concrete criteria every document must meet**:
+- **Risk-and-control framing**: Tie every major feature to a risk (e.g. data loss, compliance gap, blind spot) and a control (what SafeSquid does and how it reduces that risk)
+- **Regulatory and standards mapping**: Where relevant, cite or align to NIST, ISO 27001, PCI-DSS, HIPAA, GDPR, SOC 2, or industry frameworks so CISOs can map docs to compliance and audit
+- **Evidence and audit trail**: State what is logged, reportable, and auditable (e.g. Reporting Module, Security Logs, DLP events) and how to demonstrate control effectiveness
+- **Business impact**: Problem statements and benefits must include business impact (reputation, legal, operational, cost), not only technical outcome
+- **No fluff**: No marketing superlatives; state facts, trade-offs, and limitations clearly so CISOs can trust and reuse the content
+
+**Non-negotiables:**
+- No marketing superlatives.
+- State facts, assumptions, limitations, and trade-offs.
+- Every security claim must be verifiable.
+
 ### Project Structure
 ```
 docs/
 ├── docs/                    # Main documentation content
-│   ├── 01-Getting Started/ # Basic setup and installation
-│   ├── ...                 # Additional feature sections
-│   └── 15-FAQs/           # Frequently asked questions
-├── blog/                   # Security-related blog posts
-├── src/                    # Custom components and styling
-├── static/                 # Images and assets
-└── docusaurus.config.ts    # Docusaurus configuration
+│   ├── 01-Getting_Started/  # Basic setup and installation
+│   ├── ...                  # Additional feature sections
+│   └── 25-FAQs/             # Frequently asked questions
+├── blog/                    # Security-related blog posts
+├── src/                     # Custom components and styling
+├── static/                  # Images and assets
+└── docusaurus.config.ts     # Docusaurus configuration
 ```
 
 ### Technical Infrastructure
@@ -60,41 +95,92 @@ docs/
 - **Search**: Algolia integration
 - **Analytics**: Google Analytics integration
 
+## Information Architecture
+
+Maintain explicit document types and keep each page single-purpose.
+
+### Content Types
+
+- **get_started** (onboarding): Fastest path to first working deployment.
+- **how_to** (task): One task end-to-end with verification.
+- **admin_guide** (operational): Day-2 operations, lifecycle, troubleshooting.
+- **concepts** (explain): Definitions, models, evaluation order, data flows.
+- **reference** (exhaustive): Fields, parameters, defaults, limits, CLI/API.
+- **troubleshooting** (symptom-first): Diagnosis → root cause → fix → verify.
+
+### Navigation Hubs (main.md)
+
+Each `docs/<section>/` folder must contain `main.md` as a navigation hub:
+- One-paragraph scope
+- Complete index of docs in that folder
+- PBAC 4-sentence summaries per doc
+
+Main files may contain Prerequisites, procedures, troubleshooting, or external resource lists when they support the section overview and navigation.
+
 ## Writing Guidelines
 
-### Mandatory Document Structure
+### Mandatory Document Design
 
-All how-to documents must include the following structure in this exact order. These are content and flow requirements—**do not use them as verbatim section headings**. Use specific, actionable headings that state the key point directly (see "Headings = bottomline" under Writing Style Requirements).
+#### Document Header Contract
+
+Every document starts with frontmatter: `title`, `description`, `keywords`. Add optional `sidebar_position` when required by section conventions.
+
+#### Page Scaffolding
+
+All how-to and admin documents must include the following six content blocks in this order. Do not use these block names as verbatim headings; headings must state the bottom line.
 
 #### 1. Problem Statement
 - **Security Challenge**: Briefly describe the security or operational challenge this feature addresses
+- **Risk and Business Impact**: State the risk (e.g. data loss, compliance gap, blind spot) and business impact (regulatory, legal, operational, reputational, cost), not only the technical challenge
 - **Real-World Scenarios**: Illustrate why and when a client would need this feature
 - **Business Context**: Connect technical problems to business impact
 
 #### 2. Key Benefits
 - **Desired Outcome**: Highlight the primary advantages and security outcomes of enabling this feature
+- **Control Objectives and Compliance**: Link benefits to control objectives and, where relevant, compliance or audit (e.g. supports PCI-DSS 10.x logging, evidence for SOC 2). Name the framework or requirement and what the organization can show (logs, reports, config)
 - **Value Proposition**: Quantify benefits where possible (performance improvements, security enhancements)
-- **Competitive Advantage**: Position against competitor solutions
+- **Competitive Advantage**: Position against competitor solutions using factual comparison, not marketing
 
 #### 3. Prerequisites
 - **Client-Side Preparations**: Tasks that the client must complete independently (e.g., setting up a firewall, generating certificates)
 - **SafeSquid-Side Setup**: Required configurations within SafeSquid prior to enabling the feature
-- **System Requirements**: Hardware, software, and network prerequisites
+- **System Requirements**: Hardware, software, and network prerequisites. Call out security-sensitive prerequisites (e.g. certificates, IAM) explicitly
 
-#### 4. Call to Action
-- **Step-by-Step Actions**: Detailed implementation procedures
+#### 4. Implementation Actions
+- **Step-by-Step Actions**: One action per step; use exact UI path labels and field names
+- **Safe Defaults and Decision Points**: Include safe defaults and document decision points where the reader must choose
 - **Verification & Validation**: Confirm successful implementation and correct functioning for every step
 - **Congruence Check**: Ensure solution addresses the problem statement
 
-#### 5. Solution Verification
+#### 5. Verification and Evidence
 - **Interface Checks**: Verify configuration in SafeSquid interface
 - **Log Analysis**: Review logs for proper functioning
 - **Performance Validation**: Confirm solution performs correctly or identify needed tweaks
+- **Auditor-Ready Evidence**: Include report names, export paths, and screenshot or log snippets so the control can be demonstrated (where to see logs, which report to run, what evidence to export)
 
-#### 6. Troubleshooting Guide
-- **Common Issues & Scenarios**: List of potential errors or misconfigurations
-- **Resolution Steps**: Clear solutions mapped to each issue
-- **Escalation Procedures**: When to contact support
+#### 6. Troubleshooting
+- **Symptom → Cause → Resolution → Verification**: Structure each issue as symptom, likely cause, resolution, and how to verify the fix
+- **Escalation Criteria**: When to contact support; for CISO-owned incidents, when to escalate to vendor
+
+**Optional—CISO takeaway**: For longer or compliance-heavy docs (e.g. SSL inspection, DLP, authentication, audit and forensics), consider a short "CISO takeaway" (2–3 sentences) at or near the top: risk in one line, control in one line, and what the CISO can show (evidence). This is recommended, not a seventh mandatory section.
+
+**Next steps / Related topics:** Every how-to and get_started guide must end with a short "Next steps" (or equivalent heading) linking to the next logical task (e.g. "Configure access policies" or "Verify in Reporting") and optionally 1–3 related docs. This can be the final sub-part of Implementation Actions or Verification and Evidence, or a separate section so it is never omitted.
+
+### Onboarding Quality Standard
+
+A **get_started** guide must take a first-time admin from zero to a working deployment.
+
+**Required sections:**
+- Goal statement (one paragraph)
+- Prerequisites (explicit)
+- Steps (minimal Day-1)
+- Verification (proof of success)
+- Next steps (links to use-case guides)
+
+**Behavior:**
+- Prefer the most general deployment path
+- Defer advanced variants to separate guides
+- Provide a decision gate only when mandatory (e.g. management strategy)
 
 ### Content Standards
 
@@ -111,11 +197,29 @@ All how-to documents must include the following structure in this exact order. T
 - Use narrative style to tell the story of the problem & solution in natural deducing flow
 - Cover all cases to avoid ambiguity
 
+**User focus:** Center content on user goals (what the user will achieve) rather than product features alone.
+
+**PBAC flow:**
+- Problem-first
+- Benefit and risk language mandatory
+- Advantage is factual and comparative
+- Call-to-action is procedural and testable
+
+**Headings rules:**
+- Headings must be 3–7 words and state the conclusion, not the topic
+- Avoid templated headings like "Overview" or "Introduction"
+
+**Clarity rules:**
+- Spell out acronyms on first use (e.g. "Zero Trust Network Access (ZTNA)"); optionally link to glossary or concept doc
+- Avoid ambiguous verbs: "configure", "set", "update" must name exact target (e.g. "set the TLS inspection policy rule")
+- Use concrete nouns: "policy rule", "TLS handshake", "HTTP CONNECT", "DLP event"
+- Use meaningful link text (no "click here")
+
 **Writing Style Requirements:**
 - [ ] Use minimum words → remove anything not adding value
 - [ ] No pronouns → always use proper nouns
 - [ ] Active voice only
-- [ ] Keep sentences short (≤ 20 words)
+- [ ] Keep sentences short: prefer 8–12 words when possible; maximum ≤ 20 words
 - [ ] Use narrative style
 - [ ] Cover all cases → avoid ambiguity
 - [ ] Always be technically precise with correct terminology
@@ -124,6 +228,9 @@ All how-to documents must include the following structure in this exact order. T
 - [ ] Use memorable phrases
 - [ ] Headings = bottomline (state the key point directly)
 - [ ] Neutral tone → no glorifying words, no adverbs
+- [ ] **Risk-and-control language**: Name the risk, then the control and outcome
+- [ ] **Compliance framing**: Where a feature supports compliance, name the framework or requirement (e.g. HIPAA, GDPR, PCI-DSS) and what the organization can show (logs, reports, config)
+- [ ] **Limitations and trade-offs**: State limitations and trade-offs clearly (e.g. bypass rules, performance impact, browser trust). Avoid unqualified marketing language; keep tone factual and audit-friendly
 - [ ] Use diagrams wherever possible
 - [ ] Add interlinking to related docs
 - [ ] Insert external links for 3rd-party tools
@@ -141,27 +248,23 @@ All how-to documents must include the following structure in this exact order. T
 ```markdown
 ---
 title: "Document Title"
-description: "Brief description of the document's purpose"
+description: "Brief purpose statement"
 keywords:
   - keyword1
   - keyword2
   - keyword3
+# optional: sidebar_position (when required by section conventions)
 ---
 
-# Main Title
+# Bottom-line title
 
-## Section Header
+## Bottom-line section heading
 
-### Subsection Header
+### Specific subheading
 
-**Bold text** for emphasis
-*Italic text* for subtle emphasis
+`inline code`
 
-`Code snippets` for inline code
-
-```bash
-Code blocks with syntax highlighting
-```
+    # command (code blocks with syntax highlighting)
 ```
 
 **Language Guidelines:**
@@ -169,6 +272,17 @@ Code blocks with syntax highlighting
 - Use active voice ("Create a new policy" not "A new policy should be created")
 - Avoid jargon unless defined; explain technical terms on first use
 - Use consistent terminology (e.g., always "SafeSquid SWG" not "SWG")
+- **UI elements:** Use **bold** or `code` for UI labels, buttons, and menu paths (e.g. **Configuration → NGFW**); be consistent so readers can scan for exact strings
+
+#### Admonitions (callouts)
+
+Use callout boxes to surface important information without cluttering the main flow.
+
+- **Note:** Additional useful information that does not fit in the main flow (e.g. "This applies only when Feature Y is enabled"; feature availability or plan scope). A single Note at page top may state scope/availability (e.g. "This feature is available on Enterprise plan only") without a header inside step-by-step.
+- **Tip / Best practice:** Optimal configuration or recommended approach; tone suggestive ("We recommend…"), not mandatory.
+- **Warning / Caution:** Behavior that could impact security or break functionality; state the risk clearly (e.g. "Disabling TLS verification may expose to man-in-the-middle attacks"). Place immediately before the relevant step.
+
+**Rules:** At most one of each type per section to avoid clutter. Keep callout content short (ideally a few lines or bullets)—if longer, move to a dedicated section. Place each callout at the point of relevance.
 
 #### Code Examples
 - Include complete, working examples
@@ -177,24 +291,65 @@ Code blocks with syntax highlighting
 - Include expected outputs when relevant
 - Test all code examples before publication
 
-#### Images and Diagrams
-- Store images in `/static/img/` directory
-- Use descriptive filenames following the pattern: `feature-description.webp`
-- Include alt text for accessibility
-- Optimize images for web (WebP format preferred)
-- Use relative paths: `/img/category/image-name.webp`
-- **Mandatory**: Add screenshots & logs tied to each feature
+#### Visual Evidence Standard
+
+**Images:**
+- Store in `/static/img/` (reference as `/img/category/image-name.webp`)
+- Prefer WebP; filenames: `feature-short_description.webp`
+- Always include meaningful alt text
+- **Mandatory**: Add screenshots and logs tied to each feature; include interface screenshots for verification steps
+
+**Diagrams:**
+- Use diagrams for: traffic flows, trust boundaries, control points, policy evaluation order
+- Prefer **Mermaid** for process flows and sequence diagrams when possible (text-based, searchable, easy to update); use SVG for complex or custom diagrams
+- Always provide a short caption or alt text describing what the diagram shows
 - Use diagrams wherever possible to illustrate complex concepts
-- Include interface screenshots for verification steps
+
+**Logs:**
+- For each major step include: what to check, where to check, an example log line pattern, and expected "success" indicators
+
+## Research Methodology
+
+Complete the research process and checklist below before drafting any document. Research output is for agent use only; the final document contains only the 6 mandatory content blocks, not a visible "Research" section.
+
+### Required source categories (minimum before writing)
+
+- **SafeSquid resources**: Official product docs, admin guides, release notes, and (if available) architecture or security docs for the feature
+- **Industry standards and frameworks**: NIST (e.g. NIST SP 800-63, 800-53), ISO/IEC 27001, CIS Controls, or domain-specific (PCI-DSS, HIPAA, GDPR) as relevant to the feature
+- **Threat and risk context**: How the threat landscape or common failures motivate this control (e.g. encrypted traffic blind spots, DLP, phishing). Use vendor-agnostic or vendor sources with clear attribution
+- **Competitor and market context**: How SWG or similar solutions (e.g. Zscaler, Netskope, Palo Alto, Cisco, Cloudflare) address the same problem—capabilities and trade-offs—for comparison only; keep tone factual and non-derogatory
+- **Related sections**: Other SafeSquid docs that this feature depends on or integrates with (auth, reporting, DLP, etc.) so the narrative is consistent and cross-linked
+
+### Research verification steps
+
+- Confirm technical steps and UI paths against current product behavior (or note version or limitation)
+- Verify regulatory or framework references (correct control IDs or clause references where cited)
+- Ensure competitor claims are accurate and sourceable (no unsupported superlatives)
+
+### Research output (not published verbatim)
+
+Produce a short research note or outline: problem, risk, relevant standards, how SafeSquid addresses it, and key differentiators or trade-offs. Use this to inform the document; do not publish it as a section in the final doc.
+
+### Research complete checklist
+
+- [ ] SafeSquid sources reviewed for the feature
+- [ ] At least one relevant standard or framework identified and mapped (where applicable)
+- [ ] Threat or risk context for the control stated
+- [ ] Related docs and integration points noted
+- [ ] Technical and regulatory claims verified or scoped (e.g. version, limitation)
 
 ## Content Creation Workflow
 
 ### Document Creation Process
-1. **Research Phase**: Gather information about the feature or topic (External Resources, SafeSquid Resources, Industry Standards, Competitor Solutions, Related Sections - for research only, not to be included in documents)
-2. **Structure Planning**: Plan the 6-section document structure
-3. **Content Writing**: Create the document following PBAC methodology
-4. **Review and Edit**: Ensure compliance with all guidelines
-5. **File Placement**: Save in appropriate `docs/` or `blog/` subfolder
+1. **Research**: Follow the Research Methodology section; complete the research checklist before drafting
+2. **Select content type and decide page goal**: Choose get_started, how_to, admin_guide, concepts, reference, or troubleshooting and state the single purpose of the page
+3. **Plan headings**: Use bottom-line statements (3–7 words, conclusion not topic)
+4. **Draft**: Create the document using the six-block scaffolding and PBAC methodology
+5. **Add evidence**: Add diagrams, screenshots, and log evidence (what to check, where, pattern, success indicators)
+6. **Add cross-links and next steps**: Link to related docs and point to logical next steps
+7. **Run pre-publication checklist**: Complete the Pre-Publication Checklist before considering the doc done
+
+Save the document in the appropriate `docs/` or `blog/` subfolder (see File Organization).
 
 ### File Organization
 - **Documentation**: Place in `docs/[section-number]-[section-name]/`
@@ -212,12 +367,7 @@ The `main.md` file in each folder must include:
 1. **Section Overview**: Brief description of what the section covers
 2. **Document Index**: List and brief description of every document in the folder
 
-**CRITICAL**: Main files must NOT contain:
-- Prerequisites or requirements
-- How-to instructions or step-by-step procedures
-- Detailed implementation guides
-- Troubleshooting information
-- External Resources, SafeSquid Resources, Industry Standards, Competitor Solutions, or Related Sections
+Main files may contain Prerequisites, procedures, troubleshooting, or external resource lists (e.g. SafeSquid Resources, Industry Standards, Competitor Solutions, Related Sections) when they support the section overview and navigation.
 
 Main files serve as navigation hubs that link to detailed documents.
 
@@ -267,20 +417,30 @@ Brief introduction explaining the section's scope and purpose.
 ### Pre-Publication Checklist
 
 #### Content Validation
-- [ ] All frontmatter is complete and accurate
-- [ ] Document follows mandatory structure ( content blocks in order; headings need not be verbatim—use specific, bottom-line headings)
-- [ ] All headings are properly formatted and state key points directly
-- [ ] Code examples are tested and functional
-- [ ] Links are valid and point to correct resources
+- [ ] Frontmatter complete (title, description, keywords; optional sidebar_position)
+- [ ] Correct content type and page goal
+- [ ] Six content blocks present and ordered
+- [ ] Headings are bottom-line, 3–7 words
+- [ ] Steps are atomic; UI paths precise
+- [ ] Verification includes UI + logs + evidence export
+- [ ] Troubleshooting is symptom-first (symptom → cause → resolution → verification)
+- [ ] Compliance mapping included when relevant
+- [ ] Trade-offs and limitations stated
+- [ ] All code tested or scoped with version
+- [ ] Screenshots match current UI
 - [ ] Images load properly and have alt text
-- [ ] Screenshots & logs are tied to each feature
-- [ ] Spelling and grammar are correct
-- [ ] PBAC methodology is followed (Problem → Benefit → Advantage → Call-To-Action)
-- [ ] Writing style requirements are met (no pronouns, active voice, ≤20 words per sentence)
-- [ ] Technical precision is maintained throughout
-- [ ] Competitive positioning is included where relevant
-- [ ] Main file (`main.md`) exists in folder and contains section overview with complete document index
-- [ ] All documents in folder are cross-referenced in the main file
+- [ ] Internal links are relative and valid
+- [ ] Main file (`main.md`) exists in folder and contains section overview with complete document index; **main.md index updated** for any new or changed docs
+- [ ] Next steps / related topics present at end of guide (how-to and get_started)
+- [ ] Admonitions used correctly (Note vs Tip vs Warning/Caution) and sparingly (at most one of each type per section)
+- [ ] Acronyms expanded on first use; UI labels and menu paths in **bold** or `code`
+- [ ] Diagrams have caption or alt text; Mermaid preferred for process flows
+- [ ] PBAC methodology and flow followed (Problem → Benefit → Advantage → Call-To-Action)
+- [ ] Writing style requirements met (no pronouns, active voice, ≤20 words per sentence)
+- [ ] **CISO-grade**: Risk and business impact stated in problem or benefits
+- [ ] **CISO-grade**: At least one standard, framework, or compliance use case referenced where relevant
+- [ ] **CISO-grade**: Evidence or audit trail (logging, reporting, proof of control) described
+- [ ] **CISO-grade**: Limitations and trade-offs stated where applicable
 - [ ] Main file follows prescribed structure and format
 
 #### Content Quality Testing
@@ -343,6 +503,11 @@ Brief introduction explaining the section's scope and purpose.
 - Include warnings about insecure configurations
 - Provide examples of security-hardened setups
 - Document security-related features and their proper configuration
+
+**Safe configuration emphasis:**
+- Promote hardened defaults
+- Add warnings for risky settings
+- Provide rollback guidance for changes affecting connectivity
 
 ### Data Protection
 
@@ -414,6 +579,7 @@ npm audit fix
 - Address reported issues promptly
 - Schedule regular content reviews and updates
 - Maintain documentation freshness and accuracy
+- Where the publishing pipeline supports it, ensure each page can show last-reviewed or last-updated date so readers can assess freshness
 
 ---
 

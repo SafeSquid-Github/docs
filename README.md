@@ -203,7 +203,7 @@ Open a web browser and navigate to `http://<server-ip>` to verify the documentat
   - Cookie Control.md
   - DNS Blacklisting.md
   - Geo Location Blocking.md
-  - Header Obfuscation.md
+  - Header Re-Write.md
   - main.md
   - Payload Content Rewrite.md
   - Privileged Access Management.md
@@ -336,7 +336,7 @@ Open a web browser and navigate to `http://<server-ip>` to verify the documentat
   - Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords.md
   - Block_inappropriate_images_by_using_Image_Analyzer.md
   - Block_Particular_User_Login_To_Facebook_Or_Gmail.md
-  - Block_Personal_Gmail,_Allow_Google_Corporate_Accounts.md
+  - Block_Personal_Gmail_Allow_Google_Corporate_Accounts.md
   - Block_Specific_Youtube_Channel.md
   - Facebook_Read_Only_Mode.md
   - main.md

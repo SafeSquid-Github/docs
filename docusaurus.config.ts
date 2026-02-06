@@ -12,6 +12,10 @@ const config: Config = {
   organizationName: 'SafeSquid-Github',
   projectName: 'docs',
   onBrokenLinks: 'warn',
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],

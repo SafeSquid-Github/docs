@@ -1,5 +1,6 @@
 ---
 title: VPN Integration
+slug: /Integrations/VPN
 description: Configure and manage VPN settings for SafeSquid Web Security Clients via Self-Service Portal, including FQDN setup and verification.
 
 keywords:
@@ -13,8 +14,11 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Directly exposing a SafeSquid proxy server hosted in the cloud to office or remote users is insecure and exposes critical infrastructure to external threats. Establishing a dedicated, encrypted [WireGuard](https://www.wireguard.com/) VPN tunnel enables secure transport of traffic from enterprise networks or remote endpoints to the cloud environment without public exposure. This configuration isolates the proxy server, limits attack surfaces, and enforces zero-trust connectivity using SafeSquid's application-layer inspection and access control mechanisms.
-The following diagram depicts the working of VPN tunnel:
+# Secure proxy access with WireGuard VPN
+
+Directly exposing a SafeSquid proxy in the cloud to office or remote users is insecure. A dedicated, encrypted [WireGuard](https://www.wireguard.com/) VPN tunnel enables secure transport from enterprise networks or remote endpoints to the cloud without public exposure. This isolates the proxy, limits attack surface, and supports zero-trust connectivity with SafeSquid inspection and access control.
+
+The following diagram depicts the VPN tunnel:
 ![WireGuard VPN tunnel and SafeSquid proxy architecture](/img/wireguard/image1.webp)
 ## Prerequisites
 <Tabs>
@@ -39,7 +43,7 @@ The following diagram depicts the working of VPN tunnel:
 
 </TabItem>
 </Tabs>
-## Network Topology Overview
+## Example cloud and office network topology
 <Tabs>
 <TabItem value="Cloud Environment" label="Cloud Environment" default>
 
@@ -330,10 +334,9 @@ wg genkey | tee privatekey | wg pubkey > publickey
 -   The private key is stored securely on the client system
 -   Key rotation is recommended for long-term deployments
 
-## Solution Verification
+## Verification and Evidence
 
 - **Interface Checks**: Confirm [WireGuard](https://www.wireguard.com/) interface is up (`wg show`); SafeSquid listens on the expected ports and is reachable over the VPN tunnel from clients.
 - **Log Analysis**: VPN peer handshakes and traffic appear in system logs; SafeSquid access logs show requests from VPN client IPs when traffic is routed through the proxy.
 - **Performance Validation**: From a client connected via VPN, browse through SafeSquid; traffic is inspected and policies apply. Load balancer (if used) distributes connections correctly.
 
-**Related**: [Configuration Portal](/docs/SafeSquid%20SWG/Configuration%20Portal), [Operational Modes](/docs/Operational%20Modes/main), [Integrations](/docs/Integrations/main), [Troubleshooting](/docs/Troubleshooting/main)
