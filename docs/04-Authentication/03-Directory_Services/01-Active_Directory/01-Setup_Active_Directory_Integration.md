@@ -116,6 +116,6 @@ This example uses an Active Directory named **mann-ad.safesquid**. A new user ha
 
    ![Seeing the list of all the users from the AD](/img/How_To/Integrate_AD/image22.webp)
 
-**Related:** [Simple Authentication](Simple_Authentication.md), [SSO Authentication](SSO_Authentication.md)
+**Related:** [Simple Authentication](/docs/Authentication/Directory_Services/Active_Directory/Simple_Authentication/), [SSO Authentication](/docs/Authentication/Directory_Services/Active_Directory/SSO_Authentication/)
 
 </section>

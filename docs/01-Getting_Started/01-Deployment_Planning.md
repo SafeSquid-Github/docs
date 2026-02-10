@@ -147,7 +147,7 @@ Prepare the target environment before installation:
 2. **Configure network interfaces** — assign static IPs, verify gateway and DNS resolution.
 3. **Set up NTP** — ensure time synchronisation across all nodes.
 4. **Verify resource reservations** — for virtual or cloud deployments, confirm CPU, RAM, and disk allocations match the hardware matrix above.
-5. **Test outbound connectivity** — the server must reach SafeSquid update and licensing endpoints (see [Activate Your License](04-Activate.md) for the full endpoint list).
+5. **Test outbound connectivity** — the server must reach SafeSquid update and licensing endpoints (see [Activate Your License](/docs/Getting_Started/Activate/) for the full endpoint list).
 
 </section>
 
@@ -157,7 +157,7 @@ Prepare the target environment before installation:
 
 After installation, validate your deployment against the plan:
 
-- **Interface Checks:** Confirm in the [Configuration Portal](../02-SafeSquid_SWG/01-Configuration_Portal.md) that proxy and application settings match the planned topology.
+- **Interface Checks:** Confirm in the [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/) that proxy and application settings match the planned topology.
 - **Log Analysis:** Review SafeSquid and system logs for resource or connectivity errors under expected load.
 - **Performance Validation:** Monitor session counts and latency against the ideal/peak thresholds in the hardware matrix.
 
@@ -167,8 +167,8 @@ After installation, validate your deployment against the plan:
 
 ## Next Steps
 
-Proceed to [Install SafeSquid](03-Install_SafeSquid/main.md).
+Proceed to [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/main/).
 
-**Related:** [License Activation](04-Activate.md) · [Proxy Clustering](../17-Proxy_Clustering/main.md)
+**Related:** [License Activation](/docs/Getting_Started/Activate/) · [Proxy Clustering](/docs/Proxy_Clustering/main/)
 
 </section>

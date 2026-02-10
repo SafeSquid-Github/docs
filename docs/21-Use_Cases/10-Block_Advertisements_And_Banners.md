@@ -35,7 +35,7 @@ Reduces malware and tracking exposure from ad networks. Lowers bandwidth and CPU
 
 ## Prerequisites
 
-**SafeSquid-side:** HTTPS Inspection enabled so SafeSquid can inspect and modify HTTPS content. See [Configure HTTPS Inspection](../05-SSL_Inspection/01-Configure_HTTPS_Inspection.md) if not yet enabled. Admin access to the Configuration Portal.
+**SafeSquid-side:** HTTPS Inspection enabled so SafeSquid can inspect and modify HTTPS content. See [Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) if not yet enabled. Admin access to the Configuration Portal.
 
 **Client-side:** No change required; blocking is transparent.
 
@@ -45,7 +45,7 @@ Reduces malware and tracking exposure from ad networks. Lowers bandwidth and CPU
 
 ## Enable BLOCK ADVERTISEMENT policy
 
-1. Access the SafeSquid interface via the [Configuration Portal](../02-SafeSquid_SWG/01-Configuration_Portal.md).
+1. Access the SafeSquid interface via the [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/).
 
 ![Click Configure in the SafeSquid interface](/img/How_To/Block_Advertisements_And_Banners/image1.webp)
 
@@ -82,7 +82,7 @@ Reduces malware and tracking exposure from ad networks. Lowers bandwidth and CPU
 
 ![Blocked ad replaced by SafeSquid template on YouTube](/img/How_To/Block_Advertisements_And_Banners/image10.webp)
 
-- **Audit:** Access logs and reports show traffic matching the policy; export reports from the [Reporting Module](../15-Audit_Forensics/01-Reporting_Module.md) for evidence.
+- **Audit:** Access logs and reports show traffic matching the policy; export reports from the [Reporting Module](/docs/Audit_Forensics/Reporting_Module/) for evidence.
 
 :::note
 Administrators can replace the default template with a custom template.
@@ -106,8 +106,8 @@ Administrators can replace the default template with a custom template.
 
 ## Next steps
 
-- [Block inappropriate images using Image Analyzer](Block_inappropriate_images_by_using_Image_Analyzer.md) for visual content filtering.
-- [Header Re-Write](../11-Header_Obfuscation/main.md) for header filtering and privacy.
-- [Content Modifier](../13-Content_Modifier/main.md) for custom regex-based content rewriting.
+- [Block inappropriate images using Image Analyzer](/docs/Use_Cases/Block_inappropriate_images_by_using_Image_Analyzer/) for visual content filtering.
+- [Header Re-Write](/docs/Header_Obfuscation/main/) for header filtering and privacy.
+- [Content Modifier](/docs/Content_Modifier/main/) for custom regex-based content rewriting.
 
 </section>

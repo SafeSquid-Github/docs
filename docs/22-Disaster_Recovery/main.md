@@ -23,7 +23,7 @@ Disasters or failures can cause loss of configuration and SSL certificates. Safe
 
 ## Disaster recovery configuration guides
 
-### [Configure Cloud Restore](01-Configure_Cloud_Restore.md)
+### [Configure Cloud Restore](/docs/Disaster_Recovery/Configure_Cloud_Restore/)
 Recovery requires Cloud Restore to be configured and the same activation key. The document covers how Cloud Restore works, required setup (Monit), and step-by-step configuration in the SafeSquid interface. Restoring configuration and SSL certificates from the cloud reduces downtime and rework. Use this document to implement and run disaster recovery.
 
 </section>

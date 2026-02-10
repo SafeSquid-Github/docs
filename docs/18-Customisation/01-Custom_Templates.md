@@ -52,7 +52,7 @@ I will use this file in the below configuration
 
 <section class="section-strip">
 
-## [Access the SafeSquid user interface](../02-SafeSquid_SWG/01-Configuration_Portal.md)
+## [Access the SafeSquid user interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 ### Go to Configure Page
 ![Clicking on configure in SafeSquid interface](/img/How_To/Create_Custom_Templates/image2.webp)
 
@@ -102,10 +102,10 @@ You must edit the original entry, because the entries in template section are pr
 
 ## Verification and Evidence
 
-- **Interface Checks**: In [Configuration Portal](../02-SafeSquid_SWG/01-Configuration_Portal.md), Custom Settings → Custom Templates: new template appears in the list with correct content and is assigned to the intended policy or block page.
+- **Interface Checks**: In [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), Custom Settings → Custom Templates: new template appears in the list with correct content and is assigned to the intended policy or block page.
 - **Log Analysis**: When a block or redirect occurs, the custom template is served; config logs show the template change if applicable.
 - **Performance Validation**: Trigger a block or use case that invokes the template; the custom message or page displays as designed.
 
-**Related**: [Startup Parameters](02-Startup_Parameters.md), [Customisation](main.md), [Access Restriction](../08-Access_Restriction/main.md), [Troubleshooting](../23-Troubleshooting/main.md)
+**Related**: [Startup Parameters](/docs/Customisation/Startup_Parameters/), [Customisation](/docs/Customisation/main/), [Access Restriction](/docs/Access_Restriction/main/), [Troubleshooting](/docs/Troubleshooting/main/)
 
 </section>

@@ -38,7 +38,7 @@ Content Modifier enables security and operational control: strip or replace Acti
 
 **Client-side:** No change required; modification is transparent to the client.
 
-**SafeSquid-side:** SafeSquid deployed and operational; admin access to the configuration interface. [SSL Inspection](../05-SSL_Inspection/main.md) enabled if modifying HTTPS response body. [Access Restriction](../08-Access_Restriction/main.md) and profiles configured so modifier policies can target the right connections.
+**SafeSquid-side:** SafeSquid deployed and operational; admin access to the configuration interface. [SSL Inspection](/docs/SSL_Inspection/main/) enabled if modifying HTTPS response body. [Access Restriction](/docs/Access_Restriction/main/) and profiles configured so modifier policies can target the right connections.
 
 </section>
 
@@ -46,7 +46,7 @@ Content Modifier enables security and operational control: strip or replace Acti
 
 ## Enable and configure Content Modifier in SafeSquid
 
-Access the SafeSquid interface via the [Configuration Portal](../02-SafeSquid_SWG/01-Configuration_Portal.md).
+Access the SafeSquid interface via the [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/).
 
 ### Open the Configure page
 
@@ -188,8 +188,8 @@ Modify the header response and request for PNG & JPG images instead of AVIF & WE
 
 ## Next steps
 
-- [Header Re-Write](../11-Header_Obfuscation/main.md) for filtering or modifying specific headers.
-- [Cookie Inspection](../12-Cookie_Inspection/main.md) for cookie filtering and policy.
-- [Data Leakage Prevention](../09-Data_Leakage_Prevention/main.md) for DLP and compliance templates.
+- [Header Re-Write](/docs/Header_Obfuscation/main/) for filtering or modifying specific headers.
+- [Cookie Inspection](/docs/Cookie_Inspection/main/) for cookie filtering and policy.
+- [Data Leakage Prevention](/docs/Data_Leakage_Prevention/main/) for DLP and compliance templates.
 
 </section>

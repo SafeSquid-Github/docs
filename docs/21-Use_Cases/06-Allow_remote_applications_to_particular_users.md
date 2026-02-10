@@ -26,7 +26,7 @@ When a user tries to access remote application software, First SafeSquid checks 
 <section class="section-strip">
 
 ## How to Allow Remote Applications?
-Follow the Link: [Allow anydesk](Allow_anydesk.md)
+Follow the Link: [Allow anydesk](/docs/Use_Cases/Allow_anydesk/)
 
 </section>
 

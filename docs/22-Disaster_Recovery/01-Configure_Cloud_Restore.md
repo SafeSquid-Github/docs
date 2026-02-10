@@ -50,7 +50,7 @@ Monit must be up and running. Monit is required to start the SafeSquid service a
 
 <section class="section-strip">
 
-## [Access the SafeSquid User Interface](../02-SafeSquid_SWG/01-Configuration_Portal.md)
+## [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 ![Access the SafeSquid User Interface to configure cloud restore](/img/How_To/Setup_Cloud_Restore/image1.webp)
 
 ![verify same Activation key before configure cloud restore ](/img/How_To/Setup_Cloud_Restore/image2.webp)

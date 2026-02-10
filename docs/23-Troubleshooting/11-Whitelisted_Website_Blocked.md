@@ -34,7 +34,7 @@ Note: Whitelist category is the category to allow. Blacklist category is the cat
 
 ## Enable sscore and add site to whitelist category
 
-Ensure the **sscore** section is enabled and the categorization engine is loaded. Verify from the SafeSquid Statistics page in the interface. See [the Reporting Module](../15-Audit_Forensics/01-Reporting_Module.md). Add the corporate website to the whitelist category from Custom Settings → Categorize Web-sites in the SafeSquid UI.
+Ensure the **sscore** section is enabled and the categorization engine is loaded. Verify from the SafeSquid Statistics page in the interface. See [the Reporting Module](/docs/Audit_Forensics/Reporting_Module/). Add the corporate website to the whitelist category from Custom Settings → Categorize Web-sites in the SafeSquid UI.
 
 </section>
 
@@ -42,7 +42,7 @@ Ensure the **sscore** section is enabled and the categorization engine is loaded
 
 ## Procedure
 
-1.  [Access the SafeSquid interface](../02-SafeSquid_SWG/01-Configuration_Portal.md)
+1.  [Access the SafeSquid interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 2.  Go to configure page
 
 ![click on configure in SafeSquid Interface](/img/Troubleshooting/White_listed_website_is_blocked/image1.webp)
@@ -81,10 +81,10 @@ Use Categorize websites to Create and add websites to the "whitelist category".
 
 ## Verification and Evidence
 
-- **Interface Checks**: In [Configuration Portal](../02-SafeSquid_SWG/01-Configuration_Portal.md), Custom Settings → Categorize Web-sites: site shows whitelist category. Restriction Policies → Access profiles: default whitelist policy is enabled and above GLOBAL BLOCK.
+- **Interface Checks**: In [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), Custom Settings → Categorize Web-sites: site shows whitelist category. Restriction Policies → Access profiles: default whitelist policy is enabled and above GLOBAL BLOCK.
 - **Log Analysis**: Access logs show allowed response for the whitelisted URL; no block template or category block for that domain.
 - **Performance Validation**: From a client, open the whitelisted site; page loads without block template.
 
-**Related**: [Web Categorization](../07-Profiling_Engine/02-Web_Categorization.md), [Access Restriction](../08-Access_Restriction/main.md), [Reporting](../15-Audit_Forensics/01-Reporting_Module.md), [Troubleshooting](main.md)
+**Related**: [Web Categorization](/docs/Profiling_Engine/Web_Categorization/), [Access Restriction](/docs/Access_Restriction/main/), [Reporting](/docs/Audit_Forensics/Reporting_Module/), [Troubleshooting](/docs/Troubleshooting/main/)
 
 </section>

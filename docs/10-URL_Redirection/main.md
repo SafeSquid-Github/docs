@@ -23,10 +23,10 @@ URL redirection lets SafeSquid send users to a different URL than the one reques
 
 ## URL redirection and SafeSearch guides
 
-### [Enforce SafeSearch](SafeSearch.md)
+### [Enforce SafeSearch](/docs/URL_Redirection/SafeSearch/)
 Search engines return explicit content when SafeSearch is not enforced. SafeSquid appends SafeSearch parameters to Google, Yahoo, and Bing queries so users cannot disable filtering. Consistent content filtering across search traffic reduces exposure and supports policy compliance. Enable SafeSearch policies using this document.
 
-### [Redirect One Website to Another](01-Redirect_One_Website_to_Another.md)
+### [Redirect One Website to Another](/docs/URL_Redirection/Redirect_One_Website_to_Another/)
 Organizations need to send traffic from one URL to another for branding, blocking, or compliance. The document covers enabling the Redirect section and creating redirection policies in Real Time Content Security. Verification in Native logs confirms redirects work as intended. Use this document to configure and validate URL-to-URL redirection.
 
 </section>

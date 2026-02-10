@@ -14,7 +14,7 @@ keywords:
 Use this method to install SafeSquid on an existing Linux server. Works on any distribution — Red Hat, CentOS, SUSE, Debian, Ubuntu, etc.
 
 :::info
-This method installs the SafeSquid binary only. You are responsible for OS hardening, disk partitioning, and supporting services. For a fully automated setup, use the [Appliance Builder](01-SafeSquid_Appliance_Builder.md) instead.
+This method installs the SafeSquid binary only. You are responsible for OS hardening, disk partitioning, and supporting services. For a fully automated setup, use the [Appliance Builder](/docs/Getting_Started/Install_SafeSquid/SafeSquid_Appliance_Builder/) instead.
 :::
 
 </section>
@@ -23,7 +23,7 @@ This method installs the SafeSquid binary only. You are responsible for OS harde
 
 ## Prerequisites
 
-- Linux server meeting [minimum requirements](main.md) (4 CPU, 8 GB RAM, 100 GB disk)
+- Linux server meeting [minimum requirements](/docs/Getting_Started/Install_SafeSquid/main/) (4 CPU, 8 GB RAM, 100 GB disk)
 - Root or sudo access
 - Internet connectivity for downloads
 
@@ -81,8 +81,8 @@ SafeSquid listens on port **8080** by default. If it appears in the output, the 
 
 SAB handles these automatically, but TAR installs require manual setup:
 
-- **[Monit](../../02-SafeSquid_SWG/07-Supporting_Services/01-Monit.md)** — process monitoring and auto-restart for SafeSquid
-- **[BIND9](../../02-SafeSquid_SWG/07-Supporting_Services/02-Bind.md)** — local DNS resolver used by SafeSquid
+- **[Monit](/docs/SafeSquid_SWG/Supporting_Services/Monit/)** — process monitoring and auto-restart for SafeSquid
+- **[BIND9](/docs/SafeSquid_SWG/Supporting_Services/Bind/)** — local DNS resolver used by SafeSquid
 
 :::tip
 Configure Monit before going to production. Without it, a crashed SafeSquid process will not restart automatically.
@@ -94,8 +94,8 @@ Configure Monit before going to production. Without it, a crashed SafeSquid proc
 
 ## Next Steps
 
-1. **[Activate your license](../../04-Activate.md)**
-  2. **[Connect a browser](../../05-Connect_Your_Client/main.md)** to verify traffic flows
-  3. **[Enable SSL Inspection](../../05-SSL_Inspection/main.md)** for HTTPS visibility
+1. **[Activate your license](/docs/Getting_Started/Activate/)**
+  2. **[Connect a browser](/docs/Getting_Started/Connect_Your_Client/main/)** to verify traffic flows
+  3. **[Enable SSL Inspection](/docs/SSL_Inspection/main/)** for HTTPS visibility
 
 </section>

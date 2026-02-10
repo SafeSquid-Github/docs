@@ -44,7 +44,7 @@ Automatic updates and approved applications work without user interaction. Polic
 ### SafeSquid-side
 
 - SafeSquid deployed with authentication enabled in access rules.
-- Admin access to [Configuration Portal](../02-SafeSquid_SWG/01-Configuration_Portal.md) and permission to edit Request Types and Access Profiles.
+- Admin access to [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/) and permission to edit Request Types and Access Profiles.
 
 </section>
 
@@ -54,7 +54,7 @@ Automatic updates and approved applications work without user interaction. Polic
 
 ### Enable bypass authentication
 
-1. Access the [SafeSquid User Interface](../02-SafeSquid_SWG/01-Configuration_Portal.md) and click **Configure**.
+1. Access the [SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/) and click **Configure**.
 
    ![SafeSquid Configure](/img/How_To/Bypass_Authentication/image1.webp)
 
@@ -143,8 +143,8 @@ Automatic updates and approved applications work without user interaction. Polic
 
 ## Next steps
 
-- [Local Credential Store (BASIC)](01-BASIC.md)
-- [PAM Authentication](04-PAM.md)
-- [Access Restriction](../08-Access_Restriction/main.md)
+- [Local Credential Store (BASIC)](/docs/Authentication/BASIC/)
+- [PAM Authentication](/docs/Authentication/PAM/)
+- [Access Restriction](/docs/Access_Restriction/main/)
 
 </section>

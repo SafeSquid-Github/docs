@@ -17,7 +17,7 @@ Your SWG is running. We recommend tackling these in order — each builds on the
 
 <div className="col col--4" style={{marginBottom: '1.5rem'}}>
 
-### 1. 🔒 [SSL Inspection](../05-SSL_Inspection/main.md)
+### 1. 🔒 [SSL Inspection](/docs/SSL_Inspection/main/)
 
 Most web traffic is encrypted. Enable HTTPS inspection first so SafeSquid can actually see and filter content.
 
@@ -25,7 +25,7 @@ Most web traffic is encrypted. Enable HTTPS inspection first so SafeSquid can ac
 
 <div className="col col--4" style={{marginBottom: '1.5rem'}}>
 
-### 2. 👤 [Authentication](../04-Authentication/main.md)
+### 2. 👤 [Authentication](/docs/Authentication/main/)
 
 Connect Active Directory, OpenLDAP, or network-based identity so policies apply per user, not just per IP.
 
@@ -33,7 +33,7 @@ Connect Active Directory, OpenLDAP, or network-based identity so policies apply 
 
 <div className="col col--4" style={{marginBottom: '1.5rem'}}>
 
-### 3. 🛡️ [Security Policies](../07-Profiling_Engine/main.md)
+### 3. 🛡️ [Security Policies](/docs/Profiling_Engine/main/)
 
 With visibility and identity in place, configure URL filtering, access controls, and usage policies.
 
@@ -41,7 +41,7 @@ With visibility and identity in place, configure URL filtering, access controls,
 
 <div className="col col--4" style={{marginBottom: '1.5rem'}}>
 
-### 4. 🌐 [Client Deployment at Scale](05-Connect_Your_Client/main.md)
+### 4. 🌐 [Client Deployment at Scale](/docs/Getting_Started/Connect_Your_Client/main/)
 
 Roll out to all endpoints using PAC files, system-wide proxy, GPO, or configuration management.
 
@@ -49,7 +49,7 @@ Roll out to all endpoints using PAC files, system-wide proxy, GPO, or configurat
 
 <div className="col col--4" style={{marginBottom: '1.5rem'}}>
 
-### 5. 🏗️ [Deployment Planning](01-Deployment_Planning.md)
+### 5. 🏗️ [Deployment Planning](/docs/Getting_Started/Deployment_Planning/)
 
 Hardware sizing, high availability, network bonding, and DR planning for enterprise-scale loads.
 
@@ -57,7 +57,7 @@ Hardware sizing, high availability, network bonding, and DR planning for enterpr
 
 <div className="col col--4" style={{marginBottom: '1.5rem'}}>
 
-### 6. 📊 [Monitoring and Reporting](../15-Audit_Forensics/main.md)
+### 6. 📊 [Monitoring and Reporting](/docs/Audit_Forensics/main/)
 
 Traffic forensics, usage reports, and real-time dashboards for visibility and compliance.
 
@@ -65,7 +65,7 @@ Traffic forensics, usage reports, and real-time dashboards for visibility and co
 
 <div className="col col--4" style={{marginBottom: '1.5rem'}}>
 
-### 🔧 [Troubleshooting](../23-Troubleshooting/main.md)
+### 🔧 [Troubleshooting](/docs/Troubleshooting/main/)
 
 Logs, diagnostics, and community support when help is needed.
 

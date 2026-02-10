@@ -59,7 +59,7 @@ HTTPS inspection enables URL filtering, malware scanning, data loss prevention, 
 
 ### Generating SSL certificates
 
-[**Access the Self-Service Portal**](../02-SafeSquid_SWG/04-Self-Service_Portal.md)
+[**Access the Self-Service Portal**](/docs/SafeSquid_SWG/Self-Service_Portal/)
 
 Log in to the Self-Service Portal - [https://key.safesquid.com](https://key.safesquid.com/)
 
@@ -123,7 +123,7 @@ From the Self-Service Portal
 
 ### Enabling SSL inspection
 
-[**Access the SafeSquid interface**](../02-SafeSquid_SWG/01-Configuration_Portal.md)
+[**Access the SafeSquid interface**](/docs/SafeSquid_SWG/Configuration_Portal/)
 
 Go to Configure Page
 
@@ -208,7 +208,7 @@ After importing the SafeSquid Root CA in Firefox, confirm that HTTPS inspection 
 
 **To bypass HTTPS Inspection enabled SafeSquid default configuration, follow the below steps:**
 
-[**Access the SafeSquid User Interface**](../02-SafeSquid_SWG/01-Configuration_Portal.md)
+[**Access the SafeSquid User Interface**](/docs/SafeSquid_SWG/Configuration_Portal/)
 
 ![clicking on configure in safesquid interface](/img/SSL_Inspection/image30.webp)
 
@@ -264,7 +264,7 @@ Configure proxy settings in Dropbox and upload or download files to validate tha
 
 ## Verification and Evidence
 
-- **Interface Checks**: In [Configuration Portal](../02-SafeSquid_SWG/01-Configuration_Portal.md), Real-time content security → HTTPS Inspection: Global enabled, Inspection policies show Enforce SSL scanning and Bypass rules as configured. Self-Service Portal or Manage Certificate shows the Root CA in use.
+- **Interface Checks**: In [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), Real-time content security → HTTPS Inspection: Global enabled, Inspection policies show Enforce SSL scanning and Bypass rules as configured. Self-Service Portal or Manage Certificate shows the Root CA in use.
 - **Log Analysis**: Access and security logs show decrypted requests when inspection is applied; bypassed hosts show CONNECT without decrypt. Certificate or policy errors appear in logs.
 - **Performance Validation**: Browsing HTTPS sites works without certificate warnings when the SafeSquid Root CA is installed in clients. Bypassed domains (e.g. banking) load without inspection; other traffic is inspected and policies apply.
 
@@ -274,9 +274,9 @@ Configure proxy settings in Dropbox and upload or download files to validate tha
 
 ## Troubleshooting
 
-- **Certificate errors in browser**: Ensure SafeSquid Root CA is installed in the client trust store. See [Server Verification](../26-Server_Verification/main.md) and [Import certificate into Firefox](#import-certificate-into-firefox).
+- **Certificate errors in browser**: Ensure SafeSquid Root CA is installed in the client trust store. See [Server Verification](/docs/Server_Verification/main/) and [Import certificate into Firefox](#import-certificate-into-firefox).
 - **Sites or applications broken after enabling inspection**: Add bypass rules for sensitive or pinned applications. Use Request Types and Access Policies to match domains or applications and set BYPASS SSL INSPECTION.
-- **Handshake or policy failures in logs**: Confirm Trusted Root CA store and upstream certificate validation; check [SSL Inspection Issues](../23-Troubleshooting/SSL_Inspection_Issues.md) for diagnostic steps.
+- **Handshake or policy failures in logs**: Confirm Trusted Root CA store and upstream certificate validation; check [SSL Inspection Issues](/docs/Troubleshooting/SSL_Inspection_Issues/) for diagnostic steps.
 
 </section>
 
@@ -284,9 +284,9 @@ Configure proxy settings in Dropbox and upload or download files to validate tha
 
 ## Next steps
 
-- [Self-Service Portal](../02-SafeSquid_SWG/04-Self-Service_Portal.md) for certificate management.
-- [Server Verification](../26-Server_Verification/main.md) for client certificate import.
-- [Access Restriction](../08-Access_Restriction/main.md) for policy and bypass rules.
-- [SSL Inspection Issues](../23-Troubleshooting/SSL_Inspection_Issues.md) for diagnostic steps.
+- [Self-Service Portal](/docs/SafeSquid_SWG/Self-Service_Portal/) for certificate management.
+- [Server Verification](/docs/Server_Verification/main/) for client certificate import.
+- [Access Restriction](/docs/Access_Restriction/main/) for policy and bypass rules.
+- [SSL Inspection Issues](/docs/Troubleshooting/SSL_Inspection_Issues/) for diagnostic steps.
 
 </section>

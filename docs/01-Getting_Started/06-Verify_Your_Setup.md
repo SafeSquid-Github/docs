@@ -48,7 +48,7 @@ http://safesquid.cfg/
 Expected: the SafeSquid configuration interface loads.
 
 :::tip
-If a browser is not yet configured, see [Connect Your First Client](05-Connect_Your_Client/main.md).
+If a browser is not yet configured, see [Connect Your First Client](/docs/Getting_Started/Connect_Your_Client/main/).
 :::
 
 </section>
@@ -107,7 +107,7 @@ Expected: a valid IP address response. If this fails, check BIND9 configuration.
 | DNS resolution fails | BIND9 not running or misconfigured | `systemctl status bind9` and check `/etc/bind/` config |
 
 :::info
-For detailed troubleshooting, see [Troubleshooting](../23-Troubleshooting/main.md).
+For detailed troubleshooting, see [Troubleshooting](/docs/Troubleshooting/main/).
 :::
 
 </section>

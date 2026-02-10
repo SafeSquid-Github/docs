@@ -22,13 +22,13 @@ Three installation methods are available: Appliance Builder (SAB) for full OS pl
 
 ## Installation method guides
 
-### [SafeSquid Appliance Builder](01-SafeSquid_Appliance_Builder.md)
+### [SafeSquid Appliance Builder](/docs/Getting_Started/Install_SafeSquid/SafeSquid_Appliance_Builder/)
 New deployments on bare metal or VM need a turnkey image with OS, SafeSquid, and supporting services. SAB produces a security-hardened image with SafeSquid, Monit, BIND9, and disk layout. Fastest path for new deployments. Follow this document to build and deploy the appliance.
 
-### [Cloud Deployment](02-Cloud_Deployment.md)
+### [Cloud Deployment](/docs/Getting_Started/Install_SafeSquid/Cloud_Deployment/)
 AWS, Azure, DigitalOcean, or private cloud require SafeSquid on a cloud VM. Cloud Deployment covers image or cloud-init based deployment. SafeSquid runs in the cloud with the same policy and inspection capabilities. Use this document to deploy SafeSquid in the cloud.
 
-### [Linux Server](03-Linux_Server.md)
+### [Linux Server](/docs/Getting_Started/Install_SafeSquid/Linux_Server/)
 Existing Linux servers need SafeSquid binary only without a full appliance. Linux Server describes installing from the TAR package on an existing distro. Administrators configure OS and services separately. Follow this document when adding SafeSquid to an existing Linux host.
 
 </section>

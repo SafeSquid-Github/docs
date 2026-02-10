@@ -26,7 +26,7 @@ This section assumes an active SafeSquid account with at least one activation ke
 
 ![Newly added signature can be view after click on submit to save the signature](/img/How_To/Manage_Keyword_Signatures_using_Self_Service_portal/image5.webp)
 
-To know more about this feature follow link [Block Emails or Files including archives or Social Posts using Keywords](../21-Use_Cases/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords.md)
+To know more about this feature follow link [Block Emails or Files including archives or Social Posts using Keywords](/docs/Use_Cases/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/)
 
 </section>
 

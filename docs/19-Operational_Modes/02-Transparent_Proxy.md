@@ -95,8 +95,8 @@ The following list contains the usefulness of SafeSquid transparent proxy to Bob
 
 ## Next steps
 
-- [Forward Proxy](01-Forward_Proxy.md) for explicit browser configuration.
-- [TCP Proxy](03-TCP_Proxy.md) for non-HTTP protocols.
-- [Configure HTTPS Inspection](../05-SSL_Inspection/01-Configure_HTTPS_Inspection.md) for SSL transparent mode.
+- [Forward Proxy](/docs/Operational_Modes/Forward_Proxy/) for explicit browser configuration.
+- [TCP Proxy](/docs/Operational_Modes/TCP_Proxy/) for non-HTTP protocols.
+- [Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) for SSL transparent mode.
 
 </section>

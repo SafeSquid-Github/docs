@@ -30,7 +30,7 @@ The Cookie Filter lets administrators choose which hosts (websites) may send and
 
 ## Cookie filter configuration guides
 
-### [Cookie Filter Configuration and Reference](01-Cookie_Filter_Configuration.md)
+### [Cookie Filter Configuration and Reference](/docs/Cookie_Inspection/Cookie_Filter_Configuration/)
 Cookie allow/deny behavior requires correct Global policy and Allow/Deny rules. The document covers the Configuration Portal path, Global and Policy options, and Allow/Deny rule parameters (profiles, expiry, domain, path, direction, time match). Example rules and solution verification support validation. Use the document to configure and validate cookie filtering.
 
 </section>

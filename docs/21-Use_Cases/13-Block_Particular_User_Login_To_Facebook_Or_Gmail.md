@@ -20,13 +20,13 @@ Restrict which users can log into Facebook or Gmail; only selected users can log
 <section class="section-strip">
 
 ## Prerequisites
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, see the document - [How to enable HTTPS Inspection](../05-SSL_Inspection/main.md).
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, see the document - [How to enable HTTPS Inspection](/docs/SSL_Inspection/main/).
 
 </section>
 
 <section class="section-strip">
 
-## [Access the SafeSquid User Interface](../02-SafeSquid_SWG/01-Configuration_Portal.md)
+## [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 ![click on configure in safesquid interface](/img/How_To/Block_Particular_User_Login_To_Facebook_Or_Gmail/image1.webp)
 
 </section>

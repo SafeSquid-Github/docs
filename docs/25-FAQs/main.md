@@ -60,7 +60,7 @@ The SafeSquid Self-Service Portal is the cloud-based management console for Safe
 
 The SafeSquid Self-Service Portal manages the activities like, SafeSquid cloud-backed features, Custom Web Categorization, Web Security Clients for Roaming users (VPN), Confidential Data Signatures, Subscription management, etc.
 
-Read more: [Self-Service Portal](../02-SafeSquid_SWG/04-Self-Service_Portal.md).
+Read more: [Self-Service Portal](/docs/SafeSquid_SWG/Self-Service_Portal/).
 
 </section>
 
@@ -85,7 +85,7 @@ If all websites are accessible through the browser, the product is activated.
 ## Where to get license details
 After successful activation, license details appear on the Support page of the SafeSquid Web GUI.
 
-For more details see the [Support page](../15-Audit_Forensics/main.md) (license details after activation) or [Activate](../01-Getting_Started/04-Activate.md).
+For more details see the [Support page](/docs/Audit_Forensics/main/) (license details after activation) or [Activate](/docs/Getting_Started/Activate/).
 
 </section>
 
@@ -155,11 +155,11 @@ Preventing access to porn sites
 ## Preventing access to social networking sites
 Yes. SafeSquid can prevent users from accessing social networking sites. When configured, SafeSquid blocks all social networking sites by default. Administrators can allow those sites for specific times (e.g. lunch hour).
 
-Allow social networking sites in lunch hours: [Allow Social Networking Sites During Lunch Hours](../21-Use_Cases/Allow_Social_Networking_Sites_during_Lunch_Hours.md).
+Allow social networking sites in lunch hours: [Allow Social Networking Sites During Lunch Hours](/docs/Use_Cases/Allow_Social_Networking_Sites_during_Lunch_Hours/).
 
 Facebook is a social networking website that allows users to interact with other users in a multimedia environment on the Web. Facebook users can install and use applications to enhance their experience. Many organizations want to allow Facebook access to maintain morale, increase retention, and boost hiring, but they also want to control access to it.
 
-SafeSquid allows full Facebook access for a social media group, partial access to a customer service group, and read-only access to other groups. Access to Facebook can also be assigned by time of day. For more details: [Facebook Read-Only Mode](../21-Use_Cases/Facebook_Read_Only_Mode.md), [Allow Specific Page on Facebook](../21-Use_Cases/Allowing_Specific_Page_on_Facebook.md).
+SafeSquid allows full Facebook access for a social media group, partial access to a customer service group, and read-only access to other groups. Access to Facebook can also be assigned by time of day. For more details: [Facebook Read-Only Mode](/docs/Use_Cases/Facebook_Read_Only_Mode/), [Allow Specific Page on Facebook](/docs/Use_Cases/Allowing_Specific_Page_on_Facebook/).
 
 </section>
 
@@ -201,7 +201,7 @@ An anonymous proxy will allow users to surf the web anonymously, since it tunnel
 Anonymous Proxy service can enhance security and lets users access some restricted websites online.
 
 
-For more detail: [Access Restriction](../08-Access_Restriction/main.md) and [Use Cases](../21-Use_Cases/main.md) for blocking anonymous proxies and application control.
+For more detail: [Access Restriction](/docs/Access_Restriction/main/) and [Use Cases](/docs/Use_Cases/main/) for blocking anonymous proxies and application control.
 
 </section>
 
@@ -270,7 +270,7 @@ Yes. SafeSquid has a reporting module that reduces processing time and provides 
 <section class="section-strip">
 
 ## Why does SafeSquid become slow after running for some time?
-Slowness after sustained operation is often due to resource exhaustion (disk, memory, or connection state). Check disk space and RAM (see [Disk space and RAM are full](../23-Troubleshooting/Disk_Space_and_RAM_are_Full.md)), clear or rotate logs, and review the [Performance Plot](../15-Audit_Forensics/03-Performance_Plot.md) and [Support](../15-Audit_Forensics/main.md) page for resource usage. Restart the proxy after freeing resources if needed.
+Slowness after sustained operation is often due to resource exhaustion (disk, memory, or connection state). Check disk space and RAM (see [Disk space and RAM are full](/docs/Troubleshooting/Disk_Space_and_RAM_are_Full/)), clear or rotate logs, and review the [Performance Plot](/docs/Audit_Forensics/Performance_Plot/) and [Support](/docs/Audit_Forensics/main/) page for resource usage. Restart the proxy after freeing resources if needed.
 
 </section>
 

@@ -85,13 +85,13 @@ At a high level, the SafeSquid SWG solution consists of the following core compo
 
 For production use, deploy SafeSquid with Supporting Services for high availability, monitoring and performance enhancement.
 
-1. [Monit](07-Supporting_Services/01-Monit.md) \
+1. [Monit](/docs/SafeSquid_SWG/Supporting_Services/Monit/) \
    Monitoring service to ensure zero downtime and optimal performance: continually optimizes the system, cleans up temporary files, auto-restarts in case of unexpected shutdowns, and fetches threat intelligence updates.
 
-2. [BIND](07-Supporting_Services/02-Bind.md)\
+2. [BIND](/docs/SafeSquid_SWG/Supporting_Services/Bind/)\
    Speeds up the DNS resolutions by utilizing Root DNS servers
 
-3. [NTP](07-Supporting_Services/03-NTP.md) \
+3. [NTP](/docs/SafeSquid_SWG/Supporting_Services/NTP/) \
    Time synchronizations with the Active directory in SSO configuration
 
 </section>

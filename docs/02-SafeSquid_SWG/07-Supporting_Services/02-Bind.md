@@ -121,7 +121,7 @@ keywords:
   ```
 - **Performance Validation**: `dig @resolver-ip popular-domain.tld +noall +stats` shows low query time and growing cache hit rate. <!-- TODO: Add screenshot: /img/Supporting_Services/bind_dig_stats.webp when available -->
 
-**Related**: [Monit](01-Monit.md), [NTP](03-NTP.md), [Integrated DNS Security](../../06-Integrated_DNS_Security.md), [Troubleshooting DNS](../../../23-Troubleshooting/DNS_Failure.md)
+**Related**: [Monit](/docs/SafeSquid_SWG/Supporting_Services/Monit/), [NTP](/docs/SafeSquid_SWG/Supporting_Services/NTP/), [Integrated DNS Security](/docs/SafeSquid_SWG/Integrated_DNS_Security/), [Troubleshooting DNS](/docs/Troubleshooting/DNS_Failure/)
 
 </section>
 

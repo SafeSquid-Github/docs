@@ -96,7 +96,7 @@ After completing all steps above, SSO configuration can proceed.
 
 <section class="section-strip">
 
-## [Access the SafeSquid User Interface](../../../02-SafeSquid_SWG/01-Configuration_Portal.md)
+## [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 
 ![clicking on configure in safesquid interface](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image1.webp)
 
@@ -239,7 +239,7 @@ Monit service must be up.
 Ensure the AD domain is resolvable from all clients and the SafeSquid server.
 :::
 
-If no entries appear in the LDAP Entries subsection, validate all fields in the LDAP servers subsection and verify Kerberos files (e.g. `HTTP.keytab`, `krb5.conf`) under `/usr/local/safesquid/security`. For more help see [Troubleshooting](../../../23-Troubleshooting/main.md).
+If no entries appear in the LDAP Entries subsection, validate all fields in the LDAP servers subsection and verify Kerberos files (e.g. `HTTP.keytab`, `krb5.conf`) under `/usr/local/safesquid/security`. For more help see [Troubleshooting](/docs/Troubleshooting/main/).
 
 ![Showing all the users from directory in LDAP entries tab](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image24.webp)
 
@@ -259,6 +259,6 @@ Clicking **Save config** prompts for confirmation to store the configuration in 
 
 Otherwise select **No** and click **Submit**.
 
-**Related:** [Simple Authentication](Simple_Authentication), [Setup Active Directory Integration](Setup_Active_Directory_Integration), [Failed To Fetch LDAP Entries](../../../23-Troubleshooting/Failed_To_Fetch_LDAP_Entries.md), [SSO Authentication Fail](../../../23-Troubleshooting/SSO_Authentication_Fail.md)
+**Related:** [Simple Authentication](Simple_Authentication), [Setup Active Directory Integration](Setup_Active_Directory_Integration), [Failed To Fetch LDAP Entries](/docs/Troubleshooting/Failed_To_Fetch_LDAP_Entries/), [SSO Authentication Fail](/docs/Troubleshooting/SSO_Authentication_Fail/)
 
 </section>

@@ -33,7 +33,7 @@ Organizations without Active Directory need identity-based web access control. A
 
 ## Key benefits
 
-Eliminates LDAP dependency for small or isolated environments. Access control and logging apply per user. HTTP Basic Authentication is integrated into SafeSquid credential manager. No directory infrastructure is required. Supports audit evidence for user-level access (e.g. SOC 2, ISO 27001 A.9); identity and access logs show authenticated usernames for auditors. **Limitation:** Credentials are stored in SafeSquid; no SSO or directory-backed MFA. Use when a directory is not available; for centralized identity, use [Directory Services](03-Directory_Services/main.md).
+Eliminates LDAP dependency for small or isolated environments. Access control and logging apply per user. HTTP Basic Authentication is integrated into SafeSquid credential manager. No directory infrastructure is required. Supports audit evidence for user-level access (e.g. SOC 2, ISO 27001 A.9); identity and access logs show authenticated usernames for auditors. **Limitation:** Credentials are stored in SafeSquid; no SSO or directory-backed MFA. Use when a directory is not available; for centralized identity, use [Directory Services](/docs/Authentication/Directory_Services/main/).
 
 </section>
 
@@ -153,9 +153,9 @@ Eliminates LDAP dependency for small or isolated environments. Access control an
 
 ## Next steps
 
-- [Network Signature](02-Network_Signature.md) for IP-based policy without login.
-- [Directory Services](03-Directory_Services/main.md) for Active Directory or OpenLDAP.
-- [PAM Authentication](04-PAM.md) for OS credential integration.
-- [Bypass Authentication](05-Bypass_Authentication.md) for exempt destinations or request types.
+- [Network Signature](/docs/Authentication/Network_Signature/) for IP-based policy without login.
+- [Directory Services](/docs/Authentication/Directory_Services/main/) for Active Directory or OpenLDAP.
+- [PAM Authentication](/docs/Authentication/PAM/) for OS credential integration.
+- [Bypass Authentication](/docs/Authentication/Bypass_Authentication/) for exempt destinations or request types.
 
 </section>

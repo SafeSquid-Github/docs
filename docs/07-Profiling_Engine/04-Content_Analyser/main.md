@@ -28,7 +28,7 @@ SafeSquid prevents users from accessing inappropriate content such as pornograph
 <section class="section-strip">
 
 ## Prerequisites
-HTTPS Inspection must be enabled in SafeSquid. See [How to enable HTTPS Inspection](../../05-SSL_Inspection/main.md) if not yet enabled.
+HTTPS Inspection must be enabled in SafeSquid. See [How to enable HTTPS Inspection](/docs/SSL_Inspection/main/) if not yet enabled.
 
 </section>
 
@@ -75,7 +75,7 @@ Make the Global Section Enabled to TRUE.
 
 Then click on Filtering Policies and Enable policy to Enable as TRUE
 
-Read more about [How to block inappropriate images by using Image Analyzer](03-Image_Analyser_AI.md)
+Read more about [How to block inappropriate images by using Image Analyzer](/docs/Profiling_Engine/Content_Analyser/Image_Analyser_AI/)
 
 </section>
 
@@ -89,7 +89,7 @@ Make the Global Section Enabled to TRUE.
 Then click on Filtering Policies and Enable policies to Enable as TRUE.
 
 
-Read more about [Image Analyzer](03-Image_Analyser_AI.md) and [Text Analyzer](02-Text_Analyser.md)
+Read more about [Image Analyzer](/docs/Profiling_Engine/Content_Analyser/Image_Analyser_AI/) and [Text Analyzer](/docs/Profiling_Engine/Content_Analyser/Text_Analyser/)
 
 </section>
 
@@ -107,8 +107,9 @@ SafeSquid’s content moderation engine analyzes and filters web content in real
 <section class="section-strip">
 
 ## Included Modules
-- [Image Analyzer](03-Image_Analyser_AI.md): Detects inappropriate or non-compliant visual content using AI-powered image analysis
-- [Text Analyzer](02-Text_Analyser.md): Scans and classifies textual content for profanity, hate speech, and policy violations
+- [Content Fingerprints](/docs/Profiling_Engine/Content_Analyser/True-Mime_Fingerprints/): Detects true MIME types through content fingerprinting to prevent file extension spoofing and malware disguise
+- [Image Analyzer](/docs/Profiling_Engine/Content_Analyser/Image_Analyser_AI/): Detects inappropriate or non-compliant visual content using AI-powered image analysis
+- [Text Analyzer](/docs/Profiling_Engine/Content_Analyser/Text_Analyser/): Scans and classifies textual content for profanity, hate speech, and policy violations
 
 Use these tools to build a safer and policy-compliant browsing environment.
 

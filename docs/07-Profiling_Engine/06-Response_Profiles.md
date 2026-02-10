@@ -29,7 +29,7 @@ Use Response profiles to manage profiling based on responses from the web server
 
 <section class="section-strip">
 
-## [Access SafeSquid interface](../02-SafeSquid_SWG/01-Configuration_Portal.md)
+## [Access SafeSquid interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 
 </section>
 

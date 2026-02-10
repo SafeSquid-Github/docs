@@ -24,7 +24,7 @@ SafeSquid integrates with enterprise identity and access management (IAM) system
 
 Identity and Access Management configuration in SafeSquid is implemented through **Authentication** and **Directory Services**. For setup and procedures, use the following:
 
-### [Directory Services](../../04-Authentication/03-Directory_Services/main.md)
+### [Directory Services](/docs/Authentication/Directory_Services/main/)
 Identity-driven policy requires centralized user authentication and group membership. Directory Services covers Active Directory and OpenLDAP integration for simple and SSO authentication. Configure directory services there and reference those identities in SafeSquid access restriction and reporting. Use the Directory Services section and the Active Directory and OpenLDAP subsections for setup.
 
 </section>

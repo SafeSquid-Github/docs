@@ -51,7 +51,7 @@ SafeSquid should be installed and activated using same product activation key on
 
 <section class="section-strip">
 
-## [Access the SafeSquid User Interface](../02-SafeSquid_SWG/01-Configuration_Portal.md)
+## [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 
 </section>
 
@@ -129,10 +129,10 @@ SafeSquid should be installed and activated using same product activation key on
 
 ## Verification and Evidence
 
-- **Interface Checks**: On the slave, open [Configuration Portal](../02-SafeSquid_SWG/01-Configuration_Portal.md) and confirm Support → Startup params show the master IP and port. On the master, confirm Access Restriction → Allow list includes the slave and policies are enabled.
+- **Interface Checks**: On the slave, open [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/) and confirm Support → Startup params show the master IP and port. On the master, confirm Access Restriction → Allow list includes the slave and policies are enabled.
 - **Log Analysis**: Check slave logs for successful sync events; config and policy updates from master should appear after changes on the master.
-- **Performance Validation**: Make a configuration change on the master and confirm it propagates to the slave; verify centralized [Reporting](../15-Audit_Forensics/01-Reporting_Module.md) shows data from all slaves.
+- **Performance Validation**: Make a configuration change on the master and confirm it propagates to the slave; verify centralized [Reporting](/docs/Audit_Forensics/Reporting_Module/) shows data from all slaves.
 
-**Related**: [Configuration Sync](02-Configuration_Sync.md), [Configuration Portal](../02-SafeSquid_SWG/01-Configuration_Portal.md), [Reporting Module](../15-Audit_Forensics/01-Reporting_Module.md), [Troubleshooting](../23-Troubleshooting/main.md)
+**Related**: [Configuration Sync](/docs/Proxy_Clustering/Configuration_Sync/), [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), [Reporting Module](/docs/Audit_Forensics/Reporting_Module/), [Troubleshooting](/docs/Troubleshooting/main/)
 
 </section>

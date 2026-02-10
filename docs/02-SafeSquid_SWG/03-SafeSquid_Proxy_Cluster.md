@@ -14,6 +14,6 @@ keywords:
 
 SafeSquid Proxy Cluster provides high availability, load balancing, and scalable deployment with centralized policy management. Multiple proxy nodes share configuration and can be fronted by a load balancer or WCCP for transparent traffic distribution.
 
-For deployment patterns, architecture, master-slave setup, and configuration sync, see [Proxy Clustering](../17-Proxy_Clustering/main.md).
+For deployment patterns, architecture, master-slave setup, and configuration sync, see [Proxy Clustering](/docs/Proxy_Clustering/main/).
 
 </section>

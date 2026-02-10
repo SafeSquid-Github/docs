@@ -44,7 +44,7 @@ Group-based policies apply by IP or subnet without directory or user login. Acce
 ### SafeSquid-side
 
 - SafeSquid deployed and operational; admin access to the configuration interface.
-- [Configuration Portal](../02-SafeSquid_SWG/01-Configuration_Portal.md) access.
+- [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/) access.
 - For **user**-based groups (LDAP/AD): directory integration. For **IP-only** Network Signature policies: no directory required.
 
 </section>
@@ -53,7 +53,7 @@ Group-based policies apply by IP or subnet without directory or user login. Acce
 
 ## Call to action: Configure IP-based user-groups
 
-1. Access the [SafeSquid User Interface](../02-SafeSquid_SWG/01-Configuration_Portal.md) and click **Configure**.
+1. Access the [SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/) and click **Configure**.
 
    ![SafeSquid Configure page](/img/How_To/IP_based_authentication/image1.webp)
 
@@ -108,8 +108,8 @@ Group-based policies apply by IP or subnet without directory or user login. Acce
 
 ## Next steps
 
-- [Local Credential Store (BASIC)](01-BASIC.md)
-- [Directory Services](03-Directory_Services/main.md)
-- [Access Restriction](../08-Access_Restriction/main.md)
+- [Local Credential Store (BASIC)](/docs/Authentication/BASIC/)
+- [Directory Services](/docs/Authentication/Directory_Services/main/)
+- [Access Restriction](/docs/Access_Restriction/main/)
 
 </section>

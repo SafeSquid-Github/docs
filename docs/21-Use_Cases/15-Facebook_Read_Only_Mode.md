@@ -32,13 +32,13 @@ Organizations often want to allow Facebook for morale or recruitment but limit r
 <section class="section-strip">
 
 ## Prerequisites
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, refer to the document - [How to enable HTTPS Inspection](../05-SSL_Inspection/main.md).
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, refer to the document - [How to enable HTTPS Inspection](/docs/SSL_Inspection/main/).
 
 </section>
 
 <section class="section-strip">
 
-## [Access the SafeSquid User Interface](../02-SafeSquid_SWG/01-Configuration_Portal.md)
+## [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 ![Access safesquid user interface to enable Facebook read only mode](/img/How_To/Facebook_Read_Only_Mode/image1.webp)
 
 ![Search 'FACEBOOK READ ONLY MODE' in search section](/img/How_To/Facebook_Read_Only_Mode/image2.webp)

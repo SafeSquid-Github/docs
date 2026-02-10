@@ -25,7 +25,7 @@ This section links to the document that covers certificate setup, enabling inspe
 
 ## HTTPS inspection configuration and verification
 
-### [Configure HTTPS Inspection](01-Configure_HTTPS_Inspection.md)
+### [Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/)
 HTTPS traffic must be decrypted for policy enforcement and threat prevention. The document covers prerequisites, certificate generation or import via the Self-Service Portal, and enabling inspection in the Configuration Portal. Bypass rules and client Root CA import support compliance-sensitive domains and audit evidence. Follow the document to deploy and validate HTTPS inspection end-to-end.
 
 </section>

@@ -12,7 +12,7 @@ keywords:
 
 <section class="section-strip">
 
-## [Access the SafeSquid User Interface](../02-SafeSquid_SWG/01-Configuration_Portal.md)
+## [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 
 </section>
 

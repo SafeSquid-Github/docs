@@ -53,7 +53,7 @@ keywords:
 
 ## Troubleshooting
 ### Verify SSL certificate import in browser
-Follow [Configure HTTPS Inspection](../05-SSL_Inspection/01-Configure_HTTPS_Inspection.md) and [Import certificate into Firefox](../26-Server_Verification/main.md) or Chrome/IE.
+Follow [Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) and [Import certificate into Firefox](/docs/Server_Verification/main/) or Chrome/IE.
 
 ### Case 2: Check SSL certs/cache for these symptoms
 SafeSquid certificate is imported in the browser but a secured connection still fails when accessing HTTPS websites. Some HTTPS sites work while others do not. After removing the old activation key, installing a new key, and configuring the new SSL certificate, clear SSL cache if issues persist.
@@ -215,7 +215,7 @@ To allow domain mismatch errors for specific HTTPS websites, create a policy:
 
 ## Verification and Evidence
 
-- **Interface Checks**: Confirm the SafeSquid Root CA is installed in the browser trust store ([Server Verification](../26-Server_Verification/main.md)). In Configuration Portal, HTTPS Inspection policies match the intended bypass/enforce rules; SSL Certs/Cache cleared if DNS mismatch was the issue.
+- **Interface Checks**: Confirm the SafeSquid Root CA is installed in the browser trust store ([Server Verification](/docs/Server_Verification/main/)). In Configuration Portal, HTTPS Inspection policies match the intended bypass/enforce rules; SSL Certs/Cache cleared if DNS mismatch was the issue.
 - **Log Analysis**: Native logs show successful client encryption for previously failing domains; no `S_X509_DNS_MISMATCH` or transfer failed errors for the fixed cases.
 - **Performance Validation**: Previously failing HTTPS sites load without "connection not secured" or "secured connection fail"; YouTube and other sites work per policy.
 
@@ -225,8 +225,8 @@ To allow domain mismatch errors for specific HTTPS websites, create a policy:
 
 ## Next steps
 
-- [Configure HTTPS Inspection](../05-SSL_Inspection/01-Configure_HTTPS_Inspection.md) for setup and bypass rules.
-- [Server Verification](../26-Server_Verification/main.md) for client certificate import.
-- [Troubleshooting](main.md) for other diagnostic guides.
+- [Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) for setup and bypass rules.
+- [Server Verification](/docs/Server_Verification/main/) for client certificate import.
+- [Troubleshooting](/docs/Troubleshooting/main/) for other diagnostic guides.
 
 </section>

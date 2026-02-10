@@ -17,7 +17,7 @@ keywords:
 
 ## HTTP Parser parses, inspects, and manipulates proxy traffic
 
-The HTTP Parser is the core engine that parses, inspects, and manipulates HTTP and HTTPS request and response traffic through SafeSquid. It normalizes requests and responses so downstream modules can apply policies consistently. Deep inspection of headers and body enables access control, [SSL Inspection](../05-SSL_Inspection/main.md), [Access Restriction](../08-Access_Restriction/main.md), [Header Obfuscation](../11-Header_Obfuscation/main.md), [Cookie Inspection](../12-Cookie_Inspection/main.md), [Content Modifier](../13-Content_Modifier/main.md), and [Data Leakage Prevention](../09-Data_Leakage_Prevention/main.md).
+The HTTP Parser is the core engine that parses, inspects, and manipulates HTTP and HTTPS request and response traffic through SafeSquid. It normalizes requests and responses so downstream modules can apply policies consistently. Deep inspection of headers and body enables access control, [SSL Inspection](/docs/SSL_Inspection/main/), [Access Restriction](/docs/Access_Restriction/main/), [Header Obfuscation](/docs/Header_Obfuscation/main/), [Cookie Inspection](/docs/Cookie_Inspection/main/), [Content Modifier](/docs/Content_Modifier/main/), and [Data Leakage Prevention](/docs/Data_Leakage_Prevention/main/).
 
 </section>
 
@@ -25,7 +25,7 @@ The HTTP Parser is the core engine that parses, inspects, and manipulates HTTP a
 
 ## Parser enables policy and content modules
 
-The parser exposes structured request and response data to the profiling engine, restriction profiles, and real-time content security sections. Header and body handling support URL rewriting, MIME detection, and pattern-based rules. Administrators do not configure the parser directly; configuration of policies and profiles in the [Configuration Portal](../02-SafeSquid_SWG/01-Configuration_Portal.md) drives how parsed traffic is evaluated and enforced.
+The parser exposes structured request and response data to the profiling engine, restriction profiles, and real-time content security sections. Header and body handling support URL rewriting, MIME detection, and pattern-based rules. Administrators do not configure the parser directly; configuration of policies and profiles in the [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/) drives how parsed traffic is evaluated and enforced.
 
 </section>
 
@@ -33,8 +33,8 @@ The parser exposes structured request and response data to the profiling engine,
 
 ## Related
 
-- [Configuration Portal](../02-SafeSquid_SWG/01-Configuration_Portal.md) — policy and profile configuration
-- [SSL Inspection](../05-SSL_Inspection/main.md) — HTTPS visibility for the parser
-- [Access Restriction](../08-Access_Restriction/main.md) — policy enforcement using parsed data
+- [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/) — policy and profile configuration
+- [SSL Inspection](/docs/SSL_Inspection/main/) — HTTPS visibility for the parser
+- [Access Restriction](/docs/Access_Restriction/main/) — policy enforcement using parsed data
 
 </section>

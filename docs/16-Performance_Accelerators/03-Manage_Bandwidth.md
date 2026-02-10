@@ -16,7 +16,7 @@ keywords:
 Use SafeSquid Limits to set download speed and maximum download or upload size per user. Configure limits in the Limits (or speed limits) section and attach to profiles.
 
 ### Prerequisites
-When downloading files from HTTPS websites, ensure that [HTTPS Inspection](../05-SSL_Inspection/main.md) in SafeSquid is enabled
+When downloading files from HTTPS websites, ensure that [HTTPS Inspection](/docs/SSL_Inspection/main/) in SafeSquid is enabled
 
 ### Setup Download Rate
 ![clicking on edit policies and editing the first entry in speed limits section ](/img/How_To/Setup_Download_Speed_At_Which_the_files_need_to_download/image1.webp)
@@ -36,7 +36,7 @@ When downloading files from HTTPS websites, ensure that [HTTPS Inspection](../05
 This can be achieved using SafeSquid limits feature, the interface provides an option to set up the limit on the Download size for users.
 
 ### Prerequisites
-When downloading files from HTTPS websites, ensure that [HTTPS Inspection](../05-SSL_Inspection/main.md) in SafeSquid is enabled
+When downloading files from HTTPS websites, ensure that [HTTPS Inspection](/docs/SSL_Inspection/main/) in SafeSquid is enabled
 
 ### Setup Maximum Download Size
 ![Edit second entry in policy under Configuration Section to Setup Maximum limit on the Download size](/img/How_To/Setup_Maximum_limit_on_the_Download_size/image1.webp)
@@ -52,7 +52,7 @@ When downloading files from HTTPS websites, ensure that [HTTPS Inspection](../05
 This can be achieved using SafeSquid limits feature, the interface provides an option to set up the limit on the Download size for users.
 
 ### Prerequisites
-When downloading files from HTTPS websites, ensure that [HTTPS Inspection](../05-SSL_Inspection/main.md) in SafeSquid is enabled
+When downloading files from HTTPS websites, ensure that [HTTPS Inspection](/docs/SSL_Inspection/main/) in SafeSquid is enabled
 
 ### Setup Maximum Upload Size
 ![Setup Maximum limit on the Upload size in Speed Limits section](/img/How_To/Setup_Maximum_limit_on_the_Upload_size/image1.webp)

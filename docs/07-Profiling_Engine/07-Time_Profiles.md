@@ -25,7 +25,7 @@ Time Profiler enforces time-based internet access using configurable ranges: mon
 
 ## Enable Time Profiler
 
-1. Access the [SafeSquid interface](../02-SafeSquid_SWG/01-Configuration_Portal.md).
+1. Access the [SafeSquid interface](/docs/SafeSquid_SWG/Configuration_Portal/).
 
 2. Navigate to **Configure** page.
 

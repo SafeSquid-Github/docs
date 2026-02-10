@@ -24,7 +24,7 @@ The Request Profiler manages profiling based on the request sent to the web serv
 
 <section class="section-strip">
 
-## [Access SafeSquid interface](../02-SafeSquid_SWG/01-Configuration_Portal.md)
+## [Access SafeSquid interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 
 </section>
 
@@ -338,8 +338,8 @@ Profiles are evaluated top-to-bottom. Order entries from most specific to most g
 2. **Group by category** — `CLOUD_*`, `SOCIAL_*`, `WEBMAIL_*`
 3. **Separate read/write** — Distinguish GET (read) from POST/PUT (write)
 4. **Regular review** — Update patterns as new services emerge
-5. **Combine with DLP** — Use profiles to trigger [Data Leakage Prevention](../09-Data_Leakage_Prevention/main.md) policies
+5. **Combine with DLP** — Use profiles to trigger [Data Leakage Prevention](/docs/Data_Leakage_Prevention/main/) policies
 
-**Related**: [Data Leakage Prevention](../09-Data_Leakage_Prevention/main.md), [Access Restriction](../08-Access_Restriction/main.md), [Reporting Module](../15-Audit_Forensics/01-Reporting_Module.md)
+**Related**: [Data Leakage Prevention](/docs/Data_Leakage_Prevention/main/), [Access Restriction](/docs/Access_Restriction/main/), [Reporting Module](/docs/Audit_Forensics/Reporting_Module/)
 
 </section>

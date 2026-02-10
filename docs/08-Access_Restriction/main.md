@@ -33,6 +33,6 @@ Enterprises need to allow or block web access by user, group, time, destination,
 
 ## Access policies and profiles define what is allowed
 
-Access restriction in SafeSquid uses policies and profiles. Policies define conditions (user, group, time, URL, category, application). Profiles attach to policies and carry actions (allow, deny, redirect, or apply SSL inspection, header filter, cookie filter, and similar controls). The [Configuration Portal](../02-SafeSquid_SWG/01-Configuration_Portal.md) provides the interface to create and order these policies. Identity comes from [Authentication](../04-Authentication/main.md); HTTPS visibility comes from [SSL Inspection](../05-SSL_Inspection/main.md). Configure access restriction in the Configuration Portal under the relevant restriction and real-time content security sections.
+Access restriction in SafeSquid uses policies and profiles. Policies define conditions (user, group, time, URL, category, application). Profiles attach to policies and carry actions (allow, deny, redirect, or apply SSL inspection, header filter, cookie filter, and similar controls). The [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/) provides the interface to create and order these policies. Identity comes from [Authentication](/docs/Authentication/main/); HTTPS visibility comes from [SSL Inspection](/docs/SSL_Inspection/main/). Configure access restriction in the Configuration Portal under the relevant restriction and real-time content security sections.
 
 </section>

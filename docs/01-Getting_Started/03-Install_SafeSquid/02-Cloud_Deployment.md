@@ -66,11 +66,11 @@ Review and customise the cloud-init YAML before deploying — adjust network set
 
 ### Option 3: SAB ISO on Cloud VM
 
-Attach the [SAB ISO](https://downloads.safesquid.com/appliance/safesquid.iso) to a cloud VM and follow the [Appliance Builder installation steps](01-SafeSquid_Appliance_Builder.md).
+Attach the [SAB ISO](https://downloads.safesquid.com/appliance/safesquid.iso) to a cloud VM and follow the [Appliance Builder installation steps](/docs/Getting_Started/Install_SafeSquid/SafeSquid_Appliance_Builder/).
 
 ### Option 4: TAR Package on Existing Cloud VM
 
-If you already have a Linux VM running, install SafeSquid using the [TAR package method](03-Linux_Server.md).
+If you already have a Linux VM running, install SafeSquid using the [TAR package method](/docs/Getting_Started/Install_SafeSquid/Linux_Server/).
 
 </section>
 
@@ -112,8 +112,8 @@ Do not expose port 8080 to the public internet without authentication and access
 
 ## Next Steps
 
-1. **[Activate your license](../../04-Activate.md)**
-  2. **[Connect a browser](../../05-Connect_Your_Client/main.md)** to verify traffic flows
-  3. **[Enable SSL Inspection](../../05-SSL_Inspection/main.md)** for HTTPS visibility
+1. **[Activate your license](/docs/Getting_Started/Activate/)**
+  2. **[Connect a browser](/docs/Getting_Started/Connect_Your_Client/main/)** to verify traffic flows
+  3. **[Enable SSL Inspection](/docs/SSL_Inspection/main/)** for HTTPS visibility
 
 </section>

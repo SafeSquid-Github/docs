@@ -30,7 +30,7 @@ Organizations that use PAM for login and access control need the proxy to valida
 
 ## Key benefits
 
-Single set of credentials for OS and proxy reduces credential sprawl and support burden. Identity-based access policies apply using the same usernames as the operating system. PAM fits environments that already rely on PAM for authentication (e.g. Linux login, SSH). Logged usernames support audit and compliance (e.g. ISO 27001 A.9, SOC 2 access control evidence). **Limitation:** PAM applies only where SafeSquid runs on a PAM-capable OS (typically Linux); use [Bypass Authentication](05-Bypass_Authentication.md) or separate rules for flows that must not require auth.
+Single set of credentials for OS and proxy reduces credential sprawl and support burden. Identity-based access policies apply using the same usernames as the operating system. PAM fits environments that already rely on PAM for authentication (e.g. Linux login, SSH). Logged usernames support audit and compliance (e.g. ISO 27001 A.9, SOC 2 access control evidence). **Limitation:** PAM applies only where SafeSquid runs on a PAM-capable OS (typically Linux); use [Bypass Authentication](/docs/Authentication/Bypass_Authentication/) or separate rules for flows that must not require auth.
 
 </section>
 
@@ -48,7 +48,7 @@ Single set of credentials for OS and proxy reduces credential sprawl and support
 
 ## Call to action: Enable PAM in the access rule
 
-1. Open the [SafeSquid Configuration Portal](../02-SafeSquid_SWG/01-Configuration_Portal.md) and click **Configure**.
+1. Open the [SafeSquid Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/) and click **Configure**.
 2. Navigate to **Application Setup** → **Access Restrictions** → **Allow List**.
 3. Edit the entry that matches the client IP or profile, or add a new entry and set the matching IP/subnet.
 4. Set **PAM Authentication** to **TRUE**. Leave **Username** and **Password** empty when using PAM only.
@@ -73,7 +73,7 @@ Single set of credentials for OS and proxy reduces credential sprawl and support
 |-------|------------|
 | PAM authentication not prompting | Ensure PAM is set to TRUE in the access rule and the rule matches the client IP or profile. |
 | Valid OS credentials rejected | Verify the system PAM stack (e.g. `/etc/pam.d/`) allows the same service or that SafeSquid is using the expected PAM configuration. |
-| Mixed auth requirements | Use [Bypass Authentication](05-Bypass_Authentication.md) for destinations that must not require auth; use separate access rules for PAM vs. BASIC if needed. |
+| Mixed auth requirements | Use [Bypass Authentication](/docs/Authentication/Bypass_Authentication/) for destinations that must not require auth; use separate access rules for PAM vs. BASIC if needed. |
 
 </section>
 
@@ -81,9 +81,9 @@ Single set of credentials for OS and proxy reduces credential sprawl and support
 
 ## Next steps
 
-- [Authentication](main.md)
-- [Directory Services](03-Directory_Services/main.md)
-- [Bypass Authentication](05-Bypass_Authentication.md)
-- [Local Credential Store (BASIC)](01-BASIC.md)
+- [Authentication](/docs/Authentication/main/)
+- [Directory Services](/docs/Authentication/Directory_Services/main/)
+- [Bypass Authentication](/docs/Authentication/Bypass_Authentication/)
+- [Local Credential Store (BASIC)](/docs/Authentication/BASIC/)
 
 </section>

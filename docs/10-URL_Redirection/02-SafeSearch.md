@@ -32,7 +32,7 @@ SafeSquid SWG includes default rules that enforce SafeSearch for Google, Yahoo, 
 
 ## Required setup
 
-HTTPS Inspection must be enabled in SafeSquid. See [How to enable HTTPS Inspection](../05-SSL_Inspection/main.md) if not yet enabled.
+HTTPS Inspection must be enabled in SafeSquid. See [How to enable HTTPS Inspection](/docs/SSL_Inspection/main/) if not yet enabled.
 
 </section>
 

@@ -47,7 +47,7 @@ Remote applications like **Remote desktop applications, Download managers**, etc
 
 <section class="section-strip">
 
-## [Access the SafeSquid interface](../02-SafeSquid_SWG/01-Configuration_Portal.md)
+## [Access the SafeSquid interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 
 </section>
 
@@ -110,10 +110,10 @@ Bind that created user group and Request Type in Access Profiles and decide whet
 
 ## Verification and Evidence
 
-- **Interface Checks**: In [Configuration Portal](../02-SafeSquid_SWG/01-Configuration_Portal.md), confirm Real-time content security → HTTPS Inspection has Bypass SSL Inspection policy enabled, and Restriction Policies → Access profiles show the allow policy for the remote desktop application with the correct request type and Bypass SSL Inspection profile.
+- **Interface Checks**: In [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), confirm Real-time content security → HTTPS Inspection has Bypass SSL Inspection policy enabled, and Restriction Policies → Access profiles show the allow policy for the remote desktop application with the correct request type and Bypass SSL Inspection profile.
 - **Log Analysis**: SafeSquid access logs should show successful CONNECT or requests for the remote app when allowed; blocked attempts appear with deny or policy response codes.
 - **Performance Validation**: From an allowed user and device, launch [AnyDesk](https://anydesk.com/) (or the configured app) with proxy set; connection should succeed. From a non-allowed user or app, access should be blocked.
 
-**Related**: [SSL Inspection](../05-SSL_Inspection/main.md), [Access Restriction](../08-Access_Restriction/main.md), [Application Signatures](../07-Profiling_Engine/03-Application_Signatures.md), [Restrict AnyDesk](Restrict_anydesk.md), [Troubleshooting](../23-Troubleshooting/main.md)
+**Related**: [SSL Inspection](/docs/SSL_Inspection/main/), [Access Restriction](/docs/Access_Restriction/main/), [Application Signatures](/docs/Profiling_Engine/Application_Signatures/), [Restrict AnyDesk](/docs/Use_Cases/Restrict_anydesk/), [Troubleshooting](/docs/Troubleshooting/main/)
 
 </section>

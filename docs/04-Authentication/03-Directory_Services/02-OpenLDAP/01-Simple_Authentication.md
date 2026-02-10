@@ -58,7 +58,7 @@ Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, passw
 
 <section class="section-strip">
 
-## [Access the SafeSquid User Interface](../../../02-SafeSquid_SWG/01-Configuration_Portal.md)
+## [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 
 </section>
 
@@ -148,6 +148,6 @@ Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, passw
 
 Clicking **Save config** prompts to store the configuration in the cloud. Select **Yes** only when the same configuration will be used on other SafeSquid instances or all sections are fully configured and validated. Otherwise select **No** and click **Submit**.
 
-**Related:** [SSO Authentication](SSO_Authentication), [Failed To Fetch LDAP Entries](../../../23-Troubleshooting/Failed_To_Fetch_LDAP_Entries.md)
+**Related:** [SSO Authentication](SSO_Authentication), [Failed To Fetch LDAP Entries](/docs/Troubleshooting/Failed_To_Fetch_LDAP_Entries/)
 
 </section>

@@ -26,7 +26,7 @@ SafeSquid SSL certificate installation in IE or Chrome enables HTTPS browsing. T
 SafeSquid web security client users do not need to manually import certificates into Chrome or IE.
 :::
 
-For Firefox, certificates use a separate store; see [Configure HTTPS Inspection](../05-SSL_Inspection/01-Configure_HTTPS_Inspection.md#import-certificate-into-firefox) for import steps.
+For Firefox, certificates use a separate store; see [Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#import-certificate-into-firefox) for import steps.
 
 </section>
 
@@ -34,7 +34,7 @@ For Firefox, certificates use a separate store; see [Configure HTTPS Inspection]
 
 ## Client certificate trust guides
 
-### [Import Certificate into Chrome or Internet Explorer](01-Import_Certificate_Chrome_IE.md)
+### [Import Certificate into Chrome or Internet Explorer](/docs/Server_Verification/Import_Certificate_Chrome_IE/)
 Clients must trust the SafeSquid Root CA for HTTPS inspection to work without certificate warnings. The document provides step-by-step import of the SafeSquid SSL certificate into Chrome or Internet Explorer via Trusted Root Certification Authorities. Certificate deployment completes client-side trust for IE and Chrome. Use this document to complete client-side certificate deployment.
 
 </section>

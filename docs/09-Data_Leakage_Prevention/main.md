@@ -26,7 +26,7 @@ Sensitive data leaving the network creates regulatory, legal, and reputational r
 
 ## DLP configuration guides
 
-### [Compliance Templates](01-Compliance_Templates.md)
+### [Compliance Templates](/docs/Data_Leakage_Prevention/Compliance_Templates/)
 Organizations must detect sensitive data in transit to meet PCI-DSS, HIPAA, GDPR, and similar requirements. Compliance Templates provide pre-configured patterns for credit card numbers, SSN, PHI, and PII for use with SafeSquid Text Analyser. Block or log matches and combine with Access Restriction for enforcement. Configure Text Analyser with the templates and link to Access Restriction policies using this document.
 
 </section>

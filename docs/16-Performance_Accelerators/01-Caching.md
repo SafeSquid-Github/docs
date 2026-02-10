@@ -23,7 +23,7 @@ Content Caching stores local copies of requested pages and files. Later requests
 
 ### Create Access Policy
 
-1. Access the [SafeSquid User Interface](../02-SafeSquid_SWG/01-Configuration_Portal.md) and click **Configure**.
+1. Access the [SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/) and click **Configure**.
 
    ![Configure page](/img/How_To/Caching_Specific_websites/image1.webp)
 

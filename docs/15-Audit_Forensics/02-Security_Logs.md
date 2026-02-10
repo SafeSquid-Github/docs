@@ -107,7 +107,7 @@ Adjusting this value requires a restart of SafeSquid service.
 :::
 This file stored all data related **to every request and response** processed by the SafeSquid. These logs will be useful for debugging purpose.
 
-[Access the SafeSquid  User Interface ](../02-SafeSquid_SWG/01-Configuration_Portal.md)
+[Access the SafeSquid  User Interface ](/docs/SafeSquid_SWG/Configuration_Portal/)
 
 On top right of Safesquid Interface view **Reports >> Dashboard**
 
@@ -489,7 +489,7 @@ The details of the fields in performance.log are as follows:
 
 From the interface go to the Support page; open the **Performance Plot** tab, select two time intervals to generate the performance plot for that range.
 
-See More about [How to generate the Performance Plot ](03-Performance_Plot.md)
+See More about [How to generate the Performance Plot ](/docs/Audit_Forensics/Performance_Plot/)
 
 ### Bypass logs
 

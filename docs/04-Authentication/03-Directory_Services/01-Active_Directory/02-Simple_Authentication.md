@@ -53,7 +53,7 @@ Example values used in this procedure:
 - Username : administrator@safesquid.test
 
 
-### [Access the SafeSquid user interface](../../../02-SafeSquid_SWG/01-Configuration_Portal.md)
+### [Access the SafeSquid user interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 ![Application Setup](/img/How_To/Integrate_Active_Directory_For_Simple_Authentication/image1.webp)
 
 ### Go to application setup

@@ -233,10 +233,10 @@ In this sub-section, you can find the example headers with type and values.
 
 ## Verification and Evidence
 
-- **Interface Checks**: In [Configuration Portal](../02-SafeSquid_SWG/01-Configuration_Portal.md), Restriction Profiles → Header Filter: Global enabled, Allow/Deny/Insert rules match intent; Type, Value, and Applies to are set correctly.
+- **Interface Checks**: In [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), Restriction Profiles → Header Filter: Global enabled, Allow/Deny/Insert rules match intent; Type, Value, and Applies to are set correctly.
 - **Log Analysis**: Requests and responses show modified or stripped headers per policy; WebSocket or target-site behavior matches expected allow/deny/insert.
 - **Performance Validation**: Test with profile (e.g. ALLOW WEBSOCKET, REMOVE WEBSOCKETS, X-GoogApps-Allowed-Domains); expected sites work and restricted behavior is enforced.
 
-**Related**: [Cookie Inspection](../12-Cookie_Inspection/main.md), [Access Restriction](../08-Access_Restriction/main.md), [URL Redirection SafeSearch](../10-URL_Redirection/SafeSearch.md), [Troubleshooting](../23-Troubleshooting/main.md)
+**Related**: [Cookie Inspection](/docs/Cookie_Inspection/main/), [Access Restriction](/docs/Access_Restriction/main/), [URL Redirection SafeSearch](/docs/URL_Redirection/SafeSearch/), [Troubleshooting](/docs/Troubleshooting/main/)
 
 </section>

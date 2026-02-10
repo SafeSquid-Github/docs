@@ -66,7 +66,7 @@ rm -rf *
 <section class="section-strip">
 
 ## Steps
-### [Access the SafeSquid User Interface](../../02-SafeSquid_SWG/01-Configuration_Portal.md)
+### [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 
 ![your current version of safesquid will be shown in the right hand bottom corner in the safesquid interface](/img/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image1.webp)
 

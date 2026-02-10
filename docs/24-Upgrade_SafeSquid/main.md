@@ -21,10 +21,10 @@ Administrators can upgrade SafeSquid SWG in two ways: OS upgrade (when the under
 
 ## Upgrade guides
 
-### [OS Upgrade](02-OS_Upgrade/main.md)
+### [OS Upgrade](/docs/Upgrade_SafeSquid/OS_Upgrade/main/)
 The base OS may reach end-of-life or lack kernel and library versions required by newer SafeSquid. OS Upgrade documents non-interactive upgrade of the host (e.g. Ubuntu 20.04 to 24.04) so SafeSquid remains supported and secure. Configuration is retained and restored after the system upgrade. Follow the OS Upgrade document when the OS must be modernized.
 
-### [Version Upgrade](01-Version_Upgrade/main.md)
+### [Version Upgrade](/docs/Upgrade_SafeSquid/Version_Upgrade/main/)
 SafeSquid software updates deliver bug fixes, security patches, and new features. Version Upgrade describes upgrading the SafeSquid application via the Support page and tarball upload while keeping the OS unchanged. Monit restarts the service after upload. Follow the Version Upgrade document to update SafeSquid when the OS is already current.
 
 </section>

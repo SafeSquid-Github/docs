@@ -101,7 +101,7 @@ keywords:
   ```
 - **Performance Validation**: Confirm no new SSO failures; TLS validations proceed without date errors. <!-- TODO: Add screenshot: /img/Supporting_Services/chrony_tracking.webp when available -->
 
-**Related**: [Monit](01-Monit.md), [BIND](02-Bind.md), [Authentication](../../../04-Authentication/main.md), [Troubleshooting](../../../23-Troubleshooting/main.md)
+**Related**: [Monit](/docs/SafeSquid_SWG/Supporting_Services/Monit/), [BIND](/docs/SafeSquid_SWG/Supporting_Services/Bind/), [Authentication](/docs/Authentication/main/), [Troubleshooting](/docs/Troubleshooting/main/)
 
 </section>
 

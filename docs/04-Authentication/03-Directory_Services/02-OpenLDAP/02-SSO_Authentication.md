@@ -37,14 +37,14 @@ Single sign-on experience for directory users; consistent identity and group-bas
 
 ## Prerequisites
 
-- [Integrate LDAP](main.md) configured and user extraction successful.
-- Access to [Configuration Portal](../../../02-SafeSquid_SWG/01-Configuration_Portal.md).
+- [Integrate LDAP](/docs/Authentication/Directory_Services/OpenLDAP/main/) configured and user extraction successful.
+- Access to [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/).
 
 </section>
 
 <section class="section-strip">
 
-## [Access the SafeSquid User Interface](../../../02-SafeSquid_SWG/01-Configuration_Portal.md)
+## [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 
 </section>
 
@@ -65,7 +65,7 @@ Leave the Global Section unchanged; SSO is **TRUE** by default.
 
 ![SafeSquid includes default entries under the allow list; administrators can edit or create entries as needed](/img/How_To/Enable_authentication_for_LDAP_users/image5.webp)
 
-See the working of each Entry [here](../../../21-Use_Cases/working_of_default_entries_in_access_restrictions.md)
+See the working of each Entry [here](/docs/Use_Cases/working_of_default_entries_in_access_restrictions/)
 
 ![default entry given for adding LDAP users into a single user group](/img/How_To/Enable_authentication_for_LDAP_users/image6.webp)
 
@@ -139,6 +139,6 @@ Open **Reports** → **Detailed logs** and confirm that requests show the authen
 
 ![Confirming SSO authentication by seeing the username in SafeSquid detailed logs](/img/How_To/Enable_authentication_for_LDAP_users/image35.webp)
 
-**Related:** [Simple Authentication](Simple_Authentication), [Working of Default Entries in Access Restrictions](../../../21-Use_Cases/working_of_default_entries_in_access_restrictions.md), [SSO Authentication Fail](../../../23-Troubleshooting/SSO_Authentication_Fail.md)
+**Related:** [Simple Authentication](Simple_Authentication), [Working of Default Entries in Access Restrictions](/docs/Use_Cases/working_of_default_entries_in_access_restrictions/), [SSO Authentication Fail](/docs/Troubleshooting/SSO_Authentication_Fail/)
 
 </section>

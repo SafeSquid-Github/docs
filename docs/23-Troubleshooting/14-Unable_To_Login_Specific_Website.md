@@ -30,11 +30,11 @@ keywords:
 ## Solution
 ### Case 1: Facebook accessible via proxy but login fails
 
-When https://www.facebook.com/ is accessible via proxy with HTTPS inspection enabled, HTTPS and SSL certificate configuration in the browser are correct. If HTTPS inspection is not configured, follow [Configure HTTPS Inspection](../05-SSL_Inspection/01-Configure_HTTPS_Inspection.md). Inability to log in on Facebook usually means the Cookie Filter section is enabled with Global TRUE. Set the policy under Privacy Control > Cookie filter > Deny to Enabled FALSE (search for "Strip cookies from all connections profiled as NO LOGIN") and disable it.
+When https://www.facebook.com/ is accessible via proxy with HTTPS inspection enabled, HTTPS and SSL certificate configuration in the browser are correct. If HTTPS inspection is not configured, follow [Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/). Inability to log in on Facebook usually means the Cookie Filter section is enabled with Global TRUE. Set the policy under Privacy Control > Cookie filter > Deny to Enabled FALSE (search for "Strip cookies from all connections profiled as NO LOGIN") and disable it.
 
 ### Case 2: Login fails on a specific website using Facebook or Google credentials via proxy
 
-Confirm the target website is HTTP or HTTPS. For HTTPS, configure the HTTPS Inspection section; follow [Configure HTTPS Inspection](../05-SSL_Inspection/01-Configure_HTTPS_Inspection.md). If login to https://stackoverflow.com/ via Facebook or Google fails, the Elevated Privacy section is likely enabled with Global TRUE. Set the policy under Privacy Control > Elevated Privacy > Elevated policies to Enabled FALSE (search for "Blocks the third-party cookies") and disable it.
+Confirm the target website is HTTP or HTTPS. For HTTPS, configure the HTTPS Inspection section; follow [Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/). If login to https://stackoverflow.com/ via Facebook or Google fails, the Elevated Privacy section is likely enabled with Global TRUE. Set the policy under Privacy Control > Elevated Privacy > Elevated policies to Enabled FALSE (search for "Blocks the third-party cookies") and disable it.
 
 ### Case 3: Facebook login works but Google account login fails
 

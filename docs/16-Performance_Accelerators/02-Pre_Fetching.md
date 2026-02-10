@@ -21,7 +21,7 @@ Prefetching fetches and caches files referenced in HTML before the user requests
 
 ## Configure prefetching
 
-1. Access the [SafeSquid User Interface](../02-SafeSquid_SWG/01-Configuration_Portal.md) and click **Configure**.
+1. Access the [SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/) and click **Configure**.
 
    ![Configure page](/img/How_To/Prefetch_embedded_images/image1.webp)
 

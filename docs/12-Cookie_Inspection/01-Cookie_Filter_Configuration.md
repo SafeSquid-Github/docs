@@ -16,7 +16,7 @@ keywords:
 
 <section class="section-strip">
 
-## [Access SafeSquid interface](../../02-SafeSquid_SWG/01-Configuration_Portal.md)
+## [Access SafeSquid interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 
 </section>
 
@@ -303,10 +303,10 @@ Cookies will be dropped for both incoming and outgoing requests.
 
 ## Verification and Evidence
 
-- **Interface Checks**: In [Configuration Portal](../../02-SafeSquid_SWG/01-Configuration_Portal.md), Restriction Profiles → Cookie Filter: Global and policy entries match intent (Allow/Deny, profiles). Test URLs or domains show correct category in Categorize Web-sites if used.
+- **Interface Checks**: In [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), Restriction Profiles → Cookie Filter: Global and policy entries match intent (Allow/Deny, profiles). Test URLs or domains show correct category in Categorize Web-sites if used.
 - **Log Analysis**: Access logs reflect cookie allow/deny per policy; blocked cookie exchange may show in response or request logs.
 - **Performance Validation**: Browsing with Allow profile allows login and cookies; with Deny or Drop profile, target sites do not receive or retain cookies as configured.
 
-**Related**: [Access Restriction](../../08-Access_Restriction/main.md), [Header Obfuscation](../../11-Header_Obfuscation/main.md), [Configuration Portal](../../02-SafeSquid_SWG/01-Configuration_Portal.md), [Troubleshooting](../../23-Troubleshooting/main.md)
+**Related**: [Access Restriction](/docs/Access_Restriction/main/), [Header Obfuscation](/docs/Header_Obfuscation/main/), [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), [Troubleshooting](/docs/Troubleshooting/main/)
 
 </section>

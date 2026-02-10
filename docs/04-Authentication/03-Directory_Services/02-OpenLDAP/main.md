@@ -23,10 +23,10 @@ SafeSquid integrates with OpenLDAP (and compatible LDAP servers) so user and gro
 
 ## OpenLDAP authentication options
 
-### [Simple Authentication](Simple_Authentication.md)
+### [Simple Authentication](/docs/Authentication/Directory_Services/OpenLDAP/Simple_Authentication/)
 Organizations using OpenLDAP need proxy authentication validated against the directory without Kerberos. Simple Authentication uses browser username/password validated against OpenLDAP with group membership. Standard LDAP bind works without extra SSO infrastructure. Enable Integrate LDAP, add the LDAP server with bind DN and Base DN, run user extraction, then use access rules with LDAP profiles using this document.
 
-### [SSO Authentication](SSO_Authentication.md)
+### [SSO Authentication](/docs/Authentication/Directory_Services/OpenLDAP/SSO_Authentication/)
 LDAP users should use the proxy with minimal prompts after domain or directory login. SSO Authentication provides a flow so authenticated directory users get access without re-entering credentials. Consistent identity and better user experience result. Enable authentication in Access Restrictions, configure LDAP profiles and user groups, then verify SSO using this document.
 
 </section>

@@ -18,7 +18,7 @@ keywords:
 
 # Server Geo-Location
 
-**CISO takeaway**: Unknown destination geography creates compliance gaps and regional threat exposure. Server Geo-Location classifies destinations by country and ASN so policies can block or allow by location. Evidence: [Security Logs](../15-Audit_Forensics/02-Security_Logs.md) and [Reporting Module](../15-Audit_Forensics/01-Reporting_Module.md) show `server_country`, `server_region`, and `server_asn`; dashboards and exports demonstrate the control to auditors.
+**CISO takeaway**: Unknown destination geography creates compliance gaps and regional threat exposure. Server Geo-Location classifies destinations by country and ASN so policies can block or allow by location. Evidence: [Security Logs](/docs/Audit_Forensics/Security_Logs/) and [Reporting Module](/docs/Audit_Forensics/Reporting_Module/) show `server_country`, `server_region`, and `server_asn`; dashboards and exports demonstrate the control to auditors.
 
 </section>
 
@@ -41,8 +41,8 @@ Server Geo-Location enables country-based access control, targeted policy enforc
 <section class="section-strip">
 
 ## Prerequisites ensure accurate geo classification
-- SafeSquid SWG installed and operational. See [Getting Started](../01-Getting_Started/main.md).
-- Profiling Engine enabled. See [Request Profiles](../07-Profiling_Engine/05-Request_Profiles.md) and [Response Profiles](../07-Profiling_Engine/06-Response_Profiles.md).
+- SafeSquid SWG installed and operational. See [Getting Started](/docs/Getting_Started/main/).
+- Profiling Engine enabled. See [Request Profiles](/docs/Profiling_Engine/Request_Profiles/) and [Response Profiles](/docs/Profiling_Engine/Response_Profiles/).
 - Up-to-date GeoIP database available on SafeSquid SWG
 - Administrative access to Policy Management Console
 - Outbound DNS resolution working and consistent
@@ -61,10 +61,10 @@ Server Geo-Location enables country-based access control, targeted policy enforc
 3. Save the profile and confirm it appears in the profile list.
    - Verify rule precedence if multiple profiles overlap
 4. Reference the profile in policy modules.
-   - Access Control: deny or allow based on server location. See [Access Restriction](../08-Access_Restriction/main.md).
-   - Bandwidth Management: prioritize local regions. See [Manage Bandwidth](../16-Performance_Accelerators/03-Manage_Bandwidth.md).
-   - URL Redirection or Exceptions: adapt experience by region. See [URL Redirection](../10-URL_Redirection/main.md).
-   - Reporting: build dashboards by destination country. See [Reporting Module](../15-Audit_Forensics/01-Reporting_Module.md).
+   - Access Control: deny or allow based on server location. See [Access Restriction](/docs/Access_Restriction/main/).
+   - Bandwidth Management: prioritize local regions. See [Manage Bandwidth](/docs/Performance_Accelerators/Manage_Bandwidth/).
+   - URL Redirection or Exceptions: adapt experience by region. See [URL Redirection](/docs/URL_Redirection/main/).
+   - Reporting: build dashboards by destination country. See [Reporting Module](/docs/Audit_Forensics/Reporting_Module/).
 5. Validate behavior using test destinations per region.
    - Use known regional domains or IPs when possible
 
@@ -77,8 +77,8 @@ Server Geo-Location enables country-based access control, targeted policy enforc
 ## Verify policy and monitor logs
 
 - **Interface**: Profile visible, enabled, and referenced in policies.
-- **Logs**: Confirm `server_country`, `server_region`, and `server_asn` in [Security Logs](../15-Audit_Forensics/02-Security_Logs.md).
-- **Demonstrate control to auditor**: Export logs or run a report filtered by `server_country`; show policy configuration that denies or allows by geography; provide a country-based dashboard from the [Reporting Module](../15-Audit_Forensics/01-Reporting_Module.md) as evidence of active enforcement.
+- **Logs**: Confirm `server_country`, `server_region`, and `server_asn` in [Security Logs](/docs/Audit_Forensics/Security_Logs/).
+- **Demonstrate control to auditor**: Export logs or run a report filtered by `server_country`; show policy configuration that denies or allows by geography; provide a country-based dashboard from the [Reporting Module](/docs/Audit_Forensics/Reporting_Module/) as evidence of active enforcement.
 - **Curl test**:
 
 ```bash
@@ -106,19 +106,19 @@ profile=Block-High-Risk-Countries rule=deny-non-compliant-regions user=jdoe
   - Fix: update GeoIP database; restart profiling service if required
 - CDN or anycast endpoints
   - Symptom: destination resolves to global POP; country differs from brand site location.
-  - Fix: allow-list CDNs by ASN where appropriate; use [Application Signatures](../07-Profiling_Engine/03-Application_Signatures.md).
+  - Fix: allow-list CDNs by ASN where appropriate; use [Application Signatures](/docs/Profiling_Engine/Application_Signatures/).
 - Private or RFC1918 destinations
   - Symptom: no geo data for non-routable IPs
-  - Fix: add explicit policy exceptions; rely on identity or application profiles. See [User Identities](../07-Profiling_Engine/01-User_Identities/main.md).
+  - Fix: add explicit policy exceptions; rely on identity or application profiles. See [User Identities](/docs/Profiling_Engine/User_Identities/main/).
 - DNS-based variance
   - Symptom: different resolver returns regionally distinct IPs.
-  - Fix: standardize resolvers; verify [Integrated DNS Security](../02-SafeSquid_SWG/06-Integrated_DNS_Security.md).
+  - Fix: standardize resolvers; verify [Integrated DNS Security](/docs/SafeSquid_SWG/Integrated_DNS_Security/).
 - IPv6 classification gaps
   - Symptom: missing geo for v6-only hosts
   - Fix: ensure IPv6 ranges in GeoIP; confirm dual-stack handling
 - HTTPS SNI/IP mismatch
   - Symptom: SNI points to geo X, IP maps to geo Y
-  - Fix: prefer IP-based geo for enforcement; validate SNI with server verification. See [Server Verification](../26-Server_Verification/main.md).
+  - Fix: prefer IP-based geo for enforcement; validate SNI with server verification. See [Server Verification](/docs/Server_Verification/main/).
 - Performance impact from complex geo sets
   - Symptom: latency on policy evaluation
   - Fix: consolidate countries into regions; push heavy rules higher in precedence; cache outcomes

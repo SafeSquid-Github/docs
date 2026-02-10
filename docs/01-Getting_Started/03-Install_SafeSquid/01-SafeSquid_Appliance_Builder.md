@@ -27,7 +27,7 @@ SAB automates all of it — reducing configuration errors, ensuring optimal perf
 **Download:** [safesquid.iso](https://downloads.safesquid.com/appliance/safesquid.iso)
 
 :::info Minimum Disk
-100 GB (NVMe SSD recommended). See [Production Planning](../01-Deployment_Planning.md) for full sizing guidance.
+100 GB (NVMe SSD recommended). See [Production Planning](/docs/Getting_Started/Deployment_Planning/) for full sizing guidance.
 :::
 
 </section>
@@ -130,8 +130,8 @@ SAB automates all of it — reducing configuration errors, ensuring optimal perf
 
 ## Next Steps
 
-1. **[Activate your license](../../04-Activate.md)**
-  2. **[Connect a browser](../../05-Connect_Your_Client/main.md)** to verify traffic flows
-  3. **[Enable SSL Inspection](../../05-SSL_Inspection/main.md)** for HTTPS visibility
+1. **[Activate your license](/docs/Getting_Started/Activate/)**
+  2. **[Connect a browser](/docs/Getting_Started/Connect_Your_Client/main/)** to verify traffic flows
+  3. **[Enable SSL Inspection](/docs/SSL_Inspection/main/)** for HTTPS visibility
 
 </section>

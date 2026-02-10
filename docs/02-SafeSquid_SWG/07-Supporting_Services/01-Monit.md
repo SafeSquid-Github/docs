@@ -143,6 +143,6 @@ keywords:
   - Collect `monit summary`, `monit status`, `/var/log/monit.log`, system journal
   - Contact SafeSquid support with logs and configuration snippets
 
-**Related**: [BIND DNS](02-Bind.md), [NTP time sync](03-NTP.md), [Troubleshooting](../../../23-Troubleshooting/main.md)
+**Related**: [BIND DNS](/docs/SafeSquid_SWG/Supporting_Services/Bind/), [NTP time sync](/docs/SafeSquid_SWG/Supporting_Services/NTP/), [Troubleshooting](/docs/Troubleshooting/main/)
 
 </section>

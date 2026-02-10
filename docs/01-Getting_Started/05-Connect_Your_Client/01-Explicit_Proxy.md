@@ -201,6 +201,6 @@ curl -I --proxy http://192.168.1.100:8080 http://safesquid.cfg/
 
 **Performance Issues**: Check network latency between client and proxy server. Verify SafeSquid performance settings and consider proxy server optimization.
 
-**Related**: [PAC File](02-PAC_File.md), [System-Wide Proxy](03-System_Wide_Proxy.md), [Configuration Portal](../../02-SafeSquid_SWG/01-Configuration_Portal.md), [SSL Inspection](../../05-SSL_Inspection/main.md), [Troubleshooting](../../23-Troubleshooting/main.md)
+**Related**: [PAC File](/docs/Getting_Started/Connect_Your_Client/PAC_File/), [System-Wide Proxy](/docs/Getting_Started/Connect_Your_Client/System_Wide_Proxy/), [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), [SSL Inspection](/docs/SSL_Inspection/main/), [Troubleshooting](/docs/Troubleshooting/main/)
 
 </section>

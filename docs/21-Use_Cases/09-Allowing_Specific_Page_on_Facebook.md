@@ -20,14 +20,14 @@ Many organizations block Facebook but need to allow a specific page (e.g. compan
 <section class="section-strip">
 
 ## Prerequisites
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, refer to the document - [How to enable HTTPS Inspection](../05-SSL_Inspection/main.md).
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, refer to the document - [How to enable HTTPS Inspection](/docs/SSL_Inspection/main/).
 
 </section>
 
 <section class="section-strip">
 
 ## Steps
-[Access the SafeSquid User Interface](../02-SafeSquid_SWG/01-Configuration_Portal.md)
+[Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 
 ![Select Configure section from safesquid user interface to allow only specific page of Facebook ](/img/How_To/Allowing_Specific_Page_on_Facebook/image1.webp)
 
