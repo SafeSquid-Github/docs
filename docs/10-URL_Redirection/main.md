@@ -10,10 +10,16 @@ keywords:
   - content steering proxy
   - URL filtering SafeSquid
 ---
+<section class="section-strip">
+
 
 # URL Redirection
 
 URL redirection lets SafeSquid send users to a different URL than the one requested. Use it to enforce safe search, steer traffic for compliance, or redirect specific sites to an alternative destination.
+
+</section>
+
+<section class="section-strip">
 
 ## URL redirection and SafeSearch guides
 
@@ -22,3 +28,5 @@ Search engines return explicit content when SafeSearch is not enforced. SafeSqui
 
 ### [Redirect One Website to Another](01-Redirect_One_Website_to_Another.md)
 Organizations need to send traffic from one URL to another for branding, blocking, or compliance. The document covers enabling the Redirect section and creating redirection policies in Real Time Content Security. Verification in Native logs confirms redirects work as intended. Use this document to configure and validate URL-to-URL redirection.
+
+</section>

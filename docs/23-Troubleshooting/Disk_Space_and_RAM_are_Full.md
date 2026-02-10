@@ -8,10 +8,16 @@ keywords:
   - SafeSquid RAM usage high
   - free space SafeSquid server
 ---
+<section class="section-strip">
+
 
 # Free disk and RAM to restore proxy operation
 
 When SafeSquid partitions or RAM are full, the proxy can fail or behave unpredictably. This guide helps identify full partitions, clean logs and cache safely, and prevent recurrence.
+
+</section>
+
+<section class="section-strip">
 
 ## Prerequisites
 Give the enough size to backup store.
@@ -19,6 +25,10 @@ Give the enough size to backup store.
 Example: If you want to take a backup of files of size 5GB then consider the store up to 5.5 GB
 
 Don't delete the original log files (.log extension) and database files.
+
+</section>
+
+<section class="section-strip">
 
 ## Check disk space
 Run the below command to check the available disk space on each partition.
@@ -59,6 +69,10 @@ You will see the Used and Available sizes on each partition.
   -------------------------------------------------------------------------------------------------------------
 
 If any of the above partitions are observed to be used over 80%, then you may take a backup of the following files and delete files as per your requirement.
+
+</section>
+
+<section class="section-strip">
 
 ## Partitions
 When the "/ " partition is full remove the files from the below paths:
@@ -155,3 +169,5 @@ Delete all files and folders present in this directory. By using this command
 rm -rf *
 ```
 This memory will be used only in upgradation time.
+
+</section>

@@ -9,15 +9,26 @@ keywords:
   - SafeSquid DNS resolution fix
 ---
 
+
+<section class="section-strip">
+
 ## Connection failed to proxy or origin
 When the user accesses the website, the browser displays "**Connection to 192.168.27.30:80 failed**". When the user accesses https://abc.safesquid.com/ via proxy and logs in with a corporate email ID, the browser may show "**Connection to abc.safesquid.com:443 failed**".
 
 ![Error showing "Connection to abc.safesquid.com:443 failed"](/img/Troubleshooting/Connection_failure_to_websites/image1.webp)
 
+</section>
+
+<section class="section-strip">
+
 ## Root Causes
 If the website which you are trying to reach is not up
 
 If you are unable to reach the particular website because of internet slowness issues.
+
+</section>
+
+<section class="section-strip">
 
 ## Troubleshooting
 ### Case1
@@ -132,3 +143,5 @@ Command to restart bind9 service:
 /etc/init.d/bind9 restart
 ```
 Verify whether the website is resolving to the local IP successfully or not.
+
+</section>

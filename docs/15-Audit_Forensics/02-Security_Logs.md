@@ -9,6 +9,9 @@ keywords:
   - SafeSquid performance log analysis
 ---
 
+
+<section class="section-strip">
+
 ## Logs support troubleshooting and analysis
 
 Logs provide a timeline of events for the OS and applications and are a primary troubleshooting tool. When an issue occurs, the system administrator analyzes log files first. Most logs are plain text under /var/log. With SafeSquid installed, two log types matter: SafeSquid application logs and SafeSquid activity logs (in system logs). To view a log file, use one of:
@@ -27,6 +30,11 @@ tail -f /var/log/logfilename
 ```bash
 grep -i error /var/log/logfilename
 ```
+
+</section>
+
+<section class="section-strip">
+
 ## SafeSquid Application Logs
 
 SafeSquid application produces these logs. Logs contain all kinds of error messages, warnings or other events written by the SafeSquid. These messages provide logical, high-level information for specific use cases. Each log message helps administrators understand SafeSquid behavior.
@@ -562,6 +570,10 @@ The details of the fields in privacy.log are as follows:
   action                  Action is the privacy level applied to the request.
   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+</section>
+
+<section class="section-strip">
+
 ## SafeSquid activity log written in system logs
 
 The path to these log files is as follows:
@@ -628,3 +640,5 @@ You will find log lines of SafeSquid application in the syslog file.
 https://help.safesquid.com/portal/en/kb/articles/identify-the-filter-by-using-safesquid-extended-logs-or-detailed-logs
 https://help.safesquid.com/portal/en/kb/articles/identify-the-filter-name-using-safesquid-detailed-logs-from-the-interface
 https://help.safesquid.com/portal/en/kb/articles/forwarding-logs-to-the-siem-server-by-configuring-the-udp-port
+
+</section>

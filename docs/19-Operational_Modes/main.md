@@ -12,10 +12,16 @@ keywords:
   - enterprise proxy deployment
   - network architecture proxy
 ---
+<section class="section-strip">
+
 
 # Proxy deployment modes for enterprise networks
 
 SafeSquid supports forward, transparent, TCP, reverse proxy, and proxy chaining so deployment fits network architecture and security requirements. The documents below describe each mode and how to configure it.
+
+</section>
+
+<section class="section-strip">
 
 ## Configure forward, transparent, TCP, reverse, or chained proxy
 
@@ -37,3 +43,5 @@ Organizations need to protect internal web servers and applications from direct 
 
 ### [Proxy Chain](05-Proxy_Chain.md)
 Enterprise environments require multi-tier proxy architectures for hierarchical security enforcement, load distribution, and specialized processing across different network segments and security zones. Proxy Chain enables SafeSquid to operate as part of multi-tier proxy architectures, providing hierarchical security enforcement, load distribution, and specialized processing capabilities through intelligent traffic routing and policy coordination. This chaining capability ensures security coverage while supporting complex enterprise architectures and specialized security requirements. Configure proxy chaining in SafeSquid's network settings to enable multi-tier proxy deployment and hierarchical security enforcement.
+
+</section>

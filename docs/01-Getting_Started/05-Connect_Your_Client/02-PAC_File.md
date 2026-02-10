@@ -9,12 +9,22 @@ keywords:
   - WPAD configuration
   - browser PAC setup
 ---
+<section class="section-strip">
+
 
 # PAC File Configuration
+
+</section>
+
+<section class="section-strip">
 
 ## Problem Statement
 
 Organizations require automated proxy configuration to reduce deployment complexity and enable dynamic traffic routing without manual browser configuration for each endpoint. Manual proxy configuration becomes impractical in large-scale deployments where hundreds or thousands of endpoints need consistent proxy settings with intelligent routing capabilities. PAC files provide automated proxy selection through JavaScript-based configuration, enabling sophisticated routing logic, load balancing, and failover capabilities across proxy clusters.
+
+</section>
+
+<section class="section-strip">
 
 ## Key Benefits
 
@@ -24,6 +34,10 @@ Organizations require automated proxy configuration to reduce deployment complex
 
 **Centralized Management**: PAC files enable centralized configuration management with automatic updates and rollback capabilities. Changes to proxy configuration can be deployed instantly across all endpoints without individual browser reconfiguration.
 
+</section>
+
+<section class="section-strip">
+
 ## Prerequisites
 
 **Client-Side Preparations**: Ensure browsers support PAC file functionality and have appropriate network connectivity to access PAC file hosting location. Verify DNS resolution for PAC file server and test HTTP access to PAC file URL.
@@ -31,6 +45,10 @@ Organizations require automated proxy configuration to reduce deployment complex
 **SafeSquid-Side Setup**: Configure SafeSquid proxy servers with appropriate load balancing and failover capabilities. Ensure PAC file hosting server is accessible and PAC file content is properly formatted JavaScript.
 
 **System Requirements**: Client systems must have browsers that support PAC file functionality (Chrome, Firefox, Safari, Edge). Network connectivity must allow access to PAC file hosting server and SafeSquid proxy servers.
+
+</section>
+
+<section class="section-strip">
 
 ## Call to Action
 
@@ -167,6 +185,10 @@ nmcli connection modify "connection-name" proxy.pac-url "$PAC_URL"
 wpad.company.com. IN A 192.168.1.10
 ```
 
+</section>
+
+<section class="section-strip">
+
 ## Verification and Evidence
 
 **PAC File Loading Verification**: Check browser developer tools or proxy settings to confirm PAC file is loading correctly and proxy selection is working as expected.
@@ -176,6 +198,10 @@ wpad.company.com. IN A 192.168.1.10
 **Bypass List Testing**: Confirm internal domains bypass proxy configuration while external traffic routes through SafeSquid according to PAC file rules.
 
 **Load Balancing Verification**: Test multiple proxy servers to ensure PAC file load balancing is functioning correctly with proper failover capabilities.
+
+</section>
+
+<section class="section-strip">
 
 ## Troubleshooting Guide
 
@@ -190,3 +216,5 @@ wpad.company.com. IN A 192.168.1.10
 **DNS Resolution Problems**: Check DNS resolution for PAC file server and proxy servers. Verify internal DNS configuration and external DNS resolution.
 
 **Performance Issues**: Monitor PAC file execution time and optimize JavaScript logic for faster proxy selection. Consider caching PAC file content for improved performance.
+
+</section>

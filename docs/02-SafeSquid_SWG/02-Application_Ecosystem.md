@@ -10,9 +10,15 @@ keywords:
   - Web reporting and analytics
   - SafeSquid supporting services
 ---
+<section class="section-strip">
+
 # Application Ecosystem
 
 Enterprises stitching together multiple security appliances inherit policy drift, inspection blind spots, and operational overhead; effective Layer-7 enforcement therefore demands a single, modular system that integrates cleanly, scales horizontally, and sustains line-rate performance.
+
+</section>
+
+<section class="section-strip">
 
 ## Typical High-Level Solution Architecture
 
@@ -42,6 +48,10 @@ Enterprises struggle when a single change in one place breaks traffic in another
 - **Observability plane**\
   Incident response and compliance fail when logs lack context or arrive late. Reporting & Forensics solves this by streaming structured telemetry (JSON/CEF/syslog) with evidence fields. Dashboards show health and policy outcomes in real time, while scheduled CSV/PDF reports satisfy audit cycles without manual exports.
 
+</section>
+
+<section class="section-strip">
+
 ## Core Components
 
 At a high level, the SafeSquid SWG solution consists of the following core components:
@@ -67,6 +77,10 @@ At a high level, the SafeSquid SWG solution consists of the following core compo
 7. Cloud-Based Threat Intelligence Feeds\
    To ensure your organization's security posture has maximum relevance, real-time intelligence feeds are directly injected into the enforcement pipeline.
 
+</section>
+
+<section class="section-strip">
+
 ## Supporting Services
 
 For production use, deploy SafeSquid with Supporting Services for high availability, monitoring and performance enhancement.
@@ -80,10 +94,20 @@ For production use, deploy SafeSquid with Supporting Services for high availabil
 3. [NTP](07-Supporting_Services/03-NTP.md) \
    Time synchronizations with the Active directory in SSO configuration
 
+</section>
+
+<section class="section-strip">
+
 ## Integrations
 
 With Enterprise-Ready Integrations, SafeSquid can easily integrate with your IAM systems, ICAP servers, DLP systems, SIEMs, and SoC threat intelligence, to easily blend in your environment.
 
+</section>
+
+<section class="section-strip">
+
 ## Directory Structure
 
 SafeSquid's directory structure adheres to the Linux Filesystem Hierarchy Standard and logically organizes files related to service initialization, log management, module loading, UI rendering, and system performance tuning. It separates critical components such as SSL certificates, content filtering modules, DLP, caching, and analytics, ensuring easy maintenance, debugging, and extensibility.
+
+</section>

@@ -10,6 +10,8 @@ keywords:
   - SafeSquid remote client setup
   - Configure FQDN for SafeSquid VPN
 ---
+<section class="section-strip">
+
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -20,6 +22,11 @@ Directly exposing a SafeSquid proxy in the cloud to office or remote users is in
 
 The following diagram depicts the VPN tunnel:
 ![WireGuard VPN tunnel and SafeSquid proxy architecture](/img/wireguard/image1.webp)
+
+</section>
+
+<section class="section-strip">
+
 ## Prerequisites
 <Tabs>
 <TabItem value="Cloud VPS" label="Cloud VPS" default>
@@ -43,6 +50,11 @@ The following diagram depicts the VPN tunnel:
 
 </TabItem>
 </Tabs>
+
+</section>
+
+<section class="section-strip">
+
 ## Example cloud and office network topology
 <Tabs>
 <TabItem value="Cloud Environment" label="Cloud Environment" default>
@@ -65,6 +77,10 @@ The following diagram depicts the VPN tunnel:
 
 </TabItem>
 </Tabs>
+
+</section>
+
+<section class="section-strip">
 
 ## Setup Procedure
 
@@ -229,6 +245,11 @@ apt install iptables-persistent -y
 ```bash
 netfilter-persistent save
 ```
+
+</section>
+
+<section class="section-strip">
+
 ## Validate VPN Connectivity
 <Tabs>
 <TabItem value="Cloud VPS Ping Test" label="Cloud VPS Ping Test" default>
@@ -262,6 +283,10 @@ wg show
 ```
 </TabItem>
 </Tabs>
+
+</section>
+
+<section class="section-strip">
 
 ## Post-Deployment Considerations
 
@@ -334,9 +359,14 @@ wg genkey | tee privatekey | wg pubkey > publickey
 -   The private key is stored securely on the client system
 -   Key rotation is recommended for long-term deployments
 
+</section>
+
+<section class="section-strip">
+
 ## Verification and Evidence
 
 - **Interface Checks**: Confirm [WireGuard](https://www.wireguard.com/) interface is up (`wg show`); SafeSquid listens on the expected ports and is reachable over the VPN tunnel from clients.
 - **Log Analysis**: VPN peer handshakes and traffic appear in system logs; SafeSquid access logs show requests from VPN client IPs when traffic is routed through the proxy.
 - **Performance Validation**: From a client connected via VPN, browse through SafeSquid; traffic is inspected and policies apply. Load balancer (if used) distributes connections correctly.
 
+</section>

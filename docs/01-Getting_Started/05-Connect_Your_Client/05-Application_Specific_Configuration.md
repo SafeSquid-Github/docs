@@ -9,12 +9,22 @@ keywords:
   - Outlook proxy configuration
   - Git proxy settings
 ---
+<section class="section-strip">
+
 
 # Application-Specific Configuration
+
+</section>
+
+<section class="section-strip">
 
 ## Problem Statement
 
 Organizations require specialized proxy configuration for non-browser applications including email clients, development tools, and command-line utilities to ensure comprehensive security coverage across all network applications. Many applications do not respect system-wide proxy settings or browser-specific configurations, requiring individual application configuration to ensure complete traffic interception and security enforcement. Application-specific configuration provides detailed setup procedures for diverse application types while maintaining functionality and performance.
+
+</section>
+
+<section class="section-strip">
 
 ## Key Benefits
 
@@ -24,6 +34,10 @@ Organizations require specialized proxy configuration for non-browser applicatio
 
 **Detailed Implementation Guidance**: Application-specific configuration provides detailed, step-by-step procedures for diverse application types, enabling administrators to configure complex applications with confidence and ensuring consistent security enforcement.
 
+</section>
+
+<section class="section-strip">
+
 ## Prerequisites
 
 **Client-Side Preparations**: Ensure applications are installed and configured with appropriate permissions for proxy configuration changes. Verify network connectivity between applications and SafeSquid proxy servers.
@@ -31,6 +45,10 @@ Organizations require specialized proxy configuration for non-browser applicatio
 **SafeSquid-Side Setup**: Configure SafeSquid proxy services with appropriate authentication and policy configuration for non-HTTP protocols. Ensure SSL inspection is enabled if HTTPS traffic requires inspection.
 
 **System Requirements**: Client systems must have applications installed with appropriate configuration access. Network connectivity must be established between applications and SafeSquid proxy servers.
+
+</section>
+
+<section class="section-strip">
 
 ## Call to Action
 
@@ -228,6 +246,10 @@ Host remote-host
 4. Configure No Proxy for internal domains
 5. Test LibreOffice connectivity
 
+</section>
+
+<section class="section-strip">
+
 ## Verification and Evidence
 
 **Application Connectivity Testing**: Verify all configured applications can connect through SafeSquid proxy with proper functionality and performance.
@@ -237,6 +259,10 @@ Host remote-host
 **Functionality Verification**: Test application-specific features to ensure proxy configuration does not impact application functionality or user experience.
 
 **Performance Validation**: Test application performance to ensure proxy configuration does not significantly impact application performance or response times.
+
+</section>
+
+<section class="section-strip">
 
 ## Troubleshooting Guide
 
@@ -252,3 +278,4 @@ Host remote-host
 
 **Protocol Compatibility**: Verify SafeSquid supports protocols required by applications. Check proxy server configuration for protocol-specific settings and requirements.
 
+</section>

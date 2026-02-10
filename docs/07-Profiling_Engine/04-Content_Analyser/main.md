@@ -10,15 +10,29 @@ keywords:
   - content categorization
   - web content filtering
 ---
+<section class="section-strip">
+
 
 # Filter inappropriate content with categorization and analyzers
+
+</section>
+
+<section class="section-strip">
 
 ## Content analysis and inappropriate content blocking
 
 SafeSquid prevents users from accessing inappropriate content such as pornography using categorization, image analysis, and text analysis.
 
+</section>
+
+<section class="section-strip">
+
 ## Prerequisites
 HTTPS Inspection must be enabled in SafeSquid. See [How to enable HTTPS Inspection](../../05-SSL_Inspection/main.md) if not yet enabled.
+
+</section>
+
+<section class="section-strip">
 
 ## Select the Filters to block
 To block inappropriate content from web, SafeSquid provides different types of filters.
@@ -33,6 +47,10 @@ SafeSquid provides you with some default rules in "Text analyzer" to block porno
 
 And in image filter also there is one default policy exist, to block the pornographic images.
 
+</section>
+
+<section class="section-strip">
+
 ## Custom Categorization
 SafeSquid includes sample policies to support policy creation.
 
@@ -46,6 +64,10 @@ The page shows existing policies. Search for 'GLOBAL BLOCK'.
 
 Edit the policy and enable the policy by setting Enabled as TRUE and save (Save button is placed at right bottom)
 
+</section>
+
+<section class="section-strip">
+
 ## Image Analyzer
 Verify the default section is enabled (default: TRUE).
 
@@ -54,6 +76,10 @@ Make the Global Section Enabled to TRUE.
 Then click on Filtering Policies and Enable policy to Enable as TRUE
 
 Read more about [How to block inappropriate images by using Image Analyzer](03-Image_Analyser_AI.md)
+
+</section>
+
+<section class="section-strip">
 
 ## Text Analyzer
 You have to just check the default section is enable or not.By default it should be Enable as FALSE
@@ -65,6 +91,10 @@ Then click on Filtering Policies and Enable policies to Enable as TRUE.
 
 Read more about [Image Analyzer](03-Image_Analyser_AI.md) and [Text Analyzer](02-Text_Analyser.md)
 
+</section>
+
+<section class="section-strip">
+
 ## Testing
 Accessing pornographic content from a browser shows the SafeSquid blocked template. Pornographic images are blocked by the image analyzer.
 
@@ -72,8 +102,14 @@ Accessing pornographic content from a browser shows the SafeSquid blocked templa
 
 SafeSquid’s content moderation engine analyzes and filters web content in real-time to enforce compliance, safety, and productivity policies.
 
+</section>
+
+<section class="section-strip">
+
 ## Included Modules
 - [Image Analyzer](03-Image_Analyser_AI.md): Detects inappropriate or non-compliant visual content using AI-powered image analysis
 - [Text Analyzer](02-Text_Analyser.md): Scans and classifies textual content for profanity, hate speech, and policy violations
 
 Use these tools to build a safer and policy-compliant browsing environment.
+
+</section>

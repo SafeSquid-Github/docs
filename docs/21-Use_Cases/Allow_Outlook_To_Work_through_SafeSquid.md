@@ -9,20 +9,35 @@ keywords:
   - SafeSquid authentication settings
 ---
 
+
+<section class="section-strip">
+
 ## Problem: Outlook fails when proxy authentication or SSL inspection is enabled
 
 MS Outlook often fails when SafeSquid has authentication (Negotiate or Basic) and/or SSL inspection enabled. SafeSquid is typically deployed behind a firewall that allows only ports 80 and 443; other traffic is blocked. Outlook uses not only HTTP/HTTPS but also SMTP(S), IMAP(S), POP(S), DNS (UDP), and LDAP (389, 636). Blocking those ports or failing to allow them through the firewall breaks Outlook.
 
 Outlook supports proxy authentication (Negotiate and Basic) and SSL negotiation with a certificate deployed in Internet Explorer. The fix is to allow the necessary Outlook-related traffic (mail, DNS, LDAP, etc.) in the firewall or on the SafeSquid server and block the rest.
 
+</section>
+
+<section class="section-strip">
+
 ## Key benefits
 
 Outlook works through SafeSquid with authentication and SSL inspection enabled. Mail flow continues without weakening proxy policy. Administrators can use iptables on the SafeSquid server or configure the organization firewall to allow the required ports.
+
+</section>
+
+<section class="section-strip">
 
 ## Prerequisites
 
 - SafeSquid with authentication and/or SSL inspection enabled.
 - Root or sufficient privilege to configure iptables on the SafeSquid server, or access to the organization firewall to allow the ports listed below.
+
+</section>
+
+<section class="section-strip">
 
 ## Call to action
 
@@ -86,3 +101,5 @@ This rule is to drop the forward output traffic from the server
 iptables -P FORWARD DROP
 ```
 The above iptables rules are enough for Outlook to work in an environment where authentication and/or SSL inspection in SafeSquid are enabled.
+
+</section>

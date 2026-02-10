@@ -15,10 +15,16 @@ keywords:
   - deployment planning
   - hardware provisioning
 ---
+<section class="section-strip">
+
 
 # Deployment Planning
 
 Plan your infrastructure before installing SafeSquid. Undersized hardware, misconfigured networking, or insufficient disk I/O will cause policy failures, latency spikes, and data loss under load.
+
+</section>
+
+<section class="section-strip">
 
 ## System Requirements by Deployment Scale
 
@@ -75,6 +81,10 @@ Deploy Active-Active clusters for better hardware utilisation. Account for the f
 |                    2 |      32 |      32 |       8 |      3000 |           6000 |              1500 |
 |                    2 |      32 |      64 |      16 |      4000 |           8000 |              2000 |
 
+</section>
+
+<section class="section-strip">
+
 ## Network Configuration
 
 ### NIC Planning
@@ -95,6 +105,10 @@ Implement link aggregation to protect against single-port failures and bandwidth
 |                 8 Ports | Two high-throughput bonds (2x4)       |
 |                16 Ports | Dual 8-port LACP bonds                |
 
+</section>
+
+<section class="section-strip">
+
 ## Disk I/O Planning
 
 SafeSquid performs high-frequency concurrent disk writes for session logging, behavioural analysis, and threat detection. SATA SSDs will cause logging delays and missed entries under concurrent sessions. Use NVMe SSDs.
@@ -113,9 +127,17 @@ SafeSquid performs high-frequency concurrent disk writes for session logging, be
 
 For extended log retention, offload to an external syslog or reporting node.
 
+</section>
+
+<section class="section-strip">
+
 ## Disaster Recovery (DR)
 
 Deploy a separate SafeSquid stack in a geographically distant zone, configured to mirror production capacity. Place the DR site in a different city, data centre, and power grid than the primary. Co-locating DR in the same facility or region negates continuity guarantees during regional failures.
+
+</section>
+
+<section class="section-strip">
 
 ## Environment Preparation
 
@@ -127,6 +149,10 @@ Prepare the target environment before installation:
 4. **Verify resource reservations** — for virtual or cloud deployments, confirm CPU, RAM, and disk allocations match the hardware matrix above.
 5. **Test outbound connectivity** — the server must reach SafeSquid update and licensing endpoints (see [Activate Your License](04-Activate.md) for the full endpoint list).
 
+</section>
+
+<section class="section-strip">
+
 ## Verify Your Plan
 
 After installation, validate your deployment against the plan:
@@ -135,8 +161,14 @@ After installation, validate your deployment against the plan:
 - **Log Analysis:** Review SafeSquid and system logs for resource or connectivity errors under expected load.
 - **Performance Validation:** Monitor session counts and latency against the ideal/peak thresholds in the hardware matrix.
 
+</section>
+
+<section class="section-strip">
+
 ## Next Steps
 
 Proceed to [Install SafeSquid](03-Install_SafeSquid/main.md).
 
 **Related:** [License Activation](04-Activate.md) · [Proxy Clustering](../17-Proxy_Clustering/main.md)
+
+</section>

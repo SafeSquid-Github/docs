@@ -13,11 +13,22 @@ keywords:
   - hostname based filtering SafeSquid
 ---
 
+
+<section class="section-strip">
+
 ## Request profiler manages rules by request attributes
 
 The Request Profiler manages profiling based on the request sent to the web server. Configure rules by request method, protocol, referrer, and user agent. Use it to block or allow websites by hostname. Use it to make social networks (Facebook, Twitter) read-only (no like, comment, share, chat, or gaming). Use it to enforce safe search for Google, Yahoo, and YouTube.
 
+</section>
+
+<section class="section-strip">
+
 ## [Access SafeSquid interface](../02-SafeSquid_SWG/01-Configuration_Portal.md)
+
+</section>
+
+<section class="section-strip">
 
 ## Go to the configure page
 
@@ -26,6 +37,10 @@ The Request Profiler manages profiling based on the request sent to the web serv
 ![clicking on custom settings in the sidebar](/img/Configure/Custom_Settings/Request_Types/image2.webp)
 
 ![clicking on Response Types in custom settings](/img/Configure/Custom_Settings/Request_Types/image3.webp)
+
+</section>
+
+<section class="section-strip">
 
 ## Global
 
@@ -37,6 +52,10 @@ Enable or Disable request types of sections.
 - FALSE: Disable request types of section
 
 ![showing global section of request types](/img/Configure/Custom_Settings/Request_Types/image4.webp)
+
+</section>
+
+<section class="section-strip">
 
 ## Request Types
 
@@ -204,6 +223,10 @@ Comma-separated list of Request Profiles to be removed when all the above rules 
 
 If any of these Request profiles have been already applied to the connection by any of the other Request Profile rules, they will be removed.
 
+</section>
+
+<section class="section-strip">
+
 ## Example
 
 ### Rule#1
@@ -223,6 +246,10 @@ This is useful to remove authentication or bypass SSL inspection only for a spec
 ![showing rule created for google keep](/img/Configure/Custom_Settings/Request_Types/image8.webp)
 
 ---
+
+</section>
+
+<section class="section-strip">
 
 ## User Activity Visibility
 
@@ -314,3 +341,5 @@ Profiles are evaluated top-to-bottom. Order entries from most specific to most g
 5. **Combine with DLP** — Use profiles to trigger [Data Leakage Prevention](../09-Data_Leakage_Prevention/main.md) policies
 
 **Related**: [Data Leakage Prevention](../09-Data_Leakage_Prevention/main.md), [Access Restriction](../08-Access_Restriction/main.md), [Reporting Module](../15-Audit_Forensics/01-Reporting_Module.md)
+
+</section>

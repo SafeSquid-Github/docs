@@ -7,6 +7,8 @@ keywords:
   - redirection policies
   - Real Time Content Security Redirect
 ---
+<section class="section-strip">
+
 
 # Redirect One Website to Another
 
@@ -37,3 +39,5 @@ In this the URL value 'rediff.com' is redirect to 'SafeSquid.com' and the port t
 In a browser, open https://www.rediff.com/, it must redirect to SafeSquid.com; verify in SafeSquid under Native logs on SafeSquid interface Reports >> Native logs as like below.
 
 ![Verify Redirect One Website To Another Website in Native logs on](/img/How_To/Redirect_One_Website_To_Another_Website/image4.webp)
+
+</section>

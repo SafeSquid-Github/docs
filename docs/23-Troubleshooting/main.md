@@ -12,10 +12,16 @@ keywords:
   - proxy configuration problems
   - SafeSquid support procedures
 ---
+<section class="section-strip">
+
 
 # Diagnose and resolve SafeSquid proxy issues
 
 SafeSquid troubleshooting provides diagnostic procedures and resolution guides for common proxy issues, connection failures, configuration problems, and performance anomalies. The documents below cover installation, interface access, SSL, authentication, DNS, connectivity, policy, reporting, and advanced diagnostics. Use the relevant document for each issue.
+
+</section>
+
+<section class="section-strip">
 
 ## Common Configuration Issues
 
@@ -28,6 +34,10 @@ Administrators cannot reach SafeSquid's web interface due to authentication fail
 ### [SSL inspection issues](SSL_Inspection_Issues.md)
 Organizations encounter SSL inspection problems including certificate errors, handshake failures, and inspection bypass issues that prevent proper SSL traffic analysis and control. SSL Inspection Issues provides diagnostic procedures for SSL-related problems including certificate validation, handshake troubleshooting, and inspection configuration issues. This troubleshooting guide ensures proper SSL inspection functionality while providing systematic resolution procedures for SSL-related problems. Reference SSL Inspection Issues documentation to resolve SSL inspection and certificate-related problems.
 
+</section>
+
+<section class="section-strip">
+
 ## Authentication and Directory Service Issues
 
 ### [SSO authentication fail](SSO_Authentication_Fail.md)
@@ -36,6 +46,10 @@ Organizations experience single sign-on authentication failures due to directory
 ### [Failed to fetch LDAP entries](Failed_To_Fetch_LDAP_Entries.md)
 Administrators encounter LDAP connectivity problems that prevent user authentication and group membership resolution due to network issues, configuration errors, or directory service problems. Failed To Fetch LDAP Entries provides diagnostic procedures for LDAP-related problems including connectivity troubleshooting, configuration validation, and directory service integration issues. This troubleshooting guide ensures reliable LDAP integration while providing systematic resolution procedures for directory service problems. Reference Failed To Fetch LDAP Entries documentation to resolve LDAP connectivity and configuration issues.
 
+</section>
+
+<section class="section-strip">
+
 ## Performance and Resource Issues
 
 ### [Disk space and RAM are full](Disk_Space_and_RAM_are_Full.md)
@@ -43,6 +57,10 @@ Organizations experience performance degradation and system failures due to insu
 
 ### [Not generating performance plot](Not_Generating_Performance_Plot.md)
 Administrators encounter issues with performance monitoring and reporting when SafeSquid fails to generate performance plots due to configuration problems, resource constraints, or service failures. Not Generating Performance Plot provides diagnostic procedures and resolution steps for performance monitoring issues including configuration validation, service troubleshooting, and resource optimization procedures. This troubleshooting guide ensures reliable performance monitoring while providing systematic procedures for resolving monitoring-related problems. Reference Not Generating Performance Plot documentation to resolve performance monitoring and reporting issues.
+
+</section>
+
+<section class="section-strip">
 
 ## Network and Connectivity Issues
 
@@ -54,6 +72,10 @@ Users encounter website access problems due to proxy configuration issues, netwo
 
 ### [Website not accessible](Website_Not_Accessible.md)
 Organizations experience website accessibility issues due to proxy blocking, network problems, or configuration errors that prevent legitimate website access. Website Not Accessible provides diagnostic procedures for website accessibility problems including proxy policy review, network troubleshooting, and configuration validation procedures. This troubleshooting guide ensures reliable website access while providing systematic resolution procedures for accessibility-related problems. Follow Website Not Accessible procedures to diagnose and resolve website accessibility issues.
+
+</section>
+
+<section class="section-strip">
 
 ## Policy and Configuration Issues
 
@@ -69,6 +91,10 @@ Organizations encounter SafeSearch enforcement problems when search engines fail
 ### [Unable to login specific website](Unable_To_Login_Specific_Website.md)
 Users cannot log in to a specific website through the proxy due to cookie filter, header filter, elevated privacy, or SSL inspection settings. Unable to Login Specific Website provides resolution steps for login failures on sites such as Facebook and Google when access works but authentication fails. This targeted fix restores login capability while keeping other policies in place. Follow Unable to Login Specific Website procedures to diagnose and resolve login failures on specific sites.
 
+</section>
+
+<section class="section-strip">
+
 ## Reporting and Interface Issues
 
 ### [Blank report page](Blank_Report_Page.md)
@@ -80,6 +106,10 @@ Users encounter proxy connection refusal errors due to service failures, configu
 ### [No tar-ball support](No_Tar-Ball_Support.md)
 Administrators cannot generate the support tarball from the SafeSquid interface due to script or permission failures. No Tar-Ball Support provides steps to manually run the support tarball script and resolve permission or path issues so diagnostic archives can be produced for support. This guide restores the ability to collect logs and configuration for troubleshooting. Follow No Tar-Ball Support procedures to generate the support tarball when the interface option fails.
 
+</section>
+
+<section class="section-strip">
+
 ## Advanced Diagnostic Tools
 
 ### [How to use find_client_id.sh for getting complete connection log](How_to_use_find_client_id.sh_for_getting_complete_connection_log.md)
@@ -89,3 +119,4 @@ Administrators need advanced diagnostic tools to analyze specific connection iss
 Organizations experience complete SafeSquid service failures due to system crashes, configuration corruption, or critical errors that prevent proxy functionality. Product Failure provides emergency diagnostic procedures and recovery steps for complete service failures including system recovery, configuration restoration, and emergency troubleshooting procedures. This critical troubleshooting guide ensures rapid service recovery while providing systematic procedures for resolving complete service failures. Follow Product Failure procedures to diagnose and resolve complete SafeSquid service failures and system crashes.
 <!-- Merged from: Troubleshooting / Basic SOP -->
 
+</section>

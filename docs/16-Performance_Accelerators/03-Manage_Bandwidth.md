@@ -8,6 +8,8 @@ keywords:
   - Set file transfer limits SafeSquid
   - SafeSquid HTTPS download control
 ---
+<section class="section-strip">
+
 
 # Control download speed and size per user with Limits
 
@@ -26,6 +28,9 @@ When downloading files from HTTPS websites, ensure that [HTTPS Inspection](../05
 ### Testing Download Rate
 ![testing the download rate by downloading a file](/img/How_To/Setup_Download_Speed_At_Which_the_files_need_to_download/image4.webp)
 
+</section>
+
+<section class="section-strip">
 
 ## Setup Maximum limit on the Download size
 This can be achieved using SafeSquid limits feature, the interface provides an option to set up the limit on the Download size for users.
@@ -62,3 +67,5 @@ Here I am selecting the file to Upload
 When I click on upload, I will get the below error, Because I am uploading 4MB file, but I have maximum upload limit of 2MB
 
 ![Error template of Maximum limit on the Upload size](/img/How_To/Setup_Maximum_limit_on_the_Upload_size/image4.webp)
+
+</section>

@@ -14,13 +14,24 @@ keywords:
   - conditional DNS forwarding
 ---
 
+
+<section class="section-strip">
+
 ## Connection failed to proxy or origin
 When the user accesses the website, the browser displays "**Connection to 192.168.27.30:80 failed**". When the user accesses https://abc.safesquid.com/ via proxy and logs in with a corporate email ID, the browser may show "**Connection to abc.safesquid.com:443 failed**".
 
 ![Error showing "Connection to abc.safesquid.com:443 failed"](/img/Troubleshooting/Connection_failure_to_websites/image1.webp)
 
+</section>
+
+<section class="section-strip">
+
 ## Possible causes
 The destination website may be down, or the user may be unable to reach the site because of internet slowness.
+
+</section>
+
+<section class="section-strip">
 
 ## Troubleshooting
 ### Website or origin unreachable
@@ -139,3 +150,5 @@ Command to restart bind9 service:
 /etc/init.d/bind9 restart
 ```
 Verify whether the website is resolving to the local IP successfully or not.
+
+</section>

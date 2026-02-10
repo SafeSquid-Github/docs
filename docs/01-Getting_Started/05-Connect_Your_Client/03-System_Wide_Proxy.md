@@ -9,12 +9,22 @@ keywords:
   - macOS proxy configuration
   - universal proxy settings
 ---
+<section class="section-strip">
+
 
 # System-Wide Proxy Settings
+
+</section>
+
+<section class="section-strip">
 
 ## Problem Statement
 
 Organizations require operating system-level proxy configuration to ensure all applications route traffic through SafeSquid without individual application configuration for comprehensive security coverage. Many applications do not respect browser-specific proxy settings, requiring system-wide configuration to ensure complete traffic interception and security enforcement. System-wide proxy settings provide universal application coverage while eliminating the need for application-specific configuration across diverse software environments.
+
+</section>
+
+<section class="section-strip">
 
 ## Key Benefits
 
@@ -24,6 +34,10 @@ Organizations require operating system-level proxy configuration to ensure all a
 
 **Consistent Security Enforcement**: System-wide proxy settings ensure uniform security policy application across all applications, preventing security bypasses and ensuring comprehensive threat protection and policy enforcement.
 
+</section>
+
+<section class="section-strip">
+
 ## Prerequisites
 
 **Client-Side Preparations**: Ensure administrative privileges are available for system-wide proxy configuration changes. Verify network connectivity between client systems and SafeSquid proxy servers with appropriate firewall rules configured.
@@ -31,6 +45,10 @@ Organizations require operating system-level proxy configuration to ensure all a
 **SafeSquid-Side Setup**: Configure SafeSquid proxy services on standard ports with proper authentication and policy configuration. Ensure SSL inspection is enabled if HTTPS traffic requires inspection and monitoring.
 
 **System Requirements**: Client systems must have appropriate operating system versions that support system-wide proxy configuration. Network connectivity must be established between client systems and SafeSquid proxy servers.
+
+</section>
+
+<section class="section-strip">
 
 ## Call to Action
 
@@ -201,6 +219,10 @@ source ~/.bash_profile
 curl -I --proxy $http_proxy http://safesquid.cfg/
 ```
 
+</section>
+
+<section class="section-strip">
+
 ## Verification and Evidence
 
 **System-Wide Application Testing**: Verify all applications (browsers, email clients, development tools) route traffic through SafeSquid proxy without individual configuration.
@@ -210,6 +232,10 @@ curl -I --proxy $http_proxy http://safesquid.cfg/
 **Bypass List Verification**: Test internal domain access to ensure bypass list configuration works correctly for internal resources.
 
 **Performance Validation**: Test application performance to ensure system-wide proxy configuration does not significantly impact functionality or user experience.
+
+</section>
+
+<section class="section-strip">
 
 ## Troubleshooting Guide
 
@@ -225,3 +251,4 @@ curl -I --proxy $http_proxy http://safesquid.cfg/
 
 **Network Manager Conflicts**: Verify Network Manager proxy settings do not conflict with manual environment variable configuration. Choose one configuration method consistently.
 
+</section>

@@ -8,25 +8,47 @@ keywords:
   - LDAP configuration
   - SafeSquid authentication
 ---
+<section class="section-strip">
+
 
 :::info CISO takeaway
 **Risk:** Repeated proxy login reduces usability and can lead to workarounds. **Control:** SSO with LDAP allows directory-authenticated users to use the proxy with minimal prompts. **Evidence:** Identity and access logs show authenticated usernames for audit.
 :::
 
+</section>
+
+<section class="section-strip">
+
 ## Problem: Enable SSO for LDAP users
 
 LDAP (or AD) users should use the proxy with minimal prompts after directory authentication. Access rules with LDAP profiles and SSO enabled apply identity-based policy; configure Allow List entries and LDAP profiles so the correct user groups get access.
 
+</section>
+
+<section class="section-strip">
+
 ## Key benefits
 
 Single sign-on experience for directory users; consistent identity and group-based policy. No separate proxy credential store when using LDAP profiles. Supports audit via identity and access logs.
+
+</section>
+
+<section class="section-strip">
 
 ## Prerequisites
 
 - [Integrate LDAP](main.md) configured and user extraction successful.
 - Access to [Configuration Portal](../../../02-SafeSquid_SWG/01-Configuration_Portal.md).
 
+</section>
+
+<section class="section-strip">
+
 ## [Access the SafeSquid User Interface](../../../02-SafeSquid_SWG/01-Configuration_Portal.md)
+
+</section>
+
+<section class="section-strip">
 
 ## Enable authentication: Configure access rules
 
@@ -103,6 +125,10 @@ If this field is left blank, the user or IP address used to access the SafeSquid
 
 ![default entry to authenticate all users from AD which are not added in earlier entries](/img/How_To/Enable_authentication_for_LDAP_users/image32.webp)
 
+</section>
+
+<section class="section-strip">
+
 ## Verification and Evidence
 
 Open **Reports** → **Detailed logs** and confirm that requests show the authenticated username. This confirms SSO authentication is applied and supports audit evidence.
@@ -114,3 +140,5 @@ Open **Reports** → **Detailed logs** and confirm that requests show the authen
 ![Confirming SSO authentication by seeing the username in SafeSquid detailed logs](/img/How_To/Enable_authentication_for_LDAP_users/image35.webp)
 
 **Related:** [Simple Authentication](Simple_Authentication), [Working of Default Entries in Access Restrictions](../../../21-Use_Cases/working_of_default_entries_in_access_restrictions.md), [SSO Authentication Fail](../../../23-Troubleshooting/SSO_Authentication_Fail.md)
+
+</section>

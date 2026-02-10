@@ -10,10 +10,16 @@ keywords:
   - SafeSquid support
   - SafeSquid SWG FAQ
 ---
+<section class="section-strip">
+
 
 # FAQs
 
 This section answers common questions about SafeSquid SWG: installation, activation, licensing, proxy modes, reporting, transparent proxy, WCCP, DLP, SafeSearch, and troubleshooting. Use the list below to jump to a topic.
+
+</section>
+
+<section class="section-strip">
 
 ## FAQ index
 
@@ -29,13 +35,25 @@ This section answers common questions about SafeSquid SWG: installation, activat
 - [How does SafeSquid licensing work?](#how-does-safesquid-licensing-work)
 - [How to purchase SafeSquid SWG](#how-to-purchase-safesquid-swg)
 
+</section>
+
+<section class="section-strip">
+
 ## What is SafeSquid for Windows?
 SafeSquid for Windows is content filtering proxy server. SafeSquid for Linux has been natively ported for use on Microsoft Windows platform, and distributed as SafeSquid for Windows. It provides total access control, Total Content Control & Total Internet Security. SafeSquid for Windows can be installed on any desktop/server having Microsoft Windows based 64-bit Operating Systems.
+
+</section>
+
+<section class="section-strip">
 
 ## Where to get a product activation key
 Obtain a product activation key **on SafeSquid self-service portal** - https://key.safesquid.com/
 
 Register to create an account on **SafeSquid self-service portal** and **download the product activation key**
+
+</section>
+
+<section class="section-strip">
 
 ## What is SafeSquid Self Service portal?
 The SafeSquid Self-Service Portal is the cloud-based management console for SafeSquid.
@@ -44,24 +62,48 @@ The SafeSquid Self-Service Portal manages the activities like, SafeSquid cloud-b
 
 Read more: [Self-Service Portal](../02-SafeSquid_SWG/04-Self-Service_Portal.md).
 
+</section>
+
+<section class="section-strip">
+
 ## Who has access to the SafeSquid Web GUI
 SafeSquid has an intrinsic Web GUI, that enables administrators to manage the installation, setup required policies, and monitor the secure web gateway.
 
 Configure SafeSquid policies to allow access of the Web GUI to only security administrators.
 
+</section>
+
+<section class="section-strip">
+
 ## How to confirm SafeSquid is activated
 If all websites are accessible through the browser, the product is activated.
+
+</section>
+
+<section class="section-strip">
 
 ## Where to get license details
 After successful activation, license details appear on the Support page of the SafeSquid Web GUI.
 
 For more details see the [Support page](../15-Audit_Forensics/main.md) (license details after activation) or [Activate](../01-Getting_Started/04-Activate.md).
 
+</section>
+
+<section class="section-strip">
+
 ## Why does "Proxy Access Denied" appear?
 "Proxy Access Denied" appears when access restriction policies are misconfigured or the administrator has not granted SafeSquid Interface access.
 
+</section>
+
+<section class="section-strip">
+
 ## Can I use SafeSquid Captive portal to monitor internet usage traffic?
 Yes. SafeSquid captive portal can monitor internet usage traffic.
+
+</section>
+
+<section class="section-strip">
 
 ## What is SafeSquid Captive portal?
 SafeSquid captive portal is works as same as general captive portal.
@@ -78,6 +120,10 @@ This way SafeSquid captive portal secures WIFI network by only granting access t
 
 Combining SafeSquid Captive Portal with SafeSquid secure web gateway allows monitoring of internet usage, filtering of traffic, and other security enhancements to enhance security levels.
 
+</section>
+
+<section class="section-strip">
+
 ## Does SafeSquid supports transparent proxy?
 Yes, SafeSquid supports transparent proxy.
 
@@ -86,6 +132,10 @@ SafeSquid support both HTTP and HTTPS websites in transparent mode. The HTTPS we
 The traffic will come to router and router will send traffic to SafeSquid Secure web gate way with port 80 and 443 respectively.
 
 The **redirection rules on SafeSquid Secure web gateway** will redirect traffic to SafeSquid Proxy with port 8080 and 8443 (SSL transparent) respectively (By enabling IP forwarding).
+
+</section>
+
+<section class="section-strip">
 
 ## When to enable WCCP
 For transparent redirection of traffic, Load balance traffic & scaling up or Service assurance & high availability, enable WCCP in SafeSquid. Enable WCCP support on routers that support WCCP.
@@ -98,6 +148,10 @@ Making SafeSquid go direct for some sites
 
 Preventing access to porn sites
 
+</section>
+
+<section class="section-strip">
+
 ## Preventing access to social networking sites
 Yes. SafeSquid can prevent users from accessing social networking sites. When configured, SafeSquid blocks all social networking sites by default. Administrators can allow those sites for specific times (e.g. lunch hour).
 
@@ -106,6 +160,10 @@ Allow social networking sites in lunch hours: [Allow Social Networking Sites Dur
 Facebook is a social networking website that allows users to interact with other users in a multimedia environment on the Web. Facebook users can install and use applications to enhance their experience. Many organizations want to allow Facebook access to maintain morale, increase retention, and boost hiring, but they also want to control access to it.
 
 SafeSquid allows full Facebook access for a social media group, partial access to a customer service group, and read-only access to other groups. Access to Facebook can also be assigned by time of day. For more details: [Facebook Read-Only Mode](../21-Use_Cases/Facebook_Read_Only_Mode.md), [Allow Specific Page on Facebook](../21-Use_Cases/Allowing_Specific_Page_on_Facebook.md).
+
+</section>
+
+<section class="section-strip">
 
 ## Preventing users from uploading confidential data
 Yes. SafeSquid can prevent users from uploading confidential data. When an organization has confidential information and an internal user leaks it intentionally or unintentionally, productivity loss can be large.
@@ -120,12 +178,20 @@ This challenge is also big for security experts because when there is an upload 
 
 But SafeSquid come up with **Advanced DLP** solution embedded into **SafeSquid SWG**, which analyzes post data, deeply inspect archives using file decomposition methods and able to identify whether archive or emails or social media posts contains certain keyword matches. Based on the match, the administrator can block uploads by user or by destination website. The Advanced DLP solution is managed from the SafeSquid Self-Service Portal, where administrators create keyword expression matches. SafeSquid SWG will download those keyword expressions and loads into memory. When an archive uploads or an email write, SafeSquid SWG analyses Post data and transmit it to the Clam AV daemon for Signatures verification. If the keyword expression matches Clam AV daemon responds with match. SafeSquid will take respective action based on match.
 
+</section>
+
+<section class="section-strip">
+
 ## Preventing upload of specific file extensions
 Yes. SafeSquid can prevent users from uploading specific file extensions.
 
 SafeSquid DLP section is nothing but **Data Loss Prevention module**, used to protect from sending sensitive or critical information outside the corporate network.
 
 It is possible by blocking the specific file types or file extensions based on Content type and extension of file types.
+
+</section>
+
+<section class="section-strip">
 
 ## Can I prevent users to use anonymous proxy?
 Yes. SafeSquid can prevent users from using anonymous proxy.
@@ -137,21 +203,44 @@ Anonymous Proxy service can enhance security and lets users access some restrict
 
 For more detail: [Access Restriction](../08-Access_Restriction/main.md) and [Use Cases](../21-Use_Cases/main.md) for blocking anonymous proxies and application control.
 
+</section>
+
+<section class="section-strip">
 
 ## Should third-party cookies be blocked?
 SafeSquid can block cookies for third-party domains. This controls tracking across sites and hides the referrer for third-party domains; SafeSquid can set referrer to match hostname. Administrators can also hide user agents for third-party domains; SafeSquid can use a default user agent (e.g. Mozilla/4.0 (compatible; MSIE 5.5; Windows 98; Win 9x 4.90)).
 
+</section>
+
+<section class="section-strip">
+
 ## Where to get SafeSquid default policies
 SafeSquid default policies and how-to guides are in the "How To" section of http://docs.safesquid.com
+
+</section>
+
+<section class="section-strip">
 
 ## Where to get the performance plot
 The performance plot is available on the Support page of the SafeSquid Web GUI. Administrators can generate a performance plot by range: last hour, last 7 days, last month, today, or a custom time.
 
+</section>
+
+<section class="section-strip">
+
 ## Where to get the support tarball
 The support tarball is on the Support page of the SafeSquid Web GUI. Administrators can generate a new support tarball or search existing tarballs by year, month, day, or time.
 
+</section>
+
+<section class="section-strip">
+
 ## When to download the config file
 The config file can be downloaded at any time. SafeSquid allows download by year, month, day, or time, and allows download of the default config for revert scenarios.
+
+</section>
+
+<section class="section-strip">
 
 ## Is SafeSquid provide dashboard for reporting?
 SafeSquid provide dashboard which contain details of last 1000 transactions.
@@ -162,14 +251,30 @@ Administrators can edit the total number of transactions for the report. Reports
 
 Administrators can select any number of filtering options.
 
+</section>
+
+<section class="section-strip">
+
 ## How to get reports in PDF format
 SafeSquid reporting supports export to PDF and Excel. Open the SafeSquid interface, go to Reports > Dashboard; the PDF button is at the bottom right, just above the SafeSquid version.
+
+</section>
+
+<section class="section-strip">
 
 ## Can reports be generated for specific dates?
 Yes. SafeSquid has a reporting module that reduces processing time and provides detailed reports, hour-wise reports, filtering options, deeper data analysis, an automated data mining engine, and export to PDF and Excel.
 
+</section>
+
+<section class="section-strip">
+
 ## Why does SafeSquid become slow after running for some time?
 Slowness after sustained operation is often due to resource exhaustion (disk, memory, or connection state). Check disk space and RAM (see [Disk space and RAM are full](../23-Troubleshooting/Disk_Space_and_RAM_are_Full.md)), clear or rotate logs, and review the [Performance Plot](../15-Audit_Forensics/03-Performance_Plot.md) and [Support](../15-Audit_Forensics/main.md) page for resource usage. Restart the proxy after freeing resources if needed.
+
+</section>
+
+<section class="section-strip">
 
 ## How does SafeSquid licensing work?
 SafeSquid SWG is available with annual subscription.
@@ -191,8 +296,18 @@ Named Users and Concurrent Connection subscriptions are annual. Multi-year conse
 3. Log Aggregator
 4. WCCP
 
+</section>
+
+<section class="section-strip">
+
 ## How to purchase SafeSquid SWG
 Opt for a SafeSquid SWG subscription by paying online via PayPal or by wire or bank transfer.
 
+</section>
+
+<section class="section-strip">
+
 ## What happens if the subscription is not renewed?
 SafeSquid SWG is an annual subscription; if the subscription is not renewed, the product stops working.
+
+</section>

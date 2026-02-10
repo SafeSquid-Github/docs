@@ -8,12 +8,22 @@ keywords:
   - TCP protocol proxy
   - SafeSquid connect method
 ---
+<section class="section-strip">
+
 
 # TCP proxy handles non-HTTP protocols
+
+</section>
+
+<section class="section-strip">
 
 ## When to use TCP proxy
 
 HTTP/HTTPS traffic is handled by SafeSquid's HTTP proxy. Applications using other TCP-based protocols (e.g. custom ports, non-web services) need a way to route through the proxy. TCP Proxy mode enables SafeSquid to accept and forward non-HTTP TCP connections so all TCP traffic can be funneled through the gateway. Clients still configure the proxy (e.g. browser or system proxy); SafeSquid forwards the TCP stream to the destination.
+
+</section>
+
+<section class="section-strip">
 
 ## Configure TCP proxy in browser
 
@@ -77,8 +87,14 @@ HTTP/HTTPS traffic is handled by SafeSquid's HTTP proxy. Applications using othe
 
    ![Save](/img/How_To/How_To_configure_Proxy_In_a_Browser/image17.webp)
 
+</section>
+
+<section class="section-strip">
+
 ## Next steps
 
 - [Forward Proxy](01-Forward_Proxy.md) for HTTP/HTTPS explicit proxy.
 - [Transparent Proxy](02-Transparent_Proxy.md) for interception without client config.
 - [Proxy Chain](05-Proxy_Chain.md) for forwarding to a parent proxy.
+
+</section>

@@ -6,6 +6,8 @@ keywords:
   - SafeSquid activation key
   - SafeSquid licensing
 ---
+<section class="section-strip">
+
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -25,6 +27,10 @@ SafeSquid offers two licensing tiers:
 | Email support | ❌ | ✅ |
 
 The free license has no time limit. You can upgrade to commercial at any time through the [Self-Service Portal](https://key.safesquid.com).
+
+</section>
+
+<section class="section-strip">
 
 ## Readiness Checklist
 
@@ -55,6 +61,10 @@ Your SafeSquid server needs outbound access to these endpoints. Ensure your fire
 | klassify.itsecure.co.in  | 8080 | /URLCategorizerService/URLCategorize |
 | prourl.itonlinesecure.in | 8080 | /URLCategorizerService/URLCategorize |
 | encurl.itonlinesecure.in | 8080 | /URLCategorizerService/URLCategorize |
+
+</section>
+
+<section class="section-strip">
 
 ## Activation Steps
 
@@ -90,6 +100,10 @@ Your SafeSquid server needs outbound access to these endpoints. Ensure your fire
 :::note
 To synchronize SSL certificates and configuration across a proxy cluster, upload the same activation key on every SafeSquid instance.
 :::
+
+</section>
+
+<section class="section-strip">
 
 ## Troubleshooting
 
@@ -163,3 +177,5 @@ To synchronize SSL certificates and configuration across a proxy cluster, upload
 
   </TabItem>
 </Tabs>
+
+</section>

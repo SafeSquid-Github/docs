@@ -8,6 +8,8 @@ keywords:
   - bypass SSL inspection
   - Firefox certificate import
 ---
+<section class="section-strip">
+
 
 # Configure HTTPS Inspection
 
@@ -15,13 +17,25 @@ keywords:
 **Risk:** Encrypted HTTPS traffic creates a blind spot for URL filtering, DLP, and malware detection; compliance frameworks (e.g. PCI-DSS 10.x, SOC 2) expect visibility into web traffic where applicable. **Control:** SafeSquid terminates TLS, inspects content, and re-encrypts so policies apply to HTTPS while bypass rules protect sensitive domains. **Evidence:** Inspection and bypass policies are visible in the Configuration Portal; access and security logs show decrypted requests and bypassed hosts for audit.
 :::
 
+</section>
+
+<section class="section-strip">
+
 ## Encrypted traffic hides threats without inspection
 
 Most web traffic is HTTPS. Proxies that cannot decrypt and inspect this traffic cannot enforce policy, block malware, or apply DLP. SafeSquid HTTPS inspection allows the gateway to terminate TLS, apply security and policy, then re-encrypt to the origin so traffic remains protected end-to-end while remaining visible to the gateway. **Limitation:** Bypass rules are required for SSL-pinned applications and privacy-sensitive domains (e.g. banking, healthcare); client browsers must trust the SafeSquid Root CA.
 
+</section>
+
+<section class="section-strip">
+
 ## Visibility and control over HTTPS reduce risk and support compliance
 
 HTTPS inspection enables URL filtering, malware scanning, data loss prevention, and application control on encrypted traffic. Organizations gain consistent policy enforcement, better threat detection, and the ability to meet compliance requirements that depend on visibility into web traffic (e.g. PCI-DSS requirement 10, SOC 2 CC6.1). Evidence for auditors: configuration in Real-time content security → HTTPS Inspection; logs showing inspected vs. bypassed traffic.
+
+</section>
+
+<section class="section-strip">
 
 ## Prerequisites
 
@@ -36,6 +50,10 @@ HTTPS inspection enables URL filtering, malware scanning, data loss prevention, 
 - Generate or import enterprise-approved Root CA certificates
 - Configure Trusted Root CA store for validating upstream certificates
 - Prepare role-based policies for bypassing sensitive domains and services
+
+</section>
+
+<section class="section-strip">
 
 ## Configuring HTTPS Inspection
 
@@ -156,6 +174,10 @@ Clicking Save config prompts for confirmation to store the configuration in the 
   - All sections are fully configured and validated.
 - Otherwise select No and click Submit.
 
+</section>
+
+<section class="section-strip">
+
 ## Import certificate into Firefox {#import-certificate-into-firefox}
 
 Firefox uses its own certificate store and does not use the system or Chrome trust store. Import the SafeSquid Root CA so that HTTPS inspection works without certificate warnings in Firefox.
@@ -165,6 +187,10 @@ Firefox uses its own certificate store and does not use the system or Chrome tru
 3. Open the **Authorities** tab → **Import**.
 4. Select the downloaded SafeSquid Root CA file, check **Trust this CA to identify websites**, then **OK**.
 
+</section>
+
+<section class="section-strip">
+
 ## Test certificate in Firefox {#test-certificate-in-firefox}
 
 After importing the SafeSquid Root CA in Firefox, confirm that HTTPS inspection is working.
@@ -173,6 +199,10 @@ After importing the SafeSquid Root CA in Firefox, confirm that HTTPS inspection 
 2. In Firefox, visit an HTTPS site (e.g. https://www.google.com).
 3. Click the padlock (or connection icon) in the address bar → **Connection secure** → **More information**.
 4. Click **View Certificate** and verify the certificate chain shows the SafeSquid Root CA or the enterprise CA as the root. If the chain is valid and the site loads without warnings, inspection is working.
+
+</section>
+
+<section class="section-strip">
 
 ## Bypass Inspection
 
@@ -228,11 +258,19 @@ Configure proxy settings in Dropbox and upload or download files to validate tha
 
 :::
 
+</section>
+
+<section class="section-strip">
+
 ## Verification and Evidence
 
 - **Interface Checks**: In [Configuration Portal](../02-SafeSquid_SWG/01-Configuration_Portal.md), Real-time content security → HTTPS Inspection: Global enabled, Inspection policies show Enforce SSL scanning and Bypass rules as configured. Self-Service Portal or Manage Certificate shows the Root CA in use.
 - **Log Analysis**: Access and security logs show decrypted requests when inspection is applied; bypassed hosts show CONNECT without decrypt. Certificate or policy errors appear in logs.
 - **Performance Validation**: Browsing HTTPS sites works without certificate warnings when the SafeSquid Root CA is installed in clients. Bypassed domains (e.g. banking) load without inspection; other traffic is inspected and policies apply.
+
+</section>
+
+<section class="section-strip">
 
 ## Troubleshooting
 
@@ -240,9 +278,15 @@ Configure proxy settings in Dropbox and upload or download files to validate tha
 - **Sites or applications broken after enabling inspection**: Add bypass rules for sensitive or pinned applications. Use Request Types and Access Policies to match domains or applications and set BYPASS SSL INSPECTION.
 - **Handshake or policy failures in logs**: Confirm Trusted Root CA store and upstream certificate validation; check [SSL Inspection Issues](../23-Troubleshooting/SSL_Inspection_Issues.md) for diagnostic steps.
 
+</section>
+
+<section class="section-strip">
+
 ## Next steps
 
 - [Self-Service Portal](../02-SafeSquid_SWG/04-Self-Service_Portal.md) for certificate management.
 - [Server Verification](../26-Server_Verification/main.md) for client certificate import.
 - [Access Restriction](../08-Access_Restriction/main.md) for policy and bypass rules.
 - [SSL Inspection Issues](../23-Troubleshooting/SSL_Inspection_Issues.md) for diagnostic steps.
+
+</section>

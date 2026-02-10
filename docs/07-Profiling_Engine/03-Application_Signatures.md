@@ -11,6 +11,8 @@ keywords:
   - keyword-based DLP SafeSquid
   - configure keyword filter SafeSquid
 ---
+<section class="section-strip">
+
 
 This section assumes an active SafeSquid account with at least one activation key. Register at [https://key.safesquid.com/](https://key.safesquid.com/) if needed. Log in to the Self-Service Portal at [https://key.safesquid.com/](https://key.safesquid.com/).
 
@@ -25,6 +27,10 @@ This section assumes an active SafeSquid account with at least one activation ke
 ![Newly added signature can be view after click on submit to save the signature](/img/How_To/Manage_Keyword_Signatures_using_Self_Service_portal/image5.webp)
 
 To know more about this feature follow link [Block Emails or Files including archives or Social Posts using Keywords](../21-Use_Cases/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords.md)
+
+</section>
+
+<section class="section-strip">
 
 ## Adding users using SafeSquid interface for authentication
 
@@ -45,3 +51,5 @@ When no Active Directory (AD) server is available for SafeSquid LDAP, administra
 ![Application Signatures list with new entry](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image12.webp)
 
 ![Application Signatures configuration applied](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image14.webp)
+
+</section>

@@ -9,6 +9,8 @@ keywords:
   - connection forensics
   - SafeSquid debugging
 ---
+<section class="section-strip">
+
 
 # Get complete connection log with find_client_id.sh
 
@@ -23,3 +25,5 @@ Client id can be extracted from the response headers section in browsers network
 ![find_client_id script output or connection log example](/img/picture1.jpg)
 
 Also, client id can be extracted from SafeSquid's native logs
+
+</section>

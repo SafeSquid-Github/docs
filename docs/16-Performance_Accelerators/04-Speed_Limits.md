@@ -8,11 +8,19 @@ keywords:
   - connection speed limits
   - SafeSquid SWG
 ---
+<section class="section-strip">
+
 
 # Speed Limits
 
 > 🚧 **This page is under construction.** Content coming soon.
 
+</section>
+
+<section class="section-strip">
+
 ## Control per-user or per-group download and upload speed
 
 Speed Limits let administrators cap download and upload speeds for users, groups, or content types. Configure speed limit policies in the Configuration Portal and attach them to profiles. For related traffic control, see [Bandwidth Management](03-Manage_Bandwidth.md).
+
+</section>

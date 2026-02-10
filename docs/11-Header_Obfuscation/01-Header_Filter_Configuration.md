@@ -6,8 +6,14 @@ keywords:
   - header allow deny insert
   - Restriction Profiles Header Filter
 ---
+<section class="section-strip">
+
 
 # Header Filter Configuration and Reference
+
+</section>
+
+<section class="section-strip">
 
 ## Global
 
@@ -33,6 +39,10 @@ Select the default action to take, when no matching entry for a requested header
 **ALLOW:** Allow everything Except rules defined under Deny subsection.
 
 **DENY:** Deny everything Except rules defined under Allow subsection.
+
+</section>
+
+<section class="section-strip">
 
 ## Allow
 When the Policy is Deny, rules defined under this sub-section, are exclusively allowed access.
@@ -88,6 +98,10 @@ This option is to select whether this entry applies to the server header, client
 Allow WebSockets for connections with profile "ALLOW WEBSOCKET". Use this when all users' WebSocket connections are denied by default. The Allow rule permits WebSocket connections for a defined application or service and user group.
 
 ![Allow WebSocket rule for ALLOW WEBSOCKET profile](/img/Configure/Restriction_Profiles/Header_Filter/image3.webp)
+
+</section>
+
+<section class="section-strip">
 
 ## Deny
 When the Policy is Allow, rules defined under this sub-section, are denied access exclusively.
@@ -204,10 +218,18 @@ Allow YouTube during lunch hours while blocking inappropriate content. Enforce Y
 
 ![YouTube-Restrict header insert for strict mode](/img/Configure/Restriction_Profiles/Header_Filter/image8.webp)
 
+</section>
+
+<section class="section-strip">
+
 ## View headers
 In this sub-section, you can find the example headers with type and values.
 
 ![View headers sub-section with example headers](/img/Configure/Restriction_Profiles/Header_Filter/image9.webp)
+
+</section>
+
+<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -216,3 +238,5 @@ In this sub-section, you can find the example headers with type and values.
 - **Performance Validation**: Test with profile (e.g. ALLOW WEBSOCKET, REMOVE WEBSOCKETS, X-GoogApps-Allowed-Domains); expected sites work and restricted behavior is enforced.
 
 **Related**: [Cookie Inspection](../12-Cookie_Inspection/main.md), [Access Restriction](../08-Access_Restriction/main.md), [URL Redirection SafeSearch](../10-URL_Redirection/SafeSearch.md), [Troubleshooting](../23-Troubleshooting/main.md)
+
+</section>

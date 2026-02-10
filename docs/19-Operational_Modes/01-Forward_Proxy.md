@@ -8,20 +8,38 @@ keywords:
   - SafeSquid browser setup
   - Access SafeSquid WebGUI
 ---
+<section class="section-strip">
+
 
 # Forward proxy requires explicit client configuration
+
+</section>
+
+<section class="section-strip">
 
 ## Why explicit proxy is used
 
 Uncontrolled direct internet access increases malware, data loss, and compliance risk. SafeSquid provides a browser-based WebGUI at `http://safesquid.cfg` for configuration and management. Clients must send traffic through SafeSquid by configuring the browser or system proxy. Forward (explicit) proxy gives administrators clear control over which applications use the proxy and supports per-browser or per-application rollout.
 
+</section>
+
+<section class="section-strip">
+
 ## Benefits of forward proxy mode
 
 Explicit configuration ensures only intended traffic is inspected. Policy enforcement and logging apply to configured clients. No network-layer redirection is required; deployment fits environments where endpoint configuration is manageable. **Limitation:** Applications that do not use the configured proxy bypass SafeSquid unless system-wide or PAC-based proxy is used.
 
+</section>
+
+<section class="section-strip">
+
 ## Prerequisites
 
 **Client-side:** Browser supporting manual proxy configuration (Chrome, Firefox, or equivalent). SafeSquid proxy IP and port (default 8080). **SafeSquid-side:** SafeSquid deployed and listening on the proxy port; WebGUI reachable via proxy at `http://safesquid.cfg`.
+
+</section>
+
+<section class="section-strip">
 
 ## Configure proxy in Chrome (system settings)
 
@@ -60,6 +78,10 @@ Explicit configuration ensures only intended traffic is inspected. Policy enforc
 
    ![Save settings](/img/How_To/How_To_configure_Proxy_In_a_Browser/image10.webp)
 
+</section>
+
+<section class="section-strip">
+
 ## Configure Proxy in Firefox
 
 Firefox allows browser-specific proxy configuration without affecting system-wide settings.
@@ -92,9 +114,17 @@ Firefox allows browser-specific proxy configuration without affecting system-wid
 
    ![Save Firefox settings](/img/How_To/How_To_configure_Proxy_In_a_Browser/image17.webp)
 
+</section>
+
+<section class="section-strip">
+
 ## Verify configuration
 
 Open `http://safesquid.cfg` through the proxy; the SafeSquid WebGUI loads. Browse an external site; traffic appears in SafeSquid access logs from the client IP. **Interface:** Confirm proxy IP and port in browser or system proxy settings. **Logs:** Check `access.log` or Reporting for requests from the client.
+
+</section>
+
+<section class="section-strip">
 
 ## Troubleshooting
 
@@ -106,8 +136,14 @@ Open `http://safesquid.cfg` through the proxy; the SafeSquid WebGUI loads. Brows
 
 **Escalation:** If connectivity fails after correct configuration, check firewall and SafeSquid service status; contact support with access log excerpts.
 
+</section>
+
+<section class="section-strip">
+
 ## Next steps
 
 - [Transparent Proxy](02-Transparent_Proxy.md) for interception without client proxy configuration.
 - [Connect Your Client](../01-Getting_Started/05-Connect_Your_Client/main.md) for PAC file, system-wide, and enterprise deployment.
 - [Verify Your Setup](../01-Getting_Started/06-Verify_Your_Setup.md) to confirm end-to-end connectivity.
+
+</section>

@@ -8,7 +8,11 @@ keywords:
   - real-time security feeds
   - web categorization feeds
 ---
+<section class="section-strip">
+
 
 # Cloud threat intelligence for categorization and security
 
 SafeSquid uses cloud-integrated, real-time threat intelligence for web categorization, application identification, SSL reputation, image analysis, malware indicators, and geo-location. Feeds keep enforcement current so policies and blocks reflect the latest risk. Administrators enable or tune related features in the Configuration Portal; feed delivery and refresh are managed by the SafeSquid cloud service. This section has no separate child documents; refer to the Configuration Portal and feature-specific sections for configuration.
+
+</section>

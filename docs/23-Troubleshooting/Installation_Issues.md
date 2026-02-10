@@ -8,15 +8,25 @@ keywords:
   - SafeSquid network configuration
   - SafeSquid bad archive mirror
 ---
+<section class="section-strip">
+
 
 A comprehensive guide for troubleshooting common issues encountered during the installation of SafeSquid.
 
 It is designed to help users navigate through potential problems and find effective solutions.
 
+</section>
+
+<section class="section-strip">
+
 ## Before Installation
 Common issues in this stage include system compatibility, creating a bootable USB or attaching the appropriate .iso file, and correctly setting up the BIOS/UEFI settings.
 
 Solutions involve checking system requirements, verifying the integrity of the installation media, and ensuring correct boot order.
+
+</section>
+
+<section class="section-strip">
 
 ## During Installation
 Issues during installation can range from partitioning errors, and network configuration problems, to software selection difficulties.
@@ -26,6 +36,10 @@ Resolutions may include checking disk space, reviewing network settings, and ens
 For network-related issues such as those mentioned below, you can use the installer console to identify the root cause of the issue and act based on it.
 
 ![using the installer console to identify the root cause of the issue and act based on them](/img/Troubleshooting/Troubleshooting_issues_during_installation_of_SafeSquid/image1.webp)
+
+</section>
+
+<section class="section-strip">
 
 ## Network Checks for Issue Identification
 Network issues can significantly impact the installation and functionality of SafeSquid.
@@ -65,9 +79,16 @@ Select the "Download debconf preconfiguration file" step.
 
 Follow the steps of standard installation and continue your installation process.
 
+</section>
+
+<section class="section-strip">
+
 ## Conclusion
 This guide aims to cover the most common issues encountered during the SafeSquid installation process. For additional assistance, users are encouraged to consult the SafeSquid forums and community resources.
 
+</section>
+
+<section class="section-strip">
 
 ## ISO Installation Failure
 ### Issues
@@ -82,3 +103,5 @@ If you face any error while installing SafeSquid Appliance Builder (SAB-ISO), yo
 ![Bad Archive Mirror Template](/img/Troubleshooting/ISO_installation_failure/image1.webp)
 
 ![Failed to retrieve the pre-configuration file error template](/img/Troubleshooting/ISO_installation_failure/image2.webp)
+
+</section>

@@ -11,11 +11,21 @@ keywords:
   - NTP
   - time synchronization
 ---
+<section class="section-strip">
+
 
 # Monit, BIND, and NTP for reliability and accuracy
 
+</section>
+
+<section class="section-strip">
+
 ## Continuous reliability and performance safeguards
 Supporting services harden SafeSquid SWG operations. These services sustain availability, speed, and correctness across network and system layers.
+
+</section>
+
+<section class="section-strip">
 
 ## Supporting service guides
 
@@ -27,3 +37,5 @@ DNS latency and upstream outages degrade browsing and threat lookups. A local BI
 
 ### [NTP](03-NTP.md)
 Clock drift breaks SSO, TLS validation, and log correlation. NTP maintains precise time for authentication and certificate checks. Accurate time supports reliable audits and authentication. Configure NTP against enterprise sources using this document and confirm sync with ntpq.
+
+</section>

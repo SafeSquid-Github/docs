@@ -6,6 +6,8 @@ keywords:
   - SafeSquid production deployment
   - SafeSquid next steps
 ---
+<section class="section-strip">
+
 
 # Next Steps
 
@@ -70,3 +72,5 @@ Logs, diagnostics, and community support when help is needed.
 </div>
 
 </div>
+
+</section>

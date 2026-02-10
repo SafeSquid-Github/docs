@@ -8,14 +8,25 @@ keywords:
   - getting started
   - quick start
 ---
+<section class="section-strip">
 
-# Deploy SafeSquid SWG from planning to client connectivity
+# Getting Started
 
-## Deployment path from planning through client configuration
+</section>
 
-SafeSquid is an HTTP proxy server for application-layer security. SafeSquid-based Secure Web Gateway (SWG) provides perimeter-level security for enterprise web traffic. This section guides deployment from planning through activation and client configuration.
+<section class="section-strip">
+
+## Welcome to SafeSquid!
+
+SafeSquid is a multi-threaded HTTP Proxy Server, specially designed for Layer 7 Perimeter Security. Zero Trust Web Security architecture promises scalable performance while ensuring comprehensive mitigation of Layer 7 threats.
+
+SafeSquid-based Secure Web Gateway (SafeSquid SWG) enforces granular web access control, deep content mitigation, and real-time visiblity in enterprise web traffic. This section guides deployment from planning through activation and client configuration.
 
 Learn more [about SafeSquid SWG](../02-SafeSquid_SWG/main.md).
+
+</section>
+
+<section class="section-strip">
 
 ## Deployment and connectivity guides
 
@@ -40,7 +51,13 @@ Deployment must be validated with smoke tests before production use. Verify Your
 ### [Next Steps](07-Next_Steps.md)
 After the gateway is running, SSL inspection, authentication, and security policies are typically configured. Next Steps points to SSL Inspection, Authentication, Profiling Engine, and scaling so administrators know where to continue. Use this document to plan the next configuration phase.
 
+</section>
+
+<section class="section-strip">
+
 ## Solution Architecture
 
 ![Solution Architecture](/img/Getting-Started/Getting_Started_with_SafeSquid_Secure_Web_Gateway/image1.webp)
 The SafeSquid Application Ecosystem constitutes the complete SWG solution.
+
+</section>

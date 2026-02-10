@@ -9,6 +9,9 @@ keywords:
   - domain mismatch SSL
 ---
 
+
+<section class="section-strip">
+
 ## SSL certificate and inspection issues
 
 | Symptom | Likely cause | Resolution | Verification |
@@ -43,6 +46,10 @@ keywords:
 ->Remove HTTPS websites from SSL Certs/Cache when **Secured connection fails** appears on HTTPS websites.
 
 6.  Or some of the **HTTPS websites are working without error** but some of the **HTTPS websites are not working**.
+
+</section>
+
+<section class="section-strip">
 
 ## Troubleshooting
 ### Verify SSL certificate import in browser
@@ -202,14 +209,24 @@ To allow domain mismatch errors for specific HTTPS websites, create a policy:
 
 ![saving configuration globally](/img/Troubleshooting/SSL_certification_errors/image9.webp)
 
+</section>
+
+<section class="section-strip">
+
 ## Verification and Evidence
 
 - **Interface Checks**: Confirm the SafeSquid Root CA is installed in the browser trust store ([Server Verification](../26-Server_Verification/main.md)). In Configuration Portal, HTTPS Inspection policies match the intended bypass/enforce rules; SSL Certs/Cache cleared if DNS mismatch was the issue.
 - **Log Analysis**: Native logs show successful client encryption for previously failing domains; no `S_X509_DNS_MISMATCH` or transfer failed errors for the fixed cases.
 - **Performance Validation**: Previously failing HTTPS sites load without "connection not secured" or "secured connection fail"; YouTube and other sites work per policy.
 
+</section>
+
+<section class="section-strip">
+
 ## Next steps
 
 - [Configure HTTPS Inspection](../05-SSL_Inspection/01-Configure_HTTPS_Inspection.md) for setup and bypass rules.
 - [Server Verification](../26-Server_Verification/main.md) for client certificate import.
 - [Troubleshooting](main.md) for other diagnostic guides.
+
+</section>

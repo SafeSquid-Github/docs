@@ -7,6 +7,8 @@ keywords:
   - SSL certificate install Chrome IE
   - Trusted Root Certification Authorities
 ---
+<section class="section-strip">
+
 
 # Import Certificate into Chrome or Internet Explorer
 
@@ -43,3 +45,5 @@ keywords:
    ![Import successful confirmation](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image8.webp)
 
    ![Import complete](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image9.webp)
+
+</section>

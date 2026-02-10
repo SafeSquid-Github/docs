@@ -9,6 +9,9 @@ keywords:
   - proxy traffic monitoring
 ---
 
+
+<section class="section-strip">
+
 ## Reporting module provides real-time visibility
 
 SafeSquid provides visibility into activity with detailed real-time reporting. The SafeSquid Dashboard shows real-time traffic (Internet usage), bandwidth utilization, and request counts. Dashboard data comes from SafeSquid databases; direct database access is available for querying and analytics. Reports default to the last **1000 transactions**; **date range** and **last transaction** are configurable.
@@ -35,6 +38,10 @@ The dashboard displays the following activities based on the last 1000 transacti
 18. Categories
 
 ![Detailed real-time reporting SafeSquid Dashboard](/img/How_To/Reporting_%28Dashboard%29/image1.webp)
+
+</section>
+
+<section class="section-strip">
 
 ## Drilling method
 Click any entry to apply that filter. In the example below the drill-down uses **User Name: "anounymous@192.168.0.14"**.
@@ -63,9 +70,15 @@ SafeSquid supports reports by date range. Filter the report by selecting start a
 
 ![Flush button to reset filters of safesquid report](/img/How_To/Reporting_%28Dashboard%29/image10.webp)
 
+</section>
+
+<section class="section-strip">
+
 ## Verification and Evidence
 
 - **Interface:** Reports > Dashboard shows the last 1000 transactions (or configured range); drill-down and date range filters apply. PDF/Excel export is available.
 - **Audit evidence:** Use date range and filters to produce reports for a given period; export to PDF or Excel for compliance or audit. Logs and reports demonstrate control operation for SOC 2, PCI-DSS 10.x, or similar.
 
 **Related**: [Security Logs](02-Security_Logs.md), [Performance Plot](03-Performance_Plot.md)
+
+</section>

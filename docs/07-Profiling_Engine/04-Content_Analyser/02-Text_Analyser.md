@@ -14,6 +14,9 @@ keywords:
   - SafeSquid content filter policy
 ---
 
+
+<section class="section-strip">
+
 ## Text Analyzer restricts access by keyword score
 
 The Text Analyzer detects and restricts access to websites that may contain inappropriate or pornographic content using a keyword scoring system.
@@ -25,6 +28,10 @@ This feature can be effectively used to block websites belonging to specific cat
 When a keyword from the list of words specified in an entry is found, the page is given the score specified in that entry. The total score of the page is equal to the sum of the scores of all the rules that match.
 
 When the total score is equal to or greater than the threshold, then the page is blocked.
+
+</section>
+
+<section class="section-strip">
 
 ## Global
 ![Text-global.jpg](/img/Configure/Real_Time_Content_Activity/Text_analyzer/image1.webp)
@@ -45,6 +52,10 @@ Templates are used throughout Safesquid as a replacement for pages that can't be
 Specify the template name to display when this entry matches. Select the name from the template section.
 
 Leave this rule blank, to use the default template.
+
+</section>
+
+<section class="section-strip">
 
 ## Filtering policies
 Add new policies here to block websites based on content type.
@@ -97,6 +108,10 @@ If you mention a keyword as adult, then every time this word is found in the doc
 
 **Example:** If you mentioned the score as 20, then if the word adult is found once in the requested document, 20 will be added, for two times it will be 40, three times it will be 60.
 
+</section>
+
+<section class="section-strip">
+
 ## Example
 ### Rule#1
 **Example:** Block web pages based on defined keywords.
@@ -114,3 +129,5 @@ Text analyzer can be used in situations where uncategorized websites serve inapp
 **Example: Articles, news etc.**
 
 ![Slide1-txtAnlyz.webp](/img/Configure/Real_Time_Content_Activity/Text_analyzer/image3.webp)
+
+</section>

@@ -6,6 +6,8 @@ keywords:
   - SafeSquid Linux installation
   - manual SafeSquid installation
 ---
+<section class="section-strip">
+
 
 # Install from TAR Package
 
@@ -15,11 +17,19 @@ Use this method to install SafeSquid on an existing Linux server. Works on any d
 This method installs the SafeSquid binary only. You are responsible for OS hardening, disk partitioning, and supporting services. For a fully automated setup, use the [Appliance Builder](01-SafeSquid_Appliance_Builder.md) instead.
 :::
 
+</section>
+
+<section class="section-strip">
+
 ## Prerequisites
 
 - Linux server meeting [minimum requirements](main.md) (4 CPU, 8 GB RAM, 100 GB disk)
 - Root or sudo access
 - Internet connectivity for downloads
+
+</section>
+
+<section class="section-strip">
 
 ## Steps
 
@@ -51,6 +61,10 @@ This method installs the SafeSquid binary only. You are responsible for OS harde
    /etc/init.d/safesquid start
    ```
 
+</section>
+
+<section class="section-strip">
+
 ## Verify
 
 ```bash title="Confirm SafeSquid is listening on port 8080"
@@ -58,6 +72,10 @@ netstat -tulnp | grep safesquid
 ```
 
 SafeSquid listens on port **8080** by default. If it appears in the output, the installation succeeded.
+
+</section>
+
+<section class="section-strip">
 
 ## Configure Supporting Services
 
@@ -70,8 +88,14 @@ SAB handles these automatically, but TAR installs require manual setup:
 Configure Monit before going to production. Without it, a crashed SafeSquid process will not restart automatically.
 :::
 
+</section>
+
+<section class="section-strip">
+
 ## Next Steps
 
 1. **[Activate your license](../../04-Activate.md)**
   2. **[Connect a browser](../../05-Connect_Your_Client/main.md)** to verify traffic flows
   3. **[Enable SSL Inspection](../../05-SSL_Inspection/main.md)** for HTTPS visibility
+
+</section>

@@ -7,12 +7,27 @@ keywords:
   - cookie filter reference
   - Restriction Profiles Cookie Filter
 ---
+<section class="section-strip">
+
 
 # Cookie Filter Configuration and Reference
 
+</section>
+
+<section class="section-strip">
+
 ## [Access SafeSquid interface](../../02-SafeSquid_SWG/01-Configuration_Portal.md)
+
+</section>
+
+<section class="section-strip">
+
 ## Go to configure page
 ![Configure page with Cookie Filter in sidebar](/img/Configure/Restriction_Profiles/Cookie_Filter/image1.webp)
+
+</section>
+
+<section class="section-strip">
 
 ## Global
 ### Enabled
@@ -28,6 +43,10 @@ Select the default action to take, when no matching entry for a requested cookie
 
 -   **ALLOW:** When Policy is set to Allow, a requested cookie is allowed, when no matching entry is found
 -   **DENY:** When Policy is set to Deny, a requested cookie is denied, if no matching entry is found
+
+</section>
+
+<section class="section-strip">
 
 ## Allow
 ![Cookie Filter Allow sub-section](/img/Configure/Restriction_Profiles/Cookie_Filter/image3.webp)
@@ -147,6 +166,10 @@ I want to allow cookie filtering for connections with the profile "COOKIE ALLOW"
 I want to allow cookies for domain safesquid.com Despite the deny rule, connections to domain safesquid.com will not drop cookies This can be used in a situation where login is required for mission-critical applications.
 
 ![Allow cookies for domain safesquid.com rule](/img/Configure/Restriction_Profiles/Cookie_Filter/image5.webp)
+
+</section>
+
+<section class="section-strip">
 
 ## Deny
 When the Policy is Allow, rules defined under this sub-section, are exclusively denied access.
@@ -274,6 +297,10 @@ Cookies will be dropped for both incoming and outgoing requests.
 
 ![DROP COOKIES FOR GOOGLE rule for domain google.com](/img/Configure/Restriction_Profiles/Cookie_Filter/image8.webp)
 
+</section>
+
+<section class="section-strip">
+
 ## Verification and Evidence
 
 - **Interface Checks**: In [Configuration Portal](../../02-SafeSquid_SWG/01-Configuration_Portal.md), Restriction Profiles → Cookie Filter: Global and policy entries match intent (Allow/Deny, profiles). Test URLs or domains show correct category in Categorize Web-sites if used.
@@ -281,3 +308,5 @@ Cookies will be dropped for both incoming and outgoing requests.
 - **Performance Validation**: Browsing with Allow profile allows login and cookies; with Deny or Drop profile, target sites do not receive or retain cookies as configured.
 
 **Related**: [Access Restriction](../../08-Access_Restriction/main.md), [Header Obfuscation](../../11-Header_Obfuscation/main.md), [Configuration Portal](../../02-SafeSquid_SWG/01-Configuration_Portal.md), [Troubleshooting](../../23-Troubleshooting/main.md)
+
+</section>

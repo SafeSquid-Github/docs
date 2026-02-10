@@ -9,23 +9,41 @@ keywords:
   - root hints
   - DNSSEC
 ---
+<section class="section-strip">
+
 
 # BIND Local DNS Resolver
+
+</section>
+
+<section class="section-strip">
 
 ## Problem Statement
 - Security Challenge: Slow or unreliable public DNS causes latency and resolution failures
 - Real-World Scenarios: External DNS rate-limits, outages, or geo-DNS inconsistencies impact content access and threat lookups
 - Business Context: DNS instability affects browsing performance, policy enforcement, and malware categorization accuracy
 
+</section>
+
+<section class="section-strip">
+
 ## Key Benefits
 - Desired Outcome: Fast, consistent, and locally controlled DNS for SafeSquid SWG
 - Value Proposition: Reduce DNS lookup time and improve cache hits for repeated domains
 - Competitive Advantage: Enterprise-grade control, auditability, and resilience versus public resolvers
 
+</section>
+
+<section class="section-strip">
+
 ## Prerequisites
 - Client-Side Preparations: Confirm upstream DNS policy; define allowed egress for UDP/TCP 53
 - SafeSquid-Side Setup: Plan SafeSquid to query local resolver IP
 - System Requirements: Linux host, [BIND 9.x](https://bind9.readthedocs.io/), time synchronization (NTP) for DNSSEC validation
+
+</section>
+
+<section class="section-strip">
 
 ## Call to Action
 1. Install BIND.
@@ -89,6 +107,10 @@ keywords:
      ```
    - Verification: Logs rotate and record query activity
 
+</section>
+
+<section class="section-strip">
+
 ## Verification and Evidence
 
 - **Interface Checks**: N/A (service daemon). Validate using CLI: `rndc status`, `dig @127.0.0.1 example.com +short`.
@@ -100,6 +122,10 @@ keywords:
 - **Performance Validation**: `dig @resolver-ip popular-domain.tld +noall +stats` shows low query time and growing cache hit rate. <!-- TODO: Add screenshot: /img/Supporting_Services/bind_dig_stats.webp when available -->
 
 **Related**: [Monit](01-Monit.md), [NTP](03-NTP.md), [Integrated DNS Security](../../06-Integrated_DNS_Security.md), [Troubleshooting DNS](../../../23-Troubleshooting/DNS_Failure.md)
+
+</section>
+
+<section class="section-strip">
 
 ## Troubleshooting Guide
 - Common Issues & Scenarios:
@@ -115,3 +141,5 @@ keywords:
 - Escalation Procedures:
   - Collect `named-checkconf`, `rndc status`, `dig +trace` outputs, logs
   - Contact SafeSquid support with configuration snippets and diagnostics
+
+</section>

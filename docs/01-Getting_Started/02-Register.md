@@ -6,6 +6,8 @@ keywords:
   - SafeSquid activation key
   - SafeSquid account
 ---
+<section class="section-strip">
+
 
 # Register and Get Your Key
 
@@ -14,6 +16,10 @@ The activation key identifies your SafeSquid instance and unlocks licensing feat
 :::tip Already registered?
 [Sign in to the Self-Service Portal](https://key.safesquid.com) to download your existing key.
 :::
+
+</section>
+
+<section class="section-strip">
 
 ## Steps
 
@@ -47,9 +53,15 @@ Do not rename or modify the activation key file. SafeSquid will reject a tampere
 Using a business email unlocks enterprise account benefits such as team onboarding and POC support.
 :::
 
+</section>
+
+<section class="section-strip">
+
 ## Troubleshooting
 
 - **Activation email not received?** — Check your spam/junk folder. If it's not there, try registering again with the same email. Still nothing? [Contact SafeSquid support](https://www.safesquid.com/contact-us).
 - **Key download fails?** — Ensure you are signed in to the [Self-Service Portal](https://key.safesquid.com). Try a different browser or clear your cache. If the issue persists, [contact us](https://www.safesquid.com/contact-us).
 - **Forgot your password?** — Use the password reset link on the [Self-Service Portal](https://key.safesquid.com) login page.
 - **Account locked or other issues?** — [Contact SafeSquid support](https://www.safesquid.com/contact-us) with your registered email address.
+
+</section>

@@ -9,6 +9,8 @@ keywords:
   - local user authentication
   - credential management
 ---
+<section class="section-strip">
+
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,13 +19,25 @@ import TabItem from '@theme/TabItem';
 **Risk:** Without user identity, access policies cannot be enforced per user; anonymous proxy access increases misuse and complicates audit. **Control:** Local credential store (BASIC) provides browser-prompt authentication and user-level policies without a directory. **Evidence:** Identity and access logs record authenticated usernames; policies tie to user identity for audit trail.
 :::
 
+</section>
+
+<section class="section-strip">
+
 ## Problem: Identity-based access without a directory
 
 Organizations without Active Directory need identity-based web access control. Absence of centralized directory prevents per-user policies and audit attribution. SafeSquid local credential store (BASIC) enables authentication via browser prompts with usernames and passwords stored in SafeSquid. User-level policies and logs then support accountability and compliance.
 
+</section>
+
+<section class="section-strip">
+
 ## Key benefits
 
 Eliminates LDAP dependency for small or isolated environments. Access control and logging apply per user. HTTP Basic Authentication is integrated into SafeSquid credential manager. No directory infrastructure is required. Supports audit evidence for user-level access (e.g. SOC 2, ISO 27001 A.9); identity and access logs show authenticated usernames for auditors. **Limitation:** Credentials are stored in SafeSquid; no SSO or directory-backed MFA. Use when a directory is not available; for centralized identity, use [Directory Services](03-Directory_Services/main.md).
+
+</section>
+
+<section class="section-strip">
 
 ## Prerequisites
 
@@ -38,6 +52,10 @@ Eliminates LDAP dependency for small or isolated environments. Access control an
 - Admin access to SafeSquid configuration interface
 - "Enable Authentication" set in access profiles
 - Policy management interface available via HTTP/HTTPS
+
+</section>
+
+<section class="section-strip">
 
 ## Call to action: Setup browser authentication
 
@@ -55,6 +73,10 @@ Eliminates LDAP dependency for small or isolated environments. Access control an
 
 4. **Save the Configuration**\
    Click the checkmark to save the rule. A browser prompt will appear for username and password when accessing the internet.
+
+</section>
+
+<section class="section-strip">
 
 ## Call to action: Add user
 
@@ -102,12 +124,20 @@ Eliminates LDAP dependency for small or isolated environments. Access control an
   </TabItem>
 </Tabs>
 
+</section>
+
+<section class="section-strip">
+
 ## Verification and Evidence
 
 - Browse an external site; username/password prompt should appear.
 - Enter configured credentials; access is granted when authentication succeeds.
 - **Interface:** Access Restrictions → Allow List shows the rule with authentication enabled and credentials or PAM set to FALSE.
 - **Logs:** Check `identity.log` or `access.log` for authenticated username entries. Use these logs to demonstrate user-level access for audit.
+
+</section>
+
+<section class="section-strip">
 
 ## Troubleshooting
 
@@ -117,9 +147,15 @@ Eliminates LDAP dependency for small or isolated environments. Access control an
 | Login fails | Repeated prompts | Incorrect credentials or misconfigured rule | Verify username/password and rule configuration |
 | Rule not enforced | Open access for all | IP mismatch or missing fields | Ensure IP and access permissions match the client |
 
+</section>
+
+<section class="section-strip">
+
 ## Next steps
 
 - [Network Signature](02-Network_Signature.md) for IP-based policy without login.
 - [Directory Services](03-Directory_Services/main.md) for Active Directory or OpenLDAP.
 - [PAM Authentication](04-PAM.md) for OS credential integration.
 - [Bypass Authentication](05-Bypass_Authentication.md) for exempt destinations or request types.
+
+</section>

@@ -8,10 +8,16 @@ keywords:
   - version upgrade SafeSquid
   - SafeSquid update
 ---
+<section class="section-strip">
+
 
 # Upgrade SafeSquid application or OS
 
 Administrators can upgrade SafeSquid SWG in two ways: OS upgrade (when the underlying OS must be updated) or version upgrade (when only the SafeSquid application is updated). The documents below describe each path and when to use it.
+
+</section>
+
+<section class="section-strip">
 
 ## Upgrade guides
 
@@ -20,3 +26,5 @@ The base OS may reach end-of-life or lack kernel and library versions required b
 
 ### [Version Upgrade](01-Version_Upgrade/main.md)
 SafeSquid software updates deliver bug fixes, security patches, and new features. Version Upgrade describes upgrading the SafeSquid application via the Support page and tarball upload while keeping the OS unchanged. Monit restarts the service after upload. Follow the Version Upgrade document to update SafeSquid when the OS is already current.
+
+</section>

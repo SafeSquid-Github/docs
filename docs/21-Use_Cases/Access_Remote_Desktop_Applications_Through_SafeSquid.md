@@ -9,6 +9,9 @@ keywords:
   - SafeSquid access profiles
 ---
 
+
+<section class="section-strip">
+
 ## Case 1: There is no direct Internet access to the client Machine
 **A)HTTPS ENABLED**
 
@@ -30,6 +33,10 @@ keywords:
 How to block in the above(B) scenario:
 1. Enable the default entry in access profiles named as: BLOCK APPLICATIONS (or)
 2. Enable HTTPS inspection In the SafeSquid
+
+</section>
+
+<section class="section-strip">
 
 ## **Case 2 : There is a direct Internet access to the client Machine**
     
@@ -54,3 +61,5 @@ How to block in the above(B) scenario:
 How to block in the above(B) scenario:
 1. It is not possible to block Any desk and team viewer with direct Internet connection, because they don't use the proxy settings configured in settings.
 2. You can block AmmyAdmin by enabling default entry in Access profiles (or) By enabling HTTPS Inspection.
+
+</section>

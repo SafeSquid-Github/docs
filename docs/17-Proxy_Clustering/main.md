@@ -10,10 +10,16 @@ keywords:
   - SafeSquid configuration sync
   - enterprise proxy scaling
 ---
+<section class="section-strip">
+
 
 # Master-slave clustering for high availability
 
 SafeSquid supports clustered deployments for high availability, failover, and horizontal scaling. A master node holds policy and reporting; slave nodes enforce policy and forward data. Use a load balancer in front of slaves for distribution and failover. The documents below cover master-slave setup and configuration sync.
+
+</section>
+
+<section class="section-strip">
 
 ## Clustering configuration guides
 
@@ -22,3 +28,5 @@ Single-node deployments lack failover and scale limits. Master-Slave describes h
 
 ### [Configuration Sync](02-Configuration_Sync.md)
 Configuration drift across nodes causes inconsistent enforcement and troubleshooting difficulty. Configuration Sync enables automatic propagation of policy and configuration from master to slaves. All nodes stay aligned without manual copy. Configure sync using this document.
+
+</section>

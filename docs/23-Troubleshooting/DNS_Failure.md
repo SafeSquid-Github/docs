@@ -9,10 +9,17 @@ keywords:
   - SafeSquid nslookup fails
 ---
 
+
+<section class="section-strip">
+
 ## Issue
 Via proxy sometimes occur an error "DNS Lookup for safesqddns.com failed".
 
 ![Proxy error showing "DNS Lookup for safesqddns.com failed"](/img/Troubleshooting/DNS_failure/image1.webp)
+
+</section>
+
+<section class="section-strip">
 
 ## Root Causes
 
@@ -20,6 +27,10 @@ Via proxy sometimes occur an error "DNS Lookup for safesqddns.com failed".
 1.  The local DNS server service is not running.
 1.  The forwarder DNS server is not able to resolve the query.
 1.  The network service is down.
+
+</section>
+
+<section class="section-strip">
 
 ## Solution
 If the FQDN of the website is incorrect you will face a DNS failure issue to that website while accessing via proxy. So, you have to enter the correct FQDN of that particular website.
@@ -55,3 +66,5 @@ Server: 127.0.0.1
 Address: 127.0.0.1#53
 
 server can't find test.safesquiddns.com: NXDOMAIN
+
+</section>

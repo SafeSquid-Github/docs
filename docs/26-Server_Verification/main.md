@@ -9,8 +9,14 @@ keywords:
   - download SSL SafeSquid
   - enable HTTPS proxy
 ---
+<section class="section-strip">
+
 
 # Server Verification
+
+</section>
+
+<section class="section-strip">
 
 ## Certificate installation enables HTTPS inspection in IE and Chrome
 
@@ -22,7 +28,13 @@ SafeSquid web security client users do not need to manually import certificates 
 
 For Firefox, certificates use a separate store; see [Configure HTTPS Inspection](../05-SSL_Inspection/01-Configure_HTTPS_Inspection.md#import-certificate-into-firefox) for import steps.
 
+</section>
+
+<section class="section-strip">
+
 ## Client certificate trust guides
 
 ### [Import Certificate into Chrome or Internet Explorer](01-Import_Certificate_Chrome_IE.md)
 Clients must trust the SafeSquid Root CA for HTTPS inspection to work without certificate warnings. The document provides step-by-step import of the SafeSquid SSL certificate into Chrome or Internet Explorer via Trusted Root Certification Authorities. Certificate deployment completes client-side trust for IE and Chrome. Use this document to complete client-side certificate deployment.
+
+</section>

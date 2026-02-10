@@ -11,6 +11,8 @@ keywords:
   - credit card number detection
   - PII protection SafeSquid
 ---
+<section class="section-strip">
+
 
 # Compliance Templates
 
@@ -18,19 +20,35 @@ keywords:
 **Risk:** Uncontrolled exfiltration of cardholder data, PHI, or PII creates regulatory exposure (PCI-DSS, HIPAA, GDPR) and reputational harm. **Control:** SafeSquid Text Analyser applies pattern-based detection for PCI, HIPAA, GDPR, and custom data; policies block or log matches. **Evidence:** DLP events and matches are logged; reports from the [Reporting Module](../15-Audit_Forensics/01-Reporting_Module.md) support compliance audits and evidence of control operation.
 :::
 
+</section>
+
+<section class="section-strip">
+
 ## Problem: Sensitive data in transit requires detection for compliance
 
 Organizations must detect and control sensitive data in web traffic to meet PCI-DSS, HIPAA, GDPR, and similar requirements. Failure to detect cardholder data, PHI, or PII in transit creates regulatory and legal risk. SafeSquid Text Analyser supports pattern-based detection so administrators can block or log matches and demonstrate control to auditors.
 
+</section>
+
+<section class="section-strip">
+
 ## Key benefits
 
 Pre-built patterns reduce implementation time for PCI-DSS (cardholder data), HIPAA (PHI, SSN, MRN), and GDPR (PII, national IDs). Organizations can show auditors configured detection rules and logs of matches or blocks. Combine templates with [Access Restriction](../08-Access_Restriction/main.md) to block, log, or alert on matches.
+
+</section>
+
+<section class="section-strip">
 
 ## Prerequisites
 
 - HTTPS inspection enabled so SafeSquid can inspect request/response body content. See [Configure HTTPS Inspection](../05-SSL_Inspection/01-Configure_HTTPS_Inspection.md).
 - Access to Configure → Real Time Content Security → Text Analyser in the Configuration Portal.
 - Decision on which regulations apply and which data types to protect (assess before configuring).
+
+</section>
+
+<section class="section-strip">
 
 ## Pre-built patterns for regulatory requirements
 
@@ -39,6 +57,10 @@ SafeSquid's Text Analyser supports pattern-based detection of sensitive data. Us
 :::note
 These templates provide detection patterns. Combine them with [Access Restriction](../08-Access_Restriction/main.md) policies to block, log, or alert on matches.
 :::
+
+</section>
+
+<section class="section-strip">
 
 ## PCI-DSS (Payment Card Industry)
 
@@ -73,6 +95,10 @@ Detect credit card numbers, CVV codes, and cardholder data in transit.
 | Track Data | `%B[0-9]{13,19}\^[A-Z\s]{2,26}\^[0-9]{4}` |
 
 ---
+
+</section>
+
+<section class="section-strip">
 
 ## HIPAA (Healthcare)
 
@@ -109,6 +135,10 @@ Detect Protected Health Information (PHI) including medical record numbers, SSNs
 2. Set **Threshold** to 100 (blocks when multiple indicators present)
 
 ---
+
+</section>
+
+<section class="section-strip">
 
 ## GDPR (European Union)
 
@@ -150,6 +180,10 @@ Detect Personally Identifiable Information (PII) for EU data subjects.
 
 ---
 
+</section>
+
+<section class="section-strip">
+
 ## Financial Services
 
 ### Bank Account Numbers
@@ -170,6 +204,10 @@ Detect Personally Identifiable Information (PII) for EU data subjects.
 
 ---
 
+</section>
+
+<section class="section-strip">
+
 ## Intellectual Property
 
 ### Source Code Detection
@@ -187,6 +225,10 @@ Detect code snippets that may indicate IP leakage:
 ```
 
 ---
+
+</section>
+
+<section class="section-strip">
 
 ## Implementation Guidelines
 
@@ -210,11 +252,19 @@ Use [Reporting Module](../15-Audit_Forensics/01-Reporting_Module.md) to track DL
 
 ---
 
+</section>
+
+<section class="section-strip">
+
 ## Verification and Evidence
 
 - **Interface:** Configure → Real Time Content Security → Text Analyser shows policies with patterns, scores, and thresholds. Access Restriction policies reference the same profiles for block/log actions.
 - **Logs:** Security and access logs record matches and blocked requests when threshold is exceeded. Filter logs by DLP or Text Analyser events.
 - **Audit evidence:** Export reports from the Reporting Module for the audit period; show configured patterns and count of matches or blocks to demonstrate control operation.
+
+</section>
+
+<section class="section-strip">
 
 ## Troubleshooting
 
@@ -226,6 +276,10 @@ Use [Reporting Module](../15-Audit_Forensics/01-Reporting_Module.md) to track DL
 
 ---
 
+</section>
+
+<section class="section-strip">
+
 ## Custom Templates
 
 Create organization-specific patterns for:
@@ -235,3 +289,5 @@ Create organization-specific patterns for:
 - Proprietary terminology
 
 **Related**: [Text Analyser](../07-Profiling_Engine/04-Content_Analyser/02-Text_Analyser.md), [Image Analyser](../07-Profiling_Engine/04-Content_Analyser/03-Image_Analyser_AI.md), [Access Restriction](../08-Access_Restriction/main.md), [Reporting Module](../15-Audit_Forensics/01-Reporting_Module.md)
+
+</section>

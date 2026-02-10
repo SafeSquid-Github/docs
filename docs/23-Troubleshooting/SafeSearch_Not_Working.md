@@ -8,6 +8,8 @@ keywords:
   - block pornography policy
   - inappropriate content search
 ---
+<section class="section-strip">
+
 
 You have enabled all the entries required for Safe Searches, but you are able to access the in appropriate content through search engines, then follow the below steps to Troubleshoot
 
@@ -20,3 +22,5 @@ Then check the SSL certificate in the browser. See [Test certificate in Firefox]
 Removes the cache and restart the browser and test it again.
 
 You may see block template when "Text Analyzer" and default entry to block pornogrophy in policies and profiles are enabled.
+
+</section>

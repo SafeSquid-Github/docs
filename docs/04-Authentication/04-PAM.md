@@ -7,6 +7,8 @@ keywords:
   - Pluggable Authentication Modules
   - system authentication proxy
 ---
+<section class="section-strip">
+
 
 :::info CISO takeaway
 **Risk:** Separate proxy credentials increase sprawl and weaken accountability tied to OS identity. **Control:** PAM integration validates proxy users against the system PAM stack so one credential set applies to OS and proxy. **Evidence:** Identity and access logs record authenticated usernames; demonstrate alignment with access control objectives (e.g. ISO 27001 A.9, SOC 2).
@@ -14,19 +16,35 @@ keywords:
 
 # PAM Authentication
 
+</section>
+
+<section class="section-strip">
+
 ## Problem: System credentials must align with proxy authentication
 
 Organizations that use PAM for login and access control need the proxy to validate users against the same credentials. Without PAM integration, users may have to maintain separate proxy credentials or cannot use identity-based policies tied to OS accounts. SafeSquid PAM integration allows the gateway to validate users via the system PAM stack so one set of credentials applies to both login and proxy access.
 
+</section>
+
+<section class="section-strip">
+
 ## Key benefits
 
 Single set of credentials for OS and proxy reduces credential sprawl and support burden. Identity-based access policies apply using the same usernames as the operating system. PAM fits environments that already rely on PAM for authentication (e.g. Linux login, SSH). Logged usernames support audit and compliance (e.g. ISO 27001 A.9, SOC 2 access control evidence). **Limitation:** PAM applies only where SafeSquid runs on a PAM-capable OS (typically Linux); use [Bypass Authentication](05-Bypass_Authentication.md) or separate rules for flows that must not require auth.
+
+</section>
+
+<section class="section-strip">
 
 ## Prerequisites
 
 - SafeSquid installed on a host that uses PAM (typical for Linux deployments).
 - PAM configured on the system for the desired authentication (e.g. local, LDAP via PAM).
 - Admin access to SafeSquid configuration interface and to Access Restrictions / Access Profiles.
+
+</section>
+
+<section class="section-strip">
 
 ## Call to action: Enable PAM in the access rule
 
@@ -36,10 +54,18 @@ Single set of credentials for OS and proxy reduces credential sprawl and support
 4. Set **PAM Authentication** to **TRUE**. Leave **Username** and **Password** empty when using PAM only.
 5. Save the rule. Ensure the system PAM stack (e.g. `/etc/pam.d/`) is configured to validate the same users (local or via LDAP/PAM).
 
+</section>
+
+<section class="section-strip">
+
 ## Verification and Evidence
 
 - Browsing through the proxy triggers authentication; credentials accepted by the OS (e.g. Linux login) are accepted by SafeSquid when PAM is enabled.
 - Logs (`identity.log`, `access.log`) show the authenticated username for requests.
+
+</section>
+
+<section class="section-strip">
 
 ## Troubleshooting
 
@@ -49,9 +75,15 @@ Single set of credentials for OS and proxy reduces credential sprawl and support
 | Valid OS credentials rejected | Verify the system PAM stack (e.g. `/etc/pam.d/`) allows the same service or that SafeSquid is using the expected PAM configuration. |
 | Mixed auth requirements | Use [Bypass Authentication](05-Bypass_Authentication.md) for destinations that must not require auth; use separate access rules for PAM vs. BASIC if needed. |
 
+</section>
+
+<section class="section-strip">
+
 ## Next steps
 
 - [Authentication](main.md)
 - [Directory Services](03-Directory_Services/main.md)
 - [Bypass Authentication](05-Bypass_Authentication.md)
 - [Local Credential Store (BASIC)](01-BASIC.md)
+
+</section>

@@ -12,10 +12,16 @@ keywords:
   - web acceleration
   - cache optimization
 ---
+<section class="section-strip">
+
 
 # Caching, prefetch, and bandwidth control
 
 SafeSquid Performance Accelerators improve delivery through caching, prefetching, bandwidth management, speed limits, and WCCP integration. The documents below cover configuration for each feature.
+
+</section>
+
+<section class="section-strip">
 
 ## Performance accelerator guides
 
@@ -33,3 +39,5 @@ Per-user or per-group bandwidth consumption must be capped to prevent abuse and 
 
 ### [WCCP](05-WCCP.md)
 Enterprise networks require seamless integration with existing routing infrastructure to enable transparent proxy deployment and load distribution across multiple proxy instances. WCCP integration enables SafeSquid to participate in Web Cache Communication Protocol for automatic traffic redirection, load balancing, and failover management through router-based traffic steering. This integration capability ensures transparent proxy operation while providing scalability and high availability through intelligent traffic distribution. Configure WCCP integration in SafeSquid's network settings to enable router integration and transparent proxy deployment.
+
+</section>

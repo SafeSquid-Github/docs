@@ -10,10 +10,16 @@ keywords:
   - web categorization SafeSquid
   - content fingerprinting
 ---
+<section class="section-strip">
+
 
 # Classify traffic by identity, category, and content
 
 SafeSquid Profiling Engine classifies web traffic by user identity, request and response attributes, application signatures, and time so policies can be enforced with context. This section links to documents for user identities, web categorization, application signatures, content analysis, and request, response, and time profiles. For authentication and identity methods, see [Authentication](../04-Authentication/main.md).
+
+</section>
+
+<section class="section-strip">
 
 ## Profiling configuration and reference guides
 
@@ -37,3 +43,5 @@ Server responses vary by MIME type, file extension, and content; policies must a
 
 ### [Time Profiles](07-Time_Profiles.md)
 Productivity and bandwidth policies often require time-based allow or block rules. Time Profiles enable SafeSquid to enforce policies by time range (month, day, hour, minute). Business hours, shift patterns, and scheduled access use time profiles. Configure time-based rules in the Time Profiler section using this document.
+
+</section>

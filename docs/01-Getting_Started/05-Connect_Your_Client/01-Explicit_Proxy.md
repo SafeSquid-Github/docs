@@ -11,12 +11,22 @@ keywords:
   - Chrome proxy setup
   - Firefox proxy configuration
 ---
+<section class="section-strip">
+
 
 # Explicit Proxy Configuration
+
+</section>
+
+<section class="section-strip">
 
 ## Problem Statement
 
 Organizations require manual proxy configuration for controlled environments where users must configure browsers to route traffic through SafeSquid for policy enforcement and threat protection. Manual configuration provides granular control over proxy usage while enabling comprehensive security monitoring and policy enforcement across diverse browser environments. This explicit configuration approach ensures precise control over proxy behavior while supporting user-specific preferences and organizational security requirements.
+
+</section>
+
+<section class="section-strip">
 
 ## Key Benefits
 
@@ -26,6 +36,10 @@ Organizations require manual proxy configuration for controlled environments whe
 
 **Troubleshooting Capability**: Manual configuration provides clear visibility into proxy settings, enabling rapid troubleshooting and verification of proxy connectivity. This transparency facilitates rapid issue resolution while maintaining security enforcement capabilities.
 
+</section>
+
+<section class="section-strip">
+
 ## Prerequisites
 
 **Client-Side Preparations**: Ensure SafeSquid SWG is deployed and accessible from client networks with proper network connectivity and firewall rules configured to allow proxy traffic on required ports. Verify SafeSquid is running and accepting connections on configured proxy ports.
@@ -33,6 +47,10 @@ Organizations require manual proxy configuration for controlled environments whe
 **SafeSquid-Side Setup**: Configure SafeSquid proxy services on appropriate ports (typically 8080 for HTTP, 8443 for HTTPS) with proper authentication and policy configuration. Ensure SSL inspection is enabled if HTTPS traffic requires inspection and monitoring.
 
 **System Requirements**: Client systems must have appropriate browsers installed with administrative privileges for system-wide proxy configuration. Network connectivity must be established between client systems and SafeSquid proxy servers.
+
+</section>
+
+<section class="section-strip">
 
 ## Call to Action
 
@@ -151,6 +169,10 @@ curl -I --proxy http://192.168.1.100:8080 http://safesquid.cfg/
 
 **Verification**: Access SafeSquid interface at http://safesquid.cfg/ to confirm connectivity.
 
+</section>
+
+<section class="section-strip">
+
 ## Verification and Evidence
 
 **Interface Access Verification**: Successfully access SafeSquid WebGUI at http://safesquid.cfg/ through configured proxy settings, confirming proper proxy connectivity and authentication.
@@ -160,6 +182,10 @@ curl -I --proxy http://192.168.1.100:8080 http://safesquid.cfg/
 **Bypass List Testing**: Confirm internal domains bypass proxy configuration while external traffic routes through SafeSquid for security enforcement.
 
 **Performance Validation**: Test web browsing performance to ensure proxy configuration does not significantly impact user experience or application functionality.
+
+</section>
+
+<section class="section-strip">
 
 ## Troubleshooting Guide
 
@@ -176,3 +202,5 @@ curl -I --proxy http://192.168.1.100:8080 http://safesquid.cfg/
 **Performance Issues**: Check network latency between client and proxy server. Verify SafeSquid performance settings and consider proxy server optimization.
 
 **Related**: [PAC File](02-PAC_File.md), [System-Wide Proxy](03-System_Wide_Proxy.md), [Configuration Portal](../../02-SafeSquid_SWG/01-Configuration_Portal.md), [SSL Inspection](../../05-SSL_Inspection/main.md), [Troubleshooting](../../23-Troubleshooting/main.md)
+
+</section>

@@ -9,10 +9,16 @@ keywords:
   - Create HTML template SafeSquid
   - SafeSquid UI template management
 ---
+<section class="section-strip">
+
 
 # Replace blocked or error pages with custom content
 
 SafeSquid uses templates to replace pages that cannot be displayed (filtering, error, or other conditions). Custom templates support non-English messages, company logos, and contact text (e.g. "If this site was blocked in error, contact helpdesk@mycompany.com"). Templates can be HTML, images, audio, or executables. Built-in examples include tinygif, checkeredgif, and tinyswf; checkeredgif is the default replacement for images blocked by the pornographic image filter.
+
+</section>
+
+<section class="section-strip">
 
 ## Prerequisites
 Create your own html file and place that file in the below paths
@@ -27,6 +33,10 @@ The path for Linux version of SafeSquid is:
 
 **Note**: If you want to use any images in the html file make sure that the image also exist in the same path.
 
+</section>
+
+<section class="section-strip">
+
 ## Example:
 Here i am creating below html page:
 
@@ -37,6 +47,10 @@ I Am saving this file with name:
 **Custom_template.html**
 
 I will use this file in the below configuration
+
+</section>
+
+<section class="section-strip">
 
 ## [Access the SafeSquid user interface](../02-SafeSquid_SWG/01-Configuration_Portal.md)
 ### Go to Configure Page
@@ -68,11 +82,23 @@ You must edit the original entry, because the entries in template section are pr
 
 ![Saved rule](/img/How_To/Create_Custom_Templates/image12.webp)
 
+</section>
+
+<section class="section-strip">
+
 ## Testing
 ![Testing the template](/img/How_To/Create_Custom_Templates/image13.webp)
 
+</section>
+
+<section class="section-strip">
+
 ## Saving the Configuration
 ![clicking on save config to save the policy](/img/How_To/Create_Custom_Templates/image14.webp)
+
+</section>
+
+<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -82,3 +108,4 @@ You must edit the original entry, because the entries in template section are pr
 
 **Related**: [Startup Parameters](02-Startup_Parameters.md), [Customisation](main.md), [Access Restriction](../08-Access_Restriction/main.md), [Troubleshooting](../23-Troubleshooting/main.md)
 
+</section>

@@ -8,10 +8,16 @@ keywords:
   - SafeSquid mobile application access
   - proxy configuration for mobile devices
 ---
+<section class="section-strip">
+
 
 # Route mobile app traffic through SafeSquid proxy
 
 When internet access is allowed only via a proxy, mobile applications must use proxy settings. Set the relevant environment variables or device proxy configuration so traffic goes through SafeSquid.
+
+</section>
+
+<section class="section-strip">
 
 ## Prerequisites
 Most of mobile applications will not work without direct Internet connection (Means you have blocked the access to the IP address of the mobile on your firewall/router) to the mobile.
@@ -20,6 +26,10 @@ Most of mobile applications will not work without direct Internet connection (Me
 If you are using firewall, then there is an option to block the Internet access to the specific IP addresses.
 If you block the Internet connection to the specific IP addresses (which is client IP / Mobile IP addresses), on your firewall then you are unable to access the Internet without setting proxy settings in that client machine(or) mobile device.
 By default all devices are allowed to access the Internet
+
+</section>
+
+<section class="section-strip">
 
 ## Working of Mobile Applications with Proxy
 If there is no direct Internet access to the mobiles, and you configured proxy in the mobile, then some of the applications will work through proxy, as they designed such that to use proxy settings. And some of the applications will not work.
@@ -42,3 +52,5 @@ In this case it is not possible to allow some of the applications to work with p
 :::note
 Note: The same scenario is applicable in transparent mode also.
 :::
+
+</section>

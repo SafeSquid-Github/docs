@@ -14,6 +14,9 @@ keywords:
   - SafeSquid category management
 ---
 
+
+<section class="section-strip">
+
 ## Whitelisted sites still blocked
 
 Company policy blocks the social network category for all employees, but a few social networking sites must be whitelisted. Those sites are added to the whitelist category yet still show a block template. Similarly, after whitelisting the corporate website, employees may still be unable to access it.
@@ -25,9 +28,17 @@ Company policy blocks the social network category for all employees, but a few s
 
 Note: Whitelist category is the category to allow. Blacklist category is the category to block.
 
+</section>
+
+<section class="section-strip">
+
 ## Enable sscore and add site to whitelist category
 
 Ensure the **sscore** section is enabled and the categorization engine is loaded. Verify from the SafeSquid Statistics page in the interface. See [the Reporting Module](../15-Audit_Forensics/01-Reporting_Module.md). Add the corporate website to the whitelist category from Custom Settings → Categorize Web-sites in the SafeSquid UI.
+
+</section>
+
+<section class="section-strip">
 
 ## Procedure
 
@@ -64,6 +75,10 @@ Ensure the **sscore** section is enabled and the categorization engine is loaded
 
 Use Categorize websites to Create and add websites to the "whitelist category".
 
+</section>
+
+<section class="section-strip">
+
 ## Verification and Evidence
 
 - **Interface Checks**: In [Configuration Portal](../02-SafeSquid_SWG/01-Configuration_Portal.md), Custom Settings → Categorize Web-sites: site shows whitelist category. Restriction Policies → Access profiles: default whitelist policy is enabled and above GLOBAL BLOCK.
@@ -71,3 +86,5 @@ Use Categorize websites to Create and add websites to the "whitelist category".
 - **Performance Validation**: From a client, open the whitelisted site; page loads without block template.
 
 **Related**: [Web Categorization](../07-Profiling_Engine/02-Web_Categorization.md), [Access Restriction](../08-Access_Restriction/main.md), [Reporting](../15-Audit_Forensics/01-Reporting_Module.md), [Troubleshooting](main.md)
+
+</section>

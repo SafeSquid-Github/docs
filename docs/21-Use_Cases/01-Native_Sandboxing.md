@@ -8,11 +8,19 @@ keywords:
   - web content inspection
   - SafeSquid SWG
 ---
+<section class="section-strip">
+
 
 # Native Sandboxing
 
 > 🚧 **This page is under construction.** Content coming soon.
 
+</section>
+
+<section class="section-strip">
+
 ## Isolate and inspect suspicious content before delivery
 
 SafeSquid's native sandboxing provides built-in isolation for inspecting suspicious web content before it reaches end users. This page will cover enabling the feature, configuring sandbox boundaries, and verifying isolated execution.
+
+</section>

@@ -7,6 +7,8 @@ keywords:
   - web security administration
   - SafeSquid WebGUI
 ---
+<section class="section-strip">
+
 
 # Policy Management Console
 
@@ -14,3 +16,4 @@ The Policy Management Console (Configuration Portal) is the SafeSquid web interf
 
 Access the interface from a browser using the SafeSquid server URL and port. Configure policies under **Configure** in the top-right; use the sidebar to navigate Real Time Content Security, Restriction Profiles, Authentication, and related sections. For step-by-step access and first-time setup, see [Getting Started](../01-Getting_Started/main.md) and [Connect Your Client](../01-Getting_Started/05-Connect_Your_Client/main.md).
 
+</section>

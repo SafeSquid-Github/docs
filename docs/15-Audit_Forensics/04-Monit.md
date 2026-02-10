@@ -10,6 +10,9 @@ keywords:
   - monit startup configuration
 ---
 
+
+<section class="section-strip">
+
 ## Installation and configuration of Monit Service
 **Monit** will automatically get installed when you install **SafeSquid Appliance Builder (SAB)** to set up your secure web gateway.
 
@@ -74,9 +77,15 @@ pidof safesquid
 ```
 You will observe that the SafeSquid service had automatically been started by Monit without any user interaction.
 
+</section>
+
+<section class="section-strip">
+
 ## Add Monit service to startup
 You can also execute the command below to start a monit service for every machine reboot.
 
 ```bash
 update-rc.d monit enable
 ```
+
+</section>

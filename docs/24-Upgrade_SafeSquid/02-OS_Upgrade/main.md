@@ -13,8 +13,14 @@ keywords:
   - SafeSquid system prerequisites
   - SafeSquid DNS and Netplan setup
 ---
+<section class="section-strip">
+
 
 # Upgrade Ubuntu 20.04 to 24.04 for SafeSquid compatibility
+
+</section>
+
+<section class="section-strip">
 
 ## OS upgrade scope and procedure
 
@@ -23,6 +29,10 @@ This document provides a **step-by-step, non-interactive procedure** to upgrade 
 The steps ensure **compatibility**, **security**, and **service continuity** for SafeSquid deployments running in production environments.
 
 ---
+
+</section>
+
+<section class="section-strip">
 
 ## Why This Upgrade Is Required
 
@@ -57,6 +67,10 @@ After this date:
 Upgrading to **Ubuntu 24.04 LTS (Noble Numbat)** ensures long-term security and system support until **2034** under extended maintenance.
 
 ---
+
+</section>
+
+<section class="section-strip">
 
 ## Important Pre-Requisite
 
@@ -140,6 +154,10 @@ If the version shows **18.04**, perform an upgrade to **20.04** first before con
 
 ---
 
+</section>
+
+<section class="section-strip">
+
 ## Step 1: Upgrade Ubuntu from 20.04 → 24.04 (Two-Step Process)
 
 Ubuntu LTS upgrades must be done **sequentially** (20.04 → 22.04 → 24.04).
@@ -219,6 +237,10 @@ reboot
 
 ---
 
+</section>
+
+<section class="section-strip">
+
 ## Step 2: Update BIND Configuration
 
 **Why:**
@@ -254,6 +276,10 @@ This restarts the DNS service with updated configuration.
 
 ---
 
+</section>
+
+<section class="section-strip">
+
 ## Step 3: Rename `msktutil` Binary
 
 **Why:**`msktutil` is a tool used for managing machine accounts in Active Directory.
@@ -269,6 +295,10 @@ mv /usr/local/bin/msktutil /usr/local/bin/msktutil_
 ```
 
 ---
+
+</section>
+
+<section class="section-strip">
 
 ## Step 4: Update Netplan Configuration
 
@@ -299,6 +329,10 @@ This ensures DNS resolution functions correctly with BIND post-upgrade.
 
 ---
 
+</section>
+
+<section class="section-strip">
+
 ## Step 5: Upgrade SafeSquid Application
 
 **Why:**
@@ -328,6 +362,10 @@ systemctl enable safesquid
 This ensures SafeSquid starts automatically after system reboots.
 
 ---
+
+</section>
+
+<section class="section-strip">
 
 ## Step 6: Post-Upgrade Cleanup and Verification
 
@@ -367,3 +405,5 @@ ls -rlt /opt/safesquid/bin/safesquid
 ```bash
 lrwxrwxrwx 1 ssquid root 39 Oct 13 22:22 /opt/safesquid/bin/safesquid -> safesquid-2025.1001.1232.3-swg-standard
 ```
+
+</section>

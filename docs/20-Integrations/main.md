@@ -8,10 +8,16 @@ keywords:
   - VPN integration SafeSquid
   - identity and access management
 ---
+<section class="section-strip">
+
 
 # Integrate SafeSquid with IAM and VPN
 
 SafeSquid integrates with enterprise identity management and VPN infrastructure so policy enforcement and authentication align with existing systems. This section links to Identity and Access Management (IAM) and VPN integration documentation.
+
+</section>
+
+<section class="section-strip">
 
 ## Integration guides
 
@@ -20,3 +26,5 @@ Organizations require integration with existing identity management to enforce u
 
 ### [VPN Integration](02-VPN/main.md)
 Remote users and branch offices need consistent web security policy enforcement across distributed infrastructure. VPN Integration enables SafeSquid to use WireGuard for encrypted tunnels and centralized policy enforcement. Secure remote access and consistent security posture result from this integration. Configure VPN integration through SafeSquid network settings using this document.
+
+</section>

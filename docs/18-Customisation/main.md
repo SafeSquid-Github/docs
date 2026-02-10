@@ -9,10 +9,16 @@ keywords:
   - proxy configuration
   - SafeSquid tuning
 ---
+<section class="section-strip">
+
 
 # Customize SafeSquid templates and startup parameters
 
 SafeSquid customization covers custom templates (error pages, branding) and startup parameters (performance and operational configuration). The documents below describe each.
+
+</section>
+
+<section class="section-strip">
 
 ## Custom templates and startup configuration guides
 
@@ -21,3 +27,5 @@ Organizations face user confusion when blocked content displays generic error me
 
 ### [Startup Parameters](02-Startup_Parameters.md)
 Default SafeSquid configurations may not match enterprise requirements for threading, memory, logging, cluster sync, or socket tuning. Startup parameters control listening interfaces, thread management, buffer sizes, and master-slave configurations. Organizations optimize proxy performance and enable clustering or remote logging. Use the document to configure startup.ini and tune the proxy.
+
+</section>

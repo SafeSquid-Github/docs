@@ -14,11 +14,18 @@ keywords:
   - SafeSquid content modifier login block
 ---
 
+
+<section class="section-strip">
+
 ## Issues
 1. https://www.facebook.com/ is accessible via proxy but login fails.
 2. Login to specific websites using Facebook or Google credentials fails via proxy.
 3. Login works on https://www.facebook.com/ but fails on https://accounts.google.com/
 4. Login fails on both https://accounts.google.com/ and https://www.facebook.com/
+
+</section>
+
+<section class="section-strip">
 
 ## Solution
 ### Case 1: Facebook accessible via proxy but login fails
@@ -40,3 +47,5 @@ When login fails only on https://accounts.google.com/ and https://www.facebook.c
 :::note
 If the global section is enabled for the particular section but the policy under that particular section is disabled then that individual policy should not work.
 :::
+
+</section>

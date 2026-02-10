@@ -8,10 +8,16 @@ keywords:
   - SSO
   - Kerberos
 ---
+<section class="section-strip">
+
 
 # Identify users for access control and audit
 
 SafeSquid supports multiple authentication methods to identify users accessing the proxy. Methods can be used individually or in combination to suit enterprise requirements and support identity-based access control and audit.
+
+</section>
+
+<section class="section-strip">
 
 ## Authentication methods and when to use them
 
@@ -29,3 +35,5 @@ Proxy authentication should use the same credentials as the operating system to 
 
 ### [Bypass Authentication](05-Bypass_Authentication.md)
 Applications that cannot send proxy credentials (e.g. automatic updates) fail when authentication is required. Bypass rules let specific destinations or request types skip authentication while the rest remains authenticated and logged. A narrow, auditable bypass list preserves control. Follow the document to enable bypass and define request types for bypassed destinations.
+
+</section>

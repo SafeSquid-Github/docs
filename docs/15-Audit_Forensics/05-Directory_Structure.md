@@ -10,10 +10,16 @@ keywords:
   - SafeSquid performance tuning
   - SafeSquid SSL and DLP directories
 ---
+<section class="section-strip">
+
 
 # SafeSquid SWG Directories
 
 SafeSquid installation and operational directories adhere to the Linux Filesystem Hierarchy Standard (FHS) and house core components for Layer 7 security, system management, and performance optimization. Key directories and their purposes are outlined below:
+
+</section>
+
+<section class="section-strip">
 
 ## SafeSquid Installation Directory
 
@@ -23,6 +29,10 @@ SafeSquid installation and operational directories adhere to the Linux Filesyste
 
 The diretory contains all core SafeSquid Web Gateway components. The executables and libraries enable Layer 7 security, threat mitigation, throughput acceleration, and system management capabilities.
 
+</section>
+
+<section class="section-strip">
+
 ## SafeSquid service init scripts
 
 ```bash npm2yarn
@@ -30,6 +40,10 @@ The diretory contains all core SafeSquid Web Gateway components. The executables
 ```
 
 Contains scripts for managing SafeSquid services, including initialization, termination, and status checks. The SafeSquid script supports commands such as **\{start|stop|restart|status|foreground}** for service control. The service is configured to start automatically on system boot, ensuring all necessary dependencies and environmental variables are set during initialization. This script is frequently used to manage the SafeSquid service operations.
+
+</section>
+
+<section class="section-strip">
 
 ## TCP Tuning Script
 
@@ -52,6 +66,10 @@ SafeSquid stores **tcp\_tune.sh** script in the directory **/etc/init.d/** for T
 
 SafeSquid stores the modified TCP parameters into **/tmp/sysctl\_.conf** file for debugging purposes.
 
+</section>
+
+<section class="section-strip">
+
 ## SafeSquid Log Management Script
 
 ```bash npm2yarn
@@ -60,6 +78,10 @@ SafeSquid stores the modified TCP parameters into **/tmp/sysctl\_.conf** file fo
 
 The SafeSquid log management script automates the rotation and archiving of log files exceeding 1GB in size using the **logrotate** utility. Logs are compressed into GZIP format to optimize disk space usage. By default, **logrotate** runs daily via a cron scheduler, ensuring systematic log management to prevent disk space exhaustion.
 
+</section>
+
+<section class="section-strip">
+
 ## Monit configuration file for SafeSquid
 
 ```bash npm2yarn
@@ -67,6 +89,10 @@ The SafeSquid log management script automates the rotation and archiving of log 
 ```
 
 Enables the **Monit** to monitor the SafeSquid service. If the service stops or fails, **Monit** automatically restarts it without user intervention. The file is placed in the **conf.d** directory to preserve the original configuration and provide seamless service management and monitoring.
+
+</section>
+
+<section class="section-strip">
 
 ## PAM Configuration File for SafeSquid
 
@@ -80,6 +106,10 @@ SafeSquid uses **pam\_unix.so** and **pam\_permit.so** files.
 
 - pam\_unix: This is the standard Unix authentication module. It performs authentication against hashed passwords stored in **/etc/shadow** file and **/etc/passwd** file.
 - pam\_permit: This module always permits access and returns success. It does nothing else.
+
+</section>
+
+<section class="section-strip">
 
 ## System Tuning Configuration File
 
@@ -100,6 +130,10 @@ SafeSquid optimizes various Linux networking and system settings such as:
 - The default and maximum amount for the receive and send socket memory
 - Minimum, average, and maximum size of the TCP read and send buffers
 
+</section>
+
+<section class="section-strip">
+
 ## Main SafeSquid Configuration File
 
 ```bash npm2yarn
@@ -107,6 +141,10 @@ SafeSquid optimizes various Linux networking and system settings such as:
 ```
 
 The SafeSquid total configuration file that is soft-linked with the running version of SafeSquid. If you delete this file SafeSquid will not work.
+
+</section>
+
+<section class="section-strip">
 
 ## Customization Library of Add-on Modules
 
@@ -116,6 +154,10 @@ The SafeSquid total configuration file that is soft-linked with the running vers
 
 SafeSquid has a library of add-on modules that can be easily added or removed, to enhance or modify existing features. SafeSquid modules are independently developed and compiled units from a source file. Each module encapsulates shared object(.so) and XML files to implement a particular functionality. SafeSquid loads all add-on modules from the directory **/opt/safesquid/bin/modules** when the process is started.
 
+</section>
+
+<section class="section-strip">
+
 ## SafeSquid DLP Feature
 
 ```bash npm2yarn
@@ -124,6 +166,10 @@ SafeSquid has a library of add-on modules that can be easily added or removed, t
 
 SafeSquid has a DLP feature as an add-on module. This folder contains a shared object (.so) and XML files of the DLP module. The data loss prevention (DLP) feature detects potential data breaches/data ex-filtration transmissions and prevents end-users from sending sensitive or critical information outside the corporate network. For example, if an employee tries to upload a corporate file via email, then the file will not be uploaded, and the template will be displayed.
 
+</section>
+
+<section class="section-strip">
+
 ## SafeSquid Elevated Privacy Module
 
 ```bash npm2yarn
@@ -131,6 +177,10 @@ SafeSquid has a DLP feature as an add-on module. This folder contains a shared o
 ```
 
 Contains shared object (.so) and XML files of the Elevated Privacy module. You can use Elevated Privacy to protect privacy activity across different websites. Otherwise, third-party cookies will be tracking your activities. Example: When you are surfing the internet by logging into any of your accounts like Hotmail, Yahoo, Gmail, Online Banking... etc. Your activities will be tracked by third-party and referral domains. Set 'Privacy Level' as per your requirement to block Third-Party Cookies, and hide the HTTP & HTTPS referer and User Agents.
+
+</section>
+
+<section class="section-strip">
 
 ## SafeSquid ICAP Module
 
@@ -143,6 +193,10 @@ Contains shared object **(.so)** and XML files for the ICAP (Internet Content Ad
 - **HTTP Caching Systems**: Transactions are routed through the ICAP server, allowing modification or redirection of web requests and responses
 - **FTP Systems**: Transactions pass through the ICAP server for integration with virus scanners or content-filtering tools, enabling advanced content inspection and security
 
+</section>
+
+<section class="section-strip">
+
 ## SafeSquid Image Analyzer Module
 
 ```bash npm2yarn
@@ -150,6 +204,10 @@ Contains shared object **(.so)** and XML files for the ICAP (Internet Content Ad
 ```
 
 Has a shared object (**.so**) and XML files for the Image Analyzer (Imgfilter) module. The module enables real-time analysis of graphical content in images to identify and block pornographic or suspicious content. Blocked images are replaced with blank or checkered placeholders. The detection accuracy is configurable and ranges between 80%-90%, making it an effective deterrent.
+
+</section>
+
+<section class="section-strip">
 
 ## Content Modifier Module
 
@@ -159,6 +217,10 @@ Has a shared object (**.so**) and XML files for the Image Analyzer (Imgfilter) m
 
 Contains a shared object (.so) and XML files for the Content Modifier (Content Re-Write) module. The module uses regular expressions to modify web page content, files, client headers, and server headers in real time. It is designed to remove potentially harmful elements like ActiveX, JavaScript, or cookies from untrusted websites before delivering the content to users. This feature requires cautious implementation due to its powerful capabilities.
 
+</section>
+
+<section class="section-strip">
+
 ## Ssqore Web Categorization
 
 ```bash npm2yarn
@@ -167,6 +229,10 @@ Contains a shared object (.so) and XML files for the Content Modifier (Content R
 
 Contains a shared object (.so) and XML files of the Ssqore module. Ssqore allows you to categorize the websites, depending on the potential nature of the content served by the website. Ssqore queries SafeSquid's Content Categorization Service (CCS), to determine if a website belongs to one or more categories.
 
+</section>
+
+<section class="section-strip">
+
 ## SqScan Anti-Malware
 
 ```bash npm2yarn
@@ -174,6 +240,10 @@ Contains a shared object (.so) and XML files of the Ssqore module. Ssqore allows
 ```
 
 Contains a shared object (.so) and XML files of the SqScan module. SqScan is a high-speed in-memory virus scanner built into a module that protects users against malware. SqScan uses an anti-malware signature database which is constantly updated to ensure the application of the latest anti-malware definitions. SqScan uses proactive protection, such as generic detection routines, a heuristic engine, and a behavior-based engine to proactively prevent unknown or previously unseen malware.
+
+</section>
+
+<section class="section-strip">
 
 ## SafeSquid WCCP Module
 
@@ -185,6 +255,10 @@ Contains a shared object (.so) and XML files of the WCCP module.
 
 Web Cache Communication Protocol (WCCP) is a Cisco-developed content-routing protocol that provides a mechanism to redirect traffic flows in real-time. It has built-in load balancing, scaling, fault tolerance, and service-assurance (failsafe) mechanisms. SafeSquid WCCP module is configured to interact with WCCP-enabled routers. WCCP-enabled routers are used as gateways for End users. All the client's traffic will be transparently redirected to the SafeSquid proxy by a router.
 
+</section>
+
+<section class="section-strip">
+
 ## UI Layout directory
 
 ```bash npm2yarn
@@ -192,6 +266,10 @@ Web Cache Communication Protocol (WCCP) is a Cisco-developed content-routing pro
 ```
 
 Contains the necessary XMLs of SafeSquid. You can find XML of every feature in this folder except add-on modules. These XMLs are used for rendering the SafeSquid User Interface.
+
+</section>
+
+<section class="section-strip">
 
 ## Setup and Startup Configuration Folder
 
@@ -205,6 +283,10 @@ SafeSquid loads default configuration/startup parameters from the **startup.ini*
 
 SafeSquid loads default setup parameters from the setup.ini file. To modify setup parameters, you should take a copy of the setup.ini file and store it as **/opt/safesquid/setup.ini** before editing it manually.
 
+</section>
+
+<section class="section-strip">
+
 ## SafeSquid Temporary Folder
 
 ```bash npm2yarn
@@ -212,6 +294,10 @@ SafeSquid loads default setup parameters from the setup.ini file. To modify setu
 ```
 
 Contains the temporary files created by SafeSquid while the process is running or upgrading to the latest version.
+
+</section>
+
+<section class="section-strip">
 
 ## SafeSquid Core Directory
 
@@ -226,6 +312,10 @@ The directory contains security, ui\_root, SQLite, and bin sub-directories. Thes
 - SQLite Database
 - SSL certificates etc.
 
+</section>
+
+<section class="section-strip">
+
 ## Custom Scripts Folder
 
 ```bash npm2yarn
@@ -234,6 +324,10 @@ The directory contains security, ui\_root, SQLite, and bin sub-directories. Thes
 
 Contains the scripts that can be executed/run with the external applications section. User-created scripts should be stored in /usr/local/safesquid/bin directory for execution.
 
+</section>
+
+<section class="section-strip">
+
 ## Security Component Folder
 
 ```bash npm2yarn
@@ -241,6 +335,10 @@ Contains the scripts that can be executed/run with the external applications sec
 ```
 
 The directory has policies, SSL, and DNS sub-directories. This directory contains activation\_key.updates.backup, activation\_key.updates, and activation\_key files which are product activation-related files. These files should never be deleted otherwise SafeSquid service will be stopped.
+
+</section>
+
+<section class="section-strip">
 
 ## Configuration Policy Folder
 
@@ -258,6 +356,10 @@ Contains the default SafeSquid configuration file (**default.config.xml**). Conf
 
 Subsequent modifications create additional timestamped backup files, allowing restoration of the last known stable configuration when necessary.
 
+</section>
+
+<section class="section-strip">
+
 ## SSL Certificate Store
 
 ```bash npm2yarn
@@ -265,6 +367,10 @@ Subsequent modifications create additional timestamped backup files, allowing re
 ```
 
 The folder has the SSL ROOT certificates and trusted bundle files. It also contains the SubCA used in the OpenVPN configuration.
+
+</section>
+
+<section class="section-strip">
 
 ## Database Configuration
 
@@ -274,6 +380,10 @@ The folder has the SSL ROOT certificates and trusted bundle files. It also conta
 
 Contains the users.db.conf, reporting\_db.conf, and bypass\_db.conf files. These are configuration files for the SQLite database in SafeSquid.
 
+</section>
+
+<section class="section-strip">
+
 ## Web Interface Root
 
 ```bash npm2yarn
@@ -281,6 +391,10 @@ Contains the users.db.conf, reporting\_db.conf, and bypass\_db.conf files. These
 ```
 
 Contains further sub-directories that contain files used for rendering SafeSquid Web User Interface.
+
+</section>
+
+<section class="section-strip">
 
 ## CGI Scripts
 
@@ -290,6 +404,10 @@ Contains further sub-directories that contain files used for rendering SafeSquid
 
 Contains the additional scripts that are used for the execution of the well-defined functionality of SafeSquid. Some of the functionalities are generation of support tarball, generation of performance plot, Kerberos setup, etc.
 
+</section>
+
+<section class="section-strip">
+
 ## Style Sheets
 
 ```bash npm2yarn
@@ -297,6 +415,10 @@ Contains the additional scripts that are used for the execution of the well-defi
 ```
 
 Has all the CSS (Cascading Style Sheets) files. These files help to describe how HTML elements of SafeSquid are displayed on the screen. Modification in these files without proper knowledge may disarrange the SafeSquid interface display.
+
+</section>
+
+<section class="section-strip">
 
 ## Web Fonts
 
@@ -306,6 +428,10 @@ Has all the CSS (Cascading Style Sheets) files. These files help to describe how
 
 Have the web font files used in SafeSquid. You will get glyphicons-halflings-regular.*, font awesome-web font.*, and hinted-SegoeUI.\* files. Font Awesome is a font and icon toolkit based on CSS and LESS. Segoe is a typeface or family of fonts, that is best known for its use by Microsoft. Glyphis used for a variety of designs of a certain character. You can add more web font files as per your needs.
 
+</section>
+
+<section class="section-strip">
+
 ## Interface Images
 
 ```bash npm2yarn
@@ -314,6 +440,10 @@ Have the web font files used in SafeSquid. You will get glyphicons-halflings-reg
 
 Contains the image files that are shown on the SafeSquid interface. Some of these files are in PNG and GIF formats used to show simple animations or small icons on the interface. You can add your preferred image files to this folder to modify the interface display. Modify CSS/JavaScript files and edit your preferred image file names to modify the SafeSquid interface display.
 
+</section>
+
+<section class="section-strip">
+
 ## JavaScript Resources
 
 ```bash npm2yarn
@@ -321,6 +451,10 @@ Contains the image files that are shown on the SafeSquid interface. Some of thes
 ```
 
 This directory contains all the JavaScript files used in SafeSquid to perform various functionality.
+
+</section>
+
+<section class="section-strip">
 
 ## HTML Templates
 
@@ -337,6 +471,10 @@ This directory contains files for SafeSquid's web interface, including:
 
 Custom HTML templates can be added to this directory and configured in the templates section to customize browser displays.
 
+</section>
+
+<section class="section-strip">
+
 ## SafeSquid's Caching directory
 
 ```bash npm2yarn
@@ -344,6 +482,10 @@ Custom HTML templates can be added to this directory and configured in the templ
 ```
 
 This is the default directory to store all caching objects. You can configure SafeSquid''s cache and its storage area, for optimum performance. SafeSquid will create a cache store for all cacheable objects if the cache section is enabled.
+
+</section>
+
+<section class="section-strip">
 
 ## Web analytics databases
 
@@ -359,6 +501,10 @@ This directory contains SQLite database files used by SafeSquid to retrieve user
 
 Additionally, a time-stamped file (**YYYYMMDDhhmmss-main.db**) is created after every 1000 transactions for audit and recovery purposes. These files collectively ensure efficient and reliable database operations.
 
+</section>
+
+<section class="section-strip">
+
 ## SSL certificate storage
 
 ```bash npm2yarn
@@ -366,6 +512,10 @@ Additionally, a time-stamped file (**YYYYMMDDhhmmss-main.db**) is created after 
 ```
 
 Contains the temporary SSL certificates created by safesquid for webservers, while doing https inspection.
+
+</section>
+
+<section class="section-strip">
 
 ## User-to-IP mapping database
 
@@ -375,6 +525,10 @@ Contains the temporary SSL certificates created by safesquid for webservers, whi
 
 SQLITE\_DB file containing usernames assigned to IP addresses.
 
+</section>
+
+<section class="section-strip">
+
 ## Application Signature Storage
 
 ```bash npm2yarn
@@ -383,6 +537,10 @@ SQLITE\_DB file containing usernames assigned to IP addresses.
 
 Stores the **applications3** file in the **updates** folder which is an application signature file. SafeSquid service checks and downloads the latest application signature file from the cloud on an hourly basis.
 
+</section>
+
+<section class="section-strip">
+
 ## Custom Category Storage
 
 ```bash npm2yarn
@@ -390,6 +548,10 @@ Stores the **applications3** file in the **updates** folder which is an applicat
 ```
 
 Contains a category.db file which is the local database for custom categories.
+
+</section>
+
+<section class="section-strip">
 
 ## Content Signature Shared Library and Storage
 
@@ -404,6 +566,10 @@ The directory contains the following components for SafeSquid's content signatur
 
 The SafeSquid service periodically checks and downloads the latest content signature updates from the cloud every hour, ensuring up-to-date content recognition capabilities.
 
+</section>
+
+<section class="section-strip">
+
 ## Image Analyzer Dependency and Finetuning Files
 
 ```bash npm2yarn
@@ -417,6 +583,10 @@ The directory contains essential dependencies for the Image Analyzer module:
 
 The SafeSquid service periodically checks and downloads the latest versions of these library files from the cloud on an hourly basis to ensure optimal performance.
 
+</section>
+
+<section class="section-strip">
+
 ## Ssqore Dependency Files and Signature Storage
 
 ```bash npm2yarn
@@ -425,6 +595,10 @@ The SafeSquid service periodically checks and downloads the latest versions of t
 
 Contains essential library files for the proper execution of the **Ssqore** module. All the Ssqore signatures are stored in the **parental\_sig** subfolder. SafeSquid service checks and downloads the latest **libbdupdatesdk.so** file and stores into **an **update subfolder on an hourly basis.
 
+</section>
+
+<section class="section-strip">
+
 ## Sqscan Dependency Files and Anti-Malware Signature Storage
 
 ```bash npm2yarn
@@ -432,6 +606,10 @@ Contains essential library files for the proper execution of the **Ssqore** modu
 ```
 
 Contains essential library files for the proper execution of the SqScan module. All the SqScan anti-Malware signature databases are stored in the **Plugins** subfolder. SafeSquid service checks and downloads the latest **libbdupdatesdk.so** file and stores into an **update** subfolder on an hourly basis.
+
+</section>
+
+<section class="section-strip">
 
 ## SafeSquid Config Logs
 
@@ -442,6 +620,10 @@ Contains essential library files for the proper execution of the SqScan module. 
 Folder contains the **config.log** file which stores the details about modification in the SafeSquid configuration via SafeSquid UI. This log file will help the administrator trace any rule that is added/modified/deleted in the SafeSquid configuration. The administrator can easily roll back the faulty changes from the SafeSquid configuration.  Log rotation will change **config.log** into **XXXX-config.log** file, where XXXX is the time of log rotation.
 
 Below is the heading/legend for the Config Log file- `"ACCESS_TIME"   "SAFESQUID_INTERFACE"   "USERNAME@IP"   "PAGE"  "SECTION"       "ACTION"        "HTTP_METHOD"   "URL"   "REFERER"       "ARGUMENTS"     "CONFIG_FILE"   "REASON"` **Log Rotation**: Log Rotation is the process in SafeSquid to control large log files. Some Log Analyzers and Text Editor cannot process bigger log files (2GB earlier). To handle this SafeSquid sets the parameter LOG\_SIZE\_LIMIT for the maximum file size in bytes for a log file. Exceeding the maximum file size SafeSquid will automatically truncate and compress the log file, further, this file will be renamed and saved on the disk.
+
+</section>
+
+<section class="section-strip">
 
 ## SafeSquid Extended Logs
 
@@ -457,6 +639,10 @@ Below is the heading/legend for the Extended Log file-
 "record_id"     "client_id"     "request_id"    "date_time"     "elapsed_time"  "status"        "size"  "upload"        "download"      "bypassed"      "client_ip"     "username"      "method"        "url"   "http_referer"  "useragent"     "mime"  "filter_name"   "filtering_reason"      "interface"     "cachecode"     "peercode"      "peer"  "request_host"  "request_tld"   "referer_host"  "referer_tld"   "range" "time_profiles" "user_groups"   "request_profiles"      "application_signatures"        "categories"    "response_profiles"     "upload_content_types"  "download_content_types"        "profiles"** **
 ```
 
+</section>
+
+<section class="section-strip">
+
 ## SafeSquid Native Logs
 
 ```bash npm2yarn
@@ -466,6 +652,10 @@ Below is the heading/legend for the Extended Log file-
 Contains the **native.log** file detailing the various functional aspects like **REQUESTS, SECURITY, REDIRECT**, etc. that are affected by the various features and their configuration. This file stores all data related to every request and response processed by the SafeSquid which will be helpful to an administrator for debugging purposes. Control the verbosity of the Native Log by specifying LOGLEVEL. Log rotation will change **native.log** into **XXXX-native.log** file, where **XXXX** is the time of log rotation.
 
 **LOG\_LEVEL**: Set to 16777216 (for only warnings) 33554432 (only errors) 67108864 (only profiles) 134217728 (only debug) 268435455 (all activities and debug information). The default is 33554435(errors requests network).
+
+</section>
+
+<section class="section-strip">
 
 ## Performance Logs
 
@@ -483,6 +673,10 @@ Below is the heading/legend for the Performance Log file-
 Time Stamp (YYYYMMDDhhmmss) , Elapsed Time , Client Connections Handled , Client Connections Closed , Client Transactions Handled , Client Connections in Pool , Spare Client Threads , Client Threads in Use , Client Threads in Waiting , Threads Starting up , Threads Reserved for Prefetching , Threading Errors , Outbound Connections created , Outbound Connections Failed , Outbound Connection Pool Reused , Outbound Connections in Pool , Bytes in (KBytes) , Bytes Out (KBytes) , Caching Objects Created in Memory , Caching Objects Removed from Memory , DNS Queries Reused , New DNS Queries , DNS Query failures , Total System Memory (KBytes) , Free System Memory (KBytes) , SafeSquid Virtual Memory (KBytes) , SafeSquid Resident Memory (KBytes) , SafeSquid Shared Memory (KBytes) , SafeSquid Code Memory (KBytes) , SafeSquid Data Memory (KBytes) , SafeSquid Library Memory (KBytes) , Connections Handled Delta , Connections Closed Delta , Transactions Handled Delta , Client Pool Delta , Spare Threads Delta , Active Threads Delta , Threads Waiting Delta , Threads Starting up Delta , Threads Prefetching Delta , Threading Errors Delta , Outbound Connections created Delta , Outbound Connections Failed Delta , Outbound Connection Pool Reused Delta , Outbound Connections in Pool Delta , Bytes in (KBytes) Delta , Bytes Out (KBytes) Delta , Caching Objects Created in Memory Delta , Caching Objects Removed from Memory Delta , DNS Queries Reused Delta , New DNS Queries Delta , DNS Query failures Delta, load avg.(1 min), load avg.(5 min), load avg.(15 min), Running Processes, Waiting Processes, User Time, System Time, Total (user + system) Time , User Time Delta , System Time Delta , Total Time Delta
 ```
 
+</section>
+
+<section class="section-strip">
+
 ## Privacy logs
 
 ```bash npm2yarn
@@ -491,6 +685,10 @@ Time Stamp (YYYYMMDDhhmmss) , Elapsed Time , Client Connections Handled , Client
 
 Contains the privacy logs record cookies, cross-site exchange, and Safesquid Elevated Privacy policy enforcements.
 
+</section>
+
+<section class="section-strip">
+
 ## SafeSquid PID
 
 ```bash npm2yarn
@@ -498,3 +696,5 @@ Contains the privacy logs record cookies, cross-site exchange, and Safesquid Ele
 ```
 
 Contains the **safesquid.pid** file which stores the process ID of SafeSquid. For every restart of SafeSquid, this file is modified with a new process ID.
+
+</section>

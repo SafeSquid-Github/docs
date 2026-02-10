@@ -8,18 +8,32 @@ keywords:
   - SafeSquid authentication policy
   - allow application without authentication SafeSquid
 ---
+<section class="section-strip">
+
 
 :::info CISO takeaway
 **Risk:** Unauthenticated proxy traffic has no user attribution and weakens audit and acceptable-use enforcement. **Control:** Bypass rules limit unauthenticated access to an explicit list of destinations or request types; all other traffic remains subject to authentication and logging. **Evidence:** Bypass configuration is auditable; logs show which traffic was bypassed (no user identity) versus authenticated—demonstrate narrow scope of bypass for auditors.
 :::
 
+</section>
+
+<section class="section-strip">
+
 ## Problem: Applications that cannot send proxy credentials break or fail
 
 Organizations enforce proxy authentication to attribute access and enforce policy. Automatic updates (antivirus, OS, applications) and non-interactive clients (e.g. Dropbox, some backup tools) cannot send proxy credentials and fail when authentication is required. Blocking them disrupts operations; allowing all unauthenticated traffic removes accountability. SafeSquid bypass rules let specific destinations or request types skip authentication while the rest of the traffic remains authenticated and tracked.
 
+</section>
+
+<section class="section-strip">
+
 ## Key benefits
 
 Automatic updates and approved applications work without user interaction. Policy and logging stay in place for all other traffic. Bypass list is explicit and configurable so scope is auditable. **Trade-off:** Bypassed traffic is not attributed to a user; keep the bypass list minimal and document it for compliance.
+
+</section>
+
+<section class="section-strip">
 
 ## Prerequisites
 
@@ -31,6 +45,10 @@ Automatic updates and approved applications work without user interaction. Polic
 
 - SafeSquid deployed with authentication enabled in access rules.
 - Admin access to [Configuration Portal](../02-SafeSquid_SWG/01-Configuration_Portal.md) and permission to edit Request Types and Access Profiles.
+
+</section>
+
+<section class="section-strip">
 
 ## Call to action: Enable bypass and define bypassed destinations
 
@@ -97,11 +115,19 @@ Automatic updates and approved applications work without user interaction. Polic
 
     ![Save policy](/img/How_To/Bypass_Authentication/image15.webp)
 
+</section>
+
+<section class="section-strip">
+
 ## Verification and Evidence
 
 - **Bypassed destination:** From a client, trigger traffic to the bypassed destination (e.g. update service, Dropbox); request succeeds without authentication prompt. Check identity or access logs; bypassed requests show no user identity or show bypass indicator.
 - **Authenticated traffic:** Browse a non-bypassed site; authentication prompt appears and access is logged with username.
 - **Interface:** Search for BYPASS AUTHENTICATION and confirm Enabled is TRUE; review Request Types and Access Profiles to confirm bypass list scope for audit.
+
+</section>
+
+<section class="section-strip">
 
 ## Troubleshooting
 
@@ -111,8 +137,14 @@ Automatic updates and approved applications work without user interaction. Polic
 | Wrong traffic bypassed | Pattern too broad (e.g. Smart TLD) | Tighten domain pattern or disable Smart TLD; test with a single FQDN first. |
 | Updates still fail | Destination not in bypass list or different domain | Add the actual update domains to a request type and include in bypass profile; verify with logs. |
 
+</section>
+
+<section class="section-strip">
+
 ## Next steps
 
 - [Local Credential Store (BASIC)](01-BASIC.md)
 - [PAM Authentication](04-PAM.md)
 - [Access Restriction](../08-Access_Restriction/main.md)
+
+</section>

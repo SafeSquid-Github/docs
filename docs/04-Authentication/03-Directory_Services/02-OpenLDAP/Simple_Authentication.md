@@ -8,18 +8,32 @@ keywords:
   - configure openldap for SafeSquid
   - openldap setup for SafeSquid
 ---
+<section class="section-strip">
+
 
 :::info CISO takeaway
 **Risk:** Per-user proxy control requires identity from a trusted directory. **Control:** OpenLDAP simple bind validates users and provides group membership for access rules. **Evidence:** LDAP bind and user extraction are logged; identity and access logs show authenticated usernames for audit.
 :::
 
+</section>
+
+<section class="section-strip">
+
 ## Problem: Proxy authentication backed by OpenLDAP
 
 Organizations using OpenLDAP need proxy authentication validated against the directory with group-based access rules. Simple LDAP bind validates usernames and passwords and retrieves group membership without Kerberos or SSO.
 
+</section>
+
+<section class="section-strip">
+
 ## Key benefits
 
 Centralized identity from OpenLDAP; user and group-based access control. Standard LDAP bind; no extra SSO infrastructure. Supports audit and compliance evidence via identity and access logs.
+
+</section>
+
+<section class="section-strip">
 
 ## Example: integrate OpenLDAP with SafeSquid
 
@@ -33,20 +47,43 @@ This example uses an OpenLDAP server with the following information.
 
 **User Name**: cn=admin,dc=safesquid,dc=net
 
+</section>
+
+<section class="section-strip">
 
 ## Prerequisites
 Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, password, base dn, domain) in configuration are correct. If any value is wrong SafeSquid will fail to fetch the entries.
 
+</section>
+
+<section class="section-strip">
+
 ## [Access the SafeSquid User Interface](../../../02-SafeSquid_SWG/01-Configuration_Portal.md)
+
+</section>
+
+<section class="section-strip">
 
 ## Go to configure Page
 ![clicking on configure in safesquid interface](/img/How_To/Integrate_openLDAP_for_simple_authentication/image1.webp)
 
+</section>
+
+<section class="section-strip">
+
 ## Go to Application Setup
 ![clicking on application setup](/img/How_To/Integrate_openLDAP_for_simple_authentication/image2.webp)
 
+</section>
+
+<section class="section-strip">
+
 ## Go to Integrate LDAP
 ![going to integrate LDAP in application setup section](/img/How_To/Integrate_openLDAP_for_simple_authentication/image3.webp)
+
+</section>
+
+<section class="section-strip">
 
 ## Enable Integrate LDAP
 ![ensuring the LDAP section is enabled. By default, it is set as false](/img/How_To/Integrate_openLDAP_for_simple_authentication/image4.webp)
@@ -57,8 +94,16 @@ Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, passw
 
 ![clicking on save policy](/img/How_To/Integrate_openLDAP_for_simple_authentication/image7.webp)
 
+</section>
+
+<section class="section-strip">
+
 ## Go to LDAP servers
 ![Going to LDAP servers tab](/img/How_To/Integrate_openLDAP_for_simple_authentication/image8.webp)
+
+</section>
+
+<section class="section-strip">
 
 ## Add a new entry
 ![creating a new entry by clicking add new button](/img/How_To/Integrate_openLDAP_for_simple_authentication/image9.webp)
@@ -87,8 +132,16 @@ Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, passw
 
 ![clicking on ldap entries tab to check for entries](/img/How_To/Integrate_openLDAP_for_simple_authentication/image21.webp)
 
+</section>
+
+<section class="section-strip">
+
 ## Test User extraction
 ![showing all the users from LDAP server in ldap entries tab](/img/How_To/Integrate_openLDAP_for_simple_authentication/image22.webp)
+
+</section>
+
+<section class="section-strip">
 
 ## Save Configuration
 ![clicking on save config to save it](/img/How_To/Integrate_openLDAP_for_simple_authentication/image23.webp)
@@ -96,3 +149,5 @@ Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, passw
 Clicking **Save config** prompts to store the configuration in the cloud. Select **Yes** only when the same configuration will be used on other SafeSquid instances or all sections are fully configured and validated. Otherwise select **No** and click **Submit**.
 
 **Related:** [SSO Authentication](SSO_Authentication), [Failed To Fetch LDAP Entries](../../../23-Troubleshooting/Failed_To_Fetch_LDAP_Entries.md)
+
+</section>

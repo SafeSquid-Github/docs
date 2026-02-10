@@ -9,6 +9,9 @@ keywords:
   - SafeSquid content filtering youtube
 ---
 
+
+<section class="section-strip">
+
 ## Client Scenario
 Ganpat University provides graduate programs to various colleges. Ganpat University distributes the internet to its students. Ganpat University wants to block entire www.youtube.com for their students, but wants some of the YouTube channels allowed which are helpful for students.
 
@@ -18,13 +21,25 @@ All Students should not be allowed to access www.youtube.com. If any student tri
 
 Only a few of the specified YouTube channels and their playlists should be allowed. This YouTube channel contains educational and knowledge-sharing videos.
 
+</section>
+
+<section class="section-strip">
+
 ## Solution
 You can achieve this by creating a policy in the Request Profiles Section and binding it with policies in the Access Profiles Section.
+
+</section>
+
+<section class="section-strip">
 
 ## Prerequisites
 HTTPS Inspection should be enabled in SafeSquid. If not enabled, refer to the document - [How to enable HTTPS Inspection](../05-SSL_Inspection/main.md).
 
 You need the YouTube **Channel-ID** and **List-ID** of the playlist you want to allow. You have to extract the Channel-ID and List-ID of the playlist from the YouTube URL before creating rules in SafeSquid.
+
+</section>
+
+<section class="section-strip">
 
 ## Channel-ID and List-ID Extraction
 ### Extract Channel-ID from YouTube channel
@@ -56,6 +71,10 @@ URL for next video in CBT Nuggets Webinars playlist: https://www.youtube.com/wat
 **List-ID: PLQVJk9oC5JKo_bMWae3xsavpPMKAzIeGb**
 
 ![Verify List-ID from YouTube Channel to Allow Specific YouTube Channel and its Playlist](/img/How_To/Allow_Specific_YouTube_Channel_and_its_Playlist/image3.webp)
+
+</section>
+
+<section class="section-strip">
 
 ## Policy Creation
 ### Create policy in Request Types section
@@ -127,6 +146,10 @@ Create two new policies instead of modifying the default policies if preferred.
 
 ![saving to confirm whether its created properly or not policy that allow Specific YouTube Channel and its Playlist](/img/How_To/Allow_Specific_YouTube_Channel_and_its_Playlist/image20.webp)
 
+</section>
+
+<section class="section-strip">
+
 ## Test the Scenario
 Now try to open videos other than the CBT Nuggets Webinars playlist of the YouTube Channel CBT Nuggets.
 
@@ -141,3 +164,5 @@ This configuration will work only for videos sourced from the channel page and n
 
 To allow all the videos of any specific YouTube Channel you have to insert List-ID's (of every playlist in that channel) and file part (of each individual unlisted video) of the URL in the File field of the Request Types Section.
 :::
+
+</section>
