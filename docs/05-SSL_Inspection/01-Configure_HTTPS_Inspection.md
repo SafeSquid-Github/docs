@@ -274,7 +274,7 @@ Configure proxy settings in Dropbox and upload or download files to validate tha
 
 ## Troubleshooting
 
-- **Certificate errors in browser**: Ensure SafeSquid Root CA is installed in the client trust store. See [Server Verification](/docs/Server_Verification/main/) and [Import certificate into Firefox](#import-certificate-into-firefox).
+- **Certificate errors in browser**: Ensure SafeSquid Root CA is installed in the client trust store. See [Import Certificate into Chrome or IE](/docs/SSL_Inspection/Import_Certificate_Chrome_IE/) and [Import certificate into Firefox](#import-certificate-into-firefox).
 - **Sites or applications broken after enabling inspection**: Add bypass rules for sensitive or pinned applications. Use Request Types and Access Policies to match domains or applications and set BYPASS SSL INSPECTION.
 - **Handshake or policy failures in logs**: Confirm Trusted Root CA store and upstream certificate validation; check [SSL Inspection Issues](/docs/Troubleshooting/SSL_Inspection_Issues/) for diagnostic steps.
 
@@ -285,7 +285,7 @@ Configure proxy settings in Dropbox and upload or download files to validate tha
 ## Next steps
 
 - [Self-Service Portal](/docs/SafeSquid_SWG/Self-Service_Portal/) for certificate management.
-- [Server Verification](/docs/Server_Verification/main/) for client certificate import.
+- [Import Certificate into Chrome or IE](/docs/SSL_Inspection/Import_Certificate_Chrome_IE/) for client certificate import.
 - [Access Restriction](/docs/Access_Restriction/main/) for policy and bypass rules.
 - [SSL Inspection Issues](/docs/Troubleshooting/SSL_Inspection_Issues/) for diagnostic steps.
 

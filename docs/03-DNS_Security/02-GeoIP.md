@@ -118,7 +118,7 @@ profile=Block-High-Risk-Countries rule=deny-non-compliant-regions user=jdoe
   - Fix: ensure IPv6 ranges in GeoIP; confirm dual-stack handling
 - HTTPS SNI/IP mismatch
   - Symptom: SNI points to geo X, IP maps to geo Y
-  - Fix: prefer IP-based geo for enforcement; validate SNI with server verification. See [Server Verification](/docs/Server_Verification/main/).
+  - Fix: prefer IP-based geo for enforcement; validate SNI with server verification. See [SSL Inspection](/docs/SSL_Inspection/main/).
 - Performance impact from complex geo sets
   - Symptom: latency on policy evaluation
   - Fix: consolidate countries into regions; push heavy rules higher in precedence; cache outcomes

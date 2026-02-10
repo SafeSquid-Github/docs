@@ -28,4 +28,7 @@ This section links to the document that covers certificate setup, enabling inspe
 ### [Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/)
 HTTPS traffic must be decrypted for policy enforcement and threat prevention. The document covers prerequisites, certificate generation or import via the Self-Service Portal, and enabling inspection in the Configuration Portal. Bypass rules and client Root CA import support compliance-sensitive domains and audit evidence. Follow the document to deploy and validate HTTPS inspection end-to-end.
 
+### [Import Certificate into Chrome or IE](/docs/SSL_Inspection/Import_Certificate_Chrome_IE/)
+Clients must trust the SafeSquid Root CA for HTTPS inspection to work without certificate warnings. This guide provides step-by-step import of the SafeSquid SSL certificate into the Windows Trusted Root Certification Authorities store used by Chrome and Internet Explorer. Complete this after enabling HTTPS inspection to eliminate browser trust errors.
+
 </section>
