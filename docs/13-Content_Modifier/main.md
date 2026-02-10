@@ -186,8 +186,12 @@ Modify the header response and request for PNG & JPG images instead of AVIF & WE
 
 <section class="section-strip">
 
-## Next steps
+## Detailed reference and next steps
 
+### [Rewriting Policies Reference](/docs/Content_Modifier/Rewriting_Policies_Reference/)
+Field-by-field reference for every policy parameter (Enabled, Profiles, Mime type, Pattern, Replace, Applies to) with practical examples — title tag injection, image format enforcement, and header rewriting.
+
+### Related sections
 - [Header Re-Write](/docs/Header_Obfuscation/main/) for filtering or modifying specific headers.
 - [Cookie Inspection](/docs/Cookie_Inspection/main/) for cookie filtering and policy.
 - [Data Leakage Prevention](/docs/Data_Leakage_Prevention/main/) for DLP and compliance templates.
