@@ -1,28 +1,25 @@
 ---
 title: Integrations
 slug: /Integrations
-description: Enterprise integration with identity management and VPN for policy enforcement and remote access.
+description: Enterprise integration with VPN for policy enforcement and secure remote access through SafeSquid SWG.
 keywords:
   - SafeSquid integrations
-  - enterprise identity management
   - VPN integration SafeSquid
-  - identity and access management
+  - WireGuard SafeSquid
+  - secure remote access proxy
 ---
 <section class="section-strip">
 
 
-# Integrate SafeSquid with IAM and VPN
+# Integrate SafeSquid with VPN for secure remote access
 
-SafeSquid integrates with enterprise identity management and VPN infrastructure so policy enforcement and authentication align with existing systems. This section links to Identity and Access Management (IAM) and VPN integration documentation.
+SafeSquid integrates with VPN infrastructure so policy enforcement extends to remote users and branch offices. For identity and authentication integration (Active Directory, OpenLDAP, SSO), see [Authentication](/docs/Authentication/main/) and [Directory Services](/docs/Authentication/Directory_Services/main/).
 
 </section>
 
 <section class="section-strip">
 
 ## Integration guides
-
-### [Identity and Access Management](/docs/Integrations/Identity_and_Access_Management/main/)
-Organizations require integration with existing identity management to enforce user-based policies and centralized authentication. Identity and Access Management describes directory services and SSO integration (Active Directory, OpenLDAP) with SafeSquid. Consistent access control and audit attribution rely on this integration. Follow the document and Authentication → Directory Services for detailed setup.
 
 ### [VPN Integration](/docs/Integrations/VPN/main/)
 Remote users and branch offices need consistent web security policy enforcement across distributed infrastructure. VPN Integration enables SafeSquid to use WireGuard for encrypted tunnels and centralized policy enforcement. Secure remote access and consistent security posture result from this integration. Configure VPN integration through SafeSquid network settings using this document.
