@@ -20,9 +20,9 @@ keywords:
 
 SafeSquid is a multi-threaded HTTP Proxy Server, specially designed for Layer 7 Perimeter Security. Zero Trust Web Security architecture promises scalable performance while ensuring comprehensive mitigation of Layer 7 threats.
 
-SafeSquid-based Secure Web Gateway (SafeSquid SWG) enforces granular web access control, deep content mitigation, and real-time visiblity in enterprise web traffic. This section guides deployment from planning through activation and client configuration.
+SafeSquid-based Secure Web Gateway (SafeSquid SWG) enforces granular web access control, deep content mitigation, and real-time visibility in enterprise web traffic. This section guides deployment from planning through activation and client configuration.
 
-Learn more [about SafeSquid SWG](/docs/SafeSquid_SWG/main/).
+Learn more [about SafeSquid SWG](/docs/SafeSquid_SWG/main/) — architecture overview, components, and ecosystem.
 
 </section>
 
@@ -30,26 +30,26 @@ Learn more [about SafeSquid SWG](/docs/SafeSquid_SWG/main/).
 
 ## Deployment and connectivity guides
 
-### [Deployment Planning](/docs/Getting_Started/Deployment_Planning/)
-Organizations must size hardware and plan network topology before deploying a web gateway. Deployment Planning addresses capacity, NICs, and environment preparation so the SWG fits the target environment. Use this document to avoid under- or over-provisioning and to align with network architecture. Follow the steps to plan deployment and prepare the environment.
+### [Deployment Planning](/docs/Getting_Started/Deployment_Planning/) — hardware sizing, network topology, and environment preparation
+Organizations must size hardware and plan network topology before deploying a web gateway. This guide covers CPU/RAM/NIC requirements, disk I/O planning, HA topologies, and DR considerations. Use this document to avoid under- or over-provisioning and to align with network architecture.
 
-### [Register](/docs/Getting_Started/Register/)
-SafeSquid requires an activation key from the Self-Service Portal. Register creates an account and downloads the product activation key so installation and activation can proceed. Organizations obtain keys without credit card for evaluation or purchase. Create an account on the Self-Service Portal and download the activation key.
+### [Register](/docs/Getting_Started/Register/) — create account and download activation key
+SafeSquid requires an activation key from the Self-Service Portal. This guide walks through account creation, license selection (trial or purchased), and key download. Organizations obtain keys without credit card for evaluation or purchase.
 
-### [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/main/)
-SafeSquid must be installed via Appliance Builder (SAB), cloud deployment, or Linux TAR package. Install SafeSquid compares methods and provides step-by-step installation for each option. Choosing the right method avoids rework and fits the organization's infrastructure. Follow the guide to deploy the proxy using SAB, cloud, or Linux TAR.
+### [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/main/) — compare installation methods and deploy using SAB, cloud, or TAR
+SafeSquid can be installed via Appliance Builder (SAB), cloud deployment, or Linux TAR package. This section compares methods and provides step-by-step installation for each option. Choosing the right method avoids rework and fits the organization's infrastructure.
 
-### [Activate](/docs/Getting_Started/Activate/)
-The activation key must be uploaded and the license verified before the gateway is fully operational. Activate describes uploading the key and confirming license status in the SafeSquid interface. Verification ensures the product is licensed and support is available. Upload the activation key and verify the license using this document.
+### [Activate](/docs/Getting_Started/Activate/) — upload license key and verify activation
+The activation key must be uploaded and the license verified before the gateway is fully operational. This guide covers uploading the key via the Self-Service Portal or SafeSquid interface, confirming license status, and troubleshooting activation failures.
 
-### [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/)
-Clients must be configured to use the proxy (browser, PAC, system-wide, or enterprise deployment). Connect Your Client covers explicit proxy, PAC file, system-wide proxy, enterprise deployment, and application-specific configuration. Administrators choose the appropriate method for the environment. Configure clients using the relevant guide in this section.
+### [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/) — configure browsers, PAC files, system-wide proxy, or enterprise deployment
+Clients must be configured to use the proxy. This section covers explicit proxy (manual browser config), PAC file (auto-discovery), system-wide proxy (OS-level), enterprise deployment (Group Policy, MDM), and application-specific configuration.
 
-### [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)
-Deployment must be validated with smoke tests before production use. Verify Your Setup provides quick checks to confirm end-to-end connectivity and policy enforcement. Validation reduces risk of misconfiguration and supports handover to operations. Run the verification steps to confirm the setup.
+### [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) — smoke tests for connectivity and policy enforcement
+Deployment must be validated before production use. This guide provides quick checks to confirm end-to-end connectivity, DNS resolution, SSL inspection, authentication, and basic policy enforcement.
 
-### [Next Steps](/docs/Getting_Started/Next_Steps/)
-After the gateway is running, SSL inspection, authentication, and security policies are typically configured. Next Steps points to SSL Inspection, Authentication, Profiling Engine, and scaling so administrators know where to continue. Use this document to plan the next configuration phase.
+### [Next Steps](/docs/Getting_Started/Next_Steps/) — post-deployment roadmap for SSL, authentication, policies, and scaling
+After the gateway is running, SSL inspection, authentication, and security policies are typically configured. This guide points to SSL Inspection, Authentication, Profiling Engine, and scaling so administrators know where to continue.
 
 </section>
 

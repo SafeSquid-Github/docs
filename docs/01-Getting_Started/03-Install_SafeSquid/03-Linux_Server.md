@@ -33,7 +33,14 @@ This method installs the SafeSquid binary only. You are responsible for OS harde
 
 ## Steps
 
-1. **Download and extract** the SafeSquid package:
+1. **Verify prerequisites**
+
+   Before installing, confirm you have:
+   - Root or sudo access (run `sudo -v` to verify)
+   - Internet connectivity (run `ping -c 3 google.com` to test)
+   - At least 10 GB free disk space (run `df -h /` to check)
+
+2. **Download and extract** the SafeSquid package:
 
    ```bash
    cd /usr/local/src
@@ -41,11 +48,15 @@ This method installs the SafeSquid binary only. You are responsible for OS harde
    tar -zxvf safesquid_latest.tar.gz
    ```
 
-2. **Run the installer:**
+   **Expected output:** Directory `_mkappliance` extracted with installation scripts.
+
+3. **Run the installer:**
 
    ```bash
    _mkappliance/installation/setup.sh
    ```
+
+   The installer checks dependencies, creates system users, and installs SafeSquid binaries to `/opt/safesquid/`.
 
 3. **Check for missing dependencies:**
 
