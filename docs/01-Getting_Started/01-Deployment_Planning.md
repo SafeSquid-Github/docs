@@ -19,81 +19,49 @@ keywords:
 
 # Deployment Planning
 
-Undersized hardware, misconfigured networking, or insufficient disk I/O lead to policy failures, latency spikes, and data loss under load. Planning before installation ensures right-sized capacity, HA/DR readiness, and predictable performance. This page covers sizing, network and storage, environment prep, and how to verify your plan.
+## Why deployment planning matters
 
-## Key Benefits
+Undersized hardware, misconfigured networking, or insufficient disk I/O cause policy failures, latency spikes, and data loss under load. The gateway becomes the bottleneck: sessions drop, SSL decryption stalls, and logs fall behind. A single point of failure means an outage takes all web traffic offline — no inspection, no policy, no visibility. SLA breaches trigger penalties and customer loss; auditors (SOC 2, ISO 27001) expect documented availability and resilience, and recovery from an unplanned failover or DR event is costly and slow if capacity and topology were not planned up front.
 
-- **Right-sized capacity** — match CPU, RAM, NICs, and disk to your user count and peak burst so the gateway does not become the bottleneck.
-- **HA/DR readiness** — choose active-passive or active-active and plan DR in a separate zone so outages do not take the proxy offline.
-- **Predictable performance** — NVMe, LACP bonding, and correct endpoint access avoid surprises after go-live.
+Planning before install avoids that. It delivers capacity that matches load, resilience when something fails, and evidence you can show auditors:
 
-## System Requirements by Deployment Scale
+- **Capacity that matches load** — Size to peak concurrent connections so policies apply under load.
+- **Resilience when it matters** — Use HA (active-passive or active-active) and DR in a separate zone so a single or regional outage doesn’t take the proxy offline.
+- **Predictable performance at go-live** — Right-size NICs and use NVMe for logs (see [Disk and log storage](#disk-and-log-storage)) so rollout doesn’t bring latency or logging gaps.
+- **Audit-ready evidence** — Document sizing and topology for SOC 2 and ISO 27001.
 
-### Single Node Deployments
+## What you need before planning
 
-Match CPU, memory, and NIC count to your expected user base and session concurrency. Ensure the CPU supports **AES-NI** (Advanced Encryption Standard New Instructions — CPU instructions for hardware-accelerated AES used in SSL decryption) for accelerated SSL decryption. Use NVMe SSDs for log and cache operations. Scale NICs to prevent I/O bottlenecks under burst load.
+Gather the following before you size hardware or choose a topology:
 
-**Hardware Matrix**
+- **Concurrent connection estimate** — Peak or typical so you can use the [Hardware sizing](#hardware-sizing) table (~8 per active user if you only have user count).
+- **Network layout** — LAN/WAN segments, VLANs, and proxy placement for NIC sizing and bonding (see [Network: NICs and bonding](#network-nics-and-bonding)).
+- **Deployment goal** — Single node for pilot or eval; for production, decide HA and DR before go-live (see [Deployment scenario](#deployment-scenario)).
 
-| **CPU** | **RAM** | **NIC** | **Ideal Concurrent Connections** | **Peak Burst** | **Approx. Users** | **AES-NI Required** |
-| ------: | ------: | ------: | -------------------------------: | -------------: | ----------------: | :-----------------: |
-|       4 |       8 |       2 |                              150 |            400 |               100 |         Yes         |
-|       8 |      16 |       2 |                              800 |           1500 |               350 |         Yes         |
-|      16 |      32 |       4 |                             2000 |           3000 |               750 |         Yes         |
-|      24 |      64 |       8 |                             2500 |           4000 |              1000 |         Yes         |
-|      32 |      64 |       8 |                             3000 |           6000 |              1500 |         Yes         |
-|      64 |     128 |      16 |                             4000 |           8000 |              2000 |         Yes         |
+Then complete **Prepare the host before install** (below) on each target host before you run the installer.
 
-### High Availability Deployments
+## Hardware sizing
 
-#### Active-Passive
+Match CPU, RAM, and NICs to your expected **peak** concurrent connections (not average) so you avoid latency and dropped sessions. Ensure the CPU supports **AES-NI** (Advanced Encryption Standard New Instructions) for SSL decryption; use NVMe SSDs for log and cache (see [Disk and log storage](#disk-and-log-storage)).
 
-Deploy Active-Passive clusters for zero-downtime SLA compliance. Ensure the passive node has full compute parity, real-time configuration sync, and resilient heartbeat protocols. Test failback procedures — stale DNS or incomplete sync will cause service gaps during recovery.
+| **CPU**    | **RAM**   | **NICs**       | **Max Concurrent Connections** |
+|:-----------|:----------|:---------------|-------------------------------:|
+| 4 cores    | 8 GB      | 2 × 1 Gbps     | 400                            |
+| 8 cores    | 16 GB     | 2 × 1 Gbps     | 1,500                          |
+| 16 cores   | 32 GB     | 4 × 1 Gbps     | 3,000                          |
+| 24 cores   | 64 GB     | 8 × 1 Gbps     | 4,000                          |
+| 32 cores   | 64 GB     | 8 × 1 Gbps     | 6,000                          |
+| 64 cores   | 128 GB    | 16 × 1 Gbps    | 8,000                          |
 
-![Active-Passive cluster diagram with two nodes and failover path](/img/Deployment_Provisioning/image1.webp)
-*Active-Passive cluster topology*
+Beyond 4,000 concurrent connections, assign multiple WAN IPs and consider [Proxy Clustering](/docs/Proxy_Clustering/main/) for HA.
 
-**Hardware Specifications (Per Server in Pair):**
+## Network: NICs and bonding
 
-| **No. of Instances** | **CPU** | **RAM** | **NIC** | **Ideal** | **Peak Burst** | **Approx. Users** |
-| -------------------: | ------: | ------: | ------: | --------: | -------------: | ----------------: |
-|                    2 |       4 |       8 |       2 |       150 |            400 |               100 |
-|                    2 |       8 |      16 |       2 |       800 |           1500 |               350 |
-|                    2 |      16 |      32 |       4 |      2000 |           3000 |               750 |
-|                    2 |      24 |      64 |       8 |      2500 |           4000 |              1000 |
-|                    2 |      32 |      64 |       8 |      3000 |           6000 |              1500 |
-|                    2 |      64 |     128 |      16 |      4000 |           8000 |              2000 |
+### NIC sizing
 
-#### Active-Active
+Allocate enough physical ports for LAN and WAN. Up to 1,500 peak burst, two ports (WAN + LAN) are the minimum; above that, use 10GbE or faster (1GbE saturates under SSL inspection) and at least four ports for VLAN isolation and monitoring.
 
-Deploy Active-Active clusters for better hardware utilisation. Account for the fact that a single node failure forces the surviving instance to absorb 100% of traffic. Size each node to handle peak burst alone. Configure health checks on the load balancer to avoid misrouting during partial failures.
-
-![Active-Active cluster diagram with load-balanced nodes](/img/Deployment_Provisioning/image2.webp)
-*Active-Active cluster topology*
-
-**Hardware Specifications (Per Server in Cluster):**
-
-| **No. of Instances** | **CPU** | **RAM** | **NIC** | **Ideal** | **Peak Burst** | **Approx. Users** |
-| -------------------: | ------: | ------: | ------: | --------: | -------------: | ----------------: |
-|                    1 |       4 |       8 |       2 |       150 |            400 |               100 |
-|                    2 |       4 |       8 |       2 |       800 |           1500 |               350 |
-|                    2 |       8 |      16 |       4 |      2000 |           3000 |               750 |
-|                    2 |      12 |      32 |       8 |      2500 |           4000 |              1000 |
-|                    2 |      32 |      32 |       8 |      3000 |           6000 |              1500 |
-|                    2 |      32 |      64 |      16 |      4000 |           8000 |              2000 |
-
-
-
-## Network Configuration
-
-### NIC Planning
-
-Allocate sufficient physical ports to avoid contention between LAN and WAN traffic. Deployments using 1GbE ports for multi-gigabit traffic will saturate during peak hours, especially with SSL inspection enabled.
-
-- **Up to 1,500 Peak Burst:** Two physical ports (WAN + LAN) are the minimum. Expect a chokepoint under sustained load.
-- **Above 1,500 Peak Burst:** Use 10GbE or faster NICs. Provision at least four physical ports to support VLAN isolation and monitoring interfaces.
-
-### Network Bonding (LACP)
+### Link aggregation (LACP)
 
 **LACP bonding** (Link Aggregation Control Protocol) combines multiple network interfaces into one logical link for higher bandwidth and redundancy. Implement link aggregation to protect against single-port failures and bandwidth ceiling constraints. Without bonding, a failed NIC can cause complete service loss.
 
@@ -106,33 +74,24 @@ Allocate sufficient physical ports to avoid contention between LAN and WAN traff
 
 
 
-## Disk I/O Planning
+## Disk and log storage
 
-SafeSquid performs high-frequency concurrent disk writes for session logging, behavioural analysis, and threat detection. SATA SSDs will cause logging delays and missed entries under concurrent sessions. Use NVMe SSDs.
+SafeSquid performs high-frequency disk writes for session logging, behavioural analysis, and threat detection. Use NVMe (not SATA) for `/var/log/safesquid`, `/var/db/safesquid`, and `/var/lib/safesquid` — SATA SSDs cause logging delays and missed entries under load.
 
-**Critical Directories:**
-- `/var/log/safesquid`
-- `/var/db/safesquid`
-- `/var/lib/safesquid`
+**Capacity guidelines**
 
-**Capacity Guidelines:**
-
-| **Peak Burst** | **Recommended Disk** |
-| -------------: | -------------------- |
+| **Peak burst** | **Recommended disk** |
+| --------------: | -------------------- |
 |  Up to 1,500   | 500 GB – 1 TB        |
 |  3,000+        | 2 TB – 4 TB+         |
 
-For extended log retention, offload to an external syslog or reporting node.
+For extended retention, offload to an external syslog or reporting node.
 
+## Disaster recovery
 
+Deploy a separate SafeSquid stack in a geographically distant zone, configured to mirror production capacity. Place the DR site in a different city, data centre, and power grid than the primary — co-locating DR in the same facility or region negates continuity during regional failures.
 
-## Disaster Recovery (DR)
-
-Deploy a separate SafeSquid stack in a geographically distant zone, configured to mirror production capacity. Place the DR site in a different city, data centre, and power grid than the primary. Co-locating DR in the same facility or region negates continuity guarantees during regional failures.
-
-
-
-## Environment Preparation
+## Prepare the host before install
 
 Prepare the target environment before installation:
 
@@ -144,28 +103,19 @@ Prepare the target environment before installation:
 
 
 
-## Verify Your Plan
+## Verify and document for audits
 
-After installation, validate your deployment against the plan:
+After installation, validate against your plan:
 
-- **Interface Checks:** Confirm in the [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/) that proxy and application settings match the planned topology.
-- **Log Analysis:** Review SafeSquid and system logs for resource or connectivity errors under expected load.
-- **Performance Validation:** Monitor session counts and latency against the ideal/peak thresholds in the hardware matrix.
+- **Interface checks** — In the [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), confirm proxy and application settings match the planned topology.
+- **Logs** — Check `/var/log/safesquid` and system journal for resource or connectivity errors under load.
+- **Performance** — Compare session counts and latency to the [Hardware sizing](#hardware-sizing) table.
 
-## Troubleshooting
+Document sizing choices (peak burst, topology) and retain for change control; post-install session counts and logs support availability and capacity audits.
 
-| Symptom | Likely cause | Fix |
-| ------- | ------------ | --- |
-| Activation fails after install | Firewall blocking outbound traffic to licensing/update endpoints | Open required ports to `api.safesquid.net` (443) and other endpoints; see [Activate Your License](/docs/Getting_Started/Activate/) for the full list. |
-| Poor performance under load | Undersized CPU/RAM, saturated NIC, or slow disk | Compare actual session count to the hardware matrix; upgrade or add NICs; use NVMe for `/var/log/safesquid`, `/var/db/safesquid`, `/var/lib/safesquid`. |
-| Single point of failure | No HA planned | Deploy active-passive or active-active; see [Proxy Clustering](/docs/Proxy_Clustering/main/) and the HA tables above. |
-| Logging delays or missed entries | SATA SSD or insufficient disk I/O | Use NVMe SSDs; ensure capacity matches the Disk I/O Planning table. |
+## Next steps
 
-For installation and runtime errors, see [Troubleshooting](/docs/Troubleshooting/main/).
+Proceed to [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/main/). After installation, [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) to confirm proxy and client connectivity.
 
-## Next Steps
-
-Proceed to [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/main/).
-
-**Related:** [License Activation](/docs/Getting_Started/Activate/) · [Proxy Clustering](/docs/Proxy_Clustering/main/)
+**Related:** [Activate Your License](/docs/Getting_Started/Activate/) for licensing and endpoint list · [Proxy Clustering](/docs/Proxy_Clustering/main/) for HA cluster setup
 
