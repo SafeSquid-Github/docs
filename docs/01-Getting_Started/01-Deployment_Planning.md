@@ -30,7 +30,7 @@ Plan your infrastructure before installing SafeSquid. Undersized hardware, misco
 
 ### Single Node Deployments
 
-Match CPU, memory, and NIC count to your expected user base and session concurrency. Ensure the CPU supports **AES-NI** for accelerated SSL decryption. Use NVMe SSDs for log and cache operations. Scale NICs to prevent I/O bottlenecks under burst load.
+Match CPU, memory, and NIC count to your expected user base and session concurrency. Ensure the CPU supports **AES-NI** (Advanced Encryption Standard New Instructions — CPU instructions for hardware-accelerated AES used in SSL decryption) for accelerated SSL decryption. Use NVMe SSDs for log and cache operations. Scale NICs to prevent I/O bottlenecks under burst load.
 
 **Hardware Matrix**
 
@@ -96,7 +96,7 @@ Allocate sufficient physical ports to avoid contention between LAN and WAN traff
 
 ### Network Bonding (LACP)
 
-Implement link aggregation to protect against single-port failures and bandwidth ceiling constraints. Without bonding, a failed NIC can cause complete service loss.
+**LACP bonding** (Link Aggregation Control Protocol) combines multiple network interfaces into one logical link for higher bandwidth and redundancy. Implement link aggregation to protect against single-port failures and bandwidth ceiling constraints. Without bonding, a failed NIC can cause complete service loss.
 
 | **Available NIC Ports** | **Recommended Bonding Configuration** |
 | ----------------------: | ------------------------------------- |

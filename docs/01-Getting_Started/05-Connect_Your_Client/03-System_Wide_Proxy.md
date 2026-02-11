@@ -57,14 +57,14 @@ Organizations require operating system-level proxy configuration to ensure all a
 #### Internet Options Control Panel
 
 **Configure System Proxy via Internet Options**:
-1. Open Control Panel → Internet Options
-2. Navigate to Connections tab
-3. Click LAN Settings button
+1. Open **Control Panel** → **Internet Options**.
+2. Open the **Connections** tab.
+3. In the Connections tab, click **LAN Settings** to open the proxy dialog.
 4. Enable "Use a proxy server for your LAN"
 5. Enter SafeSquid proxy IP and port (e.g., 192.168.1.100:8080)
-6. Click Advanced to configure different protocols
+6. Click **Advanced** to configure separate proxies per protocol.
 7. Configure bypass list for internal domains
-8. Click OK to apply settings
+8. Click **OK** in each dialog to apply settings
 
 **Advanced Proxy Configuration**:
 1. In Advanced settings, configure separate proxies for:
@@ -83,7 +83,7 @@ Organizations require operating system-level proxy configuration to ensure all a
 4. Enter proxy address and port
 5. Configure bypass list for internal domains
 6. Enable "Use proxy server for all protocols"
-7. Click Save to apply settings
+7. In the Proxy pane, click **Save** to apply settings
 
 #### Registry-Based Configuration
 

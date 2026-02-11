@@ -49,7 +49,7 @@ Enable the default policy in the subsection for virus signature detection.
 
 ![Enable the default policy in the subsection for virus signature detection](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image4.webp)
 
-The policy appears as shown below.
+The policy appears in the list with the configured name, conditions, and BLOCK action (see screenshot below).
 
 ![The default policy in the subsection for virus signature detection.](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image5.webp)
 

@@ -27,7 +27,7 @@ Click Redirection Policies to see default policies, then add a new policy.
 
 ![Default policies in Redirection Policies section](/img/How_To/Redirect_One_Website_To_Another_Website/image2.webp)
 
-Create a policy as shown:
+Create a policy in **Configure** → **Access Profiles** (or **Templates**) with source/destination and redirect action as in the following example:
 
 ![Policy to Redirect One Website To Another Website](/img/How_To/Redirect_One_Website_To_Another_Website/image3.webp)
 

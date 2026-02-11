@@ -99,7 +99,7 @@ SafeSquid should be installed and activated using same product activation key on
 
 ![Going to Access Restriction under Application Setup](/img/How_To/Master_Slave_configuration/image9.webp)
 
-![If authentication is enabled on master server you have to configure policies as shown on master server](/img/How_To/Master_Slave_configuration/image9.webp)
+![Slave server policy configuration matching master: authentication and policy settings must mirror the master when authentication is enabled on the master](/img/How_To/Master_Slave_configuration/image9.webp)
 
 </section>
 

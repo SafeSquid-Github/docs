@@ -64,7 +64,7 @@ Organizations require manual proxy configuration for controlled environments whe
 3. Enable "Use a proxy server" toggle
 4. Enter SafeSquid proxy IP address and port (e.g., 192.168.1.100:8080)
 5. Configure bypass list for internal domains (e.g., *.local, *.company.com)
-6. Click Save to apply settings
+6. In the Proxy pane, click **Save** to apply settings
 
 **Alternative Method via Internet Options**:
 1. Open Control Panel → Internet Options
@@ -77,10 +77,10 @@ Organizations require manual proxy configuration for controlled environments whe
 #### Firefox Browser-Specific Configuration
 
 **Configure Firefox Proxy Settings**:
-1. Open Firefox and click menu (three horizontal lines)
-2. Navigate to Settings → General
-3. Scroll to Network Settings section
-4. Click Settings button
+1. Open Firefox and in the browser toolbar click the **menu** (three horizontal lines, top-right).
+2. Navigate to **Settings** → **General**.
+3. Scroll to **Network Settings**.
+4. Click **Settings** to open the connection settings dialog.
 5. Select "Manual proxy configuration"
 6. Enter HTTP Proxy: SafeSquid IP and port
 7. Enable "Use this proxy server for all protocols"

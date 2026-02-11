@@ -26,16 +26,16 @@ SafeSquid SWG consolidates proxy enforcement, policy management, self-service po
 
 ## SWG component and configuration guides
 
-### [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/)
+### [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/) — web interface for policy and system settings
 Administrators need a single interface to define and manage proxy policies. Configuration Portal provides the web-based administrative interface for SafeSquid policy and profile configuration. The centralized console reduces errors and ensures consistent enforcement across access restriction, SSL inspection, and content security. Use the Configuration Portal to configure and verify policies.
 
-### [Application Ecosystem](/docs/SafeSquid_SWG/Application_Ecosystem/)
+### [Application Ecosystem](/docs/SafeSquid_SWG/Application_Ecosystem/) — architecture and component overview
 Enterprises need to understand how SafeSquid components work together. Application Ecosystem describes the proxy cluster, policy console, self-service portal, reporting, DNS security, and supporting services. The document clarifies architecture and integration points for deployment planning. Reference Application Ecosystem to plan deployment and integration.
 
 ### [SafeSquid Proxy Cluster](/docs/SafeSquid_SWG/SafeSquid_Proxy_Cluster/)
 High availability and scale require multiple proxy nodes. SafeSquid Proxy Cluster documents the central enforcement layer for HTTP/HTTPS traffic and cluster topology. Load balancing and failover enable production resilience. Configure the proxy cluster using this document for scaling and availability.
 
-### [Self-Service Portal](/docs/SafeSquid_SWG/Self-Service_Portal/)
+### [Self-Service Portal](/docs/SafeSquid_SWG/Self-Service_Portal/) — activation keys, license and certificate management
 Activation keys and Root CA certificates require a cloud-managed workflow. Self-Service Portal covers the web portal for activation keys, license management, and SSL certificate generation. Organizations reduce dependency on support for routine tasks. Use the Self-Service Portal to obtain activation keys and manage certificates.
 
 ### [Reporting Service](/docs/SafeSquid_SWG/Reporting_Service/)

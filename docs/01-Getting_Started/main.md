@@ -22,7 +22,7 @@ SafeSquid is a multi-threaded HTTP Proxy Server, specially designed for Layer 7 
 
 SafeSquid-based Secure Web Gateway (SafeSquid SWG) enforces granular web access control, deep content mitigation, and real-time visibility in enterprise web traffic. This section guides deployment from planning through activation and client configuration.
 
-Learn more [about SafeSquid SWG](/docs/SafeSquid_SWG/main/) — architecture overview, components, and ecosystem.
+Learn more [about SafeSquid SWG](/docs/SafeSquid_SWG/main/) — architecture overview, components, and configuration options.
 
 </section>
 

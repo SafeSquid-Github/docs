@@ -42,7 +42,7 @@ For network-related issues such as those mentioned below, you can use the instal
 <section class="section-strip">
 
 ## Network Checks for Issue Identification
-Network issues can significantly impact the installation and functionality of SafeSquid.
+Network issues can significantly impact the installation and functionality of SafeSquid. If you see **"Bad archive mirror"** or **"Failed to retrieve the pre-configuration file"** during installation, use the checks below to fix DNS and gateway settings.
 
 Administrators can perform various checks to identify and resolve network-related problems:
 

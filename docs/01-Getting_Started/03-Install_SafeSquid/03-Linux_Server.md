@@ -50,7 +50,7 @@ This method installs the SafeSquid binary only. You are responsible for OS harde
 
    **Expected output:** Directory `_mkappliance` extracted with installation scripts.
 
-3. **Run the installer:**
+3. **Run the installer:** Ensure you have root or sudo access. From the directory where you extracted the TAR (e.g. `/usr/local/src`), run:
 
    ```bash
    _mkappliance/installation/setup.sh
@@ -58,7 +58,7 @@ This method installs the SafeSquid binary only. You are responsible for OS harde
 
    The installer checks dependencies, creates system users, and installs SafeSquid binaries to `/opt/safesquid/`.
 
-3. **Check for missing dependencies:**
+4. **Check for missing dependencies:**
 
    ```bash
    ldd /opt/safesquid/bin/safesquid
@@ -66,7 +66,7 @@ This method installs the SafeSquid binary only. You are responsible for OS harde
 
    If any library shows `not found`, install the missing package using your distribution's package manager (`apt`, `yum`, `zypper`, etc.).
 
-4. **Start SafeSquid:**
+5. **Start SafeSquid:**
 
    ```bash
    /etc/init.d/safesquid start

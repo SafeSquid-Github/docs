@@ -45,23 +45,23 @@ Reduces malware and tracking exposure from ad networks. Lowers bandwidth and CPU
 
 ## Enable BLOCK ADVERTISEMENT policy
 
-1. Access the SafeSquid interface via the [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/).
+1. Access the SafeSquid interface via the [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/) — web interface for policy and system settings. In the interface header, click **Configure** to open the configuration menu.
 
-![Click Configure in the SafeSquid interface](/img/How_To/Block_Advertisements_And_Banners/image1.webp)
+![Configuration Portal header with Configure menu highlighted](/img/How_To/Block_Advertisements_And_Banners/image1.webp)
 
-![Click search in access profiles](/img/How_To/Block_Advertisements_And_Banners/image2.webp)
+2. In **Access Profiles** (or **Templates**), use the search box to find the default policy; search for **BLOCK ADVERTISEMENT**.
 
-2. Search for the default policy: **BLOCK ADVERTISEMENT**.
+![Search box in Access Profiles or Templates list](/img/How_To/Block_Advertisements_And_Banners/image2.webp)
 
 ![Search for BLOCK ADVERTISEMENT default policy](/img/How_To/Block_Advertisements_And_Banners/image3.webp)
 
-3. Edit the policy and set **Enabled** to **TRUE**; save.
+3. Open the policy: click **Edit** on the BLOCK ADVERTISEMENT row to open the policy editor. Set **Enabled** to **TRUE**, then click **Save** (or the equivalent save control in the policy section) to save the policy.
 
-![Click Edit to open the policy](/img/How_To/Block_Advertisements_And_Banners/image4.webp)
+![Edit button on the BLOCK ADVERTISEMENT policy row](/img/How_To/Block_Advertisements_And_Banners/image4.webp)
 
-![Set Enabled to True](/img/How_To/Block_Advertisements_And_Banners/image5.webp)
+![Enabled toggle set to TRUE in the policy form](/img/How_To/Block_Advertisements_And_Banners/image5.webp)
 
-![Click Save to save the policy](/img/How_To/Block_Advertisements_And_Banners/image6.webp)
+![Save button to persist the policy changes](/img/How_To/Block_Advertisements_And_Banners/image6.webp)
 
 4. Alternatively, enable from **Templates** in custom settings: open the BLOCK ADVERTISEMENT template, set **Enabled** to **TRUE**, and save.
 
