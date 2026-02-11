@@ -88,7 +88,7 @@ All docs must also meet the **CISO-grade bar** (see About and Audience): risk-an
 5. **Verification and Evidence** — Interface checks; log analysis; performance; auditor-ready evidence (report names, export paths, log snippets).
 6. **Troubleshooting** — Symptom → cause → resolution → verification; escalation criteria.
 
-**Next steps:** Every how-to and get_started must end with "Next steps" (or equivalent) + 1–3 related docs.
+**Next steps:** Every Section hub (main.md), how-to and get_started must end with "Next steps" (or equivalent) + 1–3 related docs.
 
 **Get_started:** Goal, Prerequisites, minimal Day-1 steps, Verification, Next steps. Prefer general path; defer advanced variants.
 
@@ -181,14 +181,15 @@ Before drafting: gather SafeSquid sources (docs, guides, release notes); at leas
 
 **CRITICAL:** Every `docs/<section>/` folder must have `main.md` as the navigation hub. Headings follow Voice, structure, and formatting.
 
-**Contents:** (1) Section overview (one paragraph). (2) Document index — every doc in the folder with a PBAC summary in 4 sentences (Problem → Benefit → Advantage → Call-to-Action). Optional: Prerequisites, procedures, troubleshooting, external resources. Template: frontmatter + H1 + section-specific H2/H3 + doc links with PBAC descriptions.
+**Contents:** (1) Section overview (one paragraph). (2) Navigation: should be **Quickstart path** — sequential steps with links to the main child docs or sub-section hubs and a brief PBAC summary description per step; sub-section folders may be linked via their `main.md` or listing nested docs.
+
 
 ### Avoiding ambiguity
 
 When writing or editing docs, apply these patterns so readers are never left guessing:
 
 1. **UI location:** Don't say only "Click Configure." Give breadcrumb context: "In the SafeSquid interface header → click **Configure**."
-2. **Cross-references:** Don't use bare links. Add a short purpose: "[Configuration Portal](/docs/.../Configuration_Portal/) — web interface for policy and system settings."
+2. **Cross-references:** Don't use bare links. Add a short purpose: "Use [Configuration Portal](/docs/.../Configuration_Portal/) for policy and system settings." In section hub (main.md) pages, link text plus the immediately following sentence or phrase can serve as the purpose; not every link needs an inline "— purpose" when context is clear.
 3. **Implicit assumptions:** State prerequisites before steps. Don't say "Run the installer"; say "Ensure you have root access. Run the installer: `/path/to/setup.sh`."
 4. **Undefined terminology:** Define technical terms on first use or link to glossary. E.g. "**LACP bonding** (Link Aggregation Control Protocol — combines multiple interfaces for bandwidth and redundancy)."
 5. **Troubleshooting:** Include failure symptoms, not only "if it fails, check X." E.g. "If you see 'Bad archive mirror' or 'Failed to retrieve pre-configuration', check DNS and gateway settings."
@@ -203,7 +204,7 @@ Flag for follow-up: missing screenshots, version-specific UI notes, missing defa
 Verify against the sections above; no need to duplicate every rule here.
 
 - **Content:** Frontmatter complete; correct content type and page goal; six blocks present and ordered; opens with threat/outcome; jargon defined; real threats/apps named; concrete examples; Common Pitfalls on config-heavy pages; Next steps at end. CISO bar met: risk and business impact, compliance where relevant, evidence/audit trail, trade-offs stated, CISO Takeaway on major security pages. PBAC and voice/formatting per Writing Guidelines.
-- **Structure:** Headings per guidelines; main.md present with section overview and doc index (PBAC summaries); main.md updated for new/changed docs.
+- **Structure:** Headings per guidelines; main.md present with section overview and quickstart path as applicable; main.md updated for new/changed docs.
 - **Technical:** Markdown valid; internal links relative and working; images in `/static/img/`, paths correct; frontmatter valid YAML; code blocks with syntax highlighting. Screenshots current; code tested or scoped; procedures produce expected results.
 - **Review:** Terminology and formatting consistent; format conventions followed (user-entered bold, output code, consistent menu style); icons used consistently (✅❌⚠️); cross-references correct; ready for publication and proper file placement. For release notes: version/date and summary present; linked from relevant docs where appropriate.
 
