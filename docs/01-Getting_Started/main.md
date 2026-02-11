@@ -65,6 +65,10 @@ Clients can be configured to use the proxy in the browser settings, via a PAC (P
 :::tip For the fastest check, use Explicit proxy on one browser, then [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/).
 :::
 
+## [Troubleshooting](/docs/Troubleshooting/main/)
+
+If the UI doesn't load, activation fails, or clients can't reach the proxy, see Troubleshooting for logs and common fixes. Logs, diagnostics, and community support when help is needed.
+
 ## Next Steps
 We recommend configuring security policies in order — each builds on the previous.
 
@@ -87,7 +91,3 @@ We recommend configuring security policies in order — each builds on the previ
 * We strongly recommend clustering SafeSquid Instances for High Availability before deploying in production.
 * Configure traffic forensics, usage reports, and real-time dashboards for visibility and compliance.
 :::
-
-## [Troubleshooting](/docs/Troubleshooting/main/)
-
-If the UI doesn't load, activation fails, or clients can't reach the proxy, see Troubleshooting for logs and common fixes. Logs, diagnostics, and community support when help is needed.
