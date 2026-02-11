@@ -41,9 +41,9 @@ The agent should:
 
 ### About and Audience
 
-SafeSquid SWG documentation (Docusaurus 3.7.0) is a technically precise knowledge base for enterprise zero-trust web security. **Audience:** CISOs and security leadership; security and network technicians; system administrators; security architects; compliance and risk teams; operations.
+SafeSquid SWG documentation (Docusaurus 3.7.0) is a technically precise knowledge base for enterprise zero-trust web security. **Audience:** CISOs and security leadership; security and network technicians; system administrators; security architects; compliance and risk teams; operations. Docs serve both "get it done" (task-based) and "justify/audit" (control mapping, evidence, compliance) needs. Start each doc with a clear purpose and outcome so readers can decide quickly if it applies.
 
-**CISO-grade bar (every document):** Write so CISOs can justify controls, support audits, brief the board, and compare solutions. **Criteria:** (1) **Risk-and-control** — tie features to a risk and to the control SafeSquid provides. (2) **Compliance** — where relevant, cite NIST, ISO 27001, PCI-DSS, HIPAA, GDPR, SOC 2 and state what can be shown (logs, reports, config). (3) **Evidence** — state what is logged, reportable, auditable and how to prove control effectiveness. (4) **Business impact** — problem and benefits must include impact (reputation, legal, operational, cost). (5) **No fluff** — no marketing superlatives; state facts, assumptions, limitations, trade-offs; every security claim verifiable.
+**CISO-grade bar (every document):** Write so CISOs can justify controls, support audits, brief the board, and compare solutions. **Criteria:** (1) **Risk-and-control** — tie features to a risk and to the control SafeSquid provides. (2) **Compliance** — where relevant, cite NIST, ISO 27001, PCI-DSS, HIPAA, GDPR, SOC 2 and state what can be shown (logs, reports, config); link configurations and features to control frameworks (e.g. NIST SP 800-53, CIS, SOC 2) so customers can map to audits. (3) **Evidence** — state what is logged, reportable, auditable and how to prove control effectiveness; call out export paths, report names, and log snippets that support audits; where relevant, document retention and log lifecycle (generate, store, access) for incident investigation. (4) **Business impact** — problem and benefits must include impact (reputation, legal, operational, cost). (5) **No fluff** — no marketing superlatives; state facts, assumptions, limitations, trade-offs; every security claim verifiable. Where security reviewers need to assess applicability, state scope, assumptions, and trust boundaries (e.g. topology, on-path vs off-path) explicitly. **Weave this content into the body copy; do not use separate CISO takeaway callouts.**
 
 ### Project Structure
 - **Content:** `docs/[section-number]-[section-name]/`; `blog/` (date-prefixed); images in `/static/img/` as `/img/category/image-name.webp` (WebP preferred).
@@ -88,17 +88,22 @@ All docs must also meet the **CISO-grade bar** (see About and Audience): risk-an
 5. **Verification and Evidence** — Interface checks; log analysis; performance; auditor-ready evidence (report names, export paths, log snippets).
 6. **Troubleshooting** — Symptom → cause → resolution → verification; escalation criteria.
 
+Using different headings, merging blocks, or omitting Verification and Evidence or Troubleshooting is acceptable when the document type or audience makes a different structure clearer.
+
 **Next steps:** Every Section hub (main.md), how-to and get_started must end with "Next steps" (or equivalent) + 1–3 related docs.
 
 **Get_started:** Goal, Prerequisites, minimal Day-1 steps, Verification, Next steps. Prefer general path; defer advanced variants.
+
+**Structure (SaaS and security-product alignment):** Organize by task and user journey (onboarding → first value → advanced) as well as by product area. Use progressive disclosure—basic flows prominent; advanced or edge-case content in linked docs or expandable sections. Where applicable, provide validated deployment guides for common scenarios (branch, HA, cloud) to set expectations and reduce risk.
 
 ### Voice, structure, and formatting
 
 - **Voice:** Active voice; imperative for procedures ("Click the Button"). "You" permitted in explanatory prose; avoid abstract "enterprises/organizations." Opinionated; no hedging ("may," "might") or marketing fluff. Sentences ≤20 words; 8–12 preferred.
 - **PBAC:** Problem-first; benefit and risk mandatory; advantage factual and comparative; call-to-action procedural and testable. Narrative flow; cover all cases.
-- **Headings:** 3–7 words; state conclusion not topic; action-oriented; no "Overview"/"Introduction." Lists: parallel structure; lead with action verbs.
+- **Headings:** 3–7 words; state conclusion not topic; action-oriented; no "Overview"/"Introduction." Lists: parallel structure; lead with action verbs. Lead paragraphs and list items with the main concept so content is skimmable.
 - **Clarity:** Acronyms on first use; name exact target for "configure/set/update"; concrete nouns; descriptive link text (no "click here"); relative paths. Use concrete examples and numbers where helpful ("Block downloads >100MB during business hours"); analogies when they aid understanding. UI: **bold** or `code` for labels and menu paths (e.g. **Configuration → NGFW**).
 - **Formatting:** Lead with threat or outcome (never "This section describes…"); tables for comparisons; Mermaid for workflows; paragraphs ≤5 lines. See **Format conventions** and **Icons and visual conventions** below.
+- **Content principles (SaaS and security-product research):** **Skimmable** — descriptive headings, short paragraphs, lists; links that describe the target. **Exemplary** — include worked examples, sample configs, and expected outcomes; separate tutorials/examples from dense reference where it helps scanning. **ARID** — accept some repetition for clarity; prefer self-contained docs over over-DRYing (Write the Docs). **Consistent** — one style and terminology across docs; critical for control names, parameters, and log fields. **Current** — incorrect documentation is worse than missing; version docs when behavior differs by version.
 - **Evidence:** Images in `/static/img/` → `/img/category/name.webp`; alt text; screenshots and logs per feature. Diagrams: Mermaid preferred; caption or alt. Logs: what to check, where, pattern, success indicator. Code: language tags, comments, expected output when relevant.
 
 #### Format conventions
@@ -133,7 +138,7 @@ keywords: [keyword1, keyword2, keyword3]
 
 ### Standard feature page structure (optional full template)
 
-For feature overviews, sections in this order: **Hero** (threat-focused headline + 2–3 sentence hook; **The problem** / **What SafeSquid does** / **Outcome**) → **Why This Matters** (threat narrative: scenario, cost, why current approaches fail) → **How [Feature] Works** (components with examples; Mermaid if helpful) → **Before/After** table (Scenario | Without [Feature] | With [Feature] | ❌/✅) → **When to Use / When NOT** (✅ Use when… / ❌ Don't use when…) → **How to Configure** (links to task docs; optional config snippet) → **⚠️ Common Pitfalls** ([Mistake]: [What breaks] → [Fix or link]) → **Related Topics** (Prerequisites, Next Steps, Troubleshooting) → **CISO Takeaway** (Risk | Control | Evidence | Action).
+For feature overviews, sections in this order: **Hero** (threat-focused headline + 2–3 sentence hook; **The problem** / **What SafeSquid does** / **Outcome**) → **Why This Matters** (threat narrative: scenario, cost, why current approaches fail) → **How [Feature] Works** (components with examples; Mermaid if helpful) → **Before/After** table (Scenario | Without [Feature] | With [Feature] | ❌/✅) → **When to Use / When NOT** (✅ Use when… / ❌ Don't use when…) → **How to Configure** (links to task docs; optional config snippet) → **⚠️ Common Pitfalls** ([Mistake]: [What breaks] → [Fix or link]) → **Related Topics** (Prerequisites, Next Steps, Troubleshooting).
 
 Threat narrative shape: **[Scenario]** Who does what; what data is at risk; consequence. **[Cost]** Quantify if possible. **[Problem]** Why current approaches fail.
 
@@ -145,18 +150,33 @@ Threat narrative shape: **[Scenario]** Who does what; what data is at risk; cons
 - **Common Pitfalls:** On config-heavy pages: **⚠️ Common Pitfalls** — **[Mistake]:** [What breaks] → [Fix or link].
 - **Decision tables:** Requirements as rows, options as columns (✅/❌/⚠️); one-line **Recommendation**.
 - **Workflow:** Mermaid for multi-step flows; clear node labels and decisions.
-- **CISO takeaway:** **Risk:** [gap] | **Control:** [what SafeSquid provides] | **Evidence:** [logs/reports] | **Action:** [next step].
 - **Deployment-scenario recommendations:** In deployment, architecture, or get_started docs, add brief recommendations by scenario (e.g. small office, branch, high-availability, cloud). For each scenario: when to use it, key constraints, and a pointer to the relevant task doc or config section. Helps readers choose a path and compare options.
+- **Runbooks and operational content:** Step-by-step deployment, configuration, operational procedures, rollback, and troubleshooting; include verification steps and expected results per step. Prerequisites and requirements go in a dedicated section or clearly before steps—not hidden in callouts.
+- **Concrete examples:** Sample configs, CLI snippets, and (where applicable) IaC examples for repeatable deployments; specify version or compatibility when it matters. Release notes: version/date, summary; link from relevant how-tos so readers see what changed.
 
 ### Page type templates
 
-- **Feature overview:** Hero → Why This Matters → How It Works → Before/After → When to Use / When NOT → Config overview (links) → Common Pitfalls → Related → CISO Takeaway.
+- **Feature overview:** Hero → Why This Matters → How It Works → Before/After → When to Use / When NOT → Config overview (links) → Common Pitfalls → Related.
 - **Task guide:** Action-oriented title; Prerequisites (links); time estimate if helpful; numbered steps with screenshots where helpful; Verification; link to troubleshooting; Related tasks.
 - **Use case:** Clear goal as title; business context (one paragraph); requirements; configuration steps; testing; variations for different environments.
 
 ### Admonitions, code, and examples
 
-- **Callouts:** Note (extra info/scope); Tip (recommended approach); Warning/Caution (risk before step). At most one of each per section; short; at point of relevance.
+- **Callouts:** Note (extra info/scope); Tip (recommended approach); Warning/Caution (risk before step). At most one of each per section; short; at point of relevance. Follow the research-backed rules in **Tips and recommendations** below.
+
+#### Tips and recommendations (research-backed)
+
+Evidence from Nielsen Norman Group, Google Developer Documentation Style Guide, GitHub Docs, and tech-writing sources:
+
+- **Use sparingly.** Overuse dilutes impact. Prefer at most one callout per section; avoid two or more notices in a row. Readers often skip out-of-flow elements.
+- **Reserve tips for supplemental content only.** Tips = helpful but not essential; if the reader skips it, they still succeed. Never put critical instructions, prerequisites, constraints, or must-follow steps inside a tip or callout—that content belongs in the main flow or a dedicated section.
+- **Use clear, conventional labels:** Note (extra context); Tip (optional shortcut or efficiency hint); Important (key details that could cause extra work if missed); Warning (irreversible harm or security risk); Caution (unintended side effects).
+- **Keep callouts short and in context.** If a note is long or has many bullets, make it its own section with a heading. Place the callout next to the text it supports; assume many users will not open tips—for those who do, give clear, in-the-moment guidance.
+- **Prefer one consolidated block over many scattered callouts.** When several related points apply (e.g. restart warning, permissions, pre-checks), use a single section (e.g. **Configuration considerations** or **Before you start**) with a short bullet list instead of multiple Note/Tip/Warning boxes.
+- **When to use vs skip:** Use a callout for an optional shortcut (Tip), an important point that doesn't fit the flow (Note), key details that could cause extra work (Important), or irreversible/security risk (Warning). Skip callouts when the info is already in the main steps, belongs in intro/prerequisites, the note is long (use a section), or the note states the obvious.
+
+#### Code and examples
+
 - **Code:** Complete, working; syntax highlighting; context and expected output; test before publish.
 - **Good vs bad:**
   - **Opening:** Bad = feature-focused, passive ("This section provides information about…"). Good = threat-focused, active ("Your proxy sees thousands of requests per second… Is that your CEO downloading an M&A contract? A contractor uploading customer data? Without profiling, every request is a mystery box…").
@@ -172,7 +192,7 @@ Before drafting: gather SafeSquid sources (docs, guides, release notes); at leas
 1. **Research** — per Research methodology.
 2. **Select content type and page goal** — get_started, how_to, admin_guide, concepts, reference, or troubleshooting; single purpose.
 3. **Plan headings** — bottom-line, 3–7 words (per Writing Guidelines).
-4. **Draft** — six-block scaffolding and PBAC; add evidence (diagrams, screenshots, logs); cross-links and next steps.
+4. **Draft** — problem, benefits, prerequisites, implementation (and verification/troubleshooting where appropriate; headings may differ or blocks merged/omitted); PBAC; add evidence (diagrams, screenshots, logs); cross-links and next steps.
 5. **Run pre-publication checklist** — verify against Writing Guidelines, structure, technical, review.
 
 **Placement:** Docs in `docs/[section-number]-[section-name]/`; blog in `blog/` with date prefix (YYYY-MM-DD-Title.md); images in `/static/img/`; internal links relative.
@@ -203,7 +223,7 @@ Flag for follow-up: missing screenshots, version-specific UI notes, missing defa
 
 Verify against the sections above; no need to duplicate every rule here.
 
-- **Content:** Frontmatter complete; correct content type and page goal; six blocks present and ordered; opens with threat/outcome; jargon defined; real threats/apps named; concrete examples; Common Pitfalls on config-heavy pages; Next steps at end. CISO bar met: risk and business impact, compliance where relevant, evidence/audit trail, trade-offs stated, CISO Takeaway on major security pages. PBAC and voice/formatting per Writing Guidelines.
+- **Content:** Frontmatter complete; correct content type and page goal; content covers problem, benefits, prerequisites, implementation (and verification/troubleshooting where appropriate—different headings or merged/omitted blocks are acceptable); opens with threat/outcome; jargon defined; real threats/apps named; concrete examples; Common Pitfalls on config-heavy pages; Next steps at end. CISO bar met in body copy (risk and business impact, compliance where relevant, evidence/audit trail, trade-offs stated)—no separate CISO callouts. PBAC and voice/formatting per Writing Guidelines.
 - **Structure:** Headings per guidelines; main.md present with section overview and quickstart path as applicable; main.md updated for new/changed docs.
 - **Technical:** Markdown valid; internal links relative and working; images in `/static/img/`, paths correct; frontmatter valid YAML; code blocks with syntax highlighting. Screenshots current; code tested or scoped; procedures produce expected results.
 - **Review:** Terminology and formatting consistent; format conventions followed (user-entered bold, output code, consistent menu style); icons used consistently (✅❌⚠️); cross-references correct; ready for publication and proper file placement. For release notes: version/date and summary present; linked from relevant docs where appropriate.
