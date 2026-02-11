@@ -41,7 +41,7 @@ Organizations need centralized proxy configuration management for large-scale de
 
 
 
-## Call to Action
+## Implementation Actions
 
 ### Windows Enterprise Deployment
 
@@ -221,7 +221,7 @@ class safesquid_proxy {
 
 
 
-## Troubleshooting Guide
+## Troubleshooting
 
 **GPO Deployment Issues**: Verify GPO linking, permissions, and replication across domain controllers. Check Group Policy Results to identify deployment problems.
 
@@ -234,4 +234,10 @@ class safesquid_proxy {
 **Performance Issues**: Monitor enterprise management system performance and optimize configuration distribution processes for large-scale deployments.
 
 **Rollback Procedures**: Test rollback procedures regularly and ensure automated rollback triggers function correctly for configuration failures.
+
+## Next steps
+
+1. [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) — sample endpoints to confirm proxy configuration is applied and traffic is proxied.
+2. [SSL Inspection](/docs/SSL_Inspection/main/) — enable HTTPS inspection and deploy root CA via GPO/MDM for consistent policy enforcement.
+3. [Troubleshooting](/docs/Troubleshooting/main/) — logs and diagnostics when deployment or connectivity issues occur.
 

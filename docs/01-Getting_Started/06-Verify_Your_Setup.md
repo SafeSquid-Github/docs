@@ -10,11 +10,18 @@ keywords:
 
 # Verify Your Setup
 
+**Goal:** Confirm SafeSquid is installed, licensed, and proxying traffic so you can proceed to policy configuration with confidence.
+
+## Prerequisites
+
+- SafeSquid is installed and the license is activated (see [Activate Your License](/docs/Getting_Started/Activate/)).
+- At least one client is configured to use the proxy (e.g. explicit proxy in one browser for a quick smoke test), or you will use `curl --proxy` for testing.
+
+## Verification and Evidence
+
 Run these checks to confirm SafeSquid is working end-to-end. Each test takes under a minute.
 
-
-
-## 1. Service Is Running
+### 1. Service Is Running
 
 SSH into the SafeSquid server and check:
 
@@ -32,7 +39,7 @@ Expected: one or more process IDs.
 
 
 
-## 2. Configuration Interface Loads
+### 2. Configuration Interface Loads
 
 From a browser configured to proxy through SafeSquid (port 8080), navigate to:
 
@@ -48,7 +55,7 @@ If a browser is not yet configured, see [Connect Your First Client](/docs/Gettin
 
 
 
-## 3. License Is Active
+### 3. License Is Active
 
 In the SafeSquid interface, go to **Support** in the top menu.
 
@@ -59,7 +66,7 @@ Check the **Activation Details** section:
 
 
 
-## 4. Traffic Flows Through the Proxy
+### 4. Traffic Flows Through the Proxy
 
 From the proxied browser, visit any external site (e.g., `https://example.com`).
 
@@ -73,7 +80,7 @@ Expected: log entries showing the request to `example.com`.
 
 
 
-## 5. DNS Resolution Works
+### 5. DNS Resolution Works
 
 ```bash title="Test DNS from the SafeSquid server"
 nslookup example.com 127.0.0.1
@@ -97,3 +104,8 @@ Expected: a valid IP address response. If this fails, check BIND9 configuration.
 For detailed troubleshooting, see [Troubleshooting](/docs/Troubleshooting/main/).
 :::
 
+## Next steps
+
+1. [SSL Inspection](/docs/SSL_Inspection/main/) — enable HTTPS decryption so SafeSquid can inspect and filter encrypted traffic.
+2. [Authentication](/docs/Authentication/main/) — combine directory services and network signatures for user-aware policies.
+3. [Troubleshooting](/docs/Troubleshooting/main/) — logs, diagnostics, and common fixes when issues arise.

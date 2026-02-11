@@ -12,11 +12,13 @@ keywords:
 
 Use this method to install SafeSquid on an existing Linux server. Works on any distribution — Red Hat, CentOS, SUSE, Debian, Ubuntu, etc.
 
+## Problem Statement
+
+You already have a Linux server and want to add SafeSquid without replacing the OS or using a full appliance image. The TAR method gives you the SafeSquid binary and installer only; you retain control over OS hardening, disk layout, and supporting services. Trade-off: you must configure Monit, DNS, and other dependencies yourself.
+
 :::info
 This method installs the SafeSquid binary only. You are responsible for OS hardening, disk partitioning, and supporting services. For a fully automated setup, use the [Appliance Builder](/docs/Getting_Started/Install_SafeSquid/SafeSquid_Appliance_Builder/) instead.
 :::
-
-
 
 ## Prerequisites
 
@@ -69,15 +71,21 @@ This method installs the SafeSquid binary only. You are responsible for OS harde
 
 
 
-## Verify
+## Verification and Evidence
 
 ```bash title="Confirm SafeSquid is listening on port 8080"
 netstat -tulnp | grep safesquid
 ```
 
-SafeSquid listens on port **8080** by default. If it appears in the output, the installation succeeded.
+SafeSquid listens on port **8080** by default. If it appears in the output, the installation succeeded. From a browser configured to use this host as the HTTP proxy, open `http://safesquid.cfg/` to confirm the configuration interface loads.
 
+## Troubleshooting
 
+| Symptom | Likely cause | Fix |
+| ------- | ------------ | --- |
+| `ldd` shows "not found" for a library | Missing system dependency | Install the required package (e.g. `libssl`, `libpcre`) using your distro's package manager. |
+| SafeSquid fails to start | Permissions, port in use, or config error | Check `/var/log/safesquid/` for errors; ensure port 8080 is free (e.g. run `netstat -lntp` and confirm nothing else uses 8080); run as root or with correct sudo. |
+| Installer script fails | Insufficient disk, no root/sudo, or network | Ensure at least 10 GB free, run with sudo/root, and verify outbound connectivity to downloads. See [Troubleshooting](/docs/Troubleshooting/main/). |
 
 ## Configure Supporting Services
 

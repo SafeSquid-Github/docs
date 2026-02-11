@@ -41,7 +41,7 @@ Organizations require automated proxy configuration to reduce deployment complex
 
 
 
-## Call to Action
+## Implementation Actions
 
 ### PAC File Overview
 
@@ -190,7 +190,7 @@ wpad.company.com. IN A 192.168.1.10
 
 
 
-## Troubleshooting Guide
+## Troubleshooting
 
 **PAC File Not Loading**: Verify PAC file URL is accessible and returns valid JavaScript content. Check browser console for JavaScript errors in PAC file execution.
 
@@ -203,4 +203,10 @@ wpad.company.com. IN A 192.168.1.10
 **DNS Resolution Problems**: Check DNS resolution for PAC file server and proxy servers. Verify internal DNS configuration and external DNS resolution.
 
 **Performance Issues**: Monitor PAC file execution time and optimize JavaScript logic for faster proxy selection. Consider caching PAC file content for improved performance.
+
+## Next steps
+
+1. [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) — confirm traffic from PAC-configured clients reaches the proxy.
+2. [Enterprise Deployment](/docs/Getting_Started/Connect_Your_Client/Enterprise_Deployment/) — roll out PAC or system proxy at scale via GPO or MDM.
+3. [SSL Inspection](/docs/SSL_Inspection/main/) — enable HTTPS inspection for full content policy enforcement.
 

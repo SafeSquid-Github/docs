@@ -13,9 +13,7 @@ keywords:
 
 # Choose SAB, cloud, or Linux TAR installation
 
-Three installation methods are available: Appliance Builder (SAB) for full OS plus SafeSquid, cloud deployment for cloud VMs, and Linux TAR for existing servers. Choose based on environment. After installation, activate the license and connect clients.
-
-
+Choose an installation method to get a running SafeSquid node: Appliance Builder (SAB) for a full hardened image, cloud deployment for AWS/Azure/DigitalOcean or private cloud, or Linux TAR for an existing server. Pick the option that matches your environment; once installed, the node is ready for license activation and client connectivity.
 
 ## Installation method guides
 
@@ -28,3 +26,8 @@ AWS, Azure, DigitalOcean, or private cloud require SafeSquid on a cloud VM. Clou
 ### [Linux Server](/docs/Getting_Started/Install_SafeSquid/Linux_Server/)
 Existing Linux servers need SafeSquid binary only without a full appliance. Linux Server describes installing from the TAR package on an existing distro. Administrators configure OS and services separately. Follow this document when adding SafeSquid to an existing Linux host.
 
+## Next steps
+
+1. [Activate Your License](/docs/Getting_Started/Activate/) — upload your activation key so the gateway is fully operational.
+2. [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/) — configure at least one browser or client to use the proxy.
+3. [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) — confirm the service is running, licensed, and proxying traffic.

@@ -19,9 +19,13 @@ keywords:
 
 # Deployment Planning
 
-Plan your infrastructure before installing SafeSquid. Undersized hardware, misconfigured networking, or insufficient disk I/O will cause policy failures, latency spikes, and data loss under load.
+Undersized hardware, misconfigured networking, or insufficient disk I/O lead to policy failures, latency spikes, and data loss under load. Planning before installation ensures right-sized capacity, HA/DR readiness, and predictable performance. This page covers sizing, network and storage, environment prep, and how to verify your plan.
 
+## Key Benefits
 
+- **Right-sized capacity** — match CPU, RAM, NICs, and disk to your user count and peak burst so the gateway does not become the bottleneck.
+- **HA/DR readiness** — choose active-passive or active-active and plan DR in a separate zone so outages do not take the proxy offline.
+- **Predictable performance** — NVMe, LACP bonding, and correct endpoint access avoid surprises after go-live.
 
 ## System Requirements by Deployment Scale
 
@@ -148,7 +152,16 @@ After installation, validate your deployment against the plan:
 - **Log Analysis:** Review SafeSquid and system logs for resource or connectivity errors under expected load.
 - **Performance Validation:** Monitor session counts and latency against the ideal/peak thresholds in the hardware matrix.
 
+## Troubleshooting
 
+| Symptom | Likely cause | Fix |
+| ------- | ------------ | --- |
+| Activation fails after install | Firewall blocking outbound traffic to licensing/update endpoints | Open required ports to `api.safesquid.net` (443) and other endpoints; see [Activate Your License](/docs/Getting_Started/Activate/) for the full list. |
+| Poor performance under load | Undersized CPU/RAM, saturated NIC, or slow disk | Compare actual session count to the hardware matrix; upgrade or add NICs; use NVMe for `/var/log/safesquid`, `/var/db/safesquid`, `/var/lib/safesquid`. |
+| Single point of failure | No HA planned | Deploy active-passive or active-active; see [Proxy Clustering](/docs/Proxy_Clustering/main/) and the HA tables above. |
+| Logging delays or missed entries | SATA SSD or insufficient disk I/O | Use NVMe SSDs; ensure capacity matches the Disk I/O Planning table. |
+
+For installation and runtime errors, see [Troubleshooting](/docs/Troubleshooting/main/).
 
 ## Next Steps
 

@@ -20,9 +20,11 @@ SafeSquid SWG (Secure Web Gateway) is the full product: proxy, policy console, r
 
 SafeSquid SWG enforces granular web access control, deep content mitigation, and real-time visibility in enterprise web traffic.
 
+This section is the fastest path to a working pilot: administrators and evaluators follow a linear sequence from sizing and registration through installation, license activation, and client connectivity. By the end you have a deployed SafeSquid node, an active license, and clients sending web traffic through the proxy.
+
 ## Quickstart to pilot SWG deployment
 
-### [Resource Provisioning](/docs/Getting_Started/Deployment_Planning/)
+### [Deployment Planning](/docs/Getting_Started/Deployment_Planning/)
 
 SafeSquid is platform-agnostic: single node, HA (active-passive or active-active), cloud VMs, or existing Linux hosts. The deployment guide covers sizing, hardware matrix, network bonding, and DR. Single node for pilot; plan HA and DR before production.
 
@@ -32,7 +34,7 @@ SafeSquid is platform-agnostic: single node, HA (active-passive or active-active
 * A browser on a machine that can reach the server 
 :::
 
-### [Get your activation key](/docs/Getting_Started/Register/) 
+### [Register and get your key](/docs/Getting_Started/Register/) 
 
 Register on the [SafeSquid Self Service portal](https://key.safesquid.com) and download the activation key.
 
@@ -49,7 +51,7 @@ SafeSquid can be installed via Appliance Builder ISO (SAB), cloud image, or as a
 * **Linux TAR** — existing Linux server; add SafeSquid only, no full appliance.
 :::
 
-### [Activate license](/docs/Getting_Started/Activate/)
+### [Activate Your License](/docs/Getting_Started/Activate/)
 Upload the activation key in the SafeSquid admin interface (e.g. [https://safesquid.cfg](https://safesquid.cfg) or your server's URL) to activate the license.
 
 The activation key must be uploaded and the license verified before the gateway is fully operational.

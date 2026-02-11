@@ -13,6 +13,14 @@ import TabItem from '@theme/TabItem';
 
 # Activate Your License
 
+An unlicensed SafeSquid instance cannot use commercial features (threat intelligence, URL categorization, DR backup, support) or receive full update feeds. Activation ties your key to this instance and unlocks the chosen tier so the gateway is fully operational.
+
+## Key Benefits
+
+- **Unlock commercial features** — threat intelligence, URL categorization database, 365-day DR backup, and email support (see table below).
+- **Receive updates** — subscription and malware definition feeds require successful activation.
+- **Prove licensing for audits** — activation status is visible in the SafeSquid interface for compliance evidence.
+
 SafeSquid offers two licensing tiers:
 
 |  | Free | Commercial |
@@ -96,7 +104,17 @@ Your SafeSquid server needs outbound access to these endpoints. Ensure your fire
 To synchronize SSL certificates and configuration across a proxy cluster, upload the same activation key on every SafeSquid instance.
 :::
 
+## Verification and Evidence
 
+After activation and restart, confirm in the SafeSquid interface:
+
+1. In the top menu, go to **Support**.
+2. In **Activation Details**, verify:
+   - **Product Type** matches your tier (Free or Commercial)
+   - **Status** shows active
+   - **Expiry** is in the future (commercial) or shows no expiry (free)
+
+Use this screen for auditor requests or compliance evidence that the gateway is correctly licensed.
 
 ## Troubleshooting
 
@@ -171,3 +189,7 @@ To synchronize SSL certificates and configuration across a proxy cluster, upload
   </TabItem>
 </Tabs>
 
+## Next steps
+
+1. [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/) — configure at least one browser or client to use the proxy.
+2. [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) — run smoke tests to confirm the proxy is receiving traffic.

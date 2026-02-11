@@ -13,9 +13,11 @@ keywords:
 
 SAB is a security-hardened **Debian Linux** ISO that installs the OS, partitions disks, and deploys SafeSquid with all dependencies in about 15 minutes.
 
+## Problem Statement
 
+Installing a Secure Web Gateway manually — OS install, hardening, disk layout, dependency libraries, and supporting services — is error-prone and time-consuming. One misstep in partitioning or networking can delay or break the deployment. SAB automates a hardened stack so you get a consistent, production-ready image without manual assembly.
 
-## Why Use SAB?
+## Key Benefits
 
 Setting up a Secure Web Gateway manually requires installing and hardening the Linux OS, partitioning disks appropriately, downloading and configuring dependency libraries, and installing supporting services. This process demands expertise and time.
 
@@ -24,7 +26,7 @@ SAB automates all of it — reducing configuration errors, ensuring optimal perf
 **Download:** [safesquid.iso](https://downloads.safesquid.com/appliance/safesquid.iso)
 
 :::info Minimum Disk
-100 GB (NVMe SSD recommended). See [Production Planning](/docs/Getting_Started/Deployment_Planning/) for full sizing guidance.
+100 GB (NVMe SSD recommended). See [Deployment Planning](/docs/Getting_Started/Deployment_Planning/) for full sizing guidance.
 :::
 
 
@@ -115,7 +117,21 @@ SAB automates all of it — reducing configuration errors, ensuring optimal perf
 | Logs | `/var/log/safesquid/` |
 | Configuration interface | [http://safesquid.cfg/](http://safesquid.cfg/) (via proxy) |
 
+## Verification and Evidence
 
+Confirm SAB installed successfully:
+
+1. **Service is listening** — from the server or over SSH, run `netstat -lntp | grep 8080`. You should see SafeSquid listening on port **8080**.
+2. **Configuration interface loads** — from a browser configured to use this host as the HTTP proxy (IP, port 8080), open `http://safesquid.cfg/`. The SafeSquid admin interface should load.
+3. **Default login works** — log in with **administrator** / **safesquid** (then change the password). If the interface prompts for activation key upload, the appliance is ready for the next step.
+
+## Troubleshooting
+
+| Symptom | Likely cause | Fix |
+| ------- | ------------ | --- |
+| System does not boot from media | Boot order or secure boot | Set BIOS/UEFI boot order so USB or optical drive is first; disable secure boot if it blocks the installer. |
+| Installation hangs or fails at mirror | Network or proxy | Ensure the server has outbound HTTP/HTTPS; if behind a proxy, enter it when the installer prompts. |
+| Port 8080 not listening after reboot | SafeSquid not started or dependency missing | Run `/etc/init.d/safesquid start`; check `/var/log/safesquid/` for errors; see [Troubleshooting](/docs/Troubleshooting/main/) for installation issues. |
 
 ## Next Steps
 

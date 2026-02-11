@@ -41,7 +41,7 @@ Organizations require operating system-level proxy configuration to ensure all a
 
 
 
-## Call to Action
+## Implementation Actions
 
 ### Windows System-Wide Configuration
 
@@ -224,7 +224,7 @@ curl -I --proxy $http_proxy http://safesquid.cfg/
 
 
 
-## Troubleshooting Guide
+## Troubleshooting
 
 **Applications Not Using Proxy**: Verify system-wide proxy settings are properly applied and applications are restarted after configuration changes. Check application-specific proxy settings that may override system settings.
 
@@ -237,4 +237,10 @@ curl -I --proxy $http_proxy http://safesquid.cfg/
 **Environment Variable Issues**: Check environment variable configuration and ensure variables are properly exported and sourced in application environments.
 
 **Network Manager Conflicts**: Verify Network Manager proxy settings do not conflict with manual environment variable configuration. Choose one configuration method consistently.
+
+## Next steps
+
+1. [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) — confirm all application traffic flows through the proxy.
+2. [Application-Specific Configuration](/docs/Getting_Started/Connect_Your_Client/Application_Specific_Configuration/) — configure proxy for Git, npm, Docker, or other apps that need explicit settings.
+3. [SSL Inspection](/docs/SSL_Inspection/main/) — deploy the SafeSquid root CA so HTTPS traffic can be inspected.
 

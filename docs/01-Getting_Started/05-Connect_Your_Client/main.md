@@ -13,9 +13,7 @@ keywords:
 
 # Route client traffic through SafeSquid proxy
 
-Traffic must be routed through SafeSquid by configuring the client. Administrators need the SafeSquid server IP and port 8080. The documents below cover explicit proxy (single browser), PAC file, system-wide proxy, enterprise deployment, and application-specific configuration.
-
-
+Web traffic reaches SafeSquid only when clients use it as their proxy. This section covers how to configure clients: from explicit proxy (single browser or quick test) through PAC file, system-wide proxy, and enterprise rollout via GPO or MDM. Outcome: traffic from chosen clients flows through SafeSquid for policy enforcement and inspection.
 
 ## Client configuration guides
 
@@ -34,3 +32,7 @@ Organizations need proxy settings rolled out at scale via GPO, Active Directory,
 ### [Application-Specific Configuration](/docs/Getting_Started/Connect_Your_Client/Application_Specific_Configuration/)
 Individual applications (Git, npm, Docker, email clients, CLI tools) require their own proxy configuration. Application-Specific Configuration describes proxy settings for each. Ensures non-browser traffic is inspected. Use this document to configure proxy for specific applications.
 
+## Next steps
+
+1. [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) — run smoke tests to confirm the proxy is receiving traffic.
+2. [SSL Inspection](/docs/SSL_Inspection/main/) — enable HTTPS decryption so SafeSquid can inspect and filter encrypted traffic.

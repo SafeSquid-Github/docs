@@ -10,13 +10,17 @@ keywords:
 
 # Register and Get Your Key
 
-The activation key identifies your SafeSquid instance and unlocks licensing features. Registration is free and takes about two minutes.
+**Goal:** Obtain an activation key so your SafeSquid instance can be licensed and fully operational. Registration is free and takes about two minutes.
 
 :::tip Already registered?
 [Sign in to the Self-Service Portal](https://key.safesquid.com) to download your existing key.
 :::
 
+## Prerequisites
 
+- A browser with access to the internet
+- A valid email address (for account activation and key delivery)
+- Network access to [https://key.safesquid.com](https://key.safesquid.com) (no proxy required for registration)
 
 ## Steps
 
@@ -59,3 +63,12 @@ Using a business email unlocks enterprise account benefits such as team onboardi
 - **Forgot your password?** — Use the password reset link on the [Self-Service Portal](https://key.safesquid.com) login page.
 - **Account locked or other issues?** — [Contact SafeSquid support](https://www.safesquid.com/contact-us) with your registered email address.
 
+## Verification
+
+- The key file is downloaded and named `activation_key` (no extension), typically a few KB in size.
+- You can sign in to the [Self-Service Portal](https://key.safesquid.com) and see your account and **Download Key** option.
+
+## Next steps
+
+1. [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/main/) on your server or VM.
+2. After installation, [Activate Your License](/docs/Getting_Started/Activate/) by uploading this key in the SafeSquid interface.

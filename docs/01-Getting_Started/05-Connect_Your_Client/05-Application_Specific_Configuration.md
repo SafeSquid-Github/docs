@@ -41,7 +41,7 @@ Organizations require specialized proxy configuration for non-browser applicatio
 
 
 
-## Call to Action
+## Implementation Actions
 
 ### Email Client Configuration
 
@@ -251,7 +251,7 @@ Host remote-host
 
 
 
-## Troubleshooting Guide
+## Troubleshooting
 
 **Application Connection Failures**: Verify application-specific proxy settings and ensure applications support proxy configuration. Check application logs for connection errors.
 
@@ -264,4 +264,10 @@ Host remote-host
 **Configuration Conflicts**: Ensure application-specific proxy settings do not conflict with system-wide or browser proxy configurations. Choose consistent configuration approach.
 
 **Protocol Compatibility**: Verify SafeSquid supports protocols required by applications. Check proxy server configuration for protocol-specific settings and requirements.
+
+## Next steps
+
+1. [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) — confirm application traffic appears in SafeSquid logs.
+2. [SSL Inspection](/docs/SSL_Inspection/main/) — enable HTTPS inspection and install the root CA where required by each application.
+3. [Troubleshooting](/docs/Troubleshooting/main/) — for connection failures, certificate errors, or protocol issues.
 

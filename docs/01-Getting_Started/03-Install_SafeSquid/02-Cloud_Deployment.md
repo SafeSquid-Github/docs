@@ -13,11 +13,11 @@ keywords:
 
 Deploy SafeSquid on any cloud or private cloud infrastructure. Four methods are available — pick the one that fits your platform.
 
+## Problem Statement
 
+Backhauling remote and branch traffic to an on-premises SWG creates latency, doubles bandwidth through the gateway, and degrades user experience. Organizations need inspection close to users or at the edge without maintaining physical appliances in every location.
 
-## Why Cloud SWG?
-
-Traditional on-premises SWG worked when all employees shared a single LAN gateway. As organizations expand globally and adopt BYOD and remote work, web traffic originates from endpoints outside the central network. Backhauling this traffic to an on-premises SWG creates latency, doubles bandwidth through the gateway, and degrades user experience.
+## Key Benefits
 
 Cloud SWG eliminates backhauling. Remote workers route directly to the nearest SWG instance. Traffic from remote offices consolidates at edge devices (e.g., SD-WAN) before reaching the cloud SWG. Inspected traffic then routes directly to the internet.
 
@@ -97,7 +97,13 @@ Do not expose port 8080 to the public internet without authentication and access
 - **Use VPN or ZTNA** for remote user access to the proxy.
 - **Place SafeSquid in a private subnet** where possible, fronted by a load balancer or VPN gateway.
 
+## Troubleshooting
 
+| Symptom | Likely cause | Fix |
+| ------- | ------------ | --- |
+| Instance not reachable on 8080 | Security group or firewall blocks port | Allow inbound TCP 8080 from your admin/VPN range in the cloud provider's security group or firewall. |
+| Cloud-init or image import fails | Platform-specific limits or user-data size | Check cloud provider docs for image size and user-data limits; use SAB ISO or TAR method as fallback. |
+| SafeSquid not listening after boot | Service not started or dependency missing | SSH in and run `/etc/init.d/safesquid start`; check `/var/log/safesquid/` and [Troubleshooting](/docs/Troubleshooting/main/). |
 
 ## Next Steps
 

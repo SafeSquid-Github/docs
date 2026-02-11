@@ -43,7 +43,7 @@ Organizations require manual proxy configuration for controlled environments whe
 
 
 
-## Call to Action
+## Implementation Actions
 
 ### Windows Browser Configuration
 
@@ -174,7 +174,7 @@ curl -I --proxy http://192.168.1.100:8080 http://safesquid.cfg/
 
 
 
-## Troubleshooting Guide
+## Troubleshooting
 
 **Connection Refused Errors**: Verify SafeSquid proxy service is running and accessible on configured ports. Check firewall rules and network connectivity between client and proxy server.
 
@@ -188,5 +188,9 @@ curl -I --proxy http://192.168.1.100:8080 http://safesquid.cfg/
 
 **Performance Issues**: Check network latency between client and proxy server. Verify SafeSquid performance settings and consider proxy server optimization.
 
-**Related**: [PAC File](/docs/Getting_Started/Connect_Your_Client/PAC_File/), [System-Wide Proxy](/docs/Getting_Started/Connect_Your_Client/System_Wide_Proxy/), [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), [SSL Inspection](/docs/SSL_Inspection/main/), [Troubleshooting](/docs/Troubleshooting/main/)
+## Next steps
+
+1. [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) — confirm the proxy is receiving traffic and the configuration interface is reachable.
+2. [PAC File](/docs/Getting_Started/Connect_Your_Client/PAC_File/) or [System-Wide Proxy](/docs/Getting_Started/Connect_Your_Client/System_Wide_Proxy/) — scale beyond a single browser when ready.
+3. [SSL Inspection](/docs/SSL_Inspection/main/) — enable HTTPS decryption so SafeSquid can inspect encrypted traffic.
 
