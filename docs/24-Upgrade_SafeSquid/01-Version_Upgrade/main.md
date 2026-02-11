@@ -10,22 +10,17 @@ keywords:
   - SafeSquid version upgrade
   - SafeSquid Monit service
 ---
-<section class="section-strip">
 
 
 # Upgrade SafeSquid application via Web GUI
 
-</section>
 
-<section class="section-strip">
 
 ## Version upgrade scope and procedure
 
 SafeSquid SWG upgrade is a newer version of the SafeSquid that offers a significant change or major improvement over your current version. Upgrade your SafeSquid to the latest version which may consists of bugfixes and enhancements. When you upload latest tarball of SafeSquid SWG from WebGUI monit service will automatically restart the SafeSquid service.
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 Monit service should be running and started on your SafeSquid server, you can check it by using below command from your SafeSquid server
@@ -61,9 +56,7 @@ Further delete all the files from the folder by using the command:
 rm -rf *
 ```
 
-</section>
 
-<section class="section-strip">
 
 ## Steps
 ### [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
@@ -95,18 +88,14 @@ Click on upload button to upload new tar file.
 
 ![clicking on upload button to upload](/img/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image7.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Testing Upgradation
 You can see upgraded version number of SafeSquid SWG at the bottom right corner of interface.
 
 ![test if the newer version of the safesquid is showing in the bottom right hand corner](/img/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image8.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Where should I get the latest version of SafeSquid to upgrade?
 
@@ -114,4 +103,3 @@ You can download **SafeSquid SWG for Windows** package from - http://downloads.s
 
 You can download **SafeSquid SWG for Linux** package from - http://downloads.safesquid.net/appliance/binary/safesquid_latest.tar.gz
 
-</section>

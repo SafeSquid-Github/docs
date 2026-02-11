@@ -9,14 +9,11 @@ keywords:
   - restrict cookies SafeSquid
   - cookie filtering SafeSquid
 ---
-<section class="section-strip">
 
 
 # Cookie Inspection
 
-</section>
 
-<section class="section-strip">
 
 ## Cookie filter controls which hosts can send and receive cookies
 
@@ -24,13 +21,10 @@ The Cookie Filter lets administrators choose which hosts (websites) may send and
 
 **Example:** Block cookies from advertising sites such as tribalfusion.com and doubleclick.net to prevent private information from being transferred. Users can query search engines (Google, Yahoo) but cannot log into personal accounts (Gmail, shopping, trading sites).
 
-</section>
 
-<section class="section-strip">
 
 ## Cookie filter configuration guides
 
 ### [Cookie Filter Configuration and Reference](/docs/Cookie_Inspection/Cookie_Filter_Configuration/)
 Cookie allow/deny behavior requires correct Global policy and Allow/Deny rules. The document covers the Configuration Portal path, Global and Policy options, and Allow/Deny rule parameters (profiles, expiry, domain, path, direction, time match). Example rules and solution verification support validation. Use the document to configure and validate cookie filtering.
 
-</section>

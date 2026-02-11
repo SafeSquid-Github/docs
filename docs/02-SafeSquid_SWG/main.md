@@ -11,7 +11,6 @@ keywords:
   - Proxy Cluster
   - Zero-Trust Web Security
 ---
-<section class="section-strip">
 
 
 # SafeSquid SWG architecture and components
@@ -20,9 +19,7 @@ SafeSquid Secure Web Gateway (SWG) is a purpose-built HTTP proxy for application
 
 SafeSquid SWG consolidates proxy enforcement, policy management, self-service portal, reporting, integrated DNS security, and supporting services into one platform. The documents below guide administrators through each component.
 
-</section>
 
-<section class="section-strip">
 
 ## SWG component and configuration guides
 
@@ -47,4 +44,3 @@ DNS is a common vector for bypass and malware. Integrated DNS Security documents
 ### [Supporting Services](/docs/SafeSquid_SWG/Supporting_Services/main/)
 Production deployments need monitoring and dependency services. Supporting Services covers Monit, BIND, and NTP used by SafeSquid. High availability and correct time and DNS depend on these services. Configure Supporting Services using this document for production readiness.
 
-</section>

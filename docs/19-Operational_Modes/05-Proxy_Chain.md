@@ -8,7 +8,6 @@ keywords:
   - SafeSquid forwarding proxy setup
   - SafeSquid behind corporate firewall
 ---
-<section class="section-strip">
 
 
 # Forward client traffic through a parent proxy
@@ -52,9 +51,7 @@ My Parent Proxy## 's network IP - 192.168.27.100
 
 Deploy SafeSquid, it is up and running, no extra configuration required in parent proxy
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 Enable HTTPS inspection on child proxy (optionally on parent proxy also). Check our document to configure HTTPS inspection on SafeSquid - [How to configure HTTPS inspection](/docs/SSL_Inspection/main/)
@@ -63,9 +60,7 @@ Import SafeSquid child proxy ROOT CA in client browser
 
 Note: No configuration required on Parent Proxy server. Just deploy the parent proxy and make sure that it is up and running.
 
-</section>
 
-<section class="section-strip">
 
 ## Configure proxy chain in SafeSquid
 
@@ -139,9 +134,7 @@ if the total configuration in all sections is completed and validated.
 
 Otherwise select No and click on submit.
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -149,9 +142,7 @@ Otherwise select No and click on submit.
 - **Log Analysis**: Check SafeSquid access logs for requests showing the parent proxy as upstream; connection failures to the parent appear in logs with connect errors.
 - **Performance Validation**: From a client behind the child proxy, browse an external site; traffic should succeed and appear in both child and parent proxy logs.
 
-</section>
 
-<section class="section-strip">
 
 ## Next steps
 
@@ -159,4 +150,3 @@ Otherwise select No and click on submit.
 - [SSL Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) for HTTPS inspection on the child proxy.
 - [Troubleshooting](/docs/Troubleshooting/main/) if connectivity or parent proxy errors occur.
 
-</section>

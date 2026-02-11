@@ -8,16 +8,13 @@ keywords:
   - Sync proxy configuration SafeSquid
   - SafeSquid centralized policy update
 ---
-<section class="section-strip">
 
 
 # Keep all proxy nodes in sync with master configuration
 
 Without configuration synchronization, each proxy node must be updated manually. Inconsistencies cause policy gaps, vulnerabilities, and extra maintenance. SafeSquid configuration sync propagates policy and settings from the master to slave nodes so all nodes stay uniform and administrative overhead is reduced.
 
-</section>
 
-<section class="section-strip">
 
 ## Enable configuration sync for the proxy cluster
 :::note
@@ -30,51 +27,37 @@ Below is an example on how to create a new user group for slave proxy instance.
 
 To enable policy configuration, follow the steps below on the secondary/slave proxy server.
 
-</section>
 
-<section class="section-strip">
 
 ## Access the web interface and go to Support
 ![accessing safesquid web interface and going to support ](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image2.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Select Startup Params
 ![selecting setup params option](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image3.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Click on the edit button.
 ![clicking on edit button](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image4.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Add the master proxy server IP address
 ![Adding the master proxy server IP address](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image5.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Add the master proxy server port number
 ![Adding the master proxy server port number](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image6.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Now click on the correct icon to save the configuration.
 ![clicking on the correct icon to save the configuration](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image7.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Now click on restart for applying changes.
 ![clicking on restart for applying changes](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image8.webp)
@@ -87,4 +70,3 @@ Click **Submit** after selecting the appropriate option.
 
 Once the master instance has been restarted, all configuration and further changes synchronize to the slave instance of SafeSquid.
 
-</section>

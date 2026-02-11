@@ -9,16 +9,13 @@ keywords:
   - integrate ldap with SafeSquid
   - ldap configuration for SafeSquid
 ---
-<section class="section-strip">
 
 
 # Integrate SafeSquid with Microsoft Active Directory
 
 SafeSquid integrates with Microsoft Active Directory via LDAP so user and group data from AD drive access restriction and reporting. Configure AD and LDAP connectivity first, then choose simple (username/password) or SSO (Kerberos) authentication.
 
-</section>
 
-<section class="section-strip">
 
 ## Active Directory integration options
 
@@ -31,4 +28,3 @@ Enterprises need LDAP-backed authentication without Kerberos or SSO infrastructu
 ### [SSO Authentication](/docs/Authentication/Directory_Services/Active_Directory/SSO_Authentication/)
 Users should sign in once (domain login) and use the proxy without a second prompt. SSO Authentication uses Kerberos with AD so domain-authenticated users get proxy access without re-entering credentials. Better user experience and consistent identity. Configure LDAP with Negotiate bind, ensure time sync and DNS, then verify SSO using this document.
 
-</section>

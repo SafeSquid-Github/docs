@@ -11,7 +11,6 @@ keywords:
   - credit card number detection
   - PII protection SafeSquid
 ---
-<section class="section-strip">
 
 
 # Compliance Templates
@@ -20,25 +19,19 @@ keywords:
 **Risk:** Uncontrolled exfiltration of cardholder data, PHI, or PII creates regulatory exposure (PCI-DSS, HIPAA, GDPR) and reputational harm. **Control:** SafeSquid Text Analyser applies pattern-based detection for PCI, HIPAA, GDPR, and custom data; policies block or log matches. **Evidence:** DLP events and matches are logged; reports from the [Reporting Module](/docs/Audit_Forensics/Reporting_Module/) support compliance audits and evidence of control operation.
 :::
 
-</section>
 
-<section class="section-strip">
 
 ## Problem: Sensitive data in transit requires detection for compliance
 
 Organizations must detect and control sensitive data in web traffic to meet PCI-DSS, HIPAA, GDPR, and similar requirements. Failure to detect cardholder data, PHI, or PII in transit creates regulatory and legal risk. SafeSquid Text Analyser supports pattern-based detection so administrators can block or log matches and demonstrate control to auditors.
 
-</section>
 
-<section class="section-strip">
 
 ## Key benefits
 
 Pre-built patterns reduce implementation time for PCI-DSS (cardholder data), HIPAA (PHI, SSN, MRN), and GDPR (PII, national IDs). Organizations can show auditors configured detection rules and logs of matches or blocks. Combine templates with [Access Restriction](/docs/Access_Restriction/main/) to block, log, or alert on matches.
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 
@@ -46,9 +39,7 @@ Pre-built patterns reduce implementation time for PCI-DSS (cardholder data), HIP
 - Access to Configure → Real Time Content Security → Text Analyser in the Configuration Portal.
 - Decision on which regulations apply and which data types to protect (assess before configuring).
 
-</section>
 
-<section class="section-strip">
 
 ## Pre-built patterns for regulatory requirements
 
@@ -58,9 +49,7 @@ SafeSquid's Text Analyser supports pattern-based detection of sensitive data. Us
 These templates provide detection patterns. Combine them with [Access Restriction](/docs/Access_Restriction/main/) policies to block, log, or alert on matches.
 :::
 
-</section>
 
-<section class="section-strip">
 
 ## PCI-DSS (Payment Card Industry)
 
@@ -96,9 +85,7 @@ Detect credit card numbers, CVV codes, and cardholder data in transit.
 
 ---
 
-</section>
 
-<section class="section-strip">
 
 ## HIPAA (Healthcare)
 
@@ -136,9 +123,7 @@ Detect Protected Health Information (PHI) including medical record numbers, SSNs
 
 ---
 
-</section>
 
-<section class="section-strip">
 
 ## GDPR (European Union)
 
@@ -180,9 +165,7 @@ Detect Personally Identifiable Information (PII) for EU data subjects.
 
 ---
 
-</section>
 
-<section class="section-strip">
 
 ## Financial Services
 
@@ -204,9 +187,7 @@ Detect Personally Identifiable Information (PII) for EU data subjects.
 
 ---
 
-</section>
 
-<section class="section-strip">
 
 ## Intellectual Property
 
@@ -226,9 +207,7 @@ Detect code snippets that may indicate IP leakage:
 
 ---
 
-</section>
 
-<section class="section-strip">
 
 ## Implementation Guidelines
 
@@ -252,9 +231,7 @@ Use [Reporting Module](/docs/Audit_Forensics/Reporting_Module/) to track DLP eve
 
 ---
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -262,9 +239,7 @@ Use [Reporting Module](/docs/Audit_Forensics/Reporting_Module/) to track DLP eve
 - **Logs:** Security and access logs record matches and blocked requests when threshold is exceeded. Filter logs by DLP or Text Analyser events.
 - **Audit evidence:** Export reports from the Reporting Module for the audit period; show configured patterns and count of matches or blocks to demonstrate control operation.
 
-</section>
 
-<section class="section-strip">
 
 ## Troubleshooting
 
@@ -276,9 +251,7 @@ Use [Reporting Module](/docs/Audit_Forensics/Reporting_Module/) to track DLP eve
 
 ---
 
-</section>
 
-<section class="section-strip">
 
 ## Custom Templates
 
@@ -290,4 +263,3 @@ Create organization-specific patterns for:
 
 **Related**: [Text Analyser](/docs/Profiling_Engine/Content_Analyser/Text_Analyser/), [Image Analyser](/docs/Profiling_Engine/Content_Analyser/Image_Analyser_AI/), [Access Restriction](/docs/Access_Restriction/main/), [Reporting Module](/docs/Audit_Forensics/Reporting_Module/)
 
-</section>

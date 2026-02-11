@@ -8,16 +8,13 @@ keywords:
   - network traffic graph SafeSquid
   - proxy server analytics
 ---
-<section class="section-strip">
 
 
 # Generate performance plot from SafeSquid interface
 
 Generate performance plots from the SafeSquid user interface to view traffic and system metrics over time.
 
-</section>
 
-<section class="section-strip">
 
 ## Access Support and generate plot
 
@@ -35,11 +32,8 @@ Access the [SafeSquid Configuration Portal](/docs/SafeSquid_SWG/Configuration_Po
 
 ![Result of Generate Performance Plot from SafeSquid User Interaface](/img/How_To/Generate_Performance_Plot_From_SafeSquid_User_Interface/image5.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Save the Plot
 ![Save Generated Performance Plot from SafeSquid User Interaface](/img/How_To/Generate_Performance_Plot_From_SafeSquid_User_Interface/image6.webp)
 
-</section>

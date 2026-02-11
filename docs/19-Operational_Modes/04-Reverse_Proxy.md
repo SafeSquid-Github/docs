@@ -8,16 +8,13 @@ keywords:
   - Reverse proxy caching SafeSquid
   - SafeSquid reverse proxy authentication
 ---
-<section class="section-strip">
 
 
 # Reverse proxy protects and accelerates backend servers
 
 A reverse proxy sits in front of backend web servers and accepts client requests. It forwards requests to the appropriate backend and returns responses. Clients connect to the reverse proxy; they do not need proxy configuration. SafeSquid as reverse proxy provides a single point for SSL termination, authentication, caching, and load distribution while hiding backend server identities.
 
-</section>
 
-<section class="section-strip">
 
 ## Benefits of SafeSquid reverse proxy
 **Web acceleration**
@@ -107,9 +104,7 @@ Access the website from a client machine without configuring proxy settings in t
 
 ![In Server logs, view which the website is access with proxy IP](/img/How_To/How_to_configure_reverse_proxy/image3.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Next steps
 
@@ -117,4 +112,3 @@ Access the website from a client machine without configuring proxy settings in t
 - [SSL Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) for HTTPS termination.
 - [Proxy Clustering](/docs/Proxy_Clustering/main/) for high availability.
 
-</section>

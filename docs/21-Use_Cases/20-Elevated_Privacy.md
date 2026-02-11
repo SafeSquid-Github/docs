@@ -13,7 +13,6 @@ keywords:
   - privacy levels SafeSquid
   - paranoid privacy mode
 ---
-<section class="section-strip">
 
 
 # Reduce tracking with third-party cookie and referrer controls
@@ -22,9 +21,7 @@ Use Elevated Privacy to protect privacy across websites. Otherwise, third-party 
 
 **Example:** When you are surfing the internet by logging into any of your accounts like Hotmail, Yahoo, Gmail, Online Banking...etc. Your activities will be tracked by third party and referral domains.
 
-</section>
 
-<section class="section-strip">
 
 ## Global
 ![Elevated Privacy restriction profile or configuration](/img/Configure/Restriction_Profiles/Elevated_Privacy/image1.webp)
@@ -35,9 +32,7 @@ Enable or Disable this section.
 -   **TRUE:** Enable strict privacy and third-party cookies blocking
 -   **FALSE:** Disable strict privacy and third-party cookies blocking
 
-</section>
 
-<section class="section-strip">
 
 ## Elevated policies
 ![Elevated Privacy policy or profile options](/img/Configure/Restriction_Profiles/Elevated_Privacy/image2.webp)
@@ -78,9 +73,7 @@ Caution: If you select 'Paranoid' level privacy, it may cause problems for web s
 -   **STANDARD:** Select this, if you want to block Third-Party Cookies and hide the HTTP & HTTPS referrer
 -   **PARANOID:** Select this, if you want to block Third-Party Cookies and hide the HTTP & HTTPS referrer and also hide different User Agents
 
-</section>
 
-<section class="section-strip">
 
 ## Example
 ### Rule#1
@@ -114,4 +107,3 @@ Connections with "BYPASS ELEVATED PRIVACY" CAN use third-party cookies for authe
 
 ![Elevated Privacy save or apply configuration](/img/Configure/Restriction_Profiles/Elevated_Privacy/image4.webp)
 
-</section>

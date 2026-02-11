@@ -10,7 +10,6 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## SSL certificate and inspection issues
 
@@ -47,9 +46,7 @@ keywords:
 
 6.  Or some of the **HTTPS websites are working without error** but some of the **HTTPS websites are not working**.
 
-</section>
 
-<section class="section-strip">
 
 ## Troubleshooting
 ### Verify SSL certificate import in browser
@@ -209,9 +206,7 @@ To allow domain mismatch errors for specific HTTPS websites, create a policy:
 
 ![saving configuration globally](/img/Troubleshooting/SSL_certification_errors/image9.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -219,9 +214,7 @@ To allow domain mismatch errors for specific HTTPS websites, create a policy:
 - **Log Analysis**: Native logs show successful client encryption for previously failing domains; no `S_X509_DNS_MISMATCH` or transfer failed errors for the fixed cases.
 - **Performance Validation**: Previously failing HTTPS sites load without "connection not secured" or "secured connection fail"; YouTube and other sites work per policy.
 
-</section>
 
-<section class="section-strip">
 
 ## Next steps
 
@@ -229,4 +222,3 @@ To allow domain mismatch errors for specific HTTPS websites, create a policy:
 - [Import Certificate into Chrome or IE](/docs/SSL_Inspection/Import_Certificate_Chrome_IE/) for client certificate import.
 - [Troubleshooting](/docs/Troubleshooting/main/) for other diagnostic guides.
 
-</section>

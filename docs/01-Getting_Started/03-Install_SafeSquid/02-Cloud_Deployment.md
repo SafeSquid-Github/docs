@@ -7,16 +7,13 @@ keywords:
   - SafeSquid Cloud-IMG
   - cloud SWG
 ---
-<section class="section-strip">
 
 
 # Cloud Deployment
 
 Deploy SafeSquid on any cloud or private cloud infrastructure. Four methods are available — pick the one that fits your platform.
 
-</section>
 
-<section class="section-strip">
 
 ## Why Cloud SWG?
 
@@ -32,9 +29,7 @@ Cloud SWG eliminates backhauling. Remote workers route directly to the nearest S
 
 SafeSquid is cloud-agnostic — deploy on AWS, Azure, GCP, DigitalOcean, or any private cloud without vendor lock-in.
 
-</section>
 
-<section class="section-strip">
 
 ## Deployment Methods
 
@@ -72,9 +67,7 @@ Attach the [SAB ISO](https://downloads.safesquid.com/appliance/safesquid.iso) to
 
 If you already have a Linux VM running, install SafeSquid using the [TAR package method](/docs/Getting_Started/Install_SafeSquid/Linux_Server/).
 
-</section>
 
-<section class="section-strip">
 
 ## Verify the Deployment
 
@@ -92,9 +85,7 @@ netstat -lntp | grep 8080
 lsblk
 ```
 
-</section>
 
-<section class="section-strip">
 
 ## Security Configuration
 
@@ -106,9 +97,7 @@ Do not expose port 8080 to the public internet without authentication and access
 - **Use VPN or ZTNA** for remote user access to the proxy.
 - **Place SafeSquid in a private subnet** where possible, fronted by a load balancer or VPN gateway.
 
-</section>
 
-<section class="section-strip">
 
 ## Next Steps
 
@@ -116,4 +105,3 @@ Do not expose port 8080 to the public internet without authentication and access
   2. **[Connect a browser](/docs/Getting_Started/Connect_Your_Client/main/)** to verify traffic flows
   3. **[Enable SSL Inspection](/docs/SSL_Inspection/main/)** for HTTPS visibility
 
-</section>

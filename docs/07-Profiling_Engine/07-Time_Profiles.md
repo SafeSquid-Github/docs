@@ -12,16 +12,13 @@ keywords:
   - SafeSquid time match modes
   - SafeSquid allranges vs absolutetime
 ---
-<section class="section-strip">
 
 
 # Enforce access by time range
 
 Time Profiler enforces time-based internet access using configurable ranges: month, day, weekday, hour, and minute. Create Time Profile entries as combinations of these ranges; SafeSquid allows or blocks categories and websites according to the active profile.
 
-</section>
 
-<section class="section-strip">
 
 ## Enable Time Profiler
 
@@ -39,9 +36,7 @@ Time Profiler enforces time-based internet access using configurable ranges: mon
 
    ![Time Profiler section](/img/Configure/Custom_Settings/Time_Profiler/image3.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Configuration Options
 
@@ -88,9 +83,7 @@ SafeSquid evaluates entries from top to bottom. All entries within the time rang
 - Example: Weekday Monday-Friday, Hour 10-17
 - Active every day Monday-Friday between 10 AM and 5 PM
 
-</section>
 
-<section class="section-strip">
 
 ## Examples
 
@@ -119,4 +112,3 @@ Lunch hours: 2 PM to 2:30 PM, Monday to Friday. Allow Social Media during lunch.
 
 ![Lunch hours rule](/img/Configure/Custom_Settings/Time_Profiler/image8.webp)
 
-</section>

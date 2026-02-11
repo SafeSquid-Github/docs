@@ -9,16 +9,13 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## Startup parameters control proxy behavior and tuning
 SafeSquid loads default configuration/startup parameters from the startup.ini file. You can modify the startup parameter values from SafeSquid GUI. Modified values of startup parameters are stored in **/opt/safesquid/startup.ini** file.
 
 SafeSquid loads default setup parameters from the setup.ini file. To modify setup parameters, you should take a copy of the setup.ini file and store it as **/opt/safesquid/setup.ini** before editing it manually.
 
-</section>
 
-<section class="section-strip">
 
 ## Startup Parameters
 | **Field**                     | **Explanation** |
@@ -62,4 +59,3 @@ SafeSquid loads default setup parameters from the setup.ini file. To modify setu
 You can tune up the SafeSquid for better results. You can modify Startup Parameters to obtain better performance by tweaking the overall system & application tuning. Quite a few users have experienced difficulties due to a lack of understanding of SafeSquid\'s configuration, and possibly due to insufficient documentation on the subject.
 :::
 
-</section>

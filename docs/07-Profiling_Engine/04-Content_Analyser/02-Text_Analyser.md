@@ -15,7 +15,6 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## Text Analyzer restricts access by keyword score
 
@@ -29,9 +28,7 @@ When a keyword from the list of words specified in an entry is found, the page i
 
 When the total score is equal to or greater than the threshold, then the page is blocked.
 
-</section>
 
-<section class="section-strip">
 
 ## Global
 ![Text-global.jpg](/img/Configure/Real_Time_Content_Activity/Text_analyzer/image1.webp)
@@ -53,9 +50,7 @@ Specify the template name to display when this entry matches. Select the name fr
 
 Leave this rule blank, to use the default template.
 
-</section>
 
-<section class="section-strip">
 
 ## Filtering policies
 Add new policies here to block websites based on content type.
@@ -108,9 +103,7 @@ If you mention a keyword as adult, then every time this word is found in the doc
 
 **Example:** If you mentioned the score as 20, then if the word adult is found once in the requested document, 20 will be added, for two times it will be 40, three times it will be 60.
 
-</section>
 
-<section class="section-strip">
 
 ## Example
 ### Rule#1
@@ -130,4 +123,3 @@ Text analyzer can be used in situations where uncategorized websites serve inapp
 
 ![Slide1-txtAnlyz.webp](/img/Configure/Real_Time_Content_Activity/Text_analyzer/image3.webp)
 
-</section>

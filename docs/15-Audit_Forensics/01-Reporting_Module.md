@@ -10,7 +10,6 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## Reporting module provides real-time visibility
 
@@ -39,9 +38,7 @@ The dashboard displays the following activities based on the last 1000 transacti
 
 ![Detailed real-time reporting SafeSquid Dashboard](/img/How_To/Reporting_Dashboard/image1.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Drilling method
 Click any entry to apply that filter. In the example below the drill-down uses **User Name: "anounymous@192.168.0.14"**.
@@ -70,9 +67,7 @@ SafeSquid supports reports by date range. Filter the report by selecting start a
 
 ![Flush button to reset filters of safesquid report](/img/How_To/Reporting_Dashboard/image10.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -81,4 +76,3 @@ SafeSquid supports reports by date range. Filter the report by selecting start a
 
 **Related**: [Security Logs](/docs/Audit_Forensics/Security_Logs/), [Performance Plot](/docs/Audit_Forensics/Performance_Plot/)
 
-</section>

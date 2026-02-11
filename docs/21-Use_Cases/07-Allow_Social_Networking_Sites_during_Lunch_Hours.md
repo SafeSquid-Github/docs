@@ -10,23 +10,18 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## Problem: Social networking access must be bounded by time
 
 Unrestricted social networking during work hours can reduce productivity and create policy risk. Many organizations block social networking on network computers. Some organizations allow access during lunch or defined windows to balance productivity and morale. SafeSquid time profiles allow social networking sites only during configured hours (e.g. lunch); outside that window access is blocked.
 
-</section>
 
-<section class="section-strip">
 
 ## Key benefits
 
 Social networking is allowed only during the configured time window. Outside that window users receive a block template. Administrators set the LUNCH (or custom) time profile once; policy applies consistently. Productivity controls remain while offering limited access.
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 
@@ -35,9 +30,7 @@ Social networking is allowed only during the configured time window. Outside tha
 - SScore section enabled as TRUE (Application setup → Score).
 - Access to [SafeSquid Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/).
 
-</section>
 
-<section class="section-strip">
 
 ## Call to action
 ![Select Configure section to allow social networking sites in lunch hours](/img/How_To/Allow_Social_Networking_Sites_during_Lunch_Hours/image1.webp)
@@ -46,9 +39,7 @@ Open the Search icon (bottom right of SafeSquid Web GUI) to search by keyword or
 
 ![View default policies under policies and profiles](/img/How_To/Allow_Social_Networking_Sites_during_Lunch_Hours/image2.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Search default policy: LUNCH.
 Enter **LUNCH** in the value field of the search dialog and click Search.
@@ -57,9 +48,7 @@ Enter **LUNCH** in the value field of the search dialog and click Search.
 
 The default policy for the **LUNCH** profile appears in the Time Profile section.
 
-</section>
 
-<section class="section-strip">
 
 ## Go to Time Profiler
 Open the default policy from the Time Profiler section having a **LUNCH** profile.
@@ -83,9 +72,7 @@ Save the policy after making Global part of Time Profiler as TRUE.
 
 ![Save the policy after making Global part of Time Profiler as TRUE.](/img/How_To/Allow_Social_Networking_Sites_during_Lunch_Hours/image7.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Go to Access Profiles
 Open Access Profiles from the Restriction Policies side menu.
@@ -111,9 +98,7 @@ Click on the top right Icon to save the policy.
 
 ![Specify unique profile name inside Added Profiles field and click on top right Icon to save the policy.](/img/How_To/Allow_Social_Networking_Sites_during_Lunch_Hours/image12.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -121,9 +106,7 @@ Click on the top right Icon to save the policy.
 - Outside the lunch window: access a social networking site; the **BLOCK** template appears.
 - **Interface:** Time Profiler shows LUNCH with the correct hour/minute range; Access Profiles shows the policy with Category Socialnetworks, Action ALLOW, and the added profile. Global for Time Profiler is TRUE.
 
-</section>
 
-<section class="section-strip">
 
 ## Troubleshooting
 
@@ -132,4 +115,3 @@ Click on the top right Icon to save the policy.
 | Social sites always blocked | Ensure Global (Time Profiler) is TRUE. Confirm the LUNCH hour/minute range includes the current time. Confirm Access Profile has Action ALLOW and Category Socialnetworks. |
 | Social sites always allowed | Check policy order; a later ALLOW may override. Confirm the time profile is applied to the Access Profile and the range is correct. |
 
-</section>

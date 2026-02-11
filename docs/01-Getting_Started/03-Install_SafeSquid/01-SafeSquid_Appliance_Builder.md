@@ -7,16 +7,13 @@ keywords:
   - SafeSquid ISO deployment
   - secure web gateway deployment
 ---
-<section class="section-strip">
 
 
 # SafeSquid Appliance Builder (SAB)
 
 SAB is a security-hardened **Debian Linux** ISO that installs the OS, partitions disks, and deploys SafeSquid with all dependencies in about 15 minutes.
 
-</section>
 
-<section class="section-strip">
 
 ## Why Use SAB?
 
@@ -30,9 +27,7 @@ SAB automates all of it — reducing configuration errors, ensuring optimal perf
 100 GB (NVMe SSD recommended). See [Production Planning](/docs/Getting_Started/Deployment_Planning/) for full sizing guidance.
 :::
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 
@@ -48,9 +43,7 @@ SAB automates all of it — reducing configuration errors, ensuring optimal perf
 2. **Attach the ISO** as a virtual CD/DVD.
 3. **Configure networking:** Bridged (direct network access) or NAT.
 
-</section>
 
-<section class="section-strip">
 
 ## Installation Steps
 
@@ -110,9 +103,7 @@ SAB automates all of it — reducing configuration errors, ensuring optimal perf
     Default credentials: **administrator** / **safesquid**. You must change the password on first login.
     :::
 
-</section>
 
-<section class="section-strip">
 
 ## What Gets Installed
 
@@ -124,9 +115,7 @@ SAB automates all of it — reducing configuration errors, ensuring optimal perf
 | Logs | `/var/log/safesquid/` |
 | Configuration interface | [http://safesquid.cfg/](http://safesquid.cfg/) (via proxy) |
 
-</section>
 
-<section class="section-strip">
 
 ## Next Steps
 
@@ -134,4 +123,3 @@ SAB automates all of it — reducing configuration errors, ensuring optimal perf
   2. **[Connect a browser](/docs/Getting_Started/Connect_Your_Client/main/)** to verify traffic flows
   3. **[Enable SSL Inspection](/docs/SSL_Inspection/main/)** for HTTPS visibility
 
-</section>

@@ -10,7 +10,6 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## Troubleshooting
 If your configuration is exactly like **How to** and still your SSO authentication failed. Check out the following:
@@ -94,4 +93,3 @@ tail -F /var/log/safesquid/extended/extended.log
 ```
 find username@SAFESQUID.TEST@ 192.168.221.212 (IP address of Windows machine which is in the domain)
 
-</section>

@@ -8,32 +8,25 @@ keywords:
   - sso setup SafeSquid
   - SafeSquid active directory authentication
 ---
-<section class="section-strip">
 
 
 :::info CISO takeaway
 **Risk:** Repeated proxy login prompts reduce usability and can lead to workarounds that weaken control. **Control:** Kerberos-based SSO with AD allows domain-authenticated users to use the proxy without a second credential prompt. **Evidence:** Identity and access logs show authenticated usernames; SSO flow is auditable.
 :::
 
-</section>
 
-<section class="section-strip">
 
 ## Problem: Single sign-on for domain users
 
 Domain-joined users should access the proxy without a separate login when they are already authenticated to Active Directory. Kerberos SSO validates the user ticket with AD and applies identity-based policy without a browser credential prompt. Requires time sync, DNS, and LDAP with Negotiate bind.
 
-</section>
 
-<section class="section-strip">
 
 ## Key benefits
 
 One sign-on for domain and proxy; better user experience and consistent identity. Kerberos ticket validation with AD; no password sent to the proxy. Supports audit and access control objectives. **Prerequisite:** Complete [Setup Active Directory Integration](Setup_Active_Directory_Integration) and ensure Monit is running; time and DNS must be correct.
 
-</section>
 
-<section class="section-strip">
 
 ## Example: integrate Active Directory for SSO
 
@@ -73,9 +66,7 @@ sequenceDiagram
     SafeSquid-->>Client: Allow or deny
 ```
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, password, base dn, domain) while configuration are correct. If any value is inappropriate then SafeSquid will fail to fetch the entries.
@@ -92,31 +83,23 @@ Time Synchronization of AD server and Proxy server should be same. Verify it usi
 
 After completing all steps above, SSO configuration can proceed.
 
-</section>
 
-<section class="section-strip">
 
 ## [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 
 ![clicking on configure in safesquid interface](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image1.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Go to Application Setup
 ![clicking on application setup](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image2.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Go to Integrate LDAP
 ![going to integrate LDAP in application setup section](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image3.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Ensure LDAP Section is enabled
 ![ensuring the LDAP section is enabled. by default it is set as false](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image4.webp)
@@ -127,16 +110,12 @@ After completing all steps above, SSO configuration can proceed.
 
 ![clicking on save policy](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image7.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Go to LDAP servers
 ![Going to LDAP servers tab](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image8.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Creating new entry
 ![creating a new entry by clicking add new button](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image9.webp)
@@ -175,9 +154,7 @@ Use any Active Directory user with **Administrator permissions**
 
 ![clicking on save policy](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image22.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Test user extraction
 
@@ -243,9 +220,7 @@ If no entries appear in the LDAP Entries subsection, validate all fields in the 
 
 ![Showing all the users from directory in LDAP entries tab](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/image24.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Save configuration
 
@@ -261,4 +236,3 @@ Otherwise select **No** and click **Submit**.
 
 **Related:** [Simple Authentication](Simple_Authentication), [Setup Active Directory Integration](Setup_Active_Directory_Integration), [Failed To Fetch LDAP Entries](/docs/Troubleshooting/Failed_To_Fetch_LDAP_Entries/), [SSO Authentication Fail](/docs/Troubleshooting/SSO_Authentication_Fail/)
 
-</section>

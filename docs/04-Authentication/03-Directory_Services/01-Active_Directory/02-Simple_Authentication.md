@@ -8,39 +8,30 @@ keywords:
   - ldap configuration
   - sso authentication SafeSquid
 ---
-<section class="section-strip">
 
 
 :::info CISO takeaway
 **Risk:** Per-user web access control requires validated identity from a trusted source. **Control:** AD simple (LDAP) authentication validates users against Active Directory and applies group-based policies without Kerberos. **Evidence:** LDAP bind and user extraction are logged; identity and access logs show authenticated usernames for audit (e.g. SOC 2, ISO 27001 A.9).
 :::
 
-</section>
 
-<section class="section-strip">
 
 ## Problem: Centralized identity without SSO infrastructure
 
 Enterprises need user and group-based proxy policies backed by Active Directory without deploying Kerberos or SSO. Simple LDAP bind validates users against AD and provides group membership for access rules. No AD schema changes are required; real-time validation and group caching support policy mapping and audit attribution.
 
-</section>
 
-<section class="section-strip">
 
 ## Key benefits
 
 Centralized identity from AD; user-specific and group-based access control. No SSO infrastructure; browser username/password prompt with AD credentials. LDAP bind and group sync support audit and compliance evidence. **Limitation:** Users enter credentials at the proxy; for single sign-on use [SSO Authentication](SSO_Authentication).
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 Make sure that all the values (LDAP server FQDN, LDAP server IP, Username, password, base dn, domain ) in configuration are correct. If any value is wrong SafeSquid will fail to fetch the entries.
 
-</section>
 
-<section class="section-strip">
 
 ## Call to action: LDAP configuration
 
@@ -114,9 +105,7 @@ Clicking Save config prompts to store the configuration in the cloud. Select Yes
 - Otherwise, select No and click on submit
 :::
 
-</section>
 
-<section class="section-strip">
 
 ## Validation Checklist
 
@@ -133,9 +122,7 @@ Example `ldapsearch` command:
 ldapsearch -x -h 192.168.1.10 -b "dc=example,dc=local" -D "administrator@example.local" -w password
 ```
 
-</section>
 
-<section class="section-strip">
 
 ## Troubleshooting Guide
 
@@ -163,4 +150,3 @@ ldapsearch -x -h 192.168.1.10 -b "dc=example,dc=local" -D "administrator@example
 * **Cause**: Incorrect filters or AD object not reachable
 * **Fix**: Adjust filters; use LDAP browser tool to validate user location
 
-</section>

@@ -9,41 +9,32 @@ keywords:
   - TLS validation
   - Kerberos
 ---
-<section class="section-strip">
 
 
 # NTP Time Synchronization
 
-</section>
 
-<section class="section-strip">
 
 ## Problem Statement
 - Security Challenge: Clock drift breaks Kerberos, SSO, TLS validation, and log correlation
 - Real-World Scenarios: AD-integrated environments require 5-minute skew or less; drift causes authentication failures
 - Business Context: Failed logins and invalid certificates disrupt access and auditing, increasing support load
 
-</section>
 
-<section class="section-strip">
 
 ## Key Benefits
 - Desired Outcome: Precise and reliable system time aligned with enterprise time sources
 - Value Proposition: Stable SSO, accurate TLS checks, and consistent audit trails
 - Competitive Advantage: Predictable authentication at scale versus unmanaged host time
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 - Client-Side Preparations: Identify enterprise NTP servers or domain controllers providing time
 - SafeSquid-Side Setup: Confirm host firewall allows UDP 123 to enterprise NTP
 - System Requirements: [chrony](https://chrony.tuxfamily.org/) or `ntpd` supported on the OS; stable network connectivity
 
-</section>
 
-<section class="section-strip">
 
 ## Call to Action
 1. Install time synchronization service.
@@ -86,9 +77,7 @@ keywords:
    - For SSO/Kerberos: Confirm SafeSquid host time skew within 5 minutes of AD
    - Verification: Authentication succeeds; no KRB5 clock skew errors in logs
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -103,9 +92,7 @@ keywords:
 
 **Related**: [Monit](/docs/SafeSquid_SWG/Supporting_Services/Monit/), [BIND](/docs/SafeSquid_SWG/Supporting_Services/Bind/), [Authentication](/docs/Authentication/main/), [Troubleshooting](/docs/Troubleshooting/main/)
 
-</section>
 
-<section class="section-strip">
 
 ## Troubleshooting Guide
 - Common Issues & Scenarios:
@@ -122,4 +109,3 @@ keywords:
   - Collect `timedatectl`, `chronyc tracking`, `chronyc sources -v`, and logs
   - Contact SafeSquid support with environment details and outputs
 
-</section>

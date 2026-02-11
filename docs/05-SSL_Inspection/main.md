@@ -10,7 +10,6 @@ keywords:
   - SSL certificate configuration SafeSquid
   - HTTPS scanning enterprise proxy
 ---
-<section class="section-strip">
 
 
 # HTTPS inspection for policy and threat visibility
@@ -19,9 +18,7 @@ Encrypted HTTPS traffic conceals malicious payloads, phishing attempts, and data
 
 This section links to the document that covers certificate setup, enabling inspection, and verification.
 
-</section>
 
-<section class="section-strip">
 
 ## HTTPS inspection configuration and verification
 
@@ -31,4 +28,3 @@ HTTPS traffic must be decrypted for policy enforcement and threat prevention. Th
 ### [Import Certificate into Chrome or IE](/docs/SSL_Inspection/Import_Certificate_Chrome_IE/)
 Clients must trust the SafeSquid Root CA for HTTPS inspection to work without certificate warnings. This guide provides step-by-step import of the SafeSquid SSL certificate into the Windows Trusted Root Certification Authorities store used by Chrome and Internet Explorer. Complete this after enabling HTTPS inspection to eliminate browser trust errors.
 
-</section>

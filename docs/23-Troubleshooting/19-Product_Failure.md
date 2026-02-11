@@ -10,16 +10,13 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## Issues
 1.  I uploaded my activation key, but still SafeSquid UI is showing Failed to set Subscription details.
 1.  After uploading the activation key, I am getting the template on the browser proxy server refusing connections.
 1.  Unable to see subscription details on the support page from SafeSquid User Interface.
 
-</section>
 
-<section class="section-strip">
 
 ## Root Causes
 
@@ -29,9 +26,7 @@ keywords:
 1.  After uploading the activation key, the page shows the proxy server refusing connections.
 1.  SafeSquid service restart was not done properly.
 
-</section>
 
-<section class="section-strip">
 
 ## Troubleshooting
 ### Case 1: Check for the activation_key file on the SafeSquid server
@@ -114,4 +109,3 @@ SafeSquid restart was not done, start the SafeSquid from the server console by u
 /etc/init.d/safesquid start
 ```
 
-</section>

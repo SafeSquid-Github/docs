@@ -15,7 +15,6 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## Whitelisted sites still blocked
 
@@ -28,17 +27,13 @@ Company policy blocks the social network category for all employees, but a few s
 
 Note: Whitelist category is the category to allow. Blacklist category is the category to block.
 
-</section>
 
-<section class="section-strip">
 
 ## Enable sscore and add site to whitelist category
 
 Ensure the **sscore** section is enabled and the categorization engine is loaded. Verify from the SafeSquid Statistics page in the interface. See [the Reporting Module](/docs/Audit_Forensics/Reporting_Module/). Add the corporate website to the whitelist category from Custom Settings → Categorize Web-sites in the SafeSquid UI.
 
-</section>
 
-<section class="section-strip">
 
 ## Procedure
 
@@ -75,9 +70,7 @@ Ensure the **sscore** section is enabled and the categorization engine is loaded
 
 Use Categorize websites to Create and add websites to the "whitelist category".
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -87,4 +80,3 @@ Use Categorize websites to Create and add websites to the "whitelist category".
 
 **Related**: [Web Categorization](/docs/Profiling_Engine/Web_Categorization/), [Access Restriction](/docs/Access_Restriction/main/), [Reporting](/docs/Audit_Forensics/Reporting_Module/), [Troubleshooting](/docs/Troubleshooting/main/)
 
-</section>

@@ -8,7 +8,6 @@ keywords:
   - GeoIP
   - homograph detection
 ---
-<section class="section-strip">
 
 
 # DNS Security
@@ -28,9 +27,7 @@ flowchart LR
 
 *Figure: DNS security evaluation order — client request through SafeSquid, DNS resolution, DNSBL, GeoIP, and homograph checks before allow or block.*
 
-</section>
 
-<section class="section-strip">
 
 ## DNS security controls and configuration
 
@@ -43,4 +40,3 @@ Organizations face regional compliance gaps and threat exposure when destination
 ### [Homograph Detection](/docs/DNS_Security/Homograph_Detection/)
 IDN homograph attacks use visually similar characters to impersonate legitimate domains and enable phishing. Homograph detection identifies and blocks these impersonation attempts at DNS resolution. The control reduces lookalike-domain risk and supports evidence in DNS security logs. Configure allowed or blocked IDN patterns in DNS Security when the feature is available.
 
-</section>

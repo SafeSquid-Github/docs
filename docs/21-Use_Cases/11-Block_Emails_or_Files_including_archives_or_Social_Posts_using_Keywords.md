@@ -10,7 +10,6 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## Problem and benefit
 When an employee or user on the network leaks confidential information intentionally or unintentionally, the organization can suffer large losses. Data leakage can occur through many channels. Users may upload important documents to the internet; even when content filtering blocks Microsoft Word and Excel uploads, users can create archives and attempt to upload them. Many organizations do not block archive files because administrators use them to transfer large log files. Organizations may protect data from external intruders but not from theft or accidental disclosure by employees and partners, who may copy content from Word or Excel and email it to third parties.
@@ -21,15 +20,11 @@ This challenge is also big for security experts because when there is an upload 
 
 SafeSquid **Advanced DLP** in **SafeSquid SWG** analyzes post data, inspects archives via file decomposition, and identifies archive files, emails, or social posts containing keyword matches. Administrators can then block uploads by user (e.g. XYZ) or block data transfer to specific destinations (e.g. abcd.com). The Advanced DLP solution is managed from the SafeSquid Self-Service Portal, where administrators create keyword expression matches. SafeSquid SWG downloads those expressions and loads them into memory. When a user uploads an archive or writes an email, SafeSquid SWG analyzes the post data and sends it to the ClamAV daemon for signature verification. When the keyword expression matches the email or file content, ClamAV responds and SafeSquid applies the policy configured for that keyword match.
 
-</section>
 
-<section class="section-strip">
 
 ## [Manage Keyword Signatures using Self Service portal](/docs/Profiling_Engine/Application_Signatures/)
 
-</section>
 
-<section class="section-strip">
 
 ## Configure SafeSquid SWG for using Custom Signatures
 
@@ -61,9 +56,7 @@ Click on bottom left Icon to save the configuration.
 After configuring the policy as above, go to the Support page and click Refresh to refresh subscription details.
 :::
 
-</section>
 
-<section class="section-strip">
 
 ## Testing signature detection
 HTTPS Inspection must be enabled in SafeSquid. If not, see [How to enable HTTPS Inspection](/docs/SSL_Inspection/main/).
@@ -116,9 +109,7 @@ Now try to post the comment, you will not be able to post any comments with thos
 
 The same test can be run on other sites by posting data containing the configured keywords. SafeSquid blocks posts that contain those keywords.
 
-</section>
 
-<section class="section-strip">
 
 ## Troubleshooting
 ### Check SafeSquid logs
@@ -152,4 +143,3 @@ If ClamAV service is running then check whether you have signatures database fil
 
 If you still got any problem, you can send us mail at support@safesquid.net
 
-</section>

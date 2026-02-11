@@ -9,22 +9,17 @@ keywords:
   - Outlook proxy configuration
   - Git proxy settings
 ---
-<section class="section-strip">
 
 
 # Application-Specific Configuration
 
-</section>
 
-<section class="section-strip">
 
 ## Problem Statement
 
 Organizations require specialized proxy configuration for non-browser applications including email clients, development tools, and command-line utilities to ensure comprehensive security coverage across all network applications. Many applications do not respect system-wide proxy settings or browser-specific configurations, requiring individual application configuration to ensure complete traffic interception and security enforcement. Application-specific configuration provides detailed setup procedures for diverse application types while maintaining functionality and performance.
 
-</section>
 
-<section class="section-strip">
 
 ## Key Benefits
 
@@ -34,9 +29,7 @@ Organizations require specialized proxy configuration for non-browser applicatio
 
 **Detailed Implementation Guidance**: Application-specific configuration provides detailed, step-by-step procedures for diverse application types, enabling administrators to configure complex applications with confidence and ensuring consistent security enforcement.
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 
@@ -46,9 +39,7 @@ Organizations require specialized proxy configuration for non-browser applicatio
 
 **System Requirements**: Client systems must have applications installed with appropriate configuration access. Network connectivity must be established between applications and SafeSquid proxy servers.
 
-</section>
 
-<section class="section-strip">
 
 ## Call to Action
 
@@ -246,9 +237,7 @@ Host remote-host
 4. Configure No Proxy for internal domains
 5. Test LibreOffice connectivity
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -260,9 +249,7 @@ Host remote-host
 
 **Performance Validation**: Test application performance to ensure proxy configuration does not significantly impact application performance or response times.
 
-</section>
 
-<section class="section-strip">
 
 ## Troubleshooting Guide
 
@@ -278,4 +265,3 @@ Host remote-host
 
 **Protocol Compatibility**: Verify SafeSquid supports protocols required by applications. Check proxy server configuration for protocol-specific settings and requirements.
 
-</section>

@@ -10,14 +10,11 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## ISSUE
 Unable to generate performance plot from SafeSquid Interface: **Support Page > Performance Plot**
 
-</section>
 
-<section class="section-strip">
 
 ## Troubleshooting
 When you install SafeSquid Appliance Builder (SAB) to setup your secure web gateway, the required packages are also installed automatically.
@@ -104,4 +101,3 @@ drwxrwxr-- 9 ssquid root 4096 Mar 14 12:05 ../
 
 **-rw-rw-r-- 1 ssquid root 259706 Mar 21 16:46 performance.png**
 
-</section>

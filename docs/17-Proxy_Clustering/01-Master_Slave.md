@@ -10,7 +10,6 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## What does Master/Slave mean?
 In computer networking, master/slave is a model for a communication in which one device or process (known as the master) controls one or more other devices or processes (known as slaves). Once the master/slave relationship is established, the direction of control is always from the master to the slave(s).
@@ -34,41 +33,29 @@ A slave server acts as a single (stand-alone) instance of SafeSquid, managing ne
 
 The master server does not have its own managed computers, but it indirectly manages those of its slave servers by assigning policies and tasks to them. Another purpose of the master server is to provide you with information on the network security status, by centralizing data from all managed servers. In this way, you can get centralized results from all the clients of the slave servers in a single report.
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 SafeSquid should be installed and activated using same product activation key on all the machines (master as well as slave)
 
-</section>
 
-<section class="section-strip">
 
 ## Master Slave configuration
 
-</section>
 
-<section class="section-strip">
 
 ## [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 
-</section>
 
-<section class="section-strip">
 
 ## Configuration on Slave Server
 
-</section>
 
-<section class="section-strip">
 
 ## Go to Support
 ![clicking on support in safesquid interface in top right corner ](/img/How_To/Master_Slave_configuration/image1.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Go to Startup params
 ![clicking on start up params](/img/How_To/Master_Slave_configuration/image2.webp)
@@ -85,15 +72,11 @@ SafeSquid should be installed and activated using same product activation key on
 
 ![clicking on yes for backup current configuration to cloud](/img/How_To/Master_Slave_configuration/image8.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Configuration on Master Server if authentication is Enabled
 
-</section>
 
-<section class="section-strip">
 
 ## Go to Access Restriction under Application Setup
 
@@ -101,9 +84,7 @@ SafeSquid should be installed and activated using same product activation key on
 
 ![Slave server policy configuration matching master: authentication and policy settings must mirror the master when authentication is enabled on the master](/img/How_To/Master_Slave_configuration/image9.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Go to Allow list
 ![going to allow list tab in access restrictions](/img/How_To/Master_Slave_configuration/image10.webp)
@@ -116,16 +97,12 @@ SafeSquid should be installed and activated using same product activation key on
 
 ![policy saved](/img/How_To/Master_Slave_configuration/image14.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Verify the synchronization of defined sections on Slave server
 ![Verifying the synchronization of defined sections on Slave server](/img/How_To/Master_Slave_configuration/image15.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -135,4 +112,3 @@ SafeSquid should be installed and activated using same product activation key on
 
 **Related**: [Configuration Sync](/docs/Proxy_Clustering/Configuration_Sync/), [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), [Reporting Module](/docs/Audit_Forensics/Reporting_Module/), [Troubleshooting](/docs/Troubleshooting/main/)
 
-</section>

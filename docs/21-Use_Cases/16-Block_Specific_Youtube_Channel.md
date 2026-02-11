@@ -8,7 +8,6 @@ keywords:
   - SafeSquid block youtube content
   - youtube category restriction SafeSquid
 ---
-<section class="section-strip">
 
 
 # Block one YouTube channel while allowing other content
@@ -19,18 +18,14 @@ Block access to specific YouTube channels (e.g., T-Series) while allowing other 
 Blocking specific YouTube channels while allowing other videos is a hypothetical scenario. YouTube is not designed for such use cases. This guide demonstrates blocking a specific channel and its playlist videos.
 :::
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 
 - HTTPS Inspection must be enabled in SafeSquid. See [How to enable HTTPS Inspection](/docs/SSL_Inspection/main/).
 - Extract the YouTube **Channel-ID** and **List-ID** from the target channel URL
 
-</section>
 
-<section class="section-strip">
 
 ## Extract Channel-ID and List-ID
 
@@ -52,9 +47,7 @@ Blocking specific YouTube channels while allowing other videos is a hypothetical
 
    ![List-ID in subsequent videos](/img/How_To/Block_Specific_Youtube_Channel/image3.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Create Request Types Policy
 
@@ -86,9 +79,7 @@ Blocking specific YouTube channels while allowing other videos is a hypothetical
 
     ![Add Channel-ID and List-ID](/img/How_To/Block_Specific_Youtube_Channel/image9.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Create Access Profiles Policy
 
@@ -106,9 +97,7 @@ Blocking specific YouTube channels while allowing other videos is a hypothetical
 
     ![Save policy](/img/How_To/Block_Specific_Youtube_Channel/image12.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -128,13 +117,10 @@ This configuration blocks videos accessed from the channel page only. Videos fro
 To block all videos from a channel, add all playlist List-IDs and individual video file portions to the Request Types File field.
 :::
 
-</section>
 
-<section class="section-strip">
 
 ## Next steps
 
 - [Allow Specific YouTube Channel and Its Playlist](/docs/Use_Cases/Allow_Specific_YouTube_Channel_and_its_Playlist/) to allow only approved channels.
 - [Access Restriction](/docs/Access_Restriction/main/) for policy and profile configuration.
 
-</section>

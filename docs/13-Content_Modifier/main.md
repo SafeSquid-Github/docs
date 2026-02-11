@@ -9,30 +9,23 @@ keywords:
   - modify client and server headers
   - web page filtering proxy
 ---
-<section class="section-strip">
 
 
 # Real-time content rewriting for security and policy
 
-</section>
 
-<section class="section-strip">
 
 ## Uninspected or unmodified content increases risk and compliance gaps
 
 Web pages and responses can contain unwanted scripts, tracking, or sensitive data. Without in-transit modification, organizations cannot enforce branding, remove risky content (e.g. ActiveX, inline scripts), or normalize headers for downstream systems. Risk includes malware delivery, policy violations, and inconsistent handling of MIME types. SafeSquid Content Modifier applies regex-based rewrites to body, client headers, server headers, and POST data so policies apply in real time.
 
-</section>
 
-<section class="section-strip">
 
 ## Key benefits of Content Modifier
 
 Content Modifier enables security and operational control: strip or replace ActiveX, JavaScript, and cookies by profile; rewrite titles or inject inspection notices for audit; normalize Accept headers (e.g. request PNG/JPG instead of AVIF/WEBP). Supports compliance use cases where content must be altered before delivery (e.g. data masking, branding). **Limitation:** Regex errors or broad MIME matching can affect page layout or break applications; test rules in a non-production profile first.
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 
@@ -40,9 +33,7 @@ Content Modifier enables security and operational control: strip or replace Acti
 
 **SafeSquid-side:** SafeSquid deployed and operational; admin access to the configuration interface. [SSL Inspection](/docs/SSL_Inspection/main/) enabled if modifying HTTPS response body. [Access Restriction](/docs/Access_Restriction/main/) and profiles configured so modifier policies can target the right connections.
 
-</section>
 
-<section class="section-strip">
 
 ## Enable and configure Content Modifier in SafeSquid
 
@@ -60,9 +51,7 @@ Access the SafeSquid interface via the [Configuration Portal](/docs/SafeSquid_SW
 
 ![Open Content Modifier section in Real-time content security](/img/Configure/Real_Time_Content_Activity/Content_modifier/image3.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Global
 ### Enabled
@@ -76,9 +65,7 @@ Enable or Disable this section.
 
 ![Content Modifier global configuration](/img/Configure/Real_Time_Content_Activity/Content_modifier/image6.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Rewriting Policies
 
@@ -137,9 +124,7 @@ This option is to select what the rewrite entry applies to.
 -   **SERVER**: Rewrite the header from the remote web server, the same conditions from the client header apply
 -   **POST:** Rewrite POST/PUT data sent when submitting a form or uploading a file
 
-</section>
 
-<section class="section-strip">
 
 ## Example
 ### Rule#1
@@ -160,9 +145,7 @@ Modify the header response and request for PNG & JPG images instead of AVIF & WE
 
 ![Content Modifier header rewrite result](/img/Configure/Real_Time_Content_Activity/Content_modifier/image12.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -170,9 +153,7 @@ Modify the header response and request for PNG & JPG images instead of AVIF & WE
 - **Traffic:** Load a page or trigger a request that matches a rule; confirm the response body or headers reflect the replacement (e.g. title contains "Inspected by SafeSquid", or Accept header requests image types as configured).
 - **Logs:** SafeSquid access and content logs can indicate requests that matched modifier profiles; use for audit when demonstrating that content was altered per policy.
 
-</section>
 
-<section class="section-strip">
 
 ## Troubleshooting
 
@@ -182,9 +163,7 @@ Modify the header response and request for PNG & JPG images instead of AVIF & WE
 | Rule not applied | Profile or MIME mismatch; rule disabled | Ensure connection has a matching profile; set **Enabled** TRUE; check **Applies to** (BODY/CLIENT/SERVER/POST) | Trigger request that matches profile and MIME; inspect response |
 | Header removal breaks site | CLIENT or SERVER rewrite removed required header | Avoid removing Host, Content-Length, or other required headers | Retest request; check browser or client for errors |
 
-</section>
 
-<section class="section-strip">
 
 ## Detailed reference and next steps
 
@@ -196,4 +175,3 @@ Field-by-field reference for every policy parameter (Enabled, Profiles, Mime typ
 - [Cookie Inspection](/docs/Cookie_Inspection/main/) for cookie filtering and policy.
 - [Data Leakage Prevention](/docs/Data_Leakage_Prevention/main/) for DLP and compliance templates.
 
-</section>

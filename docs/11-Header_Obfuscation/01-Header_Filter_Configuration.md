@@ -6,14 +6,11 @@ keywords:
   - header allow deny insert
   - Restriction Profiles Header Filter
 ---
-<section class="section-strip">
 
 
 # Header Filter Configuration and Reference
 
-</section>
 
-<section class="section-strip">
 
 ## Global
 
@@ -40,9 +37,7 @@ Select the default action to take, when no matching entry for a requested header
 
 **DENY:** Deny everything Except rules defined under Allow subsection.
 
-</section>
 
-<section class="section-strip">
 
 ## Allow
 When the Policy is Deny, rules defined under this sub-section, are exclusively allowed access.
@@ -99,9 +94,7 @@ Allow WebSockets for connections with profile "ALLOW WEBSOCKET". Use this when a
 
 ![Allow WebSocket rule for ALLOW WEBSOCKET profile](/img/Configure/Restriction_Profiles/Header_Filter/image3.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Deny
 When the Policy is Allow, rules defined under this sub-section, are denied access exclusively.
@@ -218,18 +211,14 @@ Allow YouTube during lunch hours while blocking inappropriate content. Enforce Y
 
 ![YouTube-Restrict header insert for strict mode](/img/Configure/Restriction_Profiles/Header_Filter/image8.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## View headers
 In this sub-section, you can find the example headers with type and values.
 
 ![View headers sub-section with example headers](/img/Configure/Restriction_Profiles/Header_Filter/image9.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -239,4 +228,3 @@ In this sub-section, you can find the example headers with type and values.
 
 **Related**: [Cookie Inspection](/docs/Cookie_Inspection/main/), [Access Restriction](/docs/Access_Restriction/main/), [URL Redirection SafeSearch](/docs/URL_Redirection/SafeSearch/), [Troubleshooting](/docs/Troubleshooting/main/)
 
-</section>

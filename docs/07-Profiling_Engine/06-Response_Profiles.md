@@ -14,7 +14,6 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## Response profiles manage rules by server response
 
@@ -25,23 +24,17 @@ Use Response profiles to manage profiling based on responses from the web server
 3. Content-Length
 4. Response header pattern, etc.,
 
-</section>
 
-<section class="section-strip">
 
 ## [Access SafeSquid interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 
-</section>
 
-<section class="section-strip">
 
 ## Go to configure page
 
 ![clicking on configure in safesquid interface](/img/Configure/Custom_Settings/Response_Types/image1.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Go to custom settings.
 
@@ -49,9 +42,7 @@ Use Response profiles to manage profiling based on responses from the web server
 
 ![clicking on Response Types in custom settings](/img/Configure/Custom_Settings/Response_Types/image3.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Global
 
@@ -67,9 +58,7 @@ FALSE: Disable response types of section.
 
 ![adding a new policy by clicking on add new button](/img/Configure/Custom_Settings/Response_Types/image5.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Response Types
 
@@ -192,9 +181,7 @@ Subsequent applicable Entries may further modify the connection's Response Profi
 
 Select previously defined Response Profile(s)from the drop-down menu to apply to the connection, if it matches this entry.
 
-</section>
 
-<section class="section-strip">
 
 ## Example
 
@@ -220,4 +207,3 @@ For connections with response header Upgrade: websocket, add the response type a
 
 ![showing rule which will add the response type of websocket](/img/Configure/Custom_Settings/Response_Types/image9.webp)
 
-</section>

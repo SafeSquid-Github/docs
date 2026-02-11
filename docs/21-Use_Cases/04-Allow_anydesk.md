@@ -10,15 +10,12 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## Allow remote applications for specific users
 
 When all traffic is blocked for security, some users may need access to remote applications. SafeSquid allows the administrator to permit specific users or groups to access remote applications.
 
-</section>
 
-<section class="section-strip">
 
 ## How it works?
 When a user tries to access a remote application, First SafeSquid checks for that user and decides whether this user is allowed to access a remote application or not, if yes then SafeSquid gives access to that user, and before giving the access it will check for user-agent. If access is allowed to both users and the application, then only the user can able to access that application. If the user **Samidha wants access** to the XYZ application but is trying to access the **ABC** application, SafeSquid will block to user Samidha.
@@ -43,22 +40,16 @@ Remote applications like Anydesk® and Ammyadmin™ do not support SSO authentic
 
 Remote applications like **Remote desktop applications, Download managers**, etc. (Anydesk and Teamviewer®) should get automatically blocked if HTTPS inspection is enabled. No need to configure any policy for blocking purposes.
 
-</section>
 
-<section class="section-strip">
 
 ## [Access the SafeSquid interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 
-</section>
 
-<section class="section-strip">
 
 ## Go to configure page
 ![Go to configure page to Allow anydesk](/img/How_To/Allow_anydesk/image1.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Go to Real-time content security: HTTPS Inspection
 ![Select HTTPS Inspection option in Real time content security section to Allow anydesk](/img/How_To/Allow_anydesk/image2.webp)
@@ -71,9 +62,7 @@ Remote applications like **Remote desktop applications, Download managers**, etc
 
 ![Save Bypass SSL Inspection policy to allow anydesk](/img/How_To/Allow_anydesk/image6.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Go to Restriction Policies
 ![Select Access profiles in Restriction policies section to allow anydesk](/img/How_To/Allow_anydesk/image7.webp)
@@ -88,9 +77,7 @@ Remote applications like **Remote desktop applications, Download managers**, etc
 
 ![Save Allow anydesk policy](/img/How_To/Allow_anydesk/image12.webp)![Save configuration of policy to allow anydesk](/img/How_To/Allow_anydesk/image13.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Configuration on Anydesk®
 ### Set proxy on Anydesk application
@@ -104,9 +91,7 @@ If an application is not categorized under default Application Signatures, find 
 ### Add that User-agent or website into request types
 Bind that created user group and Request Type in Access Profiles and decide whether to block or allow.
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -116,4 +101,3 @@ Bind that created user group and Request Type in Access Profiles and decide whet
 
 **Related**: [SSL Inspection](/docs/SSL_Inspection/main/), [Access Restriction](/docs/Access_Restriction/main/), [Application Signatures](/docs/Profiling_Engine/Application_Signatures/), [Restrict AnyDesk](/docs/Use_Cases/Restrict_anydesk/), [Troubleshooting](/docs/Troubleshooting/main/)
 
-</section>

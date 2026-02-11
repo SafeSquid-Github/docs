@@ -10,25 +10,20 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## Issues
 
 1.  I am trying to access the web through the proxy server and suddenly getting the error "Proxy server refusing connections".
 1.  When I go to Restart the SafeSquid service from the SafeSquid interface, it displays the error "Proxy server refusing connections".
 
-</section>
 
-<section class="section-strip">
 
 ## Root Causes
 1.  SafeSquid Process is not running.
 1.  SafeSquid is not listening on the specific IP (or) port, where you configured in the client browsers.
 1.  Monit service is not running on SafeSquid Server. (When you restart SafeSquid from the Interface, the monit service will start the SafeSquid service. If the Monit is not running, then SafeSquid is not going to start, till you start the Monit service manually).
 
-</section>
 
-<section class="section-strip">
 
 ## Troubleshooting
 
@@ -64,4 +59,3 @@ netstat -tlnp | grep -iE "safesquid"
 
 In the above command, SafeSquid listens on all Interfaces present on the server with ports 8080, 8081, and 8443.
 
-</section>

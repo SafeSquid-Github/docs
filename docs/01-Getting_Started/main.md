@@ -8,56 +8,84 @@ keywords:
   - getting started
   - quick start
 ---
-<section class="section-strip">
 
 # Getting Started
 
-</section>
+## [What is SafeSquid SWG?](/docs/SafeSquid_SWG/main/)
 
-<section class="section-strip">
+SafeSquid SWG (Secure Web Gateway) is the full product: proxy, policy console, reporting, and DNS security. SafeSquid is a multi-threaded HTTP Proxy Server, specially designed for Layer 7 Perimeter Security. Zero Trust Web Security architecture promises scalable performance while ensuring comprehensive mitigation of Layer 7 threats.
 
-## Welcome to SafeSquid!
+![SafeSquid SWG: proxy layer, policy and configuration, reporting, and DNS security](/img/Getting-Started/Getting_Started_with_SafeSquid_Secure_Web_Gateway/image1.webp)
+*SafeSquid SWG: proxy layer, policy and configuration, reporting, and DNS security.*
 
-SafeSquid is a multi-threaded HTTP Proxy Server, specially designed for Layer 7 Perimeter Security. Zero Trust Web Security architecture promises scalable performance while ensuring comprehensive mitigation of Layer 7 threats.
+SafeSquid SWG enforces granular web access control, deep content mitigation, and real-time visibility in enterprise web traffic.
 
-SafeSquid-based Secure Web Gateway (SafeSquid SWG) enforces granular web access control, deep content mitigation, and real-time visibility in enterprise web traffic. This section guides deployment from planning through activation and client configuration.
+## Quickstart to pilot SWG deployment
 
-Learn more [about SafeSquid SWG](/docs/SafeSquid_SWG/main/) — architecture overview, components, and configuration options.
+### [Resource Provisioning](/docs/Getting_Started/Deployment_Planning/)
 
-</section>
+SafeSquid is platform-agnostic: single node, HA (active-passive or active-active), cloud VMs, or existing Linux hosts. The deployment guide covers sizing, hardware matrix, network bonding, and DR. Single node for pilot; plan HA and DR before production.
 
-<section class="section-strip">
+:::tip For pilot evaluation, you'll need:
+* A server or VM — minimum 4 CPU cores, 8 GB RAM, 2 NICs
+* Internet connectivity for downloads and license activation
+* A browser on a machine that can reach the server 
+:::
 
-## Deployment and connectivity guides
+### [Get your activation key](/docs/Getting_Started/Register/) 
 
-### [Deployment Planning](/docs/Getting_Started/Deployment_Planning/) — hardware sizing, network topology, and environment preparation
-Organizations must size hardware and plan network topology before deploying a web gateway. This guide covers CPU/RAM/NIC requirements, disk I/O planning, HA topologies, and DR considerations. Use this document to avoid under- or over-provisioning and to align with network architecture.
+Register on the [SafeSquid Self Service portal](https://key.safesquid.com) and download the activation key.
 
-### [Register](/docs/Getting_Started/Register/) — create account and download activation key
-SafeSquid requires an activation key from the Self-Service Portal. This guide walks through account creation, license selection (trial or purchased), and key download. Organizations obtain keys without credit card for evaluation or purchase.
+:::info Key is generated automatically immediately after sign-up
+:::
 
-### [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/main/) — compare installation methods and deploy using SAB, cloud, or TAR
-SafeSquid can be installed via Appliance Builder (SAB), cloud deployment, or Linux TAR package. This section compares methods and provides step-by-step installation for each option. Choosing the right method avoids rework and fits the organization's infrastructure.
+### [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/main/)
 
-### [Activate](/docs/Getting_Started/Activate/) — upload license key and verify activation
-The activation key must be uploaded and the license verified before the gateway is fully operational. This guide covers uploading the key via the Self-Service Portal or SafeSquid interface, confirming license status, and troubleshooting activation failures.
+SafeSquid can be installed via Appliance Builder ISO (SAB), cloud image, or as a TAR package.
 
-### [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/) — configure browsers, PAC files, system-wide proxy, or enterprise deployment
-Clients must be configured to use the proxy. This section covers explicit proxy (manual browser config), PAC file (auto-discovery), system-wide proxy (OS-level), enterprise deployment (Group Policy, MDM), and application-specific configuration.
+:::tip Not sure which installation method to choose?
+* **SAB (Recommended)** — new bare metal or VM; fastest to production-ready
+* **Cloud** — AWS, Azure, DigitalOcean, or private cloud; use the cloud deployment guide.
+* **Linux TAR** — existing Linux server; add SafeSquid only, no full appliance.
+:::
 
-### [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) — smoke tests for connectivity and policy enforcement
-Deployment must be validated before production use. This guide provides quick checks to confirm end-to-end connectivity, DNS resolution, SSL inspection, authentication, and basic policy enforcement.
+### [Activate license](/docs/Getting_Started/Activate/)
+Upload the activation key in the SafeSquid admin interface (e.g. [https://safesquid.cfg](https://safesquid.cfg) or your server's URL) to activate the license.
 
-### [Next Steps](/docs/Getting_Started/Next_Steps/) — post-deployment roadmap for SSL, authentication, policies, and scaling
-After the gateway is running, SSL inspection, authentication, and security policies are typically configured. This guide points to SSL Inspection, Authentication, Profiling Engine, and scaling so administrators know where to continue.
+The activation key must be uploaded and the license verified before the gateway is fully operational.
 
-</section>
+:::info Gateway will be operational after license verification
+:::
 
-<section class="section-strip">
+### [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/) 
+Clients can be configured to use the proxy in the browser settings, via a PAC (Proxy Auto-Configuration) file, or as system-wide proxy pushed via MDM or GPO (Group Policy) policy.
 
-## Solution Architecture
+:::tip For the fastest check, use Explicit proxy on one browser, then [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/).
+:::
 
-![Solution Architecture](/img/Getting-Started/Getting_Started_with_SafeSquid_Secure_Web_Gateway/image1.webp)
-The SafeSquid Application Ecosystem constitutes the complete SWG solution.
+## Next Steps
+We recommend configuring security policies in order — each builds on the previous.
 
-</section>
+1. Most web traffic is encrypted. Enable [SSL Inspection](/docs/SSL_Inspection/main/) so SafeSquid can actually see and filter content.
+
+2. For [Authentication](/docs/Authentication/main/), combine Active Directory user groups with network-signatures for multi-factor authentication.
+
+3. [Integrated DNS Security](/docs/DNS_Security/main/) blocks malicious DNS queries, enforces policy-aware resolution, and mitigates DNS tunneling.
+
+4. Configure [Profiling Engine](/docs/Profiling_Engine/main/) to profile requests by identity, application, content, and time so policies apply to the right traffic.
+
+5. Define [Access Restriction](/docs/Access_Restriction/main/) rules by URL category, application, user, and time window.
+
+6. Scan downloads and content with [Malware Scanners](/docs/Malware_Scanners/main/) for detecting malicious content.
+
+7. [Prevent Data Leakage](/docs/Data_Leakage_Prevention/main/) in uploads, downloads, and web posts using compliance templates and content rules.
+
+:::info When going to production:
+* Push client configuration to all endpoints using PAC files, system-wide proxy, GPO or MDM
+* We strongly recommend clustering SafeSquid Instances for High Availability before deploying in production.
+* Configure traffic forensics, usage reports, and real-time dashboards for visibility and compliance.
+:::
+
+## [Troubleshooting](/docs/Troubleshooting/main/)
+
+If the UI doesn't load, activation fails, or clients can't reach the proxy, see Troubleshooting for logs and common fixes. Logs, diagnostics, and community support when help is needed.

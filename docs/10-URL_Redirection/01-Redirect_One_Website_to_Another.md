@@ -7,7 +7,6 @@ keywords:
   - redirection policies
   - Real Time Content Security Redirect
 ---
-<section class="section-strip">
 
 
 # Redirect One Website to Another
@@ -40,4 +39,3 @@ In a browser, open https://www.rediff.com/, it must redirect to SafeSquid.com; v
 
 ![Verify Redirect One Website To Another Website in Native logs on](/img/How_To/Redirect_One_Website_To_Another_Website/image4.webp)
 
-</section>

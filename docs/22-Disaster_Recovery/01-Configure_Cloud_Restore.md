@@ -7,14 +7,11 @@ keywords:
   - restore configuration SSL
   - disaster recovery procedure
 ---
-<section class="section-strip">
 
 
 # Configure Cloud Restore
 
-</section>
 
-<section class="section-strip">
 
 ## How SafeSquid Cloud Restore works
 
@@ -32,23 +29,17 @@ keywords:
 8. This line only comes when SafeSquid find new backup of configuration on cloud.
 9. In the SafeSquid interface, open Configure to verify; all policy configuration should match the restored state.
 
-</section>
 
-<section class="section-strip">
 
 ## Required setup
 
 Monit must be up and running. Monit is required to start the SafeSquid service automatically.
 
-</section>
 
-<section class="section-strip">
 
 ## Configure Cloud Restore
 
-</section>
 
-<section class="section-strip">
 
 ## [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 ![Access the SafeSquid User Interface to configure cloud restore](/img/How_To/Setup_Cloud_Restore/image1.webp)
@@ -61,4 +52,3 @@ Monit must be up and running. Monit is required to start the SafeSquid service a
 
 ![Confirmation of configure cloud restore](/img/How_To/Setup_Cloud_Restore/image5.webp)
 
-</section>

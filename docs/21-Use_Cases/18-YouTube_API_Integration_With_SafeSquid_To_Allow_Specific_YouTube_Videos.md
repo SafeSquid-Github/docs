@@ -8,16 +8,13 @@ keywords:
   - integrate youtube api SafeSquid
   - SafeSquid content filtering youtube
 ---
-<section class="section-strip">
 
 
 # Allow or block YouTube by category via YouTube API
 
 YouTube offers entertainment and educational content; unrestricted viewing can reduce productivity and bandwidth. SafeSquid integrates with the YouTube API to identify video categories. Policies can allow or block specific categories so organizations permit learning and marketing content while blocking unrelated videos.
 
-</section>
 
-<section class="section-strip">
 
 ## Client scenario (case study)
 Ganpat University provides graduate programs to various colleges. All the staff's PC/Laptop traffic is going via SafeSquid SWG.
@@ -52,16 +49,12 @@ You can now allow/block specific category of videos on YouTube.
 
 ![Find category to allow or block Youtube video](/img/How_To/YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos/image1.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 HTTPS Inspection should be enabled in SafeSquid. If not enabled, you can check our document - How to enable HTTPS Inspection
 
-</section>
 
-<section class="section-strip">
 
 ## Create a YouTube V3 API using your Google Account.
 To Request the Category of Specific Video
@@ -84,9 +77,7 @@ Since they have specified Per Day Quota i.e. No of Request to find Information a
 
 Make sure that this Google Account is not using YouTube API for any other purposes as this will reduce the No of Request
 
-</section>
 
-<section class="section-strip">
 
 ## CREATE A NEW PROJECT
 ![Click on select a project to integrate Youtube API with safesquid](/img/How_To/YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos/image3.webp)
@@ -118,9 +109,7 @@ Make sure that this Google Account is not using YouTube API for any other purpos
 
 ![Google generate Youtube API keys](/img/How_To/YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos/image14.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Integrate the YouTube API Key in SafeSquid.
 **To identify the category of the YouTube video**
@@ -220,4 +209,3 @@ To do so, I will help you out in creating a simple Policy which will only allow 
 
 ![Youtube Video policy to allow specific video](/img/How_To/YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos/image18.webp)
 
-</section>

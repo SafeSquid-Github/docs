@@ -9,41 +9,32 @@ keywords:
   - auto-restart
   - health checks
 ---
-<section class="section-strip">
 
 
 # Monit Service Governance
 
-</section>
 
-<section class="section-strip">
 
 ## Problem Statement
 - Security Challenge: Service crashes, resource leaks, and stalled updates cause outages and security blind spots
 - Real-World Scenarios: Kernel updates, disk pressure, or transient network failures stop SafeSquid or auxiliary daemons
 - Business Context: Downtime impacts web access, SSO, and policy enforcement, creating productivity loss and risk exposure
 
-</section>
 
-<section class="section-strip">
 
 ## Key Benefits
 - Desired Outcome: Continuous availability through auto-recovery and proactive housekeeping
 - Value Proposition: Reduce MTTR to minutes; stabilize SLA; prevent cascading failures
 - Competitive Advantage: Push-button resilience without third-party agents or manual restarts
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 - Client-Side Preparations: Define operational SLAs and approved maintenance windows
 - SafeSquid-Side Setup: Install Monit; register SafeSquid, BIND, and NTP checks; enable on boot
 - System Requirements: Linux host with [systemd](https://www.freedesktop.org/wiki/Software/systemd/), outbound access for threat updates, log storage capacity
 
-</section>
 
-<section class="section-strip">
 
 ## Call to Action
 1. Install Monit
@@ -109,9 +100,7 @@ keywords:
    ```
    - Verification: All checks show `Running` and `OK`
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -124,9 +113,7 @@ keywords:
   ```
 - **Performance Validation**: Induce a controlled SafeSquid stop and confirm automatic restart within one cycle.
 
-</section>
 
-<section class="section-strip">
 
 ## Troubleshooting Guide
 - Common Issues & Scenarios:
@@ -145,4 +132,3 @@ keywords:
 
 **Related**: [BIND DNS](/docs/SafeSquid_SWG/Supporting_Services/Bind/), [NTP time sync](/docs/SafeSquid_SWG/Supporting_Services/NTP/), [Troubleshooting](/docs/Troubleshooting/main/)
 
-</section>

@@ -14,21 +14,16 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## Request profiler manages rules by request attributes
 
 The Request Profiler manages profiling based on the request sent to the web server. Configure rules by request method, protocol, referrer, and user agent. Use it to block or allow websites by hostname. Use it to make social networks (Facebook, Twitter) read-only (no like, comment, share, chat, or gaming). Use it to enforce safe search for Google, Yahoo, and YouTube.
 
-</section>
 
-<section class="section-strip">
 
 ## [Access SafeSquid interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 
-</section>
 
-<section class="section-strip">
 
 ## Go to the configure page
 
@@ -38,9 +33,7 @@ The Request Profiler manages profiling based on the request sent to the web serv
 
 ![clicking on Response Types in custom settings](/img/Configure/Custom_Settings/Request_Types/image3.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Global
 
@@ -53,9 +46,7 @@ Enable or Disable request types of sections.
 
 ![showing global section of request types](/img/Configure/Custom_Settings/Request_Types/image4.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Request Types
 
@@ -223,9 +214,7 @@ Comma-separated list of Request Profiles to be removed when all the above rules 
 
 If any of these Request profiles have been already applied to the connection by any of the other Request Profile rules, they will be removed.
 
-</section>
 
-<section class="section-strip">
 
 ## Example
 
@@ -247,9 +236,7 @@ This is useful to remove authentication or bypass SSL inspection only for a spec
 
 ---
 
-</section>
 
-<section class="section-strip">
 
 ## User Activity Visibility
 
@@ -342,4 +329,3 @@ Profiles are evaluated top-to-bottom. Order entries from most specific to most g
 
 **Related**: [Data Leakage Prevention](/docs/Data_Leakage_Prevention/main/), [Access Restriction](/docs/Access_Restriction/main/), [Reporting Module](/docs/Audit_Forensics/Reporting_Module/)
 
-</section>

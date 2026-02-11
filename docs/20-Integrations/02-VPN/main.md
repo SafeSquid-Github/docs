@@ -10,7 +10,6 @@ keywords:
   - SafeSquid remote client setup
   - Configure FQDN for SafeSquid VPN
 ---
-<section class="section-strip">
 
 
 import Tabs from '@theme/Tabs';
@@ -23,9 +22,7 @@ Directly exposing a SafeSquid proxy in the cloud to office or remote users is in
 The following diagram depicts the VPN tunnel:
 ![WireGuard VPN tunnel and SafeSquid proxy architecture](/img/wireguard/image1.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 <Tabs>
@@ -51,9 +48,7 @@ The following diagram depicts the VPN tunnel:
 </TabItem>
 </Tabs>
 
-</section>
 
-<section class="section-strip">
 
 ## Example cloud and office network topology
 <Tabs>
@@ -78,9 +73,7 @@ The following diagram depicts the VPN tunnel:
 </TabItem>
 </Tabs>
 
-</section>
 
-<section class="section-strip">
 
 ## Setup Procedure
 
@@ -246,9 +239,7 @@ apt install iptables-persistent -y
 netfilter-persistent save
 ```
 
-</section>
 
-<section class="section-strip">
 
 ## Validate VPN Connectivity
 <Tabs>
@@ -284,9 +275,7 @@ wg show
 </TabItem>
 </Tabs>
 
-</section>
 
-<section class="section-strip">
 
 ## Post-Deployment Considerations
 
@@ -359,9 +348,7 @@ wg genkey | tee privatekey | wg pubkey > publickey
 -   The private key is stored securely on the client system
 -   Key rotation is recommended for long-term deployments
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -369,4 +356,3 @@ wg genkey | tee privatekey | wg pubkey > publickey
 - **Log Analysis**: VPN peer handshakes and traffic appear in system logs; SafeSquid access logs show requests from VPN client IPs when traffic is routed through the proxy.
 - **Performance Validation**: From a client connected via VPN, browse through SafeSquid; traffic is inspected and policies apply. Load balancer (if used) distributes connections correctly.
 
-</section>

@@ -7,7 +7,6 @@ keywords:
   - load balancing SafeSquid
   - enterprise proxy deployment
 ---
-<section class="section-strip">
 
 
 # SafeSquid Proxy Cluster
@@ -16,4 +15,3 @@ SafeSquid Proxy Cluster provides high availability, load balancing, and scalable
 
 For deployment patterns, architecture, master-slave setup, and configuration sync, see [Proxy Clustering](/docs/Proxy_Clustering/main/).
 
-</section>

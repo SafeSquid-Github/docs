@@ -6,16 +6,13 @@ keywords:
   - SafeSquid smoke test
   - SafeSquid health check
 ---
-<section class="section-strip">
 
 
 # Verify Your Setup
 
 Run these checks to confirm SafeSquid is working end-to-end. Each test takes under a minute.
 
-</section>
 
-<section class="section-strip">
 
 ## 1. Service Is Running
 
@@ -33,9 +30,7 @@ pidof safesquid
 
 Expected: one or more process IDs.
 
-</section>
 
-<section class="section-strip">
 
 ## 2. Configuration Interface Loads
 
@@ -51,9 +46,7 @@ Expected: the SafeSquid configuration interface loads.
 If a browser is not yet configured, see [Connect Your First Client](/docs/Getting_Started/Connect_Your_Client/main/).
 :::
 
-</section>
 
-<section class="section-strip">
 
 ## 3. License Is Active
 
@@ -64,9 +57,7 @@ Check the **Activation Details** section:
 - **Status** shows active
 - **Expiry** is in the future (commercial) or shows no expiry (free)
 
-</section>
 
-<section class="section-strip">
 
 ## 4. Traffic Flows Through the Proxy
 
@@ -80,9 +71,7 @@ tail -20 /var/log/safesquid/access/extended/extended.log
 
 Expected: log entries showing the request to `example.com`.
 
-</section>
 
-<section class="section-strip">
 
 ## 5. DNS Resolution Works
 
@@ -92,9 +81,7 @@ nslookup example.com 127.0.0.1
 
 Expected: a valid IP address response. If this fails, check BIND9 configuration.
 
-</section>
 
-<section class="section-strip">
 
 ## Troubleshooting
 
@@ -110,4 +97,3 @@ Expected: a valid IP address response. If this fails, check BIND9 configuration.
 For detailed troubleshooting, see [Troubleshooting](/docs/Troubleshooting/main/).
 :::
 
-</section>

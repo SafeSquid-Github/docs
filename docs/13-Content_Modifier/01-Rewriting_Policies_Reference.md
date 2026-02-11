@@ -10,15 +10,12 @@ keywords:
   - HTTP header rewriting
 ---
 
-<section class="section-strip">
 
 # Rewriting policies control what SafeSquid modifies
 
 Content Modifier uses regex-based rewriting policies to modify web page body content, client request headers, server response headers, and POST data in real time. Each policy defines a match pattern, a replacement, a MIME scope, and a target (body, client header, server header, or POST data). Policies are ordered; SafeSquid evaluates them top-to-bottom and applies all matching rules to each connection.
 
-</section>
 
-<section class="section-strip">
 
 ## Global section enables or disables all rewriting
 
@@ -31,9 +28,7 @@ Enable or disable the entire Content Modifier section.
 - **TRUE**: SafeSquid applies rewriting policies to matching connections.
 - **FALSE**: SafeSquid skips all content modification. No policies are evaluated.
 
-</section>
 
-<section class="section-strip">
 
 ## Policy fields define match conditions and actions
 
@@ -87,9 +82,7 @@ Select what the rewrite entry targets:
 | **SERVER** | Server response header | Rewrites the response header from the remote web server. Same caution as CLIENT applies. |
 | **POST** | POST/PUT request body | Rewrites POST or PUT data sent when submitting a form or uploading a file. |
 
-</section>
 
-<section class="section-strip">
 
 ## Examples demonstrate common rewriting scenarios
 
@@ -116,9 +109,7 @@ SafeSquid buffers chunked responses to ensure the complete title tag is matched 
 
 SafeSquid strips the AVIF and WEBP entries from the Accept header, causing the server to fall back to PNG or JPG formats that the Image Analyser can inspect.
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and evidence
 
@@ -128,4 +119,3 @@ SafeSquid strips the AVIF and WEBP entries from the Accept header, causing the s
 
 **Next steps:** [Content Modifier overview](/docs/Content_Modifier/main/) for prerequisites, implementation actions, and troubleshooting. [Header Obfuscation](/docs/Header_Obfuscation/main/) for header-specific filtering. [Cookie Inspection](/docs/Cookie_Inspection/main/) for cookie-level policies.
 
-</section>

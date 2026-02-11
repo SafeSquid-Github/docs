@@ -10,16 +10,13 @@ keywords:
   - centralized user management
   - LDAP group policies
 ---
-<section class="section-strip">
 
 
 # Integrate SafeSquid with OpenLDAP
 
 SafeSquid integrates with OpenLDAP (and compatible LDAP servers) so user and group data from the directory drive access restriction and reporting. Enable LDAP, add the OpenLDAP server and bind credentials, then configure simple or SSO authentication in access rules.
 
-</section>
 
-<section class="section-strip">
 
 ## OpenLDAP authentication options
 
@@ -29,4 +26,3 @@ Organizations using OpenLDAP need proxy authentication validated against the dir
 ### [SSO Authentication](/docs/Authentication/Directory_Services/OpenLDAP/SSO_Authentication/)
 LDAP users should use the proxy with minimal prompts after domain or directory login. SSO Authentication provides a flow so authenticated directory users get access without re-entering credentials. Consistent identity and better user experience result. Enable authentication in Access Restrictions, configure LDAP profiles and user groups, then verify SSO using this document.
 
-</section>

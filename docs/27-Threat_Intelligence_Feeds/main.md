@@ -11,7 +11,6 @@ keywords:
   - malware signature updates
 ---
 
-<section class="section-strip">
 
 # Cloud threat intelligence keeps enforcement current
 
@@ -19,9 +18,7 @@ keywords:
 **Risk:** Static blocklists and outdated signatures create blind spots that attackers exploit within hours of a new campaign. **Control:** SafeSquid's cloud-integrated threat intelligence delivers real-time updates to web categorization, application signatures, SSL security, image analysis, malware scanning, and geo-location databases. **Evidence:** Feed refresh timestamps and category versions appear in the SafeSquid interface and logs; audit reports confirm current threat posture.
 :::
 
-</section>
 
-<section class="section-strip">
 
 ## Outdated threat data creates exploitable gaps
 
@@ -29,9 +26,7 @@ Threat actors register and rotate domains, change hosting infrastructure, and mo
 
 SafeSquid addresses this with automatic, cloud-backed feed updates that keep enforcement aligned with the latest threat landscape.
 
-</section>
 
-<section class="section-strip">
 
 ## Feeds cover categorization, signatures, and reputation
 
@@ -48,9 +43,7 @@ SafeSquid cloud services deliver real-time updates across six intelligence domai
 
 Feed delivery and refresh schedules are managed by the SafeSquid cloud service. SafeSquid instances pull updates automatically when connected to the cloud. Custom categorization overrides (managed via the [Self-Service Portal](/docs/SafeSquid_SWG/Self-Service_Portal/)) merge with cloud feeds on each refresh.
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 
@@ -58,9 +51,7 @@ Feed delivery and refresh schedules are managed by the SafeSquid cloud service. 
 - **Internet connectivity**: SafeSquid must reach the SafeSquid cloud endpoints for feed updates. If SafeSquid operates behind a firewall, allow outbound HTTPS to `*.safesquid.com`.
 - **Subscription**: Some feed categories (e.g. DLP signatures, advanced application signatures) require a premium subscription. Check the [Self-Service Portal](/docs/SafeSquid_SWG/Self-Service_Portal/) for active subscriptions.
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and evidence
 
@@ -68,9 +59,7 @@ Feed delivery and refresh schedules are managed by the SafeSquid cloud service. 
 - **Log Analysis**: SafeSquid logs feed update events including success, failure, and version changes. Search logs for feed-related entries to confirm refresh frequency.
 - **Custom Categorization**: Verify custom categories created in the Self-Service Portal appear in SafeSquid's categorization engine after the next feed sync. Test by browsing a custom-categorized URL and checking the access log for the expected category.
 
-</section>
 
-<section class="section-strip">
 
 ## Next steps
 
@@ -79,4 +68,3 @@ Feed delivery and refresh schedules are managed by the SafeSquid cloud service. 
 - [Malware Scanners](/docs/Malware_Scanners/main/) for ClamAV, ICAP, and SqScan configuration.
 - [Self-Service Portal](/docs/SafeSquid_SWG/Self-Service_Portal/) to manage custom categorization and subscriptions.
 
-</section>

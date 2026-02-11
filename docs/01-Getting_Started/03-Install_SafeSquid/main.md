@@ -9,16 +9,13 @@ keywords:
   - SafeSquid cloud deployment
   - SafeSquid TAR install
 ---
-<section class="section-strip">
 
 
 # Choose SAB, cloud, or Linux TAR installation
 
 Three installation methods are available: Appliance Builder (SAB) for full OS plus SafeSquid, cloud deployment for cloud VMs, and Linux TAR for existing servers. Choose based on environment. After installation, activate the license and connect clients.
 
-</section>
 
-<section class="section-strip">
 
 ## Installation method guides
 
@@ -31,4 +28,3 @@ AWS, Azure, DigitalOcean, or private cloud require SafeSquid on a cloud VM. Clou
 ### [Linux Server](/docs/Getting_Started/Install_SafeSquid/Linux_Server/)
 Existing Linux servers need SafeSquid binary only without a full appliance. Linux Server describes installing from the TAR package on an existing distro. Administrators configure OS and services separately. Follow this document when adding SafeSquid to an existing Linux host.
 
-</section>

@@ -6,19 +6,15 @@ keywords:
   - IDN attacks
   - SafeSquid DNS security
 ---
-<section class="section-strip">
 
 
 # Homograph Detection
 
 > 🚧 **This page is under construction.** Content coming soon.
 
-</section>
 
-<section class="section-strip">
 
 ## Homograph detection blocks IDN impersonation
 
 Homograph detection identifies and blocks Internationalized Domain Name (IDN) attacks. Attackers use visually similar characters from different scripts to impersonate legitimate domains. When published, this page will cover enabling homograph detection in DNS Security, configuring allowed or blocked IDN patterns, verification, and troubleshooting.
 
-</section>

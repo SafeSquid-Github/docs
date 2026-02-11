@@ -8,16 +8,13 @@ keywords:
   - Bandwidth optimization SafeSquid
   - Cache specific URLs SafeSquid
 ---
-<section class="section-strip">
 
 
 # Serve repeated requests from local cache
 
 Content Caching stores local copies of requested pages and files. Later requests for the same content are served from cache instead of the origin, improving bandwidth and latency. SafeSquid provides configurable content caching.
 
-</section>
 
-<section class="section-strip">
 
 ## Configure content caching
 
@@ -95,9 +92,7 @@ Content Caching stores local copies of requested pages and files. Later requests
 
     ![Global save](/img/How_To/Caching_Specific_websites/image18.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -109,4 +104,3 @@ Content Caching stores local copies of requested pages and files. Later requests
 
     ![Disk cache contents](/img/How_To/Caching_Specific_websites/image20.webp)
 
-</section>

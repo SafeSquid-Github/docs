@@ -7,27 +7,20 @@ keywords:
   - cookie filter reference
   - Restriction Profiles Cookie Filter
 ---
-<section class="section-strip">
 
 
 # Cookie Filter Configuration and Reference
 
-</section>
 
-<section class="section-strip">
 
 ## [Access SafeSquid interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 
-</section>
 
-<section class="section-strip">
 
 ## Go to configure page
 ![Configure page with Cookie Filter in sidebar](/img/Configure/Restriction_Profiles/Cookie_Filter/image1.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Global
 ### Enabled
@@ -44,9 +37,7 @@ Select the default action to take, when no matching entry for a requested cookie
 -   **ALLOW:** When Policy is set to Allow, a requested cookie is allowed, when no matching entry is found
 -   **DENY:** When Policy is set to Deny, a requested cookie is denied, if no matching entry is found
 
-</section>
 
-<section class="section-strip">
 
 ## Allow
 ![Cookie Filter Allow sub-section](/img/Configure/Restriction_Profiles/Cookie_Filter/image3.webp)
@@ -167,9 +158,7 @@ I want to allow cookies for domain safesquid.com Despite the deny rule, connecti
 
 ![Allow cookies for domain safesquid.com rule](/img/Configure/Restriction_Profiles/Cookie_Filter/image5.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Deny
 When the Policy is Allow, rules defined under this sub-section, are exclusively denied access.
@@ -297,9 +286,7 @@ Cookies will be dropped for both incoming and outgoing requests.
 
 ![DROP COOKIES FOR GOOGLE rule for domain google.com](/img/Configure/Restriction_Profiles/Cookie_Filter/image8.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -309,4 +296,3 @@ Cookies will be dropped for both incoming and outgoing requests.
 
 **Related**: [Access Restriction](/docs/Access_Restriction/main/), [Header Obfuscation](/docs/Header_Obfuscation/main/), [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), [Troubleshooting](/docs/Troubleshooting/main/)
 
-</section>

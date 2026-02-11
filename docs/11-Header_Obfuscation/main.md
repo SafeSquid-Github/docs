@@ -9,14 +9,11 @@ keywords:
   - header policy SafeSquid
   - request response header SafeSquid
 ---
-<section class="section-strip">
 
 
 # Header Re-Write
 
-</section>
 
-<section class="section-strip">
 
 ## Header filter behavior and scope
 
@@ -34,13 +31,10 @@ Setting the Default Policy to Allow in the Global Sub-Section, permits all HTTP 
 
 Similarly setting the Default policy to Deny shall block all non-mandatory HTTP headers from being exchanged, unless a policy in the Allow list, explicitly permits.
 
-</section>
 
-<section class="section-strip">
 
 ## Header filter configuration guides
 
 ### [Header Filter Configuration and Reference](/docs/Header_Obfuscation/Header_Filter_Configuration/)
 Header allow/deny/insert behavior requires correct Global policy and rule configuration. The document covers the Global section, Allow and Deny rule parameters (Type, Value, Applies to, Profiles), and Insert rules for adding or modifying headers. Solution verification confirms policies apply as intended. Use the document to configure and validate header filtering.
 
-</section>

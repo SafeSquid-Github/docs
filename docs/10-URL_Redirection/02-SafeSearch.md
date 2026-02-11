@@ -10,7 +10,6 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## SafeSearch filters explicit content in search results
 
@@ -26,36 +25,27 @@ Google uses HTTPS, so the proxy must support SSL inspection. SafeSquid SWG suppo
 
 SafeSquid SWG includes default rules that enforce SafeSearch for Google, Yahoo, and Bing. Enable the SafeSearch policies in Policies and Profiles (if disabled).
 
-</section>
 
-<section class="section-strip">
 
 ## Required setup
 
 HTTPS Inspection must be enabled in SafeSquid. See [How to enable HTTPS Inspection](/docs/SSL_Inspection/main/) if not yet enabled.
 
-</section>
 
-<section class="section-strip">
 
 ## Google SafeSearch
 
 SafeSquid filters explicit search results (e.g. pornographic images, videos, and websites) on Google. Disabling Google SafeSearch in the browser has no effect; SafeSquid enforces it.
 
-</section>
 
-<section class="section-strip">
 
 ## Yahoo SafeSearch
 
 SafeSquid filters explicit search results on Yahoo. Disabling Yahoo SafeSearch in the browser has no effect; SafeSquid enforces it.
 
-</section>
 
-<section class="section-strip">
 
 ## Bing SafeSearch
 
 SafeSquid filters explicit search results on Bing. Disabling Bing SafeSearch in the browser has no effect; SafeSquid enforces it.
 
-</section>

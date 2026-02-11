@@ -8,53 +8,40 @@ keywords:
   - user login restriction SafeSquid
   - safe access control SafeSquid
 ---
-<section class="section-strip">
 
 
 # Block specific users from logging into Facebook or Gmail
 
 Restrict which users can log into Facebook or Gmail; only selected users can log in; all others are blocked.
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 HTTPS Inspection should be enabled in SafeSquid. If not enabled, see the document - [How to enable HTTPS Inspection](/docs/SSL_Inspection/main/).
 
-</section>
 
-<section class="section-strip">
 
 ## [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 ![click on configure in safesquid interface](/img/How_To/Block_Particular_User_Login_To_Facebook_Or_Gmail/image1.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Go to Search
 ![click on search in access profiles section](/img/How_To/Block_Particular_User_Login_To_Facebook_Or_Gmail/image2.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Search policy: "BLOCK PARTICULAR USER LOGIN"
 ![search for " BLOCK PARTICULAR USER LOGIN " default policy](/img/How_To/Block_Particular_User_Login_To_Facebook_Or_Gmail/image3.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Go to Content Modifier: Rewrite Policies
 ![showing search results for "BLOCK PARTICULAR USER LOGIN " in Content modifier section](/img/How_To/Block_Particular_User_Login_To_Facebook_Or_Gmail/image4.webp)
 
 ![click on content modifier from the sidebar under Real Time content Security](/img/How_To/Block_Particular_User_Login_To_Facebook_Or_Gmail/image5.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Ensure Global Section with Enabled TRUE
 ![ensuring the global section set as true](/img/How_To/Block_Particular_User_Login_To_Facebook_Or_Gmail/image6.webp)
@@ -63,9 +50,7 @@ HTTPS Inspection should be enabled in SafeSquid. If not enabled, see the documen
 
 ![click on submit to save the policy](/img/How_To/Block_Particular_User_Login_To_Facebook_Or_Gmail/image8.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Go to Rewrite Policies and make it Enable
 ![going in "Rewriting policies " to enable "BLOCK PARTICULAR USER LOGIN" policy](/img/How_To/Block_Particular_User_Login_To_Facebook_Or_Gmail/image9.webp)
@@ -74,25 +59,19 @@ HTTPS Inspection should be enabled in SafeSquid. If not enabled, see the documen
 
 ![setting true value in enabled ](/img/How_To/Block_Particular_User_Login_To_Facebook_Or_Gmail/image11.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Enter Username inside Pattern
 ![entering the desired username pattern](/img/How_To/Block_Particular_User_Login_To_Facebook_Or_Gmail/image12.webp)
 
 ![click on save to save the policy](/img/How_To/Block_Particular_User_Login_To_Facebook_Or_Gmail/image13.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Search policy: "BLOCK PARTICULAR USER LOGIN"
 ![searching for policy "BLOCK PARTICULAR USER LOGIN " ](/img/How_To/Block_Particular_User_Login_To_Facebook_Or_Gmail/image14.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Go to Access Profiles to Enable
 ![going to access profile to enable the policy](/img/How_To/Block_Particular_User_Login_To_Facebook_Or_Gmail/image15.webp)
@@ -103,9 +82,7 @@ HTTPS Inspection should be enabled in SafeSquid. If not enabled, see the documen
 
 ![save the policy](/img/How_To/Block_Particular_User_Login_To_Facebook_Or_Gmail/image18.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## To test
 Go to Facebook and Login
@@ -119,4 +96,3 @@ Try login to your Gmail account it will show you the below page:
 
 ![testing the policy by login](/img/How_To/Block_Particular_User_Login_To_Facebook_Or_Gmail/image20.webp)
 
-</section>

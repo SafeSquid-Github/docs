@@ -11,14 +11,11 @@ keywords:
   - LDAP authentication proxy
   - network signature authentication
 ---
-<section class="section-strip">
 
 
 # User identity drives policy and reporting
 
-</section>
 
-<section class="section-strip">
 
 ## User identity recognition methods
 
@@ -58,4 +55,3 @@ Configure user groups for group-based web access policies. User groups enable di
 
 For elevated security, SafeSquid combines identity sources. A typical flow begins with IP-based recognition---identifying the device---followed by a credential challenge through AD, OpenLDAP, PAM, or local store. Access is granted only when both factors align, ensuring dual-layer assurance without external token systems.
 
-</section>

@@ -8,7 +8,6 @@ keywords:
   - enterprise application access
   - proxy application compatibility
 ---
-<section class="section-strip">
 
 There have been several instances where it has been reported that certain applications that the organizations use do not work through SafeSquid. This article describes a generalized way of identifying what is wrong with the application and solving it.
 
@@ -31,4 +30,3 @@ The logline legend mentioning what each field means is shown below:
 
 2) One of the other reasons may be, that you have authentication and/or HTTPS inspection enabled and the application may not support the authentication (Negotiate/Basic) and/or HTTPS inspection. Authentication failure can be verified by observing the logs and checking for a status code of '407' which indicates "Invalid SSO Auth" (if you have enabled Negotiate authentication)
 
-</section>

@@ -8,30 +8,23 @@ keywords:
   - corporate email restriction SafeSquid
   - safe web gateway gmail restriction
 ---
-<section class="section-strip">
 
 
 # Block Personal Gmail, Allow Google Corporate Accounts
 
-</section>
 
-<section class="section-strip">
 
 ## Problem: Personal webmail increases data and productivity risk
 
 Organizations that use Google Workspace need to allow corporate Google accounts while blocking personal Gmail. Personal email on the office network consumes productive time and can create a path for leakage of confidential information. Many organizations use Google Corporate domains for mail; Gmail cannot be blocked entirely. SafeSquid SWG allows only configured corporate domains for Google sign-in and blocks personal Gmail.
 
-</section>
 
-<section class="section-strip">
 
 ## Key benefits
 
 Corporate Google accounts continue to work for mail and Google services. Personal Gmail sign-in is blocked so users cannot use non-corporate accounts. Policy is enforced via header manipulation so only allowed domains are accepted by Google. Administrators list allowed domains (e.g. `corp.example.com`) in one place.
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 
@@ -39,9 +32,7 @@ Corporate Google accounts continue to work for mail and Google services. Persona
 - Access to SafeSquid Configuration Portal (Configure page).
 - List of allowed Google Workspace domains (e.g. `corp.example.com`). Multiple domains are separated by comma with no space.
 
-</section>
 
-<section class="section-strip">
 
 ## Call to action
 
@@ -86,9 +77,7 @@ Insert a header so only allowed domains are accepted by Google.
 Multiple domains: separate each with a comma, no space.
 :::
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -97,9 +86,7 @@ Multiple domains: separate each with a comma, no space.
 - **Interface:** **Configure** → **Restriction Policies** → **Privacy Control** → **Header Filter** shows the GOOGLE APPLICATION Insert rule with the correct domain list. **Policies and profiles** shows GOOGLE APPLICATION enabled.
 - **Audit:** Access logs and restriction logs show traffic to Google; export from the [Reporting Module](/docs/Audit_Forensics/Reporting_Module/) for evidence of policy enforcement.
 
-</section>
 
-<section class="section-strip">
 
 ## Troubleshooting
 
@@ -109,9 +96,7 @@ Multiple domains: separate each with a comma, no space.
 | Corporate account blocked | Domain missing or typo in rule value | Add corporate domain to Insert rule value; check TLD and spelling | Sign in with corporate account |
 | Google shows generic error | Expected when personal is blocked | None; message may list allowed domains | Confirm rule and profile applied to traffic |
 
-</section>
 
-<section class="section-strip">
 
 ## Next steps
 
@@ -119,4 +104,3 @@ Multiple domains: separate each with a comma, no space.
 - [Access Restriction](/docs/Access_Restriction/main/) for URL and category-based policies.
 - [SSL Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) for HTTPS visibility and bypass rules.
 
-</section>

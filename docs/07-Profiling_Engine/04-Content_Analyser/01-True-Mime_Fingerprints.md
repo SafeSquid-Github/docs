@@ -9,8 +9,6 @@ keywords:
   - content analysis proxy
   - true file type detection
 ---
-<section class="section-strip">
 
 True MIME-type detection
 
-</section>

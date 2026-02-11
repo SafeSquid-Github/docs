@@ -8,16 +8,13 @@ keywords:
   - integrate ldap with SafeSquid
   - ldap configuration for SafeSquid
 ---
-<section class="section-strip">
 
 
 # Setup Active Directory Integration
 
 After installing Active Directory on the Windows Server, add users, groups, and computers. Link LDAP Admin with Active Directory, then integrate LDAP with SafeSquid to see all users and user groups in the SafeSquid dashboard.
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 
@@ -26,17 +23,13 @@ After installing Active Directory on the Windows Server, add users, groups, and 
 - Windows Server running on a VM or physical machine and connected to the network
 - Active Directory installed and running on the server. For installation and activation see: [Setup Active Directory Server 2016](http://pc-addicts.com/setup-active-directory-server-2016/) or [Installing Active Directory on Windows Server 2012 R2](https://dinika-15.medium.com/installing-active-directory-on-windows-server-2012-r2-e9e614770588)
 
-</section>
 
-<section class="section-strip">
 
 ## Example scenario
 
 This example uses an Active Directory named **mann-ad.safesquid**. A new user has First Name **Mann**, Last Name **Prajapati**, directory **mann-ad.safesquid**, and Logon name **Mann**. When linking LDAP Admin with AD: Connection Name **SafeSquid AD**, Host IP **192.168.0.108**, Base **DC=mann-ad,DC=safesquid**. Account username **Administrator@mann-ad.safesquid** with a strong password. For SafeSquid integration: LDAP Base DN **dc=mann,dc=safesquid**, LDAP Domain **mann.safesquid**.
 
-</section>
 
-<section class="section-strip">
 
 ## Call to action: Add or view users in AD
 
@@ -56,9 +49,7 @@ This example uses an Active Directory named **mann-ad.safesquid**. A new user ha
 
    ![Setting up a strong password](/img/How_To/Integrate_AD/image5.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Call to action: Link LDAP Admin with AD
 
@@ -86,9 +77,7 @@ This example uses an Active Directory named **mann-ad.safesquid**. A new user ha
 
    ![Showing the list of all users](/img/How_To/Integrate_AD/image14.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Call to action: Integrate LDAP with SafeSquid
 
@@ -118,4 +107,3 @@ This example uses an Active Directory named **mann-ad.safesquid**. A new user ha
 
 **Related:** [Simple Authentication](/docs/Authentication/Directory_Services/Active_Directory/Simple_Authentication/), [SSO Authentication](/docs/Authentication/Directory_Services/Active_Directory/SSO_Authentication/)
 
-</section>

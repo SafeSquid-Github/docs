@@ -10,15 +10,12 @@ keywords:
   - image scanning SafeSquid
   - graphical content analysis
 ---
-<section class="section-strip">
 
 ## Image Analyzer blocks inappropriate images in real time
 
 This section prevents users from viewing pornographic image content. It blocks inappropriate images by analysing graphical content in real time. The default template replaces the blocked image with a checkered box.
 
-</section>
 
-<section class="section-strip">
 
 ## Global
 ![Image-global.jpg](/img/Configure/Real_Time_Content_Activity/Image_analyzer/image1.webp)
@@ -34,9 +31,7 @@ Specify the template or notification message to be sent, when entry content is m
 
 The default template replaces the blocked image with a checkered box.
 
-</section>
 
-<section class="section-strip">
 
 ## Filtering policies
 Add policies to apply to the matching entries.
@@ -101,9 +96,7 @@ Enable to just debug, without blocking.
 -   **TRUE**: Do not block, just blur the image if possibly pornographic
 -   **FALSE**: Block images if score is higher than threshold
 
-</section>
 
-<section class="section-strip">
 
 ## Example
 ### Rule#1
@@ -128,4 +121,3 @@ Apply a standard image scanning rule to every connection. Adult images are block
 
 ![Slide4-imgFltr.webp](/img/Configure/Real_Time_Content_Activity/Image_analyzer/image6.webp)
 
-</section>

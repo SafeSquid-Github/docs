@@ -11,22 +11,17 @@ keywords:
   - Chrome proxy setup
   - Firefox proxy configuration
 ---
-<section class="section-strip">
 
 
 # Explicit Proxy Configuration
 
-</section>
 
-<section class="section-strip">
 
 ## Problem Statement
 
 Organizations require manual proxy configuration for controlled environments where users must configure browsers to route traffic through SafeSquid for policy enforcement and threat protection. Manual configuration provides granular control over proxy usage while enabling comprehensive security monitoring and policy enforcement across diverse browser environments. This explicit configuration approach ensures precise control over proxy behavior while supporting user-specific preferences and organizational security requirements.
 
-</section>
 
-<section class="section-strip">
 
 ## Key Benefits
 
@@ -36,9 +31,7 @@ Organizations require manual proxy configuration for controlled environments whe
 
 **Troubleshooting Capability**: Manual configuration provides clear visibility into proxy settings, enabling rapid troubleshooting and verification of proxy connectivity. This transparency facilitates rapid issue resolution while maintaining security enforcement capabilities.
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 
@@ -48,9 +41,7 @@ Organizations require manual proxy configuration for controlled environments whe
 
 **System Requirements**: Client systems must have appropriate browsers installed with administrative privileges for system-wide proxy configuration. Network connectivity must be established between client systems and SafeSquid proxy servers.
 
-</section>
 
-<section class="section-strip">
 
 ## Call to Action
 
@@ -169,9 +160,7 @@ curl -I --proxy http://192.168.1.100:8080 http://safesquid.cfg/
 
 **Verification**: Access SafeSquid interface at http://safesquid.cfg/ to confirm connectivity.
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and Evidence
 
@@ -183,9 +172,7 @@ curl -I --proxy http://192.168.1.100:8080 http://safesquid.cfg/
 
 **Performance Validation**: Test web browsing performance to ensure proxy configuration does not significantly impact user experience or application functionality.
 
-</section>
 
-<section class="section-strip">
 
 ## Troubleshooting Guide
 
@@ -203,4 +190,3 @@ curl -I --proxy http://192.168.1.100:8080 http://safesquid.cfg/
 
 **Related**: [PAC File](/docs/Getting_Started/Connect_Your_Client/PAC_File/), [System-Wide Proxy](/docs/Getting_Started/Connect_Your_Client/System_Wide_Proxy/), [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), [SSL Inspection](/docs/SSL_Inspection/main/), [Troubleshooting](/docs/Troubleshooting/main/)
 
-</section>

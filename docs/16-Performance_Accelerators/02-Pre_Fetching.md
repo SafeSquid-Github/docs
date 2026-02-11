@@ -8,16 +8,13 @@ keywords:
   - SafeSquid caching optimization
   - Prefetching configuration SafeSquid
 ---
-<section class="section-strip">
 
 
 # Pre-fetch and cache resources referenced in HTML
 
 Prefetching fetches and caches files referenced in HTML before the user requests them, improving load time and reducing origin requests. It applies to a wider set of resources than caching alone.
 
-</section>
 
-<section class="section-strip">
 
 ## Configure prefetching
 
@@ -67,4 +64,3 @@ Prefetching fetches and caches files referenced in HTML before the user requests
 
     ![Configuration saved](/img/How_To/Prefetch_embedded_images/image12.webp)
 
-</section>

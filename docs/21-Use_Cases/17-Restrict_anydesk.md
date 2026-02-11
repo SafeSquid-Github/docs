@@ -10,20 +10,15 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
 
-</section>
 
-<section class="section-strip">
 
 ## Go to configure page
 ![Go to configure page to Restict anydesk](/img/How_To/Restrict_any_desk/image1.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Go to Real time content security
 ![Select HTTPS Inspection option in Real time content security section to Restrict anydesk](/img/How_To/Restrict_any_desk/image2.webp)
@@ -44,9 +39,7 @@ keywords:
 
 ![Save configuration of policy to restrict anydesk](/img/How_To/Restrict_any_desk/image10.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Configuration on anydesk
 Set proxy on anydesk application
@@ -55,4 +48,3 @@ If authentication is enabled you have to specify Username and Password on any de
 
 Anydesk should not take auto proxy settings: If you set proxy in IE browser or chrome browser and you select "Try to detect the proxy server" option on anydesk, it should not take proxy automatically. You must have to configure proxy on anydesk application.
 
-</section>

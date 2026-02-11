@@ -10,7 +10,6 @@ keywords:
   - PCI DSS HIPAA GDPR compliance
   - data exfiltration prevention
 ---
-<section class="section-strip">
 
 
 # Catch Data Leaks Before They Become Breaches
@@ -29,9 +28,7 @@ keywords:
 
 **Outcome:** Data exfiltration attempts are caught before they become breaches. Compliance auditors get proof you're monitoring egress.
 
-</section>
 
-<section class="section-strip">
 
 ## Before/After SafeSquid DLP
 
@@ -42,9 +39,7 @@ keywords:
 | Engineer posts AWS credentials to public GitHub gist | ❌ Credentials harvested in minutes, crypto miner deployed on EC2 | ✅ **Blocked** — API key pattern detected in POST body, SIEM alert, security review triggered |
 | Finance team shares SSN spreadsheet on Slack (external workspace) | ❌ Legal discovers it 8 months later during e-discovery | ✅ **Blocked** — 9-digit SSN pattern detected, upload fails with "Policy Violation: PII Detected" message |
 
-</section>
 
-<section class="section-strip">
 
 ## How SafeSquid DLP Works
 
@@ -107,9 +102,7 @@ When SafeSquid detects sensitive data, you choose the action:
 - Manager can release or permanently block
 - Audit trail maintained
 
-</section>
 
-<section class="section-strip">
 
 ## When to Use DLP
 
@@ -128,9 +121,7 @@ Auditors want proof you're monitoring data egress. DLP logs export to SIEM for e
 ✅ **Recent breach or close call:**  
 Board mandates "we need to prevent the next incident." DLP provides technical controls + audit trail.
 
-</section>
 
-<section class="section-strip">
 
 ## When NOT to Use DLP (Alone)
 
@@ -146,9 +137,7 @@ Credit card regex matches test data (`4111111111111111` is a test Visa number). 
 ⚠️ **DLP needs SSL inspection:**  
 90% of uploads are over HTTPS. If SSL inspection is disabled, DLP can't see the payload — it's encrypted. Enable SSL inspection first.
 
-</section>
 
-<section class="section-strip">
 
 ## How to Configure DLP
 
@@ -234,9 +223,7 @@ Don't enable blocking in production without testing. False positives will break 
 
 Once tuning is complete, enable blocking for real data.
 
-</section>
 
-<section class="section-strip">
 
 ## ⚠️ Common Pitfalls
 
@@ -260,9 +247,7 @@ Once tuning is complete, enable blocking for real data.
 **What breaks:** User screenshots customer SSN from CRM, uploads image to personal cloud. DLP only scans text, misses image uploads.  
 **Solution:** Enable [Image Analyser with OCR](/docs/Profiling_Engine/Content_Analyser/Image_Analyser_AI/) to extract text from images.
 
-</section>
 
-<section class="section-strip">
 
 ## Related Topics
 
@@ -283,9 +268,7 @@ Once tuning is complete, enable blocking for real data.
 - [Block Personal Gmail, Allow Corporate](/docs/Use_Cases/Block_Personal_Gmail_Allow_Google_Corporate_Accounts/) — Prevent data leaks via personal email
 - [Block Keywords in Uploads](/docs/Use_Cases/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/) — Detect "confidential" in social posts
 
-</section>
 
-<section class="section-strip">
 
 :::info CISO Takeaway
 **Risk:** Uncontrolled data exfiltration = regulatory fines (GDPR: €20M, PCI-DSS: lose card processing) + breach costs ($4.45M avg) + reputational damage.
@@ -304,4 +287,3 @@ Once tuning is complete, enable blocking for real data.
 **Timeline:** 1-2 weeks for deployment + tuning. Ongoing: quarterly pattern review, SIEM alert monitoring.
 :::
 
-</section>

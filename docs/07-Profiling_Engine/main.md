@@ -11,7 +11,6 @@ keywords:
   - content fingerprinting
   - zero trust web security
 ---
-<section class="section-strip">
 
 
 # Stop Guessing Who's Doing What — Profile Every Request
@@ -31,9 +30,7 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 
 **Outcome:** Policies that match reality, not guesswork.
 
-</section>
 
-<section class="section-strip">
 
 ## Why Identity-Based Profiling Matters
 
@@ -51,9 +48,7 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 - **After-hours access:** Block all uploads >10MB, require manager approval for exceptions
 - **Executives:** Bypass inspection for encrypted M&A discussions (specific domains only)
 
-</section>
 
-<section class="section-strip">
 
 ## What You Can Do with Profiling
 
@@ -64,9 +59,7 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 ✅ **Detect disguised threats:** Files claiming to be PDFs but actually executables → quarantined  
 ✅ **Application control:** Allow Zoom for meetings, block Discord for unapproved chat
 
-</section>
 
-<section class="section-strip">
 
 ## How to Configure Profiling
 
@@ -209,9 +202,7 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 
 → [Configure Time Profiles](/docs/Profiling_Engine/Time_Profiles/)
 
-</section>
 
-<section class="section-strip">
 
 ## ⚠️ Common Pitfalls
 
@@ -235,9 +226,7 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 **What breaks:** Your "lunch hour" rule is 12:00-13:00 in IST, but your US office is in PST. US users get social media blocked during their work hours.  
 **Solution:** Use UTC for time profiles and calculate offsets for each office, or create separate time profiles per region.
 
-</section>
 
-<section class="section-strip">
 
 ## Related Topics
 
@@ -252,4 +241,3 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 - [User Not Identified](/docs/Troubleshooting/) — LDAP bind failures, group membership issues
 - [Application Not Detected](/docs/Troubleshooting/) — Signature tuning, false positives
 
-</section>

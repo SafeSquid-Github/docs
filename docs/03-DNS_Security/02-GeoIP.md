@@ -13,32 +13,25 @@ keywords:
   - ip intelligence
   - zero trust
 ---
-<section class="section-strip">
 
 
 # Server Geo-Location
 
 **CISO takeaway**: Unknown destination geography creates compliance gaps and regional threat exposure. Server Geo-Location classifies destinations by country and ASN so policies can block or allow by location. Evidence: [Security Logs](/docs/Audit_Forensics/Security_Logs/) and [Reporting Module](/docs/Audit_Forensics/Reporting_Module/) show `server_country`, `server_region`, and `server_asn`; dashboards and exports demonstrate the control to auditors.
 
-</section>
 
-<section class="section-strip">
 
 ## Unknown destination geography creates compliance and threat risk
 
 Without destination geo classification, organizations cannot enforce data residency, regional restrictions, or block high-risk countries. The risk is regulatory violation, data sovereignty issues, and exposure to region-specific threats. Business impact includes fines, audit findings, and incident cost. Server Geo-Location classifies destination servers by country, region, and ASN so policies can enforce location-aware allow/deny and reporting.
 
-</section>
 
-<section class="section-strip">
 
 ## Location-aware policies support compliance and audit evidence
 
 Server Geo-Location enables country-based access control, targeted policy enforcement, and routing decisions using IP intelligence. Control objectives include data residency, geo-blocking, and compliance with regional requirements (e.g. GDPR data flow, export controls). Organizations can show auditors: policy configuration (which countries are blocked or allowed), logs with `server_country` and `server_region`, and reports or dashboards filtered by destination geography.
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites ensure accurate geo classification
 - SafeSquid SWG installed and operational. See [Getting Started](/docs/Getting_Started/main/).
@@ -47,9 +40,7 @@ Server Geo-Location enables country-based access control, targeted policy enforc
 - Administrative access to Policy Management Console
 - Outbound DNS resolution working and consistent
 
-</section>
 
-<section class="section-strip">
 
 ## Configure profiles and enforce geo policies
 1. Open Policy Management Console. Navigate to Profiling Engine → Server Geo-Location.
@@ -70,9 +61,7 @@ Server Geo-Location enables country-based access control, targeted policy enforc
 
 <!-- TODO: Add screenshots when available (profile-list.webp, profile-editor.webp, policy-reference.webp) -->
 
-</section>
 
-<section class="section-strip">
 
 ## Verify policy and monitor logs
 
@@ -96,9 +85,7 @@ profile=Block-High-Risk-Countries rule=deny-non-compliant-regions user=jdoe
 
 - Create a country-based dashboard and filter by `server_country` to validate reporting.
 
-</section>
 
-<section class="section-strip">
 
 ## Resolve classification, CDN, and database issues
 - GeoIP database outdated
@@ -127,4 +114,3 @@ External references:
 - MaxMind GeoIP2 database: `https://dev.maxmind.com/geoip`
 - Regional compliance baselines (example): `https://www.iso.org/standard/77312.html`
 
-</section>

@@ -8,30 +8,23 @@ keywords:
   - dns filtering SafeSquid
   - block dangerous websites SafeSquid
 ---
-<section class="section-strip">
 
 
 # DNS Blacklisting
 
-</section>
 
-<section class="section-strip">
 
 ## Unrestricted resolution allows access to known-bad domains
 
 Unrestricted DNS resolution lets users reach domains listed as malicious in threat feeds. The risk is malware delivery, phishing, and botnet callback traffic. Business impact includes incident response cost, regulatory findings, and reputational damage. DNSBL blocks resolution of blacklisted domains before a connection is established. SafeSquid integrates with [Integrated DNS Security](/docs/SafeSquid_SWG/Integrated_DNS_Security/) to query DNS-based blacklist services and block matching destinations.
 
-</section>
 
-<section class="section-strip">
 
 ## DNSBL reduces exposure and supports audit evidence
 
 Enabling DNSBL blocks access to domains and IPs flagged by the configured blacklist service. The control reduces exposure to known-malicious sites and supports compliance objectives that require blocking harmful content. Blocked requests are logged; [Security Logs](/docs/Audit_Forensics/Security_Logs/) and the [Reporting Module](/docs/Audit_Forensics/Reporting_Module/) provide evidence for auditors. Limitations: DNSBL effectiveness depends on list quality and availability; bypass rules and direct IP access can circumvent the control; false positives may require allow-listing.
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 
@@ -40,9 +33,7 @@ Enabling DNSBL blocks access to domains and IPs flagged by the configured blackl
 - DNSBL service or domain available (e.g. in.dnsbl.org or SOC-provided list).
 - Administrative access to Configuration Portal.
 
-</section>
 
-<section class="section-strip">
 
 ## Configure DNSBL in Real-time content security
 
@@ -84,9 +75,7 @@ Use blacklisting domain in.dnsbl.org and blocked IP addresses 127.0.0.1–127.0.
 
 ![DNSBL example configuration](/img/Configure/Real_Time_Content_Activity/DNS_blacklist/image7.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Verify configuration and blocked requests
 
@@ -95,9 +84,7 @@ Use blacklisting domain in.dnsbl.org and blocked IP addresses 127.0.0.1–127.0.
 - **Logs**: In [Security Logs](/docs/Audit_Forensics/Security_Logs/), confirm entries for blocked requests (action/result indicating DNSBL block).
 - **Audit**: Run a report filtered by block reason or DNSBL; export for evidence that the control is active and blocking malicious domains.
 
-</section>
 
-<section class="section-strip">
 
 ## Troubleshooting
 
@@ -110,4 +97,3 @@ Use blacklisting domain in.dnsbl.org and blocked IP addresses 127.0.0.1–127.0.
 
 Escalate to SafeSquid support when configuration is correct but blocks or resolution fail consistently.
 
-</section>

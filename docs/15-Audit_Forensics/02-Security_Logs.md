@@ -10,7 +10,6 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## Logs support troubleshooting and analysis
 
@@ -31,9 +30,7 @@ tail -f /var/log/logfilename
 grep -i error /var/log/logfilename
 ```
 
-</section>
 
-<section class="section-strip">
 
 ## SafeSquid Application Logs
 
@@ -570,9 +567,7 @@ The details of the fields in privacy.log are as follows:
   action                  Action is the privacy level applied to the request.
   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-</section>
 
-<section class="section-strip">
 
 ## SafeSquid activity log written in system logs
 
@@ -641,4 +636,3 @@ https://help.safesquid.com/portal/en/kb/articles/identify-the-filter-by-using-sa
 https://help.safesquid.com/portal/en/kb/articles/identify-the-filter-name-using-safesquid-detailed-logs-from-the-interface
 https://help.safesquid.com/portal/en/kb/articles/forwarding-logs-to-the-siem-server-by-configuring-the-udp-port
 
-</section>

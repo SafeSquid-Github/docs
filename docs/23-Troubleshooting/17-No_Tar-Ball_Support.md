@@ -10,14 +10,11 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## ISSUE
 Unable to generate support tarball from SafeSquid Interface: **Support Page > Support Tarball**
 
-</section>
 
-<section class="section-strip">
 
 ## Troubleshooting
 If you cannot generate support tarball from the SafeSquid interface, automatically follow the steps below.
@@ -145,4 +142,3 @@ drwxrwxr-- 9 ssquid root 4096 Jun 11 16:29 ../
 
 -rw-r--r-- 1 ssquid root 642727 Jun 18 18:06 **safesquid-2018-06-18-18-06-24.tar.gz**
 
-</section>

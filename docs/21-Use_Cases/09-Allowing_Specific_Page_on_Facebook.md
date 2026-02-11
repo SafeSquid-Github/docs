@@ -8,23 +8,18 @@ keywords:
   - SafeSquid social media filtering
   - specific facebook page access policy
 ---
-<section class="section-strip">
 
 
 # Allow one Facebook page and block the rest
 
 Many organizations block Facebook but need to allow a specific page (e.g. company page). SafeSquid SWG can allow a particular page for selected groups (e.g. social media team), partial or read-only for others, and by time of day. In the example below, only the SafeSquid page is allowed; other pages show a block template.
 
-</section>
 
-<section class="section-strip">
 
 ## Prerequisites
 HTTPS Inspection should be enabled in SafeSquid. If not enabled, refer to the document - [How to enable HTTPS Inspection](/docs/SSL_Inspection/main/).
 
-</section>
 
-<section class="section-strip">
 
 ## Steps
 [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
@@ -99,4 +94,3 @@ HTTPS Inspection should be enabled in SafeSquid. If not enabled, refer to the do
 
 ![Save configuration that allow only that allow only specific page of Facebook ](/img/How_To/Allowing_Specific_Page_on_Facebook/image34.webp)
 
-</section>

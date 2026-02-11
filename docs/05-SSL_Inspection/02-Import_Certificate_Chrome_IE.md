@@ -8,7 +8,6 @@ keywords:
   - Trusted Root Certification Authorities
   - HTTPS inspection client trust
 ---
-<section class="section-strip">
 
 
 # Import SafeSquid Root CA into Chrome or Internet Explorer
@@ -53,9 +52,7 @@ SafeSquid Web Security Client users do not need to manually import certificates 
 
    ![Import complete](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image9.webp)
 
-</section>
 
-<section class="section-strip">
 
 ## Verification and evidence
 
@@ -64,4 +61,3 @@ SafeSquid Web Security Client users do not need to manually import certificates 
 
 **Next steps:** [Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) for enabling inspection and bypass rules. [Import certificate into Firefox](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#import-certificate-into-firefox) for Firefox-specific trust setup.
 
-</section>

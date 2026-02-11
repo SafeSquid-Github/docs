@@ -10,14 +10,11 @@ keywords:
 ---
 
 
-<section class="section-strip">
 
 ## Issues
 I configured LDAP with Active Directory, but LDAP entries are still not fetched.
 
-</section>
 
-<section class="section-strip">
 
 ## Root Cause
 
@@ -88,9 +85,7 @@ Verify it from SafeSquid Logs.
   X-SafeSquid-User-Groups: ADMINS
   ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-</section>
 
-<section class="section-strip">
 
 ## Troubleshooting
 ### Case 1: Check for configuration of LDAP with AD (Active Directory).
@@ -162,4 +157,3 @@ ad.safesquid.test (192.168.221.1) >> Active Directory FQDN and IP Address
   37 packets transmitted, 0 received, +6 errors, 100% packet loss, time 36269ms
   -------------------------------------------------------------------------------
 
-</section>
