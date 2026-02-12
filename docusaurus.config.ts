@@ -27,8 +27,8 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           breadcrumbs: true,
-          showLastUpdateTime: true,
-          showLastUpdateAuthor: true,
+          showLastUpdateTime: false,
+          showLastUpdateAuthor: false,
         },
         theme: {
           customCss: './src/css/custom.css',

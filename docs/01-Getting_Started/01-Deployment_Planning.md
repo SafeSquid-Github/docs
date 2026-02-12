@@ -30,7 +30,7 @@ Planning before install avoids that. It delivers capacity that matches load, res
 - **Predictable performance at go-live** — Right-size NICs and use NVMe for logs (see [Disk and log storage](#disk-and-log-storage)) so rollout doesn’t bring latency or logging gaps.
 - **Audit-ready evidence** — Document sizing and topology for SOC 2 and ISO 27001.
 
-## What you need before planning
+## Requirement Capture
 
 Gather the following before you size hardware or choose a topology:
 

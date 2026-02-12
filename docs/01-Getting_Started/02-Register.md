@@ -40,6 +40,9 @@ keywords:
    *Password setup screen*
 
 4. **Sign in**, complete your profile, then click **Download Key**.
+   :::tip
+   Using a business email unlocks enterprise account benefits such as team onboarding and POC support.
+   :::
 
    ![Download key](/img/License_Activation/image12.webp)
    *The key download button in the portal dashboard*
@@ -49,12 +52,6 @@ The downloaded file is named `activation_key` (no extension), typically a few KB
 :::caution
 Do not rename or modify the activation key file. SafeSquid will reject a tampered key.
 :::
-
-:::tip
-Using a business email unlocks enterprise account benefits such as team onboarding and POC support.
-:::
-
-
 
 ## Troubleshooting
 
