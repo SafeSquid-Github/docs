@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import QuickLinks from '@site/src/components/QuickLinks';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
@@ -37,6 +38,7 @@ export default function Home(): ReactNode {
       description="Use world's most advanced HTTP(S) Proxy Server to implement the best of secure operating practices and derive Zero-Trust Web Security">
       <HomepageHeader />
       <main>
+        <QuickLinks />
         <HomepageFeatures />
       </main>
     </Layout>

@@ -83,6 +83,11 @@ const config: Config = {
           position: 'left',
           label: 'DOCS',
         },
+        {
+          type: 'docsVersionDropdown',
+          position: 'left',
+          dropdownActiveClassDisabled: true,
+        },
         { 
           to: '/blog', 
           label: 'BLOG', 
@@ -127,8 +132,16 @@ const config: Config = {
       appId: 'VDAYH8QLO8',
       apiKey: 'd60fc30e42711815476a72c8b3469240',
       indexName: 'safesquid',
-      contextualSearch: false,
+      contextualSearch: true,
       searchPagePath: 'search',
+      insights: true,
+      searchParameters: {
+        facetFilters: [],
+        hitsPerPage: 10,
+        attributesToSnippet: ['content:50'],
+        snippetEllipsisText: '...',
+      },
+      placeholder: 'Search documentation...',
     },
   } as Preset.ThemeConfig,
 };

@@ -142,3 +142,57 @@ table tbody tr:hover {
     white-space: nowrap;
   }
 }
+
+/* ===== Enhanced Search UI ===== */
+
+/* Search input styling */
+.DocSearch-Button {
+  border-radius: 8px;
+  height: 40px;
+  padding: 0 12px;
+  font-size: 0.95rem;
+}
+
+.DocSearch-Button:hover {
+  box-shadow: 0 2px 8px rgba(0, 102, 153, 0.15);
+}
+
+/* Search modal enhancements */
+.DocSearch-Modal {
+  border-radius: 12px;
+}
+
+.DocSearch-Hit-title {
+  font-weight: 600;
+}
+
+.DocSearch-Hit-path {
+  color: var(--ifm-color-primary);
+  font-size: 0.85rem;
+}
+
+.DocSearch-Hit mark {
+  background-color: rgba(0, 102, 153, 0.2);
+  color: inherit;
+  font-weight: 600;
+}
+
+/* Search result snippets */
+.DocSearch-Hit-content-wrapper {
+  line-height: 1.5;
+}
+
+/* ===== Version Dropdown Styling ===== */
+
+.navbar__item.dropdown__toggle {
+  font-weight: 500;
+}
+
+.dropdown__menu {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .dropdown__menu {
+  box-shadow: 0 4px 12px rgba(0, 102, 153, 0.2);
+}
