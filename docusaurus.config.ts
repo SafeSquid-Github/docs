@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'SafeSquid SWG Documentation',
-  tagline: 'Search our knowledge base',
+  tagline: 'Deploy Zero-Trust Web Security in 15 Minutes',
   favicon: 'img/favicon.ico',
   url: 'http://docs.safesquid.com',
   baseUrl: '/',
