@@ -10,15 +10,9 @@ keywords:
 ---
 
 
-:::info CISO takeaway
-**Risk:** When user identity is unavailable (device-only, legacy apps), policy cannot be enforced per user; access may be unaccountable or over-broad. **Control:** Network Signature assigns source IPs or subnets to user-groups so access restriction and reporting apply by network segment. **Evidence:** Logs and reports show traffic by IP/subnet and assigned group; user-level attribution is not available for bypassed flows—document as a limitation for compliance.
-:::
-
-
-
 ## Problem: Policy by source when user identity is unavailable
 
-Access rules must apply by source IP or subnet when user identity is not available (e.g. device-only access, legacy applications, shared kiosks). Without IP-based grouping, all such traffic is either blocked or subject to a single default policy. Unattributed access increases misuse risk and complicates audit. SafeSquid Network Signature maps client IP addresses or ranges to user-groups so different access restriction rules and reporting apply per segment.
+When user identity is unavailable (device-only, legacy apps), policy cannot be enforced per user; access may be unaccountable or over-broad. Network Signature assigns source IPs or subnets to user-groups so access restriction and reporting apply by network segment. Logs and reports show traffic by IP/subnet and assigned group; user-level attribution is not available for bypassed flows—document as a limitation for compliance. Access rules must apply by source IP or subnet when user identity is not available (e.g. device-only access, legacy applications, shared kiosks). Without IP-based grouping, all such traffic is either blocked or subject to a single default policy. Unattributed access increases misuse risk and complicates audit. SafeSquid Network Signature maps client IP addresses or ranges to user-groups so different access restriction rules and reporting apply per segment.
 
 
 

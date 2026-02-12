@@ -16,9 +16,7 @@ keywords:
 
 # Logging, reporting, and forensics for compliance and incidents
 
-:::info CISO takeaway
-**Risk:** Lack of visibility into web traffic and security events undermines incident response, compliance evidence, and audit. **Control:** SafeSquid Audit & Forensics provides logging, reporting, performance monitoring, and directory structure for logs and artifacts. **Evidence:** Reports, security logs, performance plots, and documented log locations support SOC 2, PCI-DSS 10.x, and similar requirements.
-:::
+Lack of visibility into web traffic and security events undermines incident response, compliance evidence, and audit. SafeSquid Audit & Forensics provides logging, reporting, performance monitoring, and a documented directory structure for logs and artifacts. Reports, security logs, performance plots, and log locations support SOC 2, PCI-DSS 10.x, and similar requirements.
 
 SafeSquid Audit & Forensics provides visibility into web traffic, security events, and user activities through logging, reporting, performance monitoring, and documented log and artifact locations. The documents below cover the reporting module, security logs, performance plot, Monit, and directory structure.
 
@@ -57,3 +55,6 @@ Enterprise environments require continuous monitoring of system health, service 
 ### [Directory structure](/docs/Audit_Forensics/Directory_Structure/)
 Security teams require organized access to log files, configuration data, and forensic artifacts to support incident investigation, compliance auditing, and system analysis. Directory Structure provides documentation of SafeSquid's file organization including log locations, configuration directories, data storage paths, and forensic artifact locations through structured documentation and access guidelines. This organizational framework ensures efficient access to forensic data while supporting systematic investigation and analysis procedures. Reference the Directory Structure documentation to locate and access forensic data for security investigations and compliance audits.
 
+## Next steps
+
+Correlate with [Security Logs](/docs/Audit_Forensics/Security_Logs/) and [Troubleshooting](/docs/Troubleshooting/main/) for incident response; for policy configuration see [Access Restriction](/docs/Access_Restriction/main/) and [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/).

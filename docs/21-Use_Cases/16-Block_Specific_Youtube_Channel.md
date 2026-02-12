@@ -15,7 +15,7 @@ keywords:
 Block access to specific YouTube channels (e.g., T-Series) while allowing other YouTube content.
 
 :::note
-Blocking specific YouTube channels while allowing other videos is a hypothetical scenario. YouTube is not designed for such use cases. This guide demonstrates blocking a specific channel and its playlist videos.
+Blocking specific YouTube channels while allowing other videos is a common policy need. The steps below demonstrate blocking a specific channel and its playlist videos.
 :::
 
 

@@ -10,15 +10,9 @@ keywords:
 ---
 
 
-:::info CISO takeaway
-**Risk:** Per-user web access control requires validated identity from a trusted source. **Control:** AD simple (LDAP) authentication validates users against Active Directory and applies group-based policies without Kerberos. **Evidence:** LDAP bind and user extraction are logged; identity and access logs show authenticated usernames for audit (e.g. SOC 2, ISO 27001 A.9).
-:::
-
-
-
 ## Problem: Centralized identity without SSO infrastructure
 
-Enterprises need user and group-based proxy policies backed by Active Directory without deploying Kerberos or SSO. Simple LDAP bind validates users against AD and provides group membership for access rules. No AD schema changes are required; real-time validation and group caching support policy mapping and audit attribution.
+Per-user web access control requires validated identity from a trusted source. AD simple (LDAP) authentication validates users against Active Directory and applies group-based policies without Kerberos. LDAP bind and user extraction are logged; identity and access logs show authenticated usernames for audit (e.g. SOC 2, ISO 27001 A.9). Enterprises need user and group-based proxy policies backed by Active Directory without deploying Kerberos or SSO. Simple LDAP bind validates users against AD and provides group membership for access rules. No AD schema changes are required; real-time validation and group caching support policy mapping and audit attribution.
 
 
 

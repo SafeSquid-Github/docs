@@ -26,6 +26,9 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          breadcrumbs: true,
+          showLastUpdateTime: true,
+          showLastUpdateAuthor: true,
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -75,56 +78,29 @@ const config: Config = {
       },
       items: [
         {
-          href: 'https://www.safesquid.com/#home',
-          label: 'HOME',
-          position: 'left',
-        },
-        {
-          href: 'https://www.safesquid.com/#about',
-          label: 'ABOUT',
-          position: 'left',
-        },
-        {
-          href: 'https://www.safesquid.com/#features',
-          label: 'FEATURES',
-          position: 'left',
-        },
-        {
-          href: 'https://www.safesquid.com/#technology',
-          label: 'TECHNOLOGY',
-          position: 'left',
-        },
-        {
-          href: 'https://www.safesquid.com/#solutions',
-          label: 'SOLUTIONS',
-          position: 'left',
-        },
-        {
-          href: 'https://www.safesquid.com/#get_started',
-          label: 'GET STARTED',
-          position: 'left',
-        },
-        {
-          href: 'https://www.safesquid.com/contact/',
-          label: 'CONTACT',
-          position: 'left',
-        },
-        {
-          href: 'https://www.safesquid.com/pricing/',
-          label: 'PRICING',
-          position: 'left',
-        },
-        {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'DOCS',
         },
-        { to: '/blog', label: 'BLOG', position: 'left' },
+        { 
+          to: '/blog', 
+          label: 'BLOG', 
+          position: 'left' 
+        },
         {
           href: 'https://help.safesquid.com/portal/en/community/safesquid-labs',
           label: 'FORUM',
           position: 'left',
+        },
+        {
+          href: 'https://key.safesquid.com',
+          label: 'PORTAL',
+          position: 'right',
+        },
+        {
+          type: 'search',
+          position: 'right',
         },
       ],
     },
@@ -133,6 +109,10 @@ const config: Config = {
         autoCollapseCategories: true,
         hideable: true,
       },
+    },
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 4,
     },
     footer: {
       style: 'dark',

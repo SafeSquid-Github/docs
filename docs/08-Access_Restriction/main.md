@@ -14,11 +14,7 @@ keywords:
 
 # Granular web access control for policy and compliance
 
-:::info CISO takeaway
-**Risk:** Uncontrolled web access increases malware, data loss, and compliance gaps (e.g. unacceptable use, access to restricted categories). **Control:** Access restriction enforces allow/deny/redirect by user, group, time, URL, category, and application with profiles for SSL inspection, headers, and DLP. **Evidence:** Access and security logs record policy hits; Reporting Module and Security Logs provide reports and exports for SOC 2, acceptable-use, and audit.
-:::
-
-
+Uncontrolled web access increases malware, data loss, and compliance gaps (e.g. unacceptable use, access to restricted categories). SafeSquid access restriction enforces allow/deny/redirect by user, group, time, URL, category, and application with profiles for SSL inspection, headers, and DLP. Access and security logs record policy hits; the Reporting Module and Security Logs provide reports and exports for SOC 2, acceptable-use, and audit.
 
 ## Granular web access control enforces policy and compliance
 
@@ -30,3 +26,6 @@ Enterprises need to allow or block web access by user, group, time, destination,
 
 Access restriction in SafeSquid uses policies and profiles. Policies define conditions (user, group, time, URL, category, application). Profiles attach to policies and carry actions (allow, deny, redirect, or apply SSL inspection, header filter, cookie filter, and similar controls). The [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/) — web interface for policy and system settings — provides the interface to create and order these policies. Identity comes from [Authentication](/docs/Authentication/main/) (user and group identity sources); HTTPS visibility comes from [SSL Inspection](/docs/SSL_Inspection/main/) (decrypt and inspect HTTPS traffic). Configure access restriction in the Configuration Portal under the relevant restriction and real-time content security sections.
 
+## Next steps
+
+Enable [SSL Inspection](/docs/SSL_Inspection/main/) and [Authentication](/docs/Authentication/main/) so policies can apply to HTTPS traffic and by user; then configure [Profiling Engine](/docs/Profiling_Engine/main/) and [Malware Scanners](/docs/Malware_Scanners/main/) for content and threat control.

@@ -14,11 +14,7 @@ keywords:
 
 # Cloud threat intelligence keeps enforcement current
 
-:::info CISO takeaway
-**Risk:** Static blocklists and outdated signatures create blind spots that attackers exploit within hours of a new campaign. **Control:** SafeSquid's cloud-integrated threat intelligence delivers real-time updates to web categorization, application signatures, SSL security, image analysis, malware scanning, and geo-location databases. **Evidence:** Feed refresh timestamps and category versions appear in the SafeSquid interface and logs; audit reports confirm current threat posture.
-:::
-
-
+Static blocklists and outdated signatures create blind spots that attackers exploit within hours of a new campaign. SafeSquid's cloud-integrated threat intelligence delivers real-time updates to web categorization, application signatures, SSL security, image analysis, malware scanning, and geo-location databases. Feed refresh timestamps and category versions appear in the SafeSquid interface and logs; audit reports confirm current threat posture.
 
 ## Outdated threat data creates exploitable gaps
 

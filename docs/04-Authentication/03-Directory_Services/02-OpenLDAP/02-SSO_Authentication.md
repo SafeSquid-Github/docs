@@ -10,15 +10,9 @@ keywords:
 ---
 
 
-:::info CISO takeaway
-**Risk:** Repeated proxy login reduces usability and can lead to workarounds. **Control:** SSO with LDAP allows directory-authenticated users to use the proxy with minimal prompts. **Evidence:** Identity and access logs show authenticated usernames for audit.
-:::
-
-
-
 ## Problem: Enable SSO for LDAP users
 
-LDAP (or AD) users should use the proxy with minimal prompts after directory authentication. Access rules with LDAP profiles and SSO enabled apply identity-based policy; configure Allow List entries and LDAP profiles so the correct user groups get access.
+Repeated proxy login reduces usability and can lead to workarounds. SSO with LDAP allows directory-authenticated users to use the proxy with minimal prompts. Identity and access logs show authenticated usernames for audit. LDAP (or AD) users should use the proxy with minimal prompts after directory authentication. Access rules with LDAP profiles and SSO enabled apply identity-based policy; configure Allow List entries and LDAP profiles so the correct user groups get access.
 
 
 

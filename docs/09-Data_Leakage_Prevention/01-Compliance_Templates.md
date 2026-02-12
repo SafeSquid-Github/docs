@@ -15,11 +15,7 @@ keywords:
 
 # Compliance Templates
 
-:::info CISO takeaway
-**Risk:** Uncontrolled exfiltration of cardholder data, PHI, or PII creates regulatory exposure (PCI-DSS, HIPAA, GDPR) and reputational harm. **Control:** SafeSquid Text Analyser applies pattern-based detection for PCI, HIPAA, GDPR, and custom data; policies block or log matches. **Evidence:** DLP events and matches are logged; reports from the [Reporting Module](/docs/Audit_Forensics/Reporting_Module/) support compliance audits and evidence of control operation.
-:::
-
-
+Uncontrolled exfiltration of cardholder data, PHI, or PII creates regulatory exposure (PCI-DSS, HIPAA, GDPR) and reputational harm. SafeSquid Text Analyser applies pattern-based detection for PCI, HIPAA, GDPR, and custom data; policies block or log matches. DLP events and matches are logged; reports from the [Reporting Module](/docs/Audit_Forensics/Reporting_Module/) support compliance audits and evidence of control operation.
 
 ## Problem: Sensitive data in transit requires detection for compliance
 

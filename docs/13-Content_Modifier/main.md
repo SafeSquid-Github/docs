@@ -175,3 +175,7 @@ Field-by-field reference for every policy parameter (Enabled, Profiles, Mime typ
 - [Cookie Inspection](/docs/Cookie_Inspection/main/) for cookie filtering and policy.
 - [Data Leakage Prevention](/docs/Data_Leakage_Prevention/main/) for DLP and compliance templates.
 
+## Next steps
+
+Use with [Access Restriction](/docs/Access_Restriction/main/) profiles; enable [SSL Inspection](/docs/SSL_Inspection/main/) when modifying HTTPS response body.
+

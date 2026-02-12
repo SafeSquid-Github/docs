@@ -14,7 +14,7 @@ keywords:
 
 # Disaster Recovery
 
-Disasters or failures can cause loss of configuration and SSL certificates. SafeSquid Cloud Restore stores configuration and certificates in the cloud; the same activation key restores them to the same or a new appliance. Recovery supports single-node restore and clustered deployments. This section links to the Cloud Restore configuration guide.
+Disasters or failures can cause loss of configuration and SSL certificates. SafeSquid Cloud Restore stores configuration and certificates in the cloud; the same activation key restores them to the same or a new appliance. Recovery supports single-node restore and clustered deployments. The document below covers Cloud Restore configuration.
 
 
 
@@ -23,3 +23,6 @@ Disasters or failures can cause loss of configuration and SSL certificates. Safe
 ### [Configure Cloud Restore](/docs/Disaster_Recovery/Configure_Cloud_Restore/)
 Recovery requires Cloud Restore to be configured and the same activation key. The document covers how Cloud Restore works, required setup (Monit), and step-by-step configuration in the SafeSquid interface. Restoring configuration and SSL certificates from the cloud reduces downtime and rework. Use this document to implement and run disaster recovery.
 
+## Next steps
+
+After configuring Cloud Restore, verify with [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/); for HA see [Proxy Clustering](/docs/Proxy_Clustering/main/).

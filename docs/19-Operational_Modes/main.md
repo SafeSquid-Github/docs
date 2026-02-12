@@ -41,3 +41,6 @@ Organizations need to protect internal web servers and applications from direct 
 ### [Proxy Chain](/docs/Operational_Modes/Proxy_Chain/)
 Enterprise environments require multi-tier proxy architectures for hierarchical security enforcement, load distribution, and specialized processing across different network segments and security zones. Proxy Chain enables SafeSquid to operate as part of multi-tier proxy architectures, providing hierarchical security enforcement, load distribution, and specialized processing capabilities through intelligent traffic routing and policy coordination. This chaining capability ensures security coverage while supporting complex enterprise architectures and specialized security requirements. Configure proxy chaining in SafeSquid's network settings to enable multi-tier proxy deployment and hierarchical security enforcement.
 
+## Next steps
+
+For client configuration see [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/); for transparent redirection see [WCCP](/docs/Performance_Accelerators/WCCP/).

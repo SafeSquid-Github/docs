@@ -28,3 +28,6 @@ Enterprises need LDAP-backed authentication without Kerberos or SSO infrastructu
 ### [SSO Authentication](/docs/Authentication/Directory_Services/Active_Directory/SSO_Authentication/)
 Users should sign in once (domain login) and use the proxy without a second prompt. SSO Authentication uses Kerberos with AD so domain-authenticated users get proxy access without re-entering credentials. Better user experience and consistent identity. Configure LDAP with Negotiate bind, ensure time sync and DNS, then verify SSO using this document.
 
+## Next steps
+
+Apply [Access Restriction](/docs/Access_Restriction/main/) by AD group; enable [SSL Inspection](/docs/SSL_Inspection/main/) so HTTPS is attributed to users.

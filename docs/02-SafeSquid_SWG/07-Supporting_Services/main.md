@@ -33,3 +33,6 @@ DNS latency and upstream outages degrade browsing and threat lookups. A local BI
 ### [NTP](/docs/SafeSquid_SWG/Supporting_Services/NTP/)
 Clock drift breaks SSO, TLS validation, and log correlation. NTP maintains precise time for authentication and certificate checks. Accurate time supports reliable audits and authentication. Configure NTP against enterprise sources using this document and confirm sync with ntpq.
 
+## Next steps
+
+Ensure [Authentication](/docs/Authentication/main/) and [SSL Inspection](/docs/SSL_Inspection/main/) work correctly with NTP; for monitoring see [Audit & Forensics](/docs/Audit_Forensics/main/).

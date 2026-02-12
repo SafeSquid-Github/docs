@@ -40,3 +40,6 @@ Organizations face regional compliance gaps and threat exposure when destination
 ### [Homograph Detection](/docs/DNS_Security/Homograph_Detection/)
 IDN homograph attacks use visually similar characters to impersonate legitimate domains and enable phishing. Homograph detection identifies and blocks these impersonation attempts at DNS resolution. The control reduces lookalike-domain risk and supports evidence in DNS security logs. Configure allowed or blocked IDN patterns in DNS Security when the feature is available.
 
+## Next steps
+
+Use DNS security together with [Access Restriction](/docs/Access_Restriction/main/) and [Profiling Engine](/docs/Profiling_Engine/main/) for URL and application policy; see [Integrated DNS Security](/docs/SafeSquid_SWG/Integrated_DNS_Security/) for architecture context.

@@ -36,7 +36,7 @@ Gather the following before you size hardware or choose a topology:
 
 - **Concurrent connection estimate** — Peak or typical so you can use the [Hardware sizing](#hardware-sizing) table (~8 per active user if you only have user count).
 - **Network layout** — LAN/WAN segments, VLANs, and proxy placement for NIC sizing and bonding (see [Network: NICs and bonding](#network-nics-and-bonding)).
-- **Deployment goal** — Single node for pilot or eval; for production, decide HA and DR before go-live (see [Deployment scenario](#deployment-scenario)).
+- **Deployment goal** — Single node for pilot or eval; for production, decide HA and DR before go-live (see [Deployment scenario recommendations](#deployment-scenario-recommendations)).
 
 Then complete **Prepare the host before install** (below) on each target host before you run the installer.
 
@@ -86,6 +86,15 @@ SafeSquid performs high-frequency disk writes for session logging, behavioural a
 |  3,000+        | 2 TB – 4 TB+         |
 
 For extended retention, offload to an external syslog or reporting node.
+
+## Deployment scenario recommendations
+
+| Scenario | When to use it | Key constraints | Next action |
+|----------|----------------|-----------------|-------------|
+| **Single node (pilot)** | Evaluation, lab, or low-availability pilot | No failover; plan for HA before production | [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/main/) |
+| **Branch or small office** | One site, moderate user count | Size to [Hardware sizing](#hardware-sizing); use NVMe for logs | Single node or [Proxy Clustering](/docs/Proxy_Clustering/main/) for local HA |
+| **High availability** | Production; cannot tolerate single-node outage | Master-slave or active-active; load balancer in front | [Proxy Clustering](/docs/Proxy_Clustering/main/), then [Disaster Recovery](/docs/Disaster_Recovery/main/) |
+| **Cloud (AWS, Azure, etc.)** | No on-prem hardware; cloud-first | Match instance type to hardware matrix; use cloud NVMe/storage | [Cloud Deployment](/docs/Getting_Started/Install_SafeSquid/Cloud_Deployment/) |
 
 ## Disaster recovery
 

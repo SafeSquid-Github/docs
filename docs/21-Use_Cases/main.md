@@ -12,7 +12,7 @@ keywords:
 
 # Use-case index for SafeSquid SWG
 
-This section lists use cases and configurations for SafeSquid SWG. Each document describes how to configure SafeSquid for a specific need: blocking or allowing sites, restricting access by user or time, and enforcing security policies.
+Find use-case configurations for SafeSquid SWG below. Each document describes how to configure SafeSquid for a specific need: blocking or allowing sites, restricting access by user or time, and enforcing security policies.
 
 
 
@@ -81,3 +81,6 @@ Third-party tracking and fingerprinting should be reduced for user privacy. The 
 ### [Working of Default Entries in Access Restrictions](/docs/Use_Cases/working_of_default_entries_in_access_restrictions/)
 Default access restriction policies control baseline web access and must be understood. The document explains how default entries in access restrictions control access for users, groups, and applications. Administrators can tune or override defaults with clarity. Follow the document to understand default entries in access restrictions.
 
+## Next steps
+
+Configure [Access Restriction](/docs/Access_Restriction/main/) and [Profiling Engine](/docs/Profiling_Engine/main/) for policy; see [Troubleshooting](/docs/Troubleshooting/main/) if a use case does not behave as expected.

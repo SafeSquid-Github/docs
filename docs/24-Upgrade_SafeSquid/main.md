@@ -24,3 +24,6 @@ The base OS may reach end-of-life or lack kernel and library versions required b
 ### [Version Upgrade](/docs/Upgrade_SafeSquid/Version_Upgrade/main/)
 SafeSquid software updates deliver bug fixes, security patches, and new features. Version Upgrade describes upgrading the SafeSquid application via the Support page and tarball upload while keeping the OS unchanged. Monit restarts the service after upload. Follow the Version Upgrade document to update SafeSquid when the OS is already current.
 
+## Next steps
+
+After upgrade, verify with [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) and [Troubleshooting](/docs/Troubleshooting/main/) if issues appear.

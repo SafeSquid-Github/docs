@@ -12,7 +12,7 @@ keywords:
 
 # Import SafeSquid Root CA into Chrome or Internet Explorer
 
-Clients must trust the SafeSquid Root CA for HTTPS inspection to work without certificate warnings. Chrome and Internet Explorer use the Windows certificate store. This guide covers importing the SafeSquid SSL certificate into Trusted Root Certification Authorities for both browsers.
+Clients must trust the SafeSquid Root CA for HTTPS inspection to work without certificate warnings. Chrome and Internet Explorer use the Windows certificate store. Follow the steps below to import the SafeSquid SSL certificate into Trusted Root Certification Authorities for both browsers.
 
 :::note
 SafeSquid Web Security Client users do not need to manually import certificates into Chrome or IE. For Firefox, see [Import certificate into Firefox](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#import-certificate-into-firefox) — Firefox uses its own certificate store.

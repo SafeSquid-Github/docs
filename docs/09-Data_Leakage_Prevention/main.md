@@ -268,22 +268,5 @@ Once tuning is complete, enable blocking for real data.
 - [Block Personal Gmail, Allow Corporate](/docs/Use_Cases/Block_Personal_Gmail_Allow_Google_Corporate_Accounts/) — Prevent data leaks via personal email
 - [Block Keywords in Uploads](/docs/Use_Cases/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/) — Detect "confidential" in social posts
 
-
-
-:::info CISO Takeaway
-**Risk:** Uncontrolled data exfiltration = regulatory fines (GDPR: €20M, PCI-DSS: lose card processing) + breach costs ($4.45M avg) + reputational damage.
-
-**Control:** SafeSquid DLP detects and blocks sensitive data (PII, PHI, payment card data) in real time at the network perimeter. Text Analyzer scans uploads/emails for patterns; Image Analyzer extracts text from screenshots via OCR.
-
-**Evidence:** DLP logs export to SIEM; violation reports ready for auditors. Every block/alert includes: timestamp, user, detected pattern, action taken, file hash.
-
-**Action:** 
-1. Enable SSL inspection (required for encrypted traffic)
-2. Load compliance templates (PCI, HIPAA, GDPR)
-3. Test with dummy data in log-only mode (2 weeks)
-4. Tune patterns to reduce false positives
-5. Enable blocking for production
-
-**Timeline:** 1-2 weeks for deployment + tuning. Ongoing: quarterly pattern review, SIEM alert monitoring.
-:::
+Uncontrolled data exfiltration drives regulatory fines (e.g. GDPR up to €20M, PCI-DSS loss of card processing), breach costs (average $4.45M), and reputational damage. SafeSquid DLP detects and blocks sensitive data (PII, PHI, payment card data) in real time at the network perimeter. DLP logs export to SIEM; violation reports are auditor-ready. Every block or alert includes timestamp, user, detected pattern, action taken, and file hash. Plan 1–2 weeks for deployment and tuning; then quarterly pattern review and SIEM alert monitoring.
 

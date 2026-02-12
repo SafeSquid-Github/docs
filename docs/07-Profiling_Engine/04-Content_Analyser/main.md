@@ -45,11 +45,11 @@ And in image filter also there is one default policy exist, to block the pornogr
 ## Custom Categorization
 SafeSquid includes sample policies to support policy creation.
 
-Click on 'Configuration' which is at top right of the SafeSquid Interface.
+1. In the SafeSquid UI header, click the **Configure** button (top-right corner).
 
-In SafeSquid sample policies " Inappropriate content Strictly block for all users" policy is already present. Enable the relevant policies so they apply.
+2. In SafeSquid sample policies, locate the "Inappropriate content Strictly block for all users" policy. Enable the relevant policies so they apply.
 
-The page shows existing policies. Search for 'GLOBAL BLOCK'.
+3. The page shows existing policies. Use the search box to find policies containing 'GLOBAL BLOCK'.
 
 ![blocking inappropriate content for all users](/img/How_To/Content_Filtering/image1.webp)
 
@@ -58,22 +58,22 @@ Edit the policy and enable the policy by setting Enabled as TRUE and save (Save 
 
 
 ## Image Analyzer
-Verify the default section is enabled (default: TRUE).
+1. Verify the **Default** section is enabled (default: TRUE).
 
-Make the Global Section Enabled to TRUE.
+2. Set the **Global** section to **Enabled: TRUE**.
 
-Then click on Filtering Policies and Enable policy to Enable as TRUE
+3. Navigate to **Filtering Policies** and set the policy's **Enabled** field to **TRUE**.
 
 Read more about [How to block inappropriate images by using Image Analyzer](/docs/Profiling_Engine/Content_Analyser/Image_Analyser_AI/)
 
 
 
 ## Text Analyzer
-You have to just check the default section is enable or not.By default it should be Enable as FALSE
+1. Check the **Default** section (default: **Enabled: FALSE**).
 
-Make the Global Section Enabled to TRUE.
+2. Set the **Global** section to **Enabled: TRUE**.
 
-Then click on Filtering Policies and Enable policies to Enable as TRUE.
+3. Navigate to **Filtering Policies** and set the policy's **Enabled** field to **TRUE**.
 
 
 Read more about [Image Analyzer](/docs/Profiling_Engine/Content_Analyser/Image_Analyser_AI/) and [Text Analyzer](/docs/Profiling_Engine/Content_Analyser/Text_Analyser/)

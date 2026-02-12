@@ -13,7 +13,7 @@ keywords:
 
 # Route client traffic through SafeSquid proxy
 
-Web traffic reaches SafeSquid only when clients use it as their proxy. This section covers how to configure clients: from explicit proxy (single browser or quick test) through PAC file, system-wide proxy, and enterprise rollout via GPO or MDM. Outcome: traffic from chosen clients flows through SafeSquid for policy enforcement and inspection.
+Web traffic reaches SafeSquid only when clients use it as their proxy. Configure clients from explicit proxy (single browser or quick test) through PAC file, system-wide proxy, and enterprise rollout via GPO or MDM so traffic from chosen clients flows through SafeSquid for policy enforcement and inspection.
 
 ## Client configuration guides
 

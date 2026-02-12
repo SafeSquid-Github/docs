@@ -1,0 +1,68 @@
+File,Pattern,Line,Severity,Status,Assignee,Notes
+05-SSL_Inspection/01-Configure_HTTPS_Inspection.md,screenshot_dependent,61-207,Medium,Open,Tech Team,44 screenshots need text alternatives - HIGH PRIORITY
+04-Authentication/03-Directory_Services/02-OpenLDAP/02-SSO_Authentication.md,screenshot_dependent,Various,Medium,Open,Tech Team,35 screenshots - document SSO workflow
+04-Authentication/03-Directory_Services/02-OpenLDAP/02-SSO_Authentication.md,vague_location,Various,Medium,Open,Writer,2 instances - add UI context
+21-Use_Cases/09-Allowing_Specific_Page_on_Facebook.md,screenshot_dependent,Various,Medium,Open,Tech Team,35 screenshots - create policy template
+21-Use_Cases/08-Allow_Specific_YouTube_Channel_and_its_Playlist.md,vague_location,Various,Medium,Open,Writer,8 instances - add numbered steps
+21-Use_Cases/08-Allow_Specific_YouTube_Channel_and_its_Playlist.md,undefined_terminology,112,High,Open,Writer,Replace 'as shown below' with specific reference
+21-Use_Cases/08-Allow_Specific_YouTube_Channel_and_its_Playlist.md,screenshot_dependent,Various,Medium,Open,Tech Team,21 screenshots
+19-Operational_Modes/05-Proxy_Chain.md,vague_location,Various,Medium,Open,Writer,1 instance
+19-Operational_Modes/05-Proxy_Chain.md,implicit_assumptions,61,Medium,Open,Writer,Remove 'just' - add prerequisites
+19-Operational_Modes/05-Proxy_Chain.md,incomplete_decision,58,High,Open,Tech Team,Document proxy failure detection and recovery
+19-Operational_Modes/05-Proxy_Chain.md,screenshot_dependent,Various,Medium,Open,Tech Team,23 screenshots - add CLI examples
+04-Authentication/03-Directory_Services/01-Active_Directory/02-Simple_Authentication.md,vague_location,Various,Medium,Open,Writer,1 instance
+04-Authentication/03-Directory_Services/01-Active_Directory/02-Simple_Authentication.md,incomplete_decision,145,High,Open,Tech Team,Document LDAP filter troubleshooting
+04-Authentication/03-Directory_Services/01-Active_Directory/02-Simple_Authentication.md,screenshot_dependent,Various,Medium,Open,Tech Team,24 screenshots - HIGH PRIORITY
+04-Authentication/03-Directory_Services/01-Active_Directory/03-SSO_Authentication.md,incomplete_decision,Various,High,Open,Tech Team,Document Kerberos/SSO failure scenarios
+04-Authentication/03-Directory_Services/01-Active_Directory/03-SSO_Authentication.md,screenshot_dependent,Various,Medium,Open,Tech Team,25 screenshots - HIGH PRIORITY
+21-Use_Cases/13-Block_Particular_User_Login_To_Facebook_Or_Gmail.md,vague_location,Various,Medium,Open,Writer,5 instances - add navigation breadcrumbs
+21-Use_Cases/13-Block_Particular_User_Login_To_Facebook_Or_Gmail.md,screenshot_dependent,Various,Medium,Open,Tech Team,20 screenshots
+04-Authentication/03-Directory_Services/02-OpenLDAP/01-Simple_Authentication.md,incomplete_decision,Various,High,Open,Tech Team,Document LDAP connection failures
+04-Authentication/03-Directory_Services/02-OpenLDAP/01-Simple_Authentication.md,screenshot_dependent,Various,Medium,Open,Tech Team,23 screenshots
+21-Use_Cases/11-Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords.md,vague_location,Various,Medium,Open,Writer,5 instances
+21-Use_Cases/11-Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords.md,screenshot_dependent,Various,Medium,Open,Tech Team,18 screenshots - add regex examples
+07-Profiling_Engine/04-Content_Analyser/main.md,vague_location,48,Medium,Fixed,Squid,Added UI header context
+07-Profiling_Engine/04-Content_Analyser/main.md,vague_location,65,Medium,Fixed,Squid,Converted to numbered list
+07-Profiling_Engine/04-Content_Analyser/main.md,vague_location,76,Medium,Fixed,Squid,Converted to numbered list
+07-Profiling_Engine/04-Content_Analyser/main.md,implicit_assumptions,72,Medium,Fixed,Squid,Removed 'just'
+07-Profiling_Engine/04-Content_Analyser/03-Image_Analyser_AI.md,implicit_assumptions,94,Medium,Fixed,Squid,Rephrased debug mode description
+07-Profiling_Engine/04-Content_Analyser/03-Image_Analyser_AI.md,implicit_assumptions,96,Medium,Fixed,Squid,Removed 'just'
+07-Profiling_Engine/07-Time_Profiles.md,undefined_terminology,72,High,Fixed,Squid,Added section reference
+21-Use_Cases/18-YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos.md,implicit_assumptions,189,Medium,Fixed,Squid,Removed 'just need to'
+24-Upgrade_SafeSquid/01-Version_Upgrade/main.md,undefined_terminology,42,High,Open,Writer,Specify output reference
+15-Audit_Forensics/02-Security_Logs.md,undefined_terminology,65,High,Open,Writer,Name the LOGLEVEL table
+15-Audit_Forensics/04-Monit.md,undefined_terminology,33,High,Open,Writer,Specify configuration block
+23-Troubleshooting/05-Failed_To_Fetch_LDAP_Entries.md,undefined_terminology,144,High,Open,Writer,Specify error message
+23-Troubleshooting/12-Custom_Categorisation_Not_Working.md,undefined_terminology,31,High,Open,Writer,Name command or section
+23-Troubleshooting/03-SSL_Inspection_Issues.md,incomplete_decision,Various,High,Open,Tech Team,Document SSL certificate error codes and symptoms
+23-Troubleshooting/09-Connection_Failure_on_Websites.md,incomplete_decision,32,High,Open,Tech Team,Document proxy vs non-proxy diagnostics
+23-Troubleshooting/10-Website_Not_Accessible.md,incomplete_decision,36,High,Open,Tech Team,Document proxy vs non-proxy diagnostics
+16-Performance_Accelerators/05-WCCP.md,incomplete_decision,23,High,Open,Tech Team,Document WCCP failover detection
+25-FAQs/main.md,implicit_assumptions,144,Medium,Open,Writer,Review 'simply' usage
+15-Audit_Forensics/05-Directory_Structure.md,implicit_assumptions,136,Medium,Open,Writer,Replace 'easily' with process explanation
+02-SafeSquid_SWG/02-Application_Ecosystem.md,implicit_assumptions,94,Medium,Open,Writer,Be specific about integration steps
+19-Operational_Modes/02-Transparent_Proxy.md,implicit_assumptions,77,Medium,Open,Writer,Rephrase comparative statement
+02-SafeSquid_SWG/07-Supporting_Services/02-Bind.md,implicit_assumptions,126,Medium,Open,Writer,Review 'Adjust' instruction - add specifics
+09-Data_Leakage_Prevention/01-Compliance_Templates.md,implicit_assumptions,217,Medium,Open,Writer,Add guidance on score adjustment
+16-Performance_Accelerators/03-Manage_Bandwidth.md,vague_location,21,Medium,Open,Writer,Add section context
+16-Performance_Accelerators/03-Manage_Bandwidth.md,vague_location,23,Medium,Open,Writer,Specify dropdown location
+16-Performance_Accelerators/03-Manage_Bandwidth.md,vague_location,58,Medium,Open,Writer,Remove first-person
+16-Performance_Accelerators/01-Caching.md,vague_location,23,Medium,Open,Writer,Already specific - verify
+16-Performance_Accelerators/01-Caching.md,vague_location,Various,Medium,Open,Writer,Review numbered steps for clarity
+16-Performance_Accelerators/02-Pre_Fetching.md,vague_location,Various,Medium,Open,Writer,Review numbered steps
+14-Malware_Scanners/03-ICAP.md,vague_location,88,Medium,Open,Writer,Specify 'ADD icon' location
+14-Malware_Scanners/04-Adaptable_External_Parser.md,vague_location,Various,Medium,Open,Writer,Review screenshot captions
+14-Malware_Scanners/01-SqScan.md,vague_location,99,Medium,Open,Writer,Specify where to select
+07-Profiling_Engine/05-Request_Profiles.md,vague_location,Multiple,Medium,Open,Writer,Many 'Select' statements - add context
+07-Profiling_Engine/06-Response_Profiles.md,vague_location,Multiple,Medium,Open,Writer,Many 'Select' statements - add context
+12-Cookie_Inspection/01-Cookie_Filter_Configuration.md,vague_location,Multiple,Medium,Open,Writer,Multiple 'Select' statements - add context
+13-Content_Modifier/01-Rewriting_Policies_Reference.md,vague_location,76,Medium,Open,Writer,Add context
+09-Data_Leakage_Prevention/main.md,vague_location,86,Medium,Open,Writer,Review 'choose' statement
+02-SafeSquid_SWG/04-Self-Service_Portal.md,screenshot_dependent,34,Medium,Open,Tech Team,Add access instructions
+07-Profiling_Engine/03-Application_Signatures.md,screenshot_dependent,Multiple,Medium,Open,Tech Team,8 screenshots
+07-Profiling_Engine/05-Request_Profiles.md,screenshot_dependent,Multiple,Medium,Open,Tech Team,Multiple screenshots
+07-Profiling_Engine/06-Response_Profiles.md,screenshot_dependent,Multiple,Medium,Open,Tech Team,Multiple screenshots
+07-Profiling_Engine/02-Web_Categorization.md,screenshot_dependent,30,Medium,Open,Tech Team,Add search functionality description
+12-Cookie_Inspection/main.md,vague_location,20,Medium,Open,Writer,Review 'choose' statement
+02-SafeSquid_SWG/02-Application_Ecosystem.md,vague_location,31,Medium,Open,Writer,Already clear - verify
+13-Content_Modifier/main.md,vague_location,Multiple,Medium,Open,Writer,Review 'select' usage

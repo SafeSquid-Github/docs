@@ -12,11 +12,7 @@ keywords:
 
 # Configure HTTPS Inspection
 
-:::info CISO takeaway
-**Risk:** Encrypted HTTPS traffic creates a blind spot for URL filtering, DLP, and malware detection; compliance frameworks (e.g. PCI-DSS 10.x, SOC 2) expect visibility into web traffic where applicable. **Control:** SafeSquid terminates TLS, inspects content, and re-encrypts so policies apply to HTTPS while bypass rules protect sensitive domains. **Evidence:** Inspection and bypass policies are visible in the Configuration Portal; access and security logs show decrypted requests and bypassed hosts for audit.
-:::
-
-
+Encrypted HTTPS traffic creates a blind spot for URL filtering, DLP, and malware detection; compliance frameworks (e.g. PCI-DSS 10.x, SOC 2) expect visibility into web traffic where applicable. SafeSquid terminates TLS, inspects content, and re-encrypts so policies apply to HTTPS while bypass rules protect sensitive domains. Inspection and bypass policies are visible in the Configuration Portal; access and security logs show decrypted requests and bypassed hosts for audit.
 
 ## Encrypted traffic hides threats without inspection
 
@@ -66,21 +62,15 @@ In the Self-Service Portal dashboard → locate your deployment in the list → 
 
 **Generate SafeSquid Certificate**
 
-Using Self-Signed Certificate.
+Using Self-Signed Certificate: the **Generate** button appears only when SafeSquid's SSL certificate has not been generated yet.
 
-:::note
+![Click the Generate button in the Certificate Management section](/img/SSL_Inspection/image3.webp)
 
-The "Generate" button appears only when SafeSquid's SSL certificate has not been generated yet.
+The passphrase entered in step 3 is non-recoverable. Save the passphrase to reuse the same certificate with a different activation key.
 
-:::
+![Select General self-signed, enter passphrase, then click Generate](/img/SSL_Inspection/image4.webp)
 
-![clicking on generate](/img/SSL_Inspection/image3.webp)
-
-**Note**: The passphrase entered in step #3 is non-recoverable. Save the passphrase to reuse the same certificate with a different activation key.
-
-![selecting general self signed and entering passphrase for self signed certificate and clicking on generate](/img/SSL_Inspection/image4.webp)
-
-![clicking on close to continue](/img/SSL_Inspection/image5.webp)
+![Click Close to continue](/img/SSL_Inspection/image5.webp)
 
 Using Enterprise CA Certificate
 
@@ -88,27 +78,27 @@ Using Enterprise CA Certificate
 
 Generating SafeSquid certificate using an enterprise CA certificate which has a passphrase.
 
-![clicking on regenerate, uploading the enterprise CA cert and selecting have passphrase option](/img/SSL_Inspection/image6.webp)
+![Click Regenerate, upload the enterprise CA cert, and select the have-passphrase option](/img/SSL_Inspection/image6.webp)
 
-![selecting CA cert files](/img/SSL_Inspection/image7.webp)
+![Select the CA cert files](/img/SSL_Inspection/image7.webp)
 
-![entering the passphrase and clicking on validate private key](/img/SSL_Inspection/image8.webp)
+![Enter the passphrase and click Validate private key](/img/SSL_Inspection/image8.webp)
 
-![selecting retain password and clicking on upload](/img/SSL_Inspection/image9.webp)
+![Select Retain password and click Upload](/img/SSL_Inspection/image9.webp)
 
-![clicking on close to continue](/img/SSL_Inspection/image10.webp)
+![Click Close to continue](/img/SSL_Inspection/image10.webp)
 
 *Without a Passphrase*
 
-![clicking on regenerate, uploading the enterprise CA cert and selecting does not have passphrase option ](/img/SSL_Inspection/image11.webp)
+![Click Regenerate, upload the enterprise CA cert, and select the does-not-have-passphrase option](/img/SSL_Inspection/image11.webp)
 
-![selecting the CA cert files](/img/SSL_Inspection/image12.webp)
+![Select the CA cert files](/img/SSL_Inspection/image12.webp)
 
-**Note**: The passphrase entered in step #6 is non-recoverable. Save the passphrase to reuse the same certificate with a different activation key.
+The passphrase entered in step 6 is non-recoverable. Save the passphrase to reuse the same certificate with a different activation key.
 
-![entering new passphrase and clicking on upload](/img/SSL_Inspection/image13.webp)
+![Enter the new passphrase and click Upload](/img/SSL_Inspection/image13.webp)
 
-![clicking on close to continue](/img/SSL_Inspection/image14.webp)
+![Click Close to continue](/img/SSL_Inspection/image14.webp)
 
 **Download Certificate**
 
@@ -124,13 +114,13 @@ From the Self-Service Portal
 
 In the SafeSquid interface header (top navigation bar) → click **Configure**.
 
-![clicking on configure in safesquid interface](/img/SSL_Inspection/image17.webp)
+![Click Configure in the SafeSquid interface header](/img/SSL_Inspection/image17.webp)
 
 **Open the Real-time Content Security section**
 
 In the left sidebar → expand **Real Time Content Security** (if collapsed) → click to open the subsections.
 
-![clicking on Real Time Content Security in the sidebar](/img/SSL_Inspection/image18.webp)
+![Click Real Time Content Security in the sidebar](/img/SSL_Inspection/image18.webp)
 
 **Navigate to HTTPS Inspection**
 
@@ -150,15 +140,15 @@ In SafeSquid versions released after June 2017, the setup tab was removed. The H
 
 In the HTTPS Inspection section → click the **Global** tab (first tab at the top of the main content area) → click the **Edit** icon (pencil icon) on the policy row.
 
-![clicking on edit policy in global tab ](/img/SSL_Inspection/image21.webp)
+![Click the Edit icon on the policy row in the Global tab](/img/SSL_Inspection/image21.webp)
 
 In the policy editor → set **Enabled** dropdown to **True**.
 
-![selecting true in drop down menu](/img/SSL_Inspection/image22.webp)
+![Set Enabled to True in the dropdown](/img/SSL_Inspection/image22.webp)
 
 Click **Save Policy** (green button at the bottom of the policy editor).
 
-![clicking on save policy](/img/SSL_Inspection/image23.webp)
+![Click Save Policy](/img/SSL_Inspection/image23.webp)
 
 **Configure Inspection Policies**
 
@@ -166,27 +156,27 @@ In the HTTPS Inspection section → click the **Inspection Policies** tab (secon
 
 Verify that all default policies are enabled. The table displays existing inspection rules; each row should show **Enabled: True**.
 
-![clicking on inspection policy tab](/img/SSL_Inspection/image24.webp)
+![Click the Inspection Policies tab](/img/SSL_Inspection/image24.webp)
 
 ![showing of default policies in Inspection policies tab](/img/SSL_Inspection/image25.webp)
 
 Find the policy named **"Enforce SSL scanning for all websites"** (usually the last entry) → click the **Edit** icon (pencil icon) on that row.
 
-![clicking on edit on last rule of Enforce SSL scanning for all websites](/img/SSL_Inspection/image26.webp)
+![Click the Edit icon on the Enforce SSL scanning for all websites rule](/img/SSL_Inspection/image26.webp)
 
 In the policy editor → set **Enabled** dropdown to **True** (if not already enabled).
 
-![clicking on true in the drop down menu of the policy](/img/SSL_Inspection/image27.webp)
+![Set Enabled to True in the policy dropdown](/img/SSL_Inspection/image27.webp)
 
 Click **Save Policy** (green button at the bottom of the policy editor).
 
-![clicking on the save policy](/img/SSL_Inspection/image28.webp)
+![Click Save Policy](/img/SSL_Inspection/image28.webp)
 
 **Save and Apply Configuration**
 
 In the SafeSquid interface → locate the **Save Configuration** icon (floppy disk icon, bottom left corner of the interface) → click to save changes.
 
-![clicking on save conf to save the configuration](/img/SSL_Inspection/image29.webp)
+![Click Save Configuration to save the configuration](/img/SSL_Inspection/image29.webp)
 
 A confirmation dialog appears asking whether to store the configuration in the cloud.
 

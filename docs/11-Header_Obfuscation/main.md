@@ -21,7 +21,7 @@ SafeSquid modifies HTTP header messages exchanged between clients (e.g. web brow
 
 The request and response headers are processed by this section before they are processed by the facility to rewrite headers in the Content Re-Write section.
 
-This section consists of 4 sub-sections — Global, Allow, Deny and Insert.
+Header filter has 4 sub-sections: Global, Allow, Deny, and Insert.
 
 The processing of a request or a response, by this section is bypassed if the Global sub-section is set to False, and the policies in Allow / Deny / Insert thus become muted.
 
@@ -38,3 +38,6 @@ Similarly setting the Default policy to Deny shall block all non-mandatory HTTP 
 ### [Header Filter Configuration and Reference](/docs/Header_Obfuscation/Header_Filter_Configuration/)
 Header allow/deny/insert behavior requires correct Global policy and rule configuration. The document covers the Global section, Allow and Deny rule parameters (Type, Value, Applies to, Profiles), and Insert rules for adding or modifying headers. Solution verification confirms policies apply as intended. Use the document to configure and validate header filtering.
 
+## Next steps
+
+Combine header filter with [Access Restriction](/docs/Access_Restriction/main/) and [Cookie Inspection](/docs/Cookie_Inspection/main/) for full request/response control.

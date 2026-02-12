@@ -15,9 +15,7 @@ keywords:
 
 # SafeSquid SWG architecture and components
 
-SafeSquid Secure Web Gateway (SWG) is a purpose-built HTTP proxy for application-layer security. It intercepts HTTP/HTTPS traffic, inspects Layer 7 content, and enforces access control, URL filtering, SSL inspection, and data leakage prevention. This section describes the SWG architecture and links to configuration and component documentation.
-
-SafeSquid SWG consolidates proxy enforcement, policy management, self-service portal, reporting, integrated DNS security, and supporting services into one platform. The documents below guide administrators through each component.
+SafeSquid Secure Web Gateway (SWG) is a purpose-built HTTP proxy for application-layer security. It intercepts HTTP/HTTPS traffic, inspects Layer 7 content, and enforces access control, URL filtering, SSL inspection, and data leakage prevention. The documents below are your path to configuring and operating each component—policy console, proxy cluster, reporting, DNS security, and supporting services.
 
 
 
@@ -44,3 +42,6 @@ DNS is a common vector for bypass and malware. Integrated DNS Security documents
 ### [Supporting Services](/docs/SafeSquid_SWG/Supporting_Services/main/)
 Production deployments need monitoring and dependency services. Supporting Services covers Monit, BIND, and NTP used by SafeSquid. High availability and correct time and DNS depend on these services. Configure Supporting Services using this document for production readiness.
 
+## Next steps
+
+After configuring SWG components, enable [SSL Inspection](/docs/SSL_Inspection/main/) for HTTPS visibility, then [Authentication](/docs/Authentication/main/) and [Access Restriction](/docs/Access_Restriction/main/) for identity-based policy.

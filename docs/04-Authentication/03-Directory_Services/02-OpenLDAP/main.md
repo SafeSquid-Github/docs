@@ -26,3 +26,6 @@ Organizations using OpenLDAP need proxy authentication validated against the dir
 ### [SSO Authentication](/docs/Authentication/Directory_Services/OpenLDAP/SSO_Authentication/)
 LDAP users should use the proxy with minimal prompts after domain or directory login. SSO Authentication provides a flow so authenticated directory users get access without re-entering credentials. Consistent identity and better user experience result. Enable authentication in Access Restrictions, configure LDAP profiles and user groups, then verify SSO using this document.
 
+## Next steps
+
+Apply [Access Restriction](/docs/Access_Restriction/main/) by LDAP group; enable [SSL Inspection](/docs/SSL_Inspection/main/) so HTTPS is attributed to users.

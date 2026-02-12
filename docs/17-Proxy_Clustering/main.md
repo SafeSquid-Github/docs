@@ -26,3 +26,6 @@ Single-node deployments lack failover and scale limits. Master-Slave describes h
 ### [Configuration Sync](/docs/Proxy_Clustering/Configuration_Sync/)
 Configuration drift across nodes causes inconsistent enforcement and troubleshooting difficulty. Configuration Sync enables automatic propagation of policy and configuration from master to slaves. All nodes stay aligned without manual copy. Configure sync using this document.
 
+## Next steps
+
+Place a load balancer in front of slave nodes; see [Disaster Recovery](/docs/Disaster_Recovery/main/) for backup and restore, and [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) for post-cluster validation.

@@ -10,15 +10,9 @@ keywords:
 ---
 
 
-:::info CISO takeaway
-**Risk:** Unauthenticated proxy traffic has no user attribution and weakens audit and acceptable-use enforcement. **Control:** Bypass rules limit unauthenticated access to an explicit list of destinations or request types; all other traffic remains subject to authentication and logging. **Evidence:** Bypass configuration is auditable; logs show which traffic was bypassed (no user identity) versus authenticated—demonstrate narrow scope of bypass for auditors.
-:::
-
-
-
 ## Problem: Applications that cannot send proxy credentials break or fail
 
-Organizations enforce proxy authentication to attribute access and enforce policy. Automatic updates (antivirus, OS, applications) and non-interactive clients (e.g. Dropbox, some backup tools) cannot send proxy credentials and fail when authentication is required. Blocking them disrupts operations; allowing all unauthenticated traffic removes accountability. SafeSquid bypass rules let specific destinations or request types skip authentication while the rest of the traffic remains authenticated and tracked.
+Unauthenticated proxy traffic has no user attribution and weakens audit and acceptable-use enforcement. Bypass rules limit unauthenticated access to an explicit list of destinations or request types; all other traffic remains subject to authentication and logging. Bypass configuration is auditable; logs show which traffic was bypassed versus authenticated so you can demonstrate narrow scope for auditors. Organizations enforce proxy authentication to attribute access and enforce policy. Automatic updates (antivirus, OS, applications) and non-interactive clients (e.g. Dropbox, some backup tools) cannot send proxy credentials and fail when authentication is required. Blocking them disrupts operations; allowing all unauthenticated traffic removes accountability. SafeSquid bypass rules let specific destinations or request types skip authentication while the rest of the traffic remains authenticated and tracked.
 
 
 

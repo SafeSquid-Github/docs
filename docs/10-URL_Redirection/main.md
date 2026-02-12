@@ -26,3 +26,6 @@ Search engines return explicit content when SafeSearch is not enforced. SafeSqui
 ### [Redirect One Website to Another](/docs/URL_Redirection/Redirect_One_Website_to_Another/)
 Organizations need to send traffic from one URL to another for branding, blocking, or compliance. The document covers enabling the Redirect section and creating redirection policies in Real Time Content Security. Verification in Native logs confirms redirects work as intended. Use this document to configure and validate URL-to-URL redirection.
 
+## Next steps
+
+Combine with [Access Restriction](/docs/Access_Restriction/main/) for allow/deny by URL; use [Profiling Engine](/docs/Profiling_Engine/main/) for category-based policy.

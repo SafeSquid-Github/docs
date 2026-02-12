@@ -10,9 +10,7 @@ keywords:
 ---
 
 
-A comprehensive guide for troubleshooting common issues encountered during the installation of SafeSquid.
-
-It is designed to help users navigate through potential problems and find effective solutions.
+If you see **Bad archive mirror**, **Failed to retrieve pre-configuration**, or other installation failures, use the sections below to diagnose and fix. Symptoms are grouped by stage: before install, during install, and network-related.
 
 
 
@@ -98,7 +96,7 @@ Follow the steps of standard installation and continue your installation process
 
 
 ## Conclusion
-This guide aims to cover the most common issues encountered during the SafeSquid installation process. For additional assistance, users are encouraged to consult the SafeSquid forums and community resources.
+For additional assistance, consult the SafeSquid forums and community resources.
 
 
 

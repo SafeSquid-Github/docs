@@ -186,7 +186,7 @@ root@safesquid-swg:cat /var/lib/safesquid/youtube/keys
 
 AIz******************************o
 
-After doing so, you just need to **RESTART SafeSquid Service** from SafeSquid Interface or by command line.
+After adding the API key, **restart the SafeSquid service** from the SafeSquid Interface or via command line:
 
 ```bash
 /etc/init.d/safesquid restart

@@ -33,3 +33,6 @@ Proxy authentication should use the same credentials as the operating system to 
 ### [Bypass Authentication](/docs/Authentication/Bypass_Authentication/)
 Applications that cannot send proxy credentials (e.g. automatic updates) fail when authentication is required. Bypass rules let specific destinations or request types skip authentication while the rest remains authenticated and logged. A narrow, auditable bypass list preserves control. Follow the document to enable bypass and define request types for bypassed destinations.
 
+## Next steps
+
+Combine authentication with [Access Restriction](/docs/Access_Restriction/main/) for identity-based policies, and with [SSL Inspection](/docs/SSL_Inspection/main/) so HTTPS traffic is attributed to users.

@@ -9,13 +9,9 @@ keywords:
 ---
 
 
-:::info CISO takeaway
-**Risk:** Separate proxy credentials increase sprawl and weaken accountability tied to OS identity. **Control:** PAM integration validates proxy users against the system PAM stack so one credential set applies to OS and proxy. **Evidence:** Identity and access logs record authenticated usernames; demonstrate alignment with access control objectives (e.g. ISO 27001 A.9, SOC 2).
-:::
-
 # PAM Authentication
 
-
+Separate proxy credentials increase sprawl and weaken accountability tied to OS identity. PAM integration validates proxy users against the system PAM stack so one credential set applies to OS and proxy. Identity and access logs record authenticated usernames and support access control objectives (e.g. ISO 27001 A.9, SOC 2).
 
 ## Problem: System credentials must align with proxy authentication
 

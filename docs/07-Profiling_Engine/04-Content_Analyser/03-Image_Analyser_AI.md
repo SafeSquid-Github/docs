@@ -13,7 +13,7 @@ keywords:
 
 ## Image Analyzer blocks inappropriate images in real time
 
-This section prevents users from viewing pornographic image content. It blocks inappropriate images by analysing graphical content in real time. The default template replaces the blocked image with a checkered box.
+Image Analyser AI prevents users from viewing pornographic or inappropriate image content by analysing graphical content in real time. The default template replaces the blocked image with a checkered box.
 
 
 
@@ -91,10 +91,10 @@ The name should be selected from template section. Find the template name in the
 The default template replaces the blocked image with a checkered box.
 
 ### Debug
-Enable to just debug, without blocking.
+Enable debugging mode to test without blocking.
 
--   **TRUE**: Do not block, just blur the image if possibly pornographic
--   **FALSE**: Block images if score is higher than threshold
+-   **TRUE**: Do not block; blur the image if possibly pornographic (testing mode)
+-   **FALSE**: Block images if score exceeds threshold
 
 
 

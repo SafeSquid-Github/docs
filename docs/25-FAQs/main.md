@@ -14,7 +14,7 @@ keywords:
 
 # FAQs
 
-This section answers common questions about SafeSquid SWG: installation, activation, licensing, proxy modes, reporting, transparent proxy, WCCP, DLP, SafeSearch, and troubleshooting. Use the list below to jump to a topic.
+Common questions about SafeSquid SWG: installation, activation, licensing, proxy modes, reporting, transparent proxy, WCCP, DLP, SafeSearch, and troubleshooting. Use the list below to jump to a topic.
 
 
 

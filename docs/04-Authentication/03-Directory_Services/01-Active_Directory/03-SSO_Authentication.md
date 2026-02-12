@@ -10,15 +10,9 @@ keywords:
 ---
 
 
-:::info CISO takeaway
-**Risk:** Repeated proxy login prompts reduce usability and can lead to workarounds that weaken control. **Control:** Kerberos-based SSO with AD allows domain-authenticated users to use the proxy without a second credential prompt. **Evidence:** Identity and access logs show authenticated usernames; SSO flow is auditable.
-:::
-
-
-
 ## Problem: Single sign-on for domain users
 
-Domain-joined users should access the proxy without a separate login when they are already authenticated to Active Directory. Kerberos SSO validates the user ticket with AD and applies identity-based policy without a browser credential prompt. Requires time sync, DNS, and LDAP with Negotiate bind.
+Repeated proxy login prompts reduce usability and can lead to workarounds that weaken control. Kerberos-based SSO with AD allows domain-authenticated users to use the proxy without a second credential prompt. Identity and access logs show authenticated usernames and the SSO flow is auditable. Domain-joined users should access the proxy without a separate login when they are already authenticated to Active Directory. Kerberos SSO validates the user ticket with AD and applies identity-based policy without a browser credential prompt. Requires time sync, DNS, and LDAP with Negotiate bind.
 
 
 

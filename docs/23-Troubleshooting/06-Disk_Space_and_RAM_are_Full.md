@@ -12,7 +12,7 @@ keywords:
 
 # Free disk and RAM to restore proxy operation
 
-When SafeSquid partitions or RAM are full, the proxy can fail or behave unpredictably. This guide helps identify full partitions, clean logs and cache safely, and prevent recurrence.
+When SafeSquid partitions or RAM are full, the proxy can fail or behave unpredictably. Use the steps below to identify full partitions, clean logs and cache safely, and prevent recurrence.
 
 
 

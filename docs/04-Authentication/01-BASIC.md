@@ -14,15 +14,9 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::info CISO takeaway
-**Risk:** Without user identity, access policies cannot be enforced per user; anonymous proxy access increases misuse and complicates audit. **Control:** Local credential store (BASIC) provides browser-prompt authentication and user-level policies without a directory. **Evidence:** Identity and access logs record authenticated usernames; policies tie to user identity for audit trail.
-:::
-
-
-
 ## Problem: Identity-based access without a directory
 
-Organizations without Active Directory need identity-based web access control. Absence of centralized directory prevents per-user policies and audit attribution. SafeSquid local credential store (BASIC) enables authentication via browser prompts with usernames and passwords stored in SafeSquid. User-level policies and logs then support accountability and compliance.
+Without user identity, access policies cannot be enforced per user; anonymous proxy access increases misuse and complicates audit. Organizations without Active Directory need identity-based web access control. Absence of centralized directory prevents per-user policies and audit attribution. Local credential store (BASIC) provides browser-prompt authentication and user-level policies without a directory; identity and access logs record authenticated usernames and policies tie to user identity for audit trail. SafeSquid local credential store (BASIC) enables authentication via browser prompts with usernames and passwords stored in SafeSquid. User-level policies and logs then support accountability and compliance.
 
 
 
@@ -54,12 +48,12 @@ Eliminates LDAP dependency for small or isolated environments. Access control an
    Access the SafeSquid configuration interface at `http://safesquid.cfg/` through a browser using the SafeSquid proxy.
 
 2. **Navigate to Access Restrictions**\
-   From the left menu: `Application Setup` → `Access Restrictions` → `Allow List`.\
-   Click the orange `+` icon to add a new entry.\
+   In the SafeSquid interface left menu: **Application Setup** → **Access Restrictions** → **Allow List**.\
+   Click the orange **+** icon to add a new entry.\
    ![Going in the access restrictions section in application setup](/img/How_To/Setup_Authentication/image2.webp)
 
 3. **Disable PAM Authentication**\
-   In the new rule window, set `PAM Authentication` to `FALSE`.\
+   In the new rule window, set **PAM Authentication** to **FALSE**.\
    ![Making the PAM authentication false and adding username and password in the username password field](/img/How_To/Setup_Authentication/image3.webp)
 
 4. **Save the Configuration**\
@@ -75,9 +69,9 @@ Eliminates LDAP dependency for small or isolated environments. Access control an
     label="From SafeSquid Interface"
     default
   >
-    ![clicking on configure in safesquid interface](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image1.webp)
+    ![Click Configure in the SafeSquid interface](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image1.webp)
 
-    ![click on search in access profiles](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image2.webp)
+    ![Click Search in Access Profiles](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image2.webp)
 
     ![Access profiles search or policy list](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image4.webp)
 

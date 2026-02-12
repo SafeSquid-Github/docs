@@ -16,7 +16,7 @@ keywords:
 
 The Global section controls how SafeSquid edits HTTP header messages between the browser and the Internet. Use it to increase privacy, control client requests and server responses, and add, delete, or modify request and response headers. The Insert sub-section adds new headers or modifies existing ones in addition to Allow/Deny.
 
-This section analyzes:
+The following subsections cover:
 
 1. Request header patterns that are passed from browsers to webservers.
 2. Response header patterns that are coming from webservers to clients.

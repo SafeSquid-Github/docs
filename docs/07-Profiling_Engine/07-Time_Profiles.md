@@ -69,7 +69,7 @@ SafeSquid evaluates entries from top to bottom. All entries within the time rang
 | **Weekday Range** | Active weekdays (default: all). Example: Monday to Thursday |
 | **Hour Range** | Active hours (default: all). Example: 9 to 12 (9 AM to 12 PM) |
 | **Minute Range** | Active minutes in conjunction with Hour Range. Example: 15 to 30 |
-| **Time Match Mode** | ABSOLUTETIME or ALLRANGES (see below) |
+| **Time Match Mode** | ABSOLUTETIME or ALLRANGES. See the **Time Match Modes** section below for details on each mode |
 | **Added Time Profiles** | Profiles to append when entry matches |
 | **Removed Time Profiles** | Profiles to remove when entry matches |
 

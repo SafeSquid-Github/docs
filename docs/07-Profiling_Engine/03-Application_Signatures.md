@@ -13,7 +13,7 @@ keywords:
 ---
 
 
-This section assumes an active SafeSquid account with at least one activation key. Register at [https://key.safesquid.com/](https://key.safesquid.com/) if needed. Log in to the Self-Service Portal at [https://key.safesquid.com/](https://key.safesquid.com/).
+You need an active SafeSquid account with at least one activation key. Register at [https://key.safesquid.com/](https://key.safesquid.com/) if needed. Log in to the Self-Service Portal at [https://key.safesquid.com/](https://key.safesquid.com/).
 
 ![Select manage signatures option to Manage Keyword Signatures using Self Service portal (https://key.safesquid.com/)](/img/How_To/Manage_Keyword_Signatures_using_Self_Service_portal/image1.webp)
 

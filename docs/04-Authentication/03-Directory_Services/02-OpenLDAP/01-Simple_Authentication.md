@@ -10,15 +10,9 @@ keywords:
 ---
 
 
-:::info CISO takeaway
-**Risk:** Per-user proxy control requires identity from a trusted directory. **Control:** OpenLDAP simple bind validates users and provides group membership for access rules. **Evidence:** LDAP bind and user extraction are logged; identity and access logs show authenticated usernames for audit.
-:::
-
-
-
 ## Problem: Proxy authentication backed by OpenLDAP
 
-Organizations using OpenLDAP need proxy authentication validated against the directory with group-based access rules. Simple LDAP bind validates usernames and passwords and retrieves group membership without Kerberos or SSO.
+Per-user proxy control requires identity from a trusted directory. OpenLDAP simple bind validates users and provides group membership for access rules. LDAP bind and user extraction are logged; identity and access logs show authenticated usernames for audit. Organizations using OpenLDAP need proxy authentication validated against the directory with group-based access rules. Simple LDAP bind validates usernames and passwords and retrieves group membership without Kerberos or SSO.
 
 
 

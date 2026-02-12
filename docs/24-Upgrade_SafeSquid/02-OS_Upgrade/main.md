@@ -21,7 +21,7 @@ keywords:
 
 ## OS upgrade scope and procedure
 
-This document provides a **step-by-step, non-interactive procedure** to upgrade the **SafeSquid Secure Web Gateway** system from **Ubuntu 20.04 LTS** to **Ubuntu 24.04 LTS**, followed by upgrading to the latest **SafeSquid version 2025.1001.1232.3**.
+Use this step-by-step, non-interactive procedure to upgrade the SafeSquid Secure Web Gateway system from Ubuntu 20.04 LTS to Ubuntu 24.04 LTS, then to SafeSquid version 2025.1001.1232.3.
 
 The steps ensure **compatibility**, **security**, and **service continuity** for SafeSquid deployments running in production environments.
 

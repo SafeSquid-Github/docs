@@ -21,3 +21,6 @@ SafeSquid integrates with VPN infrastructure so policy enforcement extends to re
 ### [VPN Integration](/docs/Integrations/VPN/main/)
 Remote users and branch offices need consistent web security policy enforcement across distributed infrastructure. VPN Integration enables SafeSquid to use WireGuard for encrypted tunnels and centralized policy enforcement. Secure remote access and consistent security posture result from this integration. Configure VPN integration through SafeSquid network settings using this document.
 
+## Next steps
+
+Combine with [Authentication](/docs/Authentication/main/) and [Access Restriction](/docs/Access_Restriction/main/) for identity-based policy over VPN traffic.
