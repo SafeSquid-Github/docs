@@ -44,6 +44,20 @@ element {
 
 /* ===== Enterprise Documentation Enhancements ===== */
 
+/* Full-Width Images in Documentation */
+.markdown img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .markdown img {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
 /* Improved Table Readability */
 table {
   border-collapse: collapse;
