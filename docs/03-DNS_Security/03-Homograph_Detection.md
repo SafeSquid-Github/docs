@@ -19,7 +19,7 @@ To configure Homograph Detection, navigate to:
 
 You can enable or disable the feature from this section.
 
-![Homograph Configuration](/img/homograph_config.webp)
+![Homograph Configuration](/img/Homographic_Detection/homograph_config.webp)
 
 ## Verification
 
@@ -37,7 +37,7 @@ curl -v -x http://10.200.2.204:8080 http://аpple.com
 
 **Output:**
 
-![cURL Verification Output](/img/homograph_curl_output.webp)
+![cURL Verification Output](/img/Homographic_Detection/homograph_curl_output.webp)
 
 ### Method 2: Using Browser
 
@@ -47,4 +47,4 @@ Visit the URL `http://аpple.com` in your browser while connected to the SafeSqu
 
 We access the URL `http://аpple.com` through the proxy and we got the following output:
 
-![Browser Verification Output](/img/homograph_browser_output.webp)
+![Browser Verification Output](/img/Homographic_Detection/homograph_browser_output.webp)
