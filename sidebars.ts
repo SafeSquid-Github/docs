@@ -35,7 +35,7 @@ function generateJson(dirPath: string): any[] {
         return [
             {
                 type: 'category',
-                label: path.basename(dirPath).replace(/^[0-9]+-/, ''),
+                label: path.basename(dirPath).replace(/^[0-9]+-/, '').replace(/_/g, ' '),
                 link: { type: 'doc', id: cleanMainId },
                 items: items,
             },
