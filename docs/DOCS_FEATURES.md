@@ -7,6 +7,7 @@ keywords:
   - version selector
   - search documentation
 ---
+import PDFExportButton from '@site/src/components/PDFExport';
 
 # Documentation Features Guide
 
