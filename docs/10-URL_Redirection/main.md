@@ -16,7 +16,23 @@ keywords:
 
 URL redirection lets SafeSquid send users to a different URL than the one requested. Use it to enforce safe search, steer traffic for compliance, or redirect specific sites to an alternative destination.
 
+## Redirection Modes
 
+SafeSquid supports two redirection modes controlled by the **302 Redirect** toggle:
+
+### HTTP Redirection (302 Redirect Enabled)
+When enabled, SafeSquid sends an HTTP 302 redirect response to the client browser. The browser sees the redirect and follows it to the new destination. This mode:
+- Shows the redirect in browser history
+- Allows the client to see both original and target URLs
+- Uses standard HTTP redirect mechanisms
+
+### Internal Redirection (302 Redirect Disabled)
+When disabled, SafeSquid performs the redirection internally without informing the client. The proxy fetches content from the target URL and serves it transparently. This mode:
+- Hides the redirect from the end user
+- Maintains the original URL in the browser address bar
+- Performs the redirection at the proxy level
+
+Choose the mode based on whether users should see the redirect happening (HTTP) or experience seamless content steering (internal).
 
 ## URL redirection and SafeSearch guides
 
