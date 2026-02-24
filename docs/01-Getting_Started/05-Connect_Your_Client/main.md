@@ -10,29 +10,110 @@ keywords:
   - enterprise proxy deployment
 ---
 
+# Connect Your Client
 
-# Route client traffic through SafeSquid proxy
+Web traffic flows through SafeSquid only when clients are configured to use it as their HTTP proxy. Choose a configuration method based on your deployment scale and environment:
 
-Web traffic reaches SafeSquid only when clients use it as their proxy. Configure clients from explicit proxy (single browser or quick test) through PAC file, system-wide proxy, and enterprise rollout via GPO or MDM so traffic from chosen clients flows through SafeSquid for policy enforcement and inspection.
+- **Explicit Proxy** — Manual browser configuration (testing, single users)
+- **PAC File** — Automated proxy selection for all browsers (medium deployments)
+- **System-Wide Proxy** — OS-level configuration for all applications (complete coverage)
+- **Enterprise Deployment** — Mass rollout via GPO, MDM, or config management (production at scale)
+- **Application-Specific** — Individual app configuration (Git, Docker, CLI tools)
 
-## Client configuration guides
+:::info Before You Start
+
+- SafeSquid must be installed and running (verify with `netstat -lntp | grep 8080`)
+- License must be activated (see [Activate Your License](/docs/Getting_Started/Activate/))
+- Note your SafeSquid server IP address and port (default: 8080)
+- For HTTPS sites, you'll need [SSL Inspection](/docs/SSL_Inspection/main/) configured later
+
+:::
+
+## Which Method Should I Use?
+
+| **Scenario** | **Recommended Method** | **Why** |
+|--------------|------------------------|---------|
+| Testing SafeSquid for the first time | [Explicit Proxy](#explicit-proxy) | Fastest way to validate installation |
+| Single user, multiple browsers | [PAC File](#pac-file) | Configure once, applies to all browsers |
+| Need all apps on a machine proxied | [System-Wide Proxy](#system-wide-proxy) | OS-level proxy covers browsers + CLI tools |
+| Rolling out to 10-1000+ endpoints | [Enterprise Deployment](#enterprise-deployment) | GPO/MDM push for consistent configuration |
+| Only specific apps need proxy (e.g., Docker) | [Application-Specific](#application-specific-configuration) | Configure individual apps without affecting others |
+
+**For production:** Start with [Explicit Proxy](#explicit-proxy) to test, then use [Enterprise Deployment](#enterprise-deployment) for full rollout.
+
+## Configuration Methods
 
 ### [Explicit Proxy](/docs/Getting_Started/Connect_Your_Client/Explicit_Proxy/)
-Single-browser or quick verification requires manual proxy settings in the browser. Explicit Proxy describes configuring the browser to use the SafeSquid IP and port. Suitable for testing and controlled environments. Use this document for quick verification or single-browser setup.
+
+**Manual browser configuration.** Set proxy IP and port in browser settings for quick testing or controlled environments.
+
+**Use this for:** Initial testing, single-user setups, or when you need immediate validation that SafeSquid is working.
+
+**Time to deploy:** 2 minutes per browser.
+
+---
 
 ### [PAC File](/docs/Getting_Started/Connect_Your_Client/PAC_File/)
-All browsers on a machine can use one proxy configuration via a Proxy Auto-Configuration (PAC) file. PAC File covers creating and deploying a PAC file for automated proxy selection and optional load balancing. Reduces per-browser configuration. Follow this document to deploy PAC-based proxy selection.
+
+**Automated proxy selection.** Deploy a Proxy Auto-Configuration (PAC) file that all browsers reference. Supports conditional routing (e.g., direct access for internal sites, proxy for internet).
+
+**Use this for:** Medium deployments (10-100 users), branch offices, or when you need flexible proxy rules without reconfiguring every browser.
+
+**Time to deploy:** 10 minutes to create PAC file + distribute URL.
+
+---
 
 ### [System-Wide Proxy](/docs/Getting_Started/Connect_Your_Client/System_Wide_Proxy/)
-All applications on a machine must use the proxy for full coverage. System-Wide Proxy describes configuring the OS so every application uses SafeSquid. Non-browser apps and CLI tools are covered. Use this document for machine-wide proxy configuration.
+
+**OS-level configuration.** Configure Windows, macOS, or Linux to route all application traffic through SafeSquid—browsers, CLI tools, and background apps.
+
+**Use this for:** Complete traffic coverage on individual machines, developer workstations, or endpoints where all apps must use the proxy.
+
+**Time to deploy:** 5 minutes per OS.
+
+---
 
 ### [Enterprise Deployment](/docs/Getting_Started/Connect_Your_Client/Enterprise_Deployment/)
-Organizations need proxy settings rolled out at scale via GPO, Active Directory, or configuration management. Enterprise Deployment covers group policy, AD, Puppet, Ansible, and similar methods. Consistent configuration across the organization. Follow this document for organization-wide deployment.
+
+**Mass rollout via GPO, MDM, or config management.** Push proxy settings to hundreds or thousands of endpoints using Group Policy (Windows), MDM (macOS/mobile), Puppet, Ansible, or SCCM.
+
+**Use this for:** Production deployments, organization-wide rollouts, or when you need centralized control and consistent configuration.
+
+**Time to deploy:** Initial setup 1-2 hours, then automatic for all endpoints.
+
+---
 
 ### [Application-Specific Configuration](/docs/Getting_Started/Connect_Your_Client/Application_Specific_Configuration/)
-Individual applications (Git, npm, Docker, email clients, CLI tools) require their own proxy configuration. Application-Specific Configuration describes proxy settings for each. Ensures non-browser traffic is inspected. Use this document to configure proxy for specific applications.
 
-## Next steps
+**Configure individual applications.** Set proxy for Git, npm, Docker, email clients, and CLI tools that don't inherit system proxy settings.
 
-1. [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) — run smoke tests to confirm the proxy is receiving traffic.
-2. [SSL Inspection](/docs/SSL_Inspection/main/) — enable HTTPS decryption so SafeSquid can inspect and filter encrypted traffic.
+**Use this for:** Developer tools, containerized apps, or when only specific applications need proxy access.
+
+**Time to deploy:** 2-5 minutes per application.
+
+## Testing Your Configuration
+
+After configuring any method, test immediately:
+
+1. **Open a browser** configured to use SafeSquid
+2. **Navigate to** `http://example.com`
+3. **Check SafeSquid logs:**
+   ```bash
+   tail -f /var/log/safesquid/access/extended.log
+   ```
+   You should see the request logged with client IP, URL, and timestamp
+
+**If the site doesn't load:**
+- Verify SafeSquid is running: `systemctl status safesquid`
+- Check firewall allows port 8080
+- Confirm proxy IP and port in client settings
+- See [Troubleshooting](/docs/Troubleshooting/main/) for common issues
+
+**For HTTPS sites:** You'll see certificate warnings until [SSL Inspection](/docs/SSL_Inspection/main/) is configured.
+
+## Next Steps
+
+1. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Run comprehensive smoke tests to confirm traffic flows
+2. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Enable HTTPS decryption so SafeSquid can inspect encrypted traffic
+3. **[Configure Policies](/docs/Access_Restriction/main/)** — Set up access controls and content filtering
+4. **[Scale Your Deployment](#enterprise-deployment)** — If testing succeeded, roll out to all endpoints using Enterprise Deployment methods

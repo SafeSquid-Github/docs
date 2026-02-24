@@ -14,6 +14,8 @@ Imagine a **sleeper‑cell domain**—a web address that has sat idle for months
 
 > Definition – Strategically Aged Domain: a domain registered or re‑registered months or years before active use, specifically to accumulate benign reputation and category labels.
 
+<!-- truncate -->
+
 ***
 
 ## Anatomy of Zero-Hour Phishing

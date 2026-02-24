@@ -10,203 +10,316 @@ keywords:
   - browser PAC setup
 ---
 
-
 # PAC File Configuration
 
+**PAC (Proxy Auto-Configuration)** files use JavaScript to automatically select the right proxy for each request. Browsers fetch the PAC file from a URL and execute it for every connection.
 
+**Use this method for:**
+- Medium deployments (10-100 users)
+- Conditional routing (internal sites direct, external via proxy)
+- Load balancing across multiple SafeSquid nodes
+- Automatic failover when a proxy is down
 
-## Problem Statement
+**Time to deploy:** 10 minutes to create PAC + distribute URL
 
-Organizations require automated proxy configuration to reduce deployment complexity and enable dynamic traffic routing without manual browser configuration for each endpoint. Manual proxy configuration becomes impractical in large-scale deployments where hundreds or thousands of endpoints need consistent proxy settings with intelligent routing capabilities. PAC files provide automated proxy selection through JavaScript-based configuration, enabling sophisticated routing logic, load balancing, and failover capabilities across proxy clusters.
+:::tip When to Use PAC Files
 
+Use PAC files when you need flexibility (different rules for different sites) without reconfiguring every browser. For enterprise scale (100+ endpoints), use [Enterprise Deployment](/docs/Getting_Started/Connect_Your_Client/Enterprise_Deployment/) to push PAC URLs via GPO/MDM.
 
-
-## Key Benefits
-
-**Automated Deployment**: PAC files eliminate manual browser configuration requirements, enabling rapid deployment across large-scale environments with minimal administrative overhead. This automation reduces deployment time and configuration errors while ensuring consistent proxy settings across all endpoints.
-
-**Intelligent Routing**: PAC files enable sophisticated routing logic based on destination URLs, user groups, time-based policies, and network conditions. This intelligence allows organizations to implement complex routing strategies including load balancing, failover, and conditional proxy selection.
-
-**Centralized Management**: PAC files enable centralized configuration management with automatic updates and rollback capabilities. Changes to proxy configuration can be deployed instantly across all endpoints without individual browser reconfiguration.
-
-
+:::
 
 ## Prerequisites
 
-**Client-Side Preparations**: Ensure browsers support PAC file functionality and have appropriate network connectivity to access PAC file hosting location. Verify DNS resolution for PAC file server and test HTTP access to PAC file URL.
+:::info Before You Start
 
-**SafeSquid-Side Setup**: Configure SafeSquid proxy servers with appropriate load balancing and failover capabilities. Ensure PAC file hosting server is accessible and PAC file content is properly formatted JavaScript.
+- Web server to host PAC file (Apache, Nginx, IIS, or any HTTP server)
+- SafeSquid IP address and port (default: 8080)
+- (Optional) Multiple SafeSquid IPs for load balancing/failover
+- Basic JavaScript knowledge to customize PAC logic
 
-**System Requirements**: Client systems must have browsers that support PAC file functionality (Chrome, Firefox, Safari, Edge). Network connectivity must allow access to PAC file hosting server and SafeSquid proxy servers.
+:::
 
+## Hosting Methods
 
+| **Method** | **When to Use** | **Pros** | **Cons** |
+|------------|-----------------|----------|----------|
+| **HTTP Server** | Production, multiple users | Centralized updates, automatic distribution | Requires web server |
+| **File Protocol** | Testing, single machine | No server needed, instant changes | Must copy file to every machine |
 
-## Implementation Actions
+**Recommended:** Use HTTP for anything beyond single-user testing.
 
-### PAC File Overview
+## Create Your PAC File
 
-**What is a PAC File**: Proxy Auto-Configuration (PAC) files are JavaScript-based configuration files that browsers use to automatically determine which proxy server to use for specific URLs. PAC files contain JavaScript functions that evaluate destination URLs and return appropriate proxy server information.
+PAC files contain a single JavaScript function: `FindProxyForURL(url, host)`
 
-**PAC File Benefits**: PAC files provide automated proxy selection, load balancing across multiple proxy servers, failover capabilities, and conditional routing based on URL patterns, user groups, or network conditions.
+**Basic example** (save as `proxy.pac`):
 
-### PAC File Configuration Methods
-
-#### HTTP Server Hosting (Recommended)
-
-**Deploy PAC File on Web Server**:
-1. Create PAC file with JavaScript proxy configuration
-2. Host PAC file on internal web server (e.g., IIS, Apache, Nginx)
-3. Ensure PAC file is accessible via HTTP/HTTPS
-4. Configure browsers to use PAC file URL
-5. Test PAC file functionality and proxy selection
-
-**Example PAC File Content**:
 ```javascript
 function FindProxyForURL(url, host) {
-    // Direct connection for internal domains
+    // Direct connection for localhost and internal IPs
     if (isInNet(host, "192.168.0.0", "255.255.0.0") ||
         isInNet(host, "10.0.0.0", "255.0.0.0") ||
-        host == "localhost") {
+        host == "localhost" ||
+        host == "127.0.0.1") {
         return "DIRECT";
     }
 
-    // Use SafeSquid proxy for external traffic
-    return "PROXY 192.168.1.100:8080; PROXY 192.168.1.101:8080";
+    // Direct connection for internal domains
+    if (dnsDomainIs(host, ".company.local") ||
+        dnsDomainIs(host, ".internal.company.com")) {
+        return "DIRECT";
+    }
+
+    // Use SafeSquid proxy for external traffic with failover
+    // If first proxy fails, browser tries second automatically
+    return "PROXY 192.168.1.100:8080; PROXY 192.168.1.101:8080; DIRECT";
 }
 ```
 
-#### File Protocol Hosting
+**What each line does:**
 
-**Local PAC File Deployment**:
-1. Create PAC file with proxy configuration
-2. Place PAC file in accessible local directory
-3. Configure browsers to use file:// protocol path
-4. Ensure file permissions allow browser access
-5. Test PAC file functionality
+- **`isInNet(host, network, mask)`** — True if host IP is in network range
+- **`dnsDomainIs(host, domain)`** — True if host ends with domain
+- **`PROXY ip:port`** — Use this proxy
+- **`DIRECT`** — Connect directly (no proxy)
+- **Semicolons** — Separate fallback options (try first, if fails try next)
 
-**File Path Example**: `file:///C:/PAC/proxy.pac`
+---
 
-### Browser-Specific PAC Configuration
+**Advanced example** (load balancing by URL):
 
-#### Windows Configuration
+```javascript
+function FindProxyForURL(url, host) {
+    // Direct for internal
+    if (isInNet(host, "10.0.0.0", "255.0.0.0")) {
+        return "DIRECT";
+    }
 
-**Chrome PAC Configuration**:
-1. Open Chrome Settings → Advanced → System
-2. Click "Open proxy settings"
-3. Enable "Use automatic proxy configuration"
-4. Enter PAC file URL: `http://pac-server.company.com/proxy.pac`
-5. Click OK to apply settings
+    // Load balance by hashing hostname
+    var hash = 0;
+    for (var i = 0; i < host.length; i++) {
+        hash = ((hash << 5) - hash) + host.charCodeAt(i);
+    }
+    
+    // Distribute across 3 proxies
+    var proxyNum = Math.abs(hash) % 3;
+    
+    if (proxyNum == 0) {
+        return "PROXY 192.168.1.100:8080; PROXY 192.168.1.101:8080";
+    } else if (proxyNum == 1) {
+        return "PROXY 192.168.1.101:8080; PROXY 192.168.1.102:8080";
+    } else {
+        return "PROXY 192.168.1.102:8080; PROXY 192.168.1.100:8080";
+    }
+}
+```
 
-**Firefox PAC Configuration**:
-1. Open Firefox → Settings → General
-2. Scroll to Network Settings → Settings
-3. Select "Automatic proxy configuration URL"
-4. Enter PAC file URL
-5. Click OK to save settings
+## Common PAC Functions Reference
 
-**Internet Explorer/Edge Legacy**:
-1. Open Internet Options → Connections tab
-2. Click LAN Settings
-3. Enable "Use automatic configuration script"
-4. Enter PAC file URL
-5. Click OK to apply settings
+| **Function** | **Purpose** | **Example** |
+|--------------|-------------|-------------|
+| `isInNet(host, pattern, mask)` | Check if IP is in subnet | `isInNet(host, "10.0.0.0", "255.0.0.0")` |
+| `dnsDomainIs(host, domain)` | Check if domain matches | `dnsDomainIs(host, ".google.com")` |
+| `shExpMatch(str, pattern)` | Shell-style wildcard match | `shExpMatch(url, "*.pdf")` |
+| `localHostOrDomainIs(host, domain)` | Exact match or subdomain | `localHostOrDomainIs(host, "www.company.com")` |
+| `isResolvable(host)` | Check if DNS resolves | `isResolvable(host)` |
+| `isPlainHostName(host)` | No dots in hostname | `isPlainHostName(host)` |
+| `dnsDomainLevels(host)` | Count domain levels | `dnsDomainLevels(host) > 0` |
+| `weekdayRange(day1, day2)` | Day of week | `weekdayRange("MON", "FRI")` |
+| `timeRange(h1, h2)` | Time of day | `timeRange(9, 17)` |
 
-#### Linux Configuration
+**Full reference:** [MDN PAC Functions](https://developer.mozilla.org/en-US/docs/Web/HTTP/Proxy_servers_and_tunneling/Proxy_Auto-Configuration_PAC_file)
 
-**Chrome PAC Configuration**:
-1. Open Chrome Settings → Advanced → System
-2. Click "Open proxy settings"
-3. Configure automatic proxy configuration URL
-4. Enter PAC file URL
-5. Apply settings and restart browser
+## Deploy the PAC File
 
-**Firefox PAC Configuration**:
-1. Open Firefox → Preferences → General
-2. Navigate to Network Settings
-3. Select "Automatic proxy configuration URL"
-4. Enter PAC file URL
-5. Click OK to save settings
+### Step 1: Host the PAC File
 
-**System-Wide PAC Configuration**:
+**On HTTP server (recommended):**
+
 ```bash
-# Set PAC file URL via environment variable
-export PAC_URL="http://pac-server.company.com/proxy.pac"
+# Apache/Nginx: Place in web root
+sudo cp proxy.pac /var/www/html/
+sudo chmod 644 /var/www/html/proxy.pac
 
-# Configure via Network Manager
-nmcli connection modify "connection-name" proxy.pac-url "$PAC_URL"
+# Verify accessible:
+curl http://YOUR-SERVER-IP/proxy.pac
 ```
 
-#### macOS Configuration
-
-**Safari PAC Configuration**:
-1. Open System Preferences → Network
-2. Select network connection → Advanced
-3. Navigate to Proxies tab
-4. Enable "Automatic Proxy Configuration"
-5. Enter PAC file URL
-6. Click OK and Apply
-
-**Chrome PAC Configuration**:
-1. Open Chrome → Preferences → Advanced
-2. Navigate to System section
-3. Click "Open proxy settings"
-4. Configure automatic proxy configuration
-5. Enter PAC file URL
-
-**Firefox PAC Configuration**:
-1. Open Firefox → Preferences → General
-2. Navigate to Network Settings
-3. Select "Automatic proxy configuration URL"
-4. Enter PAC file URL
-5. Click OK to save settings
-
-### WPAD (Web Proxy Auto-Discovery)
-
-**WPAD Configuration Overview**: Web Proxy Auto-Discovery enables automatic PAC file discovery without manual URL configuration. WPAD uses DNS and DHCP to automatically locate PAC files on the network.
-
-**WPAD Requirements**:
-1. Configure DNS server with WPAD record
-2. Host PAC file as `wpad.dat` on web server
-3. Ensure DHCP provides WPAD configuration
-4. Configure browsers to use automatic proxy discovery
-
-**WPAD DNS Configuration**:
+**MIME type** (add to web server config if browsers don't load PAC):
 ```
-# Add DNS record for WPAD
-wpad.company.com. IN A 192.168.1.10
+application/x-ns-proxy-autoconfig
 ```
 
+**For file:// protocol** (testing only):
+- Windows: `C:\PAC\proxy.pac` → `file:///C:/PAC/proxy.pac`
+- Linux/macOS: `/home/user/proxy.pac` → `file:///home/user/proxy.pac`
 
+---
 
-## Verification and Evidence
+### Step 2: Configure Browsers
 
-**PAC File Loading Verification**: Check browser developer tools or proxy settings to confirm PAC file is loading correctly and proxy selection is working as expected.
+**Windows (Chrome, Edge, IE — system-wide):**
 
-**Traffic Routing Verification**: Monitor SafeSquid logs to verify traffic is being routed according to PAC file logic with appropriate load balancing and failover behavior.
+1. **Settings** → **Network & Internet** → **Proxy**
+2. Toggle **Automatically detect settings** to **Off** (disable WPAD)
+3. Toggle **Use setup script** to **On**
+4. Enter PAC URL: `http://pac-server.company.com/proxy.pac`
+5. Click **Save**
 
-**Bypass List Testing**: Confirm internal domains bypass proxy configuration while external traffic routes through SafeSquid according to PAC file rules.
+**Firefox (all platforms):**
 
-**Load Balancing Verification**: Test multiple proxy servers to ensure PAC file load balancing is functioning correctly with proper failover capabilities.
+1. **Menu** (☰) → **Settings** → **Network Settings** → **Settings**
+2. Select **Automatic proxy configuration URL**
+3. Enter PAC URL
+4. Click **OK**
 
+**macOS (Safari, Chrome — system-wide):**
 
+1. **System Settings** → **Network** → Select connection → **Details** → **Proxies**
+2. Check **Automatic Proxy Configuration**
+3. Enter PAC URL
+4. Click **OK** → **Apply**
+
+**Linux (system-wide):**
+
+```bash
+# GNOME/Ubuntu:
+gsettings set org.gnome.system.proxy mode 'auto'
+gsettings set org.gnome.system.proxy autoconfig-url 'http://pac-server.company.com/proxy.pac'
+
+# KDE:
+kwriteconfig5 --file kioslaverc --group 'Proxy Settings' --key 'Proxy Config Script' 'http://pac-server.company.com/proxy.pac'
+```
+
+## Debug Your PAC File
+
+PAC files are JavaScript — errors break proxy selection.
+
+**Method 1: Browser Developer Console**
+
+1. Open DevTools (F12)
+2. Go to **Console** tab
+3. Reload page — PAC errors appear here
+
+**Method 2: Add alert() statements**
+
+```javascript
+function FindProxyForURL(url, host) {
+    alert("Testing PAC for: " + host);  // Debug line
+    
+    if (isInNet(host, "10.0.0.0", "255.0.0.0")) {
+        alert("Matched internal IP, going DIRECT");
+        return "DIRECT";
+    }
+    
+    alert("Using proxy");
+    return "PROXY 192.168.1.100:8080";
+}
+```
+
+**Method 3: Online PAC tester**
+
+- [PAC File Tester](http://www.proxytester.com/)
+- Paste PAC content, test URLs
+
+**Method 4: Command-line (Firefox)**
+
+```bash
+# Test PAC function directly
+pactester -p proxy.pac -u http://example.com -h example.com
+```
+
+**Common errors:**
+
+- **Syntax error:** Missing semicolon, bracket, or quote
+- **Function undefined:** Typo in `isInNet`, `dnsDomainIs`, etc.
+- **PAC file not loading:** Wrong MIME type or URL unreachable
+
+## Test Your Configuration
+
+1. **Open browser configured with PAC URL**
+2. **Navigate to external site:** `http://example.com`
+3. **Check if it loads** ✅
+4. **Verify proxy was used:**
+   ```bash
+   # On SafeSquid server:
+   tail -f /var/log/safesquid/access/extended.log
+   ```
+   Should show request from your client IP
+
+5. **Test internal bypass:**
+   - Navigate to internal site (e.g., `http://intranet.company.local`)
+   - Should load instantly (DIRECT, not via proxy)
+   - Should NOT appear in SafeSquid logs
+
+**Debug proxy selection:**
+
+- **Chrome:** `chrome://net-internals/#proxy`
+- **Firefox:** `about:networking#dnslookuptool`
+- **Edge:** `edge://net-internals/#proxy`
 
 ## Troubleshooting
 
-**PAC File Not Loading**: Verify PAC file URL is accessible and returns valid JavaScript content. Check browser console for JavaScript errors in PAC file execution.
+| **Symptom** | **Likely Cause** | **Fix** |
+|-------------|------------------|---------|
+| "PAC script failed" | JavaScript syntax error | Check browser console (F12) for errors |
+| PAC file not loading | Wrong URL or unreachable | Test: `curl http://pac-server.com/proxy.pac` |
+| All sites go DIRECT | PAC logic error or wrong fallback | Add `alert()` statements to debug |
+| Internal sites use proxy | Bypass logic missing | Add `isInNet()` or `dnsDomainIs()` checks |
+| Browser ignores PAC | WPAD enabled | Disable "Automatically detect settings" |
+| Slow page loads | PAC function takes too long | Simplify logic, avoid DNS lookups in PAC |
 
-**Proxy Selection Errors**: Review PAC file JavaScript syntax and logic. Test PAC file functions using browser developer tools or PAC file testing utilities.
+**Still not working?**
 
-**Network Connectivity Issues**: Ensure PAC file server is accessible and SafeSquid proxy servers are reachable from client networks.
+1. **Verify PAC file content:**
+   ```bash
+   curl http://pac-server.company.com/proxy.pac
+   ```
+   Should return JavaScript, not HTML error page
 
-**Browser Compatibility**: Verify browser supports PAC file functionality and JavaScript execution. Test with different browsers to identify compatibility issues.
+2. **Test PAC function manually:**
+   ```bash
+   pactester -p proxy.pac -u http://google.com -h google.com
+   ```
 
-**DNS Resolution Problems**: Check DNS resolution for PAC file server and proxy servers. Verify internal DNS configuration and external DNS resolution.
+3. **Check web server MIME type:**
+   ```bash
+   curl -I http://pac-server.company.com/proxy.pac
+   ```
+   Should include: `Content-Type: application/x-ns-proxy-autoconfig`
 
-**Performance Issues**: Monitor PAC file execution time and optimize JavaScript logic for faster proxy selection. Consider caching PAC file content for improved performance.
+## Advanced: WPAD (Auto-Discovery)
 
-## Next steps
+WPAD (Web Proxy Auto-Discovery) lets browsers find the PAC file automatically without manual URL entry.
 
-1. [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) — confirm traffic from PAC-configured clients reaches the proxy.
-2. [Enterprise Deployment](/docs/Getting_Started/Connect_Your_Client/Enterprise_Deployment/) — roll out PAC or system proxy at scale via GPO or MDM.
-3. [SSL Inspection](/docs/SSL_Inspection/main/) — enable HTTPS inspection for full content policy enforcement.
+**Requirements:**
 
+1. DNS record: `wpad.company.com` pointing to PAC server IP
+2. PAC file named `wpad.dat` (not `proxy.pac`)
+3. Browsers set to "Automatically detect settings"
+
+**DNS configuration:**
+
+```bash
+# Add to DNS zone:
+wpad.company.com. IN A 192.168.1.10
+```
+
+**Place PAC at:**
+```
+http://wpad.company.com/wpad.dat
+```
+
+:::caution WPAD Security Risk
+
+WPAD can be hijacked on untrusted networks (coffee shops, airports). For production, use explicit PAC URLs instead.
+
+:::
+
+## Next Steps
+
+1. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm traffic flows through SafeSquid
+2. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Enable HTTPS decryption
+3. **Scale your deployment:**
+   - **Enterprise (100+ endpoints):** [Enterprise Deployment](/docs/Getting_Started/Connect_Your_Client/Enterprise_Deployment/) — Push PAC URL via GPO/MDM
+   - **Application-specific:** [Application Configuration](/docs/Getting_Started/Connect_Your_Client/Application_Specific_Configuration/) — Configure non-browser apps

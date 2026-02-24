@@ -10,234 +10,448 @@ keywords:
   - configuration management
 ---
 
-
 # Enterprise Deployment
 
+**Enterprise deployment** pushes proxy settings to hundreds or thousands of endpoints using centralized management tools—Group Policy (Windows), MDM (macOS/mobile), or config management (Puppet, Ansible, SCCM).
 
+**Use this method for:**
+- Production deployments (100+ endpoints)
+- Organization-wide rollouts
+- Centralized control and enforcement
+- Automated updates without touching each machine
 
-## Problem Statement
+**Time to deploy:** Initial setup 1-2 hours, then automatic for all endpoints
 
-Organizations need centralized proxy configuration management for large-scale deployments requiring automated policy distribution and consistent configuration across thousands of endpoints. Manual proxy configuration becomes impractical in enterprise environments with hundreds or thousands of endpoints requiring consistent security policies and centralized management capabilities. Enterprise deployment methods enable automated configuration distribution, policy enforcement, and centralized management while ensuring consistent security coverage across all organizational endpoints.
+:::tip Start Small
 
+Test on a pilot group (5-10 users) before rolling out to the entire organization. This catches configuration issues before they affect everyone.
 
-
-## Key Benefits
-
-**Automated Deployment**: Enterprise deployment methods enable automated proxy configuration distribution across thousands of endpoints with minimal administrative overhead. This automation reduces deployment time, configuration errors, and maintenance requirements while ensuring consistent security policy enforcement.
-
-**Centralized Management**: Enterprise deployment provides centralized configuration management with automated updates, rollback capabilities, and centralized monitoring across large-scale environments. This centralized approach enables rapid policy changes and consistent security enforcement across all endpoints.
-
-**Scalable Administration**: Enterprise deployment methods scale efficiently to support large organizations with thousands of endpoints while maintaining administrative control and security policy consistency. This scalability ensures cost-effective security management as organizations grow.
-
-
+:::
 
 ## Prerequisites
 
-**Client-Side Preparations**: Ensure enterprise infrastructure includes Active Directory domain controllers, Group Policy management tools, and configuration management systems. Verify network connectivity between management systems and client endpoints.
+:::info Before You Start
 
-**SafeSquid-Side Setup**: Configure SafeSquid proxy servers with appropriate load balancing, failover capabilities, and centralized management interfaces. Ensure proxy services are accessible from all client networks.
+**For Windows (GPO):**
+- Active Directory environment
+- Group Policy Management Console access
+- Domain-joined Windows clients
+- PAC file hosted on internal web server (or explicit proxy settings decided)
 
-**System Requirements**: Enterprise infrastructure must include Active Directory, Group Policy management capabilities, and configuration management tools. Client systems must be domain-joined and support enterprise management protocols.
+**For macOS (MDM):**
+- MDM solution (Jamf, Intune, Workspace ONE)
+- Enrolled macOS devices
+- Administrator access to MDM console
 
+**For Linux (Config Management):**
+- Puppet, Ansible, Chef, or SaltStack
+- Managed Linux nodes
+- SSH access to management server
 
+:::
 
-## Implementation Actions
+## Which Method Should I Use?
 
-### Windows Enterprise Deployment
+| **Environment** | **Recommended Tool** | **Why** |
+|-----------------|----------------------|---------|
+| 100% Windows, domain-joined | **Group Policy (GPO)** | Built into Active Directory, no extra software |
+| Mixed Windows/Mac, Azure AD | **Microsoft Intune** | Unified management for Windows + macOS |
+| macOS only | **Jamf Pro** or **Intune** | MDM designed for Apple devices |
+| Linux servers/workstations | **Ansible** or **Puppet** | Industry-standard config management |
+| Mixed Windows/Linux, no AD | **Ansible** | Agentless, works over SSH |
+| Existing SCCM deployment | **SCCM** | Reuse existing infrastructure |
 
-#### Group Policy Objects (GPO) Configuration
+## Windows: Group Policy (GPO)
 
-**Create Proxy Configuration GPO**:
-1. Open Group Policy Management Console
-2. Create new GPO: "SafeSquid Proxy Configuration"
-3. Navigate to Computer Configuration → Policies → Administrative Templates → Windows Components → Internet Explorer
-4. Configure "Use automatic configuration script"
-5. Enter PAC file URL: `http://pac-server.company.com/proxy.pac`
-6. Configure "Disable changing proxy settings" to prevent user modification
-7. Link GPO to appropriate Organizational Units
+### Create the GPO
 
-**Registry-Based GPO Configuration**:
-1. Navigate to Computer Configuration → Preferences → Windows Settings → Registry
-2. Create registry preference items:
-   - ProxyEnable: DWORD = 1
-   - ProxyServer: String = "192.168.1.100:8080"
-   - ProxyOverride: String = "*.local;*.company.com;127.0.0.1"
-3. Configure registry path: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings
-4. Apply GPO to target Organizational Units
+1. **Open Group Policy Management Console** (gpmc.msc)
+2. **Right-click** your domain or OU → **Create a GPO in this domain**
+3. **Name it:** "SafeSquid Proxy Configuration"
+4. **Right-click the new GPO** → **Edit**
 
-#### Active Directory Integration
+---
 
-**Deploy PAC File via GPO**:
-1. Create shared folder for PAC files: `\\domain.com\NETLOGON\PAC\`
-2. Copy PAC file to shared location
-3. Create GPO to configure PAC file URL
-4. Configure PAC file permissions for domain users
-5. Deploy GPO to target Organizational Units
+### Configure Proxy Settings
 
-**User-Based vs Computer-Based Policies**:
-1. **Computer-Based**: Apply proxy settings to all users on specific computers
-2. **User-Based**: Apply proxy settings to specific users regardless of computer
-3. Configure appropriate policy scope based on organizational requirements
+**Option A: PAC File (Recommended)**
 
-#### Advanced GPO Configuration
+1. Navigate to:
+   ```
+   Computer Configuration → Policies → Administrative Templates → 
+   Windows Components → Internet Explorer
+   ```
 
-**Environment-Specific Configuration**:
-1. Create separate GPOs for different environments:
-   - Corporate Network GPO
-   - Remote Access GPO
-   - Guest Network GPO
-2. Configure conditional proxy settings based on network location
-3. Use WMI filters to apply policies based on system characteristics
+2. **Double-click:** "Use automatic configuration script"
+3. **Enable** it
+4. **Enter PAC URL:** `http://pac-server.company.com/proxy.pac`
+5. Click **OK**
 
-**Security Configuration**:
-1. Configure "Disable changing proxy settings" to prevent user modification
-2. Enable "Disable Internet Options" to prevent proxy bypass
-3. Configure "Disable changing connection settings" for additional security
+6. **Double-click:** "Disable changing proxy settings"
+7. **Enable** (prevents users from changing proxy)
+8. Click **OK**
 
-### Linux Enterprise Deployment
+---
 
-#### Puppet Configuration Management
+**Option B: Explicit Proxy (if not using PAC)**
 
-**Puppet Proxy Configuration**:
-1. Create Puppet manifest for proxy configuration:
+1. Navigate to:
+   ```
+   Computer Configuration → Preferences → Windows Settings → Registry
+   ```
+
+2. **Right-click** → **New** → **Registry Item**
+
+3. **Create these entries:**
+
+| **Registry Value** | **Type** | **Data** |
+|--------------------|----------|----------|
+| **ProxyEnable** | REG_DWORD | `1` |
+| **ProxyServer** | REG_SZ | `192.168.1.100:8080` |
+| **ProxyOverride** | REG_SZ | `*.local;*.company.com;localhost;127.0.0.1` |
+
+**Path for all three:**
+```
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings
+```
+
+**Action:** Update (not Create, to avoid errors on reapply)
+
+---
+
+### Link and Apply GPO
+
+1. **Close the Group Policy Editor**
+2. **Right-click the GPO** → **Link an Existing GPO**
+3. **Select:** The OU containing your target computers
+4. **Wait 15-90 minutes** for automatic Group Policy refresh, or force:
+   ```powershell
+   # On a client machine:
+   gpupdate /force
+   ```
+
+---
+
+### Verify GPO Deployment
+
+**On a client machine:**
+
+```powershell
+# Check which GPOs applied:
+gpresult /r
+
+# Detailed report (HTML):
+gpresult /h c:\gp-report.html
+```
+
+Look for your "SafeSquid Proxy Configuration" GPO in the output.
+
+**Check registry directly:**
+
+```powershell
+Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings"
+```
+
+Should show `ProxyEnable = 1` and `ProxyServer = 192.168.1.100:8080`
+
+---
+
+### Rollback Procedure
+
+**If deployment causes issues:**
+
+1. **Unlink the GPO:**
+   - Group Policy Management → Right-click the link → **Delete link**
+   - This stops enforcement immediately (doesn't delete the GPO)
+
+2. **Force client update:**
+   ```powershell
+   gpupdate /force
+   ```
+
+3. **Clients revert to previous settings** within 15-90 minutes (or immediately with gpupdate)
+
+---
+
+## macOS: MDM (Intune / Jamf)
+
+### Microsoft Intune
+
+1. **Intune admin center** → **Devices** → **Configuration profiles**
+2. **Create profile** → Platform: **macOS**, Profile type: **Settings catalog**
+3. **Add settings:**
+   - Search: **Proxy**
+   - Select: **Network → Proxy → Web Proxy**
+   - **Web Proxy Server:** `192.168.1.100`
+   - **Web Proxy Server Port:** `8080`
+   - **Bypass proxy settings for these Hosts & Domains:** `*.local, localhost, 127.0.0.1`
+4. **Assign** to macOS device group
+5. **Create** and wait for devices to check in (~15 minutes)
+
+---
+
+### Jamf Pro
+
+1. **Computers** → **Configuration Profiles** → **New**
+2. **Network** → Configure
+3. **Proxies tab:**
+   - **Web Proxy (HTTP):** Enable
+   - **Proxy Server:** `192.168.1.100:8080`
+   - **Bypass Proxy:** `*.local, localhost, 127.0.0.1`
+4. **Scope** to target computer group
+5. **Save** — devices apply on next check-in
+
+---
+
+## Linux: Ansible
+
+**Create playbook** (`safesquid-proxy.yml`):
+
+```yaml
+---
+- name: Deploy SafeSquid Proxy Configuration
+  hosts: all
+  become: yes
+  tasks:
+    - name: Configure system proxy in /etc/environment
+      lineinfile:
+        path: /etc/environment
+        line: "{{ item }}"
+        create: yes
+      loop:
+        - 'http_proxy="http://192.168.1.100:8080"'
+        - 'https_proxy="http://192.168.1.100:8080"'
+        - 'ftp_proxy="http://192.168.1.100:8080"'
+        - 'no_proxy="localhost,127.0.0.1,*.local,*.company.com"'
+
+    - name: Configure APT proxy (Debian/Ubuntu)
+      copy:
+        dest: /etc/apt/apt.conf.d/95proxies
+        content: |
+          Acquire::http::Proxy "http://192.168.1.100:8080";
+          Acquire::https::Proxy "http://192.168.1.100:8080";
+      when: ansible_os_family == "Debian"
+
+    - name: Configure YUM proxy (RHEL/CentOS)
+      lineinfile:
+        path: /etc/yum.conf
+        line: "proxy=http://192.168.1.100:8080"
+      when: ansible_os_family == "RedHat"
+
+    - name: Create profile.d proxy script
+      copy:
+        dest: /etc/profile.d/proxy.sh
+        mode: '0644'
+        content: |
+          export http_proxy=http://192.168.1.100:8080
+          export https_proxy=http://192.168.1.100:8080
+          export no_proxy=localhost,127.0.0.1,*.local
+```
+
+**Deploy:**
+
+```bash
+# Test on one host first:
+ansible-playbook -i inventory safesquid-proxy.yml --limit testhost
+
+# Deploy to all:
+ansible-playbook -i inventory safesquid-proxy.yml
+```
+
+**Rollback:**
+
+Create `remove-proxy.yml`:
+
+```yaml
+---
+- name: Remove SafeSquid Proxy Configuration
+  hosts: all
+  become: yes
+  tasks:
+    - name: Remove proxy lines from /etc/environment
+      lineinfile:
+        path: /etc/environment
+        regexp: '.*proxy.*'
+        state: absent
+
+    - name: Remove APT proxy config
+      file:
+        path: /etc/apt/apt.conf.d/95proxies
+        state: absent
+
+    - name: Remove YUM proxy config
+      lineinfile:
+        path: /etc/yum.conf
+        regexp: '^proxy='
+        state: absent
+
+    - name: Remove profile.d proxy script
+      file:
+        path: /etc/profile.d/proxy.sh
+        state: absent
+```
+
+Run: `ansible-playbook -i inventory remove-proxy.yml`
+
+---
+
+## Linux: Puppet
+
+**Create module** (`/etc/puppetlabs/code/environments/production/modules/safesquid_proxy/manifests/init.pp`):
+
 ```puppet
-class safesquid_proxy {
+class safesquid_proxy (
+  String $proxy_server = '192.168.1.100:8080',
+  String $no_proxy = 'localhost,127.0.0.1,*.local,*.company.com',
+) {
+
+  # Configure /etc/environment
   file { '/etc/environment':
-    ensure  => present,
+    ensure  => file,
     content => template('safesquid_proxy/environment.erb'),
   }
 
+  # Configure profile.d script
   file { '/etc/profile.d/proxy.sh':
-    ensure  => present,
-    content => template('safesquid_proxy/proxy.sh.erb'),
+    ensure  => file,
     mode    => '0644',
+    content => epp('safesquid_proxy/proxy.sh.epp', {
+      'proxy_server' => $proxy_server,
+      'no_proxy'     => $no_proxy,
+    }),
+  }
+
+  # APT proxy (Debian/Ubuntu)
+  if $facts['os']['family'] == 'Debian' {
+    file { '/etc/apt/apt.conf.d/95proxies':
+      ensure  => file,
+      content => "Acquire::http::Proxy \"http://${proxy_server}\";\nAcquire::https::Proxy \"http://${proxy_server}\";\n",
+    }
+  }
+
+  # YUM proxy (RHEL/CentOS)
+  if $facts['os']['family'] == 'RedHat' {
+    ini_setting { 'yum_proxy':
+      path    => '/etc/yum.conf',
+      section => 'main',
+      setting => 'proxy',
+      value   => "http://${proxy_server}",
+    }
   }
 }
 ```
 
-2. Create template files for proxy configuration
-3. Apply Puppet configuration to target nodes
-4. Monitor configuration compliance and updates
+**Create template** (`modules/safesquid_proxy/templates/proxy.sh.epp`):
 
-#### Ansible Configuration Management
-
-**Ansible Proxy Playbook**:
-1. Create Ansible playbook for proxy configuration:
-```yaml
----
-- name: Configure SafeSquid Proxy
-  hosts: all
-  tasks:
-    - name: Configure system proxy environment
-      lineinfile:
-        path: /etc/environment
-        line: "{{ item }}"
-      with_items:
-        - "http_proxy=http://192.168.1.100:8080"
-        - "https_proxy=http://192.168.1.100:8443"
-        - "no_proxy=localhost,127.0.0.1,*.local"
-
-    - name: Configure APT proxy
-      lineinfile:
-        path: /etc/apt/apt.conf.d/95proxies
-        line: "{{ item }}"
-      with_items:
-        - "Acquire::http::Proxy \"http://192.168.1.100:8080\";"
-        - "Acquire::https::Proxy \"http://192.168.1.100:8443\";"
+```bash
+export http_proxy=http://<%= $proxy_server %>
+export https_proxy=http://<%= $proxy_server %>
+export no_proxy=<%= $no_proxy %>
 ```
 
-2. Execute Ansible playbook on target systems
-3. Verify configuration deployment and compliance
+**Apply to nodes** (`site.pp`):
 
-#### System-Wide Configuration Management
+```puppet
+node 'workstation*.company.com' {
+  include safesquid_proxy
+}
+```
 
-**Profile.d Scripts Deployment**:
-1. Create centralized proxy configuration script
-2. Deploy script to `/etc/profile.d/proxy.sh` on all systems
-3. Configure script permissions and execution
-4. Test script execution and proxy configuration
+---
 
-**Network Manager Configuration**:
-1. Create Network Manager configuration templates
-2. Deploy configuration via configuration management tools
-3. Configure automatic proxy detection and configuration
-4. Monitor configuration compliance across systems
+## Verify Deployment
 
-### Configuration Management Best Practices
+**Sample 5-10 endpoints from different groups:**
 
-#### Centralized PAC File Hosting
+**Windows:**
+```powershell
+gpresult /r
+netsh winhttp show proxy
+```
 
-**PAC File Management**:
-1. Host PAC files on centralized web server with high availability
-2. Implement version control for PAC file changes
-3. Configure automatic PAC file updates and rollback capabilities
-4. Monitor PAC file accessibility and performance
+**macOS:**
+```bash
+scutil --proxy
+```
 
-**PAC File Distribution**:
-1. Use CDN or load balancer for PAC file distribution
-2. Implement caching for improved performance
-3. Configure monitoring for PAC file availability
-4. Test PAC file updates in staging environment before production deployment
+**Linux:**
+```bash
+env | grep proxy
+cat /etc/environment
+```
 
-#### Automated Updates and Rollback
+**Test connectivity on each:**
 
-**Configuration Update Process**:
-1. Implement staged deployment process for configuration changes
-2. Test configuration changes in isolated environment
-3. Deploy changes to pilot group before full deployment
-4. Monitor configuration compliance and performance
+```bash
+curl -I http://example.com
+```
 
-**Rollback Procedures**:
-1. Maintain previous configuration versions for rollback capability
-2. Implement automated rollback triggers for configuration failures
-3. Document rollback procedures and responsibilities
-4. Test rollback procedures in non-production environment
+Check SafeSquid logs for requests from those IPs.
 
-#### Monitoring and Compliance
-
-**Configuration Monitoring**:
-1. Implement monitoring for proxy configuration compliance
-2. Monitor proxy connectivity and performance across endpoints
-3. Configure alerts for configuration failures or compliance violations
-4. Generate compliance reports for management review
-
-**Audit and Reporting**:
-1. Implement configuration audit procedures
-2. Generate regular compliance reports
-3. Document configuration changes and approvals
-4. Maintain audit trail for regulatory compliance
-
-
-
-## Verification and Evidence
-
-**Enterprise Deployment Verification**: Verify proxy configuration is successfully deployed across all target endpoints with consistent settings and proper policy enforcement.
-
-**Centralized Management Verification**: Confirm centralized management tools can monitor, update, and manage proxy configuration across all endpoints effectively.
-
-**Compliance Monitoring**: Verify monitoring systems can detect configuration compliance violations and generate appropriate alerts and reports.
-
-**Performance Validation**: Test enterprise deployment performance to ensure centralized management does not impact endpoint performance or user experience.
-
-
+---
 
 ## Troubleshooting
 
-**GPO Deployment Issues**: Verify GPO linking, permissions, and replication across domain controllers. Check Group Policy Results to identify deployment problems.
+| **Symptom** | **Likely Cause** | **Fix** |
+|-------------|------------------|---------|
+| GPO not applying to client | Wrong OU link or client not in domain | Run `gpresult /r` on client, check GPO link in GPMC |
+| GPO applied but proxy not working | Registry values incorrect | Check `HKCU:\...\Internet Settings` manually |
+| MDM profile shows "Error" | Enrollment issue or syntax error | Check MDM logs, re-send profile |
+| Ansible fails on some hosts | SSH connectivity or sudo access | Test: `ansible all -m ping`, check SSH keys |
+| Puppet agent not checking in | Puppet agent stopped or network issue | `systemctl status puppet`, `puppet agent -t` |
+| PAC file not loading on clients | DNS issue or firewall blocking | Test: `nslookup pac-server.company.com`, `curl http://pac-server.company.com/proxy.pac` |
 
-**Configuration Management Failures**: Monitor configuration management tool logs and verify connectivity between management systems and target endpoints.
+**Still not working?**
 
-**PAC File Distribution Problems**: Check PAC file server accessibility, DNS resolution, and network connectivity. Verify PAC file content and JavaScript syntax.
+1. **Verify management tool connectivity:**
+   - GPO: `gpupdate /force` then `gpresult /r`
+   - Ansible: `ansible all -m ping`
+   - Puppet: `puppet agent -t --verbose`
 
-**Compliance Violations**: Investigate configuration drift and implement automated remediation procedures. Review user permissions and policy enforcement.
+2. **Check one endpoint manually:**
+   - Apply settings manually (Explicit Proxy method)
+   - If manual works, issue is deployment tool
+   - If manual fails, issue is SafeSquid or network
 
-**Performance Issues**: Monitor enterprise management system performance and optimize configuration distribution processes for large-scale deployments.
+3. **Check SafeSquid accessibility from clients:**
+   ```bash
+   telnet safesquid-ip 8080
+   ```
 
-**Rollback Procedures**: Test rollback procedures regularly and ensure automated rollback triggers function correctly for configuration failures.
+## Best Practices
 
-## Next steps
+### Staged Deployment
 
-1. [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) — sample endpoints to confirm proxy configuration is applied and traffic is proxied.
-2. [SSL Inspection](/docs/SSL_Inspection/main/) — enable HTTPS inspection and deploy root CA via GPO/MDM for consistent policy enforcement.
-3. [Troubleshooting](/docs/Troubleshooting/main/) — logs and diagnostics when deployment or connectivity issues occur.
+1. **Pilot group** (5-10 users) → 1 week
+2. **Early adopters** (50-100 users) → 1 week
+3. **Department by department** → 2-4 weeks
+4. **Full deployment**
 
+Monitor logs and support tickets at each stage.
+
+---
+
+### PAC File Hosting
+
+- **Host on redundant web servers** (not a single point of failure)
+- **Use internal DNS** (`pac.company.local`)
+- **Version control** PAC file changes (Git)
+- **Test changes** in staging before production
+
+---
+
+### Monitoring
+
+- **Group Policy Modeling** (GPMC) to predict impact before deploying
+- **Configuration compliance reports** (weekly)
+- **Alert on proxy configuration drift**
+- **SafeSquid log analysis** to confirm traffic from managed endpoints
+
+---
+
+## Next Steps
+
+1. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Sample endpoints to confirm proxy is working
+2. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Deploy root CA via GPO/MDM for HTTPS inspection
+3. **[Configure Policies](/docs/Access_Restriction/main/)** — Now that all traffic flows through SafeSquid, set up access controls
+4. **Monitor and iterate** — Review logs, support tickets, and user feedback to refine configuration

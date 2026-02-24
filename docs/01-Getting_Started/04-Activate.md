@@ -244,6 +244,26 @@ If you pass the extended conservation period and if the subscription has not bee
 
 Follow above steps to extend your conservation period again
 </TabItem>
+
+  <TabItem value="case5" label="Wrong License Tier">
+
+**Symptom:** Activation succeeds but commercial features (URL categorization, threat intel) don't work.
+
+**Cause:** Free license uploaded instead of commercial, or key expired.
+
+**Fix:**
+
+1. Check **Activation Details** in the SafeSquid interface:
+   - **Product Type** should show "Commercial" if you purchased a commercial license
+   - **Expiry** should be in the future
+
+2. If showing Free or expired:
+   - Download the correct key from the [Self-Service Portal](https://key.safesquid.com)
+   - Re-upload following the steps above
+
+3. Contact support if you purchased commercial but still see Free tier.
+
+  </TabItem>
 </Tabs>
 
 ## Next steps

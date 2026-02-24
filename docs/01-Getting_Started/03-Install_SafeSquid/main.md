@@ -10,24 +10,66 @@ keywords:
   - SafeSquid TAR install
 ---
 
+# Install SafeSquid
 
-# Choose SAB, cloud, or Linux TAR installation
+SafeSquid offers three installation paths depending on your infrastructure:
 
-Choose an installation method to get a running SafeSquid node: Appliance Builder (SAB) for a full hardened image, cloud deployment for AWS/Azure/DigitalOcean or private cloud, or Linux TAR for an existing server. Pick the option that matches your environment; once installed, the node is ready for license activation and client connectivity.
+- **Appliance Builder (SAB)** — Full turnkey image (OS + SafeSquid + services) for bare metal or VM
+- **Cloud Deployment** — Deploy on AWS, Azure, DigitalOcean, or private cloud
+- **Linux TAR** — Install SafeSquid on an existing Linux server
 
-## Installation method guides
+All methods produce a licensed, operational node ready for client connectivity.
+
+:::info Prerequisites
+
+- Complete [Deployment Planning](/docs/Getting_Started/Deployment_Planning/) to size hardware and prepare your environment
+- Download your [activation key](/docs/Getting_Started/Register/) (you'll need it after installation)
+- Server or VM meeting [hardware requirements](/docs/Getting_Started/Deployment_Planning/#hardware-sizing)
+
+:::
+
+## Which Method Should I Use?
+
+| **Environment** | **Recommended Method** | **Why** |
+|-----------------|------------------------|---------|
+| New bare metal server | [SafeSquid Appliance Builder](#safesquid-appliance-builder) | Turnkey image with hardened OS and all dependencies |
+| New VM (VMware, Hyper-V, KVM) | [SafeSquid Appliance Builder](#safesquid-appliance-builder) | Pre-configured networking, monitoring, and DNS |
+| AWS, Azure, DigitalOcean | [Cloud Deployment](#cloud-deployment) | Cloud-optimized images and cloud-init support |
+| Existing Linux server | [Linux Server](#linux-server) | Minimal footprint; you manage OS and services |
+| Private cloud (OpenStack, Proxmox) | [Cloud Deployment](#cloud-deployment) or [SAB](#safesquid-appliance-builder) | Depends on provisioning workflow |
+
+**Still unsure?** Start with [Deployment Planning](/docs/Getting_Started/Deployment_Planning/) to size hardware and plan topology.
+
+## Installation Methods
 
 ### [SafeSquid Appliance Builder](/docs/Getting_Started/Install_SafeSquid/SafeSquid_Appliance_Builder/)
-New deployments on bare metal or VM need a turnkey image with OS, SafeSquid, and supporting services. SAB produces a security-hardened image with SafeSquid, Monit, BIND9, and disk layout. Fastest path for new deployments. Follow this document to build and deploy the appliance.
+
+**Recommended for new deployments.** SAB builds a turnkey ISO with a security-hardened OS, SafeSquid, Monit, BIND9, and optimized disk layout. Boot from ISO, answer a few prompts, and deploy.
+
+**Use this when:** You need a complete appliance on bare metal or a new VM.
+
+---
 
 ### [Cloud Deployment](/docs/Getting_Started/Install_SafeSquid/Cloud_Deployment/)
-AWS, Azure, DigitalOcean, or private cloud require SafeSquid on a cloud VM. Cloud Deployment covers image or cloud-init based deployment. SafeSquid runs in the cloud with the same policy and inspection capabilities. Use this document to deploy SafeSquid in the cloud.
+
+Deploy SafeSquid on AWS, Azure, DigitalOcean, or private cloud using cloud images or cloud-init. Full policy and inspection capabilities in the cloud with auto-scaling and cloud-native networking.
+
+**Use this when:** You're deploying to public or private cloud infrastructure.
+
+---
 
 ### [Linux Server](/docs/Getting_Started/Install_SafeSquid/Linux_Server/)
-Existing Linux servers need SafeSquid binary only without a full appliance. Linux Server describes installing from the TAR package on an existing distro. Administrators configure OS and services separately. Follow this document when adding SafeSquid to an existing Linux host.
 
-## Next steps
+Install SafeSquid from a TAR package on an existing Debian, Ubuntu, or RHEL-based server. You manage OS updates, networking, and supporting services separately.
 
-1. [Activate Your License](/docs/Getting_Started/Activate/) — upload your activation key so the gateway is fully operational.
-2. [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/) — configure at least one browser or client to use the proxy.
-3. [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) — confirm the service is running, licensed, and proxying traffic.
+**Use this when:** You already have a configured Linux server and want to add SafeSquid only.
+
+## After Installation
+
+Once SafeSquid is installed, complete these steps in order:
+
+1. **[Activate Your License](/docs/Getting_Started/Activate/)** — Upload your activation key to make the gateway fully operational
+2. **[Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/)** — Configure at least one browser or endpoint to use the proxy
+3. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm the service is running, licensed, and proxying traffic
+
+Once verified, proceed to [SSL Inspection](/docs/SSL_Inspection/main/) to enable HTTPS filtering.

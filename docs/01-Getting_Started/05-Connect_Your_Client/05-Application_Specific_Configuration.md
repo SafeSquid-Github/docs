@@ -10,264 +10,371 @@ keywords:
   - Git proxy settings
 ---
 
-
 # Application-Specific Configuration
 
+**Application-specific configuration** is needed for apps that ignore system-wide proxy settings—developer tools (Git, Docker, npm), email clients, and CLI utilities.
 
+**Use this method for:**
+- Developer workstations (Git, Docker, npm, pip)
+- Email clients (Outlook, Thunderbird)
+- Command-line tools (curl, wget, apt, yum)
+- Apps that bypass system proxy
 
-## Problem Statement
+**Time to configure:** 2-5 minutes per application
 
-Organizations require specialized proxy configuration for non-browser applications including email clients, development tools, and command-line utilities to ensure comprehensive security coverage across all network applications. Many applications do not respect system-wide proxy settings or browser-specific configurations, requiring individual application configuration to ensure complete traffic interception and security enforcement. Application-specific configuration provides detailed setup procedures for diverse application types while maintaining functionality and performance.
+:::tip System Proxy First
 
+Try [System-Wide Proxy](/docs/Getting_Started/Connect_Your_Client/System_Wide_Proxy/) first. Only configure apps individually if they ignore system settings.
 
-
-## Key Benefits
-
-**Comprehensive Application Coverage**: Application-specific configuration ensures all network applications route traffic through SafeSquid, providing complete security coverage without relying on system-wide or browser-specific proxy settings. This comprehensive approach eliminates security gaps caused by applications that bypass standard proxy configurations.
-
-**Maintained Application Functionality**: Specialized configuration procedures maintain application functionality while enabling proxy connectivity, ensuring applications continue to operate normally with security enforcement. This approach balances security requirements with application performance and user experience.
-
-**Detailed Implementation Guidance**: Application-specific configuration provides detailed, step-by-step procedures for diverse application types, enabling administrators to configure complex applications with confidence and ensuring consistent security enforcement.
-
-
+:::
 
 ## Prerequisites
 
-**Client-Side Preparations**: Ensure applications are installed and configured with appropriate permissions for proxy configuration changes. Verify network connectivity between applications and SafeSquid proxy servers.
+:::info Before You Start
 
-**SafeSquid-Side Setup**: Configure SafeSquid proxy services with appropriate authentication and policy configuration for non-HTTP protocols. Ensure SSL inspection is enabled if HTTPS traffic requires inspection.
+- SafeSquid IP and port (default: 8080)
+- Application installed and accessible
+- Admin/sudo access if modifying system config files
+- (Optional) Proxy authentication credentials
 
-**System Requirements**: Client systems must have applications installed with appropriate configuration access. Network connectivity must be established between applications and SafeSquid proxy servers.
+:::
 
+## Top 10 Applications
 
+### 1. Git
 
-## Implementation Actions
+**Set proxy globally:**
 
-### Email Client Configuration
-
-#### Microsoft Outlook
-
-**Configure Outlook Proxy Settings**:
-1. Open Outlook → File → Account Settings
-2. Select email account → Change
-3. Click More Settings → Connection tab
-4. Configure proxy settings:
-   - HTTP Proxy: 192.168.1.100:8080
-   - HTTPS Proxy: 192.168.1.100:8443
-5. Enable "Use proxy authentication"
-6. Enter proxy credentials if required
-7. Click OK to save settings
-
-**Outlook Advanced Configuration**:
-1. Configure separate proxies for different protocols
-2. Set bypass list for internal mail servers
-3. Configure SSL/TLS settings for secure connections
-4. Test email connectivity and proxy functionality
-
-#### Mozilla Thunderbird
-
-**Configure Thunderbird Proxy**:
-1. Open Thunderbird → Preferences → General
-2. Navigate to Network & Disk Space
-3. Click Connection Settings
-4. Select "Manual proxy configuration"
-5. Configure proxy settings:
-   - HTTP Proxy: 192.168.1.100:8080
-   - SSL Proxy: 192.168.1.100:8443
-6. Configure No Proxy for internal domains
-7. Click OK to save settings
-
-#### Evolution (Linux)
-
-**Configure Evolution Proxy**:
-1. Open Evolution → Preferences → Mail Accounts
-2. Select account → Edit
-3. Navigate to Receiving Email → Advanced
-4. Configure proxy settings:
-   - Proxy Type: HTTP
-   - Host: 192.168.1.100
-   - Port: 8080
-5. Configure authentication if required
-6. Test email connectivity
-
-### Development Tools Configuration
-
-#### Git Proxy Configuration
-
-**Configure Git HTTP Proxy**:
 ```bash
-# Configure HTTP proxy for Git
 git config --global http.proxy http://192.168.1.100:8080
-git config --global https.proxy http://192.168.1.100:8443
-
-# Configure proxy authentication
-git config --global http.proxyAuthMethod basic
-
-# Configure bypass for internal repositories
-git config --global http.proxy http://192.168.1.100:8080
-git config --global http.noProxy "*.local,*.company.com"
+git config --global https.proxy http://192.168.1.100:8080
 ```
 
-**Configure Git SSH Proxy**:
+**Bypass for internal repos:**
+
 ```bash
-# Configure SSH proxy via ProxyCommand
-git config --global core.gitProxy "ssh -o ProxyCommand='nc -X connect -x 192.168.1.100:8080 %h %p'"
+git config --global http.noProxy "*.company.local,*.company.com"
 ```
 
-#### npm/yarn Proxy Configuration
+**Verify:**
 
-**Configure npm Proxy**:
 ```bash
-# Configure npm proxy settings
-npm config set proxy http://192.168.1.100:8080
-npm config set https-proxy http://192.168.1.100:8443
-npm config set registry https://registry.npmjs.org/
-
-# Configure authentication
-npm config set proxy-auth "username:password"
+git config --global --get http.proxy
+# Should show: http://192.168.1.100:8080
 ```
 
-**Configure Yarn Proxy**:
+**Test:**
+
 ```bash
-# Configure Yarn proxy settings
-yarn config set proxy http://192.168.1.100:8080
-yarn config set https-proxy http://192.168.1.100:8443
+git clone https://github.com/test/repo.git
 ```
 
-#### Python pip Proxy Configuration
+**Unset proxy:**
 
-**Configure pip Proxy**:
 ```bash
-# Configure pip proxy via command line
-pip install --proxy http://192.168.1.100:8080 package_name
-
-# Configure pip proxy via configuration file
-# Create ~/.pip/pip.conf
-[global]
-proxy = http://192.168.1.100:8080
-trusted-host = pypi.org
-               files.pythonhosted.org
+git config --global --unset http.proxy
+git config --global --unset https.proxy
 ```
 
-#### Docker Proxy Configuration
+---
 
-**Configure Docker Proxy**:
-1. Create Docker daemon configuration: `/etc/docker/daemon.json`
-2. Add proxy configuration:
+### 2. Docker
+
+**Configure Docker daemon** (`/etc/docker/daemon.json`):
+
 ```json
 {
   "proxies": {
     "http-proxy": "http://192.168.1.100:8080",
-    "https-proxy": "http://192.168.1.100:8443",
+    "https-proxy": "http://192.168.1.100:8080",
     "no-proxy": "localhost,127.0.0.1,*.local"
   }
 }
 ```
-3. Restart Docker daemon to apply changes
-4. Test Docker proxy functionality
 
-### Command-Line Tools Configuration
+**Restart Docker:**
 
-#### curl/wget Proxy Configuration
-
-**Configure curl Proxy**:
 ```bash
-# Configure curl proxy via command line
-curl --proxy http://192.168.1.100:8080 https://example.com
+sudo systemctl restart docker
+```
 
-# Configure curl proxy via environment variables
+**Verify:**
+
+```bash
+docker info | grep -i proxy
+```
+
+**Test:**
+
+```bash
+docker pull nginx
+```
+
+---
+
+### 3. npm (Node.js Package Manager)
+
+**Set proxy:**
+
+```bash
+npm config set proxy http://192.168.1.100:8080
+npm config set https-proxy http://192.168.1.100:8080
+npm config set registry https://registry.npmjs.org/
+```
+
+**Verify:**
+
+```bash
+npm config get proxy
+npm config get https-proxy
+```
+
+**Test:**
+
+```bash
+npm install express
+```
+
+**Unset proxy:**
+
+```bash
+npm config delete proxy
+npm config delete https-proxy
+```
+
+---
+
+### 4. Python pip
+
+**Via command-line (one-time):**
+
+```bash
+pip install --proxy http://192.168.1.100:8080 requests
+```
+
+**Via config file (permanent):**
+
+Create `~/.pip/pip.conf` (Linux/macOS) or `%APPDATA%\pip\pip.ini` (Windows):
+
+```ini
+[global]
+proxy = http://192.168.1.100:8080
+```
+
+**Verify:**
+
+```bash
+pip config list
+```
+
+**Test:**
+
+```bash
+pip install requests
+```
+
+---
+
+### 5. APT (Debian/Ubuntu Package Manager)
+
+**Create config file:**
+
+```bash
+sudo nano /etc/apt/apt.conf.d/95proxies
+```
+
+**Add:**
+
+```
+Acquire::http::Proxy "http://192.168.1.100:8080";
+Acquire::https::Proxy "http://192.168.1.100:8080";
+```
+
+**Test:**
+
+```bash
+sudo apt update
+```
+
+---
+
+### 6. YUM/DNF (RHEL/CentOS/Fedora Package Manager)
+
+**Edit config:**
+
+```bash
+sudo nano /etc/yum.conf
+```
+
+**Add:**
+
+```ini
+proxy=http://192.168.1.100:8080
+```
+
+**Test:**
+
+```bash
+sudo yum check-update
+```
+
+---
+
+### 7. curl
+
+**Via command-line (one-time):**
+
+```bash
+curl --proxy http://192.168.1.100:8080 https://example.com
+```
+
+**Via environment variable (session):**
+
+```bash
 export http_proxy=http://192.168.1.100:8080
-export https_proxy=http://192.168.1.100:8443
+export https_proxy=http://192.168.1.100:8080
 curl https://example.com
 ```
 
-**Configure wget Proxy**:
-```bash
-# Configure wget proxy via command line
-wget --proxy=on --http-proxy=192.168.1.100:8080 https://example.com
+**Via config file (`~/.curlrc`):**
 
-# Configure wget proxy via configuration file
-# Create ~/.wgetrc
+```
+proxy = "http://192.168.1.100:8080"
+```
+
+---
+
+### 8. wget
+
+**Via command-line:**
+
+```bash
+wget --proxy=on --http-proxy=192.168.1.100:8080 https://example.com
+```
+
+**Via config file (`~/.wgetrc`):**
+
+```
 http_proxy = http://192.168.1.100:8080
-https_proxy = http://192.168.1.100:8443
+https_proxy = http://192.168.1.100:8080
 use_proxy = on
 ```
 
-#### SSH Tunneling Through Proxy
+---
 
-**Configure SSH Proxy**:
-```bash
-# Configure SSH proxy via ProxyCommand
-ssh -o ProxyCommand="nc -X connect -x 192.168.1.100:8080 %h %p" user@remote-host
+### 9. Microsoft Outlook (Windows)
 
-# Configure SSH proxy via configuration file
-# Create ~/.ssh/config
-Host remote-host
-    ProxyCommand nc -X connect -x 192.168.1.100:8080 %h %p
-    User username
-```
+Outlook typically uses system proxy settings. If manual configuration needed:
 
-### Office Applications Configuration
+1. **File** → **Account Settings** → **Account Settings**
+2. Select account → **Change** → **More Settings**
+3. **Connection** tab
+4. **Connect using Internet Explorer or a 3rd party dialer**
+   - This makes Outlook use Windows system proxy
 
-#### Microsoft Office Suite
+**For Exchange/Office 365:**
+- Outlook inherits Windows proxy settings automatically
+- No manual configuration needed if system proxy is set
 
-**Configure Office Proxy**:
-1. Open Office application → File → Options
-2. Navigate to Trust Center → Trust Center Settings
-3. Click Privacy Options → Web Options
-4. Configure proxy settings:
-   - Use system proxy settings
-   - Or configure manual proxy settings
-5. Test Office connectivity and proxy functionality
+**Troubleshooting:** If Outlook won't connect, disable "Cached Exchange Mode" temporarily
 
-**Office Advanced Configuration**:
-1. Configure proxy settings for different Office applications
-2. Set bypass list for internal Office services
-3. Configure SSL/TLS settings for secure connections
-4. Test Office functionality with proxy configuration
+---
 
-#### LibreOffice
+### 10. Thunderbird (Email Client)
 
-**Configure LibreOffice Proxy**:
-1. Open LibreOffice → Tools → Options
-2. Navigate to Internet → Proxy
-3. Configure proxy settings:
-   - HTTP Proxy: 192.168.1.100:8080
-   - HTTPS Proxy: 192.168.1.100:8443
-4. Configure No Proxy for internal domains
-5. Test LibreOffice connectivity
+1. **Menu** (☰) → **Settings** → **General**
+2. Scroll to **Network & Disk Space** → **Connection Settings**
+3. Select **Manual proxy configuration**
+4. Enter:
+   - **HTTP Proxy:** `192.168.1.100` **Port:** `8080`
+   - **Use this proxy server for all protocols**
+5. **No Proxy for:** `localhost, 127.0.0.1, *.local`
+6. Click **OK**
 
+---
 
+## Other Applications
 
-## Verification and Evidence
+**General approaches for unlisted apps:**
 
-**Application Connectivity Testing**: Verify all configured applications can connect through SafeSquid proxy with proper functionality and performance.
+1. **Check app documentation** for proxy settings location
+2. **Try system environment variables** (many apps respect them):
+   ```bash
+   export http_proxy=http://192.168.1.100:8080
+   export https_proxy=http://192.168.1.100:8080
+   ```
+3. **Search for config files** in:
+   - Linux/macOS: `~/.config/[appname]/` or `~/.appname/`
+   - Windows: `%APPDATA%\[AppName]\`
+4. **Look for command-line flags**: `--proxy`, `-x`, `--http-proxy`
 
-**Traffic Monitoring**: Monitor SafeSquid logs to confirm all application traffic is being processed through proxy with appropriate policy enforcement.
+**Common config patterns:**
 
-**Functionality Verification**: Test application-specific features to ensure proxy configuration does not impact application functionality or user experience.
+- **Java apps:** Set `-Dhttp.proxyHost=192.168.1.100 -Dhttp.proxyPort=8080`
+- **Ruby gems:** `gem install --http-proxy http://192.168.1.100:8080 package`
+- **Go modules:** `export GOPROXY=http://192.168.1.100:8080`
 
-**Performance Validation**: Test application performance to ensure proxy configuration does not significantly impact application performance or response times.
+---
 
+## Test Your Configuration
 
+**For each app:**
+
+1. **Run a network operation:**
+   - Git: `git clone https://github.com/test/repo.git`
+   - Docker: `docker pull nginx`
+   - npm: `npm install express`
+   - pip: `pip install requests`
+
+2. **Check SafeSquid logs:**
+   ```bash
+   # On SafeSquid server:
+   tail -f /var/log/safesquid/access/extended.log
+   ```
+   Should show requests from your IP with app's user-agent
+
+3. **Verify bypass works:**
+   - Configure bypass for internal repos/registries
+   - Internal traffic should NOT appear in SafeSquid logs
+
+---
 
 ## Troubleshooting
 
-**Application Connection Failures**: Verify application-specific proxy settings and ensure applications support proxy configuration. Check application logs for connection errors.
+| **Symptom** | **Likely Cause** | **Fix** |
+|-------------|------------------|---------|
+| "Connection refused" | Wrong proxy IP or port | Verify: `telnet 192.168.1.100 8080` |
+| "Proxy authentication required" | SafeSquid requires auth | Add credentials: `http://user:pass@192.168.1.100:8080` |
+| "SSL certificate verify failed" | SSL inspection enabled, CA not trusted | Install SafeSquid root CA (see [SSL Inspection](/docs/SSL_Inspection/main/)) |
+| App ignores proxy setting | Environment variables override config | Unset: `unset http_proxy https_proxy` then retry |
+| Docker pull fails | No-proxy misconfigured | Add Docker registry to no-proxy list |
+| Git clone very slow | Large repo + proxy overhead | Use SSH instead of HTTPS, or bypass for internal Git |
 
-**Authentication Issues**: Confirm SafeSquid authentication settings match application configuration. Verify user credentials and authentication method compatibility.
+**Still not working?**
 
-**SSL/TLS Certificate Problems**: Install SafeSquid root CA certificate in application trust store when SSL inspection is enabled. Verify certificate installation and trust settings.
+1. **Test direct connectivity first:**
+   ```bash
+   # Without proxy:
+   unset http_proxy https_proxy
+   curl https://example.com
+   ```
+   If this fails, issue isn't proxy—check network/firewall
 
-**Performance Issues**: Check network latency between applications and proxy server. Verify SafeSquid performance settings and consider proxy server optimization.
+2. **Test proxy manually:**
+   ```bash
+   curl --proxy http://192.168.1.100:8080 https://example.com
+   ```
+   If this works, app config is wrong
 
-**Configuration Conflicts**: Ensure application-specific proxy settings do not conflict with system-wide or browser proxy configurations. Choose consistent configuration approach.
+3. **Check SafeSquid logs for errors:**
+   ```bash
+   tail -50 /var/log/safesquid/safesquid.log
+   ```
 
-**Protocol Compatibility**: Verify SafeSquid supports protocols required by applications. Check proxy server configuration for protocol-specific settings and requirements.
+---
 
-## Next steps
+## Next Steps
 
-1. [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) — confirm application traffic appears in SafeSquid logs.
-2. [SSL Inspection](/docs/SSL_Inspection/main/) — enable HTTPS inspection and install the root CA where required by each application.
-3. [Troubleshooting](/docs/Troubleshooting/main/) — for connection failures, certificate errors, or protocol issues.
-
+1. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm all application traffic flows through SafeSquid
+2. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Install root CA for apps that validate certificates (Git, pip, npm, Docker)
+3. **[Access Restriction](/docs/Access_Restriction/main/)** — Set policies for specific applications or protocols

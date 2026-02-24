@@ -78,15 +78,50 @@ const config: Config = {
       },
       items: [
         {
+          href: 'https://www.safesquid.com/#home',
+          label: 'HOME',
+          position: 'left',
+        },
+        {
+          href: 'https://www.safesquid.com/#about',
+          label: 'ABOUT',
+          position: 'left',
+        },
+        {
+          href: 'https://www.safesquid.com/#features',
+          label: 'FEATURES',
+          position: 'left',
+        },
+        {
+          href: 'https://www.safesquid.com/#technology',
+          label: 'TECHNOLOGY',
+          position: 'left',
+        },
+        {
+          href: 'https://www.safesquid.com/#solutions',
+          label: 'SOLUTIONS',
+          position: 'left',
+        },
+        {
+          href: 'https://www.safesquid.com/#get_started',
+          label: 'GET STARTED',
+          position: 'left',
+        },
+        {
+          href: 'https://www.safesquid.com/contact/',
+          label: 'CONTACT',
+          position: 'left',
+        },
+        {
+          href: 'https://www.safesquid.com/pricing/',
+          label: 'PRICING',
+          position: 'left',
+        },
+        {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'DOCS',
-        },
-        {
-          type: 'docsVersionDropdown',
-          position: 'left',
-          dropdownActiveClassDisabled: true,
         },
         { 
           to: '/blog', 
@@ -97,11 +132,6 @@ const config: Config = {
           href: 'https://help.safesquid.com/portal/en/community/safesquid-labs',
           label: 'FORUM',
           position: 'left',
-        },
-        {
-          href: 'https://key.safesquid.com',
-          label: 'PORTAL',
-          position: 'right',
         },
         {
           type: 'search',

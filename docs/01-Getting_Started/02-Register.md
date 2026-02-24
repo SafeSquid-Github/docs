@@ -7,63 +7,72 @@ keywords:
   - SafeSquid account
 ---
 
-
 # Register and Get Your Key
 
-**Goal:** Obtain an activation key so your SafeSquid instance can be licensed and fully operational. Registration is free and takes about two minutes.
+**Goal:** Obtain an activation key so you can license SafeSquid after installation. Registration is free and takes about two minutes.
 
 :::tip Already registered?
 [Sign in to the Self-Service Portal](https://key.safesquid.com) to download your existing key.
 :::
 
-## Prerequisites
+:::info Prerequisites
 
-- A browser with access to the internet
+- A browser with internet access
 - A valid email address (for account activation and key delivery)
-- Network access to [https://key.safesquid.com](https://key.safesquid.com) (no proxy required for registration)
+- Network access to `https://key.safesquid.com` (no proxy required for registration)
 
-## Steps
+:::
 
-1. **Sign up** at [https://key.safesquid.com](https://key.safesquid.com). Enter your email, name, and captcha.
+:::tip Use Your Business Email
+
+Using a corporate email domain (not Gmail, Yahoo, Outlook personal) unlocks enterprise account benefits:
+- Priority support during POC
+- Team member invitations
+- Extended trial options
+
+:::
+
+## Registration Process
+
+1. **Sign up** at [https://key.safesquid.com](https://key.safesquid.com). Enter your email, name, and captcha, then click **Register**.
 
    ![Sign up form](/img/License_Activation/image2.webp)
-   *Registration form on the Self-Service Portal*
+   *Registration form — enter your business email, name, and complete captcha*
 
 2. **Check your inbox** for the activation email and click **Click here to activate your account**.
 
    ![Email confirmation](/img/License_Activation/image3.webp)
-   *Activation link in the confirmation email*
+   *Activation email — click the "Click here to activate your account" link*
 
 3. **Set a password** and click **Activate**.
 
    ![Activate account](/img/License_Activation/image6.webp)
-   *Password setup screen*
+   *Password setup — choose a strong password and click Activate*
 
 4. **Sign in**, complete your profile, then click **Download Key**.
-   :::tip
-   Using a business email unlocks enterprise account benefits such as team onboarding and POC support.
-   :::
 
    ![Download key](/img/License_Activation/image12.webp)
-   *The key download button in the portal dashboard*
+   *Portal dashboard — click Download Key to save the activation_key file*
 
 The downloaded file is named `activation_key` (no extension), typically a few KB in size.
 
-:::caution
-Do not rename or modify the activation key file. SafeSquid will reject a tampered key.
-:::
+## About Your Activation Key
+
+- **Validity:** The key does not expire. You can use it to activate SafeSquid instances at any time.
+- **Reusability:** One key can activate multiple SafeSquid nodes in your deployment (use the same key for HA clusters).
+- **Re-download:** Sign in to the [Self-Service Portal](https://key.safesquid.com) anytime to download your key again if lost.
+- **File integrity:** Do not rename or modify the `activation_key` file — SafeSquid will reject tampered keys.
 
 ## Troubleshooting
 
-- **Activation email not received?** — Check your spam/junk folder. If it's not there, try registering again with the same email. Still nothing? [Contact SafeSquid support](https://www.safesquid.com/contact-us).
+Most registration issues resolve by checking spam filters or trying a different browser. If problems persist, contact support with your registered email address.
+
+**Common issues:**
+
+- **Activation email not received?** — Check spam/junk folder. Wait 5 minutes, then try registering again with the same email (duplicate attempts are safe). Still missing? [Contact SafeSquid support](https://www.safesquid.com/contact-us).
 - **Key download fails?** — Ensure you are signed in to the [Self-Service Portal](https://key.safesquid.com). Try a different browser or clear your cache. If the issue persists, [contact us](https://www.safesquid.com/contact-us).
 - **Forgot your password?** — Use the password reset link on the [Self-Service Portal](https://key.safesquid.com) login page.
 - **Account locked or other issues?** — [Contact SafeSquid support](https://www.safesquid.com/contact-us) with your registered email address.
-
-## Verification
-
-- The key file is downloaded and named `activation_key` (no extension), typically a few KB in size.
-- You can sign in to the [Self-Service Portal](https://key.safesquid.com) and see your account and **Download Key** option.
 
 ## Next steps
 

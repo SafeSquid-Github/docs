@@ -12,185 +12,188 @@ keywords:
   - Firefox proxy configuration
 ---
 
-
 # Explicit Proxy Configuration
 
+**Explicit proxy** means manually entering the proxy IP and port in browser settings. Use this method for:
+- Testing SafeSquid for the first time
+- Single-user setups or controlled environments
+- Quick validation without organization-wide rollout
 
+**Time to configure:** ~2 minutes per browser
 
-## Problem Statement
+:::tip When to Use This Method
 
-Organizations require manual proxy configuration for controlled environments where users must configure browsers to route traffic through SafeSquid for policy enforcement and threat protection. Manual configuration provides granular control over proxy usage while enabling comprehensive security monitoring and policy enforcement across diverse browser environments. This explicit configuration approach ensures precise control over proxy behavior while supporting user-specific preferences and organizational security requirements.
+Use explicit proxy for initial testing. For production deployments, use [PAC File](/docs/Getting_Started/Connect_Your_Client/PAC_File/) or [Enterprise Deployment](/docs/Getting_Started/Connect_Your_Client/Enterprise_Deployment/) instead.
 
-
-
-## Key Benefits
-
-**Precise Control**: Manual proxy configuration provides exact control over proxy settings, enabling organizations to specify precise proxy servers, ports, and bypass lists for optimal security enforcement. This granular control ensures consistent policy application while allowing customization for specific organizational requirements.
-
-**Comprehensive Coverage**: Explicit proxy configuration supports all major browsers and operating systems, ensuring comprehensive security coverage across diverse endpoint environments. This universal support enables organizations to maintain consistent security policies regardless of user preferences or platform choices.
-
-**Troubleshooting Capability**: Manual configuration provides clear visibility into proxy settings, enabling rapid troubleshooting and verification of proxy connectivity. This transparency facilitates rapid issue resolution while maintaining security enforcement capabilities.
-
-
+:::
 
 ## Prerequisites
 
-**Client-Side Preparations**: Ensure SafeSquid SWG is deployed and accessible from client networks with proper network connectivity and firewall rules configured to allow proxy traffic on required ports. Verify SafeSquid is running and accepting connections on configured proxy ports.
+:::info Before You Start
 
-**SafeSquid-Side Setup**: Configure SafeSquid proxy services on appropriate ports (typically 8080 for HTTP, 8443 for HTTPS) with proper authentication and policy configuration. Ensure SSL inspection is enabled if HTTPS traffic requires inspection and monitoring.
+- SafeSquid IP address and port (default: 8080 for HTTP)
+- SafeSquid must be running and accessible from the client network
+- For system-wide Windows/macOS configuration: Administrator privileges
+- For HTTPS sites: [SSL Inspection](/docs/SSL_Inspection/main/) configured (optional for initial testing)
 
-**System Requirements**: Client systems must have appropriate browsers installed with administrative privileges for system-wide proxy configuration. Network connectivity must be established between client systems and SafeSquid proxy servers.
+:::
 
+## Configuration Steps
 
+### Windows
 
-## Implementation Actions
+**For Chrome, Edge, and Internet Explorer** (uses system proxy):
 
-### Windows Browser Configuration
+1. Open **Settings** → **Network & Internet** → **Proxy**
+2. Toggle **Use a proxy server** to **On**
+3. Enter:
+   - **Address:** SafeSquid IP (e.g., `192.168.1.100`)
+   - **Port:** `8080`
+4. *(Optional)* Add bypass list for internal sites:
+   - Click **Edit** under "Use a proxy server"
+   - Add: `*.local;*.company.com;localhost`
+5. Click **Save**
 
-#### Chrome and Edge (System-Wide Configuration)
+**Alternative method (Windows 7-10):**
+- Control Panel → Internet Options → Connections → LAN Settings
+- Same settings as above
 
-**Access Windows Proxy Settings**:
-1. Open Windows Settings (Windows key + I)
-2. Navigate to Network & Internet → Proxy
-3. Enable "Use a proxy server" toggle
-4. Enter SafeSquid proxy IP address and port (e.g., 192.168.1.100:8080)
-5. Configure bypass list for internal domains (e.g., *.local, *.company.com)
-6. In the Proxy pane, click **Save** to apply settings
+---
 
-**Alternative Method via Internet Options**:
-1. Open Control Panel → Internet Options
-2. Navigate to Connections tab → LAN Settings
-3. Enable "Use a proxy server for your LAN"
-4. Enter proxy address and port
-5. Configure Advanced settings for different protocols
-6. Click OK to apply changes
+**For Firefox** (browser-specific settings):
 
-#### Firefox Browser-Specific Configuration
+1. Open Firefox → **Menu** (☰) → **Settings**
+2. Scroll to **Network Settings** → **Settings**
+3. Select **Manual proxy configuration**
+4. Enter:
+   - **HTTP Proxy:** SafeSquid IP
+   - **Port:** `8080`
+5. Check **Also use this proxy for HTTPS**
+6. Add **No Proxy for:** `localhost, 127.0.0.1, *.local`
+7. Click **OK**
 
-**Configure Firefox Proxy Settings**:
-1. Open Firefox and in the browser toolbar click the **menu** (three horizontal lines, top-right).
-2. Navigate to **Settings** → **General**.
-3. Scroll to **Network Settings**.
-4. Click **Settings** to open the connection settings dialog.
-5. Select "Manual proxy configuration"
-6. Enter HTTP Proxy: SafeSquid IP and port
-7. Enable "Use this proxy server for all protocols"
-8. Configure No Proxy for internal domains
-9. Click OK to save settings
+### Linux
 
-**Verification**: Access http://safesquid.cfg/ to verify SafeSquid interface connectivity.
+**GUI method (Ubuntu/GNOME):**
 
-### Linux Browser Configuration
+1. **Settings** → **Network** → **Network Proxy**
+2. Select **Manual**
+3. Enter:
+   - **HTTP Proxy:** SafeSquid IP, Port 8080
+   - **HTTPS Proxy:** SafeSquid IP, Port 8080
+4. Add **Ignore Hosts:** `localhost, 127.0.0.1, *.local`
+5. Click **Apply system-wide**
+6. Restart browser
 
-#### Chrome/Chromium (System-Wide Configuration)
+---
 
-**Configure System Proxy Settings**:
-1. Open System Settings → Network
-2. Select network connection → Configure
-3. Navigate to Proxy tab
-4. Select "Manual" proxy configuration
-5. Enter HTTP proxy: SafeSquid IP:8080
-6. Enter HTTPS proxy: SafeSquid IP:8443
-7. Configure bypass list for internal domains
-8. Apply settings and restart browser
+**Command-line method (works on all distros):**
 
-**Command Line Configuration**:
 ```bash
-# Set environment variables
+# Set environment variables (temporary, current session only)
 export http_proxy=http://192.168.1.100:8080
-export https_proxy=http://192.168.1.100:8443
+export https_proxy=http://192.168.1.100:8080
 export no_proxy=localhost,127.0.0.1,*.local
 
-# Launch Chrome with proxy settings
-google-chrome --proxy-server=http://192.168.1.100:8080
+# Launch browser with proxy
+google-chrome &
+# or
+firefox &
 ```
 
-#### Firefox Browser-Specific Configuration
-
-**Configure Firefox Proxy Settings**:
-1. Open Firefox and navigate to Preferences
-2. Scroll to Network Settings section
-3. Click Settings button
-4. Select "Manual proxy configuration"
-5. Enter HTTP Proxy: SafeSquid IP and port
-6. Enable "Use this proxy server for all protocols"
-7. Configure No Proxy for internal domains
-8. Click OK to save settings
-
-**Verification**: Test connectivity using curl command:
+**To make permanent** (add to `~/.bashrc` or `~/.profile`):
 ```bash
-curl -I --proxy http://192.168.1.100:8080 http://safesquid.cfg/
+echo 'export http_proxy=http://192.168.1.100:8080' >> ~/.bashrc
+echo 'export https_proxy=http://192.168.1.100:8080' >> ~/.bashrc
+echo 'export no_proxy=localhost,127.0.0.1,*.local' >> ~/.bashrc
+source ~/.bashrc
 ```
 
-### macOS Browser Configuration
+**Firefox on Linux:** Same as Windows Firefox steps above.
 
-#### Safari (System Preferences)
+### macOS
 
-**Configure System Proxy Settings**:
-1. Open System Preferences → Network
-2. Select active network connection
-3. Click Advanced → Proxies tab
-4. Enable "Web Proxy (HTTP)" and "Secure Web Proxy (HTTPS)"
-5. Enter SafeSquid IP address and ports
-6. Configure bypass list for internal domains
-7. Click OK and Apply to save settings
+**For Safari, Chrome, and system-wide proxy:**
 
-#### Chrome (System-Wide Configuration)
+1. **System Settings** → **Network**
+2. Select your active connection (Wi-Fi or Ethernet)
+3. Click **Details** → **Proxies**
+4. Check **Web Proxy (HTTP)** and **Secure Web Proxy (HTTPS)**
+5. Enter:
+   - **Web Proxy Server:** SafeSquid IP:8080
+   - **Secure Web Proxy Server:** SafeSquid IP:8080
+6. Add **Bypass proxy settings for these Hosts & Domains:**
+   - `*.local, localhost, 127.0.0.1`
+7. Click **OK** → **Apply**
+8. Restart browsers
 
-**Configure Chrome via System Settings**:
-1. Open System Preferences → Network
-2. Select network connection → Advanced
-3. Navigate to Proxies tab
-4. Enable HTTP and HTTPS proxy
-5. Enter SafeSquid proxy details
-6. Configure bypass domains
-7. Apply settings and restart Chrome
+---
 
-#### Firefox Browser-Specific Configuration
+**For Firefox** (browser-specific settings):
 
-**Configure Firefox Proxy Settings**:
-1. Open Firefox → Preferences
-2. Navigate to General → Network Settings
-3. Click Settings button
-4. Select "Manual proxy configuration"
-5. Enter proxy server details
-6. Configure protocol settings
-7. Set bypass list for internal domains
-8. Click OK to save settings
+Same as Windows Firefox steps above.
 
-**Verification**: Access SafeSquid interface at http://safesquid.cfg/ to confirm connectivity.
+## Test Your Configuration
 
+**Immediate validation:**
 
+1. Open the configured browser
+2. Navigate to `http://example.com`
+3. **If it loads:** Proxy is working ✅
+4. **If it fails:** See [Troubleshooting](#troubleshooting) below
 
-## Verification and Evidence
+**Verify SafeSquid is receiving traffic:**
 
-**Interface Access Verification**: Successfully access SafeSquid WebGUI at http://safesquid.cfg/ through configured proxy settings, confirming proper proxy connectivity and authentication.
+```bash
+# On the SafeSquid server:
+tail -f /var/log/safesquid/access/extended.log
+```
 
-**Traffic Monitoring**: Verify SafeSquid logs show client traffic being processed through proxy with appropriate policy enforcement and security monitoring.
+You should see your request logged with client IP, URL, and timestamp.
 
-**Bypass List Testing**: Confirm internal domains bypass proxy configuration while external traffic routes through SafeSquid for security enforcement.
+**Access SafeSquid admin interface:**
 
-**Performance Validation**: Test web browsing performance to ensure proxy configuration does not significantly impact user experience or application functionality.
+- Via proxy: `http://safesquid.cfg/`
+- Direct: `https://SAFESQUID-IP:8443/`
 
+:::caution HTTPS Certificate Warnings
 
+Until [SSL Inspection](/docs/SSL_Inspection/main/) is configured, HTTPS sites will show certificate warnings. This is expected—click through for now.
+
+:::
 
 ## Troubleshooting
 
-**Connection Refused Errors**: Verify SafeSquid proxy service is running and accessible on configured ports. Check firewall rules and network connectivity between client and proxy server.
+| **Symptom** | **Likely Cause** | **Fix** |
+|-------------|------------------|---------|
+| "Proxy server refusing connections" | SafeSquid not running or firewall blocking | **On SafeSquid server:** `systemctl status safesquid` <br> **Test connectivity:** `telnet SAFESQUID-IP 8080` |
+| Site loads but very slow | Network latency or SafeSquid overloaded | Check ping time: `ping SAFESQUID-IP` <br> Check SafeSquid load: `top` on server |
+| Bypass list not working | Syntax error in bypass list | Windows: Use semicolons `;` <br> macOS/Linux: Use commas `,` |
+| Firefox ignores system proxy | Firefox uses own settings | Configure Firefox manually (see steps above) |
+| "This site can't be reached" | Wrong IP or port | Verify SafeSquid IP and port 8080 in settings |
+| HTTPS sites don't load at all | SSL inspection not configured | Either [configure SSL inspection](/docs/SSL_Inspection/main/) or disable HTTPS proxy temporarily |
 
-**Authentication Failures**: Confirm SafeSquid authentication settings match client configuration. Verify user credentials and authentication method compatibility.
+**Still not working?**
 
-**SSL Certificate Issues**: Install SafeSquid root CA certificate in browser trust store when SSL inspection is enabled. Verify certificate installation and browser trust settings.
+1. **Verify proxy settings are actually applied:**
+   - Windows: Open Edge, type `edge://net-internals/#proxy`
+   - macOS: `scutil --proxy`
+   - Linux: `echo $http_proxy`
 
-**Bypass List Not Working**: Check bypass list syntax and ensure internal domains are properly configured. Verify DNS resolution for internal domains.
+2. **Check SafeSquid logs for errors:**
+   ```bash
+   tail -50 /var/log/safesquid/safesquid.log
+   ```
 
-**Browser Not Using Proxy**: Clear browser cache and restart browser after configuration changes. Verify system-wide proxy settings are properly applied.
+3. **Test direct connectivity:**
+   ```bash
+   curl -I --proxy http://SAFESQUID-IP:8080 http://example.com
+   ```
 
-**Performance Issues**: Check network latency between client and proxy server. Verify SafeSquid performance settings and consider proxy server optimization.
+## Next Steps
 
-## Next steps
-
-1. [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) — confirm the proxy is receiving traffic and the configuration interface is reachable.
-2. [PAC File](/docs/Getting_Started/Connect_Your_Client/PAC_File/) or [System-Wide Proxy](/docs/Getting_Started/Connect_Your_Client/System_Wide_Proxy/) — scale beyond a single browser when ready.
-3. [SSL Inspection](/docs/SSL_Inspection/main/) — enable HTTPS decryption so SafeSquid can inspect encrypted traffic.
-
+1. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Run comprehensive tests to confirm proxy functionality
+2. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Enable HTTPS decryption to inspect encrypted traffic
+3. **Scale your deployment:**
+   - **Small team (10-100 users):** [PAC File](/docs/Getting_Started/Connect_Your_Client/PAC_File/)
+   - **Enterprise (100+ endpoints):** [Enterprise Deployment](/docs/Getting_Started/Connect_Your_Client/Enterprise_Deployment/)
