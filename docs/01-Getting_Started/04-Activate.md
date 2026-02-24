@@ -187,6 +187,62 @@ Use this screen for auditor requests or compliance evidence that the gateway is 
    ```
 
   </TabItem>
+  <TabItem value="case4" label="License Expired">
+
+SafeSquid will now exhibit subscription expired promo if Safesquid instance has no active subscription.
+
+Subscription expire promo is activated once the SafeSquid distribution license has expired.
+Also, you can check your subscription validity from key.safesquid.com → Manage Account.
+
+/img/License_Activation/image19.webp
+
+SafeSquid sends regular email remainders per-expiration period.
+Below is how you’ll witness SafeSquid subscription expired promo.
+
+/img/License_Activation/image20.webp
+
+Once the subscription has expired security updates will be foreground.
+The update frequencies will be as per the freemium plan:
+Anti-Virus Engine Weekly Updates.
+Web Categorization Engine Weekly updates.
+Pornographic Image Filter AI Monthly updates.
+SSL Security Weekly updates.
+Application signature monthly updates.
+Content signature Monthly Updates.
+
+To avoid getting expired promo you can either renew your subscription or extend your conservation period which extends it by 3 days.
+
+During conservation period you’ll not get the expired promo.
+To extend your conservation period follow below steps.
+Visit key.safesquid.com and login to your account.
+
+/img/License_Activation/image21.webp
+
+Go to Manage Account.
+
+/img/License_Activation/image22.webp
+
+In Manage Account click on the “Extend Conservation Period”
+
+/img/License_Activation/image23.webp
+
+You can validate extended conservation period from the date mentioned in the Support Validity section.
+(Note: The “Extend Conservation Period” button will disappear, and in its place the “Conserve Subscription” option will be displayed along with a validity date (approximately 3 days). Once the Conserve Subscription validity expires, the “Extend Conservation Period” button will reappear, allowing the subscription to be extended again for another 3 days.)
+
+/img/License_Activation/image24.webp
+
+Restart SafeSquid service from web interface for the changes to take effect.
+
+/img/License_Activation/image25.webp
+
+Click on the Save Config and select “Yes” if you want to store the configuration in cloud and click on submit and then restart the safesquid
+
+/img/License_Activation/image26.webp
+
+If you pass the extended conservation period and if the subscription has not been renewed, you’ll receive SafeSquid expired promo again.
+
+Follow above steps to extend your conservation period again
+</TabItem>
 </Tabs>
 
 ## Next steps
