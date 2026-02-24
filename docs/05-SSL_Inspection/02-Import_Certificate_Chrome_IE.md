@@ -9,55 +9,168 @@ keywords:
   - HTTPS inspection client trust
 ---
 
-
 # Import SafeSquid Root CA into Chrome or Internet Explorer
 
-Clients must trust the SafeSquid Root CA for HTTPS inspection to work without certificate warnings. Chrome and Internet Explorer use the Windows certificate store. Follow the steps below to import the SafeSquid SSL certificate into Trusted Root Certification Authorities for both browsers.
+Chrome, Edge, and Internet Explorer use the Windows certificate store. Follow this guide to import the SafeSquid Root CA into **Trusted Root Certification Authorities** so HTTPS inspection works without certificate warnings.
 
-:::note
-SafeSquid Web Security Client users do not need to manually import certificates into Chrome or IE. For Firefox, see [Import certificate into Firefox](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#import-certificate-into-firefox) — Firefox uses its own certificate store.
+**Time to complete:** 2-5 minutes per machine
+
+:::tip Automated Deployment
+
+For enterprise environments, deploy the certificate via **Group Policy (GPO)** instead of manual installation:
+1. Copy certificate to `\\domain.com\SYSVOL\domain.com\Policies\`
+2. GPO → Computer Configuration → Policies → Windows Settings → Security Settings → Public Key Policies → Trusted Root Certification Authorities
+3. Import → Select SafeSquid certificate → Apply
+
 :::
 
-1. Open the SafeSquid SSL certificate downloaded from the SSL Inspection section or from [https://key.safesquid.com/portal.html](https://key.safesquid.com/portal.html).
+:::note Firefox Users
 
-   ![Opening downloaded SafeSquid certificate](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image1.webp)
+Firefox uses its own certificate store and ignores the Windows trust store. See [Import certificate into Firefox](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#import-certificate-into-firefox).
 
-2. Click **Install Certificate**.
+:::
 
-   ![Install certificate button](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image2.webp)
+---
 
-3. Select the store location and click **Next**.
+## Prerequisites
 
-   ![Store location selection](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image3.webp)
+:::info Before You Start
 
-4. Click **Browse** to select the certificate store.
+- SafeSquid Root CA certificate downloaded (from [Self-Service Portal](https://key.safesquid.com) or SafeSquid Configuration Portal)
+- Windows machine with administrative privileges
+- Chrome, Edge, or Internet Explorer installed
 
-   ![Browse certificate store](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image4.webp)
+:::
 
-5. Select **Trusted Root Certification Authorities** and click **OK**.
+---
 
-   ![Trusted Root Certification Authorities selection](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image5.webp)
+## Import Steps
 
-6. Click **Next** to continue with the SSL certificate import.
+### 1. Open the Certificate File
 
-   ![Continue import](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image6.webp)
+Double-click the downloaded SafeSquid certificate file (usually `safesquid.crt` or `safesquid.cer`).
 
-7. Click **Finish** to complete the import process.
+![Opening SafeSquid certificate](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image1.webp)
 
-   ![Finish import](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image7.webp)
+---
 
-8. A confirmation message displays indicating successful import.
+### 2. Click "Install Certificate"
 
-   ![Import successful confirmation](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image8.webp)
+![Install Certificate button](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image2.webp)
 
-   ![Import complete](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image9.webp)
+---
 
+### 3. Select Store Location
 
+Choose **"Local Machine"** (for all users on this computer) or **"Current User"** (for your account only).
 
-## Verification and evidence
+**Recommended:** Local Machine (requires admin rights, applies to all users)
 
-- **Browser Check**: Visit any HTTPS site (e.g. https://www.google.com) through the SafeSquid proxy. Click the padlock icon → **Certificate** and verify the chain shows the SafeSquid Root CA as the issuing authority. No certificate warnings should appear.
-- **Log Analysis**: SafeSquid access logs should show decrypted HTTPS requests for inspected sites.
+Click **Next**.
 
-**Next steps:** [Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) for enabling inspection and bypass rules. [Import certificate into Firefox](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#import-certificate-into-firefox) for Firefox-specific trust setup.
+![Store location selection](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image3.webp)
 
+---
+
+### 4. Select Certificate Store
+
+Click **"Browse"** to select the certificate store.
+
+![Browse certificate store](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image4.webp)
+
+---
+
+### 5. Choose "Trusted Root Certification Authorities"
+
+**Important:** Select **"Trusted Root Certification Authorities"** (NOT "Intermediate Certification Authorities").
+
+Click **OK**.
+
+![Select Trusted Root Certification Authorities](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image5.webp)
+
+---
+
+### 6. Continue with Import
+
+Click **Next** to continue.
+
+![Continue import](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image6.webp)
+
+---
+
+### 7. Finish Import
+
+Click **Finish** to complete the import.
+
+![Finish import](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image7.webp)
+
+---
+
+### 8. Confirm Success
+
+A confirmation message appears: **"The import was successful."**
+
+Click **OK**.
+
+![Import successful confirmation](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image8.webp)
+
+![Import complete](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image9.webp)
+
+---
+
+## Verify Installation
+
+### Test in Chrome/Edge
+
+1. **Open Chrome or Edge**
+2. **Browse to** `https://www.google.com` (via SafeSquid proxy)
+3. **Click the padlock** in the address bar → **Connection is secure** → **Certificate**
+4. **Verify:** Certificate chain shows SafeSquid Root CA as the issuer
+
+**Expected:** No certificate warnings, padlock shows secure connection.
+
+---
+
+### Verify Certificate is in Trust Store
+
+1. **Press Windows + R** → Type `certmgr.msc` → **Enter**
+2. **Expand** "Trusted Root Certification Authorities" → **Certificates**
+3. **Find** "SafeSquid" (or your organization name) in the list
+
+**Expected:** SafeSquid certificate appears with expiry date and issuer information.
+
+---
+
+## Troubleshooting
+
+| **Issue** | **Likely Cause** | **Fix** |
+|-----------|------------------|---------|
+| Still seeing certificate warnings | Certificate installed in wrong store | Verify certificate is in **Trusted Root Certification Authorities** (not Intermediate) |
+| "Windows cannot access the file" | No admin privileges | Right-click certificate → **Run as administrator** |
+| Import succeeds but warnings persist | Browser cache | Clear browser cache and restart browser: `chrome://settings/clearBrowserData` |
+| Certificate not visible in certmgr | Installed for Current User instead of Local Machine | Re-install, select "Local Machine" in step 3 |
+| Some sites work, others don't | HTTPS Inspection not enabled or partial bypass | Check SafeSquid Configuration Portal → HTTPS Inspection → Global = True |
+
+**Still not working?**
+
+1. **Restart browser completely** (close all windows)
+2. **Check proxy settings:**
+   - Chrome: `chrome://net-internals/#proxy`
+   - Edge: `edge://net-internals/#proxy`
+3. **Verify SafeSquid HTTPS Inspection is enabled:**
+   - Navigate to SafeSquid Configuration Portal
+   - Real-time Content Security → HTTPS Inspection → Global → Enabled = True
+
+---
+
+## Next Steps
+
+1. **[Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/)** — Complete setup guide (if you haven't enabled inspection yet)
+2. **[Import certificate into Firefox](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#import-certificate-into-firefox)** — Firefox uses separate trust store
+3. **Deploy to all clients:**
+   - **Windows enterprise:** Use GPO (see tip at top of page)
+   - **macOS:** Use MDM or manual Keychain import
+   - **Mobile:** Use MDM or manual installation
+4. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm proxy and SSL Inspection are working
+
+**Related:** [SSL Inspection Overview](/docs/SSL_Inspection/main/) | [Troubleshooting](/docs/Troubleshooting/main/)
