@@ -10,122 +10,313 @@ keywords:
   - DNSSEC
 ---
 
-
 # BIND Local DNS Resolver
 
+BIND provides a local DNS resolver for SafeSquid, reducing lookup latency and improving cache hit rates for frequently accessed domains.
 
-
-## Problem Statement
-- Security Challenge: Slow or unreliable public DNS causes latency and resolution failures
-- Real-World Scenarios: External DNS rate-limits, outages, or geo-DNS inconsistencies impact content access and threat lookups
-- Business Context: DNS instability affects browsing performance, policy enforcement, and malware categorization accuracy
-
-
-
-## Key Benefits
-- Desired Outcome: Fast, consistent, and locally controlled DNS for SafeSquid SWG
-- Value Proposition: Reduce DNS lookup time and improve cache hits for repeated domains
-- Competitive Advantage: Enterprise-grade control, auditability, and resilience versus public resolvers
-
-
+**Why you need this:** Relying on external DNS servers introduces latency, rate-limiting, and dependency on third parties. A local BIND resolver improves performance and reliability.
 
 ## Prerequisites
-- Client-Side Preparations: Confirm upstream DNS policy; define allowed egress for UDP/TCP 53
-- SafeSquid-Side Setup: Plan SafeSquid to query local resolver IP
-- System Requirements: Linux host, [BIND 9.x](https://bind9.readthedocs.io/), time synchronization (NTP) for DNSSEC validation
 
+:::info Before You Start
 
+- Linux host with root/sudo access
+- SafeSquid installed
+- Firewall allows UDP/TCP port 53 outbound (to root DNS servers or forwarders)
+- NTP configured (for DNSSEC validation)
 
-## Call to Action
-1. Install BIND.
-   - Debian/Ubuntu:
-     ```bash
-     sudo apt update
-     sudo apt install -y bind9 bind9-utils
-     ```
-   - RHEL/Rocky:
-     ```bash
-     sudo dnf install -y bind bind-utils
-     ```
-   - Verification: `named -v` prints version
-2. Configure named options.
-   - Edit `/etc/bind/named.conf.options` (Debian/Ubuntu) or `/etc/named.conf` (RHEL):
-     ```bash
-     options {
-       directory "/var/cache/bind";
-       recursion yes;
-       allow-recursion { 127.0.0.1; 10.0.0.0/8; 172.16.0.0/12; 192.168.0.0/16; };
-       listen-on port 53 { 127.0.0.1; 10.0.0.1; }; // replace with resolver IP
-       allow-query { any; };
-       dnssec-validation auto;
-       auth-nxdomain no;
-       minimal-responses yes;
-       rate-limit {
-         responses-per-second 25;
-       };
-     };
-     ```
-   - Verification: `named-checkconf` returns no output
-3. Configure root hints and local zones (optional).
-   - Ensure `root.hints` present:
-     ```bash
-     curl -o /var/cache/bind/root.hints https://www.internic.net/domain/named.root
-     ```
-   - Add local overrides file `named.conf.local`:
-     ```bash
-     zone "corp.local" { type forward; forwarders { 10.0.0.10; 10.0.0.11; }; };
-     ```
-   - Verification: `named-checkzone corp.local /dev/null` validates syntax
-4. Enable and start BIND.
+:::
+
+## Installation and Configuration
+
+### 1. Install BIND
+
+**Debian/Ubuntu:**
+```bash
+sudo apt update
+sudo apt install -y bind9 bind9-utils
+```
+
+**RHEL/Rocky/CentOS:**
+```bash
+sudo dnf install -y bind bind-utils
+```
+
+**Verify installation:**
+```bash
+named -v
+```
+Should print BIND version.
+
+---
+
+### 2. Configure BIND Options
+
+**Edit configuration file:**
+
+- **Debian/Ubuntu:** `/etc/bind/named.conf.options`
+- **RHEL/CentOS:** `/etc/named.conf`
+
+```bash
+sudo nano /etc/bind/named.conf.options
+```
+
+**Add/modify:**
+```
+options {
+  directory "/var/cache/bind";
+  
+  recursion yes;
+  allow-recursion { 127.0.0.1; 10.0.0.0/8; 172.16.0.0/12; 192.168.0.0/16; };
+  
+  listen-on port 53 { 127.0.0.1; 10.0.0.1; };  // Replace 10.0.0.1 with your server IP
+  allow-query { any; };
+  
+  dnssec-validation auto;
+  auth-nxdomain no;
+  minimal-responses yes;
+  
+  rate-limit {
+    responses-per-second 25;
+  };
+};
+```
+
+**Explanation:**
+- **recursion yes** — Enables BIND to query upstream DNS on behalf of clients
+- **allow-recursion** — Limits recursion to private IP ranges (prevents open resolver abuse)
+- **listen-on** — IP addresses BIND listens on (127.0.0.1 + server IP)
+- **dnssec-validation auto** — Validates DNSSEC signatures
+- **rate-limit** — Prevents DNS amplification attacks
+
+**Verify configuration syntax:**
+```bash
+sudo named-checkconf
+```
+Should return nothing (silence means success).
+
+---
+
+### 3. Configure Root Hints and Local Zones (Optional)
+
+**Download root hints file:**
+
+```bash
+sudo curl -o /var/cache/bind/root.hints https://www.internic.net/domain/named.root
+```
+
+**Add root hints to configuration:**
+
+Edit `/etc/bind/named.conf` (or `/etc/named.conf`):
+
+```bash
+zone "." {
+  type hint;
+  file "/var/cache/bind/root.hints";
+};
+```
+
+**Configure local zone overrides** (for internal domains):
+
+Create `/etc/bind/named.conf.local`:
+
+```bash
+sudo nano /etc/bind/named.conf.local
+```
+
+Add:
+```
+zone "corp.local" {
+  type forward;
+  forwarders { 10.0.0.10; 10.0.0.11; };  // Your internal DNS servers
+};
+```
+
+**Verify zone syntax:**
+```bash
+sudo named-checkzone corp.local /dev/null
+```
+
+---
+
+### 4. Enable and Start BIND
+
+```bash
+# Debian/Ubuntu:
+sudo systemctl enable --now bind9
+systemctl is-active bind9
+
+# RHEL/CentOS:
+sudo systemctl enable --now named
+systemctl is-active named
+```
+
+**Expected:** Service shows `active`.
+
+---
+
+### 5. Point SafeSquid to Local Resolver
+
+**Edit `/etc/resolv.conf` on the SafeSquid server:**
+
+```bash
+sudo nano /etc/resolv.conf
+```
+
+**Set:**
+```
+nameserver 127.0.0.1
+```
+
+**Or if BIND is on a different server:**
+```
+nameserver 10.0.0.1  # BIND server IP
+```
+
+**Test DNS resolution:**
+```bash
+dig @127.0.0.1 example.com
+```
+
+**Expected:** Answer section with IP address and low query time.
+
+---
+
+### 6. Harden Resolver (Production)
+
+**Enable logging:**
+
+Edit `/etc/bind/named.conf` (or `/etc/named.conf`):
+
+```bash
+logging {
+  channel default_log {
+    file "/var/log/named/default.log" versions 5 size 10m;
+    severity info;
+    print-time yes;
+  };
+  category resolver { default_log; };
+  category security { default_log; };
+};
+```
+
+**Create log directory:**
+```bash
+sudo mkdir -p /var/log/named
+sudo chown bind:bind /var/log/named
+```
+
+**Restart BIND:**
+```bash
+sudo systemctl restart bind9  # or named
+```
+
+**Additional hardening:**
+
+- **Restrict recursion** to SafeSquid server IP only (tighten `allow-recursion`)
+- **Enable Response Policy Zones (RPZ)** for threat blocking (optional)
+- **Monitor logs** for unusual query patterns
+
+---
+
+## Verify BIND is Working
+
+### Test DNS Query
+
+```bash
+dig @127.0.0.1 example.com +stats
+```
+
+**Expected output:**
+- **ANSWER SECTION** with IP address
+- **Query time** in milliseconds
+- **SERVER: 127.0.0.1#53** (confirming local resolver)
+
+**Check cache hit:**
+
+Run the same query twice:
+```bash
+dig @127.0.0.1 google.com
+dig @127.0.0.1 google.com
+```
+
+Second query should be faster (cached response).
+
+---
+
+### Check BIND Status
+
+```bash
+sudo rndc status
+```
+
+**Expected:** Shows version, uptime, and statistics.
+
+---
+
+### Monitor Logs
+
+```bash
+# Debian/Ubuntu:
+sudo journalctl -u bind9 -f
+
+# RHEL/CentOS:
+sudo journalctl -u named -f
+
+# Or custom log:
+sudo tail -f /var/log/named/default.log
+```
+
+**Expected log entries:**
+```
+[date] info: client 192.168.1.1#port: query: example.com IN A
+[date] info: resolver: success for example.com
+```
+
+---
+
+## Troubleshooting
+
+| **Issue** | **Likely Cause** | **Fix** |
+|-----------|------------------|---------|
+| SERVFAIL on DNSSEC domains | NTP not configured or trust anchors missing | Configure NTP first, verify `dnssec-validation auto` |
+| High query latency | No caching or blocked egress to root servers | Check firewall allows UDP/TCP 53 outbound; verify `root.hints` |
+| "Refused" queries | Recursion restricted or listen-on mismatch | Check `allow-recursion` includes client IP; verify `listen-on` has server IP |
+| Port 53 already in use | Another resolver (systemd-resolved, dnsmasq) running | Stop conflicting service: `sudo systemctl disable --now systemd-resolved` |
+| Cache not working | BIND restarting frequently or low memory | Check `journalctl -u bind9` for errors; increase memory if needed |
+
+**Still not working?**
+
+1. **Test DNS path:**
    ```bash
-   sudo systemctl enable --now bind9 || sudo systemctl enable --now named
-   systemctl is-active bind9 || systemctl is-active named
+   dig @8.8.8.8 example.com +short
    ```
-   - Verification: Service shows `active`
-5. Point SafeSquid to local resolver.
-   - Set DNS server IP in SafeSquid SWG host (e.g., `/etc/resolv.conf` or system resolver config) to the BIND IP
-   - Verification: `dig @127.0.0.1 example.com +stats` shows ANSWER and query time
-6. Harden resolver.
-   - Enable response policy zones (RPZ) if used for threat blocking
-   - Restrict recursion to trusted subnets only
-   - Enable logging categories in `named.conf`:
-     ```bash
-     logging {
-       channel default_log { file "/var/log/named/default.log" versions 5 size 10m; severity info; print-time yes; };
-       category resolver { default_log; };
-       category security { default_log; };
-     };
-     ```
-   - Verification: Logs rotate and record query activity
+   If this works but local doesn't, BIND config issue.
 
+2. **Check BIND configuration:**
+   ```bash
+   sudo named-checkconf
+   sudo rndc status
+   ```
 
+3. **Trace DNS query:**
+   ```bash
+   dig @127.0.0.1 example.com +trace
+   ```
+   Shows full resolution path from root to answer.
 
-## Verification and Evidence
+4. **Check logs:**
+   ```bash
+   sudo journalctl -u bind9 -n 50
+   ```
 
-- **Interface Checks**: N/A (service daemon). Validate using CLI: `rndc status`, `dig @127.0.0.1 example.com +short`.
-- **Log Analysis**: Review `/var/log/named/default.log` or `journalctl -u bind9 -f` for errors and query logs. Example lines:
-  ```text
-  [date] info: client 192.168.1.1#port: query: example.com IN A +E(0)K
-  [date] info: resolver: success for example.com
-  ```
-- **Performance Validation**: `dig @resolver-ip popular-domain.tld +noall +stats` shows low query time and growing cache hit rate. <!-- TODO: Add screenshot: /img/Supporting_Services/bind_dig_stats.webp when available -->
+---
 
-**Related**: [Monit](/docs/SafeSquid_SWG/Supporting_Services/Monit/), [NTP](/docs/SafeSquid_SWG/Supporting_Services/NTP/), [Integrated DNS Security](/docs/SafeSquid_SWG/Integrated_DNS_Security/), [Troubleshooting DNS](/docs/Troubleshooting/DNS_Failure/)
+## Next Steps
 
+1. **[Monit](/docs/SafeSquid_SWG/Supporting_Services/Monit/)** — Monitor BIND and auto-restart if it crashes
+2. **[NTP](/docs/SafeSquid_SWG/Supporting_Services/NTP/)** — Required for DNSSEC validation
+3. **[Integrated DNS Security](/docs/SafeSquid_SWG/Integrated_DNS_Security/)** — Configure DNSBL for malicious domain blocking
+4. **[Troubleshooting](/docs/Troubleshooting/main/)** — DNS-specific troubleshooting
 
-
-## Troubleshooting Guide
-- Common Issues & Scenarios:
-  - SERVFAIL on DNSSEC domains: Missing time sync or DNSSEC trust anchors
-  - High latency: No caching, blocked egress to root/forwarders, or RRL misconfiguration
-  - Refused queries: Recursion limited to wrong subnets or listen-on mismatch
-  - Port conflicts: Another resolver binding to 53
-- Resolution Steps:
-  - Fix time: Ensure NTP sync and `dnssec-validation auto`
-  - Check egress: Allow UDP/TCP 53; verify `root.hints` or forwarders reachability
-  - Adjust ACLs: Correct `allow-recursion` and `listen-on` addresses
-  - Free port: Stop conflicting service or change BIND listen IPs
-- Escalation Procedures:
-  - Collect `named-checkconf`, `rndc status`, `dig +trace` outputs, logs
-  - Contact SafeSquid support with configuration snippets and diagnostics
-
+**Related:** [Supporting Services Overview](/docs/SafeSquid_SWG/Supporting_Services/main/)
