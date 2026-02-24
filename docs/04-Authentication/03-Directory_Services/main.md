@@ -1,29 +1,42 @@
 ---
 title: Directory Services
-slug: /Authentication/Directory_Services
-description: Configure SafeSquid integration with Active Directory and OpenLDAP for centralized authentication and identity-based policy enforcement.
+description: Integrate SafeSquid with Active Directory or OpenLDAP for centralized user authentication and group-based access control.
 keywords:
   - SafeSquid directory services
-  - Active Directory authentication
-  - OpenLDAP integration
-  - LDAP proxy authentication
+  - LDAP integration
+  - Active Directory proxy
+  - OpenLDAP proxy
 ---
 
+# Centralized Identity and Group-Based Policy
 
-# Centralized authentication via Active Directory or OpenLDAP
+SafeSquid integrates with directory services to provide centralized user authentication and group-based access control. This ensures that web access policies are tied to enterprise identities and group memberships.
 
-SafeSquid integrates with directory services for user authentication and group-based policy. Identity from the directory drives access restriction and reporting. The documents below cover Active Directory and OpenLDAP setup and authentication options.
+## Supported Directory Services
 
+| Directory Service | Integration Type | Key Features |
+|-------------------|------------------|--------------|
+| [Active Directory](/docs/Authentication/Directory_Services/Active_Directory/main/) | Kerberos SSO / LDAP | Seamless SSO for domain users, group sync |
+| [OpenLDAP](/docs/Authentication/Directory_Services/OpenLDAP/main/) | Simple LDAP | Centralized identity for Linux/Unix environments |
 
+## Why use Directory Services?
 
-## Directory service integration guides
+- **Centralized Management:** Manage users and groups in one place (AD/LDAP) instead of locally in SafeSquid.
+- **Group-Based Policies:** Apply different access rules automatically based on directory group membership (e.g., Finance, IT, Sales).
+- **Single Sign-On (SSO):** (Active Directory only) Authenticate users transparently using Kerberos tickets without browser prompts.
+- **Granular Audit:** Access logs show exactly which directory user accessed which resource, simplifying compliance reporting.
 
-### [Active Directory](/docs/Authentication/Directory_Services/Active_Directory/main/)
-Enterprises using Microsoft Active Directory need proxy authentication and group membership from AD. Active Directory integration configures LDAP connectivity and supports simple (username/password) or SSO (Kerberos) authentication. One directory drives identity across the proxy. Follow the Active Directory documents to configure AD and choose simple or SSO.
+## Choose your integration method
+
+### [Active Directory (AD)](/docs/Authentication/Directory_Services/Active_Directory/main/)
+Best for Windows-centric environments. Supports **SSO Authentication** for the best user experience and **Simple Authentication** for non-domain devices or specific use cases.
 
 ### [OpenLDAP](/docs/Authentication/Directory_Services/OpenLDAP/main/)
-Organizations using OpenLDAP or compatible LDAP need proxy authentication from the directory. OpenLDAP integration configures the LDAP server, bind, and base DN and supports simple or SSO authentication. Existing directory investment is reused. Follow the OpenLDAP documents to configure LDAP and enable simple or SSO.
+Best for Linux/Unix-heavy environments or organizations using OpenLDAP for identity. Supports **Simple Authentication** (LDAP bind) to validate credentials against the directory.
 
 ## Next steps
 
-After directory integration, configure [Access Restriction](/docs/Access_Restriction/main/) to apply policies by AD or LDAP group, and [SSL Inspection](/docs/SSL_Inspection/main/) so HTTPS traffic is attributed to users.
+1. Choose your directory service above.
+2. Follow the **Setup Integration** guide to link SafeSquid with your directory.
+3. Configure **Simple** or **SSO** authentication rules.
+4. Combine with [Access Restriction](/docs/Access_Restriction/main/) to enforce policies by directory group.

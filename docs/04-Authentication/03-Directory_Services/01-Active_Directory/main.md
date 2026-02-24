@@ -1,33 +1,47 @@
 ---
 title: Active Directory
-slug: /Authentication/Directory_Services/Active_Directory
-description: Integrate Active Directory with SafeSquid for centralized user authentication, group-based access policies, and optional SSO.
+description: Integrate SafeSquid with Active Directory for seamless user authentication, SSO, and group-based access control.
 keywords:
-  - active directory integration
-  - ldap integration with SafeSquid
-  - add users to active directory
-  - integrate ldap with SafeSquid
-  - ldap configuration for SafeSquid
+  - active directory SafeSquid
+  - AD integration
+  - Kerberos SSO proxy
+  - LDAP AD authentication
 ---
 
+# Active Directory Integration
 
-# Integrate SafeSquid with Microsoft Active Directory
+Integrate SafeSquid with Active Directory (AD) to enable centralized user management, group-based access policies, and seamless Single Sign-On (SSO) for domain-joined users.
 
-SafeSquid integrates with Microsoft Active Directory via LDAP so user and group data from AD drive access restriction and reporting. Configure AD and LDAP connectivity first, then choose simple (username/password) or SSO (Kerberos) authentication.
+## Active Directory Integration Workflow
 
+| Step | Task | Goal |
+|------|------|------|
+| 1 | [Setup AD Integration](/docs/Authentication/Directory_Services/Active_Directory/Setup_Active_Directory_Integration/) | Link SafeSquid with AD and fetch user/group entities. |
+| 2 | **Choose Auth Method** | Decide between Simple (prompt) or SSO (transparent) authentication. |
+| 3 | [Simple Authentication](/docs/Authentication/Directory_Services/Active_Directory/Simple_Authentication/) | Browser prompts users for AD credentials. |
+| 4 | [SSO Authentication](/docs/Authentication/Directory_Services/Active_Directory/SSO_Authentication/) | Transparent authentication for domain-joined users via Kerberos. |
 
+## Which AD authentication method to use?
 
-## Active Directory integration options
+| Feature | Simple Authentication | SSO Authentication |
+|---------|-----------------------|--------------------|
+| **User Experience** | Browser login prompt | Transparent (no prompt) |
+| **Domain Requirement** | None (works for any device) | Client must be domain-joined |
+| **Complexity** | Low (LDAP bind) | Moderate (Kerberos, DNS, Time Sync) |
+| **Primary Use Case** | Guest devices, non-domain PCs | Standard corporate workstations |
 
-### [Setup Active Directory Integration](/docs/Authentication/Directory_Services/Active_Directory/Setup_Active_Directory_Integration/)
-SafeSquid must see AD users and groups to enforce identity-based policy. The document describes adding users in AD, linking LDAP Admin, and configuring Integrate LDAP in SafeSquid. Centralized identity from AD avoids a duplicate user store. Follow the document to add users in AD and connect SafeSquid so LDAP Entities list AD users.
+:::tip Recommendation
+Most enterprises use **SSO Authentication** for corporate domain-joined workstations to provide the best user experience, and **Simple Authentication** as a fallback for guest or non-domain devices.
+:::
 
-### [Simple Authentication](/docs/Authentication/Directory_Services/Active_Directory/Simple_Authentication/)
-Enterprises need LDAP-backed authentication without Kerberos or SSO infrastructure. Simple Authentication uses browser username/password validated against AD with group membership. No AD schema changes; standard LDAP bind is used. Configure LDAP server and bind in SafeSquid, then use access rules with LDAP profiles using this document.
+## Verification
 
-### [SSO Authentication](/docs/Authentication/Directory_Services/Active_Directory/SSO_Authentication/)
-Users should sign in once (domain login) and use the proxy without a second prompt. SSO Authentication uses Kerberos with AD so domain-authenticated users get proxy access without re-entering credentials. Better user experience and consistent identity. Configure LDAP with Negotiate bind, ensure time sync and DNS, then verify SSO using this document.
+After completing the integration:
+1. **Fetch Entries:** Verify that AD users and groups appear in the SafeSquid **LDAP Entities** section.
+2. **Test Rule:** Create an access rule that requires AD authentication.
+3. **Log Check:** Confirm `identity.log` shows the correct AD username in `DOMAIN\user` or UPN format.
 
 ## Next steps
 
-Apply [Access Restriction](/docs/Access_Restriction/main/) by AD group; enable [SSL Inspection](/docs/SSL_Inspection/main/) so HTTPS is attributed to users.
+- Start with [Setup Active Directory Integration](/docs/Authentication/Directory_Services/Active_Directory/Setup_Active_Directory_Integration/) to establish the initial connection.
+- Configure [Access Restriction](/docs/Access_Restriction/main/) to apply policies based on AD groups.

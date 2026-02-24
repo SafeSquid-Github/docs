@@ -1,6 +1,6 @@
 ---
 title: Bypass Authentication
-description: Configure authentication bypass for specific destinations or applications in SafeSquid so automatic updates and non-interactive clients work while other traffic remains authenticated and logged.
+description: Configure authentication bypass for specific destinations or applications in SafeSquid to allow non-interactive clients to work without prompts.
 keywords:
   - bypass authentication SafeSquid
   - SafeSquid proxy authentication bypass
@@ -9,120 +9,68 @@ keywords:
   - allow application without authentication SafeSquid
 ---
 
+# Bypass Authentication
 
-## Problem: Applications that cannot send proxy credentials break or fail
+Bypass rules allow specific destinations (e.g., update servers) or applications (e.g., Dropbox) to skip the authentication requirement. This is critical for automated services and non-interactive clients that cannot send proxy credentials.
 
-Unauthenticated proxy traffic has no user attribution and weakens audit and acceptable-use enforcement. Bypass rules limit unauthenticated access to an explicit list of destinations or request types; all other traffic remains subject to authentication and logging. Bypass configuration is auditable; logs show which traffic was bypassed versus authenticated so you can demonstrate narrow scope for auditors. Organizations enforce proxy authentication to attribute access and enforce policy. Automatic updates (antivirus, OS, applications) and non-interactive clients (e.g. Dropbox, some backup tools) cannot send proxy credentials and fail when authentication is required. Blocking them disrupts operations; allowing all unauthenticated traffic removes accountability. SafeSquid bypass rules let specific destinations or request types skip authentication while the rest of the traffic remains authenticated and tracked.
+## When to use Bypass Authentication
 
+| Use Bypass When | Use Authentication Instead |
+|-----------------|-----------------------------|
+| Application cannot prompt for credentials | Interactive web browsing (Chrome, Firefox) |
+| OS updates (Windows Update, Yum, Apt) | Access to corporate resources |
+| Background sync apps (Dropbox, OneDrive) | Sensitive data access |
+| Security updates (Antivirus, Malware) | Any flow where user attribution is required |
 
+:::caution Compliance Note
+Bypassed traffic is not attributed to a specific user. Keep your bypass list as narrow as possible (FQDNs vs. broad domains) to maintain security and auditability.
+:::
 
-## Key benefits
+## Step 1: Enable Global Bypass
 
-Automatic updates and approved applications work without user interaction. Policy and logging stay in place for all other traffic. Bypass list is explicit and configurable so scope is auditable. **Trade-off:** Bypassed traffic is not attributed to a user; keep the bypass list minimal and document it for compliance.
+1. **Access Configuration:** Open the [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/).
+2. **Enable Section:** Click **Search** → search for **BYPASS AUTHENTICATION**.
+3. **Set Enabled:** Edit the policy and set **Enabled** to **TRUE**.
 
+![Enable bypass authentication](/img/How_To/Bypass_Authentication/image5.webp)
 
+## Step 2: Define Bypassed Destinations
 
-## Prerequisites
+1. **Navigate to Request Types:** **Application Setup** → **Request Types**.
+2. **Create New Type:** Click **Add New**.
+   - **Host:** Enter the domain pattern (e.g., `.*\.dropbox\.com`).
+   - **Smart TLD:** Set to **TRUE** if you want to match all subdomains.
+3. **Assign Profile:** In **Added Request Type**, give it a name like `BYPASS_LIST`.
 
-### Client-side
+## Step 3: Link Bypass to Access Profile
 
-- Proxy configured on clients; authentication enabled for normal browsing.
+1. **Navigate to Access Profiles:** **Restriction Policies** → **Access Profiles**.
+2. **Create Profile:** Click **Add New**.
+   - **Request Types:** Add the profile you created (e.g., `BYPASS_LIST`).
+   - **Added Profiles:** Assign a name like `AUTHENTICATION_BYPASS`.
+3. **Apply to Authentication Rule:** 
+   In **Access Restrictions** → **Allow List**, ensure your authentication rule includes this bypass profile in the **Bypass** field.
 
-### SafeSquid-side
+![Bind request type](/img/How_To/Bypass_Authentication/image13.webp)
 
-- SafeSquid deployed with authentication enabled in access rules.
-- Admin access to [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/) and permission to edit Request Types and Access Profiles.
+## Verification
 
-
-
-## Call to action: Enable bypass and define bypassed destinations
-
-### Enable bypass authentication
-
-1. Access the [SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/) and click **Configure**.
-
-   ![SafeSquid Configure](/img/How_To/Bypass_Authentication/image1.webp)
-
-2. Click **Search**.
-
-   ![Search function](/img/How_To/Bypass_Authentication/image2.webp)
-
-3. Search for **BYPASS AUTHENTICATION**.
-
-   ![Search results](/img/How_To/Bypass_Authentication/image3.webp)
-
-4. Edit the policy and set **Enabled** to **TRUE**.
-
-   ![Edit policy](/img/How_To/Bypass_Authentication/image4.webp)
-
-   ![Enable bypass authentication](/img/How_To/Bypass_Authentication/image5.webp)
-
-### Create custom bypass policy (example: Dropbox)
-
-5. Click **Add New** to create a custom bypass policy.
-
-   ![Add new policy](/img/How_To/Bypass_Authentication/image6.webp)
-
-6. Navigate to **Request Types** section.
-
-   ![Request Types section](/img/How_To/Bypass_Authentication/image7.webp)
-
-7. Click **Add New** to create a new request type.
-
-   ![Add new request type](/img/How_To/Bypass_Authentication/image8.webp)
-
-8. Create a policy for Dropbox:
-   - Enter the domain pattern for Dropbox
-   - Set **Smart TLD** to **True** to match all Dropbox domains
-
-   ![Dropbox policy configuration](/img/How_To/Bypass_Authentication/image9.webp)
-
-   ![Smart TLD setting](/img/How_To/Bypass_Authentication/image10.webp)
-
-9. Assign a unique name in the **Added Request Type** field.
-
-   ![Request type name](/img/How_To/Bypass_Authentication/image11.webp)
-
-10. Navigate to **Access Profiles** under Restriction Policies.
-
-    ![Access Profiles section](/img/How_To/Bypass_Authentication/image12.webp)
-
-11. Create a policy binding the request type:
-    - Add the created request type to **Request Types** field
-    - Assign a name in **Added Profiles**
-    - Add a descriptive comment
-
-    ![Bind request type](/img/How_To/Bypass_Authentication/image13.webp)
-
-    ![Policy configuration](/img/How_To/Bypass_Authentication/image14.webp)
-
-12. Click **Save Policy**.
-
-    ![Save policy](/img/How_To/Bypass_Authentication/image15.webp)
-
-
-
-## Verification and Evidence
-
-- **Bypassed destination:** From a client, trigger traffic to the bypassed destination (e.g. update service, Dropbox); request succeeds without authentication prompt. Check identity or access logs; bypassed requests show no user identity or show bypass indicator.
-- **Authenticated traffic:** Browse a non-bypassed site; authentication prompt appears and access is logged with username.
-- **Interface:** Search for BYPASS AUTHENTICATION and confirm Enabled is TRUE; review Request Types and Access Profiles to confirm bypass list scope for audit.
-
-
+| Action | Method | Expected Result |
+|--------|--------|-----------------|
+| **Bypass Test** | Access a bypassed URL (e.g., Dropbox) from a client. | The site/app loads immediately without a login prompt. |
+| **Auth Test** | Access a non-bypassed site (e.g., google.com). | A login prompt appears as expected. |
+| **Check Logs** | `tail -f /var/log/safesquid/access.log` | Bypassed requests will show no username or a `-` in the identity field. |
 
 ## Troubleshooting
 
-| Issue | Likely cause | Resolution |
-|-------|--------------|------------|
-| Bypass not applied | Request type not in access profile or rule order | Ensure the request type is in the bypass Access Profile and the profile is applied to the matching access rule; check rule order. |
-| Wrong traffic bypassed | Pattern too broad (e.g. Smart TLD) | Tighten domain pattern or disable Smart TLD; test with a single FQDN first. |
-| Updates still fail | Destination not in bypass list or different domain | Add the actual update domains to a request type and include in bypass profile; verify with logs. |
-
-
+| Symptom | Likely Cause | Fix |
+|---------|--------------|-----|
+| Still prompted for login | Profile not in bypass field | Ensure your `AUTHENTICATION_BYPASS` profile is added to the **Bypass** field of the active Allow List rule. |
+| Update service still fails | Missing domains | Check logs for other domains the app uses and add them to your `BYPASS_LIST` request type. |
+| Too much traffic bypassed | Pattern too broad | Narrow your host pattern; avoid using `.*` if you can use specific FQDNs. |
 
 ## Next steps
 
 - [Local Credential Store (BASIC)](/docs/Authentication/BASIC/)
-- [PAM Authentication](/docs/Authentication/PAM/)
+- [Directory Services](/docs/Authentication/Directory_Services/main/)
 - [Access Restriction](/docs/Access_Restriction/main/)
-

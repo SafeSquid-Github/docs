@@ -1,31 +1,40 @@
 ---
-title: OpenLDAP Integration
-slug: /Authentication/Directory_Services/OpenLDAP
-description: Integrate OpenLDAP with SafeSquid for centralized user authentication, group-based access policies, and identity management.
+title: OpenLDAP
+description: Integrate SafeSquid with OpenLDAP for centralized user authentication and group-based access control in Linux/Unix environments.
 keywords:
-  - SafeSquid OpenLDAP integration
-  - LDAP authentication proxy
-  - OpenLDAP user authentication
-  - directory service integration
-  - centralized user management
-  - LDAP group policies
+  - openldap integration
+  - SafeSquid ldap setup
+  - ldap authentication
+  - linux directory integration
 ---
 
+# OpenLDAP Integration
 
-# Integrate SafeSquid with OpenLDAP
+Integrate SafeSquid with OpenLDAP to enable centralized user identification and group-based access control for Linux/Unix-centric environments.
 
-SafeSquid integrates with OpenLDAP (and compatible LDAP servers) so user and group data from the directory drive access restriction and reporting. Enable LDAP, add the OpenLDAP server and bind credentials, then configure simple or SSO authentication in access rules.
+## Integration Workflow
 
+| Step | Task | Goal |
+|------|------|------|
+| 1 | [Simple Authentication](/docs/Authentication/Directory_Services/OpenLDAP/Simple_Authentication/) | Configure LDAP server connection and enable browser-prompt authentication. |
+| 2 | [SSO Authentication](/docs/Authentication/Directory_Services/OpenLDAP/SSO_Authentication/) | Enable transparent authentication for LDAP users via Access Restrictions. |
 
+## Why use OpenLDAP with SafeSquid?
 
-## OpenLDAP authentication options
+- **Centralized Identity:** Use your existing OpenLDAP directory for proxy authentication.
+- **Group-Based Access:** Categorize users into groups (e.g., `developers`, `marketing`) and apply different filtering rules.
+- **Linux Compatibility:** Ideal for environments that don't use Active Directory but require identity-based security.
+- **Audit Trails:** Identity logs attribute all web activity to specific LDAP usernames.
 
-### [Simple Authentication](/docs/Authentication/Directory_Services/OpenLDAP/Simple_Authentication/)
-Organizations using OpenLDAP need proxy authentication validated against the directory without Kerberos. Simple Authentication uses browser username/password validated against OpenLDAP with group membership. Standard LDAP bind works without extra SSO infrastructure. Enable Integrate LDAP, add the LDAP server with bind DN and Base DN, run user extraction, then use access rules with LDAP profiles using this document.
+## Verification
 
-### [SSO Authentication](/docs/Authentication/Directory_Services/OpenLDAP/SSO_Authentication/)
-LDAP users should use the proxy with minimal prompts after domain or directory login. SSO Authentication provides a flow so authenticated directory users get access without re-entering credentials. Consistent identity and better user experience result. Enable authentication in Access Restrictions, configure LDAP profiles and user groups, then verify SSO using this document.
+After configuring OpenLDAP:
+1. **Fetch Entries:** Confirm that LDAP users and groups are listed in the **LDAP Entities** section of the SafeSquid interface.
+2. **Log Check:** Verify successful LDAP binds in `/var/log/safesquid/safesquid.log`.
+3. **Policy Test:** Ensure that a rule restricted to an LDAP group correctly allows members and blocks others.
 
 ## Next steps
 
-Apply [Access Restriction](/docs/Access_Restriction/main/) by LDAP group; enable [SSL Inspection](/docs/SSL_Inspection/main/) so HTTPS is attributed to users.
+- [Configure Simple Authentication](/docs/Authentication/Directory_Services/OpenLDAP/Simple_Authentication/) to establish the connection.
+- [Configure SSO Authentication](/docs/Authentication/Directory_Services/OpenLDAP/SSO_Authentication/) to enable user-aware policies.
+- [Access Restriction](/docs/Access_Restriction/main/) to define what your LDAP groups can access.

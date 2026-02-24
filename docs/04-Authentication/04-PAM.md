@@ -8,62 +8,56 @@ keywords:
   - system authentication proxy
 ---
 
-
 # PAM Authentication
 
-Separate proxy credentials increase sprawl and weaken accountability tied to OS identity. PAM integration validates proxy users against the system PAM stack so one credential set applies to OS and proxy. Identity and access logs record authenticated usernames and support access control objectives (e.g. ISO 27001 A.9, SOC 2).
+PAM integration validates proxy users against the system's Pluggable Authentication Modules (PAM) stack. This allows you to use a single set of credentials for both OS-level access (SSH, Login) and proxy access.
 
-## Problem: System credentials must align with proxy authentication
+## When to use PAM Authentication
 
-Organizations that use PAM for login and access control need the proxy to validate users against the same credentials. Without PAM integration, users may have to maintain separate proxy credentials or cannot use identity-based policies tied to OS accounts. SafeSquid PAM integration allows the gateway to validate users via the system PAM stack so one set of credentials applies to both login and proxy access.
+| Use PAM Authentication When | Use Directory Services Instead |
+|-----------------------------|--------------------------------|
+| SafeSquid is running on Linux/Unix | Primary identity is in Active Directory |
+| You want to use local OS users | You need Single Sign-On (SSO) |
+| System already uses PAM for LDAP/Radius | Best user experience for domain PCs |
 
+:::info Prerequisites
+- SafeSquid running on a PAM-capable operating system (typically Linux).
+- OS users and passwords already configured.
+- Admin access to the SafeSquid [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/).
+:::
 
+## Enable PAM in Access Rules
 
-## Key benefits
+1. **Access Configuration:** Open the [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/) and click **Configure**.
+2. **Navigate to Allow List:** **Application Setup** → **Access Restrictions** → **Allow List**.
+3. **Configure Rule:**
+   - Edit the entry that matches your client segment.
+   - **PAM Authentication:** Set to **TRUE**.
+   - **Username/Password:** Leave these empty (we are using OS PAM, not local SafeSquid credentials).
+4. **Save and Apply:** Click the checkmark to save.
 
-Single set of credentials for OS and proxy reduces credential sprawl and support burden. Identity-based access policies apply using the same usernames as the operating system. PAM fits environments that already rely on PAM for authentication (e.g. Linux login, SSH). Logged usernames support audit and compliance (e.g. ISO 27001 A.9, SOC 2 access control evidence). **Limitation:** PAM applies only where SafeSquid runs on a PAM-capable OS (typically Linux); use [Bypass Authentication](/docs/Authentication/Bypass_Authentication/) or separate rules for flows that must not require auth.
+:::tip Note on Local Users
+If you create a user via `useradd` on the Linux host, SafeSquid will be able to authenticate them once PAM is set to TRUE.
+:::
 
+## Verification
 
-
-## Prerequisites
-
-- SafeSquid installed on a host that uses PAM (typical for Linux deployments).
-- PAM configured on the system for the desired authentication (e.g. local, LDAP via PAM).
-- Admin access to SafeSquid configuration interface and to Access Restrictions / Access Profiles.
-
-
-
-## Call to action: Enable PAM in the access rule
-
-1. Open the [SafeSquid Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/) and click **Configure**.
-2. Navigate to **Application Setup** → **Access Restrictions** → **Allow List**.
-3. Edit the entry that matches the client IP or profile, or add a new entry and set the matching IP/subnet.
-4. Set **PAM Authentication** to **TRUE**. Leave **Username** and **Password** empty when using PAM only.
-5. Save the rule. Ensure the system PAM stack (e.g. `/etc/pam.d/`) is configured to validate the same users (local or via LDAP/PAM).
-
-
-
-## Verification and Evidence
-
-- Browsing through the proxy triggers authentication; credentials accepted by the OS (e.g. Linux login) are accepted by SafeSquid when PAM is enabled.
-- Logs (`identity.log`, `access.log`) show the authenticated username for requests.
-
-
+| Action | Method | Expected Result |
+|--------|--------|-----------------|
+| **Test Login** | Access a website from a client. | A browser login prompt appears; enter Linux OS credentials. |
+| **Check Logs** | `tail -f /var/log/safesquid/identity.log` | Shows the OS username for each authenticated request. |
+| **Verify Rule** | Check **Access Restrictions** → **Allow List**. | The rule shows **PAM Authentication** is **TRUE**. |
 
 ## Troubleshooting
 
-| Issue | Resolution |
-|-------|------------|
-| PAM authentication not prompting | Ensure PAM is set to TRUE in the access rule and the rule matches the client IP or profile. |
-| Valid OS credentials rejected | Verify the system PAM stack (e.g. `/etc/pam.d/`) allows the same service or that SafeSquid is using the expected PAM configuration. |
-| Mixed auth requirements | Use [Bypass Authentication](/docs/Authentication/Bypass_Authentication/) for destinations that must not require auth; use separate access rules for PAM vs. BASIC if needed. |
-
-
+| Symptom | Likely Cause | Fix |
+|---------|--------------|-----|
+| Authentication prompt does not appear | Rule mismatch | Ensure the rule matches the client IP and is placed high enough in the Allow List. |
+| OS credentials rejected | PAM stack mismatch | Verify the system PAM configuration (e.g., `/etc/pam.d/safesquid`) if it exists, or ensure the global PAM service is working. |
+| Login prompt repeats | Incorrect credentials | Verify the user exists on the Linux host and the password is correct. |
 
 ## Next steps
 
-- [Authentication](/docs/Authentication/main/)
-- [Directory Services](/docs/Authentication/Directory_Services/main/)
-- [Bypass Authentication](/docs/Authentication/Bypass_Authentication/)
-- [Local Credential Store (BASIC)](/docs/Authentication/BASIC/)
-
+- [Local Credential Store (BASIC)](/docs/Authentication/BASIC/) for SafeSquid-only users.
+- [Directory Services](/docs/Authentication/Directory_Services/main/) for enterprise identity integration.
+- [Bypass Authentication](/docs/Authentication/Bypass_Authentication/) for services that cannot authenticate.
