@@ -230,7 +230,7 @@ You can validate extended conservation period from the date mentioned in the Sup
 (Note: The “Extend Conservation Period” button will disappear, and in its place the “Conserve Subscription” option will be displayed along with a validity date (approximately 3 days). Once the Conserve Subscription validity expires, the “Extend Conservation Period” button will reappear, allowing the subscription to be extended again for another 3 days.)
 
 ![Active Subscription](/img/License_Activation/image24.webp)
-![Conserve Subscription](/img/License_Activation/image27.webp)
+![Active Subscription](/img/License_Activation/image27.webp)
 
 Restart SafeSquid service from web interface for the changes to take effect.
 
