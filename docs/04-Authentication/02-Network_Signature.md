@@ -13,6 +13,10 @@ keywords:
 
 Maps client IP addresses or ranges to user-groups so access restriction rules and reporting apply by network segment. No user login required; policy is enforced by source IP or subnet. Use when user identity is unavailable (device-only access, legacy apps, shared kiosks).
 
+:::tip Rule Evaluation Order
+SafeSquid evaluates Network Signature rules (Allow List) **top to bottom** and applies the **first matching rule**. Place specific IP rules above broader ranges to ensure correct policy application. See [Rule Order Matters](#troubleshooting) below for details.
+:::
+
 ## When to use Network Signature
 
 | Use Network Signature When | Use User Authentication Instead |
