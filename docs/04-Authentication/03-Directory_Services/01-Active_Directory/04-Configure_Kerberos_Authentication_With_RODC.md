@@ -78,7 +78,7 @@ Seven SPNs are required. The hostname used by `msktutil` must match the AD objec
 Choose the method that fits your administration style.
 
 <Tabs>
-<TabItem value="manual" label="Method A: Manual PowerShell Steps">
+<TabItem value="manual" label="Manual Steps">
 
 ### Step 1: Initialize Identity
 Replace `<Placeholders>` with your environment values.
@@ -139,7 +139,7 @@ Set-ADObject -Identity $obj.DistinguishedName -Server $TargetDC `
 ```
 
 </TabItem>
-<TabItem value="script" label="Method B: Master Automation Script">
+<TabItem value="script" label="Automated Script">
 
 ### Fully Generalized AD Script
 Copy-paste this into a PowerShell (Admin) terminal on a Writable DC.
