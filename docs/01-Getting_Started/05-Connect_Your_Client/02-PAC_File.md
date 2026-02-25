@@ -145,10 +145,12 @@ sudo chmod 644 /var/www/html/proxy.pac
 curl http://YOUR-SERVER-IP/proxy.pac
 ```
 
-**MIME type** (add to web server config if browsers don't load PAC):
+**MIME type** (required for some browsers to recognize PAC files):
 ```
 application/x-ns-proxy-autoconfig
 ```
+
+If browsers fail to load your PAC file, verify the web server sends the correct Content-Type header. Add to Apache: `AddType application/x-ns-proxy-autoconfig .pac` or Nginx: `types { application/x-ns-proxy-autoconfig pac; }`
 
 **For file:// protocol** (testing only):
 - Windows: `C:\PAC\proxy.pac` → `file:///C:/PAC/proxy.pac`
@@ -222,12 +224,17 @@ function FindProxyForURL(url, host) {
 - [PAC File Tester](http://www.proxytester.com/)
 - Paste PAC content, test URLs
 
-**Method 4: Command-line (Firefox)**
+**Method 4: Command-line (pactester)**
 
 ```bash
+# Install pactester (Debian/Ubuntu)
+sudo apt install pacparser
+
 # Test PAC function directly
 pactester -p proxy.pac -u http://example.com -h example.com
 ```
+
+*`pactester` is part of the `pacparser` package. For other distros: search for "pacparser" or "pactester" in your package manager.*
 
 **Common errors:**
 
@@ -312,7 +319,7 @@ http://wpad.company.com/wpad.dat
 
 :::caution WPAD Security Risk
 
-WPAD can be hijacked on untrusted networks (coffee shops, airports). For production, use explicit PAC URLs instead.
+WPAD can be hijacked on untrusted networks (coffee shops, airports) through DNS or DHCP poisoning attacks—an attacker can serve a malicious PAC file that routes traffic through their proxy. For production, use explicit PAC URLs distributed via GPO/MDM instead of relying on WPAD auto-discovery.
 
 :::
 

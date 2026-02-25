@@ -104,7 +104,7 @@ Then check the SafeSquid access log:
 
 ```bash
 # On SafeSquid server:
-tail -20 /var/log/safesquid/access/extended/extended.log
+tail -20 /var/log/safesquid/access/extended.log
 ```
 
 **Expected:** Log entries showing:
@@ -116,7 +116,10 @@ tail -20 /var/log/safesquid/access/extended/extended.log
 **If no log entries appear:**
 - Browser isn't using the proxy
 - Check browser proxy settings
-- Try: `curl --proxy http://SAFESQUID-IP:8080 http://example.com`
+- Test from command line:
+  ```bash
+  curl --proxy http://SAFESQUID-IP:8080 http://example.com
+  ```
 
 ---
 
@@ -142,7 +145,7 @@ https://www.google.com
 **Check the log:**
 
 ```bash
-tail -20 /var/log/safesquid/access/extended/extended.log
+tail -20 /var/log/safesquid/access/extended.log
 ```
 
 **Expected:** Entry for `www.google.com` with status `200`
@@ -220,6 +223,6 @@ Before going live with all users:
 - [ ] SSL Inspection configured and CA deployed to all endpoints
 - [ ] Authentication configured (AD/LDAP)
 - [ ] Basic access policies defined (block malware, adult content, etc.)
-- [ ] High availability configured ([Proxy Clustering](/docs/Proxy_Clustering/main/)) for critical deployments
+- [ ] High availability configured ([Proxy Clustering](/docs/Proxy_Clustering/main/)) if uptime requirements demand it
 - [ ] Monitoring and alerting set up
 - [ ] Support process defined for users

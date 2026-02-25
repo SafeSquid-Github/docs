@@ -153,7 +153,7 @@ You should see your request logged with client IP, URL, and timestamp.
 
 **Access SafeSquid admin interface:**
 
-- Via proxy: `http://safesquid.cfg/`
+- Via proxy: `http://safesquid.cfg/` (special hostname resolved by SafeSquid's DNS when your client uses the proxy)
 - Direct: `https://SAFESQUID-IP:8443/`
 
 :::caution HTTPS Certificate Warnings
@@ -185,9 +185,13 @@ Until [SSL Inspection](/docs/SSL_Inspection/main/) is configured, HTTPS sites wi
    tail -50 /var/log/safesquid/safesquid.log
    ```
 
-3. **Test direct connectivity:**
+3. **Test direct connectivity from command line:**
    ```bash
+   # Test HTTP proxy
    curl -I --proxy http://SAFESQUID-IP:8080 http://example.com
+   
+   # Test HTTPS proxy (expect certificate error if SSL inspection not configured)
+   curl -I --proxy http://SAFESQUID-IP:8080 https://example.com
    ```
 
 ## Next Steps
