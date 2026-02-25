@@ -25,7 +25,7 @@ flowchart LR
     Homograph --> Block[Block]
 ```
 
-*Figure: DNS security evaluation order — client request through SafeSquid, DNS resolution, DNSBL, GeoIP, and homograph checks before allow or block.*
+**Why DNS-level security matters:** Blocking threats at DNS resolution (before connection) is faster and more efficient than content inspection. DNS security provides early threat mitigation, reduces bandwidth waste, and creates audit evidence before users reach malicious sites.
 
 
 

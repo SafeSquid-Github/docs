@@ -17,53 +17,65 @@ keywords:
 
 # Server Geo-Location
 
-**CISO takeaway**: Unknown destination geography creates compliance gaps and regional threat exposure. Server Geo-Location classifies destinations by country and ASN so policies can block or allow by location. Evidence: [Security Logs](/docs/Audit_Forensics/Security_Logs/) and [Reporting Module](/docs/Audit_Forensics/Reporting_Module/) show `server_country`, `server_region`, and `server_asn`; dashboards and exports demonstrate the control to auditors.
+Classify destination servers by country, region, and ASN (Autonomous System Number) to enforce location-aware access policies, meet data residency requirements, and block high-risk regions.
+
+## Why use Server Geo-Location?
+
+Without destination geography visibility, organizations cannot enforce regional restrictions or identify threat patterns by location. Server Geo-Location enables:
+
+- **Data residency compliance:** Block traffic to non-compliant regions (GDPR, data sovereignty laws)
+- **Threat mitigation:** Block high-risk countries or ASNs known for malicious activity
+- **Audit evidence:** Logs show `server_country`, `server_region`, and `server_asn` for every connection
+- **Usage analytics:** Report bandwidth consumption by destination geography
+
+| Use Geo-Location When | Use Application Signatures Instead |
+|------------------------|-------------------------------------|
+| Enforcing regional data flow policies | Blocking specific apps (Facebook, TikTok) |
+| Blocking high-risk countries (SOC directive) | Categorizing traffic by application type |
+| Meeting compliance requirements (GDPR, export control) | Enforcing SaaS vs on-prem routing |
+| Generating geo-based usage reports | Identifying zero-day apps by behavior |
 
 
 
-## Unknown destination geography creates compliance and threat risk
+## Prerequisites
 
-Without destination geo classification, organizations cannot enforce data residency, regional restrictions, or block high-risk countries. The risk is regulatory violation, data sovereignty issues, and exposure to region-specific threats. Business impact includes fines, audit findings, and incident cost. Server Geo-Location classifies destination servers by country, region, and ASN so policies can enforce location-aware allow/deny and reporting.
-
-
-
-## Location-aware policies support compliance and audit evidence
-
-Server Geo-Location enables country-based access control, targeted policy enforcement, and routing decisions using IP intelligence. Control objectives include data residency, geo-blocking, and compliance with regional requirements (e.g. GDPR data flow, export controls). Organizations can show auditors: policy configuration (which countries are blocked or allowed), logs with `server_country` and `server_region`, and reports or dashboards filtered by destination geography.
+- SafeSquid installed and operational (see [Getting Started](/docs/Getting_Started/main/))
+- Profiling Engine enabled (see [Profiling Engine](/docs/Profiling_Engine/main/))
+- Up-to-date GeoIP database (SafeSquid includes MaxMind GeoLite2 by default)
+- Admin access to [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/)
+- Consistent DNS resolution (see [Supporting Services: BIND](/docs/SafeSquid_SWG/Supporting_Services/Bind/))
 
 
 
-## Prerequisites ensure accurate geo classification
-- SafeSquid SWG installed and operational. See [Getting Started](/docs/Getting_Started/main/).
-- Profiling Engine enabled. See [Request Profiles](/docs/Profiling_Engine/Request_Profiles/) and [Response Profiles](/docs/Profiling_Engine/Response_Profiles/).
-- Up-to-date GeoIP database available on SafeSquid SWG
-- Administrative access to Policy Management Console
-- Outbound DNS resolution working and consistent
+## Configuration Steps
+
+1. **Verify GeoIP database**  
+   Navigate to **Profiling Engine** → **Server Geo-Location**  
+   - Check that database status shows a recent update date
+   - If outdated, update the database (see GeoIP database update instructions)
+
+2. **Create geo-location profile**  
+   Click **Add New** to create a profile:
+   - **Name:** Descriptive identifier (e.g., `Block-High-Risk-Countries`, `EU-Only-Access`)
+   - **Criteria:** Select countries, regions, or ASNs to match
+   - **Action:** Specify whether to allow or block
+
+3. **Save and verify**  
+   Save the profile and confirm it appears in the profile list.  
+   If multiple profiles overlap, check rule precedence (first-match-wins).
+
+4. **Apply to policies**  
+   Reference the geo-location profile in:
+   - **Access Control:** Block/allow by destination country (see [Access Restriction](/docs/Access_Restriction/main/))
+   - **Bandwidth Management:** Prioritize local regions (see [Manage Bandwidth](/docs/Performance_Accelerators/Manage_Bandwidth/))
+   - **Reporting:** Build dashboards by destination geography (see [Reporting Module](/docs/Audit_Forensics/Reporting_Module/))
+
+5. **Test with regional destinations**  
+   Validate by accessing known sites hosted in target countries.
 
 
 
-## Configure profiles and enforce geo policies
-1. Open Policy Management Console. Navigate to Profiling Engine → Server Geo-Location.
-   - Verify GeoIP database status shows current date
-   - If outdated, update database
-2. Create a new server geo-location profile.
-   - Name: concise and specific (for example, `Block-High-Risk-Countries`)
-   - Criteria: select countries, regions, or ASNs to match
-3. Save the profile and confirm it appears in the profile list.
-   - Verify rule precedence if multiple profiles overlap
-4. Reference the profile in policy modules.
-   - Access Control: deny or allow based on server location. See [Access Restriction](/docs/Access_Restriction/main/).
-   - Bandwidth Management: prioritize local regions. See [Manage Bandwidth](/docs/Performance_Accelerators/Manage_Bandwidth/).
-   - URL Redirection or Exceptions: adapt experience by region. See [URL Redirection](/docs/URL_Redirection/main/).
-   - Reporting: build dashboards by destination country. See [Reporting Module](/docs/Audit_Forensics/Reporting_Module/).
-5. Validate behavior using test destinations per region.
-   - Use known regional domains or IPs when possible
-
-<!-- TODO: Add screenshots when available (profile-list.webp, profile-editor.webp, policy-reference.webp) -->
-
-
-
-## Verify policy and monitor logs
+## Verification
 
 - **Interface**: Profile visible, enabled, and referenced in policies.
 - **Logs**: Confirm `server_country`, `server_region`, and `server_asn` in [Security Logs](/docs/Audit_Forensics/Security_Logs/).
@@ -87,7 +99,7 @@ profile=Block-High-Risk-Countries rule=deny-non-compliant-regions user=jdoe
 
 
 
-## Resolve classification, CDN, and database issues
+## Troubleshooting
 - GeoIP database outdated
   - Symptom: `server_country` missing or incorrect
   - Fix: update GeoIP database; restart profiling service if required

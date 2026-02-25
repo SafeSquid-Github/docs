@@ -14,24 +14,23 @@ keywords:
 
 
 
-## Unrestricted resolution allows access to known-bad domains
+## Why use DNS Blacklisting?
 
-Unrestricted DNS resolution lets users reach domains listed as malicious in threat feeds. The risk is malware delivery, phishing, and botnet callback traffic. Business impact includes incident response cost, regulatory findings, and reputational damage. DNSBL blocks resolution of blacklisted domains before a connection is established. SafeSquid integrates with [Integrated DNS Security](/docs/SafeSquid_SWG/Integrated_DNS_Security/) to query DNS-based blacklist services and block matching destinations.
+Unrestricted DNS resolution allows clients to reach domains listed as malicious in threat feeds. DNSBL blocks these connections at the resolution layer-before any traffic is exchanged-reducing exposure to malware, phishing, and botnet callbacks.
 
-
-
-## DNSBL reduces exposure and supports audit evidence
-
-Enabling DNSBL blocks access to domains and IPs flagged by the configured blacklist service. The control reduces exposure to known-malicious sites and supports compliance objectives that require blocking harmful content. Blocked requests are logged; [Security Logs](/docs/Audit_Forensics/Security_Logs/) and the [Reporting Module](/docs/Audit_Forensics/Reporting_Module/) provide evidence for auditors. Limitations: DNSBL effectiveness depends on list quality and availability; bypass rules and direct IP access can circumvent the control; false positives may require allow-listing.
-
-
+| Use DNSBL When | Use Access Restrictions Instead |
+|----------------|---------------------------------|
+| Blocking known-malicious infrastructure | Blocking specific URL categories (Adult, Social) |
+| Early threat mitigation is required | Policy requires deep content analysis |
+| Using SOC-provided threat feeds | Blocking individual sites/FQDNs |
+| Reducing bandwidth waste from botnets | Enforcing user-specific access rules |
 
 ## Prerequisites
 
-- SafeSquid SWG installed and operational. See [Getting Started](/docs/Getting_Started/main/).
-- DNS resolution handled by SafeSquid (e.g. [Integrated DNS Security](/docs/SafeSquid_SWG/Integrated_DNS_Security/) or consistent resolver).
-- DNSBL service or domain available (e.g. in.dnsbl.org or SOC-provided list).
-- Administrative access to Configuration Portal.
+- SafeSquid SWG installed and operational.
+- SafeSquid configured as the primary DNS resolver (see [Supporting Services: BIND](/docs/SafeSquid_SWG/Supporting_Services/Bind/)).
+- A valid DNSBL service domain (e.g., `in.dnsbl.org` or a private threat intel list).
+- Outbound network access to the DNSBL service.
 
 
 
@@ -57,21 +56,39 @@ Enabling DNSBL blocks access to domains and IPs flagged by the configured blackl
 
 5. Set Global options:
    - **Enabled**: TRUE to enable DNSBL; FALSE to skip querying blacklist services.
-   - **Template**: Name of the template when the domain is blocked. Leave blank for default "blocked".
-   - **Domain**: DNSBL domain for queries (e.g. in.dnsbl.org). Before connecting to example.com, SafeSquid looks up example.com.in.dnsbl.org.
-   - **Blocked IP addresses**: Comma-separated IP ranges returned by the DNSBL that trigger a block (e.g. 127.0.0.1–127.0.0.6 for in.dnsbl.org).
+   - **Template**: Name of the block template displayed when a domain is blocked. Leave blank for default "blocked" message.
+   - **Domain**: DNSBL service domain for queries (e.g., `in.dnsbl.org`). SafeSquid appends this to queried domains: `example.com.in.dnsbl.org`.
+   - **Blocked IP addresses**: Comma-separated IP ranges that trigger a block when returned by the DNSBL (e.g., `127.0.0.1-127.0.0.6` for in.dnsbl.org).
 
-:::note
-Administrators can use any service that provides a similar DNS blacklist.
+:::tip DNSBL Service Compatibility
+Administrators can use any DNS-based blacklist service (e.g., Spamhaus, local threat feed). Configure the **Domain** and **Blocked IP addresses** fields to match your service's return codes.
 :::
 
-Returned IP convention for in.dnsbl.org: 127.0.0.2 UCE, 127.0.0.3 Fraud, 127.0.0.4 Spam Promo, 127.0.0.5 Illegal Content, 127.0.0.6 Pre-emptive, 127.0.0.7 Improper List Practices, 127.0.0.8 Botnet Activity / Malware.
+---
+
+### Understanding Return IP Codes (in.dnsbl.org)
+
+When SafeSquid queries `in.dnsbl.org`, the service returns specific IP addresses indicating threat categories:
+
+| Return IP | Category | Description |
+|-----------|----------|-------------|
+| 127.0.0.2 | UCE | Unsolicited commercial email |
+| 127.0.0.3 | Fraud | Financial fraud, phishing |
+| 127.0.0.4 | Spam Promo | Promotional spam |
+| 127.0.0.5 | Illegal Content | Illegal or harmful content |
+| 127.0.0.6 | Pre-emptive | Pre-emptive blocking |
+| 127.0.0.7 | List Practices | Improper list practices |
+| 127.0.0.8 | Botnet/Malware | Botnet C&C, malware delivery |
+
+**Configuration:** To block all categories, set **Blocked IP addresses** to `127.0.0.1-127.0.0.8`.
+
+---
 
 6. Save. SafeSquid caches DNSBL query results for efficiency.
 
 ### Example: block sites via DNSBL server
 
-Use blacklisting domain in.dnsbl.org and blocked IP addresses 127.0.0.1–127.0.0.6. SafeSquid blocks all matching domains and displays the blocked template. Use DNSBL when a SOC provides the list or when many domains must be blocked.
+Use blacklisting domain in.dnsbl.org and blocked IP addresses 127.0.0.1-127.0.0.6. SafeSquid blocks all matching domains and displays the blocked template. Use DNSBL when a SOC provides the list or when many domains must be blocked.
 
 ![DNSBL example configuration](/img/Configure/Real_Time_Content_Activity/DNS_blacklist/image7.webp)
 
@@ -90,10 +107,15 @@ Use blacklisting domain in.dnsbl.org and blocked IP addresses 127.0.0.1–127.0.
 
 | Issue | Symptom | Resolution |
 |-------|---------|-------------|
-| DNSBL domain unreachable | Blocks not applied; resolution timeouts | Check network and firewall to the DNSBL service; verify Domain value; see [DNS Failure](/docs/Troubleshooting/DNS_Failure/) for resolution issues. |
-| Wrong blocked-IP range | No blocks or incorrect blocks | Align Blocked IP addresses with the DNSBL provider’s return values (e.g. 127.0.0.1–127.0.0.6 for in.dnsbl.org). |
-| Cache | Stale block or allow after list update | SafeSquid caches DNSBL results; allow cache expiry or restart if immediate consistency is required. |
-| False positive | Legitimate site blocked | Allow-list the domain or IP in policy if the DNSBL listing is incorrect; consider a different list or provider. |
+| **DNSBL service unreachable** | Blocks not applied; DNS timeouts | **Check:** Network connectivity to DNSBL service. **Verify:** Firewall allows outbound DNS (UDP/TCP 53) to DNSBL domain. **Test:** `nslookup example.com.in.dnsbl.org` from SafeSquid server. |
+| **Wrong blocked-IP range** | No blocks or incorrect blocks | **Fix:** Align **Blocked IP addresses** with your DNSBL provider's return codes. Example: `127.0.0.1-127.0.0.8` for in.dnsbl.org. **Verify:** Query a known-bad domain and check what IP the DNSBL returns. |
+| **Cache causing stale results** | Site unblocked after DNSBL update | **Cause:** SafeSquid caches DNSBL responses for performance. **Fix:** Wait for cache expiry (TTL-based) or restart SafeSquid: `systemctl restart safesquid`. |
+| **False positive blocks** | Legitimate site blocked | **Identify:** Check DNSBL query logs to confirm it's a list issue. **Fix:** Add domain to bypass/allow-list in Access Restrictions. **Alternative:** Switch to a different DNSBL provider with lower false-positive rates. |
+| **DNSBL enabled but no blocks** | Malicious sites still accessible | **Check:** 1) **Enabled** is TRUE. 2) **Domain** field is correct. 3) **Blocked IP addresses** includes the range returned by your DNSBL. **Test:** Query a known-malicious domain (use a test entry from your DNSBL provider). |
+| **Direct IP access bypasses DNSBL** | Users access sites by IP instead of hostname | **Limitation:** DNSBL only works on DNS queries, not direct IP connections. **Mitigation:** Use [Access Restriction](/docs/Access_Restriction/main/) to block by IP range or category. |
 
-Escalate to SafeSquid support when configuration is correct but blocks or resolution fail consistently.
+**Still having issues?** Contact SafeSquid support with:
+- DNSBL service domain you're using
+- Sample blocked domain query results
+- Contents of `/var/log/safesquid/safesquid.log` showing DNS resolution attempts
 
