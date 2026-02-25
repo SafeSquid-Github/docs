@@ -118,7 +118,7 @@ A: Yes, use bypass policies to exclude specific domains (e.g., banking sites).
 A: Add those apps' domains to the bypass list. They cannot be inspected.
 
 **Q: Does this slow down HTTPS traffic?**  
-A: Minimal impact (<50ms latency) if hardware supports AES-NI. Without AES-NI, expect 100-300ms per connection.
+A: Minimal impact (&lt;50ms latency) if hardware supports AES-NI. Without AES-NI, expect 100-300ms per connection.
 
 ---
 

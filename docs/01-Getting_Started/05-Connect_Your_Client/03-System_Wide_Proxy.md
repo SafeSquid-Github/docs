@@ -264,10 +264,10 @@ Navigate to an internal site (e.g., `http://intranet.local`)
 | **Symptom** | **Likely Cause** | **Fix** |
 |-------------|------------------|---------|
 | Browser works, CLI tools don't | Environment variables not set | Add to `/etc/environment` or shell profile (see steps above) |
-| "Proxy refusing connections" | SafeSquid not running or firewall blocking | **Server:** `systemctl status safesquid` <br> **Client:** `telnet 192.168.1.100 8080` |
+| "Proxy refusing connections" | SafeSquid not running or firewall blocking | **Server:** `systemctl status safesquid` <br/> **Client:** `telnet 192.168.1.100 8080` |
 | Settings don't persist after reboot | Not saved to system config | Use `/etc/environment` (Linux) or System Settings (Win/Mac), not session exports |
 | Some apps ignore proxy | App uses own proxy settings | See [Application-Specific Configuration](/docs/Getting_Started/Connect_Your_Client/Application_Specific_Configuration/) |
-| Bypass list not working | Syntax error (semicolons vs commas) | Windows: use `;` <br> Linux/macOS: use `,` |
+| Bypass list not working | Syntax error (semicolons vs commas) | Windows: use `;` <br/> Linux/macOS: use `,` |
 | WPAD conflicts with manual proxy | Auto-detect enabled | Disable "Automatically detect settings" / "Auto Proxy Discovery" |
 
 **Still not working?**

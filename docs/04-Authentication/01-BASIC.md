@@ -13,9 +13,9 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Local Credential Store (BASIC)
+# BASIC Authentication
 
-Browser-prompt authentication with usernames and passwords stored in SafeSquid. No directory infrastructure required; credentials are managed locally in SafeSquid or via OS users. Use when you need identity-based access control without Active Directory or LDAP.
+Browser-prompt authentication with usernames and passwords stored locally in SafeSquid. No directory infrastructure required; credentials are managed locally in SafeSquid or via OS users. Use when you need identity-based access control without Active Directory or LDAP.
 
 ## When to use BASIC authentication
 
@@ -26,11 +26,19 @@ Browser-prompt authentication with usernames and passwords stored in SafeSquid. 
 | Isolated environment | SSO requirement |
 | Quick proof of concept | Audit requires directory-backed auth |
 
+:::caution Security consideration
+BASIC authentication sends credentials in base64 encoding (not encrypted). Use only on:
+- Internal networks, or
+- HTTPS proxy connections, or  
+- With SSL inspection enabled
+
+For production deployments with external access, use [Directory Services](/docs/Authentication/Directory_Services/main/) with TLS.
+:::
+
 :::info Prerequisites
 - SafeSquid deployed and operational
 - Admin access to SafeSquid configuration interface (`http://safesquid.cfg/`)
-- Modern browser with HTTP Basic Authentication support
-- Proxy configured in browser (manual or via PAC file)
+- Browser configured to use SafeSquid as proxy (see [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/))
 :::
 
 ## Enable browser authentication
@@ -47,7 +55,7 @@ Browser-prompt authentication with usernames and passwords stored in SafeSquid. 
 3. **Configure Authentication**  
    In the new rule window:
    - Set **PAM Authentication** to **FALSE** (we're using local credentials, not OS PAM)
-   - Leave **Username** and **Password** empty for now (we'll add users next)
+   - Leave **Username** and **Password** empty to apply authentication to all users (or enter specific username/password to restrict this rule to a single user)
 
    ![Making the PAM authentication false and adding username and password in the username password field](/img/How_To/Setup_Authentication/image3.webp)
 
@@ -58,12 +66,16 @@ Browser-prompt authentication with usernames and passwords stored in SafeSquid. 
 This creates the authentication requirement. Users will be prompted for credentials when browsing. Next step: add users.
 :::
 
+:::tip Apply changes
+After adding users or modifying access rules, click **Apply** in the Access Restrictions section to activate the changes immediately without restarting SafeSquid.
+:::
+
 ## Add users
 
 <Tabs>
   <TabItem
-    value="From SafeSquid Interface"
-    label="From SafeSquid Interface"
+    value="SafeSquid Credential Store"
+    label="SafeSquid Credential Store"
     default
   >
     **Best for:** Adding individual users with SafeSquid-only access
@@ -93,7 +105,7 @@ This creates the authentication requirement. Users will be prompted for credenti
        ![Configuration saved for BASIC authentication](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image14.webp)
   </TabItem>
 
-  <TabItem value="From Linux Terminal" label="From Linux Terminal">
+  <TabItem value="OS User Accounts (PAM)" label="OS User Accounts (PAM)">
     **Best for:** Users who also need OS login access
 
     1. **Create a New User**  
@@ -134,32 +146,26 @@ This creates the authentication requirement. Users will be prompted for credenti
    ```bash
    tail -f /var/log/safesquid/identity.log
    ```
-   Or check via **Reports** → **Detailed Logs** for authenticated username entries
+   You should see entries with authenticated usernames for proxied requests.
 
 ## Troubleshooting
 
 | Symptom | Likely Cause | Fix |
 |---------|--------------|-----|
-| No login prompt appears | Authentication not enabled in access rule | Verify PAM is set (TRUE for OS users, FALSE for SafeSquid-only) and rule matches client IP |
+| No login prompt appears | Authentication not enabled in access rule | Set PAM Authentication to TRUE (for OS users) or FALSE (for SafeSquid credential store); ensure rule matches client IP |
 | Login fails repeatedly | Incorrect credentials or misconfigured rule | Verify username/password; check if using PAM (OS users) vs SafeSquid credential store |
 | Some users can't login | User not added or wrong method | Confirm user exists (OS or SafeSquid interface) and matches the authentication method configured (PAM vs BASIC) |
 | Rule not applied | IP mismatch or rule order | Ensure client IP matches the rule; check rule order in Allow List |
 
-:::caution
-BASIC authentication sends credentials in base64 encoding (not encrypted). Use with:
-- Internal networks only, or
-- HTTPS proxy configuration, or
-- SSL inspection enabled
-
-For production with external access, prefer [Directory Services](/docs/Authentication/Directory_Services/main/) with TLS.
-:::
-
 ## Credential management best practices
 
-- **Password policy:** Enforce strong passwords (min 12 chars, complexity)
-- **Rotation:** Change credentials every 90 days for compliance
-- **Audit:** Review access logs monthly for unauthorized attempts
-- **Segregation:** Use different credentials for different user groups
+SafeSquid's local credential store does not enforce password policies automatically. Implement these manually:
+- **Password strength:** Require min 12 chars with complexity when creating accounts
+- **Rotation:** Manually update credentials every 90 days for compliance
+- **Audit:** Review `/var/log/safesquid/identity.log` monthly for unauthorized attempts
+- **Segregation:** Create separate user accounts for different roles/groups
+
+For automated password policy enforcement, migrate to [Directory Services](/docs/Authentication/Directory_Services/main/).
 
 ## Next steps
 

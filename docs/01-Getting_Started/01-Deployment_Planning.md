@@ -47,9 +47,9 @@ Then complete **Prepare the host before install** (below) on each target host be
 
 ### Estimating Concurrent Connections
 
-If you only have user counts, estimate **8 concurrent connections per active user** during peak hours:
+If you only have user counts, estimate **3-5 concurrent connections per active user** during peak hours (varies by usage patterns — heavy SaaS/streaming environments may see 6-8):
 
-**Example:** 200 active users × 8 connections = 1,600 concurrent connections → Use **8 cores, 16 GB RAM** from the table below.
+**Example:** 200 active users × 5 connections = 1,000 concurrent connections → Use **8 cores, 16 GB RAM** from the table below.
 
 For more accurate sizing, monitor your existing proxy (if any) or estimate:
 - Average session duration: 3-5 minutes
@@ -62,7 +62,7 @@ Use **peak** concurrent connections (not average) to avoid dropped sessions duri
 
 Match CPU, RAM, and NICs to your expected **peak** concurrent connections (not average) so you avoid latency and dropped sessions. Ensure the CPU supports **AES-NI** (Advanced Encryption Standard New Instructions) — CPUs without AES-NI suffer 3-5× slower SSL decryption, causing latency spikes and connection drops under HTTPS load. Use NVMe SSDs for log and cache (see [Disk and log storage](#disk-and-log-storage)).
 
-| **CPU**    | **RAM**   | **NICs**       | **Max Concurrent Connections** |
+| **CPU**    | **RAM**   | **NICs (minimum)**       | **Max Concurrent Connections** |
 |:-----------|:----------|:---------------|-------------------------------:|
 | 4 cores    | 8 GB      | 2 × 1 Gbps     | 400                            |
 | 8 cores    | 16 GB     | 2 × 1 Gbps     | 1,500                          |
@@ -71,7 +71,9 @@ Match CPU, RAM, and NICs to your expected **peak** concurrent connections (not a
 | 32 cores   | 64 GB     | 8 × 1 Gbps     | 6,000                          |
 | 64 cores   | 128 GB    | 16 × 1 Gbps    | 8,000                          |
 
-Beyond 4,000 concurrent connections, assign multiple WAN IPs and consider [Proxy Clustering](/docs/Proxy_Clustering/main/) for HA.
+*Minimum required interfaces; see [Network: NICs and bonding](#network-nics-and-bonding) for bonding recommendations.*
+
+Beyond 4,000 concurrent connections, assign multiple WAN IPs to avoid outbound NAT pool exhaustion and consider [Proxy Clustering](/docs/Proxy_Clustering/main/) for HA.
 
 ## Network: NICs and bonding
 
@@ -92,7 +94,11 @@ Allocate enough physical ports for LAN and WAN. For up to 1,500 peak connections
 
 ## Disk and log storage
 
-SafeSquid performs high-frequency disk writes for session logging, behavioural analysis, and threat detection. Use NVMe (not SATA) for `/var/log/safesquid`, `/var/db/safesquid`, and `/var/lib/safesquid` — SATA SSDs cause logging delays and missed entries under load.
+SafeSquid performs high-frequency disk writes for session logging, behavioural analysis, and threat detection. Use NVMe SSDs (M.2 or PCIe-attached, not SATA-connected SSDs) for `/var/log/safesquid`, `/var/db/safesquid`, and `/var/lib/safesquid` — SATA SSDs have ~10× lower write throughput and cause logging delays and missed entries under load.
+
+**Total disk requirements:**
+- OS + SafeSquid application: 50 GB minimum
+- Logs and database (table below): 500 GB - 4 TB depending on load
 
 **Capacity guidelines**
 
@@ -101,7 +107,7 @@ SafeSquid performs high-frequency disk writes for session logging, behavioural a
 | Up to 1,500     | 500 GB – 1 TB        |
 | 3,000+          | 2 TB – 4 TB+         |
 
-**Default retention:** SafeSquid retains logs locally for 30 days. At 3,000 concurrent connections, expect ~50-100 GB per day.
+**Default retention:** SafeSquid retains logs locally for 30 days. At 3,000 concurrent connections, expect ~50-100 GB per day (varies significantly with SSL inspection, DLP policies, and extended logging modules enabled).
 
 For compliance retention (90+ days), configure log forwarding to:
 - External syslog (rsyslog, Splunk, ELK)
@@ -115,7 +121,7 @@ Monitor `/var/log/safesquid` disk usage weekly to avoid log truncation.
 | Scenario | When to use it | Key constraints | Next action |
 |----------|----------------|-----------------|-------------|
 | **Single node (pilot)** | Evaluation, lab, or low-availability pilot | No failover; plan for HA before production | [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/main/) |
-| **Branch or small office** | One site, moderate user count | Size to [Hardware sizing](#hardware-sizing); use NVMe for logs | Single node or [Proxy Clustering](/docs/Proxy_Clustering/main/) for local HA |
+| **Branch or small office** | One site, moderate user count | Size to [Hardware sizing](#hardware-sizing); use NVMe for logs | Single node (if outage is tolerable) or 2-node cluster for local HA (if uptime is critical) |
 | **High availability** | Production; cannot tolerate single-node outage | Master-slave or active-active; load balancer in front | [Proxy Clustering](/docs/Proxy_Clustering/main/), then [Disaster Recovery](/docs/Disaster_Recovery/main/) |
 | **Cloud (AWS, Azure, etc.)** | No on-prem hardware; cloud-first | Match instance type to hardware matrix; use cloud NVMe/storage | [Cloud Deployment](/docs/Getting_Started/Install_SafeSquid/Cloud_Deployment/) |
 
@@ -134,8 +140,8 @@ Deploy a separate SafeSquid stack in a geographically distant zone to maintain w
 
 **Failover methods:**
 - DNS-based (change A records to DR IP) — RTO: 5-30 min depending on TTL
-- BGP Anycast (advertise same IP from DR) — RTO: <5 min
-- Load balancer health checks (automatic redirect) — RTO: <1 min
+- BGP Anycast (advertise same IP from DR) — RTO: &lt;5 min
+- Load balancer health checks (automatic redirect) — RTO: &lt;1 min
 
 Test DR failover quarterly and document procedure for audits.
 
@@ -155,7 +161,7 @@ Prepare the target environment before installation:
    - `key.safesquid.com` (license activation)
    - `updates.safesquid.com` (package updates)
    - `repo.safesquid.net` (repository access)
-8. **Disable conflicting services** — Stop and disable SELinux (or configure permissive mode) and AppArmor if present; they can block proxy operations.
+8. **Configure mandatory access controls** — If using SELinux or AppArmor, configure permissive mode or create appropriate policies — enforcing mode may block proxy operations during initial setup. Once operational, review logs and create custom policies rather than permanently disabling mandatory access controls.
 
 ## Verify and document for audits
 
@@ -163,10 +169,10 @@ After installation, validate against your plan:
 
 - **Interface checks** — In the [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), confirm network, proxy, and application settings match the planned topology.
 - **Performance baseline** — Under light load:
-  - Session latency: <50ms (check `/var/log/safesquid/extended.log`)
-  - CPU usage: <20% idle
-  - Disk I/O wait: <5%
-- **Stress test** — Simulate peak concurrent connections (use `ab` or `curl` loops); verify session counts match [Hardware sizing](#hardware-sizing) table without dropped connections.
+  - Session latency: &lt;50ms (check `/var/log/safesquid/extended.log`)
+  - CPU usage: &lt;20% idle
+  - Disk I/O wait: &lt;5%
+- **Stress test** — Simulate peak concurrent connections using load generation tools (e.g., JMeter configured for HTTP proxy mode, or multiple concurrent browser sessions via Selenium); verify session counts match [Hardware sizing](#hardware-sizing) table without dropped connections.
 - **Logs** — Check `/var/log/safesquid` and `journalctl -u safesquid` for resource warnings or connectivity errors.
 
 **If verification fails:**

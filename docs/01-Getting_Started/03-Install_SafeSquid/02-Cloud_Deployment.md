@@ -181,7 +181,7 @@ Use cloud auto-scaling groups to match instance count to load:
 1. Create a launch template with Cloud-IMG or cloud-init
 2. Configure auto-scaling group (min 2, max 10 instances)
 3. Set scaling policies based on:
-   - CPU utilization (>70% scale up, <30% scale down)
+   - CPU utilization (>70% scale up, &lt;30% scale down)
    - Network throughput
    - Connection count (via CloudWatch custom metrics)
 

@@ -166,9 +166,9 @@ Until [SSL Inspection](/docs/SSL_Inspection/main/) is configured, HTTPS sites wi
 
 | **Symptom** | **Likely Cause** | **Fix** |
 |-------------|------------------|---------|
-| "Proxy server refusing connections" | SafeSquid not running or firewall blocking | **On SafeSquid server:** `systemctl status safesquid` <br> **Test connectivity:** `telnet SAFESQUID-IP 8080` |
-| Site loads but very slow | Network latency or SafeSquid overloaded | Check ping time: `ping SAFESQUID-IP` <br> Check SafeSquid load: `top` on server |
-| Bypass list not working | Syntax error in bypass list | Windows: Use semicolons `;` <br> macOS/Linux: Use commas `,` |
+| "Proxy server refusing connections" | SafeSquid not running or firewall blocking | **On SafeSquid server:** `systemctl status safesquid` <br/> **Test connectivity:** `telnet SAFESQUID-IP 8080` |
+| Site loads but very slow | Network latency or SafeSquid overloaded | Check ping time: `ping SAFESQUID-IP` <br/> Check SafeSquid load: `top` on server |
+| Bypass list not working | Syntax error in bypass list | Windows: Use semicolons `;` <br/> macOS/Linux: Use commas `,` |
 | Firefox ignores system proxy | Firefox uses own settings | Configure Firefox manually (see steps above) |
 | "This site can't be reached" | Wrong IP or port | Verify SafeSquid IP and port 8080 in settings |
 | HTTPS sites don't load at all | SSL inspection not configured | Either [configure SSL inspection](/docs/SSL_Inspection/main/) or disable HTTPS proxy temporarily |

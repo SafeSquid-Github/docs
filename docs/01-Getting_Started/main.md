@@ -13,7 +13,7 @@ keywords:
 
 ## [What is SafeSquid SWG?](/docs/SafeSquid_SWG/main/)
 
-SafeSquid SWG (Secure Web Gateway) is the full product: proxy, policy console, reporting, and DNS security. SafeSquid is a multi-threaded HTTP Proxy Server, specially designed for Layer 7 Perimeter Security. Zero Trust Web Security architecture delivers scalable performance while ensuring comprehensive mitigation of Layer 7 threats.
+SafeSquid SWG (Secure Web Gateway) is the full product: proxy, policy console, reporting, and DNS security. SafeSquid is an SMP-aware HTTP Proxy Server designed for application-layer (Layer 7) security. Its Zero Trust Web Security architecture delivers scalable performance while ensuring comprehensive mitigation of Layer 7 threats.
 
 ![SafeSquid SWG: proxy layer, policy and configuration, reporting, and DNS security](/img/Getting-Started/Getting_Started_with_SafeSquid_Secure_Web_Gateway/image1.webp)
 *SafeSquid SWG: proxy layer, policy and configuration, reporting, and DNS security.*
@@ -25,10 +25,12 @@ Follow the sequence below to reach a working pilot: sizing and registration, ins
 :::info Before you start
 
 You'll need:
-- A server or VM with minimum 4 CPU cores, 8 GB RAM, and 2 network interfaces (one for WAN, one for LAN, or bonded for high availability)
+- A server or VM with minimum 4 CPU cores, 8 GB RAM
+- At least 1 network interface (2+ recommended for WAN/LAN separation or NIC bonding for HA)
 - Internet connectivity for downloads and license activation
 - A browser on a machine that can reach the server (for admin access)
-- Firewall configured to allow proxy traffic on port 8080 (HTTP) and 8443 (HTTPS admin interface)
+- Server firewall allowing inbound TCP 8080 (proxy) from LAN and TCP 8443 (admin UI) from admin workstations
+- Network firewall allowing SafeSquid outbound internet access
 
 After registration, you download an activation key; the gateway becomes fully operational once the key is uploaded and verified.
 
@@ -50,7 +52,7 @@ SafeSquid can be installed via Appliance Builder ISO (SAB), cloud image, or as a
 
 ### [Activate Your License](/docs/Getting_Started/Activate/)
 
-Upload the activation key in the SafeSquid Interface (accessible at `https://safesquid.cfg` once client proxy is configured, or directly via `https://YOUR-SERVER-IP:8443` before proxy setup). The gateway is fully operational only after license verification.
+Upload the activation key in the SafeSquid Interface (accessible at `https://safesquid.cfg` — a special hostname resolved by SafeSquid's DNS resolver when your client is configured to use the proxy — or directly at `https://YOUR-SERVER-IP:8443` before proxy setup). The gateway is fully operational only after license verification.
 
 ### [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/) 
 
@@ -62,7 +64,7 @@ If the UI doesn't load, activation fails, or clients can't reach the proxy, see 
 
 ## Next Steps
 
-We recommend configuring security policies in order — each builds on the previous:
+Once your pilot is operational, configure security policies in this recommended order. Items 1-3 are essential for a functional security gateway; items 4-7 extend protection and visibility:
 
 1. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Most web traffic is encrypted. Enable SSL Inspection so SafeSquid can actually see and filter HTTPS content.
 
