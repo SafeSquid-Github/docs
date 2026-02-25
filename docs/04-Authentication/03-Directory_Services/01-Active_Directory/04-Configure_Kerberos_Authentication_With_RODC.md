@@ -23,7 +23,7 @@ In distributed networks where Read-Only Domain Controllers (RODCs) are used, dir
 *   **Centralized Management**: Configure once on the Writable DC (RWDC) and replicate automatically to all RODC locations.
 *   **Zero Admin Overhead**: Automation script handles complex AD attribute mapping (UAC Flags, SPNs, Encryption Types).
 
-## 🔍 The Concept: Kerberos Lookup & the "Push"
+##  The Concept: Kerberos Lookup & the "Push"
 
 To understand why the Main DC is vital, consider the Kerberos-RODC flow:
 
