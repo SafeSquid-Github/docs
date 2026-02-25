@@ -187,3 +187,4 @@ Ensure the **Ldap Bind Method** is set to **NEGOTIATE_LDAP_AUTH**. This is the t
 *   **Fix**: Verify time sync using the `date` command on both servers. They must be within 5 minutes of each other.
 
 **Related:** [Simple Authentication](Simple_Authentication), [Setup Active Directory Integration](Setup_Active_Directory_Integration), [Troubleshooting](/docs/Troubleshooting/main/)
+
