@@ -78,7 +78,7 @@ Detailed audit trails for security investigations:
 
 ### Single Node
 
-Reporting runs on the same server as the proxy (suitable for small deployments, <500 users).
+Reporting runs on the same server as the proxy (suitable for small deployments, `<500` users).
 
 **Pros:** Simple setup, no additional hardware  
 **Cons:** Shared resources with proxy, limited scalability
