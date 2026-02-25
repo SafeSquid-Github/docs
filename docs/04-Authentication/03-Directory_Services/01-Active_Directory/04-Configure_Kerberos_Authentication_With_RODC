@@ -163,11 +163,11 @@ Navigate to **Application Setup** > **Integrate LDAP** > **LDAP servers**.
 | Parameter | Configuration Value |
 | :--- | :--- |
 | **Enabled** | `TRUE` |
-| **Ldap FQDN\IP** | `<RODC_Hostname>\<RODC_IP>` |
+| **Ldap FQDN\IP** | `` `<RODC_Hostname>\<RODC_IP>` `` |
 | **Ldap Bind Method** | `NEGOTIATE_LDAP_AUTH` |
-| **Ldap Username** | `administrator@<your_domain>` |
-| **Ldap Basedn** | `dc=<domain_part1>,dc=<domain_part2>` |
-| **Ldap Domain** | `<your_domain>` |
+| **Ldap Username** | `` `administrator@<your_domain>` `` |
+| **Ldap Basedn** | `` `dc=<domain_part1>,dc=<domain_part2>` `` |
+| **Ldap Domain** | `` `<your_domain>` `` |
 
 :::warning
 Ensure the **Ldap Bind Method** is set to **NEGOTIATE_LDAP_AUTH**. This is the trigger that initiates Kerberos ticket exchange.
