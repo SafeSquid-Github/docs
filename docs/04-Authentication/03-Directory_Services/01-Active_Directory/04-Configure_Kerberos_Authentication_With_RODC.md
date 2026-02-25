@@ -47,100 +47,159 @@ sequenceDiagram
 ---
 
 ## Prerequisites
-*   Access to a **Writable Domain Controller (RWDC)** (e.g., 10.200.2.53).
-*   Hostname and IP of the **Read-Only Domain Controller (RODC)** (e.g., 10.200.2.54).
-*   Active Directory PowerShell Module installed.
+- Perform all operations on a **Writable Domain Controller** (RWDC).
+- **Target the PDC Emulator**: To avoid "Referral" or "Unwilling to process" errors, we explicitly find and target the Primary DC.
+
+```powershell
+# Run this first to identify your Writable DC
+$TargetDC = (Get-ADDomainController -Discover -Service PrimaryDC).HostName | Select-Object -First 1
+Write-Host "Operations will be performed on: $TargetDC" -ForegroundColor Cyan
+```
 
 ---
 
-## Setup Procedure: Active Directory Preparation (On RWDC)
+## Configuration Breakdown
 
-Perform these steps on your **Main Writable DC**. Choose your preferred method below:
+### Service Principal Names (SPNs)
+Seven SPNs are required. The hostname used by `msktutil` must match the AD object's registration exactly.
+
+| Attribute | Required Value / Placeholder |
+|---|---|
+| **Name** | `safesquid` |
+| **SamAccountName** | `safesquid$` |
+| **UPN** | `safesquid.<REALM>@<REALM>` |
+| **UAC Bitmask** | `33624064` (Workstation + No Expiry + No Pre-Auth) |
+| **Encryption Type** | `28` (AES 128/256 Support) |
+
+---
+
+## Setup Procedure
+
+Choose the method that fits your administration style.
 
 <Tabs>
-<TabItem value="manual" label=" Manual PowerShell Deep-Dive">
+<TabItem value="manual" label="Method A: Manual PowerShell Steps">
 
-### Manual Execution Guide
-Each command below performs a mandatory update to the AD Schema.
+### Step 1: Initialize Identity
+Replace `<Placeholders>` with your environment values.
 
-**1. Define the Identity**
 ```powershell
-$SafesquidHostname = "<Hostname>"; $DomainName = "<Domain>"; $ComputerName = "safesquid"
+$TargetDC = (Get-ADDomainController -Discover -Service PrimaryDC).HostName | Select-Object -First 1
+$ISO_Hostname = "<SafeSquid_ISO_Hostname>"  # e.g., 'safesquid-proxy-01'
+$DomainName    = "<your.domain.name>"        # e.g., 'company.local'
+$Realm         = $DomainName.ToUpper()       # e.g., 'COMPANY.LOCAL'
+$ComputerName  = "safesquid"
 ```
-*   **Goal**: Stores names in memory to ensure consistency.
 
-**2. Calculate the LDAP Path**
+### Step 2: Create or Update Object
 ```powershell
-$BaseDCPath = "DC=" + $DomainName.Replace(".", ",DC=")
-$Container = "CN=Computers,$BaseDCPath"
+# Attempt to create the object on the writable DC
+New-ADComputer -Name $ComputerName -Server $TargetDC `
+    -SamAccountName "$ComputerName$" `
+    -Path "CN=Computers,DC=$($DomainName.Replace('.', ',DC='))" `
+    -DNSHostName "$ComputerName.$DomainName" `
+    -UserPrincipalName "$ComputerName.$Realm@$Realm" `
+    -Enabled $true
+
+# Update core attributes if object already exists
+Set-ADComputer -Identity $ComputerName -Server $TargetDC `
+    -DNSHostName "$ComputerName.$DomainName" `
+    -UserPrincipalName "$ComputerName.$Realm@$Realm"
 ```
-*   **Goal**: Turns dots into commas so AD can locate the "Computers" OU.
 
-**3. Register SPNs**
-```powershell
-$SPNs = @("HOST/...", "HTTP/...", "LDAP/...")
-```
-*   **Goal**: Assigns the "Name Tags" that allow browsers to request tickets for the proxy.
-
-**4. Identity Creation & Trust**
-```powershell
-Set-ADAccountControl -Identity $ComputerName -TrustedForDelegation $true
-Set-ADComputer -Identity $ComputerName -Replace @{'msDS-SupportedEncryptionTypes' = 28}
-```
-*   **Goal**: Grants "Delegation" trust and forces **AES 128/256 Encryption** (required for modern browsers).
-
-</TabItem>
-<TabItem value="script" label=" Automated Script (Recommended)">
-
-### Step-by-Step Execution:
-1. Log into your **Writable DC**.
-2. Open **PowerShell (Admin)**.
-3. Paste the script below, replacing the `<placeholders>` with your values.
+### Step 3: Register SPNs (Differential Update)
+Only adds SPNs that are missing to avoid "Duplicate" errors.
 
 ```powershell
-# =========================================================================
-# SAFESQUID AD PREPARATION SCRIPT
-# =========================================================================
+$obj = Get-ADComputer -Identity $ComputerName -Server $TargetDC -Properties servicePrincipalName
 
-# 1. SET YOUR VARIABLES
-$SafesquidHostname = "<Your_SafeSquid_Hostname>"
-$DomainName = "<Your_Domain_Name>"
-$ComputerName = "safesquid"
-
-# 2. AUTOMATED LOGIC (LDAP PATH & SPNS)
-$BaseDCPath = "DC=" + $DomainName.Replace(".", ",DC=")
-$Container = "CN=Computers,$BaseDCPath"
-$DNSHostName = "$SafesquidHostname.$DomainName"
-
-$SPNs = @(
-    "HOST/$SafesquidHostname.$DomainName",
-    "LDAP/$SafesquidHostname.$DomainName",
-    "HTTP/$SafesquidHostname.$DomainName",
-    "HOST/$ComputerName.$DomainName",
-    "LDAP/$ComputerName.$DomainName",
-    "HTTP/$ComputerName.$DomainName"
+# Define the mandatory SPN list
+$Desired = @(
+    "HOST/$ISO_Hostname.$Realm", "HTTP/$ISO_Hostname.$Realm", "LDAP/$ISO_Hostname.$Realm",
+    "HOST/$ComputerName.$Realm", "HTTP/$ComputerName.$Realm", "LDAP/$ComputerName.$Realm",
+    "host/$ComputerName"
 )
 
-# 3. IDENTITY CHECK & CREATION
+# Identify which ones aren't already there
+$toAdd = $Desired | Where-Object { $_ -notin $obj.servicePrincipalName }
+
+if ($toAdd) {
+    Set-ADComputer -Identity $obj.DistinguishedName -Server $TargetDC -Add @{ servicePrincipalName = $toAdd }
+    Write-Host "Added missing SPNs."
+}
+```
+
+### Step 4: Security Flags (UAC & AES)
+```powershell
+Set-ADObject -Identity $obj.DistinguishedName -Server $TargetDC `
+    -Replace @{
+        userAccountControl              = 33624064
+        'msDS-SupportedEncryptionTypes' = 28
+    }
+```
+
+</TabItem>
+<TabItem value="script" label="Method B: Master Automation Script">
+
+### Fully Generalized AD Script
+Copy-paste this into a PowerShell (Admin) terminal on a Writable DC.
+
+```powershell
+# =========================================================================
+# SAFESQUID MASTER AD PREPARATION SCRIPT (GENERAL)
+# =========================================================================
 Import-Module ActiveDirectory
-$Existing = Get-ADComputer -Filter "Name -eq '$ComputerName'" -ErrorAction SilentlyContinue
+
+# --- 1. SET YOUR VARIABLES HERE ---
+$ISO_Hostname = "<SafeSquid_ISO_Hostname>" 
+$DomainName    = "<your.domain.name>"
+$ComputerName  = "safesquid"
+
+# --- 2. AUTOMATED LOGIC ---
+$SAMAccount = "$ComputerName$"
+$Realm      = $DomainName.ToUpper()
+$BaseDCPath = ($DomainName -split '\.' | ForEach-Object { "DC=$_" }) -join ','
+$UPN        = "$ComputerName.$Realm@$Realm"
+$DNSHostName = "$ComputerName.$DomainName"
+
+# Target the Writable PDC Emulator
+$TargetDC = (Get-ADDomainController -Discover -Service PrimaryDC).HostName | Select-Object -First 1
+Write-Host "Targeting DC: $TargetDC" -ForegroundColor Cyan
+
+# SPNs (Matching msktutil requirements)
+$DesiredSPNs = @(
+    "HOST/$ISO_Hostname.$Realm", "HTTP/$ISO_Hostname.$Realm", "LDAP/$ISO_Hostname.$Realm",
+    "HOST/$ComputerName.$Realm", "HTTP/$ComputerName.$Realm", "LDAP/$ComputerName.$Realm",
+    "host/$ComputerName"
+)
+
+# --- 3. EXECUTION ---
+$Existing = Get-ADComputer -Filter "SamAccountName -eq '$SAMAccount'" -Server $TargetDC -Properties servicePrincipalName -ErrorAction SilentlyContinue
 
 if ($Existing) {
-    Set-ADComputer -Identity $Existing.DistinguishedName -Replace @{servicePrincipalName = $SPNs} -DNSHostName $DNSHostName
+    Write-Host "Object found, updating attributes..." -ForegroundColor Yellow
+    Set-ADComputer -Identity $Existing.DistinguishedName -Server $TargetDC -DNSHostName $DNSHostName -UserPrincipalName $UPN
+    # Differential SPN update
+    $SPNsToAdd = $DesiredSPNs | Where-Object { $_ -notin $Existing.servicePrincipalName }
+    if ($SPNsToAdd) { Set-ADComputer -Identity $Existing.DistinguishedName -Server $TargetDC -Add @{ servicePrincipalName = $SPNsToAdd } }
 } else {
-    New-ADComputer -Name $ComputerName -Path $Container -DNSHostName $DNSHostName -ServicePrincipalNames $SPNs -Enabled $true
+    Write-Host "Creating new computer object..." -ForegroundColor Cyan
+    New-ADComputer -Name $ComputerName -Server $TargetDC -Path "CN=Computers,$BaseDCPath" -DNSHostName $DNSHostName -UserPrincipalName $UPN -ServicePrincipalNames $DesiredSPNs -Enabled $true
 }
 
-# 4. SECURITY & ENCRYPTION (AES-256)
-$Target = Get-ADComputer -Filter "Name -eq '$ComputerName'"
-Set-ADAccountControl -Identity $Target.DistinguishedName -TrustedForDelegation $true -PasswordNeverExpires $true
-Set-ADComputer -Identity $Target.DistinguishedName -Replace @{'msDS-SupportedEncryptionTypes' = 28}
+# Apply Security Flags (UAC 33624064 + AES-256 Support)
+$FinalObj = Get-ADComputer -Identity $ComputerName -Server $TargetDC
+Set-ADObject -Identity $FinalObj.DistinguishedName -Server $TargetDC -Replace @{
+    userAccountControl              = 33624064
+    'msDS-SupportedEncryptionTypes' = 28
+}
 
-Write-Host "Success: Active Directory is now configured for SafeSquid Kerberos." -ForegroundColor Green
+Write-Host "`nSUCCESS: Active Directory is now configured for SafeSquid." -ForegroundColor Green
 ```
 
 </TabItem>
 </Tabs>
+
 
 ---
 
