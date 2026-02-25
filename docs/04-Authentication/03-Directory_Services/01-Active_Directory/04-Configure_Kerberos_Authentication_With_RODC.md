@@ -219,6 +219,8 @@ Since the RODC is read-only, you must allow it to cache the SafeSquid computer p
 
 Navigate to **Application Setup** > **Integrate LDAP** > **LDAP servers**.
 
+![LDAP CONFIG IN SAFESQUID FOR RODC](/img/How_To/Configure_LDAP_In_Safesquid_For_RHOD/image1.webp)
+
 | Parameter | Configuration Value |
 | :--- | :--- |
 | **Enabled** | `TRUE` |
