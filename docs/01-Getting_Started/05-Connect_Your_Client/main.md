@@ -22,8 +22,8 @@ Web traffic flows through SafeSquid only when clients are configured to use it a
 
 :::info Before You Start
 
-- SafeSquid must be installed and running (verify with `netstat -lntp | grep 8080`)
-- License must be activated (see [Activate Your License](/docs/Getting_Started/Activate/))
+- SafeSquid installed and running (verify by accessing `https://SERVER-IP:8443`)
+- License activated (see [Activate Your License](/docs/Getting_Started/Activate/)) for full feature access
 - Note your SafeSquid server IP address and port (default: 8080)
 - For HTTPS sites, you'll need [SSL Inspection](/docs/SSL_Inspection/main/) configured later
 
@@ -99,9 +99,14 @@ After configuring any method, test immediately:
 2. **Navigate to** `http://example.com`
 3. **Check SafeSquid logs:**
    ```bash
-   tail -f /var/log/safesquid/access/extended.log
+   tail -20 /var/log/safesquid/access/extended.log
    ```
    You should see the request logged with client IP, URL, and timestamp
+   
+   *(Use `tail -f` to follow live logs; press Ctrl+C to exit)*
+
+**Verify proxy is being used:**
+Visit a site like [whatismyip.com](https://whatismyip.com) — the displayed IP should match your SafeSquid server's WAN IP, not your client's direct IP.
 
 **If the site doesn't load:**
 - Verify SafeSquid is running: `systemctl status safesquid`

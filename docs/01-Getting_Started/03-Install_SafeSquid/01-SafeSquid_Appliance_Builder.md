@@ -23,10 +23,18 @@ SAB (SafeSquid Appliance Builder) is a security-hardened **Debian Linux** ISO th
 - All SafeSquid dependencies installed and tested
 - Production-ready in 15 minutes from ISO boot
 
+:::caution Default Credentials
+
+**Default login:** administrator / safesquid
+
+You **must** change the password immediately after first login. Run `passwd` at the shell or change it via the SafeSquid interface after activation.
+
+:::
+
 :::info System Requirements
 
-- **Minimum disk:** 100 GB (NVMe SSD recommended for production)
-- **CPU:** 4+ cores with AES-NI
+- **Minimum disk:** 100 GB (NVMe SSD recommended for production; includes 50 GB for OS+app + 50 GB for logs/cache)
+- **CPU:** 4+ cores with AES-NI (required for SSL inspection performance)
 - **RAM:** 8 GB minimum
 - See [Deployment Planning](/docs/Getting_Started/Deployment_Planning/) for full sizing guidance
 
@@ -47,8 +55,8 @@ SAB will **erase and repartition** the target disk. Back up any existing data be
 
 **For physical hardware:**
 1. Burn the ISO to USB (use Rufus, Etcher, or `dd`) or DVD
-2. Set BIOS boot order: primary = hard disk, secondary = USB/DVD
-3. Verify CPU supports AES-NI (required for SSL inspection performance)
+2. Set BIOS boot order: primary = USB/DVD, secondary = hard disk (to boot from installation media first)
+3. Verify CPU supports AES-NI (run `lscpu | grep aes` on Linux; look for "aes" in flags)
 
 **For virtual machines:**
 1. Create a VM on VMware, Hyper-V, KVM, or VirtualBox
@@ -58,7 +66,7 @@ SAB will **erase and repartition** the target disk. Back up any existing data be
 
 ## Installation Steps
 
-**Total time:** ~15 minutes (10 min prompts + 5 min automated install)
+**Total time:** ~15-20 minutes (10 min prompts + 5-10 min automated install)
 
 1. **Select Standard Installation** (recommended) at the boot menu.
 
@@ -105,7 +113,7 @@ SAB will **erase and repartition** the target disk. Back up any existing data be
    ![GRUB](/img/SAB_Debian/pptx_image15.png)
 
    :::caution
-   Installing GRUB on the wrong drive can make the system unbootable. Confirm you selected the correct disk.
+   Installing GRUB on the wrong drive (e.g., external USB instead of internal disk) can make the system unbootable. Confirm you selected the internal disk where SafeSquid will be installed (typically `/dev/sda` or `/dev/nvme0n1`).
    :::
 
 8. **Wait for installation** (~5-10 minutes). The automated preseed script:
@@ -119,17 +127,9 @@ SAB will **erase and repartition** the target disk. Back up any existing data be
 
    ![Finishing installation](/img/SAB_Debian/pptx_image16.png)
 
-9. **Log in** with the default credentials after reboot.
+9. **Log in** with the default credentials after reboot (**administrator** / **safesquid**).
 
    ![Login prompt](/img/SAB_Debian/pptx_image17.png)
-
-   :::caution Change Default Password
-
-   Default credentials: **administrator** / **safesquid**
-   
-   You **must** change the password immediately after first login. Run `passwd` at the shell or change it via the SafeSquid interface after activation.
-
-   :::
 
 ## What Gets Installed
 
@@ -139,8 +139,8 @@ SAB will **erase and repartition** the target disk. Back up any existing data be
 | **Monit** | Process monitoring and auto-restart for SafeSquid |
 | **BIND9** | Local DNS resolver (port 53) |
 | **Logs** | `/var/log/safesquid/` |
-| **Admin interface** | `https://safesquid.cfg/` (accessible only via the proxy after client configuration) |
-| **Direct admin access** | `https://SERVER-IP:8443/` (before proxy is configured) |
+| **Admin interface** | `https://safesquid.cfg/` (special hostname resolved by SafeSquid's DNS when your client uses the proxy) |
+| **Direct admin access** | `https://SERVER-IP:8443/` (before proxy is configured, or for direct access) |
 
 ## Verify Installation
 
@@ -168,7 +168,7 @@ If the interface loads and prompts for license activation, installation succeede
 | ------- | ------------ | --- |
 | System does not boot from media | Boot order or secure boot enabled | Set BIOS/UEFI boot priority (USB/DVD first); disable Secure Boot |
 | Installation hangs at mirror selection | Network or proxy required | Ensure outbound HTTP/HTTPS access; enter proxy details if prompted |
-| "Failed to partition disk" error | Disk in use or too small | Check disk is ≥100 GB; disconnect other drives during install |
+| "Failed to partition disk" error | Disk in use or too small | Verify disk is 100 GB minimum; disconnect other drives during install to avoid selecting wrong disk |
 | Port 8080 not listening after reboot | SafeSquid failed to start | Run `systemctl status safesquid` and check `/var/log/safesquid/safesquid.log` |
 | Cannot access admin interface at :8443 | Firewall blocking port | Check firewall rules: `iptables -L` or configure firewall to allow 8443 |
 | SSH connection refused | SSH not enabled or wrong IP | Verify IP with `ip addr`; check SSH is running: `systemctl status ssh` |

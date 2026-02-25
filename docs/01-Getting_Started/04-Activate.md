@@ -13,13 +13,13 @@ import TabItem from '@theme/TabItem';
 
 # Activate Your License
 
-An unlicensed SafeSquid instance cannot use commercial features (threat intelligence, URL categorization, DR backup, support) or receive full update feeds. Activation ties your key to this instance and unlocks the chosen tier so the gateway is fully operational.
+An unactivated SafeSquid instance operates with limited features. Activation ties your key to this instance and unlocks your chosen tier (Free or Commercial), enabling full update feeds and commercial features where applicable.
 
 ## Key Benefits
 
-- **Unlock commercial features** — threat intelligence, URL categorization database, 365-day DR backup, and email support (see table below).
-- **Receive updates** — subscription and malware definition feeds require successful activation.
-- **Prove licensing for audits** — activation status is visible in the SafeSquid interface for compliance evidence.
+- **Unlock commercial features** - threat intelligence, URL categorization database, 365-day DR backup, and email support (see table below).
+- **Receive updates** - subscription and malware definition feeds require successful activation.
+- **Prove licensing for audits** - activation status is visible in the SafeSquid interface for compliance evidence.
 
 SafeSquid offers two licensing tiers:
 
@@ -47,7 +47,7 @@ Your SafeSquid server needs outbound access to these endpoints. Ensure your fire
 | ----------------- | ---- | ------------------ |
 | api.safesquid.net | 443  | License activation |
 
-**Required for updates** *(can be opened after initial activation)*
+**Required for ongoing updates** *(not needed for initial activation)*
 
 | Host                      | Port | Purpose                           |
 | ------------------------- | ---- | --------------------------------- |
@@ -73,7 +73,7 @@ Your SafeSquid server needs outbound access to these endpoints. Ensure your fire
 
 1. **Configure the browser** to use SafeSquid as the HTTP proxy (SafeSquid IP, port 8080). See [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/) if the browser is not yet configured.
 
-2. **Open the SafeSquid interface** by navigating to [http://safesquid.cfg/](http://safesquid.cfg/) in your browser.
+2. **Open the SafeSquid interface** by navigating to [http://safesquid.cfg/](http://safesquid.cfg/) in your browser (a special hostname resolved by SafeSquid's DNS when your client uses the proxy).
 
    When accessing for the first time, the interface prompts for upload of the activation key.
 
@@ -100,21 +100,13 @@ Your SafeSquid server needs outbound access to these endpoints. Ensure your fire
    ![Activation details](/img/License_Activation/image18.webp)
    *Subscription and activation status display*
 
-:::note
+:::tip Proxy Cluster Sync
 To synchronize SSL certificates and configuration across a proxy cluster, upload the same activation key on every SafeSquid instance.
 :::
 
-## Verification and Evidence
-
-After activation and restart, confirm in the SafeSquid interface:
-
-1. In the top menu, go to **Support**.
-2. In **Activation Details**, verify:
-   - **Product Type** matches your tier (Free or Commercial)
-   - **Status** shows active
-   - **Expiry** is in the future (commercial) or shows no expiry (free)
-
-Use this screen for auditor requests or compliance evidence that the gateway is correctly licensed.
+:::note Verification
+After activation and restart, **Support** → **Activation Details** shows your product type, status, and expiry. Use this screen for compliance evidence that the gateway is correctly licensed.
+:::
 
 ## Troubleshooting
 
@@ -189,61 +181,47 @@ Use this screen for auditor requests or compliance evidence that the gateway is 
   </TabItem>
   <TabItem value="case4" label="License Expired">
 
-SafeSquid will now exhibit subscription expired promo if Safesquid instance has no active subscription.
+**Symptom:** SafeSquid displays "subscription expired" banner in the interface.
 
-Subscription expire promo is activated once the SafeSquid distribution license has expired.
-Also, you can check your subscription validity from key.safesquid.com → Manage Account.
+**Cause:** Commercial subscription has expired. Free licenses do not expire.
 
-![Active Subscription](/img/License_Activation/image19.webp)
+**What happens after expiration:**
 
-SafeSquid sends regular email remainders per-expiration period.
-Below is how you’ll witness SafeSquid subscription expired promo.
+- Core proxy and filtering continues to work
+- Security update frequency reduces to free-tier schedule:
+  - Anti-virus engine: weekly
+  - Web categorization: weekly  
+  - SSL security updates: weekly
+  - Application/content signatures: monthly
+- Commercial features (real-time threat intel, DR backup, email support) become unavailable
 
-![Subscription Expired](/img/License_Activation/image20.webp)
+**Solutions:**
 
-Once the subscription has expired security updates will be foreground.
-The update frequencies will be as per the freemium plan:
-Anti-Virus Engine Weekly Updates.
-Web Categorization Engine Weekly updates.
-Pornographic Image Filter AI Monthly updates.
-SSL Security Weekly updates.
-Application signature monthly updates.
-Content signature Monthly Updates.
+**Option 1: Renew Subscription**
 
-To avoid getting expired promo you can either renew your subscription or extend your conservation period which extends it by 3 days.
+1. Visit [key.safesquid.com](https://key.safesquid.com) and sign in
+2. Go to **Manage Account** → **Renew Subscription**
+3. After payment, download the updated activation key
+4. Upload the new key in SafeSquid interface (same steps as initial activation)
 
-During conservation period you’ll not get the expired promo.
-To extend your conservation period follow below steps.
-Visit key.safesquid.com and login to your account.
+**Option 2: Extend Conservation Period (3-day grace period)**
 
-![key.safesquid.com](/img/License_Activation/image21.webp)
+If you need time before renewing:
 
-Go to Manage Account.
+1. Visit [key.safesquid.com](https://key.safesquid.com) and sign in
+2. Go to **Manage Account**  
+3. Click **Extend Conservation Period** (adds 3 days to your subscription)  
+4. The "expired" banner will disappear during the conservation period
+5. Restart SafeSquid from the web interface for changes to take effect
 
-![Manage Key](/img/License_Activation/image22.webp)
+![Extend Conservation Period](/img/License_Activation/image23.webp)  
+*Extend Conservation Period button in the Self-Service Portal*
 
-In Manage Account click on the “Extend Conservation Period”
+:::note Conservation Period Limits
+The conservation period can be extended multiple times, each extension adding 3 days. However, this is a temporary measure — renew your subscription for continued commercial feature access.
+:::
 
-![Active Subscription](/img/License_Activation/image23.webp)
-
-You can validate extended conservation period from the date mentioned in the Support Validity section.
-(Note: The “Extend Conservation Period” button will disappear, and in its place the “Conserve Subscription” option will be displayed along with a validity date (approximately 3 days). Once the Conserve Subscription validity expires, the “Extend Conservation Period” button will reappear, allowing the subscription to be extended again for another 3 days.)
-
-![Active Subscription](/img/License_Activation/image24.webp)
-![Active Subscription](/img/License_Activation/image27.webp)
-
-Restart SafeSquid service from web interface for the changes to take effect.
-
-![Restart SafeSquid](/img/License_Activation/image25.webp)
-
-Click on the Save Config and select “Yes” if you want to store the configuration in cloud and click on submit and then restart the safesquid
-
-![Save Config](/img/License_Activation/image26.webp)
-
-If you pass the extended conservation period and if the subscription has not been renewed, you’ll receive SafeSquid expired promo again.
-
-Follow above steps to extend your conservation period again
-</TabItem>
+  </TabItem>
 
   <TabItem value="case5" label="Wrong License Tier">
 
@@ -268,5 +246,5 @@ Follow above steps to extend your conservation period again
 
 ## Next steps
 
-1. [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/) — configure at least one browser or client to use the proxy.
-2. [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) — run smoke tests to confirm the proxy is receiving traffic.
+1. [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/) - configure at least one browser or client to use the proxy.
+2. [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) - run smoke tests to confirm the proxy is receiving traffic.

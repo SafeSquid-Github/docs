@@ -16,9 +16,9 @@ SafeSquid offers three installation paths depending on your infrastructure:
 
 - **Appliance Builder (SAB)** — Full turnkey image (OS + SafeSquid + services) for bare metal or VM
 - **Cloud Deployment** — Deploy on AWS, Azure, DigitalOcean, or private cloud
-- **Linux TAR** — Install SafeSquid on an existing Linux server
+- **Linux Server** — Install SafeSquid on an existing Linux server using TAR package
 
-All methods produce a licensed, operational node ready for client connectivity.
+All methods produce an operational node ready for license activation and client connectivity.
 
 :::info Prerequisites
 
@@ -32,11 +32,11 @@ All methods produce a licensed, operational node ready for client connectivity.
 
 | **Environment** | **Recommended Method** | **Why** |
 |-----------------|------------------------|---------|
-| New bare metal server | [SafeSquid Appliance Builder](#safesquid-appliance-builder) | Turnkey image with hardened OS and all dependencies |
-| New VM (VMware, Hyper-V, KVM) | [SafeSquid Appliance Builder](#safesquid-appliance-builder) | Pre-configured networking, monitoring, and DNS |
-| AWS, Azure, DigitalOcean | [Cloud Deployment](#cloud-deployment) | Cloud-optimized images and cloud-init support |
-| Existing Linux server | [Linux Server](#linux-server) | Minimal footprint; you manage OS and services |
-| Private cloud (OpenStack, Proxmox) | [Cloud Deployment](#cloud-deployment) or [SAB](#safesquid-appliance-builder) | Depends on provisioning workflow |
+| New bare metal server | [SafeSquid Appliance Builder](/docs/Getting_Started/Install_SafeSquid/SafeSquid_Appliance_Builder/) | Turnkey image with hardened OS and all dependencies |
+| New VM (VMware, Hyper-V, KVM) | [SafeSquid Appliance Builder](/docs/Getting_Started/Install_SafeSquid/SafeSquid_Appliance_Builder/) | Pre-configured networking, monitoring, and DNS |
+| AWS, Azure, DigitalOcean | [Cloud Deployment](/docs/Getting_Started/Install_SafeSquid/Cloud_Deployment/) | Cloud-optimized images and cloud-init support |
+| Existing Linux server | [Linux Server](/docs/Getting_Started/Install_SafeSquid/Linux_Server/) | Minimal footprint; you manage OS and services |
+| Private cloud (OpenStack, Proxmox) | [SafeSquid Appliance Builder](/docs/Getting_Started/Install_SafeSquid/SafeSquid_Appliance_Builder/) | Complete appliance for self-managed infrastructure |
 
 **Still unsure?** Start with [Deployment Planning](/docs/Getting_Started/Deployment_Planning/) to size hardware and plan topology.
 
@@ -48,6 +48,8 @@ All methods produce a licensed, operational node ready for client connectivity.
 
 **Use this when:** You need a complete appliance on bare metal or a new VM.
 
+**Installation time:** ~15-20 minutes (10 min prompts + 5-10 min automated install).
+
 ---
 
 ### [Cloud Deployment](/docs/Getting_Started/Install_SafeSquid/Cloud_Deployment/)
@@ -56,6 +58,8 @@ Deploy SafeSquid on AWS, Azure, DigitalOcean, or private cloud using cloud image
 
 **Use this when:** You're deploying to public or private cloud infrastructure.
 
+**Installation time:** ~10-15 minutes (cloud instance provisioning + SafeSquid setup).
+
 ---
 
 ### [Linux Server](/docs/Getting_Started/Install_SafeSquid/Linux_Server/)
@@ -63,6 +67,8 @@ Deploy SafeSquid on AWS, Azure, DigitalOcean, or private cloud using cloud image
 Install SafeSquid from a TAR package on an existing Debian, Ubuntu, or RHEL-based server. You manage OS updates, networking, and supporting services separately.
 
 **Use this when:** You already have a configured Linux server and want to add SafeSquid only.
+
+**Installation time:** ~5-15 minutes (extract TAR + dependency install + service setup).
 
 ## After Installation
 

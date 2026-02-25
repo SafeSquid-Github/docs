@@ -54,7 +54,7 @@ Using a corporate email domain (not Gmail, Yahoo, Outlook personal) unlocks ente
    ![Download key](/img/License_Activation/image12.webp)
    *Portal dashboard — click Download Key to save the activation_key file*
 
-The downloaded file is named `activation_key` (no extension), typically a few KB in size.
+The downloaded file is named `activation_key` (no extension), typically 1-5 KB in size.
 
 ## About Your Activation Key
 
