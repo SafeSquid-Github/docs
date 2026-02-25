@@ -24,7 +24,7 @@ This section covers the SWG architecture, components, and supporting services.
 
 The web-based administrative interface for defining and managing proxy policies. Configure access restriction, SSL inspection, authentication, DLP, and operational settings through a centralized console.
 
-**Access:** `http://safesquid.cfg/` (via proxy) or `https://SERVER-IP:8443/` (direct)
+**Access:** `http://safesquid.cfg/` (special hostname resolved by SafeSquid's DNS when your client uses the proxy) or `https://SERVER-IP:8443/` (direct access)
 
 ---
 

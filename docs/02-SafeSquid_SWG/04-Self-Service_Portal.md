@@ -47,7 +47,7 @@ The portal centralizes routine administration tasks:
 
 :::info Before You Start
 
-- Register at [https://www.safesquid.com](https://www.safesquid.com)
+- SafeSquid account (see [Register and Get Your Key](/docs/Getting_Started/Register/) if you haven't registered yet)
 - Use your business/corporate email for enterprise benefits
 - Have your SafeSquid installation details ready (for license activation)
 
@@ -57,33 +57,16 @@ The portal centralizes routine administration tasks:
 
 ## Access the Portal
 
-### Step 1: Navigate to SafeSquid Website
+**Direct link:** [https://key.safesquid.com](https://key.safesquid.com)
 
-Go to [https://www.safesquid.com](https://www.safesquid.com)
+**From SafeSquid.com:**
+1. Visit [https://www.safesquid.com](https://www.safesquid.com)
+2. Click **Self-Service Portal** in the top menu
+3. Login with your registered email and password
 
----
-
-### Step 2: Click Self-Service Portal
-
-![Clicking on self-service portal](/img/How_To/Access_The_Self_Service_Portal/image1.webp)
-
----
-
-### Step 3: Login with Your Credentials
-
-**Existing users:** Login with your email and password.
-
-**New users:** Register first using your business email.
-
-![Login interface showing email and password fields](/img/How_To/Access_The_Self_Service_Portal/image2.webp)
-
----
-
-### Step 4: Portal Dashboard
-
-Once logged in, you'll see the Self-Service Portal dashboard with access to all management features.
-
-![Self-service portal dashboard interface](/img/How_To/Access_The_Self_Service_Portal/image3.webp)
+:::tip First-Time Users
+If you haven't created an account yet, see [Register and Get Your Key](/docs/Getting_Started/Register/) for registration steps.
+:::
 
 ---
 
