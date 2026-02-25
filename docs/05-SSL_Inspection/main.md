@@ -15,6 +15,22 @@ keywords:
 
 HTTPS inspection (SSL/TLS interception) allows SafeSquid to decrypt, inspect, and re-encrypt HTTPS traffic. Without this, encrypted traffic remains a blind spot—malware, phishing, and data leakage can pass through undetected.
 
+## When to Use SSL Inspection
+
+| Enable SSL Inspection When | Use Bypass Instead |
+|----------------------------|--------------------|
+| Enforcing web security policies on HTTPS | Banking and financial sites (compliance) |
+| Scanning encrypted downloads for malware | Healthcare portals (HIPAA) |
+| DLP on HTTPS uploads (file sharing, webmail) | SSL-pinned mobile apps (cannot inspect) |
+| Application control (identify SaaS apps in HTTPS) | Government sites (security requirements) |
+| URL filtering on encrypted sites | Personal/sensitive user traffic (privacy policy) |
+
+:::tip Selective Inspection
+You don't need to inspect everything. Use bypass policies to exclude sensitive categories while inspecting the rest.
+:::
+
+---
+
 ## Why HTTPS Inspection Matters
 
 **The Problem:**

@@ -22,7 +22,7 @@ This guide covers the complete HTTPS inspection setup: generate or import a Root
 **SafeSquid side:**
 - SafeSquid installed and licensed
 - Access to [Self-Service Portal](https://key.safesquid.com) (for certificate generation)
-- Access to SafeSquid Configuration Portal (`http://safesquid.cfg/` or `https://SERVER-IP:8443/`)
+- Access to SafeSquid Configuration Portal (`http://safesquid.cfg/`—special hostname resolved by SafeSquid's DNS when your client uses the proxy—or `https://SERVER-IP:8443/` for direct access)
 
 **Client side:**
 - List of domains to bypass (banking, healthcare, SSL-pinned apps)
