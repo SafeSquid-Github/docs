@@ -58,7 +58,39 @@ sequenceDiagram
 Perform these steps on your **Main Writable DC**. Choose your preferred method below:
 
 <Tabs>
-<TabItem value="script" label="🚀 Automated Script (Recommended)">
+<TabItem value="manual" label=" Manual PowerShell Deep-Dive">
+
+### Manual Execution Guide
+Each command below performs a mandatory update to the AD Schema.
+
+**1. Define the Identity**
+```powershell
+$SafesquidHostname = "<Hostname>"; $DomainName = "<Domain>"; $ComputerName = "safesquid"
+```
+*   **Goal**: Stores names in memory to ensure consistency.
+
+**2. Calculate the LDAP Path**
+```powershell
+$BaseDCPath = "DC=" + $DomainName.Replace(".", ",DC=")
+$Container = "CN=Computers,$BaseDCPath"
+```
+*   **Goal**: Turns dots into commas so AD can locate the "Computers" OU.
+
+**3. Register SPNs**
+```powershell
+$SPNs = @("HOST/...", "HTTP/...", "LDAP/...")
+```
+*   **Goal**: Assigns the "Name Tags" that allow browsers to request tickets for the proxy.
+
+**4. Identity Creation & Trust**
+```powershell
+Set-ADAccountControl -Identity $ComputerName -TrustedForDelegation $true
+Set-ADComputer -Identity $ComputerName -Replace @{'msDS-SupportedEncryptionTypes' = 28}
+```
+*   **Goal**: Grants "Delegation" trust and forces **AES 128/256 Encryption** (required for modern browsers).
+
+</TabItem>
+<TabItem value="script" label=" Automated Script (Recommended)">
 
 ### Step-by-Step Execution:
 1. Log into your **Writable DC**.
@@ -108,38 +140,6 @@ Write-Host "Success: Active Directory is now configured for SafeSquid Kerberos."
 ```
 
 </TabItem>
-<TabItem value="manual" label="🛠️ Manual PowerShell Deep-Dive">
-
-### Manual Execution Guide
-Each command below performs a mandatory update to the AD Schema.
-
-**1. Define the Identity**
-```powershell
-$SafesquidHostname = "<Hostname>"; $DomainName = "<Domain>"; $ComputerName = "safesquid"
-```
-*   **Goal**: Stores names in memory to ensure consistency.
-
-**2. Calculate the LDAP Path**
-```powershell
-$BaseDCPath = "DC=" + $DomainName.Replace(".", ",DC=")
-$Container = "CN=Computers,$BaseDCPath"
-```
-*   **Goal**: Turns dots into commas so AD can locate the "Computers" OU.
-
-**3. Register SPNs**
-```powershell
-$SPNs = @("HOST/...", "HTTP/...", "LDAP/...")
-```
-*   **Goal**: Assigns the "Name Tags" that allow browsers to request tickets for the proxy.
-
-**4. Identity Creation & Trust**
-```powershell
-Set-ADAccountControl -Identity $ComputerName -TrustedForDelegation $true
-Set-ADComputer -Identity $ComputerName -Replace @{'msDS-SupportedEncryptionTypes' = 28}
-```
-*   **Goal**: Grants "Delegation" trust and forces **AES 128/256 Encryption** (required for modern browsers).
-
-</TabItem>
 </Tabs>
 
 ---
@@ -186,5 +186,4 @@ Ensure the **Ldap Bind Method** is set to **NEGOTIATE_LDAP_AUTH**. This is the t
 *   **Cause**: Time drift between AD and SafeSquid.
 *   **Fix**: Verify time sync using the `date` command on both servers. They must be within 5 minutes of each other.
 
-**Related:** [Simple Authentication](Simple_Authentication), [Setup Active Directory Integration](Setup_Active_Directory_Integration), [Troubleshooting](/docs/Troubleshooting/main/)
 
