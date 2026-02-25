@@ -182,6 +182,57 @@ After installation, validate against your plan:
 
 Document sizing decisions, topology diagram, and stress test results for change control and compliance audits (SOC 2, ISO 27001).
 
+## Pre-Installation Checklist (Site Survey)
+
+Complete this checklist before starting the installation. This ensures all network, licensing, and infrastructure requirements are ready.
+
+### 1. Portal & Keys
+- **Registered Email**: Your account on [key.safesquid.com](https://key.safesquid.com)
+- **C-Code**: Required for license generation.
+- **Activation Key**: Downloaded from the portal to your client desktop.
+- **SSL Certificate**: Trusted Root CA certificate (Self-Signed or Enterprise) for SSL Inspection.
+
+### 2. Network Parameters
+Ensure you have the following static IP details ready:
+- **Proxy Hostname/FQDN**: e.g., `proxy.yourdomain.com`
+- **Proxy IP/CIDR**: e.g., `10.200.5.100/24`
+- **Gateway IP**: Your network's default gateway.
+- **Primary/Secondary DNS**: Internal or external name servers.
+
+### 3. Authentication (AD/LDAP Integration)
+If integrating with Active Directory:
+- **Server IP/FQDN**: IP or Domain name of the AD/LDAP server.
+- **Domain Admin Credentials**: Username (UPN format) and password.
+- **Base DN**: e.g., `dc=example,dc=com`
+- **LDAP Domain**: e.g., `somedomain.com`
+
+## Firewall Whitelist Requirements
+
+The SafeSquid server requires outbound access to the following endpoints for DNS resolution, license validation, and security updates.
+
+### DNS Access (Port 53)
+Outbound DNS access to Root Servers or your specific upstream DNS servers is mandatory:
+- `A.ROOT-SERVERS.NET` to `M.ROOT-SERVERS.NET` (198.41.0.4, 170.247.170.2, etc.)
+
+### SafeSquid Infrastructure (Port 443/80)
+| Endpoint | Purpose |
+| :--- | :--- |
+| `swgupdates2.safesquid.net:443` | Software & Package Updates |
+| `swgupdates.safesquid.net:80` | Legacy Update Repository |
+| `sslupdates.safesquid.com:443` | SSL Inspection & Security updates |
+| `key.safesquid.com` | License Management |
+
+### URL Categorization & Security (Port 443/8080)
+Whitelist these for real-time URL categorization and classification:
+- `category.safesquid.net:443`
+- `prourl.itsecure.co.in:8080`
+- `encurl.itsecure.co.in:8080`
+- `klassify.itsecure.co.in:8080`
+- `prourl.itonlinesecure.in:8080`
+
+### Antivirus Updates (Port 80)
+- `download.quickheal.com:80` (64.185.189.238)
+
 ## Next steps
 
 Proceed to [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/main/). After installation, [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) to confirm proxy and client connectivity.

@@ -191,6 +191,65 @@ For detailed troubleshooting, see [Troubleshooting](/docs/Troubleshooting/main/)
 
 ---
 
+## Post-Installation Client Checklist
+
+Before marking the installation complete, verify these items from a client workstation:
+
+### Network Connectivity
+- [ ] **Ping Test**: `ping <PROXY-IP>` succeeds from client machine
+- [ ] **Port Connectivity**: `telnet <PROXY-IP> 8080` connects (use PuTTY on Windows)
+
+### Client Configuration
+- [ ] **Browser Proxy Settings**: Configured to use SafeSquid (HTTP proxy: `<PROXY-IP>:8080`)
+- [ ] **System Proxy Settings**: (Optional) OS-level proxy configured for all applications
+
+### License & Interface Access
+- [ ] **Admin Interface Access**: `http://safesquid.cfg/` loads when proxy is configured
+- [ ] **Activation Key Imported**: License uploaded via SafeSquid interface
+- [ ] **License Status Verified**: Check **Support → Activation Details** shows "active"
+
+### Remote Management (Optional)
+- [ ] **SSH Client Installed**: PuTTY, Terminal, or equivalent
+- [ ] **SSH Keys Configured**: Public key added to proxy server if using key-based authentication
+- [ ] **SSH Connection Test**: `ssh administrator@<PROXY-IP>` succeeds
+
+---
+
+## SafeSquid Integration Validation
+
+Use this checklist to verify that SafeSquid is fully integrated and ready for production use.
+
+### Authentication & Identity
+- [ ] **AD/LDAP Integration**: Users authenticate with domain credentials
+- [ ] **User Identification**: Test that usernames appear in logs (`/var/log/safesquid/extended.log`)
+- [ ] **Group-Based Policies**: (If configured) Verify different user groups receive different policies
+
+### Policy Enforcement
+- [ ] **URL Filtering**: Test that blocked categories are actually blocked
+- [ ] **URL Categorization**: Verify SafeSquid correctly categorizes websites
+- [ ] **Time-Based Policies**: (If configured) Check policies activate/deactivate at scheduled times
+- [ ] **SSL Inspection**: HTTPS sites show SafeSquid's SSL certificate (after CA deployment)
+
+### Security & Content Filtering
+- [ ] **Antivirus Scanning**: Upload EICAR test file; verify it's blocked
+- [ ] **Content Filtering**: Test keyword blocking (if enabled)
+- [ ] **File Type Blocking**: Upload restricted file types; confirm they're blocked
+
+### Operations & Monitoring
+- [ ] **Logging Verified**: Check `/var/log/safesquid/` contains access logs
+- [ ] **Updates Configured**: SafeSquid can reach update servers
+- [ ] **Update Schedule Set**: Automatic or manual update policy defined
+- [ ] **Monitoring/Alerting**: (Optional) Integrated with monitoring tools (Splunk, ELK, etc.)
+- [ ] **Reporting Dashboard**: SafeSquid admin interface reports load correctly
+
+### Testing & Documentation
+- [ ] **Connectivity from Clients**: Multiple devices can browse through SafeSquid
+- [ ] **Policy Test Matrix**: Documented test cases for each policy rule
+- [ ] **Backup Configuration**: Config backed up (`/usr/local/safesquid/config/` directory)
+- [ ] **Disaster Recovery Plan**: Documented procedure for failover/restore
+
+---
+
 ## Verification Complete ✅
 
 **If all 6 checks passed:**

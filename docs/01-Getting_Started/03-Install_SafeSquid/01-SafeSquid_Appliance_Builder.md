@@ -173,6 +173,35 @@ If the interface loads and prompts for license activation, installation succeede
 | Cannot access admin interface at :8443 | Firewall blocking port | Check firewall rules: `iptables -L` or configure firewall to allow 8443 |
 | SSH connection refused | SSH not enabled or wrong IP | Verify IP with `ip addr`; check SSH is running: `systemctl status ssh` |
 
+## Monitoring Installation Progress
+
+During installation, you can switch between consoles to monitor progress or troubleshoot issues:
+
+- **ALT + F1**: Main installation interface (default view)
+- **ALT + F2**: Live installation log (shows real-time progress and error messages)
+- **ALT + F3**: Shell prompt (advanced troubleshooting)
+- **ALT + F4**: System messages
+
+**Useful commands from the shell (ALT + F3):**
+```bash
+# Monitor installation logs in real-time
+tail -f /var/log/syslog
+
+# Check network connectivity
+ping -c 3 8.8.8.8
+
+# Verify disk detection
+lsblk
+```
+
+:::tip When to Use Live Logs
+Switch to ALT + F2 if:
+- Installation appears stuck
+- Network configuration fails
+- Disk partitioning errors occur
+- You need to verify the installer is still running
+:::
+
 ## Next Steps
 
 1. **[Activate Your License](/docs/Getting_Started/Activate/)** — Upload your activation key to make SafeSquid fully operational
