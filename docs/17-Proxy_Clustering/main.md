@@ -14,7 +14,43 @@ keywords:
 
 # Master-slave clustering for high availability
 
-SafeSquid supports clustered deployments for high availability, failover, and horizontal scaling. A master node holds policy and reporting; slave nodes enforce policy and forward data. Use a load balancer in front of slaves for distribution and failover. The documents below cover master-slave setup and configuration sync.
+SafeSquid supports clustered deployments for high availability, failover, and horizontal scaling. A master node holds policy and reporting; slave nodes enforce policy and forward data. Use a load balancer in front of slaves for distribution and failover.
+
+## When to use clustering
+
+| Scenario | Solution | Benefit |
+|---|---|---|
+| Single proxy is overwhelmed by traffic | Add slave nodes behind load balancer | Distribute load horizontally |
+| Proxy downtime causes network outage | Master-slave with failover | High availability |
+| Managing policies on multiple proxies | Configuration sync from master | Consistent enforcement across nodes |
+| Compliance requires centralized reporting | Master aggregates slave data | Unified audit trail |
+
+## Prerequisites
+
+- Same SafeSquid version on all nodes
+- Same activation key on master and slaves
+- Network connectivity: slaves can reach master Configuration Portal (port 8888 by default)
+- Load balancer configured to distribute traffic to slave nodes (not to master)
+- Time synchronization (NTP) across all nodes
+
+## Architecture overview
+
+**Master node:**
+- Hosts Configuration Portal for policy management
+- Aggregates reporting data from slaves
+- Does NOT process client traffic directly
+
+**Slave nodes:**
+- Enforce policies synced from master
+- Process client traffic
+- Forward reporting data to master
+
+**Load balancer:**
+- Distributes client requests across slave nodes
+- Provides failover if a slave goes down
+- Does NOT route to master (master is for management only)
+
+The documents below cover master-slave setup and configuration sync.
 
 
 

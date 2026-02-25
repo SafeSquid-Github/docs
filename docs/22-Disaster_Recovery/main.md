@@ -14,7 +14,38 @@ keywords:
 
 # Disaster Recovery
 
-Disasters or failures can cause loss of configuration and SSL certificates. SafeSquid Cloud Restore stores configuration and certificates in the cloud; the same activation key restores them to the same or a new appliance. Recovery supports single-node restore and clustered deployments. The document below covers Cloud Restore configuration.
+Hardware failure, disk corruption, or accidental misconfiguration can cause loss of SafeSquid policies and SSL certificates. SafeSquid Cloud Restore automatically backs up configuration and certificates to the cloud; use the same activation key to restore them to the same appliance (after rebuild) or a new appliance.
+
+## When to use Cloud Restore
+
+| Scenario | Solution | Benefit |
+|---|---|---|
+| Hardware failure destroys proxy server | Restore from cloud to new appliance | Resume operations within minutes |
+| Accidental policy deletion or misconfiguration | Restore previous version from cloud | Rollback to last known-good state |
+| Deploying clustered proxies | Restore master config to new slaves | Replicate policies across nodes |
+| Migrating proxy to new hardware | Restore to new appliance with same key | Zero policy recreation effort |
+
+## What gets backed up
+
+**Included in cloud backup:**
+- All policy configuration (`config.xml`)
+- SSL root certificate and private key
+- User groups, identity rules, access policies
+- Extended policies (DLP, Anti-Virus, etc.)
+
+**NOT included:**
+- System logs
+- Network interface settings (IP, hostname)
+- Operating system configuration
+- Third-party integrations (LDAP credentials, external DB connections)
+
+## Backup frequency
+
+- **Automatic backup**: Triggered when you click **Restart SafeSquid** after making configuration changes
+- **Manual backup**: Support → Restart SafeSquid (select "Yes" for cloud backup)
+- **Retention**: Latest backup overwrites previous (single version stored per activation key)
+
+The document below covers Cloud Restore configuration and usage.
 
 
 
