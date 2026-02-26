@@ -88,6 +88,22 @@ Use this table to identify which values in the commands and scripts need to be r
 
 ---
 
+## Service Principal Name (SPN) Reference Table
+
+These seven SPNs must be registered on the SafeSquid computer object. Replace placeholders with your actual values.
+
+| SPN Type | Service Principal Name Format | Description |
+| :--- | :--- | :--- |
+| **ISO Host (FQDN)** | `HOST/<SafeSquid_ISO_Hostname>.<REALM>` | Kerberos identity for the ISO hostname. |
+| **ISO HTTP (FQDN)** | `HTTP/<SafeSquid_ISO_Hostname>.<REALM>` | Used for web-based Kerberos authentication. |
+| **ISO LDAP (FQDN)** | `LDAP/<SafeSquid_ISO_Hostname>.<REALM>` | Used for LDAP/AD communication. |
+| **Common Host (FQDN)**| `HOST/safesquid.<REALM>` | Kerberos identity for the common `safesquid` name. |
+| **Common HTTP (FQDN)**| `HTTP/safesquid.<REALM>` | Primary SPN for proxy authentication. |
+| **Common LDAP (FQDN)**| `LDAP/safesquid.<REALM>` | Used for searching AD via `safesquid` identity. |
+| **Common Host (Short)**| `host/safesquid` | Short name (NetBIOS) SPN for legacy compatibility. |
+
+---
+
 ## Setup Procedure
 
 Choose the method that fits your administration style.
