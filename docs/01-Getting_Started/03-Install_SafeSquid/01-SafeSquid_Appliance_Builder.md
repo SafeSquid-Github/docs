@@ -139,7 +139,7 @@ SAB will **erase and repartition** the target disk. Back up any existing data be
 | **Monit** | Process monitoring and auto-restart for SafeSquid |
 | **BIND9** | Local DNS resolver (port 53) |
 | **Logs** | `/var/log/safesquid/` |
-| **Admin interface** | `https://safesquid.cfg/` (special hostname resolved by SafeSquid's DNS when your client uses the proxy) |
+| **Admin interface** | `https://safesquid.cfg/` (embedded Rest UI built into SafeSquid; accessible via proxy, NOT resolved by DNS) |
 | **Direct admin access** | `https://SERVER-IP:8443/` (before proxy is configured, or for direct access) |
 
 ## Verify Installation

@@ -37,7 +37,7 @@ For production deployments with external access, use [Directory Services](/docs/
 
 :::info Prerequisites
 - SafeSquid deployed and operational
-- Admin access to SafeSquid configuration interface (`http://safesquid.cfg/`)
+- Admin access to SafeSquid configuration interface (`http://safesquid.cfg/` — embedded Rest UI, NOT DNS-resolved)
 - Browser configured to use SafeSquid as proxy (see [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/))
 :::
 

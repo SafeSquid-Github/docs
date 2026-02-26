@@ -20,8 +20,6 @@ SafeSquid SWG (Secure Web Gateway) is the full product: proxy, policy console, r
 
 SafeSquid SWG enforces granular web access control, deep content mitigation, and real-time visibility in enterprise web traffic.
 
-Follow the sequence below to reach a working pilot: sizing and registration, installation, license activation, and client connectivity. By the end you will have a deployed SafeSquid node, an active license, and clients sending web traffic through the proxy.
-
 :::info Before you start
 
 You'll need:
@@ -38,6 +36,8 @@ After registration, you download an activation key; the gateway becomes fully op
 
 ## Pilot Deployment in 5 Steps
 
+Follow the sequence below to reach a working pilot: sizing and registration, installation, license activation, and client connectivity. By the end you will have a deployed SafeSquid node, an active license, and clients sending web traffic through the proxy.
+
 ### [Deployment Planning](/docs/Getting_Started/Deployment_Planning/)
 
 SafeSquid is platform-agnostic: single node, HA (active-passive or active-active), cloud VMs, or existing Linux hosts. The deployment guide covers sizing, hardware matrix, network bonding, and disaster recovery. Start with a single node for pilot; plan HA and DR before production.
@@ -52,7 +52,7 @@ SafeSquid can be installed via Appliance Builder ISO (SAB), cloud image, or as a
 
 ### [Activate Your License](/docs/Getting_Started/Activate/)
 
-Upload the activation key in the SafeSquid Interface (accessible at `https://safesquid.cfg` — a special hostname resolved by SafeSquid's DNS resolver when your client is configured to use the proxy — or directly at `https://YOUR-SERVER-IP:8443` before proxy setup). The gateway is fully operational only after license verification.
+Upload the activation key in the SafeSquid Interface (accessible at `https://safesquid.cfg` — an embedded Rest UI interface built into SafeSquid; accessible only when your client is configured to use the proxy, but NOT resolved by SafeSquid's DNS resolver — or directly at `https://YOUR-SERVER-IP:8443` before proxy setup). The gateway is fully operational only after license verification.
 
 ### [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/) 
 

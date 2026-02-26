@@ -73,7 +73,7 @@ Your SafeSquid server needs outbound access to these endpoints. Ensure your fire
 
 1. **Configure the browser** to use SafeSquid as the HTTP proxy (SafeSquid IP, port 8080). See [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/) if the browser is not yet configured.
 
-2. **Open the SafeSquid interface** by navigating to [http://safesquid.cfg/](http://safesquid.cfg/) in your browser (a special hostname resolved by SafeSquid's DNS when your client uses the proxy).
+2. **Open the SafeSquid interface** by navigating to [http://safesquid.cfg/](http://safesquid.cfg/) in your browser (an embedded Rest UI interface built into SafeSquid; accessible only when your client uses the proxy, but NOT resolved by SafeSquid's DNS resolver).
 
    When accessing for the first time, the interface prompts for upload of the activation key.
 

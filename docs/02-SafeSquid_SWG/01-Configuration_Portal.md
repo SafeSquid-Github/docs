@@ -17,7 +17,7 @@ The Policy Management Console (Configuration Portal) is the SafeSquid web interf
 
 Access the interface from a browser configured to use SafeSquid as proxy:
 
-- **Via proxy:** `http://safesquid.cfg/` (special hostname resolved by SafeSquid's DNS when your client uses the proxy)
+- **Via proxy:** `http://safesquid.cfg/` (embedded Rest UI interface built into SafeSquid; accessible only when your client uses the proxy, but NOT resolved by SafeSquid's DNS resolver)
 - **Direct access:** `https://SERVER-IP:8443/` (before proxy configuration or for troubleshooting)
 
 **First-time setup:** See [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/) to configure your browser to use SafeSquid.

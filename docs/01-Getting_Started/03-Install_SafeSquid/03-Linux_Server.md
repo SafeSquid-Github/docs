@@ -195,7 +195,7 @@ tail -50 /var/log/safesquid/safesquid.log
 **4. Access admin interface:**
 
 - **Direct access:** `https://SERVER-IP:8443/`
-- **Via proxy:** Configure a browser to use `SERVER-IP:8080`, then navigate to `https://safesquid.cfg/`
+- **Via proxy:** Configure a browser to use `SERVER-IP:8080`, then navigate to `https://safesquid.cfg/` (embedded Rest UI interface built into SafeSquid; NOT resolved by SafeSquid's DNS resolver)
 
 If the interface loads, installation succeeded.
 

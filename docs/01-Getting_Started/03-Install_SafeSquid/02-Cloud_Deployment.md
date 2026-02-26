@@ -122,7 +122,7 @@ lsblk
 
 **Access the admin interface:**
 - Direct: `https://INSTANCE-PUBLIC-IP:8443/`
-- Via proxy: `https://safesquid.cfg/` (after configuring a client)
+- Via proxy: `https://safesquid.cfg/` (embedded Rest UI interface built into SafeSquid; accessible via proxy, NOT resolved by DNS)
 
 If the interface loads, deployment succeeded.
 
