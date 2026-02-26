@@ -16,6 +16,7 @@ Integrate SafeSquid with Active Directory (AD) to enable centralized user manage
 
 | Step | Task | Goal |
 |------|------|------|
+| 0 | [Prerequisites & Infrastructure Setup](/docs/Authentication/Directory_Services/Active_Directory/Prerequisites_Infrastructure_Setup/) | Configure DNS, Monit, permissions, and system requirements. |
 | 1 | [Setup AD Integration](/docs/Authentication/Directory_Services/Active_Directory/Setup_Active_Directory_Integration/) | Link SafeSquid with AD and fetch user/group entities. |
 | 2 | **Choose Auth Method** | Decide between Simple (prompt) or SSO (transparent) authentication. |
 | 3 | [Simple Authentication](/docs/Authentication/Directory_Services/Active_Directory/Simple_Authentication/) | Browser prompts users for AD credentials. |

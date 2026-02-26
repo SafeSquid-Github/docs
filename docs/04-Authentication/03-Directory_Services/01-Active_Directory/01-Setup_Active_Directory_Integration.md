@@ -14,6 +14,7 @@ keywords:
 Establish a connection between SafeSquid and Active Directory (AD) to synchronize user and group entities. This is the foundational step for both Simple and SSO authentication.
 
 :::info Prerequisites
+- **Infrastructure Setup:** Complete [Prerequisites & Infrastructure Setup](/docs/Authentication/Directory_Services/Active_Directory/Prerequisites_Infrastructure_Setup/) (DNS, Monit, permissions, time sync).
 - SafeSquid installed and operational.
 - Windows Server with Active Directory installed and reachable from the SafeSquid server.
 - [LDAP Admin](https://sourceforge.net/projects/ldapadmin/) installed (optional, used for verifying AD structure).
