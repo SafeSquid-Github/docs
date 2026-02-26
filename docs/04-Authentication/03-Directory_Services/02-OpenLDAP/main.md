@@ -37,4 +37,4 @@ After configuring OpenLDAP:
 
 - [Configure Simple Authentication](/docs/Authentication/Directory_Services/OpenLDAP/Simple_Authentication/) to establish the connection.
 - [Configure SSO Authentication](/docs/Authentication/Directory_Services/OpenLDAP/SSO_Authentication/) to enable user-aware policies.
-- [Access Restriction](/docs/Access_Restriction/main/) to define what your LDAP groups can access.
+- [Access Restriction](/docs/Access_Restriction/) to define what your LDAP groups can access.

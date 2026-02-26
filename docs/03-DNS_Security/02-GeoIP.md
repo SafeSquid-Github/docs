@@ -39,8 +39,8 @@ Without destination geography visibility, organizations cannot enforce regional 
 
 ## Prerequisites
 
-- SafeSquid installed and operational (see [Getting Started](/docs/Getting_Started/main/))
-- Profiling Engine enabled (see [Profiling Engine](/docs/Profiling_Engine/main/))
+- SafeSquid installed and operational (see [Getting Started](/docs/Getting_Started/))
+- Profiling Engine enabled (see [Profiling Engine](/docs/Profiling_Engine/))
 - Up-to-date GeoIP database (SafeSquid includes MaxMind GeoLite2 by default)
 - Admin access to [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/)
 - Consistent DNS resolution (see [Supporting Services: BIND](/docs/SafeSquid_SWG/Supporting_Services/Bind/))
@@ -66,7 +66,7 @@ Without destination geography visibility, organizations cannot enforce regional 
 
 4. **Apply to policies**  
    Reference the geo-location profile in:
-   - **Access Control:** Block/allow by destination country (see [Access Restriction](/docs/Access_Restriction/main/))
+   - **Access Control:** Block/allow by destination country (see [Access Restriction](/docs/Access_Restriction/))
    - **Bandwidth Management:** Prioritize local regions (see [Manage Bandwidth](/docs/Performance_Accelerators/Manage_Bandwidth/))
    - **Reporting:** Build dashboards by destination geography (see [Reporting Module](/docs/Audit_Forensics/Reporting_Module/))
 
@@ -108,7 +108,7 @@ profile=Block-High-Risk-Countries rule=deny-non-compliant-regions user=jdoe
   - Fix: allow-list CDNs by ASN where appropriate; use [Application Signatures](/docs/Profiling_Engine/Application_Signatures/).
 - Private or RFC1918 destinations
   - Symptom: no geo data for non-routable IPs
-  - Fix: add explicit policy exceptions; rely on identity or application profiles. See [User Identities](/docs/Profiling_Engine/User_Identities/main/).
+  - Fix: add explicit policy exceptions; rely on identity or application profiles. See [User Identities](/docs/Profiling_Engine/User_Identities/).
 - DNS-based variance
   - Symptom: different resolver returns regionally distinct IPs.
   - Fix: standardize resolvers; verify [Integrated DNS Security](/docs/SafeSquid_SWG/Integrated_DNS_Security/).
@@ -117,7 +117,7 @@ profile=Block-High-Risk-Countries rule=deny-non-compliant-regions user=jdoe
   - Fix: ensure IPv6 ranges in GeoIP; confirm dual-stack handling
 - HTTPS SNI/IP mismatch
   - Symptom: SNI points to geo X, IP maps to geo Y
-  - Fix: prefer IP-based geo for enforcement; validate SNI with server verification. See [SSL Inspection](/docs/SSL_Inspection/main/).
+  - Fix: prefer IP-based geo for enforcement; validate SNI with server verification. See [SSL Inspection](/docs/SSL_Inspection/).
 - Performance impact from complex geo sets
   - Symptom: latency on policy evaluation
   - Fix: consolidate countries into regions; push heavy rules higher in precedence; cache outcomes

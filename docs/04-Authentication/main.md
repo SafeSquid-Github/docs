@@ -67,5 +67,5 @@ After configuring authentication:
 ## Next steps
 
 1. Choose an authentication method above and configure it
-2. Combine with [Access Restriction](/docs/Access_Restriction/main/) for identity-based policies
-3. Enable [SSL Inspection](/docs/SSL_Inspection/main/) to decrypt HTTPS traffic — without it, SafeSquid can only authenticate based on CONNECT requests, not actual HTTPS content
+2. Combine with [Access Restriction](/docs/Access_Restriction/) for identity-based policies
+3. Enable [SSL Inspection](/docs/SSL_Inspection/) to decrypt HTTPS traffic — without it, SafeSquid can only authenticate based on CONNECT requests, not actual HTTPS content

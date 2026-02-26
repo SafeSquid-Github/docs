@@ -452,6 +452,6 @@ Monitor logs and support tickets at each stage.
 ## Next Steps
 
 1. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Sample endpoints to confirm proxy is working
-2. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Deploy root CA via GPO/MDM for HTTPS inspection
-3. **[Configure Policies](/docs/Access_Restriction/main/)** — Now that all traffic flows through SafeSquid, set up access controls
+2. **[SSL Inspection](/docs/SSL_Inspection/)** — Deploy root CA via GPO/MDM for HTTPS inspection
+3. **[Configure Policies](/docs/Access_Restriction/)** — Now that all traffic flows through SafeSquid, set up access controls
 4. **Monitor and iterate** — Review logs, support tickets, and user feedback to refine configuration

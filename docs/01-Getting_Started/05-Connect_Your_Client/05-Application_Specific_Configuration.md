@@ -345,7 +345,7 @@ Outlook typically uses system proxy settings. If manual configuration needed:
 |-------------|------------------|---------|
 | "Connection refused" | Wrong proxy IP or port | Verify: `telnet 192.168.1.100 8080` |
 | "Proxy authentication required" | SafeSquid requires auth | Add credentials: `http://user:pass@192.168.1.100:8080` |
-| "SSL certificate verify failed" | SSL inspection enabled, CA not trusted | Install SafeSquid root CA (see [SSL Inspection](/docs/SSL_Inspection/main/)) |
+| "SSL certificate verify failed" | SSL inspection enabled, CA not trusted | Install SafeSquid root CA (see [SSL Inspection](/docs/SSL_Inspection/)) |
 | App ignores proxy setting | Environment variables override config | Unset: `unset http_proxy https_proxy` then retry |
 | Docker pull fails | No-proxy misconfigured | Add Docker registry to no-proxy list |
 | Git clone very slow | Large repo + proxy overhead | Use SSH instead of HTTPS, or bypass for internal Git |
@@ -376,5 +376,5 @@ Outlook typically uses system proxy settings. If manual configuration needed:
 ## Next Steps
 
 1. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm all application traffic flows through SafeSquid
-2. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Install root CA for apps that validate certificates (Git, pip, npm, Docker)
-3. **[Access Restriction](/docs/Access_Restriction/main/)** — Set policies for specific applications or protocols
+2. **[SSL Inspection](/docs/SSL_Inspection/)** — Install root CA for apps that validate certificates (Git, pip, npm, Docker)
+3. **[Access Restriction](/docs/Access_Restriction/)** — Set policies for specific applications or protocols

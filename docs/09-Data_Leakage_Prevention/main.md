@@ -253,7 +253,7 @@ Once tuning is complete, enable blocking for real data.
 
 **Prerequisites:**
 - [SSL Inspection](/docs/SSL_Inspection/) — Required to inspect encrypted uploads (90% of traffic)
-- [Authentication](/docs/Authentication/main/) — User identity needed for per-user DLP policies
+- [Authentication](/docs/Authentication/) — User identity needed for per-user DLP policies
 
 **Next Steps:**
 - [Text Analyser Configuration](/docs/Profiling_Engine/Content_Analyser/Text_Analyser/) — Fine-tune regex patterns

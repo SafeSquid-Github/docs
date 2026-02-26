@@ -43,4 +43,4 @@ Enterprise environments require multi-tier proxy architectures for hierarchical 
 
 ## Next steps
 
-For client configuration see [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/); for transparent redirection see [WCCP](/docs/Performance_Accelerators/WCCP/).
+For client configuration see [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/); for transparent redirection see [WCCP](/docs/Performance_Accelerators/WCCP/).

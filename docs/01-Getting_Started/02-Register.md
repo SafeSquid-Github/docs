@@ -76,5 +76,5 @@ Most registration issues resolve by checking spam filters or trying a different 
 
 ## Next steps
 
-1. [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/main/) on your server or VM.
+1. [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/) on your server or VM.
 2. After installation, [Activate Your License](/docs/Getting_Started/Activate/) by uploading this key in the SafeSquid interface.

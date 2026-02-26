@@ -16,7 +16,7 @@ keywords:
 :::info Before Running These Tests
 
 - SafeSquid is installed and the license is activated (see [Activate Your License](/docs/Getting_Started/Activate/))
-- At least one client is configured to use the proxy (see [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/))
+- At least one client is configured to use the proxy (see [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/))
 - You have SSH access to the SafeSquid server
 
 :::
@@ -152,7 +152,7 @@ tail -20 /var/log/safesquid/access/extended.log
 
 :::caution Certificate Warnings Are Normal (Without SSL Inspection)
 
-Until [SSL Inspection](/docs/SSL_Inspection/main/) is configured, HTTPS sites will show certificate warnings. This is expected behavior—SafeSquid is proxying the connection but not inspecting it.
+Until [SSL Inspection](/docs/SSL_Inspection/) is configured, HTTPS sites will show certificate warnings. This is expected behavior—SafeSquid is proxying the connection but not inspecting it.
 
 :::
 
@@ -186,7 +186,7 @@ nslookup example.com 127.0.0.1
 | HTTPS sites don't load at all | Firewall blocking, or SafeSquid crashed | Check: `systemctl status safesquid`; Check firewall: `iptables -L` |
 
 :::info Detailed Troubleshooting
-For detailed troubleshooting, see [Troubleshooting](/docs/Troubleshooting/main/).
+For detailed troubleshooting, see [Troubleshooting](/docs/Troubleshooting/).
 :::
 
 ---
@@ -265,13 +265,13 @@ Use this checklist to verify that SafeSquid is fully integrated and ready for pr
 
 ## Next Steps
 
-1. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Enable HTTPS decryption so SafeSquid can inspect and filter encrypted traffic (required for policy enforcement on HTTPS sites)
+1. **[SSL Inspection](/docs/SSL_Inspection/)** — Enable HTTPS decryption so SafeSquid can inspect and filter encrypted traffic (required for policy enforcement on HTTPS sites)
 
-2. **[Authentication](/docs/Authentication/main/)** — Integrate with Active Directory or LDAP for user-aware policies
+2. **[Authentication](/docs/Authentication/)** — Integrate with Active Directory or LDAP for user-aware policies
 
-3. **[Access Restriction](/docs/Access_Restriction/main/)** — Set up URL filtering, category blocking, and time-based policies
+3. **[Access Restriction](/docs/Access_Restriction/)** — Set up URL filtering, category blocking, and time-based policies
 
-4. **[Troubleshooting](/docs/Troubleshooting/main/)** — Bookmark this for when issues arise (logs, diagnostics, common fixes)
+4. **[Troubleshooting](/docs/Troubleshooting/)** — Bookmark this for when issues arise (logs, diagnostics, common fixes)
 
 ---
 
@@ -282,6 +282,6 @@ Before going live with all users:
 - [ ] SSL Inspection configured and CA deployed to all endpoints
 - [ ] Authentication configured (AD/LDAP)
 - [ ] Basic access policies defined (block malware, adult content, etc.)
-- [ ] High availability configured ([Proxy Clustering](/docs/Proxy_Clustering/main/)) if uptime requirements demand it
+- [ ] High availability configured ([Proxy Clustering](/docs/Proxy_Clustering/)) if uptime requirements demand it
 - [ ] Monitoring and alerting set up
 - [ ] Support process defined for users

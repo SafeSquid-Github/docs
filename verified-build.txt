@@ -1,0 +1,12 @@
+
+> safesquid-docs@0.0.1 build
+> docusaurus build
+
+[INFO] [en] Creating an optimized production build...
+[webpackbar] ℹ Compiling Client
+[webpackbar] ℹ Compiling Server
+[webpackbar] ✔ Server: Compiled successfully in 12.85s
+[webpackbar] ✔ Client: Compiled successfully in 16.13s
+[WARNING] {"moduleIdentifier":"/root/.openclaw/workspace/web-dev/safesquid-docs/node_modules/vscode-languageserver-types/lib/umd/main.js","moduleName":"./node_modules/vscode-languageserver-types/lib/umd/main.js","loc":"3:24-31","message":"Critical dependency: require function is used in a way in which dependencies cannot be statically extracted","compilerPath":"server"}
+[SUCCESS] Generated static files in "build".
+[INFO] Use `npm run serve` command to test your build locally.

@@ -205,6 +205,6 @@ Switch to ALT + F2 if:
 ## Next Steps
 
 1. **[Activate Your License](/docs/Getting_Started/Activate/)** — Upload your activation key to make SafeSquid fully operational
-2. **[Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/)** — Configure a browser to use the proxy
+2. **[Connect Your Client](/docs/Getting_Started/Connect_Your_Client/)** — Configure a browser to use the proxy
 3. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm traffic flows through SafeSquid
-4. **[Enable SSL Inspection](/docs/SSL_Inspection/main/)** — Decrypt and inspect HTTPS traffic
+4. **[Enable SSL Inspection](/docs/SSL_Inspection/)** — Decrypt and inspect HTTPS traffic

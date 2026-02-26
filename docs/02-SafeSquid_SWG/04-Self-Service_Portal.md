@@ -91,7 +91,7 @@ If you haven't created an account yet, see [Register and Get Your Key](/docs/Get
 4. **Download** the certificate
 5. **Deploy** to all endpoints for SSL inspection
 
-**Details:** [SSL Inspection](/docs/SSL_Inspection/main/)
+**Details:** [SSL Inspection](/docs/SSL_Inspection/)
 
 ---
 
@@ -147,5 +147,5 @@ When registering with a corporate email domain (not Gmail, Yahoo, Outlook person
 
 1. **[Register and Get Your Key](/docs/Getting_Started/Register/)** — Create your account if you haven't already
 2. **[Activate Your License](/docs/Getting_Started/Activate/)** — Upload the key to SafeSquid
-3. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Deploy the Root CA for HTTPS inspection
+3. **[SSL Inspection](/docs/SSL_Inspection/)** — Deploy the Root CA for HTTPS inspection
 4. **[Custom Categorization](/docs/Profiling_Engine/Web_Categorization/)** — Use custom categories in access policies

@@ -85,6 +85,6 @@ For Chrome and Edge to send Kerberos tickets, the SafeSquid proxy URL must be re
 
 ## Next steps
 
-- [Access Restriction](/docs/Access_Restriction/main/) (Apply policies by AD group)
-- [SSL Inspection](/docs/SSL_Inspection/main/) (Attribute HTTPS traffic to AD users)
+- [Access Restriction](/docs/Access_Restriction/) (Apply policies by AD group)
+- [SSL Inspection](/docs/SSL_Inspection/) (Attribute HTTPS traffic to AD users)
 - [Bypass Authentication](/docs/Authentication/Bypass_Authentication/) (For non-browser apps that don't support Kerberos)

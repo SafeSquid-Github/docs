@@ -325,7 +325,7 @@ Profiles are evaluated top-to-bottom. Order entries from most specific to most g
 2. **Group by category** — `CLOUD_*`, `SOCIAL_*`, `WEBMAIL_*`
 3. **Separate read/write** — Distinguish GET (read) from POST/PUT (write)
 4. **Regular review** — Update patterns as new services emerge
-5. **Combine with DLP** — Use profiles to trigger [Data Leakage Prevention](/docs/Data_Leakage_Prevention/main/) policies
+5. **Combine with DLP** — Use profiles to trigger [Data Leakage Prevention](/docs/Data_Leakage_Prevention/) policies
 
-**Related**: [Data Leakage Prevention](/docs/Data_Leakage_Prevention/main/), [Access Restriction](/docs/Access_Restriction/main/), [Reporting Module](/docs/Audit_Forensics/Reporting_Module/)
+**Related**: [Data Leakage Prevention](/docs/Data_Leakage_Prevention/), [Access Restriction](/docs/Access_Restriction/), [Reporting Module](/docs/Audit_Forensics/Reporting_Module/)
 

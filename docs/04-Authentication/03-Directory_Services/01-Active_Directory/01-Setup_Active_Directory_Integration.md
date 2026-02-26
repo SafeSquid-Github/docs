@@ -76,4 +76,4 @@ Use LDAP Admin to test connectivity and find the correct DNs (Distinguished Name
 
 - [Configure Simple Authentication](/docs/Authentication/Directory_Services/Active_Directory/Simple_Authentication/) (Browser Prompt)
 - [Configure SSO Authentication](/docs/Authentication/Directory_Services/Active_Directory/SSO_Authentication/) (Kerberos/Transparent)
-- [Access Restriction](/docs/Access_Restriction/main/) (Apply policies by AD group)
+- [Access Restriction](/docs/Access_Restriction/) (Apply policies by AD group)

@@ -1,0 +1,50 @@
+
+> safesquid-docs@0.0.1 build
+> docusaurus build
+
+[INFO] [en] Creating an optimized production build...
+[webpackbar] ℹ Compiling Client
+[webpackbar] ℹ Compiling Server
+[webpackbar] ✔ Server: Compiled successfully in 28.14s
+[webpackbar] ✔ Client: Compiled successfully in 36.49s
+[WARNING] {"moduleIdentifier":"/root/.openclaw/workspace/web-dev/safesquid-docs/node_modules/vscode-languageserver-types/lib/umd/main.js","moduleName":"./node_modules/vscode-languageserver-types/lib/umd/main.js","loc":"3:24-31","message":"Critical dependency: require function is used in a way in which dependencies cannot be statically extracted","compilerPath":"server"}
+[WARNING] Docusaurus found broken links!
+
+Please check the pages of your site in the list below, and make sure you don't reference any path that does not exist.
+Note: it's possible to ignore broken links with the 'onBrokenLinks' Docusaurus configuration, and let the build pass.
+
+It looks like some of the broken links we found appear in many pages of your site.
+Maybe those broken links appear on all pages through your site layout?
+We recommend that you check your theme configuration for such links (particularly, theme navbar and footer).
+Frequent broken links are linking to:
+- /docs/Authentication/Directory_Services/
+
+Exhaustive list of all broken links found:
+- Broken link on source page path = /docs/Authentication/:
+   -> linking to /docs/Authentication/Directory_Services/
+- Broken link on source page path = /docs/Authentication/BASIC/:
+   -> linking to /docs/Authentication/Directory_Services/
+- Broken link on source page path = /docs/Authentication/Bypass_Authentication/:
+   -> linking to /docs/Authentication/Directory_Services/
+- Broken link on source page path = /docs/Authentication/Directory_Services/main/:
+   -> linking to /docs/Authentication/Directory_Services/Active_Directory/
+   -> linking to /docs/Authentication/Directory_Services/OpenLDAP/
+- Broken link on source page path = /docs/Authentication/Network_Signature/:
+   -> linking to /docs/Authentication/Directory_Services/
+- Broken link on source page path = /docs/Authentication/PAM/:
+   -> linking to /docs/Authentication/Directory_Services/
+- Broken link on source page path = /docs/Integrations/:
+   -> linking to /docs/Authentication/Directory_Services/
+- Broken link on source page path = /docs/Profiling_Engine/User_Identities/:
+   -> linking to /docs/Authentication/Directory_Services/OpenLDAP/
+   -> linking to /docs/Authentication/Directory_Services/Active_Directory/
+- Broken link on source page path = /:
+   -> linking to /docs/Data_Leakage_Prevention/main/
+   -> linking to /docs/Troubleshooting/main/
+   -> linking to /docs/Access_Restriction/main/
+   -> linking to /docs/Authentication/main/
+   -> linking to /docs/Audit_Forensics/main/
+   -> linking to /docs/Use_Cases/main/
+
+[SUCCESS] Generated static files in "build".
+[INFO] Use `npm run serve` command to test your build locally.

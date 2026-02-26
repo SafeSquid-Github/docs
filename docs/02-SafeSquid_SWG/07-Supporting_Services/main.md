@@ -124,6 +124,6 @@ For a production-ready SafeSquid deployment:
 ## Next Steps
 
 1. **Configure each service** using the detailed guides above
-2. **[SSL Inspection](/docs/SSL_Inspection/main/)** — NTP is critical for TLS validation
-3. **[Authentication](/docs/Authentication/main/)** — NTP is required for SSO/Kerberos
-4. **[Audit & Forensics](/docs/Audit_Forensics/main/)** — Accurate timestamps for compliance
+2. **[SSL Inspection](/docs/SSL_Inspection/)** — NTP is critical for TLS validation
+3. **[Authentication](/docs/Authentication/)** — NTP is required for SSO/Kerberos
+4. **[Audit & Forensics](/docs/Audit_Forensics/)** — Accurate timestamps for compliance

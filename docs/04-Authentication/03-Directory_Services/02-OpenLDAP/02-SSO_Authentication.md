@@ -54,6 +54,6 @@ SafeSquid includes default entries under the **Allow List**. You can edit these 
 
 ## Next steps
 
-- [Access Restriction](/docs/Access_Restriction/main/) to define policies for your different LDAP groups.
-- [SSL Inspection](/docs/SSL_Inspection/main/) to attribute encrypted traffic to specific users.
+- [Access Restriction](/docs/Access_Restriction/) to define policies for your different LDAP groups.
+- [SSL Inspection](/docs/SSL_Inspection/) to attribute encrypted traffic to specific users.
 - [Bypass Authentication](/docs/Authentication/Bypass_Authentication/) for automated services.

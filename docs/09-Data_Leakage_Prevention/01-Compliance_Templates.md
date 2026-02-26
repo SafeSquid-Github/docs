@@ -25,7 +25,7 @@ Organizations must detect and control sensitive data in web traffic to meet PCI-
 
 ## Key benefits
 
-Pre-built patterns reduce implementation time for PCI-DSS (cardholder data), HIPAA (PHI, SSN, MRN), and GDPR (PII, national IDs). Organizations can show auditors configured detection rules and logs of matches or blocks. Combine templates with [Access Restriction](/docs/Access_Restriction/main/) to block, log, or alert on matches.
+Pre-built patterns reduce implementation time for PCI-DSS (cardholder data), HIPAA (PHI, SSN, MRN), and GDPR (PII, national IDs). Organizations can show auditors configured detection rules and logs of matches or blocks. Combine templates with [Access Restriction](/docs/Access_Restriction/) to block, log, or alert on matches.
 
 
 
@@ -42,7 +42,7 @@ Pre-built patterns reduce implementation time for PCI-DSS (cardholder data), HIP
 SafeSquid's Text Analyser supports pattern-based detection of sensitive data. Use the sections below as starting points for PCI-DSS, HIPAA, GDPR, and other regulatory requirements.
 
 :::note
-These templates provide detection patterns. Combine them with [Access Restriction](/docs/Access_Restriction/main/) policies to block, log, or alert on matches.
+These templates provide detection patterns. Combine them with [Access Restriction](/docs/Access_Restriction/) policies to block, log, or alert on matches.
 :::
 
 
@@ -257,5 +257,5 @@ Create organization-specific patterns for:
 - Customer account numbers
 - Proprietary terminology
 
-**Related**: [Text Analyser](/docs/Profiling_Engine/Content_Analyser/Text_Analyser/), [Image Analyser](/docs/Profiling_Engine/Content_Analyser/Image_Analyser_AI/), [Access Restriction](/docs/Access_Restriction/main/), [Reporting Module](/docs/Audit_Forensics/Reporting_Module/)
+**Related**: [Text Analyser](/docs/Profiling_Engine/Content_Analyser/Text_Analyser/), [Image Analyser](/docs/Profiling_Engine/Content_Analyser/Image_Analyser_AI/), [Access Restriction](/docs/Access_Restriction/), [Reporting Module](/docs/Audit_Forensics/Reporting_Module/)
 

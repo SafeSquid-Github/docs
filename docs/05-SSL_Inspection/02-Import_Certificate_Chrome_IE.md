@@ -26,7 +26,7 @@ For enterprise environments, deploy the certificate via **Group Policy (GPO)** i
 
 :::note Firefox Users
 
-Firefox uses its own certificate store and ignores the Windows trust store. See [Import certificate into Firefox](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#import-certificate-into-firefox).
+Firefox uses its own certificate store and ignores the Windows trust store. See [Import certificate into Firefox](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#firefox-all-platforms).
 
 :::
 
@@ -166,11 +166,11 @@ Click **OK**.
 ## Next Steps
 
 1. **[Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/)** — Complete setup guide (if you haven't enabled inspection yet)
-2. **[Import certificate into Firefox](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#import-certificate-into-firefox)** — Firefox uses separate trust store
+2. **[Import certificate into Firefox](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#firefox-all-platforms)** — Firefox uses separate trust store
 3. **Deploy to all clients:**
    - **Windows enterprise:** Use GPO (see tip at top of page)
    - **macOS:** Use MDM or manual Keychain import
    - **Mobile:** Use MDM or manual installation
 4. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm proxy and SSL Inspection are working
 
-**Related:** [SSL Inspection Overview](/docs/SSL_Inspection/main/) | [Troubleshooting](/docs/Troubleshooting/main/)
+**Related:** [SSL Inspection Overview](/docs/SSL_Inspection/) | [Troubleshooting](/docs/Troubleshooting/)

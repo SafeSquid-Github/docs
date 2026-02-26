@@ -44,4 +44,4 @@ After completing the integration:
 ## Next steps
 
 - Start with [Setup Active Directory Integration](/docs/Authentication/Directory_Services/Active_Directory/Setup_Active_Directory_Integration/) to establish the initial connection.
-- Configure [Access Restriction](/docs/Access_Restriction/main/) to apply policies based on AD groups.
+- Configure [Access Restriction](/docs/Access_Restriction/) to apply policies based on AD groups.

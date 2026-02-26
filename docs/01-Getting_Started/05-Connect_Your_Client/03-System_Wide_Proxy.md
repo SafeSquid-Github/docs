@@ -312,5 +312,5 @@ Only use this method if you're comfortable with registry editing. Incorrect chan
 
 1. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm all application traffic flows through SafeSquid
 2. **[Application-Specific Configuration](/docs/Getting_Started/Connect_Your_Client/Application_Specific_Configuration/)** — Configure Docker, Git, npm, and other tools that ignore system proxy
-3. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Deploy SafeSquid root CA for HTTPS inspection
+3. **[SSL Inspection](/docs/SSL_Inspection/)** — Deploy SafeSquid root CA for HTTPS inspection
 4. **Scale to enterprise:** [Enterprise Deployment](/docs/Getting_Started/Connect_Your_Client/Enterprise_Deployment/) — Push system proxy via GPO/MDM for 100+ endpoints

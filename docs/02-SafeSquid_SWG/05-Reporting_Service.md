@@ -114,7 +114,7 @@ SafeSquid logs can be forwarded to:
 
 **Log formats:** JSON, CEF, syslog
 
-**Details:** See [Audit & Forensics](/docs/Audit_Forensics/main/) for log forwarding configuration.
+**Details:** See [Audit & Forensics](/docs/Audit_Forensics/) for log forwarding configuration.
 
 ---
 
@@ -130,7 +130,7 @@ SafeSquid logs can be forwarded to:
 
 ## Next Steps
 
-1. **[Audit & Forensics](/docs/Audit_Forensics/main/)** — Configure logging and retention policies
-2. **[Proxy Clustering](/docs/Proxy_Clustering/main/)** — Set up multi-node logging
-3. **[Access Restriction](/docs/Access_Restriction/main/)** — Define policies to enforce and monitor
+1. **[Audit & Forensics](/docs/Audit_Forensics/)** — Configure logging and retention policies
+2. **[Proxy Clustering](/docs/Proxy_Clustering/)** — Set up multi-node logging
+3. **[Access Restriction](/docs/Access_Restriction/)** — Define policies to enforce and monitor
 

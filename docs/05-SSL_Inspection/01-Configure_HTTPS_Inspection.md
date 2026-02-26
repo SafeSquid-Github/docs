@@ -447,10 +447,10 @@ tail -f /var/log/safesquid/access/extended.log
 
 ## Next Steps
 
-1. **[Authentication](/docs/Authentication/main/)** — Enable user-aware policies (SSL Inspection must be working first)
-2. **[Access Restriction](/docs/Access_Restriction/main/)** — Configure URL filtering (now works on HTTPS)
-3. **[Data Leakage Prevention](/docs/Data_Leakage_Prevention/main/)** — Scan HTTPS uploads for sensitive data
-4. **[Troubleshooting](/docs/Troubleshooting/main/)** — SSL-specific issues and diagnostics
+1. **[Authentication](/docs/Authentication/)** — Enable user-aware policies (SSL Inspection must be working first)
+2. **[Access Restriction](/docs/Access_Restriction/)** — Configure URL filtering (now works on HTTPS)
+3. **[Data Leakage Prevention](/docs/Data_Leakage_Prevention/)** — Scan HTTPS uploads for sensitive data
+4. **[Troubleshooting](/docs/Troubleshooting/)** — SSL-specific issues and diagnostics
 
 **Related:**
 - [Self-Service Portal](/docs/SafeSquid_SWG/Self-Service_Portal/) — Manage certificates

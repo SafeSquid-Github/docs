@@ -56,4 +56,4 @@ Recovery requires Cloud Restore to be configured and the same activation key. Th
 
 ## Next steps
 
-After configuring Cloud Restore, verify with [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/); for HA see [Proxy Clustering](/docs/Proxy_Clustering/main/).
+After configuring Cloud Restore, verify with [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/); for HA see [Proxy Clustering](/docs/Proxy_Clustering/).
