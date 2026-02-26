@@ -4,15 +4,18 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'SafeSquid SWG Documentation',
-  tagline: 'Search our knowledge base',
+  tagline: 'Deploy Zero-Trust Web Security in 15 Minutes',
   favicon: 'img/favicon.ico',
   url: 'http://docs.safesquid.com',
   baseUrl: '/',
   trailingSlash: true,
   organizationName: 'SafeSquid-Github',
   projectName: 'docs',
-  onBrokenLinks: 'ignore',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'warn',
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -23,6 +26,9 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          breadcrumbs: true,
+          showLastUpdateTime: false,
+          showLastUpdateAuthor: false,
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -117,11 +123,19 @@ const config: Config = {
           position: 'left',
           label: 'DOCS',
         },
-        { to: '/blog', label: 'BLOG', position: 'left' },
+        { 
+          to: '/blog', 
+          label: 'BLOG', 
+          position: 'left' 
+        },
         {
           href: 'https://help.safesquid.com/portal/en/community/safesquid-labs',
           label: 'FORUM',
           position: 'left',
+        },
+        {
+          type: 'search',
+          position: 'right',
         },
       ],
     },
@@ -130,6 +144,10 @@ const config: Config = {
         autoCollapseCategories: true,
         hideable: true,
       },
+    },
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 4,
     },
     footer: {
       style: 'dark',
@@ -144,8 +162,16 @@ const config: Config = {
       appId: 'VDAYH8QLO8',
       apiKey: 'd60fc30e42711815476a72c8b3469240',
       indexName: 'safesquid',
-      contextualSearch: false,
+      contextualSearch: true,
       searchPagePath: 'search',
+      insights: true,
+      searchParameters: {
+        facetFilters: [],
+        hitsPerPage: 10,
+        attributesToSnippet: ['content:50'],
+        snippetEllipsisText: '...',
+      },
+      placeholder: 'Search documentation...',
     },
   } as Preset.ThemeConfig,
 };

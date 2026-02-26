@@ -14,33 +14,32 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Free to download and use',
+    title: 'Block Zero-Hour Threats at the Perimeter',
     LightSvg: require('@site/static/img/free2use_light.svg').default,
     DarkSvg: require('@site/static/img/free2use.svg').default,
     description: (
       <>
-        Log in to the  <Link href='https://key.safesquid.com'>SafeSquid Self-Service Portal</Link>  and deploy On-Premises, Off-Premises (Cloud), or a hybrid Secure Web Gateway for your enterprise within 15 minutes. 
+        Pre-execution blocking of phishing, malware, ransomware, and data exfiltration hidden in HTTPS traffic. Deploy on-premises, cloud, or hybrid in 15 minutes via the <Link href='https://key.safesquid.com'>SafeSquid Self-Service Portal</Link>.
       </>
     ),
   },
   {
-    title: 'Agent-less integration with your environment',
+    title: 'Enterprise-Ready Integration',
     LightSvg: require('@site/static/img/integrations_light.svg').default,
     DarkSvg: require('@site/static/img/integrations.svg').default,
     description: (
       <>
-        With an Enterprise Ready Architecture, SafeSquid can easily integrate with your IAM systems, ICAP servers, DLP systems, SIEMs, and SoC threat intelligence, to easily blend in your environment.
+        Agent-less integration with IAM systems, ICAP servers, DLP solutions, SIEMs, and SoC threat intelligence. Purpose-built for Zero-Trust architectures.
       </>
     ),
   },
   {
-    title: 'Scale Effortlessly',
+    title: 'Scale Without Performance Degradation',
     LightSvg: require('@site/static/img/scale_light.svg').default,
     DarkSvg: require('@site/static/img/scale.svg').default,
     description: (
       <>
-        SafeSquid's SMP-Aware Architecture synergistically scales-up the throughput to absorb load bursts.
-        To scale out, you can seamlessly add proxy nodes with our Cluster-Ready Technology and configure them for load balancing or fail-over.
+        SMP-aware architecture scales up to absorb load bursts without IPC bottlenecks. Scale out with cluster-ready technology for load balancing and fail-over. No session drops, no logging gaps.
       </>
     ),
   },

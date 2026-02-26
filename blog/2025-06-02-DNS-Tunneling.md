@@ -13,6 +13,8 @@ Think of DNS as the Internet’s postal code system—so essential that security
 
 > *Definition – DNS Tunnelling*: The technique of embedding arbitrary data within DNS request/response fields to bypass network controls and exfiltrate information covertly.
 
+<!-- truncate -->
+
 ***
 
 ## Anatomy of a DNS‑Tunnel Breach

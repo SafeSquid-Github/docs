@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import QuickLinks from '@site/src/components/QuickLinks';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
@@ -20,7 +20,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="docs/Getting Started/main/">
+            to="docs/Getting_Started/">
             Get Started
           </Link>
         </div>
@@ -37,7 +37,7 @@ export default function Home(): ReactNode {
       description="Use world's most advanced HTTP(S) Proxy Server to implement the best of secure operating practices and derive Zero-Trust Web Security">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <QuickLinks />
       </main>
     </Layout>
   );
