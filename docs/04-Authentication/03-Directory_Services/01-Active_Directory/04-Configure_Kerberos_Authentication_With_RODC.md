@@ -73,6 +73,21 @@ Seven SPNs are required. The hostname used by `msktutil` must match the AD objec
 
 ---
 
+## Placeholder Reference Table
+
+Use this table to identify which values in the commands and scripts need to be replaced with your environment's specific details.
+
+| Placeholder | Description | Example Value |
+| :--- | :--- | :--- |
+| `<SafeSquid_ISO_Hostname>` | The hostname of your SafeSquid ISO/Virtual Machine. | `safesquid-proxy-01` |
+| `<your.domain.name>` | Your Active Directory domain name (FQDN). | `company.local` |
+| `<REALM>` | Your AD domain name in ALL CAPS. | `COMPANY.LOCAL` |
+| `$ComputerName` | The name of the AD computer object. **Do not change this.** | `safesquid` |
+| `<RODC_Hostname>` | The hostname of your Read-Only Domain Controller. | `rodc-01` |
+| `<RODC_IP>` | The IP address of your Read-Only Domain Controller. | `192.168.1.10` |
+
+---
+
 ## Setup Procedure
 
 Choose the method that fits your administration style.
@@ -143,6 +158,14 @@ Set-ADObject -Identity $obj.DistinguishedName -Server $TargetDC `
 
 ### Fully Generalized AD Script
 Copy-paste this into a PowerShell (Admin) terminal on a Writable DC.
+
+#### How to Run This Script
+1.  **Save the Script**: Copy the code below and save it as a file named `Replicate-ADComputer.ps1`.
+2.  **Location**: Save this file directly on your **Writable Domain Controller** (RWDC/PDC Emulator).
+3.  **Execute**: Open PowerShell as Administrator, navigate to the folder where you saved the script, and run it using this command:
+    ```powershell
+    .\Replicate-ADComputer.ps1
+    ```
 
 ```powershell
 # =========================================================================
@@ -246,5 +269,3 @@ Ensure the **Ldap Bind Method** is set to **NEGOTIATE_LDAP_AUTH**. This is the t
 ### 407 Proxy Authentication Required
 *   **Cause**: Time drift between AD and SafeSquid.
 *   **Fix**: Verify time sync using the `date` command on both servers. They must be within 5 minutes of each other.
-
-
