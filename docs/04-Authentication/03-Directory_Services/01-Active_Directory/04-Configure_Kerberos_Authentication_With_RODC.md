@@ -284,7 +284,7 @@ Set-ADObject -Identity $obj.DistinguishedName -Server $TargetDC `
 3.  **Edit Variables**: Open the file and fill in your values under `SET YOUR VARIABLES HERE`.
 4.  **Execute**: Open PowerShell as Administrator and run:
     ```powershell
-    .\Replicate-ADComputer.ps1
+    -ExecutionPolicy Bypass -File "\Path\of\the\file\Replicate-ADComputer.ps1"
     ```
 
 ```powershell
