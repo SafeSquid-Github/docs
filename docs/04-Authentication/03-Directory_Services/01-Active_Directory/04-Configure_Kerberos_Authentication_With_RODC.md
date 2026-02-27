@@ -171,7 +171,7 @@ Use this table to identify which values in the commands and scripts need to be r
 
 | Placeholder | Description | Example Value |
 | :--- | :--- | :--- |
-| `<SafeSquid_ISO_Hostname>` | The hostname of your SafeSquid ISO/Virtual Machine. | `safesquid-proxy-01` |
+| `<ProxyHostname>` | The actual hostname of your SafeSquid proxy VM/machine. | `proxy-01` |
 | `<your.domain.name>` | Your Active Directory domain name (FQDN). | `company.local` |
 | `<REALM>` | Your AD domain name in ALL CAPS. | `COMPANY.LOCAL` |
 | `$ComputerName` | The name of the AD computer object. **Do not change this.** | `safesquid` |
@@ -184,27 +184,27 @@ Use this table to identify which values in the commands and scripts need to be r
 
 ### Computer Object Attributes
 
-| Attribute | Required Value |
-|---|---|
-| **Name** | `safesquid` |
-| **SamAccountName** | `safesquid$` |
-| **UPN** | `safesquid.<REALM>@<REALM>` |
-| **UAC Bitmask** | `33624064` (Workstation + No Expiry + No Pre-Auth) |
-| **Encryption Type** | `28` (AES 128/256 Support) |
+| Attribute | Required Value | Notes |
+|---|---|---|
+| **Name** | `safesquid` | Fixed — do not change |
+| **SamAccountName** | `safesquid$` | `$` suffix is the AD computer account convention |
+| **UPN** | `safesquid.<REALM>@<REALM>` | e.g., `safesquid.COMPANY.LOCAL@COMPANY.LOCAL` |
+| **UAC Bitmask** | `33624064` | `WORKSTATION_TRUST` + `DONT_EXPIRE_PASSWORD` + `PARTIAL_SECRETS` (RODC-compatible) |
+| **Encryption Type** | `28` | RC4 (4) + AES-128 (8) + AES-256 (16) — supports all modern ciphers |
 
 ### Required Service Principal Names (SPNs)
 
 These seven SPNs must be registered on the SafeSquid computer object. They cover both the VM's actual hostname and the common `safesquid` identity.
 
-| SPN Type | Format | Purpose |
-| :--- | :--- | :--- |
-| **ISO Host (FQDN)** | `HOST/<SafeSquid_ISO_Hostname>.<REALM>` | Kerberos identity for the ISO hostname |
-| **ISO HTTP (FQDN)** | `HTTP/<SafeSquid_ISO_Hostname>.<REALM>` | Web-based Kerberos auth via ISO name |
-| **ISO LDAP (FQDN)** | `LDAP/<SafeSquid_ISO_Hostname>.<REALM>` | LDAP communication via ISO name |
-| **Common Host (FQDN)** | `HOST/safesquid.<REALM>` | Kerberos identity for the common name |
-| **Common HTTP (FQDN)** | `HTTP/safesquid.<REALM>` | **Primary SPN for proxy authentication** |
-| **Common LDAP (FQDN)** | `LDAP/safesquid.<REALM>` | LDAP searching via safesquid identity |
-| **Common Host (Short)** | `host/safesquid` | NetBIOS/legacy compatibility |
+| SPN Type | Format | Example Value | Purpose |
+| :--- | :--- | :--- | :--- |
+| **Proxy Host (FQDN)** | `HOST/<ProxyHostname>.<REALM>` | `HOST/proxy-01.COMPANY.LOCAL` | Kerberos machine identity — required by `msktutil` for keytab generation |
+| **Proxy HTTP (FQDN)** | `HTTP/<ProxyHostname>.<REALM>` | `HTTP/proxy-01.COMPANY.LOCAL` | Browser ticket requests using the actual VM hostname |
+| **Proxy LDAP (FQDN)** | `LDAP/<ProxyHostname>.<REALM>` | `LDAP/proxy-01.COMPANY.LOCAL` | LDAP bind using the actual VM hostname |
+| **Common Host (FQDN)** | `HOST/safesquid.<REALM>` | `HOST/safesquid.COMPANY.LOCAL` | Kerberos identity for the common `safesquid` name |
+| **Common HTTP (FQDN)** | `HTTP/safesquid.<REALM>` | `HTTP/safesquid.COMPANY.LOCAL` | **Primary SPN** — used when browser connects via PAC file |
+| **Common LDAP (FQDN)** | `LDAP/safesquid.<REALM>` | `LDAP/safesquid.COMPANY.LOCAL` | LDAP searching via the common `safesquid` identity |
+| **Common Host (Short)** | `host/safesquid` | `host/safesquid` | Short/NetBIOS form — legacy Windows client compatibility |
 
 ---
 
@@ -213,17 +213,84 @@ These seven SPNs must be registered on the SafeSquid computer object. They cover
 Perform these steps on your **Writable Domain Controller**. Choose your preferred method:
 
 <Tabs>
+<TabItem value="script" label="Automated Script (Recommended)">
+
+### Fully Generalized AD Script
+
+#### How to Run This Script
+1.  **Save the Script**: Copy the code below and save it as `Replicate-ADComputer.ps1`.
+2.  **Location**: Save this file directly on your **Writable Domain Controller (RWDC/PDC Emulator)**.
+3.  **Edit Variables**: Open the file and fill in your values under `SET YOUR VARIABLES HERE`.
+4.  **Execute**: Open PowerShell as Administrator and run:
+    ```powershell
+    ExecutionPolicy Bypass -File "\Path\of\the\file\Replicate-ADComputer.ps1"
+
+```powershell
+# =========================================================================
+# SAFESQUID MASTER AD PREPARATION SCRIPT (GENERAL)
+# =========================================================================
+Import-Module ActiveDirectory
+
+# --- 1. SET YOUR VARIABLES HERE ---
+$ProxyHostname = "<ProxyHostname>"            # e.g., 'proxy-01' (your SafeSquid VM hostname)
+$DomainName    = "<your.domain.name>"         # e.g., 'company.local'
+$ComputerName  = "safesquid"                  # Do NOT change this
+
+# --- 2. AUTOMATED LOGIC ---
+$SAMAccount  = "$ComputerName$"
+$Realm       = $DomainName.ToUpper()
+$BaseDCPath  = ($DomainName -split '\.' | ForEach-Object { "DC=$_" }) -join ','
+$UPN         = "$ComputerName.$Realm@$Realm"
+$DNSHostName = "$ComputerName.$DomainName"
+
+# Target the Writable PDC Emulator
+$TargetDC = (Get-ADDomainController -Discover -Service PrimaryDC).HostName | Select-Object -First 1
+Write-Host "Targeting DC: $TargetDC" -ForegroundColor Cyan
+
+# SPNs (Matching msktutil requirements)
+$DesiredSPNs = @(
+    "HOST/$ProxyHostname.$Realm", "HTTP/$ProxyHostname.$Realm", "LDAP/$ProxyHostname.$Realm",
+    "HOST/$ComputerName.$Realm", "HTTP/$ComputerName.$Realm", "LDAP/$ComputerName.$Realm",
+    "host/$ComputerName"
+)
+
+# --- 3. EXECUTION ---
+$Existing = Get-ADComputer -Filter "SamAccountName -eq '$SAMAccount'" -Server $TargetDC -Properties servicePrincipalName -ErrorAction SilentlyContinue
+
+if ($Existing) {
+    Write-Host "Object found, updating attributes..." -ForegroundColor Yellow
+    Set-ADComputer -Identity $Existing.DistinguishedName -Server $TargetDC -DNSHostName $DNSHostName -UserPrincipalName $UPN
+    # Differential SPN update — only adds missing SPNs to avoid "Duplicate" errors
+    $SPNsToAdd = $DesiredSPNs | Where-Object { $_ -notin $Existing.servicePrincipalName }
+    if ($SPNsToAdd) { Set-ADComputer -Identity $Existing.DistinguishedName -Server $TargetDC -Add @{ servicePrincipalName = $SPNsToAdd } }
+    Write-Host "SPNs updated." -ForegroundColor Green
+} else {
+    Write-Host "Creating new computer object..." -ForegroundColor Cyan
+    New-ADComputer -Name $ComputerName -Server $TargetDC -Path "CN=Computers,$BaseDCPath" -DNSHostName $DNSHostName -UserPrincipalName $UPN -ServicePrincipalNames $DesiredSPNs -Enabled $true
+}
+
+# Apply Security Flags (UAC 33624064 + AES-256 Support)
+$FinalObj = Get-ADComputer -Identity $ComputerName -Server $TargetDC
+Set-ADObject -Identity $FinalObj.DistinguishedName -Server $TargetDC -Replace @{
+    userAccountControl              = 33624064
+    'msDS-SupportedEncryptionTypes' = 28
+}
+
+Write-Host "`nSUCCESS: Active Directory is now configured for SafeSquid." -ForegroundColor Green
+```
+
+</TabItem>
 <TabItem value="manual" label="Manual Steps">
 
 ### Step 1: Initialize Identity
 Replace `<Placeholders>` with your environment values.
 
 ```powershell
-$TargetDC     = (Get-ADDomainController -Discover -Service PrimaryDC).HostName | Select-Object -First 1
-$ISO_Hostname = "<SafeSquid_ISO_Hostname>"  # e.g., 'safesquid-proxy-01'
-$DomainName   = "<your.domain.name>"         # e.g., 'company.local'
-$Realm        = $DomainName.ToUpper()        # e.g., 'COMPANY.LOCAL'
-$ComputerName = "safesquid"                  # Do NOT change this
+$TargetDC      = (Get-ADDomainController -Discover -Service PrimaryDC).HostName | Select-Object -First 1
+$ProxyHostname = "<ProxyHostname>"           # e.g., 'proxy-01' (your SafeSquid VM hostname)
+$DomainName    = "<your.domain.name>"        # e.g., 'company.local'
+$Realm         = $DomainName.ToUpper()       # e.g., 'COMPANY.LOCAL'
+$ComputerName  = "safesquid"                 # Do NOT change this
 ```
 
 ### Step 2: Create or Update Object
@@ -250,7 +317,7 @@ $obj = Get-ADComputer -Identity $ComputerName -Server $TargetDC -Properties serv
 
 # Define the mandatory SPN list
 $Desired = @(
-    "HOST/$ISO_Hostname.$Realm", "HTTP/$ISO_Hostname.$Realm", "LDAP/$ISO_Hostname.$Realm",
+    "HOST/$ProxyHostname.$Realm", "HTTP/$ProxyHostname.$Realm", "LDAP/$ProxyHostname.$Realm",
     "HOST/$ComputerName.$Realm", "HTTP/$ComputerName.$Realm", "LDAP/$ComputerName.$Realm",
     "host/$ComputerName"
 )
@@ -271,73 +338,6 @@ Set-ADObject -Identity $obj.DistinguishedName -Server $TargetDC `
         userAccountControl              = 33624064
         'msDS-SupportedEncryptionTypes' = 28
     }
-```
-
-</TabItem>
-<TabItem value="script" label="Automated Script">
-
-### Fully Generalized AD Script
-
-#### How to Run This Script
-1.  **Save the Script**: Copy the code below and save it as `Replicate-ADComputer.ps1`.
-2.  **Location**: Save this file directly on your **Writable Domain Controller (RWDC/PDC Emulator)**.
-3.  **Edit Variables**: Open the file and fill in your values under `SET YOUR VARIABLES HERE`.
-4.  **Execute**: Open PowerShell as Administrator and run:
-    ```powershell
-    -ExecutionPolicy Bypass -File "\Path\of\the\file\Replicate-ADComputer.ps1"
-    ```
-
-```powershell
-# =========================================================================
-# SAFESQUID MASTER AD PREPARATION SCRIPT (GENERAL)
-# =========================================================================
-Import-Module ActiveDirectory
-
-# --- 1. SET YOUR VARIABLES HERE ---
-$ISO_Hostname = "<SafeSquid_ISO_Hostname>"   # e.g., 'safesquid-proxy-01'
-$DomainName    = "<your.domain.name>"         # e.g., 'company.local'
-$ComputerName  = "safesquid"                  # Do NOT change this
-
-# --- 2. AUTOMATED LOGIC ---
-$SAMAccount  = "$ComputerName$"
-$Realm       = $DomainName.ToUpper()
-$BaseDCPath  = ($DomainName -split '\.' | ForEach-Object { "DC=$_" }) -join ','
-$UPN         = "$ComputerName.$Realm@$Realm"
-$DNSHostName = "$ComputerName.$DomainName"
-
-# Target the Writable PDC Emulator
-$TargetDC = (Get-ADDomainController -Discover -Service PrimaryDC).HostName | Select-Object -First 1
-Write-Host "Targeting DC: $TargetDC" -ForegroundColor Cyan
-
-# SPNs (Matching msktutil requirements)
-$DesiredSPNs = @(
-    "HOST/$ISO_Hostname.$Realm", "HTTP/$ISO_Hostname.$Realm", "LDAP/$ISO_Hostname.$Realm",
-    "HOST/$ComputerName.$Realm", "HTTP/$ComputerName.$Realm", "LDAP/$ComputerName.$Realm",
-    "host/$ComputerName"
-)
-
-# --- 3. EXECUTION ---
-$Existing = Get-ADComputer -Filter "SamAccountName -eq '$SAMAccount'" -Server $TargetDC -Properties servicePrincipalName -ErrorAction SilentlyContinue
-
-if ($Existing) {
-    Write-Host "Object found, updating attributes..." -ForegroundColor Yellow
-    Set-ADComputer -Identity $Existing.DistinguishedName -Server $TargetDC -DNSHostName $DNSHostName -UserPrincipalName $UPN
-    # Differential SPN update — only adds missing SPNs to avoid "Duplicate" errors
-    $SPNsToAdd = $DesiredSPNs | Where-Object { $_ -notin $Existing.servicePrincipalName }
-    if ($SPNsToAdd) { Set-ADComputer -Identity $Existing.DistinguishedName -Server $TargetDC -Add @{ servicePrincipalName = $SPNsToAdd } }
-} else {
-    Write-Host "Creating new computer object..." -ForegroundColor Cyan
-    New-ADComputer -Name $ComputerName -Server $TargetDC -Path "CN=Computers,$BaseDCPath" -DNSHostName $DNSHostName -UserPrincipalName $UPN -ServicePrincipalNames $DesiredSPNs -Enabled $true
-}
-
-# Apply Security Flags (UAC 33624064 + AES-256 Support)
-$FinalObj = Get-ADComputer -Identity $ComputerName -Server $TargetDC
-Set-ADObject -Identity $FinalObj.DistinguishedName -Server $TargetDC -Replace @{
-    userAccountControl              = 33624064
-    'msDS-SupportedEncryptionTypes' = 28
-}
-
-Write-Host "`nSUCCESS: Active Directory is now configured for SafeSquid." -ForegroundColor Green
 ```
 
 </TabItem>
