@@ -213,6 +213,67 @@ These seven SPNs must be registered on the SafeSquid computer object. They cover
 Perform these steps on your **Writable Domain Controller**. Choose your preferred method:
 
 <Tabs>
+<TabItem value="manual" label="Manual Steps">
+
+### Step 1: Initialize Identity
+Replace `<Placeholders>` with your environment values.
+
+```powershell
+$TargetDC      = (Get-ADDomainController -Discover -Service PrimaryDC).HostName | Select-Object -First 1
+$ProxyHostname = "<ProxyHostname>"           # e.g., 'proxy-01' (your SafeSquid VM hostname)
+$DomainName    = "<your.domain.name>"        # e.g., 'company.local'
+$Realm         = $DomainName.ToUpper()       # e.g., 'COMPANY.LOCAL'
+$ComputerName  = "safesquid"                 # Do NOT change this
+```
+
+### Step 2: Create or Update Object
+```powershell
+# Attempt to create the object on the writable DC
+New-ADComputer -Name $ComputerName -Server $TargetDC `
+    -SamAccountName "$ComputerName$" `
+    -Path "CN=Computers,DC=$($DomainName.Replace('.', ',DC='))" `
+    -DNSHostName "$ComputerName.$DomainName" `
+    -UserPrincipalName "$ComputerName.$Realm@$Realm" `
+    -Enabled $true
+
+# Update core attributes if object already exists
+Set-ADComputer -Identity $ComputerName -Server $TargetDC `
+    -DNSHostName "$ComputerName.$DomainName" `
+    -UserPrincipalName "$ComputerName.$Realm@$Realm"
+```
+
+### Step 3: Register SPNs (Differential Update)
+Only adds SPNs that are missing to avoid "Duplicate" errors.
+
+```powershell
+$obj = Get-ADComputer -Identity $ComputerName -Server $TargetDC -Properties servicePrincipalName
+
+# Define the mandatory SPN list
+$Desired = @(
+    "HOST/$ProxyHostname.$Realm", "HTTP/$ProxyHostname.$Realm", "LDAP/$ProxyHostname.$Realm",
+    "HOST/$ComputerName.$Realm", "HTTP/$ComputerName.$Realm", "LDAP/$ComputerName.$Realm",
+    "host/$ComputerName"
+)
+
+# Identify which ones aren't already there
+$toAdd = $Desired | Where-Object { $_ -notin $obj.servicePrincipalName }
+
+if ($toAdd) {
+    Set-ADComputer -Identity $obj.DistinguishedName -Server $TargetDC -Add @{ servicePrincipalName = $toAdd }
+    Write-Host "Added missing SPNs."
+}
+```
+
+### Step 4: Security Flags (UAC & AES)
+```powershell
+Set-ADObject -Identity $obj.DistinguishedName -Server $TargetDC `
+    -Replace @{
+        userAccountControl              = 33624064
+        'msDS-SupportedEncryptionTypes' = 28
+    }
+```
+
+</TabItem>
 <TabItem value="script" label="Automated Script (Recommended)">
 
 ### Fully Generalized AD Script
@@ -277,67 +338,6 @@ Set-ADObject -Identity $FinalObj.DistinguishedName -Server $TargetDC -Replace @{
 }
 
 Write-Host "`nSUCCESS: Active Directory is now configured for SafeSquid." -ForegroundColor Green
-```
-
-</TabItem>
-<TabItem value="manual" label="Manual Steps">
-
-### Step 1: Initialize Identity
-Replace `<Placeholders>` with your environment values.
-
-```powershell
-$TargetDC      = (Get-ADDomainController -Discover -Service PrimaryDC).HostName | Select-Object -First 1
-$ProxyHostname = "<ProxyHostname>"           # e.g., 'proxy-01' (your SafeSquid VM hostname)
-$DomainName    = "<your.domain.name>"        # e.g., 'company.local'
-$Realm         = $DomainName.ToUpper()       # e.g., 'COMPANY.LOCAL'
-$ComputerName  = "safesquid"                 # Do NOT change this
-```
-
-### Step 2: Create or Update Object
-```powershell
-# Attempt to create the object on the writable DC
-New-ADComputer -Name $ComputerName -Server $TargetDC `
-    -SamAccountName "$ComputerName$" `
-    -Path "CN=Computers,DC=$($DomainName.Replace('.', ',DC='))" `
-    -DNSHostName "$ComputerName.$DomainName" `
-    -UserPrincipalName "$ComputerName.$Realm@$Realm" `
-    -Enabled $true
-
-# Update core attributes if object already exists
-Set-ADComputer -Identity $ComputerName -Server $TargetDC `
-    -DNSHostName "$ComputerName.$DomainName" `
-    -UserPrincipalName "$ComputerName.$Realm@$Realm"
-```
-
-### Step 3: Register SPNs (Differential Update)
-Only adds SPNs that are missing to avoid "Duplicate" errors.
-
-```powershell
-$obj = Get-ADComputer -Identity $ComputerName -Server $TargetDC -Properties servicePrincipalName
-
-# Define the mandatory SPN list
-$Desired = @(
-    "HOST/$ProxyHostname.$Realm", "HTTP/$ProxyHostname.$Realm", "LDAP/$ProxyHostname.$Realm",
-    "HOST/$ComputerName.$Realm", "HTTP/$ComputerName.$Realm", "LDAP/$ComputerName.$Realm",
-    "host/$ComputerName"
-)
-
-# Identify which ones aren't already there
-$toAdd = $Desired | Where-Object { $_ -notin $obj.servicePrincipalName }
-
-if ($toAdd) {
-    Set-ADComputer -Identity $obj.DistinguishedName -Server $TargetDC -Add @{ servicePrincipalName = $toAdd }
-    Write-Host "Added missing SPNs."
-}
-```
-
-### Step 4: Security Flags (UAC & AES)
-```powershell
-Set-ADObject -Identity $obj.DistinguishedName -Server $TargetDC `
-    -Replace @{
-        userAccountControl              = 33624064
-        'msDS-SupportedEncryptionTypes' = 28
-    }
 ```
 
 </TabItem>
