@@ -72,8 +72,6 @@ The Windows client must use your Active Directory DNS server for domain name res
 1. **Open Network Settings:**
    - Press `Win + R` → Type `ncpa.cpl` → Press Enter
 
-![Opening network connections](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/ncpa-cpl.webp)
-
 2. **Check Active Network Adapter:**
    - Right-click your active network connection (Ethernet or Wi-Fi) → **Properties**
    - Select **Internet Protocol Version 4 (TCP/IPv4)** → **Properties**
@@ -82,13 +80,9 @@ The Windows client must use your Active Directory DNS server for domain name res
    - **Preferred DNS server:** Should be your AD server IP (e.g., `192.168.1.1`)
    - **Alternate DNS server:** (Optional) Secondary AD DNS or gateway
 
-![Checking DNS settings on network interface](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/ipv4-properties.webp)
-
 4. **View Detailed DNS Info:**
    - Click **Details** button in the connection status window
    - **IPv4 DNS Server:** Must show your AD server IP
-
-![Network connection details showing DNS server](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/connection-details.webp)
 
 :::warning DNS Requirement
 If the client is not using your AD DNS server, Kerberos authentication will fail. Update the DNS server setting before proceeding.
@@ -106,8 +100,6 @@ If the client is not using your AD DNS server, Kerberos authentication will fail
    - Check **Use a proxy server for your LAN**
    - **Address:** `proxy.safesquid.test` (use FQDN, **not** IP like `192.168.1.100`)
    - **Port:** `8080` (your SafeSquid listening port)
-
-![Configuring proxy using FQDN](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/proxy-settings.webp)
 
 3. **Add Bypass Rules (Optional):**
    - In **Exceptions**, add local addresses that shouldn't use the proxy:
@@ -189,8 +181,6 @@ Use browser developer tools to confirm Kerberos negotiation is occurring.
    - Scroll to **Request Headers**
    - Look for: `Proxy-Authorization: Negotiate <token>`
 
-![Developer tools showing Negotiate authentication](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/dev-tools-negotiate.webp)
-
 4. **Inspect Response Headers:**
    - Look for: `Proxy-Authenticate: Negotiate`
    - This indicates the proxy is requesting Kerberos authentication
@@ -216,8 +206,6 @@ SafeSquid assigns a unique `client_id` to each authenticated user for tracking a
 2. **View Your Client ID:**
    - The interface displays your current authenticated username and client_id
    - Format: `DOMAIN\username` or `username@domain.com`
-
-![SafeSquid interface showing client_id](/img/How_To/Integrate_Active_Directory_For_SSO_Authentication/client-id-display.webp)
 
 3. **Cross-Reference in Logs:**
    ```bash

@@ -336,8 +336,6 @@ For Kerberos SSO to work, your Active Directory must be able to resolve the Safe
 2. **Navigate to DNS:**
    - Click **Tools** → **DNS**
 
-![Opening DNS in Server Manager](/img/How_To/Integrate_AD/dns-tools.webp)
-
 3. **Expand Forward Lookup Zones:**
    - Click on your domain (e.g., `safesquid.test`)
 
@@ -348,8 +346,6 @@ For Kerberos SSO to work, your Active Directory must be able to resolve the Safe
    - **Name:** `proxy` (hostname only, not FQDN)
    - **IP Address:** `192.168.1.100` (your SafeSquid server IP)
    - **Create associated pointer (PTR) record:** (Optional, recommended)
-
-![Adding host record in AD DNS](/img/How_To/Integrate_AD/add-host-dns.webp)
 
 6. **Click Add Host**
 
