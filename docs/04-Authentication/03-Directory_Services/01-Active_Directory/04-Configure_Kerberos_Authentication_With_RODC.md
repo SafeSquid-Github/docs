@@ -13,10 +13,18 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## Problem: Kerberos SSO in RODC Environments
-Many organizations have offices and remote sites spread across different locations. Setting up a full Domain Controller (DC) at each of these sites is risky - if someone gains unauthorized access to it, they could compromise the entire network. But without a local DC, every login request has to travel back to the main server over the WAN, which is slow, unreliable, and leaves users unable to work if the connection goes down.
-This problem becomes more complex when SafeSquid SWG is deployed at these remote sites or in a DMZ to enforce web access policies. SafeSquid authenticates users against Active Directory to apply role-based web access controls and log internet activity per user. Without a local DC or RODC available, SafeSquid cannot resolve user identities in real time - meaning access policies fall back to IP-based rules, losing the granular, user-level control that makes SafeSquid effective.
-When an RODC is placed in a DMZ alongside SafeSquid, the risk increases further - the DMZ is exposed to higher threats by design, and any directory controller placed there becomes a potential target.
-The challenge is deploying a solution that gives SafeSquid reliable, real-time access to user identity and group membership at every site - without exposing writable directory data to compromise.
+
+Many organizations have offices and remote sites spread across different locations. 
+Setting up a full Domain Controller (DC) at each of these sites is risky if someone gains unauthorized access to it, they could compromise the entire network. 
+But without a local DC, every login request has to travel back to the main server over the WAN, which is slow, unreliable, and leaves users unable to work if the connection goes down.
+
+This problem becomes more complex when SafeSquid SWG is deployed at these remote sites or in a DMZ to enforce web access policies.
+SafeSquid authenticates users against Active Directory to apply role-based web access controls and log internet activity per user. 
+Without a local DC or RODC available, SafeSquid cannot resolve user identities in real time meaning access policies fall back to IP-based rules, losing the granular, user-level control that makes SafeSquid effective.
+
+When an RODC is placed in a DMZ alongside SafeSquid, the risk increases further the DMZ is exposed to higher threats by design, and any directory controller placed there becomes a potential target.
+
+The challenge is deploying a solution that gives SafeSquid reliable, real-time access to user identity and group membership at every site without exposing writable directory data to compromise.
 
 :::warning
 The RODC **cannot** create computer objects or register SPNs by itself. All AD preparation **must be done on the Writable DC (RWDC)**, then pushed to the RODC through replication.
@@ -25,12 +33,37 @@ The RODC **cannot** create computer objects or register SPNs by itself. All AD p
 ---
 
 ## Benefits of Using RODC with SafeSquid SWG
-Reliable User Authentication for SafeSquidSafeSquid authenticates users against Active Directory to enforce role and group-based web access policies. An RODC at the local site ensures SafeSquid can resolve user identities without depending on a WAN connection to the central DC. Authentication stays fast and available, even when the link to headquarters is slow or down.
-Role-Based Web Access That Actually WorksSafeSquid's strength lies in applying different web access policies based on who the user is and what group they belong to. This only works when user identity can be confirmed in real time. An RODC provides that identity data locally, allowing SafeSquid to enforce precise, role-based policies - blocking or allowing web categories based on job function, department, or shift timing.
-Contained Risk in the DMZWhen SafeSquid is deployed in a DMZ to inspect and control traffic for external-facing services, an RODC can sit alongside it to handle authentication requests. Because the RODC is read-only, a compromise in the DMZ cannot be used to modify directory data or push changes back to the main domain - limiting the blast radius of any breach.
-Accurate Activity Logging Per UserSafeSquid logs every web request against the authenticated user identity. Without a local DC, this logging degrades to IP addresses, making reports far less useful for IT administrators and HR managers. With an RODC in place, SafeSquid maintains accurate, user-attributed logs across all remote sites - supporting policy enforcement, compliance audits, and usage analysis.
-Delegated Administration Without Full PrivilegesRODC's Administrator Role Separation allows local staff at a branch office to manage the RODC without being granted domain admin rights. This pairs well with SafeSquid's own role-based policy management - both tools allow centralized IT teams to set policy while giving local staff limited, safe operational control.
-Consistent Security Posture Across All SitesWith an RODC supporting SafeSquid at every remote location, the same web security policies, user authentication rules, and access controls apply everywhere - whether at headquarters, a branch office, or through a DMZ-facing gateway. There are no gaps where users fall outside policy simply because the WAN was unavailable or a local DC was missing.
+
+**Reliable User Authentication for SafeSquid**
+
+SafeSquid authenticates users against Active Directory to enforce role and group-based web access policies. 
+An RODC at the local site ensures SafeSquid can resolve user identities without depending on a WAN connection to the central DC. 
+Authentication stays fast and available, even when the link to headquarters is slow or down.
+
+**Role-Based Web Access That Actually Works**
+
+SafeSquid's strength lies in applying different web access policies based on who the user is and what group they belong to. This only works when user identity can be confirmed in real time. 
+An RODC provides that identity data locally, allowing SafeSquid to enforce precise, role-based policies blocking or allowing web categories based on job function, department, or shift timing.
+
+**Contained Risk in the DMZ**
+
+When SafeSquid is deployed in a DMZ to inspect and control traffic for external-facing services, an RODC can sit alongside it to handle authentication requests. 
+Because the RODC is read-only, a compromise in the DMZ cannot be used to modify directory data or push changes back to the main domain limiting the blast radius of any breach.
+
+**Accurate Activity Logging Per User**
+
+SafeSquid logs every web request against the authenticated user identity. Without a local DC, this logging degrades to IP addresses, making reports far less useful for IT administrators and HR managers. 
+With an RODC in place, SafeSquid maintains accurate, user-attributed logs across all remote sites supporting policy enforcement, compliance audits, and usage analysis.
+
+**Delegated Administration Without Full Privileges**
+
+RODC's Administrator Role Separation allows local staff at a branch office to manage the RODC without being granted domain admin rights. 
+This pairs well with SafeSquid's own role-based policy management both tools allow centralized IT teams to set policy while giving local staff limited, safe operational control.
+
+**Consistent Security Posture Across All Sites**
+
+With an RODC supporting SafeSquid at every remote location, the same web security policies, user authentication rules, and access controls apply everywhere whether at headquarters, a branch office, or through a DMZ-facing gateway. 
+There are no gaps where users fall outside policy simply because the WAN was unavailable or a local DC was missing.
 
 ---
 
@@ -40,7 +73,7 @@ This problem is specific to a well-established enterprise security pattern - the
 
 ```mermaid
 flowchart TD
-    subgraph LAN["🖥️ LAN Network"]
+    subgraph LAN["LAN Network"]
         Intranet["Intranet Websites"]
         AppServer["Application Server"]
         Endpoints["Endpoints (User PCs)"]
@@ -48,7 +81,7 @@ flowchart TD
         Intranet -->|serves| AppServer
     end
 
-    subgraph DMZ["🔒 DMZ Network"]
+    subgraph DMZ["DMZ Network"]
         RODC["RODC Server"]
         SafeSquid["Proxy Server (SafeSquid)"]
     end
@@ -70,7 +103,7 @@ flowchart TD
 Placing a full Writable DC in the DMZ would expose the entire AD identity store to the internet-facing network - a critical security risk. The RODC is the correct choice because:
 - It can **verify** Kerberos tickets - but only for accounts it has cached via the Password Replication Policy.
 - It **cannot accept write operations** - protecting the AD database even if the DMZ is compromised.
-- It holds only a **partial, controlled subset** of AD data - limiting the blast radius of any breach.
+- It holds only a **partial, controlled subset** of AD data limiting the blast radius of any breach.
 
 ---
 
@@ -145,14 +178,14 @@ Write-Host "Operations will be performed on: $TargetDC" -ForegroundColor Cyan
 
 Use this table to identify which values in the commands and scripts need to be replaced with your environment's specific details.
 
-| Placeholder | Description | Example Value |
-| :--- | :--- | :--- |
-| `<ProxyHostname>` | The actual hostname of your SafeSquid proxy VM/machine. | `proxy-01` |
-| `<your.domain.name>` | Your Active Directory domain name (FQDN). | `company.local` |
-| `<REALM>` | Your AD domain name in ALL CAPS. | `COMPANY.LOCAL` |
-| `$ComputerName` | The name of the AD computer object. **Do not change this.** | `safesquid` |
-| `<RODC_Hostname>` | The hostname of your Read-Only Domain Controller. | `rodc-01` |
-| `<RODC_IP>` | The IP address of your Read-Only Domain Controller. | `192.168.1.10` |
+| Placeholder | Description | Example Value | Command to Find It |
+| :--- | :--- | :--- | :--- |
+| `<ProxyHostname>` | Hostname of your SafeSquid proxy VM/machine. | `proxy-01` | Run `hostname` on the SafeSquid machine |
+| `<your.domain.name>` | Your Active Directory domain name (FQDN). | `company.local` | `(Get-ADDomain).DNSRoot` |
+| `<REALM>` | Your AD domain name in ALL CAPS. | `COMPANY.LOCAL` | `(Get-ADDomain).DNSRoot.ToUpper()` |
+| `$ComputerName` | The name of the AD computer object. **Do not change this.** | `safesquid` | Fixed value — do not look up |
+| `<RODC_Hostname>` | Hostname of your Read-Only Domain Controller. | `rodc-01` | `Get-ADDomainController -Filter {IsReadOnly -eq $true} \| Select-Object HostName` |
+| `<RODC_IP>` | IP address of your Read-Only Domain Controller. | `192.168.1.10` | `Get-ADDomainController -Filter {IsReadOnly -eq $true} \| Select-Object IPv4Address` |
 
 ---
 
@@ -332,7 +365,7 @@ Write-Host "`nSUCCESS: Active Directory is now configured for SafeSquid." -Foreg
 
 ## Phase 2: Configure Password Replication Policy (PRP)
 
-Since the RODC is read-only, you must explicitly allow it to **cache the SafeSquid computer account password**. Without this step, the RODC will always refer ticket requests back to the RWDC - introducing latency and potential failures.
+Since the RODC is read-only, you must explicitly allow it to **cache the SafeSquid computer account password**. Without this step, the RODC will always refer ticket requests back to the RWDC introducing latency and potential failures.
 
 1.  Open **Active Directory Users and Computers** on the RWDC.
 2.  Navigate to the **Domain Controllers** OU.
@@ -365,7 +398,7 @@ Navigate to **Application Setup** → **Integrate LDAP** → **LDAP servers**.
 | **Ldap Domain** | `<your.domain.name>` |
 
 :::warning
-The **Ldap Bind Method** must be set to **NEGOTIATE_LDAP_AUTH**. This is what triggers the Kerberos ticket exchange instead of basic LDAP bind - it is the core of SSO functionality.
+The **Ldap Bind Method** must be set to **NEGOTIATE_LDAP_AUTH**. This is what triggers the Kerberos ticket exchange instead of basic LDAP bind it is the core of SSO functionality.
 :::
 
 ### Verification: Confirm LDAP is Working
@@ -380,7 +413,7 @@ If the setup is successful, SafeSquid will populate the LDAP Entries table with 
 | :--- | :--- |
 | **Login Attribute** | The user or computer account UPN (e.g., `ADMINISTRATOR@SAFESQUID.INTRANET`) |
 | **LDAP Domain** | The Distinguished Name path of the object in AD (e.g., `CN=Administrator,CN=Users,...`) |
-| **LDAP Profiles** | The AD groups the user belongs to - used by SafeSquid for role-based policy matching |
+| **LDAP Profiles** | The AD groups the user belongs to used by SafeSquid for role-based policy matching |
 
 :::note
 If the **LDAP Entries** tab is **empty** after saving, the LDAP bind has failed. Double-check the RODC hostname/IP, the `Ldap Username` credentials, and confirm the RODC's Password Replication Policy includes the `safesquid` account.
