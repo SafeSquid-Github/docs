@@ -439,4 +439,3 @@ If the **LDAP Entries** tab is **empty** after saving, the LDAP bind has failed.
 
 ---
 
-**Related:** [Simple Authentication](Simple_Authentication) | [Setup Active Directory Integration](Setup_Active_Directory_Integration) | [Troubleshooting](/docs/Troubleshooting/main/)
