@@ -185,7 +185,25 @@ After activation and restart, **Support** → **Activation Details** shows your 
 
 **Cause:** Commercial subscription has expired. Free licenses do not expire.
 
-**What happens after expiration:**
+### Check Subscription Status
+
+You can verify your subscription validity from the Self-Service Portal:
+
+1. Visit [key.safesquid.com](https://key.safesquid.com) and sign in
+
+   ![Active Subscription](/img/License_Activation/image19.webp)
+   *Subscription status in Self-Service Portal*
+
+2. SafeSquid sends regular email reminders during the pre-expiration period
+
+### What Happens After Expiration
+
+When your commercial subscription expires, SafeSquid displays the "subscription expired" banner:
+
+![Subscription Expired](/img/License_Activation/image20.webp)
+*Subscription expired notification in SafeSquid interface*
+
+After expiration:
 
 - Core proxy and filtering continues to work
 - Security update frequency reduces to free-tier schedule:
@@ -195,30 +213,53 @@ After activation and restart, **Support** → **Activation Details** shows your 
   - Application/content signatures: monthly
 - Commercial features (real-time threat intel, DR backup, email support) become unavailable
 
-**Solutions:**
-
-**Option 1: Renew Subscription**
+### Solution 1: Renew Subscription
 
 1. Visit [key.safesquid.com](https://key.safesquid.com) and sign in
 2. Go to **Manage Account** → **Renew Subscription**
 3. After payment, download the updated activation key
 4. Upload the new key in SafeSquid interface (same steps as initial activation)
 
-**Option 2: Extend Conservation Period (3-day grace period)**
+### Solution 2: Extend Conservation Period (3-day grace period)
 
-If you need time before renewing:
+If you need time before renewing, you can extend your conservation period. During this period, the expired banner will not appear.
 
-1. Visit [key.safesquid.com](https://key.safesquid.com) and sign in
-2. Go to **Manage Account**  
-3. Click **Extend Conservation Period** (adds 3 days to your subscription)  
-4. The "expired" banner will disappear during the conservation period
-5. Restart SafeSquid from the web interface for changes to take effect
+**Step 1:** Visit [key.safesquid.com](https://key.safesquid.com) and sign in
 
-![Extend Conservation Period](/img/License_Activation/image23.webp)  
-*Extend Conservation Period button in the Self-Service Portal*
+![key.safesquid.com](/img/License_Activation/image21.webp)
+*Self-Service Portal login*
 
-:::note Conservation Period Limits
-The conservation period can be extended multiple times, each extension adding 3 days. However, this is a temporary measure — renew your subscription for continued commercial feature access.
+**Step 2:** Go to **Manage Account**
+
+![Manage Account](/img/License_Activation/image22.webp)
+*Navigate to Manage Account*
+
+**Step 3:** Click **Extend Conservation Period** (adds 3 days to your subscription)
+
+![Extend Conservation Period](/img/License_Activation/image23.webp)
+*Extend Conservation Period button*
+
+**Step 4:** Validate the extended conservation period from the Support Validity date
+
+![Extended Validity](/img/License_Activation/image24.webp)
+*Subscription validity after extending conservation period*
+
+:::note
+The "Extend Conservation Period" button will disappear after use. The "Conserve Subscription" status will display with a validity date (approximately 3 days). Once expired, the button reappears and can be extended again.
+:::
+
+**Step 5:** Restart SafeSquid from the web interface for changes to take effect
+
+![Restart SafeSquid](/img/License_Activation/image25.webp)
+*Restart SafeSquid button in web interface*
+
+**Step 6:** Save configuration (optional: store in cloud) and restart
+
+![Save Config](/img/License_Activation/image26.webp)
+*Save Config and restart dialog*
+
+:::warning
+If the conservation period expires without subscription renewal, the "subscription expired" banner will reappear. Repeat the steps above to extend again, or renew your subscription for continued commercial feature access.
 :::
 
   </TabItem>
