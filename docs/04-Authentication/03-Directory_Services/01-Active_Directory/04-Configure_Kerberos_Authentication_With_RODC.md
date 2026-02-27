@@ -13,13 +13,10 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## Problem: Kerberos SSO in RODC Environments
-
-In enterprise networks that use **Read-Only Domain Controllers (RODCs)** — typically deployed in DMZ or branch-office segments — configuring Kerberos SSO for SafeSquid fails silently. The RODC cannot create computer objects or register Service Principal Names (SPNs) by itself due to its read-only nature.
-
-As a result:
-- Users experience repeated **`407 Proxy Authentication Required`** popups instead of transparent SSO.
-- IT teams cannot resolve this directly on the RODC — all changes must originate from a **Writable DC (RWDC)**.
-- Without the SafeSquid computer object being created and replicated to the RODC, the RODC remains **"blind"** to SafeSquid's existence and cannot issue Kerberos tickets for it.
+Many organizations have offices and remote sites spread across different locations. Setting up a full Domain Controller (DC) at each of these sites is risky — if someone gains unauthorized access to it, they could compromise the entire network. But without a local DC, every login request has to travel back to the main server over the WAN, which is slow, unreliable, and leaves users unable to work if the connection goes down.
+This problem becomes more complex when SafeSquid SWG is deployed at these remote sites or in a DMZ to enforce web access policies. SafeSquid authenticates users against Active Directory to apply role-based web access controls and log internet activity per user. Without a local DC or RODC available, SafeSquid cannot resolve user identities in real time — meaning access policies fall back to IP-based rules, losing the granular, user-level control that makes SafeSquid effective.
+When an RODC is placed in a DMZ alongside SafeSquid, the risk increases further — the DMZ is exposed to higher threats by design, and any directory controller placed there becomes a potential target.
+The challenge is deploying a solution that gives SafeSquid reliable, real-time access to user identity and group membership at every site — without exposing writable directory data to compromise.
 
 :::warning
 The RODC **cannot** create computer objects or register SPNs by itself. All AD preparation **must be done on the Writable DC (RWDC)**, then pushed to the RODC through replication.
@@ -27,14 +24,13 @@ The RODC **cannot** create computer objects or register SPNs by itself. All AD p
 
 ---
 
-## Benefits: What You Gain After This Setup
-
-Once the SafeSquid identity is pre-registered on the RWDC and replicated to the RODC, the following is achieved:
-
-*   **Transparent Single Sign-On**: Domain users browse the internet through SafeSquid with **zero credential prompts** — authentication happens invisibly in the background.
-*   **Security-Compliant Encryption**: Enforces **AES-256** Kerberos encryption across all site locations, meeting modern security standards.
-*   **Centralized Identity Control**: The SafeSquid computer object is managed once on the RWDC and automatically replicated to all RODC locations — no per-site configuration required.
-*   **Reduced Admin Overhead**: The provided automation script handles all complex AD attribute mapping — UAC flags, SPNs, and encryption types — in a single run.
+## Benefits of Using RODC with SafeSquid SWG
+Reliable User Authentication for SafeSquidSafeSquid authenticates users against Active Directory to enforce role and group-based web access policies. An RODC at the local site ensures SafeSquid can resolve user identities without depending on a WAN connection to the central DC. Authentication stays fast and available, even when the link to headquarters is slow or down.
+Role-Based Web Access That Actually WorksSafeSquid's strength lies in applying different web access policies based on who the user is and what group they belong to. This only works when user identity can be confirmed in real time. An RODC provides that identity data locally, allowing SafeSquid to enforce precise, role-based policies — blocking or allowing web categories based on job function, department, or shift timing.
+Contained Risk in the DMZWhen SafeSquid is deployed in a DMZ to inspect and control traffic for external-facing services, an RODC can sit alongside it to handle authentication requests. Because the RODC is read-only, a compromise in the DMZ cannot be used to modify directory data or push changes back to the main domain — limiting the blast radius of any breach.
+Accurate Activity Logging Per UserSafeSquid logs every web request against the authenticated user identity. Without a local DC, this logging degrades to IP addresses, making reports far less useful for IT administrators and HR managers. With an RODC in place, SafeSquid maintains accurate, user-attributed logs across all remote sites — supporting policy enforcement, compliance audits, and usage analysis.
+Delegated Administration Without Full PrivilegesRODC's Administrator Role Separation allows local staff at a branch office to manage the RODC without being granted domain admin rights. This pairs well with SafeSquid's own role-based policy management — both tools allow centralized IT teams to set policy while giving local staff limited, safe operational control.
+Consistent Security Posture Across All SitesWith an RODC supporting SafeSquid at every remote location, the same web security policies, user authentication rules, and access controls apply everywhere — whether at headquarters, a branch office, or through a DMZ-facing gateway. There are no gaps where users fall outside policy simply because the WAN was unavailable or a local DC was missing.
 
 ---
 
@@ -42,50 +38,39 @@ Once the SafeSquid identity is pre-registered on the RWDC and replicated to the 
 
 This problem is specific to a well-established enterprise security pattern — the **LAN + DMZ split** — where the proxy server is intentionally placed outside the trusted internal network.
 
-```
-┌──────────────────────────────────────────────────┐
-│                   LAN Network                    │
-│                                                  │
-│  ┌─────────────┐        ┌──────────────────────┐ │
-│  │  Application│◄───────│   Intranet Websites  │ │
-│  │   Server    │        └──────────────────────┘ │
-│  └─────────────┘                                 │
-│                                                  │
-│  ┌─────────────┐  Traffic  ┌──────────────────┐  │
-│  │     PAC     │──────────►│   Endpoints      │  │
-│  │  Provider   │  routing  │  (User PCs)      │  │
-│  └─────────────┘           └────────┬─────────┘  │
-│                                     │            │
-│  ┌─────────────┐                    │ Internet   │
-│  │  DC Server  │                    │ Websites   │
-│  │  (RWDC)     │                    │            │
-│  └──────┬──────┘                    │            │
-└─────────┼─────────────────────────┬─┘            │
-          │ (Replication)           │              │
-          ▼                         ▼              │
-┌──────────────────────────────────────────────────┐
-│                   DMZ Network                    │
-│                                                  │
-│  ┌─────────────┐       ┌──────────────────────┐  │
-│  │    RODC     │──────►│   Proxy Server       │  │
-│  │   Server    │       │   (SafeSquid)        │  │
-│  └─────────────┘       └──────────────────────┘  │
-└──────────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+    subgraph LAN["🖥️ LAN Network"]
+        Intranet["Intranet Websites"]
+        AppServer["Application Server"]
+        Endpoints["Endpoints (User PCs)"]
+        RWDC["DC Server (RWDC)"]
+        Intranet -->|serves| AppServer
+    end
+
+    subgraph DMZ["🔒 DMZ Network"]
+        RODC["RODC Server"]
+        SafeSquid["Proxy Server (SafeSquid)"]
+    end
+
+    RWDC -->|"Replication"| RODC
+    RODC -->|"Authenticates"| SafeSquid
+    Endpoints -->|"Internet Websites (via Proxy)"| SafeSquid
 ```
 
 | Component | Location | Role |
 | :--- | :--- | :--- |
 | **DC Server (RWDC)** | LAN | Authoritative, writable Active Directory server. All identity creation happens here. |
 | **Endpoints (User PCs)** | LAN | Corporate workstations joined to the AD domain. Users log in with domain credentials. |
-| **PAC Provider** | LAN | Distributes the Proxy Auto-Config file, directing all browser traffic through SafeSquid. |
 | **RODC Server** | DMZ | Read-only AD replica in the DMZ. Can authenticate users locally but **cannot write to AD**. |
 | **Proxy Server (SafeSquid)** | DMZ | Intercepts all outbound internet traffic and enforces authentication, policies, and filtering. |
 
+
 **Why an RODC instead of a full DC in the DMZ?**
-Placing a full Writable DC in the DMZ would expose the entire AD identity store to the internet-facing network — a critical security risk. The RODC is the correct choice because:
-- It can **verify** Kerberos tickets — but only for accounts it has cached via the Password Replication Policy.
-- It **cannot accept write operations** — protecting the AD database even if the DMZ is compromised.
-- It holds only a **partial, controlled subset** of AD data — limiting the blast radius of any breach.
+Placing a full Writable DC in the DMZ would expose the entire AD identity store to the internet-facing network - a critical security risk. The RODC is the correct choice because:
+- It can **verify** Kerberos tickets - but only for accounts it has cached via the Password Replication Policy.
+- It **cannot accept write operations** - protecting the AD database even if the DMZ is compromised.
+- It holds only a **partial, controlled subset** of AD data - limiting the blast radius of any breach.
 
 ---
 
@@ -122,7 +107,7 @@ sequenceDiagram
     Browser->>SafeSquid: HTTP request + Kerberos ticket (Negotiate header)
     SafeSquid->>RODC: Validates ticket via LDAP (NEGOTIATE_LDAP_AUTH)
     RODC-->>SafeSquid: User identity confirmed
-    SafeSquid-->>Browser: Access granted — no password prompt!
+    SafeSquid-->>Browser: Access granted - no password prompt!
 ```
 
 **Why this flow requires both the RWDC and RODC:**
@@ -177,11 +162,11 @@ Use this table to identify which values in the commands and scripts need to be r
 
 | Attribute | Required Value | Notes |
 |---|---|---|
-| **Name** | `safesquid` | Fixed — do not change |
+| **Name** | `safesquid` | Fixed - do not change |
 | **SamAccountName** | `safesquid$` | `$` suffix is the AD computer account convention |
 | **UPN** | `safesquid.<REALM>@<REALM>` | e.g., `safesquid.COMPANY.LOCAL@COMPANY.LOCAL` |
 | **UAC Bitmask** | `33624064` | `WORKSTATION_TRUST` + `DONT_EXPIRE_PASSWORD` + `PARTIAL_SECRETS` (RODC-compatible) |
-| **Encryption Type** | `28` | RC4 (4) + AES-128 (8) + AES-256 (16) — supports all modern ciphers |
+| **Encryption Type** | `28` | RC4 (4) + AES-128 (8) + AES-256 (16) - supports all modern ciphers |
 
 ### Required Service Principal Names (SPNs)
 
@@ -189,13 +174,21 @@ These seven SPNs must be registered on the SafeSquid computer object. They cover
 
 | SPN Type | Format | Example Value | Purpose |
 | :--- | :--- | :--- | :--- |
-| **Proxy Host (FQDN)** | `HOST/<ProxyHostname>.<REALM>` | `HOST/proxy-01.COMPANY.LOCAL` | Kerberos machine identity — required by `msktutil` for keytab generation |
+| **Proxy Host (FQDN)** | `HOST/<ProxyHostname>.<REALM>` | `HOST/proxy-01.COMPANY.LOCAL` | Kerberos machine identity - required by `msktutil` for keytab generation |
 | **Proxy HTTP (FQDN)** | `HTTP/<ProxyHostname>.<REALM>` | `HTTP/proxy-01.COMPANY.LOCAL` | Browser ticket requests using the actual VM hostname |
 | **Proxy LDAP (FQDN)** | `LDAP/<ProxyHostname>.<REALM>` | `LDAP/proxy-01.COMPANY.LOCAL` | LDAP bind using the actual VM hostname |
 | **Common Host (FQDN)** | `HOST/safesquid.<REALM>` | `HOST/safesquid.COMPANY.LOCAL` | Kerberos identity for the common `safesquid` name |
-| **Common HTTP (FQDN)** | `HTTP/safesquid.<REALM>` | `HTTP/safesquid.COMPANY.LOCAL` | **Primary SPN** — used when browser connects via PAC file |
+| **Common HTTP (FQDN)** | `HTTP/safesquid.<REALM>` | `HTTP/safesquid.COMPANY.LOCAL` | **Primary SPN** - used when browser connects via PAC file |
 | **Common LDAP (FQDN)** | `LDAP/safesquid.<REALM>` | `LDAP/safesquid.COMPANY.LOCAL` | LDAP searching via the common `safesquid` identity |
-| **Common Host (Short)** | `host/safesquid` | `host/safesquid` | Short/NetBIOS form — legacy Windows client compatibility |
+| **Common Host (Short)** | `host/safesquid` | `host/safesquid` | Short/NetBIOS form - legacy Windows client compatibility |
+
+## Verify Registered SPNs
+
+Run this command on the **Writable DC** to check which SPNs are currently registered on the safesquid computer object:
+
+```powershell
+Get-ADComputer safesquid -Properties servicePrincipalName | Select-Object -ExpandProperty servicePrincipalName
+```
 
 ---
 
@@ -275,7 +268,7 @@ Set-ADObject -Identity $obj.DistinguishedName -Server $TargetDC `
 3.  **Edit Variables**: Open the file and fill in your values under `SET YOUR VARIABLES HERE`.
 4.  **Execute**: Open PowerShell as Administrator and run:
     ```powershell
-    ExecutionPolicy Bypass -File ".\Replicate-ADComputer.ps1"
+    Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process; .\Replicate-ADComputer.ps1
     ```
 
 ```powershell
@@ -313,7 +306,7 @@ $Existing = Get-ADComputer -Filter "SamAccountName -eq '$SAMAccount'" -Server $T
 if ($Existing) {
     Write-Host "Object found, updating attributes..." -ForegroundColor Yellow
     Set-ADComputer -Identity $Existing.DistinguishedName -Server $TargetDC -DNSHostName $DNSHostName -UserPrincipalName $UPN
-    # Differential SPN update — only adds missing SPNs to avoid "Duplicate" errors
+    # Differential SPN update - only adds missing SPNs to avoid "Duplicate" errors
     $SPNsToAdd = $DesiredSPNs | Where-Object { $_ -notin $Existing.servicePrincipalName }
     if ($SPNsToAdd) { Set-ADComputer -Identity $Existing.DistinguishedName -Server $TargetDC -Add @{ servicePrincipalName = $SPNsToAdd } }
     Write-Host "SPNs updated." -ForegroundColor Green
@@ -339,7 +332,7 @@ Write-Host "`nSUCCESS: Active Directory is now configured for SafeSquid." -Foreg
 
 ## Phase 2: Configure Password Replication Policy (PRP)
 
-Since the RODC is read-only, you must explicitly allow it to **cache the SafeSquid computer account password**. Without this step, the RODC will always refer ticket requests back to the RWDC — introducing latency and potential failures.
+Since the RODC is read-only, you must explicitly allow it to **cache the SafeSquid computer account password**. Without this step, the RODC will always refer ticket requests back to the RWDC - introducing latency and potential failures.
 
 1.  Open **Active Directory Users and Computers** on the RWDC.
 2.  Navigate to the **Domain Controllers** OU.
@@ -360,7 +353,7 @@ With the AD object in place and the RODC caching the safesquid identity, configu
 
 Navigate to **Application Setup** → **Integrate LDAP** → **LDAP servers**.
 
-![LDAP CONFIG IN SAFESQUID FOR RODC](/img/How_To/Configure_LDAP_In_Safesquid_For_RHOD/image1.webp)
+![LDAP CONFIG IN SAFESQUID FOR RODC](/img/How_To/Configure_LDAP_In_Safesquid_For_RODC/image1.webp)
 
 | Parameter | Configuration Value |
 | :--- | :--- |
@@ -372,7 +365,25 @@ Navigate to **Application Setup** → **Integrate LDAP** → **LDAP servers**.
 | **Ldap Domain** | `<your.domain.name>` |
 
 :::warning
-The **Ldap Bind Method** must be set to **NEGOTIATE_LDAP_AUTH**. This is what triggers the Kerberos ticket exchange instead of basic LDAP bind — it is the core of SSO functionality.
+The **Ldap Bind Method** must be set to **NEGOTIATE_LDAP_AUTH**. This is what triggers the Kerberos ticket exchange instead of basic LDAP bind - it is the core of SSO functionality.
+:::
+
+### Verification: Confirm LDAP is Working
+
+Once the LDAP configuration is saved and SafeSquid successfully binds to the RODC, navigate to the **LDAP Entries** tab (next to **LDAP servers**).
+
+If the setup is successful, SafeSquid will populate the LDAP Entries table with user and computer objects fetched from Active Directory:
+
+![LDAP Entries populated after successful RODC LDAP setup](/img/How_To/Configure_LDAP_In_Safesquid_For_RODC/image2.webp)
+
+| Column | What It Shows |
+| :--- | :--- |
+| **Login Attribute** | The user or computer account UPN (e.g., `ADMINISTRATOR@SAFESQUID.INTRANET`) |
+| **LDAP Domain** | The Distinguished Name path of the object in AD (e.g., `CN=Administrator,CN=Users,...`) |
+| **LDAP Profiles** | The AD groups the user belongs to — used by SafeSquid for role-based policy matching |
+
+:::note
+If the **LDAP Entries** tab is **empty** after saving, the LDAP bind has failed. Double-check the RODC hostname/IP, the `Ldap Username` credentials, and confirm the RODC's Password Replication Policy includes the `safesquid` account.
 :::
 
 ---
@@ -385,9 +396,9 @@ The **Ldap Bind Method** must be set to **NEGOTIATE_LDAP_AUTH**. This is what tr
 *   **Fix**: Trigger manual AD replication with `repadmin /syncall /AdeP` on the RWDC, or wait 15 minutes.
 
 ### 407 Proxy Authentication Required (After Setup)
-*   **Cause 1 — Time Drift**: Kerberos requires clocks to be within 5 minutes of each other. Check time sync with `date` on all servers.
-*   **Cause 2 — SPN Mismatch**: The browser is requesting a ticket for a hostname that isn't registered as an SPN. Verify all 7 SPNs are present with `Get-ADComputer safesquid -Properties servicePrincipalName`.
-*   **Cause 3 — PRP Not Set**: The RODC doesn't have the password cached. Verify the Password Replication Policy includes the `safesquid` account.
+*   **Cause 1 - Time Drift**: Kerberos requires clocks to be within 5 minutes of each other. Check time sync with `date` on all servers.
+*   **Cause 2 - SPN Mismatch**: The browser is requesting a ticket for a hostname that isn't registered as an SPN. Verify all 7 SPNs are present with `Get-ADComputer safesquid -Properties servicePrincipalName`.
+*   **Cause 3 - PRP Not Set**: The RODC doesn't have the password cached. Verify the Password Replication Policy includes the `safesquid` account.
 
 ### RODC Refers Requests to RWDC ("Referral" Error)
 *   **Cause**: The RODC received an account request it can't serve locally, so it redirects to the RWDC.
