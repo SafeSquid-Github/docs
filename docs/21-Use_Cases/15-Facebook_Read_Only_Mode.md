@@ -27,7 +27,7 @@ Organizations often want to allow Facebook for morale or recruitment but limit r
 
 
 ## Prerequisites
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, refer to the document - [How to enable HTTPS Inspection](/docs/SSL_Inspection/main/).
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, refer to the document - [How to enable HTTPS Inspection](/docs/SSL_Inspection/).
 
 
 

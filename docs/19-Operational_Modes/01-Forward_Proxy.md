@@ -16,7 +16,7 @@ keywords:
 
 ## Why explicit proxy is used
 
-Uncontrolled direct internet access increases malware, data loss, and compliance risk. SafeSquid provides a browser-based WebGUI at `http://safesquid.cfg` for configuration and management. Clients must send traffic through SafeSquid by configuring the browser or system proxy. Forward (explicit) proxy gives administrators clear control over which applications use the proxy and supports per-browser or per-application rollout.
+Uncontrolled direct internet access increases malware, data loss, and compliance risk. SafeSquid provides a browser-based WebGUI at `http://safesquid.cfg` (an embedded Rest UI interface built into SafeSquid; accessible via proxy, NOT resolved by DNS) for configuration and management. Clients must send traffic through SafeSquid by configuring the browser or system proxy. Forward (explicit) proxy gives administrators clear control over which applications use the proxy and supports per-browser or per-application rollout.
 
 
 
@@ -28,7 +28,7 @@ Explicit configuration ensures only intended traffic is inspected. Policy enforc
 
 ## Prerequisites
 
-**Client-side:** Browser supporting manual proxy configuration (Chrome, Firefox, or equivalent). SafeSquid proxy IP and port (default 8080). **SafeSquid-side:** SafeSquid deployed and listening on the proxy port; WebGUI reachable via proxy at `http://safesquid.cfg`.
+**Client-side:** Browser supporting manual proxy configuration (Chrome, Firefox, or equivalent). SafeSquid proxy IP and port (default 8080). **SafeSquid-side:** SafeSquid deployed and listening on the proxy port; WebGUI reachable via proxy at `http://safesquid.cfg` (embedded interface, NOT DNS-resolved).
 
 
 
@@ -126,6 +126,6 @@ Open `http://safesquid.cfg` through the proxy; the SafeSquid WebGUI loads. Brows
 ## Next steps
 
 - [Transparent Proxy](/docs/Operational_Modes/Transparent_Proxy/) for interception without client proxy configuration.
-- [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/) for PAC file, system-wide, and enterprise deployment.
+- [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/) for PAC file, system-wide, and enterprise deployment.
 - [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) to confirm end-to-end connectivity.
 

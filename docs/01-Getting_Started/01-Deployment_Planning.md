@@ -73,7 +73,7 @@ Match CPU, RAM, and NICs to your expected **peak** concurrent connections (not a
 
 *Minimum required interfaces; see [Network: NICs and bonding](#network-nics-and-bonding) for bonding recommendations.*
 
-Beyond 4,000 concurrent connections, assign multiple WAN IPs to avoid outbound NAT pool exhaustion and consider [Proxy Clustering](/docs/Proxy_Clustering/main/) for HA.
+Beyond 4,000 concurrent connections, assign multiple WAN IPs to avoid outbound NAT pool exhaustion and consider [Proxy Clustering](/docs/Proxy_Clustering/) for HA.
 
 ## Network: NICs and bonding
 
@@ -120,9 +120,9 @@ Monitor `/var/log/safesquid` disk usage weekly to avoid log truncation.
 
 | Scenario | When to use it | Key constraints | Next action |
 |----------|----------------|-----------------|-------------|
-| **Single node (pilot)** | Evaluation, lab, or low-availability pilot | No failover; plan for HA before production | [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/main/) |
+| **Single node (pilot)** | Evaluation, lab, or low-availability pilot | No failover; plan for HA before production | [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/) |
 | **Branch or small office** | One site, moderate user count | Size to [Hardware sizing](#hardware-sizing); use NVMe for logs | Single node (if outage is tolerable) or 2-node cluster for local HA (if uptime is critical) |
-| **High availability** | Production; cannot tolerate single-node outage | Master-slave or active-active; load balancer in front | [Proxy Clustering](/docs/Proxy_Clustering/main/), then [Disaster Recovery](/docs/Disaster_Recovery/main/) |
+| **High availability** | Production; cannot tolerate single-node outage | Master-slave or active-active; load balancer in front | [Proxy Clustering](/docs/Proxy_Clustering/), then [Disaster Recovery](/docs/Disaster_Recovery/) |
 | **Cloud (AWS, Azure, etc.)** | No on-prem hardware; cloud-first | Match instance type to hardware matrix; use cloud NVMe/storage | [Cloud Deployment](/docs/Getting_Started/Install_SafeSquid/Cloud_Deployment/) |
 
 ## Disaster recovery
@@ -235,6 +235,6 @@ Whitelist these for real-time URL categorization and classification:
 
 ## Next steps
 
-Proceed to [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/main/). After installation, [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) to confirm proxy and client connectivity.
+Proceed to [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/). After installation, [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) to confirm proxy and client connectivity.
 
-**Related:** [Activate Your License](/docs/Getting_Started/Activate/) for licensing and endpoint list · [Proxy Clustering](/docs/Proxy_Clustering/main/) for HA cluster setup
+**Related:** [Activate Your License](/docs/Getting_Started/Activate/) for licensing and endpoint list · [Proxy Clustering](/docs/Proxy_Clustering/) for HA cluster setup

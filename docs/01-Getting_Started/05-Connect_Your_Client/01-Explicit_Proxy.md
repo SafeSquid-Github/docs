@@ -34,7 +34,7 @@ Use explicit proxy for initial testing. For production deployments, use [PAC Fil
 - SafeSquid IP address and port (default: 8080 for HTTP)
 - SafeSquid must be running and accessible from the client network
 - For system-wide Windows/macOS configuration: Administrator privileges
-- For HTTPS sites: [SSL Inspection](/docs/SSL_Inspection/main/) configured (optional for initial testing)
+- For HTTPS sites: [SSL Inspection](/docs/SSL_Inspection/) configured (optional for initial testing)
 
 :::
 
@@ -153,12 +153,12 @@ You should see your request logged with client IP, URL, and timestamp.
 
 **Access SafeSquid admin interface:**
 
-- Via proxy: `http://safesquid.cfg/` (special hostname resolved by SafeSquid's DNS when your client uses the proxy)
+- Via proxy: `http://safesquid.cfg/` (embedded Rest UI interface built into SafeSquid; accessible only when your client uses the proxy, but NOT resolved by SafeSquid's DNS resolver)
 - Direct: `https://SAFESQUID-IP:8443/`
 
 :::caution HTTPS Certificate Warnings
 
-Until [SSL Inspection](/docs/SSL_Inspection/main/) is configured, HTTPS sites will show certificate warnings. This is expected—click through for now.
+Until [SSL Inspection](/docs/SSL_Inspection/) is configured, HTTPS sites will show certificate warnings. This is expected—click through for now.
 
 :::
 
@@ -171,7 +171,7 @@ Until [SSL Inspection](/docs/SSL_Inspection/main/) is configured, HTTPS sites wi
 | Bypass list not working | Syntax error in bypass list | Windows: Use semicolons `;` <br/> macOS/Linux: Use commas `,` |
 | Firefox ignores system proxy | Firefox uses own settings | Configure Firefox manually (see steps above) |
 | "This site can't be reached" | Wrong IP or port | Verify SafeSquid IP and port 8080 in settings |
-| HTTPS sites don't load at all | SSL inspection not configured | Either [configure SSL inspection](/docs/SSL_Inspection/main/) or disable HTTPS proxy temporarily |
+| HTTPS sites don't load at all | SSL inspection not configured | Either [configure SSL inspection](/docs/SSL_Inspection/) or disable HTTPS proxy temporarily |
 
 **Still not working?**
 
@@ -197,7 +197,7 @@ Until [SSL Inspection](/docs/SSL_Inspection/main/) is configured, HTTPS sites wi
 ## Next Steps
 
 1. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Run comprehensive tests to confirm proxy functionality
-2. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Enable HTTPS decryption to inspect encrypted traffic
+2. **[SSL Inspection](/docs/SSL_Inspection/)** — Enable HTTPS decryption to inspect encrypted traffic
 3. **Scale your deployment:**
    - **Small team (10-100 users):** [PAC File](/docs/Getting_Started/Connect_Your_Client/PAC_File/)
    - **Enterprise (100+ endpoints):** [Enterprise Deployment](/docs/Getting_Started/Connect_Your_Client/Enterprise_Deployment/)

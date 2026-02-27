@@ -70,7 +70,7 @@ If all websites are accessible through the browser, the product is activated.
 ## Where to get license details
 After successful activation, license details appear on the Support page of the SafeSquid Web GUI.
 
-For more details see the [Support page](/docs/Audit_Forensics/main/) (license details after activation) or [Activate](/docs/Getting_Started/Activate/).
+For more details see the [Support page](/docs/Audit_Forensics/) (license details after activation) or [Activate](/docs/Getting_Started/Activate/).
 
 
 
@@ -168,7 +168,7 @@ An anonymous proxy will allow users to surf the web anonymously, since it tunnel
 Anonymous Proxy service can enhance security and lets users access some restricted websites online.
 
 
-For more detail: [Access Restriction](/docs/Access_Restriction/main/) and [Use Cases](/docs/Use_Cases/main/) for blocking anonymous proxies and application control.
+For more detail: [Access Restriction](/docs/Access_Restriction/) and [Use Cases](/docs/Use_Cases/) for blocking anonymous proxies and application control.
 
 
 
@@ -219,7 +219,7 @@ Yes. SafeSquid has a reporting module that reduces processing time and provides 
 
 
 ## Why does SafeSquid become slow after running for some time?
-Slowness after sustained operation is often due to resource exhaustion (disk, memory, or connection state). Check disk space and RAM (see [Disk space and RAM are full](/docs/Troubleshooting/Disk_Space_and_RAM_are_Full/)), clear or rotate logs, and review the [Performance Plot](/docs/Audit_Forensics/Performance_Plot/) and [Support](/docs/Audit_Forensics/main/) page for resource usage. Restart the proxy after freeing resources if needed.
+Slowness after sustained operation is often due to resource exhaustion (disk, memory, or connection state). Check disk space and RAM (see [Disk space and RAM are full](/docs/Troubleshooting/Disk_Space_and_RAM_are_Full/)), clear or rotate logs, and review the [Performance Plot](/docs/Audit_Forensics/Performance_Plot/) and [Support](/docs/Audit_Forensics/) page for resource usage. Restart the proxy after freeing resources if needed.
 
 
 

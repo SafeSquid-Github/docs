@@ -132,6 +132,6 @@ For environments with DHCP where client IPs change:
 ## Next steps
 
 - **Add user authentication:** Combine Network Signature with [Directory Services](/docs/Authentication/Directory_Services/main/) or [BASIC](/docs/Authentication/BASIC/) for user-aware policies
-- **Refine access rules:** Use [Access Restriction](/docs/Access_Restriction/main/) to define what each user-group can access
-- **Enable SSL Inspection:** Configure [SSL Inspection](/docs/SSL_Inspection/main/) to inspect HTTPS traffic from IP-based groups
+- **Refine access rules:** Use [Access Restriction](/docs/Access_Restriction/) to define what each user-group can access
+- **Enable SSL Inspection:** Configure [SSL Inspection](/docs/SSL_Inspection/) to inspect HTTPS traffic from IP-based groups
 - **Report by group:** Use SafeSquid reports to analyze bandwidth and activity per user-group

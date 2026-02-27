@@ -78,5 +78,5 @@ Use Categorize websites to Create and add websites to the "whitelist category".
 - **Log Analysis**: Access logs show allowed response for the whitelisted URL; no block template or category block for that domain.
 - **Performance Validation**: From a client, open the whitelisted site; page loads without block template.
 
-**Related**: [Web Categorization](/docs/Profiling_Engine/Web_Categorization/), [Access Restriction](/docs/Access_Restriction/main/), [Reporting](/docs/Audit_Forensics/Reporting_Module/), [Troubleshooting](/docs/Troubleshooting/main/)
+**Related**: [Web Categorization](/docs/Profiling_Engine/Web_Categorization/), [Access Restriction](/docs/Access_Restriction/), [Reporting](/docs/Audit_Forensics/Reporting_Module/), [Troubleshooting](/docs/Troubleshooting/)
 

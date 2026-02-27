@@ -44,4 +44,4 @@ Organizations need to send traffic from one URL to another for branding, blockin
 
 ## Next steps
 
-Combine with [Access Restriction](/docs/Access_Restriction/main/) for allow/deny by URL; use [Profiling Engine](/docs/Profiling_Engine/main/) for category-based policy.
+Combine with [Access Restriction](/docs/Access_Restriction/) for allow/deny by URL; use [Profiling Engine](/docs/Profiling_Engine/) for category-based policy.

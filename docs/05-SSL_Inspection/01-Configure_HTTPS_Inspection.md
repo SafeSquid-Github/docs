@@ -22,7 +22,7 @@ This guide covers the complete HTTPS inspection setup: generate or import a Root
 **SafeSquid side:**
 - SafeSquid installed and licensed
 - Access to [Self-Service Portal](https://key.safesquid.com) (for certificate generation)
-- Access to SafeSquid Configuration Portal (`http://safesquid.cfg/`—special hostname resolved by SafeSquid's DNS when your client uses the proxy—or `https://SERVER-IP:8443/` for direct access)
+- Access to SafeSquid Configuration Portal (`http://safesquid.cfg/`—embedded Rest UI interface built into SafeSquid; accessible only when your client uses the proxy, but NOT resolved by SafeSquid's DNS resolver—or `https://SERVER-IP:8443/` for direct access)
 
 **Client side:**
 - List of domains to bypass (banking, healthcare, SSL-pinned apps)
@@ -447,10 +447,10 @@ tail -f /var/log/safesquid/access/extended.log
 
 ## Next Steps
 
-1. **[Authentication](/docs/Authentication/main/)** — Enable user-aware policies (SSL Inspection must be working first)
-2. **[Access Restriction](/docs/Access_Restriction/main/)** — Configure URL filtering (now works on HTTPS)
-3. **[Data Leakage Prevention](/docs/Data_Leakage_Prevention/main/)** — Scan HTTPS uploads for sensitive data
-4. **[Troubleshooting](/docs/Troubleshooting/main/)** — SSL-specific issues and diagnostics
+1. **[Authentication](/docs/Authentication/)** — Enable user-aware policies (SSL Inspection must be working first)
+2. **[Access Restriction](/docs/Access_Restriction/)** — Configure URL filtering (now works on HTTPS)
+3. **[Data Leakage Prevention](/docs/Data_Leakage_Prevention/)** — Scan HTTPS uploads for sensitive data
+4. **[Troubleshooting](/docs/Troubleshooting/)** — SSL-specific issues and diagnostics
 
 **Related:**
 - [Self-Service Portal](/docs/SafeSquid_SWG/Self-Service_Portal/) — Manage certificates

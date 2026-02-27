@@ -294,5 +294,5 @@ Cookies will be dropped for both incoming and outgoing requests.
 - **Log Analysis**: Access logs reflect cookie allow/deny per policy; blocked cookie exchange may show in response or request logs.
 - **Performance Validation**: Browsing with Allow profile allows login and cookies; with Deny or Drop profile, target sites do not receive or retain cookies as configured.
 
-**Related**: [Access Restriction](/docs/Access_Restriction/main/), [Header Obfuscation](/docs/Header_Obfuscation/main/), [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), [Troubleshooting](/docs/Troubleshooting/main/)
+**Related**: [Access Restriction](/docs/Access_Restriction/), [Header Obfuscation](/docs/Header_Obfuscation/), [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), [Troubleshooting](/docs/Troubleshooting/)
 

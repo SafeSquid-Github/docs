@@ -93,5 +93,5 @@ You must edit the original entry, because the entries in template section are pr
 - **Log Analysis**: When a block or redirect occurs, the custom template is served; config logs show the template change if applicable.
 - **Performance Validation**: Trigger a block or use case that invokes the template; the custom message or page displays as designed.
 
-**Related**: [Startup Parameters](/docs/Customisation/Startup_Parameters/), [Customisation](/docs/Customisation/main/), [Access Restriction](/docs/Access_Restriction/main/), [Troubleshooting](/docs/Troubleshooting/main/)
+**Related**: [Startup Parameters](/docs/Customisation/Startup_Parameters/), [Customisation](/docs/Customisation/), [Access Restriction](/docs/Access_Restriction/), [Troubleshooting](/docs/Troubleshooting/)
 

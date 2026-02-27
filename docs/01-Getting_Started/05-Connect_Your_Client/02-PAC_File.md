@@ -326,7 +326,7 @@ WPAD can be hijacked on untrusted networks (coffee shops, airports) through DNS 
 ## Next Steps
 
 1. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm traffic flows through SafeSquid
-2. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Enable HTTPS decryption
+2. **[SSL Inspection](/docs/SSL_Inspection/)** — Enable HTTPS decryption
 3. **Scale your deployment:**
    - **Enterprise (100+ endpoints):** [Enterprise Deployment](/docs/Getting_Started/Connect_Your_Client/Enterprise_Deployment/) — Push PAC URL via GPO/MDM
    - **Application-specific:** [Application Configuration](/docs/Getting_Started/Connect_Your_Client/Application_Specific_Configuration/) — Configure non-browser apps

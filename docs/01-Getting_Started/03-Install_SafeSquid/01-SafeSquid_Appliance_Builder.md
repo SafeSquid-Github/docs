@@ -139,7 +139,7 @@ SAB will **erase and repartition** the target disk. Back up any existing data be
 | **Monit** | Process monitoring and auto-restart for SafeSquid |
 | **BIND9** | Local DNS resolver (port 53) |
 | **Logs** | `/var/log/safesquid/` |
-| **Admin interface** | `https://safesquid.cfg/` (special hostname resolved by SafeSquid's DNS when your client uses the proxy) |
+| **Admin interface** | `https://safesquid.cfg/` (embedded Rest UI built into SafeSquid; accessible via proxy, NOT resolved by DNS) |
 | **Direct admin access** | `https://SERVER-IP:8443/` (before proxy is configured, or for direct access) |
 
 ## Verify Installation
@@ -205,6 +205,6 @@ Switch to ALT + F2 if:
 ## Next Steps
 
 1. **[Activate Your License](/docs/Getting_Started/Activate/)** — Upload your activation key to make SafeSquid fully operational
-2. **[Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/)** — Configure a browser to use the proxy
+2. **[Connect Your Client](/docs/Getting_Started/Connect_Your_Client/)** — Configure a browser to use the proxy
 3. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm traffic flows through SafeSquid
-4. **[Enable SSL Inspection](/docs/SSL_Inspection/main/)** — Decrypt and inspect HTTPS traffic
+4. **[Enable SSL Inspection](/docs/SSL_Inspection/)** — Decrypt and inspect HTTPS traffic

@@ -63,7 +63,7 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 
 ## How to Configure Profiling
 
-### 1. [User Identities](/docs/Profiling_Engine/User_Identities/main/) — Connect LDAP/AD, Create Groups
+### 1. [User Identities](/docs/Profiling_Engine/User_Identities/) — Connect LDAP/AD, Create Groups
 
 **Your goal:** Tie every HTTP request to a user and group (Finance, IT, Contractors) so policies apply by identity, not just IP address.
 
@@ -76,7 +76,7 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 
 **⚠️ Common pitfall:** Don't rely on IP addresses for identity. Laptops roam, NAT pools rotate, VPNs mask IPs. Use user authentication (LDAP/SAML) or accept that your policies will break constantly.
 
-→ [Configure User Identities](/docs/Profiling_Engine/User_Identities/main/)
+→ [Configure User Identities](/docs/Profiling_Engine/User_Identities/)
 
 ---
 
@@ -123,7 +123,7 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 
 ---
 
-### 4. [Content Analyser](/docs/Profiling_Engine/Content_Analyser/main/) — Inspect Files, Text, Images
+### 4. [Content Analyser](/docs/Profiling_Engine/Content_Analyser/) — Inspect Files, Text, Images
 
 **Your goal:** Detect malware, data leaks, and inappropriate content by inspecting actual file content, not just the extension or URL.
 
@@ -140,7 +140,7 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 
 **⚠️ Common pitfall:** Content analysis requires SSL inspection to be enabled. If you're not decrypting HTTPS, the Content Analyser can't inspect encrypted uploads.
 
-→ [Configure Content Analyser](/docs/Profiling_Engine/Content_Analyser/main/)
+→ [Configure Content Analyser](/docs/Profiling_Engine/Content_Analyser/)
 
 ---
 
@@ -231,7 +231,7 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 ## Related Topics
 
 **Prerequisites:**
-- [Authentication Setup](/docs/Authentication/main/) — User identities require LDAP, AD, or SAML authentication
+- [Authentication Setup](/docs/Authentication/) — User identities require LDAP, AD, or SAML authentication
 
 **Next Steps:**
 - [Access Restrictions](/docs/Access_Restriction/) — Use profiles to build allow/block policies

@@ -163,6 +163,6 @@ This structure ensures easy maintenance, debugging, and extensibility.
 ## Next Steps
 
 1. **[Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/)** — Access the admin interface and configure policies
-2. **[Supporting Services](/docs/SafeSquid_SWG/Supporting_Services/main/)** — Set up Monit, BIND, and NTP for production readiness
-3. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Enable HTTPS decryption
-4. **[Authentication](/docs/Authentication/main/)** — Integrate with Active Directory or LDAP
+2. **[Supporting Services](/docs/SafeSquid_SWG/Supporting_Services/)** — Set up Monit, BIND, and NTP for production readiness
+3. **[SSL Inspection](/docs/SSL_Inspection/)** — Enable HTTPS decryption
+4. **[Authentication](/docs/Authentication/)** — Integrate with Active Directory or LDAP

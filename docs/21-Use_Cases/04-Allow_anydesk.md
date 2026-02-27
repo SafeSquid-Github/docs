@@ -99,5 +99,5 @@ Bind that created user group and Request Type in Access Profiles and decide whet
 - **Log Analysis**: SafeSquid access logs should show successful CONNECT or requests for the remote app when allowed; blocked attempts appear with deny or policy response codes.
 - **Performance Validation**: From an allowed user and device, launch [AnyDesk](https://anydesk.com/) (or the configured app) with proxy set; connection should succeed. From a non-allowed user or app, access should be blocked.
 
-**Related**: [SSL Inspection](/docs/SSL_Inspection/main/), [Access Restriction](/docs/Access_Restriction/main/), [Application Signatures](/docs/Profiling_Engine/Application_Signatures/), [Restrict AnyDesk](/docs/Use_Cases/Restrict_anydesk/), [Troubleshooting](/docs/Troubleshooting/main/)
+**Related**: [SSL Inspection](/docs/SSL_Inspection/), [Access Restriction](/docs/Access_Restriction/), [Application Signatures](/docs/Profiling_Engine/Application_Signatures/), [Restrict AnyDesk](/docs/Use_Cases/Restrict_anydesk/), [Troubleshooting](/docs/Troubleshooting/)
 

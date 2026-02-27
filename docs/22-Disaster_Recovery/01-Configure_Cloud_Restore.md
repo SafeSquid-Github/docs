@@ -117,5 +117,5 @@ This creates a restore point you can revert to if changes cause issues.
 - Verify Monit configuration includes SafeSquid: `monit status`
 - Manually restart if needed: `systemctl restart safesquid`
 
-**Related**: [Disaster Recovery overview](/docs/Disaster_Recovery/main/), [Proxy Clustering](/docs/Proxy_Clustering/main/), [Troubleshooting](/docs/Troubleshooting/main/)
+**Related**: [Disaster Recovery overview](/docs/Disaster_Recovery/), [Proxy Clustering](/docs/Proxy_Clustering/), [Troubleshooting](/docs/Troubleshooting/)
 

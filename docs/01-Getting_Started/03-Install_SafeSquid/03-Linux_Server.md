@@ -195,7 +195,7 @@ tail -50 /var/log/safesquid/safesquid.log
 **4. Access admin interface:**
 
 - **Direct access:** `https://SERVER-IP:8443/`
-- **Via proxy:** Configure a browser to use `SERVER-IP:8080`, then navigate to `https://safesquid.cfg/`
+- **Via proxy:** Configure a browser to use `SERVER-IP:8080`, then navigate to `https://safesquid.cfg/` (embedded Rest UI interface built into SafeSquid; NOT resolved by SafeSquid's DNS resolver)
 
 If the interface loads, installation succeeded.
 
@@ -321,6 +321,6 @@ Configure both Monit and BIND9 before moving to production. Without Monit, a cra
 
 1. **[Configure Supporting Services](#configure-supporting-services)** — Set up Monit and BIND9 before production
 2. **[Activate Your License](/docs/Getting_Started/Activate/)** — Upload your activation key to make SafeSquid fully operational
-3. **[Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/)** — Configure a browser to use the proxy
+3. **[Connect Your Client](/docs/Getting_Started/Connect_Your_Client/)** — Configure a browser to use the proxy
 4. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm traffic flows through SafeSquid
-5. **[Enable SSL Inspection](/docs/SSL_Inspection/main/)** — Decrypt and inspect HTTPS traffic
+5. **[Enable SSL Inspection](/docs/SSL_Inspection/)** — Decrypt and inspect HTTPS traffic

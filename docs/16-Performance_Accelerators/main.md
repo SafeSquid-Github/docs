@@ -39,4 +39,4 @@ Enterprise networks require seamless integration with existing routing infrastru
 
 ## Next steps
 
-For high availability see [Proxy Clustering](/docs/Proxy_Clustering/main/); for operational modes see [Transparent Proxy](/docs/Operational_Modes/Transparent_Proxy/) and [WCCP](/docs/Performance_Accelerators/WCCP/).
+For high availability see [Proxy Clustering](/docs/Proxy_Clustering/); for operational modes see [Transparent Proxy](/docs/Operational_Modes/Transparent_Proxy/) and [WCCP](/docs/Performance_Accelerators/WCCP/).

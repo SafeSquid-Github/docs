@@ -122,7 +122,7 @@ lsblk
 
 **Access the admin interface:**
 - Direct: `https://INSTANCE-PUBLIC-IP:8443/`
-- Via proxy: `https://safesquid.cfg/` (after configuring a client)
+- Via proxy: `https://safesquid.cfg/` (embedded Rest UI interface built into SafeSquid; accessible via proxy, NOT resolved by DNS)
 
 If the interface loads, deployment succeeded.
 
@@ -203,7 +203,7 @@ Use [Configuration Sync](/docs/Proxy_Clustering/Configuration_Sync/) to replicat
 ## Next Steps
 
 1. **[Activate Your License](/docs/Getting_Started/Activate/)** — Upload your activation key to make SafeSquid fully operational
-2. **[Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/)** — Configure a browser to use the cloud proxy
+2. **[Connect Your Client](/docs/Getting_Started/Connect_Your_Client/)** — Configure a browser to use the cloud proxy
 3. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm traffic flows through SafeSquid
-4. **[Enable SSL Inspection](/docs/SSL_Inspection/main/)** — Decrypt and inspect HTTPS traffic
-5. **[Set up HA](/docs/Proxy_Clustering/main/)** — Configure load balancing and failover for production
+4. **[Enable SSL Inspection](/docs/SSL_Inspection/)** — Decrypt and inspect HTTPS traffic
+5. **[Set up HA](/docs/Proxy_Clustering/)** — Configure load balancing and failover for production

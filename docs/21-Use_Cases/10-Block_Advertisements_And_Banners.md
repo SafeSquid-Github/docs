@@ -92,6 +92,6 @@ Administrators can replace the default template with a custom template.
 ## Next steps
 
 - [Block inappropriate images using Image Analyzer](/docs/Use_Cases/Block_inappropriate_images_by_using_Image_Analyzer/) for visual content filtering.
-- [Header Re-Write](/docs/Header_Obfuscation/main/) for header filtering and privacy.
-- [Content Modifier](/docs/Content_Modifier/main/) for custom regex-based content rewriting.
+- [Header Re-Write](/docs/Header_Obfuscation/) for header filtering and privacy.
+- [Content Modifier](/docs/Content_Modifier/) for custom regex-based content rewriting.
 

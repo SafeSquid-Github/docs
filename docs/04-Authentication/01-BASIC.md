@@ -37,8 +37,8 @@ For production deployments with external access, use [Directory Services](/docs/
 
 :::info Prerequisites
 - SafeSquid deployed and operational
-- Admin access to SafeSquid configuration interface (`http://safesquid.cfg/`)
-- Browser configured to use SafeSquid as proxy (see [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/))
+- Admin access to SafeSquid configuration interface (`http://safesquid.cfg/` — embedded Rest UI, NOT DNS-resolved)
+- Browser configured to use SafeSquid as proxy (see [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/))
 :::
 
 ## Enable browser authentication
@@ -169,8 +169,8 @@ For automated password policy enforcement, migrate to [Directory Services](/docs
 
 ## Next steps
 
-- **Add group-based policies:** Combine authentication with [Access Restriction](/docs/Access_Restriction/main/) to enforce different rules per user or group
-- **Attribute HTTPS traffic:** Enable [SSL Inspection](/docs/SSL_Inspection/main/) so encrypted traffic shows authenticated usernames in logs
+- **Add group-based policies:** Combine authentication with [Access Restriction](/docs/Access_Restriction/) to enforce different rules per user or group
+- **Attribute HTTPS traffic:** Enable [SSL Inspection](/docs/SSL_Inspection/) so encrypted traffic shows authenticated usernames in logs
 - **Upgrade to directory:** Migrate to [Directory Services](/docs/Authentication/Directory_Services/main/) when user count grows or centralized identity is required
 - **IP-based fallback:** Use [Network Signature](/docs/Authentication/Network_Signature/) for devices that cannot authenticate
 - **Bypass apps:** Configure [Bypass Authentication](/docs/Authentication/Bypass_Authentication/) for OS updates and automatic processes

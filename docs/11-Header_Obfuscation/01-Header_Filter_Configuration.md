@@ -226,5 +226,5 @@ In this sub-section, you can find the example headers with type and values.
 - **Log Analysis**: Requests and responses show modified or stripped headers per policy; WebSocket or target-site behavior matches expected allow/deny/insert.
 - **Performance Validation**: Test with profile (e.g. ALLOW WEBSOCKET, REMOVE WEBSOCKETS, X-GoogApps-Allowed-Domains); expected sites work and restricted behavior is enforced.
 
-**Related**: [Cookie Inspection](/docs/Cookie_Inspection/main/), [Access Restriction](/docs/Access_Restriction/main/), [URL Redirection SafeSearch](/docs/URL_Redirection/SafeSearch/), [Troubleshooting](/docs/Troubleshooting/main/)
+**Related**: [Cookie Inspection](/docs/Cookie_Inspection/), [Access Restriction](/docs/Access_Restriction/), [URL Redirection SafeSearch](/docs/URL_Redirection/SafeSearch/), [Troubleshooting](/docs/Troubleshooting/)
 

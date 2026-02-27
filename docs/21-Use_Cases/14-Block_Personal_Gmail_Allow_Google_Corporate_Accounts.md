@@ -60,7 +60,7 @@ Insert a header so only allowed domains are accepted by Google.
 
 1. Open **Restriction Policies** (left panel).
 2. Open **Privacy Control** submenu.
-3. Open [Header Filter](/docs/Header_Obfuscation/main/) section. Ensure **Global** is **Enabled** **True**.
+3. Open [Header Filter](/docs/Header_Obfuscation/) section. Ensure **Global** is **Enabled** **True**.
 
 ![Header filter under Restriction Policies](/img/How_To/Block_Personal_Gmail_Allow_Google_Corporate_Accounts/image3.webp)
 
@@ -100,7 +100,7 @@ Multiple domains: separate each with a comma, no space.
 
 ## Next steps
 
-- [Header Re-Write](/docs/Header_Obfuscation/main/) for header filtering and privacy controls.
-- [Access Restriction](/docs/Access_Restriction/main/) for URL and category-based policies.
+- [Header Re-Write](/docs/Header_Obfuscation/) for header filtering and privacy controls.
+- [Access Restriction](/docs/Access_Restriction/) for URL and category-based policies.
 - [SSL Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) for HTTPS visibility and bypass rules.
 

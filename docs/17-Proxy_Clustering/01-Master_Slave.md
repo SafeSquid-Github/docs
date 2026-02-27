@@ -143,5 +143,5 @@ On the master, open [Reporting Service](/docs/SafeSquid_SWG/Reporting_Service/) 
 - After policy changes on master, restart slave to apply: Configuration Portal → Support → Restart SafeSquid
 - Verify slave activation key matches master (same license)
 
-**Related**: [Configuration Sync](/docs/Proxy_Clustering/Configuration_Sync/), [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), [Reporting Service](/docs/SafeSquid_SWG/Reporting_Service/), [Troubleshooting](/docs/Troubleshooting/main/)
+**Related**: [Configuration Sync](/docs/Proxy_Clustering/Configuration_Sync/), [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), [Reporting Service](/docs/SafeSquid_SWG/Reporting_Service/), [Troubleshooting](/docs/Troubleshooting/)
 

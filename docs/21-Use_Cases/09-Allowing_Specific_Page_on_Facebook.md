@@ -17,7 +17,7 @@ Many organizations block Facebook but need to allow a specific page (e.g. compan
 
 
 ## Prerequisites
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, refer to the document - [How to enable HTTPS Inspection](/docs/SSL_Inspection/main/).
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, refer to the document - [How to enable HTTPS Inspection](/docs/SSL_Inspection/).
 
 
 
