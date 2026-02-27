@@ -12,19 +12,35 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Overview
+## Problem: Kerberos SSO in RODC Environments
 
-This guide explains how to configure **Kerberos Single Sign-On (SSO)** for SafeSquid when your network uses a **Read-Only Domain Controller (RODC)** — a common setup in segmented enterprise networks, branch offices, and DMZ environments.
+In enterprise networks that use **Read-Only Domain Controllers (RODCs)** — typically deployed in DMZ or branch-office segments — configuring Kerberos SSO for SafeSquid fails silently. The RODC cannot create computer objects or register Service Principal Names (SPNs) by itself due to its read-only nature.
 
-By the end of this guide, employees on your corporate network will be able to browse the internet **through SafeSquid without any login prompts**, authenticated automatically using their Active Directory credentials.
+As a result:
+- Users experience repeated **`407 Proxy Authentication Required`** popups instead of transparent SSO.
+- IT teams cannot resolve this directly on the RODC — all changes must originate from a **Writable DC (RWDC)**.
+- Without the SafeSquid computer object being created and replicated to the RODC, the RODC remains **"blind"** to SafeSquid's existence and cannot issue Kerberos tickets for it.
+
+:::warning
+The RODC **cannot** create computer objects or register SPNs by itself. All AD preparation **must be done on the Writable DC (RWDC)**, then pushed to the RODC through replication.
+:::
 
 ---
 
-## Real-World Architecture: Where This Problem Occurs
+## Benefits: What You Gain After This Setup
 
-This setup applies directly to enterprise networks where the **proxy server lives in a DMZ** (De-Militarized Zone) — separated from the main internal network by a firewall.
+Once the SafeSquid identity is pre-registered on the RWDC and replicated to the RODC, the following is achieved:
 
-Consider the following typical enterprise layout:
+*   **Transparent Single Sign-On**: Domain users browse the internet through SafeSquid with **zero credential prompts** — authentication happens invisibly in the background.
+*   **Security-Compliant Encryption**: Enforces **AES-256** Kerberos encryption across all site locations, meeting modern security standards.
+*   **Centralized Identity Control**: The SafeSquid computer object is managed once on the RWDC and automatically replicated to all RODC locations — no per-site configuration required.
+*   **Reduced Admin Overhead**: The provided automation script handles all complex AD attribute mapping — UAC flags, SPNs, and encryption types — in a single run.
+
+---
+
+## Advantages: Why This Architecture Uses an RODC in the DMZ
+
+This problem is specific to a well-established enterprise security pattern — the **LAN + DMZ split** — where the proxy server is intentionally placed outside the trusted internal network.
 
 ```
 ┌──────────────────────────────────────────────────┐
@@ -40,9 +56,9 @@ Consider the following typical enterprise layout:
 │  │  Provider   │  routing  │  (User PCs)      │  │
 │  └─────────────┘           └────────┬─────────┘  │
 │                                     │            │
-│  ┌─────────────┐                    │            │
-│  │  DC Server  │                    │ Internet   │
-│  │  (RWDC)     │                    │ Websites   │
+│  ┌─────────────┐                    │ Internet   │
+│  │  DC Server  │                    │ Websites   │
+│  │  (RWDC)     │                    │            │
 │  └──────┬──────┘                    │            │
 └─────────┼─────────────────────────┬─┘            │
           │ (Replication)           │              │
@@ -57,61 +73,36 @@ Consider the following typical enterprise layout:
 └──────────────────────────────────────────────────┘
 ```
 
-**In this architecture:**
-
 | Component | Location | Role |
 | :--- | :--- | :--- |
-| **DC Server (RWDC)** | LAN | The authoritative, writable Active Directory server. All identity creation happens here. |
+| **DC Server (RWDC)** | LAN | Authoritative, writable Active Directory server. All identity creation happens here. |
 | **Endpoints (User PCs)** | LAN | Corporate workstations joined to the AD domain. Users log in with domain credentials. |
-| **PAC Provider** | LAN | A web server that distributes the Proxy Auto-Config file, directing all browser traffic through SafeSquid. |
-| **RODC Server** | DMZ | A **read-only replica** of the DC, placed in the DMZ for security. It can authenticate users locally, but **cannot create or modify any AD objects**. |
-| **Proxy Server (SafeSquid)** | DMZ | Intercepts all outbound internet traffic from endpoints and enforces authentication, policies, and filtering. |
+| **PAC Provider** | LAN | Distributes the Proxy Auto-Config file, directing all browser traffic through SafeSquid. |
+| **RODC Server** | DMZ | Read-only AD replica in the DMZ. Can authenticate users locally but **cannot write to AD**. |
+| **Proxy Server (SafeSquid)** | DMZ | Intercepts all outbound internet traffic and enforces authentication, policies, and filtering. |
 
-### Why Does This Architecture Exist?
-
-The DMZ is an intentionally isolated security zone. Placing a full Writable DC in the DMZ would expose your entire identity store to the internet-facing network — a major security risk. Instead, an **RODC** is placed there:
-
-- It can **verify** Kerberos tickets for users — but only for accounts it has cached.
-- It **cannot** accept new write operations (no new accounts, no SPN changes).
-- It holds only a **partial, controlled subset** of AD data.
-
-This is exactly where the problem lies.
+**Why an RODC instead of a full DC in the DMZ?**
+Placing a full Writable DC in the DMZ would expose the entire AD identity store to the internet-facing network — a critical security risk. The RODC is the correct choice because:
+- It can **verify** Kerberos tickets — but only for accounts it has cached via the Password Replication Policy.
+- It **cannot accept write operations** — protecting the AD database even if the DMZ is compromised.
+- It holds only a **partial, controlled subset** of AD data — limiting the blast radius of any breach.
 
 ---
 
-## The Problem: Why SSO Breaks in RODC Environments
+## Call to Action: How to Integrate SafeSquid with RODC
 
-When a user's browser (on the LAN) is told by the PAC file to route traffic through SafeSquid (in the DMZ), the following happens for Kerberos authentication:
+The fix is a three-phase process:
 
-1. The browser asks the **RODC** for a Kerberos ticket for `HTTP/safesquid.<REALM>`.
-2. The RODC looks up its local (cached) database for that Service Principal Name (SPN).
-3. **If it doesn't find it** — because the SafeSquid computer object was never created or replicated — it **cannot issue a ticket**.
-4. The browser falls back to basic authentication, and the user sees a `407 Proxy Authentication Required` popup.
+| Phase | What You Do | Where |
+| :--- | :--- | :--- |
+| **Phase 1** | Create the SafeSquid computer object + SPNs in Active Directory | On the **Writable DC (RWDC)** |
+| **Phase 2** | Allow the RODC to cache the SafeSquid account via Password Replication Policy | On the **RWDC** (AD Users & Computers) |
+| **Phase 3** | Point SafeSquid's LDAP configuration to the RODC using `NEGOTIATE_LDAP_AUTH` | In the **SafeSquid web interface** |
 
-The root cause: The RODC is **"blind"** to SafeSquid's existence until the object is explicitly created on the Writable DC and replicated down.
-
-:::warning
-The RODC **cannot** create computer objects or register SPNs by itself. All AD preparation **must be done on the Writable DC (RWDC)**, then pushed to the RODC through replication.
-:::
-
----
-
-## The Solution: Pre-Register SafeSquid on the Writable DC
-
-The fix is to manually create the SafeSquid computer object on the **Writable DC**, configure all required SPNs and security flags, then allow/force that data to replicate to the RODC. Once the RODC has a cached copy of the SafeSquid identity, it can issue Kerberos tickets and SSO works transparently.
-
-### Key benefits
-
-*   **Global Single Sign-On**: Authenticated users access the proxy without credential prompts.
-*   **Security Alignment**: Enforces AES-256 encryption across all sites.
-*   **Centralized Management**: Configure once on the Writable DC and replicate automatically to the RODC.
-*   **Zero Admin Overhead**: Automation script handles complex AD attribute mapping (UAC Flags, SPNs, Encryption Types).
-
----
+Once the SafeSquid object is created and replicated, this is the complete authentication flow:
 
 ## How Kerberos SSO Works in This Setup
 
-Once the SafeSquid object is created and replicated, this is the complete authentication flow:
 
 ```mermaid
 sequenceDiagram
@@ -284,7 +275,8 @@ Set-ADObject -Identity $obj.DistinguishedName -Server $TargetDC `
 3.  **Edit Variables**: Open the file and fill in your values under `SET YOUR VARIABLES HERE`.
 4.  **Execute**: Open PowerShell as Administrator and run:
     ```powershell
-    ExecutionPolicy Bypass -File "\Path\of\the\file\Replicate-ADComputer.ps1"
+    ExecutionPolicy Bypass -File ".\Replicate-ADComputer.ps1"
+    ```
 
 ```powershell
 # =========================================================================
