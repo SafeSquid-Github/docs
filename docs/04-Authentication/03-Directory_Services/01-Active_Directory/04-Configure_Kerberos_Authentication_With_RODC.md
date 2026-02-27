@@ -107,7 +107,7 @@ Placing a full Writable DC in the DMZ would expose the entire AD identity store 
 
 ---
 
-## Call to Action: How to Integrate SafeSquid with RODC
+## How to Integrate SafeSquid with RODC
 
 The fix is a three-phase process:
 
