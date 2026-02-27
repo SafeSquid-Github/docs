@@ -12,7 +12,7 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Problem: Kerberos SSO in RODC Environments
+## Overview
 
 Many organizations have offices and remote sites spread across different locations. 
 Setting up a full Domain Controller (DC) at each of these sites is risky if someone gains unauthorized access to it, they could compromise the entire network. 
@@ -67,7 +67,7 @@ There are no gaps where users fall outside policy simply because the WAN was una
 
 ---
 
-## Advantages: Why This Architecture Uses an RODC in the DMZ
+## Why This Architecture Uses an RODC in the DMZ
 
 This problem is specific to a well-established enterprise security pattern - the **LAN + DMZ split** - where the proxy server is intentionally placed outside the trusted internal network.
 
