@@ -274,7 +274,6 @@ Set-ADObject -Identity $obj.DistinguishedName -Server $TargetDC `
 ```
 
 </TabItem>
-
 <TabItem value="script" label="Automated Script">
 
 ### Fully Generalized AD Script
