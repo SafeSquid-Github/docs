@@ -218,18 +218,20 @@ Set-ADComputer -Identity $ComputerName -Server $TargetDC `
 
 ```powershell
 $obj = Get-ADComputer -Identity $ComputerName -Server $TargetDC -Properties servicePrincipalName
-
+ 
 $Desired = @(
     "HOST/$ProxyHostname.$Realm", "HTTP/$ProxyHostname.$Realm", "LDAP/$ProxyHostname.$Realm",
     "HOST/$ComputerName.$Realm", "HTTP/$ComputerName.$Realm", "LDAP/$ComputerName.$Realm",
     "host/$ComputerName"
 )
 
-$toAdd = $Desired | Where-Object { $_ -notin $obj.servicePrincipalName }
-
-if ($toAdd) {
+[string[]]$toAdd = @($Desired | Where-Object { $_ -notin $obj.servicePrincipalName })
+ 
+if ($toAdd.Count -gt 0) {
     Set-ADComputer -Identity $obj.DistinguishedName -Server $TargetDC -Add @{ servicePrincipalName = $toAdd }
     Write-Host "Added missing SPNs."
+} else {
+    Write-Host "No missing SPNs to add."
 }
 ```
 
