@@ -70,47 +70,47 @@ SAB will **erase and repartition** the target disk. Back up any existing data be
 
 1. **Select Standard Installation** (recommended) at the boot menu.
 
-   ![SAB Boot Menu](/img/SAB_Debian/pptx_image1.png)
+   ![SAB Boot Menu](/img/SAB_Debian/pptx_image1.webp)
    *SAB Boot Menu*
 
 2. **Configure networking.** Select **Yes** for DHCP or **No** for static IP.
 
-   ![DHCP prompt](/img/SAB_Debian/pptx_image2.png)
+   ![DHCP prompt](/img/SAB_Debian/pptx_image2.webp)
 
 3. **Select locale and keyboard** — language, location (timezone), and keyboard layout.
 
-   ![Language](/img/SAB_Debian/pptx_image3.png)
-   ![Location](/img/SAB_Debian/pptx_image4.png)
-   ![Keyboard](/img/SAB_Debian/pptx_image5.png)
+   ![Language](/img/SAB_Debian/pptx_image3.webp)
+   ![Location](/img/SAB_Debian/pptx_image4.webp)
+   ![Keyboard](/img/SAB_Debian/pptx_image5.webp)
 
 4. **Enter static IP details** *(skip if DHCP).* Provide IP/CIDR (e.g., `192.168.1.50/24`), gateway, and DNS.
 
-   ![Static IP](/img/SAB_Debian/pptx_image6.png)
-   ![Gateway](/img/SAB_Debian/pptx_image7.png)
-   ![DNS](/img/SAB_Debian/pptx_image8.png)
+   ![Static IP](/img/SAB_Debian/pptx_image6.webp)
+   ![Gateway](/img/SAB_Debian/pptx_image7.webp)
+   ![DNS](/img/SAB_Debian/pptx_image8.webp)
 
 5. **Set hostname and domain** consistent with your network naming.
 
-   ![Hostname](/img/SAB_Debian/pptx_image9.png)
-   ![Domain](/img/SAB_Debian/pptx_image10.png)
+   ![Hostname](/img/SAB_Debian/pptx_image9.webp)
+   ![Domain](/img/SAB_Debian/pptx_image10.webp)
 
 6. **Select Debian mirror** — choose the geographically nearest mirror. Leave the HTTP proxy blank unless your network requires one.
 
-   ![Mirror](/img/SAB_Debian/pptx_image11.png)
-   ![HTTP proxy](/img/SAB_Debian/pptx_image12.png)
+   ![Mirror](/img/SAB_Debian/pptx_image11.webp)
+   ![HTTP proxy](/img/SAB_Debian/pptx_image12.webp)
 
    :::tip Continue via SSH (Optional)
 
    After network configuration completes, you can connect via SSH to the server IP and continue the installation remotely instead of using the console.
 
-   ![SSH notice](/img/SAB_Debian/pptx_image13.png)
+   ![SSH notice](/img/SAB_Debian/pptx_image13.webp)
 
    :::
 
 7. **Confirm disk and GRUB target.** SAB auto-partitions the disk. Select the target drive (typically `/dev/sda`) for both partitioning and the GRUB bootloader.
 
-   ![Disk selection](/img/SAB_Debian/pptx_image14.png)
-   ![GRUB](/img/SAB_Debian/pptx_image15.png)
+   ![Disk selection](/img/SAB_Debian/pptx_image14.webp)
+   ![GRUB](/img/SAB_Debian/pptx_image15.webp)
 
    :::caution
    Installing GRUB on the wrong drive (e.g., external USB instead of internal disk) can make the system unbootable. Confirm you selected the internal disk where SafeSquid will be installed (typically `/dev/sda` or `/dev/nvme0n1`).
@@ -125,11 +125,11 @@ SAB will **erase and repartition** the target disk. Back up any existing data be
    
    The system reboots automatically when complete.
 
-   ![Finishing installation](/img/SAB_Debian/pptx_image16.png)
+   ![Finishing installation](/img/SAB_Debian/pptx_image16.webp)
 
 9. **Log in** with the default credentials after reboot (**administrator** / **safesquid**).
 
-   ![Login prompt](/img/SAB_Debian/pptx_image17.png)
+   ![Login prompt](/img/SAB_Debian/pptx_image17.webp)
 
 ## What Gets Installed
 
