@@ -1,0 +1,108 @@
+---
+title: {{title}}
+description: {{description}}
+sidebar_label: {{title}}
+tags: [{{parentGroupLabel}}, configuration]
+---
+
+# {{title}}
+
+{{{description}}}
+
+{{#if globalSettings}}
+## Global Settings
+
+Configure section-wide settings that apply to all entries.
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+{{#each globalSettings}}
+| **{{comment}}** | `{{type}}` | {{#if value}}`{{value}}`{{else}}-{{/if}} | {{{description}}} |
+{{/each}}
+
+{{/if}}
+
+{{#each templates}}
+{{#if fields}}
+## Configuration Fields
+
+{{#if ../subsections}}
+The following fields are available when creating rules in this section.
+{{else}}
+Configure the following fields to control the behavior of this section.
+{{/if}}
+
+{{#each fields}}
+### {{comment}}
+
+**Type:** `{{type}}`  
+{{#if value}}**Default:** `{{value}}`  {{/if}}
+{{#if optional}}**Optional:** Yes  {{/if}}
+{{#if negation}}**Supports Negation:** Yes (prefix with `!` to exclude)  {{/if}}
+
+{{{description}}}
+
+{{#if (lookup ../../selects name)}}
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+{{#each (lookup ../../selects name)}}
+| {{comment}} | `{{value}}` | {{{description}}} |
+{{/each}}
+
+{{/if}}
+
+{{/each}}
+{{/if}}
+{{/each}}
+
+{{#if subsections}}
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+{{#each subsections}}
+### {{title}}
+
+{{{description}}}
+
+{{#if wizardAction}}
+:::tip Quick Add
+This subsection supports quick-add wizard for faster configuration.
+:::
+{{/if}}
+
+{{/each}}
+
+{{/if}}
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+{{#if (eq parentGroup 'infrastructure')}}
+- [Getting Started](/docs/getting-started/introduction)
+- [Installation](/docs/getting-started/installation)
+{{/if}}
+
+{{#if (eq parentGroup 'antivirus')}}
+- [Security Best Practices](#)
+- [Threat Protection](#)
+{{/if}}
+
+{{#if (eq parentGroup 'profilesdef')}}
+- [Understanding Profiles](#)
+- [Application Signatures](application-signatures)
+{{/if}}
+
+---
+
+**Section ID:** `{{id}}`  
+**Category:** {{parentGroupLabel}}  
+{{#if wizard}}**Wizard Available:** Yes{{/if}}

@@ -1,0 +1,212 @@
+---
+title: Redirect
+description: Create policies to redirect requests for a URL to another URL.
+
+You may create redirection policies that intelligently fetch response from a desired URL, and serve it to the client.
+
+Alternatively, you may create policies that respond with a HTTP 302 redirection that instructs the client to seek your suggested URL.
+sidebar_label: Redirect
+tags: [Security, configuration]
+---
+
+# Redirect
+
+Create policies to redirect requests for a URL to another URL.
+
+You may create redirection policies that intelligently fetch response from a desired URL, and serve it to the client.
+
+Alternatively, you may create policies that respond with a HTTP 302 redirection that instructs the client to seek your suggested URL.
+
+## Global Settings
+
+Configure section-wide settings that apply to all entries.
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| **Enabled** | `BOOL` | `redirect_policy` | Turn on or off URL redirection (automatically sending users to different web addresses). |
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Turn on or off this rule.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Turn off this rule. |
+| TRUE | `TRUE` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+Add notes here to explain what this rule does and why you created it.
+
+This helps you and others understand the purpose of this rule later.
+
+
+### Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_profiles,redirection_profiles`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Choose which profiles this rule should apply to.
+
+This rule will only apply if the connection has one of the profiles you select.
+
+Leave it blank to apply to all connections, regardless of their profiles.
+
+To exclude a specific profile, put an exclamation mark before it (!profile).
+
+
+### URL
+
+**Type:** `STRING`  
+
+
+
+
+Specify the requests to redirect.
+
+This should be a valid PCRE (Perl Compatible Regular Expression).
+
+Redirection occurs only if the requested URL matches this PCRE.
+
+A typical URL is in the form "protocol://host/file".
+
+
+### Redirect
+
+**Type:** `STRING`  
+
+
+
+
+Specify the URL to redirect the request to.
+
+A typical URL is in the form "protocol://host/file".
+
+If left blank, the request will neither be redirected to any URL nor be connected to the requested URL, thus leaving the request never served.
+
+
+### Port
+
+**Type:** `INT`  
+**Default:** `0`  
+
+
+
+Specify the port to redirect the request to.
+
+If left blank, the request will be redirected to the port available in the original request.
+
+
+### 302 redirect
+
+**Type:** `BOOL`  
+**Default:** `send302`  
+
+
+
+If yes, a 302 redirect is issued; otherwise the new host is connected to directly and the new file is requested.
+
+A 302 redirect should always be used when possible to ensure relative links and images are correct.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `TRUE` | Disable 302 redirect. |
+| TRUE | `FALSE` | Enable 302 redirect. |
+
+
+### Options
+
+**Type:** `STRING_SELECT_MANY`  
+**Default:** `options`  
+
+
+
+Several options are available to control how the URL should be handled.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| Encode URL | `FALSE` | Encode the new URL. |
+| Decode URL before | `TRUE` | Decode the URL before attempting to match it with the regular expression. |
+| Decode URL after | `FALSE` | Decode the new URL after matching. |
+
+
+### Applies to
+
+**Type:** `STRING_SELECT_ONE`  
+**Default:** `which`  
+
+
+
+Specify whether the URL to be redirected is the actual request from the user or part of the Location header returned by the requested site.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| LOCATION HEADER | `FALSE` | Redirect if the URL is part of the location header. |
+| URL | `FALSE` | Redirected if the URL is part of the actual request. |
+| BOTH | `TRUE` | Redirect if the URL is part of either actual request or Location header. |
+
+
+
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+### Redirection policies
+
+Create Entries to setup your URL Redirection Policies.
+
+First entry applicable for a connection is used, skipping the rest.
+
+Disabled Entries are ignored.
+
+
+
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+
+- [Security Best Practices](#)
+- [Threat Protection](#)
+
+
+---
+
+**Section ID:** `redirect`  
+**Category:** Security  
+

@@ -1,0 +1,188 @@
+---
+title: Header filter
+description: Control the hidden information that gets sent between your computer and websites. This helps protect your privacy online.
+
+Manage what information your browser shares and what websites send back.
+
+You can add, remove, or change this information to protect your privacy better.
+
+You can also allow or block certain types of information, or add new information when needed.
+
+This section looks at:  
+Information that your browser sends to websites.  
+Information that websites send back to your browser.
+sidebar_label: Header filter
+tags: [Privacy Control, configuration]
+---
+
+# Header filter
+
+Control the hidden information that gets sent between your computer and websites. This helps protect your privacy online.
+
+Manage what information your browser shares and what websites send back.
+
+You can add, remove, or change this information to protect your privacy better.
+
+You can also allow or block certain types of information, or add new information when needed.
+
+This section looks at:  
+Information that your browser sends to websites.  
+Information that websites send back to your browser.
+
+## Global Settings
+
+Configure section-wide settings that apply to all entries.
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| **Enabled** | `BOOL` | `header_enabled` | Turn on or off header filtering (controlling hidden information sent between your browser and websites). |
+| **Policy** | `STRING_SELECT_ONE` | `header_policy` | Select the default action to take, when no matching entry for a requested header is found. |
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Turn on or off this rule.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Turn off this rule. |
+| TRUE | `TRUE` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+Add notes here to explain what this rule does and why you created it.
+
+This helps you and others understand the purpose of this rule later.
+
+
+### Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_profiles,header_filter_profiles`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Specify the Profiles applicable for this entry.
+
+This entry will be applicable only if the connection has any one of the specified profiles.
+
+Leave it Blank, to apply for all connections, irrespective of any applied profile.
+
+To avoid application to a connection that has a profile, use negated profile (! profile).
+
+
+### Type
+
+**Type:** `STRING`  
+
+
+
+
+A regular expression matching the header type to which this entry applies to.
+
+Headers are in the form of type and value.
+
+Leave blank to match everything.
+
+Example: X-GoogApps-Allowed-Domains.
+
+
+### Value
+
+**Type:** `STRING`  
+
+
+
+
+A regular expression matching the header values this entry applies to.
+
+Leave blank to Match everything.
+
+Example: text/html.
+
+
+### Applies to
+
+**Type:** `STRING_SELECT_MANY`  
+**Default:** `which`  
+
+
+
+This option is to select whether this entry applies to the server header, client header, or both.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| CLIENT HEADER | `TRUE` | This entry will be applied only for request headers, sent by the client. |
+| SERVER HEADER | `FALSE` | This entry will be applied only for response headers, sent by the server. |
+
+
+
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+### Allow
+
+When the Policy is Deny, rules defined under this sub-section, are allowed access, exclusively.
+
+Here, you can add a new ‘allow’ entry that would result in acceptance or allowance of header filter to all or specific set of conditions, explicitly.
+
+
+### Deny
+
+When the Policy is Allow, rules defined under this sub-section, are denied access, exclusively.
+
+Here you can add a new ‘allow’ entry that would explicitly result in blocking or denying the header filter to all or specific set of conditions.
+
+
+### Insert
+
+In this sub section you can add the rules to modify the request and response headers.
+
+You can insert additional information in the headers sent by your browser.
+
+
+### View headers
+
+In this sub section you can find the example headers with type and values.
+
+
+
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+
+
+
+---
+
+**Section ID:** `header-filtering`  
+**Category:** Privacy Control  
+

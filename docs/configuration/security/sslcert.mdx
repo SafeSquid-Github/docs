@@ -1,0 +1,281 @@
+---
+title: HTTPS Inspection
+description: This section allows you to configure the overall operation to handle scanning of connections under HTTPS (HTTP over SSL).
+
+SSL (Secure Sockets Layer), is the standard security technology for encrypting a connection between a web server and a browser.
+
+Once established, this connection will encrypt all traffic and ensure that all data passed between the web server and browser remains private.
+
+You must set this carefully, depending on the usage of web applications handling HTTPS requests, particularly web 2.0 applications.
+
+All HTTPS requests are matched with the rules defined under the HTTPS scanning policies and actions taken based on the matching entry.
+sidebar_label: HTTPS Inspection
+tags: [Security, configuration]
+---
+
+# HTTPS Inspection
+
+This section allows you to configure the overall operation to handle scanning of connections under HTTPS (HTTP over SSL).
+
+SSL (Secure Sockets Layer), is the standard security technology for encrypting a connection between a web server and a browser.
+
+Once established, this connection will encrypt all traffic and ensure that all data passed between the web server and browser remains private.
+
+You must set this carefully, depending on the usage of web applications handling HTTPS requests, particularly web 2.0 applications.
+
+All HTTPS requests are matched with the rules defined under the HTTPS scanning policies and actions taken based on the matching entry.
+
+## Global Settings
+
+Configure section-wide settings that apply to all entries.
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| **Enabled** | `BOOL` | `ssl_policy` | Enable or Disable HTTPS inspection section. |
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Turn on or off this rule.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Turn off this rule. |
+| TRUE | `TRUE` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+Add notes here to explain what this rule does and why you created it.
+
+This helps you and others understand the purpose of this rule later.
+
+
+### Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_profiles,https_inspection_profiles`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Specify the Profiles applicable for this entry.
+
+This entry will be applicable only if the connection has any one of the specified profiles.
+
+Leave it Blank, to apply for all connections, irrespective of any applied profile.
+
+To avoid application to a connection that has a profile, use negated profile (! profile).
+
+
+### DeepScan
+
+**Type:** `STRING_SELECT_ONE`  
+**Default:** `deep_scanning`  
+
+
+
+Decide if you want to enable scanning within encrypted SSL connections matching this entry.
+
+
+### Block Access to Sites that do not have an SSL Certificate
+
+**Type:** `STRING_SELECT_ONE`  
+**Default:** `no_cert`  
+
+
+
+Decide whether Sites that do not have SSL Certificate should be blocked or not.
+
+
+### Acceptable Errors in SSL Verification
+
+**Type:** `STRING_SELECT_ONE`  
+**Default:** `ssl_error_types`  
+
+
+
+SafeSquid verifies the SSL certificate to remote SSL web-servers.
+
+You can specify here, the acceptable level of error.
+
+Only in specific or exceptional cases choose anything besides X509\_V\_OK.
+
+
+### Block domain mismatch in the web-site SSL certificate
+
+**Type:** `STRING_SELECT_ONE`  
+**Default:** `domain_mismatch`  
+
+
+
+Decide whether domain name mismatch is to be allowed or no.
+
+SafeSquid validates the DNS and Common Name in the SSL certificates supplied by the remote web-server.
+
+Only in exceptional cases set this as FALSE.
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Enable or Disable this entry
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Turn off this rule. |
+| TRUE | `TRUE` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+Explain the relevance of this entry with your policies, for documentation, and future references.
+
+
+### Proxy Host
+
+**Type:** `STRING`  
+
+
+
+
+Specify the host name of the proxy server as specified in the Startup Parameters.
+
+
+### Encrypted Password
+
+**Type:** `STRING`  
+
+
+
+
+Specify the Encrypted password for disk based caching of SSL certificates.
+
+
+### SSL Cache Store Size
+
+**Type:** `INT`  
+**Default:** `0`  
+
+
+
+Configure SSL cache size.
+
+SSL cache size is used to set max store sizes for SSL session and context stores.
+
+This setting affects memory consumption and performance.
+
+Memory consumption is proportional to this setting.
+
+It is recommended to set as 500, if the server's RAM size is less than 8GB.
+
+If the size is more than 8GB then set up to 1000.
+
+You have to set Store size at the beginning itself.
+
+You need to restart if you want to change it.
+
+
+
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+### Inspection Policies
+
+Each CONNECT request is tested only once for the applicability of the following entries.
+
+The first matching entry is applied, and the rest are ignored.
+
+If the matching entry deems that a Deep Scan should not be performed, the CONNECT request is handled without inspecting the subsequent requests.
+
+If, however the matching entry seems a Deep Scan should be performed, the connection to the remote webserver is security checked for SSL properties as per the rule in the matched entry.
+
+If the remote webserver fails to meet the desired standards, connection to that webserver is terminated.
+
+**Note:** *Deep Scan should only be performed on encrypted connections, if the underlying application protocol is HTTP.*
+
+*Applications like Google drive, Subversion Client, WinScp, etc., do not work if you attempt a Deep Scan on them.*
+
+
+### Setup
+
+List of Security Passphrase(s) or Server Policies required to generate or load an existing ROOT CA SSL Certificate (RCSC).
+
+The first matching entry below is used and the remaining is ignored.
+
+RCSC is created automatically, if none exists already.
+
+If an RCSC exists, passphrase in the applicable entry is used to load it.
+
+The Private key of the generated RCSC can be used only with the passphrase used to generate it.
+
+The passphrase prevents the private key of your RCSC from being stolen or fraudulent use.
+
+After you generate RCSC successfully, you can download the public key of your RCSC from http://safesquid.cfg/safesquid.cer.
+
+The public key must be installed on all the Web-Clients and browsers that are subjected to Deep Scan.
+
+:::tip Quick Add
+This subsection supports quick-add wizard for faster configuration.
+:::
+
+### SSL Certs/Cache
+
+**Download:** Download the SafeSquid certificate.  
+**Upload:** Upload the corporate certificates or corporate trusted-ca-certificate.  
+**Cache Refresh:** Refresh the SSL cache.
+
+
+
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+
+- [Security Best Practices](#)
+- [Threat Protection](#)
+
+
+---
+
+**Section ID:** `sslcert`  
+**Category:** Security  
+**Wizard Available:** Yes

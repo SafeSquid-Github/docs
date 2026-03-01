@@ -1,0 +1,319 @@
+---
+title: Cookie filter
+description: With Cookie Filter you can choose, which hosts (websites,) the browsers are allowed to send and receive the cookies.
+
+A HTTP cookie (also called as web cook0ie, Internet cookie, browser cookie or simply cookie) is a small piece of data sent from a website and stored in the user&#x27;s web browser while the user is browsing.
+
+You can control the cookie exchange precisely, between remote websites and users.
+
+You can manage the user privacy (Username &amp; Preferences).
+
+You can also disable the users from logging into their personal accounts.
+
+Example: you can block cookies from advertising websites like tribalfusion.com and doubleclick.net to prevent private information from being transferred to them.
+
+And users can browse the search engines (google, yahoo) but they cannot login to their personal accounts (Gmail, shopping websites, trading websites).
+sidebar_label: Cookie filter
+tags: [Privacy Control, configuration]
+---
+
+# Cookie filter
+
+With Cookie Filter you can choose, which hosts (websites,) the browsers are allowed to send and receive the cookies.
+
+A HTTP cookie (also called as web cook0ie, Internet cookie, browser cookie or simply cookie) is a small piece of data sent from a website and stored in the user's web browser while the user is browsing.
+
+You can control the cookie exchange precisely, between remote websites and users.
+
+You can manage the user privacy (Username & Preferences).
+
+You can also disable the users from logging into their personal accounts.
+
+Example: you can block cookies from advertising websites like tribalfusion.com and doubleclick.net to prevent private information from being transferred to them.
+
+And users can browse the search engines (google, yahoo) but they cannot login to their personal accounts (Gmail, shopping websites, trading websites).
+
+## Global Settings
+
+Configure section-wide settings that apply to all entries.
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| **Enabled** | `BOOL` | `cookie_enable` | Turn on or off cookie filtering. |
+| **Policy** | `STRING_SELECT_ONE` | `policy` | Select the default action to take, when no matching entry for a requested cookie is found. |
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Turn on or off this rule
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Turn off this rule. |
+| TRUE | `TRUE` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+Add notes here to explain what this rule does and why you created it.
+
+This helps you and others understand the purpose of this rule later.
+
+
+### Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_profiles,cookie_profiles`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Choose which profiles this rule should apply to.
+
+This rule will only apply if the connection has one of the profiles you select.
+
+Leave it blank to apply to all connections, regardless of their profiles.
+
+To exclude a specific profile, put an exclamation mark before it (! profile).
+
+
+### Expiry year range
+
+**Type:** `INT_RANGE`  
+**Default:** `1900,3000`  
+**Optional:** Yes  
+
+
+Mention the cookie expiry year range that is relevant to this entry.
+
+The cookie from a particular host (website) expires after this range.
+
+Ex: 2016-2017
+
+
+### Expiry month range
+
+**Type:** `STRING_RANGE`  
+**Default:** `month`  
+**Optional:** Yes  
+
+
+Select cookie expiry month range that is relevant to this entry.
+
+The cookie from a particular host (website) expires after this range.
+
+Example: January – March, here cookie expires after March.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| JANUARY | `TRUE` | Select this for january month. |
+| FEBRUARY | `FALSE` | Select this for february month. |
+| MARCH | `FALSE` | Select this for march month. |
+| APRIL | `FALSE` | Select this for april month. |
+| MAY | `FALSE` | Select this for may month. |
+| JUNE | `FALSE` | Select this for june month. |
+| JULY | `FALSE` | Select this for july month. |
+| AUGUST | `FALSE` | Select this for august month. |
+| SEPTEMBER | `FALSE` | Select this for september month. |
+| OCTOBER | `FALSE` | Select this for october month. |
+| NOVEMBER | `FALSE` | Select this for november month. |
+| DECEMBER | `FALSE` | Select this for december month. |
+
+
+### Expiry day range
+
+**Type:** `INT_RANGE`  
+**Default:** `1,31`  
+**Optional:** Yes  
+
+
+The cookie expiry day range that is relevant to this entry.
+
+The cookie from a particular host (website) expires after this range.
+
+Example: 1-20, here cookie will expire after 20th day.
+
+
+### Expiry weekday range
+
+**Type:** `STRING_RANGE`  
+**Default:** `weekday`  
+**Optional:** Yes  
+
+
+The cookie expiry weekday range, this entry applies to.
+
+The cookie from a particular host (website) expires after this range.
+
+Example: Monday – Friday, here cookie will expire after Friday.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| SUNDAY | `TRUE` | Select this for sunday. |
+| MONDAY | `FALSE` | Select this for monday. |
+| TUESDAY | `FALSE` | Select this for tuesday. |
+| WEDNESDAY | `FALSE` | Select this for wednesday. |
+| THURSDAY | `FALSE` | Select this for thursday. |
+| FRIDAY | `FALSE` | Select this for friday. |
+| SATURDAY | `FALSE` | Select this for saturday. |
+
+
+### Expiry hour range
+
+**Type:** `INT_RANGE`  
+**Default:** `0,23`  
+**Optional:** Yes  
+
+
+The cookie expiry hour range, this entry applies to.
+
+The cookie from a particular host (website) expires after this range.
+
+Example: 1-10, here cookie will expire after 10AM.
+
+
+### Expiry minute range
+
+**Type:** `INT_RANGE`  
+**Default:** `0,59`  
+**Optional:** Yes  
+
+
+The cookie expiry minute range, this entry applies to.
+
+The cookie from a particular host (website) expires after this range.
+
+Example: 15-30, here cookie will expire after 10:30AM.
+
+In the above example, Hours are included from Hour range.
+
+
+### Domain
+
+**Type:** `STRING`  
+
+
+
+
+you can mention the domain names by separating with pipe (|) which you want to allow or deny.
+
+You can use regular expression to match the domains.
+
+Ex: safesquid.com|google.com
+
+
+### Path
+
+**Type:** `STRING`  
+
+
+
+
+A regular expression matching the cookie's path attribute.
+
+Ex: /
+
+
+### Direction
+
+**Type:** `STRING_SELECT_ONE`  
+**Default:** `direction`  
+
+
+
+The direction of the cookie this entry applies to; can be either in (Set-cookie sent by website), out (Cookie sent by browser), or both.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| IN | `FALSE` | For Inbound Connections only. |
+| OUT | `FALSE` | For Outbound Connections only. |
+| BOTH | `TRUE` | For Both Inbound and Outbound connections. |
+
+
+### Time match mode
+
+**Type:** `STRING_SELECT_ONE`  
+**Default:** `matchmode`  
+
+
+
+Select the appropriate mode to match the multiple time ranges.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| ABSOLUTE | `TRUE` | When the absolute time match mode is used, any time between the starting and ending time will match. For example, if a start time of 9am monday and end time of 5pm friday is given, in absolute time match mode any time between 9am monday and 5pm friday will match. |
+| ALL RANGES | `FALSE` | With the all ranges time match mode however, a time within all of the ranges will match. For example, if a start time of 9am monday and end time of 5pm friday is given, With all range time match mode, any time between 9am and 5pm, monday to friday will match. |
+
+
+
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+### Allow
+
+When the Policy is Deny, rules defined under this sub-section, are exclusively allowed access.
+
+Here you can add a new ‘allow’ entry, that would explicitly result in acceptance or allowance of cookie transfer to all or specific set of conditions.
+
+This effectively allows you set a variety of intelligently and creatively defined Cookie Transfer whitelist(s)
+
+:::tip Quick Add
+This subsection supports quick-add wizard for faster configuration.
+:::
+
+### Deny
+
+When the Policy is Allow, rules defined under this sub-section, are exclusively denied access.
+
+Here, you can add rules under Deny that would explicitly result in blocking or denial of cookie transfer to all or specific set of conditions.
+
+This effectively allows you to set a variety of intelligently and creatively defined Cookie Transfer Blacklist(s).
+
+
+
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+
+
+
+---
+
+**Section ID:** `cookies-filtering`  
+**Category:** Privacy Control  
+**Wizard Available:** Yes

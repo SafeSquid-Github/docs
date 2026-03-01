@@ -1,0 +1,323 @@
+---
+title: Caching
+description: You can add/remove cache stores in this section, and configure: Global cache options
+
+What objects are cacheable or un-cacheable?
+
+How cacheable objects are distributed between various stores?
+
+Minimum and maximum size of the objects to be stored
+
+Revalidation period of cached objects, etc
+sidebar_label: Caching
+tags: [Performance, configuration]
+---
+
+# Caching
+
+You can add/remove cache stores in this section, and configure: Global cache options
+
+What objects are cacheable or un-cacheable?
+
+How cacheable objects are distributed between various stores?
+
+Minimum and maximum size of the objects to be stored
+
+Revalidation period of cached objects, etc
+
+## Global Settings
+
+Configure section-wide settings that apply to all entries.
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| **Enabled** | `BOOL` | `cache_policy` | Turn on or off caching (storing web content for faster loading). |
+| **Violate RFC** | `BOOL` | `violate_rfc` | This option causes the proxy server to violate some rules in the HTTP RFC to help improve cache performance specifically.
+
+When a website requests that the file must not be cached with the "No-Cache" directive in the Cache-Control header, the proxy caches it anyway but always validates it with an If-Modified-Since conditional request. |
+| **Memory cache size** | `FILE_SIZE` | `0` | The maximum amount of memory that can be used for caching.
+
+You can enter values using K for kilobytes, M for megabytes, or G for gigabytes (for example: 20K, 20M, 20G). |
+| **Memory free extra** | `FILE_SIZE` | `0` | This is how much cached content gets cleared when the memory cache is full.
+
+The oldest content is removed first to make room for new content.
+
+This helps keep frequently used content in the cache when storage reaches its limit.
+
+You can enter values using K for kilobytes, M for megabytes, or G for gigabytes (for example: 20K, 20M, 20G). |
+| **Minimum file size** | `FILE_SIZE` | `0` | The smallest file size (in bytes) that will be cached. Smaller files won't be cached. |
+| **Maximum file size** | `FILE_SIZE` | `0` | The largest file size (in bytes) that will be cached. Set to 0 to cache files of any size. |
+| **Prefetch window** | `INT` | `10` | Set how long (in seconds) after a file is prefetched that it should be kept fresh, before checking if it needs to be updated. |
+| **ICP port** | `INT` | `0` | The network port number to use for ICP communication (for sharing cache information with other proxy servers). |
+| **ICP timeout** | `INT` | `1000` | How long to wait (in milliseconds) for responses when communicating with other proxy servers. |
+| **Store balance method** | `STRING_SELECT_ONE` | `method` | This setting controls which storage location is chosen for caching files.
+
+Fill size: chooses the location with the least amount of data stored.
+
+Fill percent: chooses the location with the lowest percentage of its space used. |
+| **journal size** | `UINT` | `0` | The maximum size (in bytes) of the journal file used for tracking cache operations. |
+| **Clean Interval** | `UINT` | `0` | How often (in seconds) to clean up old cached files. Set to 0 to disable automatic cleanup. |
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Turn on or off this rule.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Turn off this rule. |
+| TRUE | `TRUE` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+Add notes here to explain what this rule does and why you created it.
+
+This helps you and others understand the purpose of this rule later.
+
+
+### Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_profiles`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Choose which profiles this rule should apply to.
+
+This rule will only apply if the connection has one of the profiles you select.
+
+Leave it blank to apply to all connections, regardless of their profiles.
+
+To exclude a specific profile, put an exclamation mark before it (!profile).
+
+
+### Path
+
+**Type:** `STRING`  
+
+
+
+
+Path of the directory where cached files are stored.
+
+
+### Maximum disk size
+
+**Type:** `LONG_FILE_SIZE`  
+**Default:** `0`  
+
+
+
+The amount of space that should be used to store cached files in this directory.
+
+You can enter values in KB,MB,GB as 20K,20M,20G respectively.
+
+
+### Disk free extra
+
+**Type:** `FILE_SIZE`  
+**Default:** `0`  
+
+
+
+This is the size of the cache store that is emptied, when the content in the store is refreshed.
+
+The stalest content is removed, to free up space for new content.
+
+This prevents frequently used content from being deleted, when the store reaches its maximum allowed limit.
+
+The value here is normally set to 30% of the total size of the store. e.g. when Maximum Disk Size is 1G, then the value entered here would be 250M.
+
+
+### MD5 integrity check
+
+**Type:** `BOOL`  
+**Default:** `md5_check`  
+
+
+
+Perform MD5 check on cache files when saving them and loading them from disk.
+
+With this you can ensure that the corrupted cache files are not used.
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Turn on or off this rule.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Turn off this rule. |
+| TRUE | `TRUE` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+
+
+
+
+Add notes here to explain what this rule does and why you created it.
+
+This helps you and others understand the purpose of this rule later.
+
+
+### Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_profiles`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Choose which profiles this rule should apply to.
+
+This rule will only apply if the connection has one of the profiles you select.
+
+Leave it blank to apply to all connections, regardless of their profiles.
+
+To exclude a specific profile, put an exclamation mark before it (!profile).
+
+
+### Cachable
+
+**Type:** `BOOL`  
+**Default:** `cachable`  
+
+
+
+Whether or not requests matching this entry are cached.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Disable cachability. |
+| TRUE | `TRUE` | Enable cachability. |
+
+
+### Minimum age
+
+**Type:** `UINT`  
+**Default:** `0`  
+
+
+
+The minimum age of any file according to the Last-Modified header. Only files older than this age are cached.
+
+
+### Maximum age
+
+**Type:** `UINT`  
+**Default:** `0`  
+
+
+
+The maximum age of any cached file before it must be revalidated.
+
+This overrides any given expiry time.
+
+
+### Revalidate age
+
+**Type:** `UINT`  
+**Default:** `0`  
+
+
+
+The maximum age of any cached file which doesn't include any headers that indicate, when it should expire before it must be revalidated;
+
+if set to 0, all cached files whose expiry time is uncertain are verified.
+
+If no "Last-Modified" header is received to calculate the Last-Modified time factor, the cached file is always revalidated.
+
+
+### Last-Modified time factor
+
+**Type:** `UINT`  
+**Default:** `0`  
+
+
+
+The maximum age of any cached file which doesn't include any headers that indicate when it should expire before it must be revalidated;
+
+if set to 0, all cached files whose expiry time is uncertain are verified.
+
+If no "Last-Modified" header is received to calculate the Last-Modified time factor, the cached file is always revalidated.
+
+
+
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+### Store
+
+List of storage locations for disk cache.
+
+:::tip Quick Add
+This subsection supports quick-add wizard for faster configuration.
+:::
+
+### Refresh
+
+List of refresh policies.
+
+:::tip Quick Add
+This subsection supports quick-add wizard for faster configuration.
+:::
+
+### Manage cached objects
+
+List of view cache.
+
+
+
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+
+
+
+---
+
+**Section ID:** `cache`  
+**Category:** Performance  
+

@@ -1,0 +1,171 @@
+---
+title: Text analyzer
+description: Text Analyzer helps you find and block websites that contain inappropriate content by looking for specific words.
+
+This tool is especially helpful for catching websites that haven&#x27;t been categorized yet but might have inappropriate content.
+
+You can use this to block certain types of websites without needing a website database.
+
+When the system finds words from your list on a webpage, it gives that page points. It adds up all the points from all the words it finds.
+
+If the total points reach or go above your set limit, the page gets blocked.
+sidebar_label: Text analyzer
+tags: [Security, configuration]
+---
+
+# Text analyzer
+
+Text Analyzer helps you find and block websites that contain inappropriate content by looking for specific words.
+
+This tool is especially helpful for catching websites that haven't been categorized yet but might have inappropriate content.
+
+You can use this to block certain types of websites without needing a website database.
+
+When the system finds words from your list on a webpage, it gives that page points. It adds up all the points from all the words it finds.
+
+If the total points reach or go above your set limit, the page gets blocked.
+
+## Global Settings
+
+Configure section-wide settings that apply to all entries.
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| **Enabled** | `BOOL` | `text_enabled` | Turn on or off text analyzer (to detect inappropriate content by scanning text). |
+| **Threshold** | `INT` | `100` | The number the total score must equal or exceed until it's blocked. |
+| **Template** | `STRING` | `blocked` | Templates are used throughout Safesquid as a replacement for pages which can't be displayed due to filtering, error, or other conditions.
+
+Specify the template name that should be displayed on a user's screen when this entry matches. The name should be selected from the template section. In template section you can find template’s name.
+
+Leave this rule blank, to use default template. |
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Turn on or off this rule.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Turn off this rule. |
+| TRUE | `TRUE` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+Add notes here to explain what this rule does and why you created it.
+
+This helps you and others understand the purpose of this rule later.
+
+
+### Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_profiles,text_analyzer_profiles`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Specify the Profiles applicable for this entry.
+
+This entry will be applicable only if the connection has any one of the specified profiles.
+
+Leave it Blank, to apply for all connections irrespective of any applied profile.
+
+To avoid application to a connection that has a profile, use negated profile (! profile).
+
+
+### Mime type
+
+**Type:** `STRING`  
+
+
+
+
+It's a way of identifying files on the Internet according to their nature and format.
+
+It is highly advisable that you set this to some mime-type; otherwise all files will be checked.
+
+A regular expression matching the mime-types this entry policy applies to.
+
+Example: text/html, ^image/, ^application/, application/x-shockwave-flash.
+
+
+### Keyword(s)
+
+**Type:** `STRING`  
+
+
+
+
+A regular expression matching anything in the body of the document considered inappropriate, leave blank to match everything.
+
+We can add more than one keyword in a single policy.
+
+Example: (sex|sexy|porn|pornography).
+
+
+### Score
+
+**Type:** `INT`  
+**Default:** `0`  
+
+
+
+This entry adds to the total score when it matches, this may be a positive or negative integer.
+
+If you mention keyword as adult, then every time this word is found in the document, the score mentioned will be added.
+
+Example: If you mentioned score as 20, then if the word adult is found once in the requested document, 20 will be added, for two times it will be 40, three times it will be 60.
+
+
+
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+### Filtering policies
+
+Here you can add the new policies to block the websites based on content type.
+
+You can give the score to each policy and the keywords to block the inappropriate content.
+
+:::tip Quick Add
+This subsection supports quick-add wizard for faster configuration.
+:::
+
+
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+
+- [Security Best Practices](#)
+- [Threat Protection](#)
+
+
+---
+
+**Section ID:** `keywords-filtering`  
+**Category:** Security  
+**Wizard Available:** Yes

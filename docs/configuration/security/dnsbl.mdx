@@ -1,0 +1,179 @@
+---
+title: DNS Blacklist
+description: DNS Blacklist
+
+Use DNS to detect client requests to inappropriate or malicious servers.
+
+Prevent requests to IP addresses of malicious servers
+sidebar_label: DNS Blacklist
+tags: [Security, configuration]
+---
+
+# DNS Blacklist
+
+DNS Blacklist
+
+Use DNS to detect client requests to inappropriate or malicious servers.
+
+Prevent requests to IP addresses of malicious servers
+
+## Global Settings
+
+Configure section-wide settings that apply to all entries.
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| **Enabled** | `BOOL` | `dnsbl_enable` | Turn on or off DNS Blacklist checking (to block malicious websites). |
+| **Maximum Permissible Unique Hosts In An Uncategorized Domain** | `INT` | `5` | Block access to all hosts in an uncategorized domain if it is found to have more than this limit.  
+Set this to -1, to disable this checking. |
+| **Maximum Permissible Host Name Length In An Uncategorized Domain** | `INT` | `5` | Block access to an host in an uncategorized domain if the name is longer than this limit.  
+Set this to -1, to disable this checking. |
+| **Block Homograph based Uncategorized Domain** | `BOOL` | `block_homograph` | Block access to an host in an uncategorized domain if the registered domain contains a homograpgh. |
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Turn on or off this rule.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Disable this entry. |
+| TRUE | `TRUE` | Enable this entry. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+For documentation, and future references, explain the relevance of this entry with your policies.
+
+That is, by reading the policies, a future user can understand the purpose of that entry.
+
+
+### Threatful Categories
+
+**Type:** `STRING_LIST`  
+**Default:** `website_categories,custom_categories`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Requested hosts belonging to this category list shall be considered threatful.
+
+Requests to such hosts, shall be **blocked without any DNS evalution.**
+
+
+### Threatful Requests
+
+**Type:** `STRING_LIST`  
+**Default:** `add_app_category,add_app_signatures,add_req_types,int_req_types`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Requested hosts belonging to this request type list shall be considered threatful.
+
+Requests to such hosts, shall be **blocked without any DNS evalution.**
+
+
+### Threatful Countries
+
+**Type:** `STRING_LIST`  
+**Default:** `countries`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Requested hosts belonging to this country list shall be considered threatful.
+
+Requests to such hosts, shall be **blocked after DNS evalution.**
+
+
+### DNSBL Domain
+
+**Type:** `STRING`  
+**Default:** `.in.dnsbl.org`  
+
+
+
+This field needs to be filled in, only for making query to a DNSBL service.
+
+The website to query is appended with DNSBL Domain name.
+
+For example: If you set DNSBL Domain **.in.dnsbl.org**, then a host such as **example.com**, is validated with a DNS lookup for **A records** of **example.com.in.dnsbl.org**
+
+
+### Blocked IP addresses
+
+**Type:** `IP_RANGE_LIST`  
+**Default:** `0.0.0.0,127.0.0.1-127.0.0.6`  
+
+
+
+Enter the comma separated list of IP address ranges that should be considered threatful.
+
+The requested host is considered threatful if the DNS query results an IP address contained in this list.
+
+DNS query failures are equivalent to **0.0.0.0**.  
+Therefore, include 0.0.0.0 in this list if you want to block requests to hosts when queries to DNSBL services fail.
+
+
+### Template
+
+**Type:** `STRING`  
+**Default:** `blocked`  
+
+
+
+Name of the template to be sent, when domain is found to be blocked.
+
+Leave this blank, to use default Template "blocked".
+
+
+
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+### DNS and IP Black Listing Policies
+
+Requested Host will be evaluated against Enabled entries.
+
+Evaluation is done from top to last until an entry results in blocking of the requested host.
+
+:::tip Quick Add
+This subsection supports quick-add wizard for faster configuration.
+:::
+
+
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+
+- [Security Best Practices](#)
+- [Threat Protection](#)
+
+
+---
+
+**Section ID:** `dnsbl`  
+**Category:** Security  
+**Wizard Available:** Yes

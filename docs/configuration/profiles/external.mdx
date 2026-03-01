@@ -1,0 +1,184 @@
+---
+title: External applications
+description: The external feature lets you use any program or script to examine and process file contents.
+
+The external program must send complete information headers, which will replace the ones from your browser or the website.
+
+If no body content is sent after the header, the original content is used with the new headers.
+sidebar_label: External applications
+tags: [Profiles, configuration]
+---
+
+# External applications
+
+The external feature lets you use any program or script to examine and process file contents.
+
+The external program must send complete information headers, which will replace the ones from your browser or the website.
+
+If no body content is sent after the header, the original content is used with the new headers.
+
+## Global Settings
+
+Configure section-wide settings that apply to all entries.
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| **Enabled** | `BOOL` | `external_enable` | Turn on or off external applications (programs that process content). |
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Turn on or off this rule.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Turn off this rule. |
+| TRUE | `TRUE` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+p>For documentation, and future references, explain the relevance of this entry with your policies.
+
+That is, by reading the policies, a future user can understand the purpose of that entry.
+
+
+### Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_profiles`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Comma separated List of Profiles to which this entry will be applied. Leave it Blank to apply to all.
+
+
+### Executable
+
+**Type:** `STRING`  
+
+
+
+
+The path to the executable; if no absolute path is given, the path as given in the PATH environment variable is searched. Any number of arguments can be passed by separating them by spaces; if you're using a temporary file as the method to pass the contents of the file, it's path will be the last argument. If an executable returns with a non-zero status code, the original content is returned.
+
+
+### Type
+
+**Type:** `STRING_SELECT_ONE`  
+**Default:** `type`  
+
+
+
+The method in which content is passed to the external program; if set to Pipe the content is piped to the program's STDIN, if set to File the content is stored in a temporary file and it's path is passed as the last argument.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| PIPE | `TRUE` | The data will be passed to the external program by writing to STDIN. |
+| FILE | `FALSE` | The data will be passed to the external program by writing it to a temporary file and passing the filename as the last argument. |
+
+
+### Applies to
+
+**Type:** `STRING_SELECT_MANY`  
+**Default:** `flags`  
+
+
+
+Select whether the external application is used on the request, response or both
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| REQUESTS | `FALSE` | This external program will be used on requests. An external program used on requests may modify the request by sending a request header and possibly a request body for POST or PUT requests, it may also satisfy the request by sending back a response header and possibly a body. |
+| RESPONSES | `FALSE` | This external program will be used on responses. An external program used on responses may modify the response by sending a response header and possibly a body. |
+
+
+### Run once per session
+
+**Type:** `BOOL`  
+**Default:** `persession`  
+
+
+
+Run external parser for every request in a session until it returns a non-zero status code, this is useful for performing authentication through an external program.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Disable run once per session. |
+| TRUE | `TRUE` | Enable run once per session. |
+
+
+### Send header
+
+**Type:** `STRING_SELECT_MANY`  
+**Default:** `sendheader`  
+
+
+
+Which header(s), if any, to send to the external program before sending the body. The response header option only applies to external programs that process the response. If both headers are sent, the request header is sent first.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| Request header | `FALSE` | Send the request header before the body. |
+| Response header | `FALSE` | Send the response header before the body. |
+
+
+
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+### Application policies
+
+List of external parsers to process content with.
+
+
+
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+
+
+- [Understanding Profiles](#)
+- [Application Signatures](application-signatures)
+
+---
+
+**Section ID:** `external`  
+**Category:** Profiles  
+

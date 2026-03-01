@@ -1,0 +1,8 @@
+
+> safesquid-docs@0.0.1 build
+> NODE_OPTIONS='--max-old-space-size=2048' docusaurus build
+
+[INFO] [en] Creating an optimized production build...
+[webpackbar] ℹ Compiling Client
+[webpackbar] ℹ Compiling Server
+[webpackbar] ✔ Server: Compiled successfully in 1.62m

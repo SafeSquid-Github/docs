@@ -1,0 +1,6 @@
+{
+  "date": "2026-03-01",
+  "broken_links": 0,
+  "has_issues": true,
+  "details": "Build failed with webpack error: Multiple chunks emit assets to the same filename server.bundle.js (chunks 792 and 326). No broken link warnings found, but build cannot complete successfully. Requires fixing webpack configuration conflict."
+}

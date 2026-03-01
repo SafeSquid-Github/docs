@@ -1,0 +1,399 @@
+---
+title: Access restrictions
+description: Control who can and cannot use SafeSquid&#x27;s services. You can allow or block access for specific people or groups of people.
+
+Set up what each user is allowed to do.
+
+Organize users into groups so you can apply different rules to different groups.
+sidebar_label: Access restrictions
+tags: [Infrastructure, configuration]
+---
+
+# Access restrictions
+
+Control who can and cannot use SafeSquid's services. You can allow or block access for specific people or groups of people.
+
+Set up what each user is allowed to do.
+
+Organize users into groups so you can apply different rules to different groups.
+
+## Global Settings
+
+Configure section-wide settings that apply to all entries.
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| **Default Access Policy** | `STRING_SELECT_ONE` | `access_policy` | You can set your Default Access Policy to either Allow or Deny.
+
+When you set it to Allow, all requests are allowed by default.
+
+Requests that match a rule in the Deny list are blocked.
+
+When you set it to Deny, all requests are blocked by default.
+
+Requests that match a rule in the Allow list are allowed.
+
+Recommended:
+
+If you set the default policy to Deny, you must create rules in the Allow list.
+
+This lets you specify which users should be allowed access.
+
+If you set the default policy to Allow, you must create rules in the Deny list.
+
+This lets you specify which users should be blocked. |
+| **SSO** | `STRING_SELECT_ONE` | `ntlm` | Turn on or off Single Sign-On (SSO) authentication. |
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Turn on or off this rule.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Turn off this rule. |
+| TRUE | `TRUE` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+Add notes here to explain what this rule does and why you created it.
+
+This helps you and others understand the purpose of this rule later.
+
+
+### Trace Entry
+
+**Type:** `STRING_SELECT_ONE`  
+**Default:** `profile_tracing`  
+
+
+
+Turn on or off tracing for this rule
+
+Select "Yes" to log details about this rule for troubleshooting using SafeSquid logs.
+
+Enabling tracing is useful if you want to verify that the rule is working correctly.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `TRUE` | Select this to turn off profile tracing (logging for troubleshooting). |
+| TRUE | `FALSE` | Select this if you want to turn on profile tracing (logging for troubleshooting). |
+
+
+### LDAP Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `ldap_entries`  
+
+
+
+To apply this rule to specific users or groups, specify the LDAP users, groups, or organizational units here.
+
+This only works if your LDAP server (like Active Directory) is connected to SafeSquid.
+
+To connect your LDAP server to SafeSquid, use the Integrate LDAP section.
+
+
+### Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_profiles`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Create a list of profiles that this rule should apply to.
+
+Leave it blank if you don't want to check profiles.
+
+Leave it blank to apply this rule to all connections, regardless of their profiles.
+
+To exclude a profile from this rule, put an exclamation mark before it (!profile)
+
+
+### Interface
+
+**Type:** `STRING_LIST`  
+**Default:** `interface`  
+
+
+
+If SafeSquid is running on multiple network connections, specify which connection (IP:PORT) this rule should apply to.
+
+Leave it blank to apply to all connections (leave blank if SafeSquid only uses one connection).
+
+You can use this to: Restrict access to the web interface (http://safesquid.cfg) to only a specific connection for better security.
+
+Require login on one connection but allow access to specific websites without login on another connection.
+
+Make the proxy configuration file available for automatic proxy setup.
+
+Enable automatic proxy detection on a secondary connection when login is required on the main connection.
+
+
+### IP Address
+
+**Type:** `IP_RANGE_LIST`  
+
+
+
+
+To make this rule apply to specific computers, enter their IP addresses here.
+
+To match a single IP address, just type that address.
+
+To match multiple IP addresses, type them separated by commas.
+
+You can also specify a range of IP addresses.
+
+For example: 192.168.0.10-192.168.0.44 will match all computers with IP addresses from 192.168.0.10 to 192.168.0.44.
+
+If you leave this blank, the rule will apply to all computers regardless of their IP addresses.
+
+If you also specify a username, those users will only be allowed access from the IP addresses you enter here.
+
+
+### PAM authentication
+
+**Type:** `BOOL`  
+**Default:** `pamauth`  
+
+
+
+Requires users to log in with a username and password.
+
+The browser will prompt users to enter their username and password.
+
+Users must enter valid credentials to access the internet.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `TRUE` | Disable PAM authentication. |
+| TRUE | `FALSE` | Enable PAM authentication. |
+
+
+### User name
+
+**Type:** `STRING`  
+
+
+
+
+To require users to log in, fill in this field.
+
+This works differently depending on your settings:
+
+(a) If No Authentication is selected, type the username you want users to use for login.
+
+You must also fill in the Password field for this user.
+
+Users can access with the username and password you specify.
+
+(b) If PAM Authentication (Windows/Linux login) is selected, type existing usernames from your server, and leave the Password field blank.
+
+Only the users you specify here will be allowed to log in.
+
+You can specify multiple usernames using a pattern, for example: ^(john|abraham|mary|laurent)$.
+
+If you leave this blank, all users on the authentication server can log in.
+
+
+### Password
+
+**Type:** `STRING`  
+
+
+
+
+You must fill in the User name field first.
+
+This is the password for the username you entered in the User name field.
+
+Users can access if they enter the correct username and password.
+
+
+### Access
+
+**Type:** `STRING_SELECT_MANY`  
+**Default:** `access`  
+
+
+
+Specify the features that connections matching this entry are allowed to access.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| Web interface | `TRUE` | Selecting this option will allow the user to access the SafeSquid web interface (http://safesquid.cfg). If this option is not selected, the user will see an Access Denied message when trying to access the web interface. Note: Access to template pages is always allowed regardless of this setting. |
+| Proxy requests | `TRUE` | Selecting this option will allow the user to browse the internet through the proxy. |
+| HTTP requests | `TRUE` | Selecting this option will allow the user to make regular web requests through the proxy (for the web interface and redirected requests). |
+| Transparent proxying | `TRUE` | Selecting this option will allow the user to make transparent proxy requests (HTTP requests must also be allowed). |
+| CONNECT requests | `TRUE` | Selecting this option will allow the user to make secure connections like HTTPS (encrypted websites), or use internet applications like FTP or SSH clients. |
+| Allow bypassing | `TRUE` | Selecting this option will allow the user to use special URL commands to bypass filtering rules for testing purposes. This feature is useful for troubleshooting, so it should only be enabled for administrators, not regular users. Note: The URL Commands option must also be enabled for this to work. |
+| URL commands | `TRUE` | Selecting this option will allow the user to use special URL commands (except bypass, which needs to be enabled separately). URL commands let you test features and check your settings from a web browser. URL commands can be used to show information about a webpage and to test certain features. |
+
+
+### Bypass
+
+**Type:** `STRING_SELECT_MANY`  
+**Default:** `bypass`  
+
+
+
+Choose which security features to skip for connections matching this rule.
+
+Specify which features should be bypassed for these connections.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| Header filtering | `FALSE` | Selecting this option will skip header filtering for users who have this policy applied to them. |
+| URL redirecting | `FALSE` | Selecting this option will skip URL redirecting for users who have this policy applied to them. |
+| Cookie filtering | `FALSE` | Selecting this option will skip cookie filtering for users who have this policy applied to them. |
+| Document rewriting | `FALSE` | Selecting this option will skip document rewriting for users who have this policy applied to them. |
+| External Applications | `FALSE` | Selecting this option will skip external applications for users who have this policy applied to them. |
+| Forwarding | `FALSE` | Selecting this option will skip request forwarding for users who have this policy applied to them. |
+| Keyword filtering | `FALSE` | Selecting this option will skip keyword filtering for users who have this policy applied to them. |
+| DNS blacklist | `FALSE` | Selecting this option will skip DNS blacklist checking for users who have this policy applied to them. |
+| Limits | `FALSE` | Selecting this option will skip limits and restrictions for users who have this policy applied to them. |
+| Antivirus | `FALSE` | Selecting this option will skip virus scanning for users who have this policy applied to them. |
+| ICAP | `FALSE` | Selecting this option will skip ICAP content filtering for users who have this policy applied to them. |
+| DLP | `FALSE` | Selecting this option will skip Data Loss Prevention (DLP) checking for users who have this policy applied to them. |
+
+
+### Interface username
+
+**Type:** `STRING`  
+
+
+
+
+Use this field along with the Interface password to require login for accessing the web interface (http://safesquid.cfg).
+
+If you don't define any users, this rule allows everyone to access the web interface.
+
+Users can only access the web interface if they enter the correct username and password.
+
+Recommended:
+
+For better security, create multiple admin accounts, each with their own username and password for accessing the web interface.
+
+
+### Interface password
+
+**Type:** `STRING`  
+
+
+
+
+Fill in this field only if you have entered a username in the Interface username field above.
+
+This is the password for the username you entered above.
+
+Users can access the web interface if they enter the correct username and password.
+
+
+### Add to User-Groups
+
+**Type:** `STRING_LIST`  
+**Default:** `add_user_groups`  
+
+
+
+Organize users into groups based on similar settings that will be used in other sections.
+
+To add users to existing groups, simply type those group names here.
+
+To create a new group for these users, type a new group name here.
+
+When creating a new group, use a name that clearly describes what the group is for.
+
+
+### MAX Concurrent Connections
+
+**Type:** `INT`  
+**Default:** `0`  
+
+
+
+Set the maximum number of simultaneous connections allowed per IP address.  
+Default is 0 (unlimited).
+
+
+
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+### Allow list
+
+When the policy is set to Deny, only requests matching rules in this Allow list will be allowed; all others will be blocked.
+
+Rules are checked from top to bottom, so rules at the top are checked first.
+
+The first rule that matches will be used, and the rest will be ignored.
+
+So the order of rules is very important.
+
+:::tip Quick Add
+This subsection supports quick-add wizard for faster configuration.
+:::
+
+### Deny list
+
+When the default policy is set to Allow, only requests matching rules in this Deny list will be blocked; all others will be allowed.
+
+Rules are checked from top to bottom, so rules at the top are checked first.
+
+The first rule that matches will be used, and the rest will be ignored.
+
+So the order of rules is very important.
+
+
+
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+- [Getting Started](/docs/getting-started/introduction)
+- [Installation](/docs/getting-started/installation)
+
+
+
+---
+
+**Section ID:** `access`  
+**Category:** Infrastructure  
+

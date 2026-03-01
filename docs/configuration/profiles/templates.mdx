@@ -1,0 +1,206 @@
+---
+title: Templates
+description: Custom templates can be very helpful when:
+
+You want to show error messages in a language other than English
+
+Or
+
+You want to show your company logo, warnings, custom messages, and notifications
+
+Templates are used throughout SafeSquid.
+
+They are shown instead of pages that can&#x27;t be displayed because they were blocked, caused an error, or other reasons.
+
+SafeSquid comes with many ready-to-use templates.
+
+You can replace these with your own custom templates.
+
+A template doesn&#x27;t have to be a webpage - it can be an audio file, video file, or other type of file.
+sidebar_label: Templates
+tags: [Profiles, configuration]
+---
+
+# Templates
+
+Custom templates can be very helpful when:
+
+You want to show error messages in a language other than English
+
+Or
+
+You want to show your company logo, warnings, custom messages, and notifications
+
+Templates are used throughout SafeSquid.
+
+They are shown instead of pages that can't be displayed because they were blocked, caused an error, or other reasons.
+
+SafeSquid comes with many ready-to-use templates.
+
+You can replace these with your own custom templates.
+
+A template doesn't have to be a webpage - it can be an audio file, video file, or other type of file.
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Turn on or off this rule.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Turn off this rule. |
+| TRUE | `TRUE` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+Add notes here to explain what this rule does and why you created it.
+
+This helps you and others understand the purpose of this rule later.
+
+
+### Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_profiles`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Choose which profiles this rule should apply to.
+
+This rule will only apply if the connection has one of the profiles you select.
+
+Leave it blank to apply to all connections, regardless of their profiles.
+
+To exclude a specific profile, put an exclamation mark before it (! profile).
+
+
+### Name
+
+**Type:** `STRING`  
+
+
+
+
+Specify the name of the template here, for identification, and this is used in other sections for reference purpose.
+
+
+### File
+
+**Type:** `STRING`  
+
+
+
+
+Specify the filename of the template, here. You have to mention the path (location) of the file here.
+
+A template may not necessarily be in html pattern, but can be almost about anything like an audio file, flash file or an executable one.
+
+
+### Mime type
+
+**Type:** `STRING`  
+
+
+
+
+Specify MIME-type of the template, here.
+
+While using an executable template, this is set, by having the external program send a HTTP response header.
+
+
+### Response code
+
+**Type:** `INT`  
+**Default:** `0`  
+
+
+
+The response code to be used when sending the template
+
+
+### Type
+
+**Type:** `STRING_SELECT_ONE`  
+**Default:** `type`  
+
+
+
+Specify the type of the template.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FILE | `TRUE` | The contents of the file will be sent. |
+| EXECUTABLE | `FALSE` | The file is executed and whatever is it's output on the STDOUT, is sent as the template. |
+
+
+### Parsable
+
+**Type:** `BOOL`  
+**Default:** `parsable`  
+
+
+
+Choose here whether or not to substitute the variables present in the HTML codes used to display the template.
+
+There are several variables that can be used in templates if the parsable option is selected, which will be replaced with information about the request currently being handled. These variables can be used to generate content in real time.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Select parsable to false if you do not want to parse the template. |
+| TRUE | `TRUE` | Select parsable to true if you want to parse the template. |
+
+
+
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+### Manage templates
+
+Create list of entries for different templates.
+
+
+
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+
+
+- [Understanding Profiles](#)
+- [Application Signatures](application-signatures)
+
+---
+
+**Section ID:** `templates`  
+**Category:** Profiles  
+

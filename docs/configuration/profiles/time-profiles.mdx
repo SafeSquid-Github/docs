@@ -1,0 +1,282 @@
+---
+title: Time Profiler
+description: Use Time Profiler to set up rules about when people can access the internet.
+
+You can set time ranges by: Month, Day of the month, Day of the week, Hour, and Minute.
+
+Create rules that combine different time ranges (like &quot;Monday to Friday, 9 AM to 5 PM&quot;).
+
+Time Profiler lets you allow or block websites and website categories based on the time of day or day of the week.
+sidebar_label: Time Profiler
+tags: [Profiles, configuration]
+---
+
+# Time Profiler
+
+Use Time Profiler to set up rules about when people can access the internet.
+
+You can set time ranges by: Month, Day of the month, Day of the week, Hour, and Minute.
+
+Create rules that combine different time ranges (like "Monday to Friday, 9 AM to 5 PM").
+
+Time Profiler lets you allow or block websites and website categories based on the time of day or day of the week.
+
+## Global Settings
+
+Configure section-wide settings that apply to all entries.
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| **Enabled** | `BOOL` | `time_policy` | Enable or Disable time profiles section. |
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Enable or Disable this entry.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Turn off this rule. |
+| TRUE | `TRUE` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+For documentation, and future references, explain the relevance of this entry with your policies.
+
+That is, by reading the policies, a future user can understand the purpose of that entry.
+
+
+### Trace Entry
+
+**Type:** `STRING_SELECT_ONE`  
+**Default:** `profile_tracing`  
+
+
+
+Enable or Disable Tracing of this entry.
+
+Select "Yes" to debug the application of entry using SafeSquid logs.
+
+Enable entry tracing, is useful if you wish to validate, its application.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `TRUE` | Select this option to disable profile tracing. |
+| TRUE | `FALSE` | Select this option to enable profile tracing. |
+
+
+### Time Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_time_profiles,time_profiler_profiles`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Specify the list of Time Profile(s) for which this entry should be applicable.
+
+Leave it Blank, to ignore this applicability test.
+
+This entry will be applicable only if the connection has at-least one of the specified Time Profile(s).
+
+To avoid application of this entry to a connection that has a Time Profile, use negation (! Weekday).
+
+Go to Time Profiler to review, or define new Time Profiles.
+
+
+### Month range
+
+**Type:** `STRING_RANGE`  
+**Default:** `month`  
+**Optional:** Yes  
+
+
+Set the month range for which this entry is active.
+
+By default, it applies to all months.
+
+For example:
+
+January to March: Keeps this policy active from the month of January through March.
+
+
+### Day range
+
+**Type:** `INT_RANGE`  
+**Default:** `1,31`  
+**Optional:** Yes  
+
+
+Set the day range for which this entry is active.
+
+By default, it applies to all days.
+
+For example: Day 5 to 15 keeps this profile active from day 5th through day 15th.
+
+If you mentioned month range as January to March, then this profile will be active after every month 5 to 15 from January through March.
+
+
+### Weekday range
+
+**Type:** `STRING_RANGE`  
+**Default:** `weekday`  
+**Optional:** Yes  
+
+
+Set the weekday range for which this entry is active.
+
+By default, it applies to all weekdays.
+
+For example: Monday to Thursday: Keeps this profile active from Monday through Thursday.
+
+If you mentioned Month Range and Day Range, then this profile is active for a combination of all ranges. (Month Range + Day range + weekday range).
+
+
+### Hour range
+
+**Type:** `INT_RANGE`  
+**Default:** `0,23`  
+**Optional:** Yes  
+
+
+Set the hour range for which this entry is active. By default, it applies to every hour.
+
+For example: Hour 9 to 12: keeps this profile active from 9 AM to 12 PM.
+
+
+### Minute range
+
+**Type:** `INT_RANGE`  
+**Default:** `0,59`  
+**Optional:** Yes  
+
+
+Set the minute range for which this entry is active, if left blank applies to every minute. This can be used in conjunction with Hour Range.
+
+For example: If the hour range is 9 to 12 and minute range is 15 to 30, then the profile remains active from 9:15 through 12:30.
+
+
+### Time match mode
+
+**Type:** `STRING_SELECT_ONE`  
+**Default:** `matchmode`  
+
+
+
+Select the appropriate mode to match the multiple time ranges.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| ABSOLUTE | `TRUE` | When the absolute time match mode is used, any time between the starting and ending time only will match. |
+| ALL RANGES | `FALSE` | With the all ranges time match mode however, a time within all of the ranges will match. |
+
+
+### Added Time profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_time_profiles`  
+
+
+
+Specify the list of Profiles, to append to the connection’s existing Profiles, if all the applicability test rules match.
+
+Subsequent applicable Entry may further modify the connection’s Profiles.
+
+Define a new Profile(s), or Select previously defined Profile(s) from the drop-down menu to apply to the connection, if it matches this entry.
+
+When defining a new Profile, use terms that uniquely represent your needs.
+
+You can use added profiles in Virus scanning, SSL inspection and other filtering sections.
+
+
+### Removed Time profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_time_profiles`  
+
+
+
+Specify the list of Profile(s), to remove the connection’s existing Profiles, if all the applicability test rules match.
+
+Subsequent applicable Entry may further modify the connection’s Profiles.
+
+Select previously defined Profile(s) from the drop-down menu to apply to the connection, if it matches this entry.
+
+
+
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+### Time profiles
+
+Create list of Entries to implement your Time profile Policies.
+
+Safesquid evaluates the entries in the order of top to bottom.
+
+All the entries within the time range are applicable.
+
+Add month, day, weekday, hour and minute ranges for each entry.
+
+Each entry will be applicable for all combinations mentioned in that entry.
+
+Click on ADD below to create a new policy.
+
+Example:  
+Month range: January to May  
+Day range: 1 to 15  
+Weekday range: Monday to Friday  
+Hour range: 9 to 16  
+Minute range: 30 to 00  
+
+The Above profile will block all social categories, every month 1st-15th, from Jan to May and every day from 9:30 AM to 4:00 PM, from Monday to Friday, if you select Time match mode as allranges.
+
+The Above profile will block all social categories, every month 1st-15th, from Jan to May and every week from Monday- 9:30 AM to Friday - 4:00 PM, if you select Time match mode as absolutemode.
+
+:::tip Quick Add
+This subsection supports quick-add wizard for faster configuration.
+:::
+
+
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+
+
+- [Understanding Profiles](#)
+- [Application Signatures](application-signatures)
+
+---
+
+**Section ID:** `timeProfiles`  
+**Category:** Profiles  
+**Wizard Available:** Yes

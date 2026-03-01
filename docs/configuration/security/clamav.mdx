@@ -1,0 +1,117 @@
+---
+title: Clam antivirus
+description: With this antivirus feature you can detect and block files containing viruses known to the ClamAV daemon scanner.
+sidebar_label: Clam antivirus
+tags: [Security, configuration]
+---
+
+# Clam antivirus
+
+With this antivirus feature you can detect and block files containing viruses known to the ClamAV daemon scanner.
+
+## Global Settings
+
+Configure section-wide settings that apply to all entries.
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| **Enabled** | `BOOL` | `clamav_enable` | Turn on or off ClamAV virus scanning. |
+| **ClamAV hostname or socket path** | `STRING` | `127.0.0.1` | Enter the computer name or IP address where ClamAV is running, or the path to its local socket file. |
+| **ClamAV port** | `INT` | `3310` | Enter the port number that ClamAV is using.
+
+Leave it blank if you're using a local socket file. The default port is 3310. |
+| **Default template** | `STRING` | - | You can send name of the Template, when this entry is matched
+
+Leave it blank for Default template. |
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Turn on or off this rule
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Turn off this rule. |
+| TRUE | `TRUE` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+Add notes here to explain what this rule does and why you created it.
+
+This helps you and others understand the purpose of this rule later.
+
+
+### Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_profiles,clamav_profiles`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Choose which profiles this rule should apply to.
+
+This rule will only apply if the connection has one of the profiles you select.
+
+Leave it blank to apply to all connections, regardless of their profiles.
+
+To exclude a specific profile, put an exclamation mark before it (!profile).
+
+
+### Template
+
+**Type:** `STRING`  
+
+
+
+
+Enter the name of the message or page template to show when this rule matches.
+
+
+
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+### clamav
+
+ClamAV entries.
+
+
+
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+
+- [Security Best Practices](#)
+- [Threat Protection](#)
+
+
+---
+
+**Section ID:** `clamav`  
+**Category:** Security  
+

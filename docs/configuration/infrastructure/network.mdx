@@ -1,0 +1,217 @@
+---
+title: Network settings
+description: Configure the basic Network Infrastructure.
+
+Configure the Sockets on which SafeSquid will Listen, and accept connections from clients.
+
+Manage SafeSquid&#x27;s outgoing connections through existing IPs of your host system.
+sidebar_label: Network settings
+tags: [Infrastructure, configuration]
+---
+
+# Network settings
+
+Configure the basic Network Infrastructure.
+
+Configure the Sockets on which SafeSquid will Listen, and accept connections from clients.
+
+Manage SafeSquid's outgoing connections through existing IPs of your host system.
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Turn on or off this rule.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Turn off this rule. |
+| TRUE | `TRUE` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+Add notes here to explain what this rule does and why you created it.
+
+This helps you and others understand the purpose of this rule later.
+
+
+### Port
+
+**Type:** `INT`  
+**Default:** `0`  
+
+
+
+Specify the Listen port. By default, SafeSquid listens on port 8080.
+
+<1 - 65535>  
+Port value can be a positive integer between 1 and 65535
+
+8080  
+Default value is 8080
+
+
+### IP
+
+**Type:** `STRING`  
+
+
+
+
+Specify the IP address to complete the socket definition. You may choose a specific IPv4 or IPv6 address.
+
+Empty or Blank  
+All the IPv4 and IPv6 addresses of the host.
+
+0.0.0.0  
+Listen to all IPv4 IPs only
+
+::  
+Listen to all IPv6 IPs only
+
+
+### Bindings
+
+**Type:** `STRING_SELECT_MANY`  
+**Default:** `flags`  
+
+
+
+Choose additional bindings (roles) for this Socket.
+
+You may select multiple options if you need.
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Turn on or off this rule.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Turn off this rule. |
+| TRUE | `TRUE` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+Add notes here to explain what this rule does and why you created it.
+
+This helps you and others understand the purpose of this rule later.
+
+
+### Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_profiles,network_settings_profiles`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Specify the Profiles applicable for this entry.
+
+This entry will be applicable only if the connection has any one of the specified profiles.
+
+Leave it Blank, to apply for all connections irrespective of any applied profile.
+
+To avoid application to a connection that has a profile, use negated profile (!profile).
+
+
+### IP
+
+**Type:** `STRING`  
+
+
+
+
+Specify an IP address assigned to the host system.
+
+SafeSquid will bind the outgoing connection to this IP address thus effectively applying the desired routing for the connection.
+
+
+
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+### Listen
+
+Setup SafeSquid’s Listen Interfaces to accept connections from clients.
+
+When SafeSquid starts-up, all the enabled entries will be evaluated, and create appropriate Listening Sockets.
+
+You may specify these Interfaces when creating policies in **Access Restrictions** Section.
+
+Evaluation logically skips disabled Entries.
+
+Service restart is required to effect any changes made here.
+
+:::tip Quick Add
+This subsection supports quick-add wizard for faster configuration.
+:::
+
+### Interface
+
+Specify Interfaces for outgoing connections.
+
+SafeSquid can take advantage of multiple ISPs or outbound connection routes, on multi-homed host systems.
+
+Create multiple entries as required.
+
+SafeSquid evaluates all enabled entries starting from top, and selects the first one that matches the connection.
+
+Evaluation skips the disabled Entries.
+
+
+
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+- [Getting Started](/docs/getting-started/introduction)
+- [Installation](/docs/getting-started/installation)
+
+
+
+---
+
+**Section ID:** `network`  
+**Category:** Infrastructure  
+**Wizard Available:** Yes

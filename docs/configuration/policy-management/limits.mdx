@@ -1,0 +1,207 @@
+---
+title: Speed Limits
+description: Set data transfer rate (speed or QoS) limits.
+sidebar_label: Speed Limits
+tags: [Policy Management, configuration]
+---
+
+# Speed Limits
+
+Set data transfer rate (speed or QoS) limits.
+
+## Global Settings
+
+Configure section-wide settings that apply to all entries.
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| **Enabled** | `BOOL` | `limits_enabled` | Turn on or off limits to control internet speed and data transfer rates. |
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Enable or Disable this Entry.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Turn off this rule. |
+| TRUE | `TRUE` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+Enter your comments here for future references, explaining what this entry does.
+
+
+### Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_profiles,speed_limits_profiles`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Select the previously created profiles, to which this rule will be applied.  
+Leave this rule blank, when you want to apply this entry to all connections.
+
+
+### Action
+
+**Type:** `STRING_SELECT_ONE`  
+**Default:** `action`  
+
+
+
+Select the appropriate action to apply when this entry matches.
+
+For example: Select allow if you desire to set a limit on data transfer or the number of requests that can be made. When limit is reached action will be denied automatically.  
+If action is set to deny then any request falling into the specified time range will be blocked, otherwise request is allowed.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| ALLOW | `TRUE` | Connections will be allowed after matching this entry. |
+| DENY | `FALSE` | Connections will be denied after matching this entry. |
+
+
+### Template
+
+**Type:** `STRING`  
+
+
+
+
+Specify the template name that should be displayed on a user's screen when this entry matches.
+
+Leave this rule blank, to use default template "blocked".
+
+For example: Templates like maxbandwidth and maxrequests are used for excessive bandwidth or requests, respectively.
+
+
+### Download transfer limit
+
+**Type:** `LONG_FILE_SIZE`  
+**Default:** `0`  
+
+
+
+Specify the maximum number of bytes(download limit) that can be downloaded by the proxy during the time span of this matching entry.  
+No download limit is applied, if left blank.
+
+
+### Upload transfer limit
+
+**Type:** `LONG_FILE_SIZE`  
+**Default:** `0`  
+
+
+
+Specify the maximum number of bytes(upload limit) that can be uploaded by the proxy during the time span of this matching entry.  
+No upload limit is applied, if left blank.
+
+
+### Request limit
+
+**Type:** `UINT`  
+**Default:** `0`  
+
+
+
+Specify the maximum number of requests(maximum request) that would be allowed during the specified time.  
+No request limit is applied, if left blank.
+
+
+### Download rate
+
+**Type:** `LONG_FILE_SIZE`  
+**Default:** `0`  
+
+
+
+Specify the maximum download transfer rate(download rate) that should be allowed.  
+No download transfer rate will be applied, if left blank.
+
+
+### Adjust Transfer Limits
+
+**Type:** `STRING_SELECT_MANY`  
+**Default:** `flags`  
+
+
+
+Select one or more options affecting how transfer limits should be applied to fine tune the rule.  
+  
+Transfer Limits will apply:  
+
+*   **Limit cache transfers:** When the content is being served from the cache.
+*   **Per-request limit:** Will be applied to each single request.
+*   **Group limit:** Share transfer limit between all matching connections.
+
+  
+For example:  
+When download transfer limit is set as 5 MB.  
+For Per-request limit each and every matching request will be allowed 5 MB.  
+For Group limit 5 MB will be shared between all the matching connections.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| LIMIT CACHE TRANSFERS | `FALSE` | Transfer limit will be applied even if the content is being served from the cache. |
+| PER-REQUEST LIMIT | `FALSE` | Transfer limit will be applied to each single request. |
+| GROUP LIMIT | `TRUE` | Transfer bandwidth limit will be shared between all matching connections. |
+
+
+
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+### Set limits
+
+The list of entries below will be processed from top to down.  
+Each entry describes limitations on users for accessing content from the Internet.  
+Disable entries, to ignore them.  
+Every entry that matches the connection parameters specified in the entry will be processed for that connection.
+
+:::tip Quick Add
+This subsection supports quick-add wizard for faster configuration.
+:::
+
+
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+
+
+
+---
+
+**Section ID:** `limits`  
+**Category:** Policy Management  
+**Wizard Available:** Yes

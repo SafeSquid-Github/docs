@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "NODE_OPTIONS='--max-old-space-size=2048' docusaurus build",
-    "build:low-memory": "NODE_OPTIONS='--max-old-space-size=1536' docusaurus build",
+    "generate:docs": "node scripts/generate-section-docs.js",
+    "start": "npm run generate:docs && docusaurus start",
+    "build": "npm run generate:docs && NODE_OPTIONS='--max-old-space-size=2048' docusaurus build",
+    "build:low-memory": "npm run generate:docs && NODE_OPTIONS='--max-old-space-size=1536' docusaurus build",
+    "build:skip-gen": "NODE_OPTIONS='--max-old-space-size=2048' docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
+    "deploy": "npm run generate:docs && docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
@@ -36,6 +38,10 @@
     "@docusaurus/module-type-aliases": "^3.9.2",
     "@docusaurus/tsconfig": "^3.9.2",
     "@docusaurus/types": "^3.9.2",
+    "fast-xml-parser": "^5.4.1",
+    "handlebars": "^4.7.8",
+    "js-yaml": "^4.1.1",
+    "turndown": "^7.2.2",
     "typescript": "~5.6.2"
   },
   "browserslist": {

@@ -1,0 +1,354 @@
+---
+title: System configuration
+description: Use &#x27;System configuration&#x27; to tune various parameters with respective network infrastructure.
+
+By this tuning you can improve overall Internet service performance and manage your secure port utilization.
+sidebar_label: System configuration
+tags: [Infrastructure, configuration]
+---
+
+# System configuration
+
+Use 'System configuration' to tune various parameters with respective network infrastructure.
+
+By this tuning you can improve overall Internet service performance and manage your secure port utilization.
+
+## Global Settings
+
+Configure section-wide settings that apply to all entries.
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| **Proxy hostname** | `STRING` | `localhost` | When your enterprise has multiple instances of SafeSquid, various instances will identify each other by this 'Proxy hostname'.
+
+If your enterprise maintains single LDAP domain, then set proxy hostname parameter as 'your LDAP domain'.
+
+Then you can login over LDAP authentication without mentioning the domain. |
+| **Connection pool size** | `INT` | `100` | Set the maximum concurrent outbound connections.
+
+SafeSquid can reuse an established outbound connection, from the Connection Pool.
+
+Connection Pool Size should be at least equal to anticipated concurrent requests,Minimally
+
+If the Connection Pool is full, SafeSquid will automatically delete the oldest connection, to accommodate a new outbound connection. |
+| **Connection pool timeout** | `INT` | `15` | You can set here the maximum time period in seconds, that a connection may be kept in the connection pool.
+
+The age of a connection is reset every-time it gets used.
+
+When the age of a connection exceeds the timeout specified here, it will be automatically removed from the pool. |
+| **Send Debugging Headers To** | `STRING_SELECT_ONE` | `dheaders` | Vital debugging information like application of profiling and filtering policies can be included in the HTTP protocol headers.  
+Specify if this information should be sent to client, server, or both.  
+Leave the field empty if this information should not be sent at all. |
+| **Dynamic Categorization** | `BOOL` | `catreferer` | The requested URL is normally considered for categorization purposes.  
+However, when accessing a web page, Internet Browsers may require connecting to various other URLs to complete the portrayal of the web-page.  
+Requests to these *dependency URLs* may thus get differently categorized than the originally requested web-page.  
+Thus even if the initially requested URL is included in a "Custom Category" created by you, and permitted for access, the proxy users may witness "broken pages".  
+Providing a satisfactory web-experience to the users, thus requires identification and explicit access permission for each of such *dependency URL*.
+
+**Dynamic Categorization** determines requests made by Internet Browser to serve a web-page included in a Custom Category.  
+Custom Categories applicable to the "Referring Web-Page" are added to the list of categories determined for the requested URL.
+
+Dynamic Categorization enables a holistic web-experience to the users, when accessing permitted web-sites. |
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Turn on or off this rule.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Disable this entry. |
+| TRUE | `TRUE` | Enable this entry. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+Add notes here to explain what this rule does and why you created it.
+
+This helps you and others understand the purpose of this rule later.
+
+
+### Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_profiles`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Choose which profiles this rule should apply to.
+
+This rule will only apply if the connection has one of the profiles you select.
+
+Leave it blank to apply to all connections, regardless of their profiles.
+
+To exclude a specific profile, put an exclamation mark before it (! profile).
+
+
+### Connection timeout
+
+**Type:** `INT`  
+**Default:** `10`  
+
+
+
+Set the maximum time (in seconds) for SafeSquid to wait when trying to connect to a website.
+
+This affects connections that SafeSquid makes to websites.
+
+Example:
+
+If you have a slow internet connection.
+
+You can create a profile for slow-connecting websites and increase this timeout value for them.
+
+
+### Header timeout
+
+**Type:** `INT`  
+**Default:** `5`  
+
+
+
+Depending upon your network conditions, a significant amount of time may pass between the events of connection set up and the receipt of initial headers from the client.
+
+The timeout in seconds to wait for a client to make the initial HTTP request.
+
+The default value of "5" seconds may not be enough when used by ISPs to service dial-up customers.
+
+
+### Keepalive timeout
+
+**Type:** `INT`  
+**Default:** `15`  
+
+
+
+SafeSquid can keep connections open with clients in a connection pool, which allows it to respond faster to future requests from those clients.
+
+Set the maximum time (in seconds) that connections can be kept in the pool.
+
+
+### Maximum download buffer size
+
+**Type:** `FILE_SIZE`  
+**Default:** `10M`  
+
+
+
+Some SafeSquid features like keyword filtering, content rewriting, image filtering, and virus scanning need to download content first before they can process it.
+
+SafeSquid stores this content temporarily, then sends it to the appropriate processors. Set the maximum size of downloaded content that can be stored and processed. You can use K for kilobytes or M for megabytes.
+
+
+### Maximum upload buffer size
+
+**Type:** `FILE_SIZE`  
+**Default:** `500K`  
+
+
+
+The maximum size of files being uploaded that will be stored temporarily for processing. Larger uploads will be sent directly to the website without processing.
+
+If the upload buffer is too large, browsers may timeout because SafeSquid receives all the data immediately but may need more time to process and send it to the website.
+
+
+### Buffer wait time
+
+**Type:** `INT`  
+**Default:** `5`  
+
+
+
+When the content is being buffered, the client may be sent an intimation of the downloading status.
+
+SafeSquid can automatically send the template "downloading", when the content is being downloaded into the buffer. You can specify, the time interval in seconds, at which the downloading template will be resent.
+
+
+### CONNECT ports
+
+**Type:** `PORT_RANGE_LIST`  
+**Default:** `80,443,24-25`  
+
+
+
+SafeSquid can be used by applications that support, like FTP-clients and other utilities to make "CONNECT", requests. CONNECT over HTTP allows these applications to create a direct tunnel for the required target services.
+
+The specification may be done as a port range. For example - 20,21,1023-65535.
+
+Caution:  
+The data exchanged by CONNECT protocol cannot be buffered, and therefore analyzed for filtering purposes.
+
+
+### Always compress mimetype
+
+**Type:** `STRING_LIST`  
+**Default:** `add_content_signatures`  
+
+
+
+A regular expression matching the MIME-types which should always be buffered and compressed even if they would not be buffered otherwise.
+
+
+### Compress outgoing
+
+**Type:** `BOOL`  
+**Default:** `compressout`  
+
+
+
+SafeSquid can compress data using gzip compression, before sending data to clients.
+
+This can significantly boost throughput if SafeSquid is being used as remotely hosted solution.
+
+For networks wherein SafeSquid is deployed locally, it is recommended you disable this feature.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `TRUE` | Disable Compress outgoing. |
+| TRUE | `FALSE` | Enable Compress outgoing. |
+
+
+### Compress incoming
+
+**Type:** `STRING_SELECT_ONE`  
+**Default:** `compressin`  
+
+
+
+This option will make Safesquid attach an Accept-Encoding header that lets the Web server know we can accept gzip and deflate content encodings regardless of whether or not the browser making the request supports it
+
+If the browser doesn't support it, it will be buffered and decompressed before sending.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Never Request Compressed data from remote web-server. |
+| TRUE | `FALSE` | Always Request Compressed data from remote web-server. |
+| AUTO | `TRUE` | Request Compressed data from remote web-server ONLY if supported by client. |
+
+
+### Buffer Chunked Responses
+
+**Type:** `STRING_SELECT_ONE`  
+**Default:** `buffer_chunked`  
+
+
+
+Buffering Chunked Responses is generally never advisable.  
+Unfortunately however, real-time content inspection requires buffering of response payload.  
+Therefore under certain conditions, if you have no choice, you may want to buffer chunked responses.  
+Select one of the options very wisely.  
+Recommended and default is **FALSE**.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| NEVER | `TRUE` | Never Buffer Chunked Responses. |
+| ENCODED | `FALSE` | Buffer only Encoded (compressed) Chunked Responses if demanded by a content inspector. |
+| ALWAYS | `FALSE` | Always Buffer Chunked Responses if demanded by a content inspector. |
+
+
+### Add X-Forwarded-For header
+
+**Type:** `BOOL`  
+**Default:** `xforwardedfor`  
+
+
+
+This option will add a header letting an upstream proxy or Web server know the IP address where the original request came from.
+
+This feature must be enabled if you are deploying SafeSquid as an ISP based solution.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `TRUE` | Disable additon of X-Forwarded-For header. |
+| TRUE | `FALSE` | Enable additon of X-Forwarded-For header. |
+
+
+### Add Via header
+
+**Type:** `BOOL`  
+**Default:** `via`  
+
+
+
+This option will add a header letting an upstream proxy or Web server know what proxy server the request passed through.
+
+This feature must be enabled if you are deploying SafeSquid as an ISP based solution.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `TRUE` | Disable via header. |
+| TRUE | `FALSE` | Enable via header. |
+
+
+
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+### Compression and buffering policies
+
+The following entries will be applied on each connection based on the profiles defined.
+
+Policy evaluation is done in top-down order. The first entry matching the profile will be applied to the connection.
+
+:::tip Quick Add
+This subsection supports quick-add wizard for faster configuration.
+:::
+
+### Connection pool
+
+View information of the current connection(s) that are being held open in the connection pool and/or awaiting reuse.
+
+
+
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+- [Getting Started](/docs/getting-started/introduction)
+- [Installation](/docs/getting-started/installation)
+
+
+
+---
+
+**Section ID:** `general`  
+**Category:** Infrastructure  
+**Wizard Available:** Yes

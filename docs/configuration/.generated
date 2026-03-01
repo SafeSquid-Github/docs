@@ -1,0 +1,62 @@
+# Auto-Generated Documentation
+
+**⚠️ Files in this directory are AUTO-GENERATED from `data/section.xml`**
+
+## Do NOT edit these files directly!
+
+Your changes will be overwritten on the next build.
+
+## To update this documentation:
+
+1. **For content changes:** Edit `data/section.xml`
+2. **For template changes:** Edit `templates/mdx/section.mdx.hbs`
+3. **For examples and best practices:** Create separate manual files
+
+## Manual Enhancement Strategy
+
+To add examples, best practices, or additional content:
+
+### Option 1: Create Companion Files
+
+```
+docs/configuration/infrastructure/
+├── access.mdx                 # Auto-generated
+└── access-examples.mdx        # Manual examples
+```
+
+### Option 2: Use Import
+
+In your manual file:
+
+```mdx
+---
+title: Access Control Guide
+---
+
+import GeneratedReference from './access.mdx';
+
+# Access Control Best Practices
+
+[Your manual content here]
+
+## Field Reference
+
+<GeneratedReference />
+```
+
+### Option 3: Edit After Generation (Not Recommended)
+
+If you must edit generated files:
+
+1. Make your edits
+2. Copy to a safe location before regenerating
+3. Manually merge after regeneration
+
+**Better:** Contribute to the XML or template instead!
+
+---
+
+**Generated on:** Every build (`npm run build` or `npm start`)  
+**Generator script:** `scripts/generate-section-docs.js`  
+**Template:** `templates/mdx/section.mdx.hbs`  
+**Source:** `data/section.xml`

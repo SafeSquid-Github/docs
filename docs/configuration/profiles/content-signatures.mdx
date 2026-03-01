@@ -1,0 +1,226 @@
+---
+title: Content Signatures
+description: This Section allows you to manage SafeSquid&#x27;s response profiling engine.
+sidebar_label: Content Signatures
+tags: [Profiles, configuration]
+---
+
+# Content Signatures
+
+This Section allows you to manage SafeSquid's response profiling engine.
+
+## Global Settings
+
+Configure section-wide settings that apply to all entries.
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| **Enabled** | `BOOL` | `content_enable` | Turn on or off the use of content signatures (to identify file types and content). |
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Turn on or off this rule.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| false | `false` | Turn off this rule. |
+| true | `true` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+
+
+
+
+Add notes here to explain what this rule does and why you created it. This helps you and others understand it later.
+
+
+### Mime type
+
+**Type:** `STRING`  
+
+
+
+
+This entry applies to regular expression matching the MIME-type. Here MIME-type indicates the response-body received from the server. Example: Content-Type: text/html; charset=utf-8 IF this entry should be applied to all responses irrespective of MIME-type leave it blank.
+
+
+### Added Content Signatures
+
+**Type:** `STRING_LIST`  
+**Default:** `add_content_signatures`  
+
+
+
+List of Response Profiles that will be added to connection, if the above specified tests result true.
+
+
+### category
+
+**Type:** `STRING_LIST`  
+**Default:** `add_content_category`  
+
+
+
+Category of content signatures
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Turn on or off this rule.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| false | `false` | Turn off this rule. |
+| true | `true` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+
+
+
+
+Add notes here to explain what this rule does and why you created it. This helps you and others understand it later.
+
+
+### Add Application Category
+
+**Type:** `STRING_LIST`  
+**Default:** `add_content_category`  
+
+
+
+Add New application category.
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Turn on or off this rule.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| false | `false` | Turn off this rule. |
+| true | `true` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+
+
+
+
+Add notes here to explain what this rule does and why you created it. This helps you and others understand it later.
+
+
+### File Extension
+
+**Type:** `STRING`  
+
+
+
+
+This entry applies to regular expression matching the extension of file(s) obtained in response body. Leave it blank to apply all the requests irrespective of file extension.
+
+
+### Added File Extensions
+
+**Type:** `STRING_LIST`  
+**Default:** `add_file_extensions`  
+
+
+
+List of Response Profiles that will be added to connection, if the above specified tests result true.
+
+
+### group
+
+**Type:** `STRING_LIST`  
+**Default:** `add_content_category`  
+
+
+
+Category of content signatures
+
+
+
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+### Content Signatures List
+
+The following rules are tested for each connection. The testing is done in top-down order. The first entry that matches the Response Profile of a connection, will be applied to it. Click on Add below, to add a new entry.
+
+
+### Content Categories List
+
+The following rules are tested for each connection. The testing is done in top-down order. The first entry that matches the Request Profile of a connection, will be applied to it. Click on Add below, to add a new entry.
+
+
+### Content File Extensions
+
+The following rules are tested for each connection. The testing is done in top-down order. The first entry that matches the Request Profile of a connection, will be applied to it. Click on Add below, to add a new entry.
+
+
+
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+
+
+- [Understanding Profiles](#)
+- [Application Signatures](application-signatures)
+
+---
+
+**Section ID:** `contentSignatures`  
+**Category:** Profiles  
+**Wizard Available:** Yes

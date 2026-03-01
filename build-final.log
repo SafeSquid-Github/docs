@@ -1,0 +1,23 @@
+
+> safesquid-docs@0.0.1 build
+> NODE_OPTIONS='--max-old-space-size=2048' docusaurus build
+
+[INFO] [en] Creating an optimized production build...
+[webpackbar] ℹ Compiling Client
+[webpackbar] ℹ Compiling Server
+[webpackbar] ✔ Server: Compiled successfully in 1.55m
+[webpackbar] ✔ Client: Compiled successfully in 2.50m
+[WARNING] {"moduleIdentifier":"/root/.openclaw/workspace/web-dev/safesquid-docs/node_modules/vscode-languageserver-types/lib/umd/main.js","moduleName":"./node_modules/vscode-languageserver-types/lib/umd/main.js","loc":"3:24-31","message":"Critical dependency: require function is used in a way in which dependencies cannot be statically extracted","compilerPath":"server"}
+[WARNING] Docusaurus found broken links!
+
+Please check the pages of your site in the list below, and make sure you don't reference any path that does not exist.
+Note: it's possible to ignore broken links with the 'onBrokenLinks' Docusaurus configuration, and let the build pass.
+
+Exhaustive list of all broken links found:
+- Broken link on source page path = /docs/Authentication/Directory_Services/Active_Directory/Configure_Kerberos_Authentication_With_RODC/:
+   -> linking to Simple_Authentication/ (resolved as: /docs/Authentication/Directory_Services/Active_Directory/Configure_Kerberos_Authentication_With_RODC/Simple_Authentication/)
+   -> linking to Setup_Active_Directory_Integration/ (resolved as: /docs/Authentication/Directory_Services/Active_Directory/Configure_Kerberos_Authentication_With_RODC/Setup_Active_Directory_Integration/)
+   -> linking to /docs/Troubleshooting/main/
+
+[SUCCESS] Generated static files in "build".
+[INFO] Use `npm run serve` command to test your build locally.

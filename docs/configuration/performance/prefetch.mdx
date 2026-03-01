@@ -1,0 +1,214 @@
+---
+title: Prefetching
+description: Use Prefetching to make websites load faster for users.
+
+SafeSquid can look at web pages ahead of time, find links to images and other content, and start downloading them in the background while showing you the page.
+
+Set up rules in the Prefetch section to tell the system which pages to prepare in advance.
+
+Make sure Caching is turned on to get the best results from Prefetching.
+sidebar_label: Prefetching
+tags: [Performance, configuration]
+---
+
+# Prefetching
+
+Use Prefetching to make websites load faster for users.
+
+SafeSquid can look at web pages ahead of time, find links to images and other content, and start downloading them in the background while showing you the page.
+
+Set up rules in the Prefetch section to tell the system which pages to prepare in advance.
+
+Make sure Caching is turned on to get the best results from Prefetching.
+
+## Global Settings
+
+Configure section-wide settings that apply to all entries.
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| **Enabled** | `BOOL` | `prefetch_enabled` | Turn on or off prefetching (downloading web content in advance for faster loading). |
+| **Threads** | `INT` | `16` | Maximum concurrent threads that will be used for Pre-Fetching.
+
+SafeSquid service must be restarted to effect any change in this setting.
+
+Optional Values are 1-256. |
+| **Queue size** | `INT` | `64` | Specify the maximum size of the prefetch queue.
+
+Each identified link is pushed to the bottom of the prefetch queue.
+
+The links starting from the top of the queue are fetched, analyzed, and cached.
+
+The newly identified links are ignored, if the queue is full.
+
+Optional Values are from 1 to 256 |
+| **Host limit** | `INT` | `64` | Specify the maximum number of queued prefetches per host.
+
+Prevent too many parallel fetches to the same host.
+
+Optional Values are from 1 to 256 |
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Enable or Disable this entry.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Turn off this rule. |
+| TRUE | `TRUE` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+For documentation, and future references, explain the relevance of this entry with your policies.
+
+
+### Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_profiles`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Choose which profiles this rule should apply to.
+
+This rule will only apply if the connection has one of the profiles you select.
+
+Leave it blank to apply to all connections, regardless of their profiles.
+
+To exclude a specific profile, put an exclamation mark before it (!profile).
+
+
+### Tag name
+
+**Type:** `STRING`  
+
+
+
+
+Specify the HTML tag that should be analyzed for pre-fetchable URLs.
+
+  
+
+For example :A, img, link, script.
+
+
+### Tag attribute
+
+**Type:** `STRING`  
+
+
+
+
+Specify the attribute of the HTML tag, holding the URL to be prefetched.
+
+For eg: href, src,etc.
+
+
+### Attribute pattern
+
+**Type:** `STRING`  
+
+
+
+
+Specify the regular expression to evaluate the URL discovered in the Tag Attribute. If the regular expression matches, the URL is logically expanded, and pushed into the prefetch queue.
+
+
+### Maximum file size
+
+**Type:** `FILE_SIZE`  
+**Default:** `0`  
+
+
+
+Specify the maximum size of the file to be prefetched.
+
+Use suffix – K, M, G, for Kilo Bytes, Mega Bytes, Giga Bytes
+
+Hint: Set this to 0 for an unlimited size.
+
+
+### Recursion level
+
+**Type:** `INT`  
+**Default:** `1`  
+
+
+
+Set the Recursion limit to 0, or a higher positive integer.
+
+Prefetched content is analyzed, to discover new prefetchable URLs.
+
+Recursion limits this iteration.
+
+Note: Setting to 0 causes links to be followed, indefinitely.
+
+
+
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+### Prefetch
+
+Create list of Entries to implement your Prefetch Policies.
+
+SafeSquid produces a virtual map of the tags discovered in a Web page.
+
+SafeSquid evaluates the list for an entry applicable for each tag.
+
+Evaluation begins with topmost entry, and sequentially iterates until first applicability match.
+
+Evaluation ignores disabled entries.
+
+Use Profiles, Name of the Tag, Tag Attributes, and Pattern of the Attribute to specify applicability.
+
+Only Entries with both Name of the Tag, Tag Attributes, specified will be applicable.
+
+SafeSquid uses the first applicable Entry and, skips the rest.
+
+
+### Prefetch now
+
+Add a popular URL into the prefetch queue.
+
+The Prefetched content will be cached.
+
+
+
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+
+
+
+---
+
+**Section ID:** `prefetch`  
+**Category:** Performance  
+

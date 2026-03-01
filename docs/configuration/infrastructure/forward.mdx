@@ -1,0 +1,233 @@
+---
+title: Proxy chain
+description: The Proxy chain section allows you to forward requests through another proxy selectively, SOCKS4 or SOCKS5 firewalls.
+
+You can also use ICP (Internet Cache Protocol) and CARP (Cache Array Routing Protocols) to share cache with peer or sibling proxies.
+sidebar_label: Proxy chain
+tags: [Infrastructure, configuration]
+---
+
+# Proxy chain
+
+The Proxy chain section allows you to forward requests through another proxy selectively, SOCKS4 or SOCKS5 firewalls.
+
+You can also use ICP (Internet Cache Protocol) and CARP (Cache Array Routing Protocols) to share cache with peer or sibling proxies.
+
+## Global Settings
+
+Configure section-wide settings that apply to all entries.
+
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| **Enabled** | `BOOL` | `forward_enable` | Turn on or off proxy chaining (forwarding requests through other proxy servers). |
+| **Enable CARP** | `BOOL` | `carp` | CARP is a protocol used by a cluster of proxies to have them act as one logical cache by using a hash algorithm which combines the proxy's hostname and requested URL to determine which proxy server the URL is requested from, and thus cached on. |
+| **CARP hash size** | `UINT` | `0` | Specify the maximum value of the CARP hash; the lower the value, the greater the redundancy of cached files across peer proxies. Set to 0 for maximum size. Any value other than 0 breaks compatibility with Squid, and all peer proxies must use the same size hash. |
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Enable or Disable this entry
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Turn off this rule. |
+| TRUE | `TRUE` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+Add notes here to explain what this rule does and why you created it.
+
+This helps you and others understand the purpose of this rule later.
+
+
+### Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_profiles`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Choose which profiles this rule should apply to.
+
+This rule will only apply if the connection has one of the profiles you select.
+
+Leave it blank to apply to all connections, regardless of their profiles.
+
+To exclude a specific profile, put an exclamation mark before it (!profile).
+
+
+### Proxy
+
+**Type:** `STRING`  
+
+
+
+
+Enter the computer name or IP address of the proxy server to forward requests through.
+
+If this field is left blank but host or file options are set, no forwarding will happen for matching requests.
+
+If the proxy address is the same as this server's address, this rule is ignored.
+
+This makes it easier to share the same configuration file across multiple proxy servers.
+
+
+### User name
+
+**Type:** `STRING`  
+
+
+
+
+Enter the username to use if the proxy server requires login.
+
+
+### Password
+
+**Type:** `STRING`  
+
+
+
+
+Enter the password to use if the proxy server requires login.
+
+
+### Domain
+
+**Type:** `STRING`  
+
+
+
+
+Enter the Windows domain name when using NTLM (Windows) authentication.
+
+
+### Port
+
+**Type:** `INT`  
+**Default:** `0`  
+
+
+
+Enter the port number of the proxy server to forward requests through.
+
+
+### ICP peer type
+
+**Type:** `STRING_SELECT_ONE`  
+**Default:** `icptype`  
+
+
+
+The type of relationship with this proxy server (parent, sibling, or multicast peer).
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| NONE | `TRUE` | The ICP protocol will not be used with this proxy. |
+| PARENT | `FALSE` | This proxy is a Parent, when no peer has the cached file it will still be requested from a parent so that it is cached for other peer proxy servers. |
+| SIBLING | `FALSE` | This proxy is a Sibling, files are requested from it only when it has a cached copy. |
+
+
+### ICP port
+
+**Type:** `INT`  
+**Default:** `0`  
+
+
+
+Enter the network port number to use for ICP communication with this proxy server.
+
+
+### Type
+
+**Type:** `STRING_SELECT_ONE`  
+**Default:** `type`  
+
+
+
+Choose the type of proxy server: HTTP, SOCKS4, SOCKS5, or CONNECT.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| HTTP | `TRUE` | This is a HTTP proxy server. |
+| SOCKS4 | `FALSE` | This is a SOCKS4 firewall. |
+| SOCKS5 | `FALSE` | This is a SOCKS5 firewall. |
+| CONNECT | `FALSE` | The CONNECT method will be used through the HTTP proxy. |
+
+
+### Applies to
+
+**Type:** `STRING_SELECT_MANY`  
+**Default:** `which`  
+
+
+
+Choose which types of requests to forward through this proxy: HTTP, FTP, and/or CONNECT (for HTTPS).
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| HTTP requests | `TRUE` | This proxy will be used for HTTP requests. |
+| FTP requests | `FALSE` | This proxy will be used for FTP requests. |
+| CONNECT requests | `FALSE` | This proxy will be used for CONNECT requests. |
+
+
+
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+### Forwarding proxies
+
+List of proxy servers to forward connections to.
+
+:::tip Quick Add
+This subsection supports quick-add wizard for faster configuration.
+:::
+
+
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+- [Getting Started](/docs/getting-started/introduction)
+- [Installation](/docs/getting-started/installation)
+
+
+
+---
+
+**Section ID:** `forward`  
+**Category:** Infrastructure  
+**Wizard Available:** Yes

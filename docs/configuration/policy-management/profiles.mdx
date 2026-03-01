@@ -1,0 +1,339 @@
+---
+title: Access Profiles
+description: Use Access Profiles to set up rules about who can access what on the internet.
+
+Create your rules by organizing them in a logical order.
+
+For each website request and response:
+
+*   First, the system checks it against your Default Policies list,
+*   Then it checks it against your Secondary Policies list.
+
+After all rules are checked:
+
+1.  The connection will be **Blocked** unless the final decision is set to Allow.
+2.  The profiles assigned to that connection then determine which other rules apply in different sections.
+sidebar_label: Access Profiles
+tags: [Policy Management, configuration]
+---
+
+# Access Profiles
+
+Use Access Profiles to set up rules about who can access what on the internet.
+
+Create your rules by organizing them in a logical order.
+
+For each website request and response:
+
+*   First, the system checks it against your Default Policies list,
+*   Then it checks it against your Secondary Policies list.
+
+After all rules are checked:
+
+1.  The connection will be **Blocked** unless the final decision is set to Allow.
+2.  The profiles assigned to that connection then determine which other rules apply in different sections.
+
+
+## Configuration Fields
+
+The following fields are available when creating rules in this section.
+
+### Enabled
+
+**Type:** `BOOL`  
+**Default:** `enabled`  
+
+
+
+Turn on or off this rule.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `FALSE` | Turn off this rule. |
+| TRUE | `TRUE` | Turn on this rule. |
+
+
+### Comment
+
+**Type:** `MULTILINE_STRING`  
+**Default:** `This entry ...`  
+
+
+
+Add notes here to explain what this rule does and why you created it.
+
+This helps you and others understand the purpose of this rule later.
+
+
+### Trace Entry
+
+**Type:** `STRING_SELECT_ONE`  
+**Default:** `profile_tracing`  
+
+
+
+Enable or Disable Tracing of this entry
+
+Select "Yes" to debug the application of entry using SafeSquid logs.
+
+"Enable entry tracing" is useful if you wish to validate its application.
+
+
+**Available Options:**
+
+| Option | Value | Description |
+|--------|-------|-------------|
+| FALSE | `TRUE` | Select this to turn off profile tracing (logging for troubleshooting). |
+| TRUE | `FALSE` | Select this to enable profile tracing. |
+
+
+### Proxy instance
+
+**Type:** `STRING`  
+
+
+
+
+Leave this blank, if this configuration is not shared across multiple instances of SafeSquid.
+
+Leave it blank to apply this entry to all your instances of SafeSquid.
+
+Specify the hostname(s) of the instances, for which this entry should be applicable, if multiple instances share this configuration.
+
+Mostly used in master-slave and cluster environments.
+
+
+### Applicable Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_profiles,network_settings_profiles,https_inspection_profiles,clamav_profiles,text_analyzer_profiles,redirection_profiles,image_analyzer_profiles,dlp_profiles,time_profiler_profiles,cookie_profiles,header_filter_profiles,elevated_privacy_profiles,speed_limits_profiles`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Specify the list of Profiles for which this entry should be applicable.
+
+Leave it Blank, to ignore this applicability test.
+
+Leave it Blank, to apply for all connections irrespective of their Profile.
+
+To avoid application of this entry to a connection that has a profile, use negation (!profile).
+
+
+### Time Schedule
+
+**Type:** `STRING_LIST`  
+**Default:** `add_time_profiles,time_profiler_profiles`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Specify the list of Time Profile(s) for which this entry should be applicable.
+
+Leave it Blank, to ignore this applicability test.
+
+This entry will be applicable only if the connection has at-least one of the specified Time Profile(s).
+
+To avoid application of this entry to a connection that has a Time Profile, use negation (!Weekday).
+
+Go to Time Profiler to review, or define new Time Profiles.
+
+
+### User Groups
+
+**Type:** `STRING_LIST`  
+**Default:** `add_user_groups,ldap_entries`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+Specify the list of User Group(s), to which this entry is applicable.
+
+Leave it Blank, to ignore this applicability test.
+
+If one or more User Groups is/are specified, this entry will be applicable after it is determined, if user authentication is required. If user authentication is required, then this entry will be applicable only after successful user authentication.
+
+This entry will be applicable only if the connection has at-least one of the specified User Group(s).
+
+To avoid application to a connection for specific User Group(s), use negation (!User Group).
+
+Go to Access Restrictions to review or define new User Groups.
+
+
+### Request Types
+
+**Type:** `STRING_LIST`  
+**Default:** `add_app_category,add_app_signatures,add_req_types,int_req_types`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+List of Request Types or application categories, to which this entry will be applicable.
+
+The connection should have been already profiled to have one or more of these Request Types or application categories.
+
+Use Negation "!", to check this entry only, when specified Request Types or application categories are not applied to the connection.
+
+Leave it Blank to check this entry irrespective of applied Request Types or application categories.
+
+If you set this to "Browsers,Skype,Webinar,!Safari", then this entry will be applicable to only those connections that have been profiled as Browsers, or Skype or Webinar, or not profiled as Safari.
+
+
+### Categories
+
+**Type:** `STRING_LIST`  
+**Default:** `website_categories,custom_categories,youtube_categories`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+List of categories, to which this entry will be applicable.
+
+The connection should have been already categorized to have one or more of these categories.
+
+Use Negation "!", to check this entry only, when specified categories are not applied to the connection.
+
+Leave it Blank to check this entry irrespective of applied categories.
+
+If you set this to "Social,Chat,IM,!Porn ", then this entry will be applicable to only those connections that have been categorized as Social, or Chat, or IM, or not categorized as Porn.
+
+
+### Response Types
+
+**Type:** `STRING_LIST`  
+**Default:** `add_res_types`  
+
+**Supports Negation:** Yes (prefix with `!` to exclude)  
+
+List of Response Types or content categories, to which this entry will be applicable.
+
+The connection should have been already profiled to have one or more of these Response Types or content categories.
+
+Use Negation "!", to check this entry only, when specified Response Types or content categories are not applied to the connection.
+
+Leave it Blank to check this entry irrespective of applied Response Types or content categories.
+
+If you set this to "Image,Pdf,Audio,!Text,!Jpeg", then this entry will be applicable to only those connections that have been profiled as Image, or Pdf, or Audio, or not profiled as Text or Jpeg.
+
+
+### Action
+
+**Type:** `STRING_SELECT_ONE`  
+**Default:** `action_to_perform`  
+
+
+
+Specify action to enforce on matched connections.
+
+ALLOW: Allow users to access.Default action. When action is allow SafeSquid uses applied profiles to do various filtering. Otherwise blocks access without doing further filtering.
+
+DENY: Block access but allow users to bypass and access sites for couple of hours. You can configure bypass access to the users using access restrictions.
+
+DO NOT BYPASS: Strictly Block access.
+
+INHERIT: Apply previously applied action.
+
+
+### Added Profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_profiles,network_settings_profiles,https_inspection_profiles,clamav_profiles,text_analyzer_profiles,redirection_profiles,image_analyzer_profiles,dlp_profiles,time_profiler_profiles,cookie_profiles,header_filter_profiles,elevated_privacy_profiles,speed_limits_profiles`  
+
+
+
+Specify the list of Profiles, to append to the connection’s existing Profiles, if the all applicability test rules match.
+
+Subsequent applicable Entry may further modify the connection’s Profiles.
+
+Define a new Profile(s), or Select previously defined Profile(s) from the drop-down menu to apply to the connection, if they match this entry.
+
+When defining a new Profile, use terms that uniquely represent your needs.
+
+You can use added profiles in Virus scanning, SSL inspection and other filtering sections.
+
+
+### Removed profiles
+
+**Type:** `STRING_LIST`  
+**Default:** `add_profiles,network_settings_profiles,https_inspection_profiles,text_analyzer_profiles,redirection_profiles,image_analyzer_profiles,dlp_profiles,time_profiler_profiles,cookie_profiles,header_filter_profiles,elevated_privacy_profiles,speed_limits_profiles`  
+
+
+
+Select profiles to remove from connection when matches.
+
+The connection should have been already profiled to have one or more of these profiles.
+
+Use remove profiles adequately to ensure white-list profiles does not conflict with block profiles.
+
+When a connection matches to block profile and as well white-list profile then your white-list entry should be configured with to remove block profile from connection.
+
+Leave it Blank to ignore.
+
+
+
+## Subsections
+
+This section contains the following subsections for organizing rules:
+
+### Default Policies
+
+Connections are tested against the Secondary Policies List after they are tested against the Default Policies List.
+
+The Policies List of Entries is processed top-down for each request and response in a Connection.
+
+Implement your Policies, by creating a logical order of Entries.
+
+Each Entry consists of Rules for testing applicability.
+
+An Entry is applicable only if a Request matches all the Rules of an Entry.
+
+When an Entry is applicable:
+
+1.  The corresponding set of **Added Profiles**, is appended to the Connection's Profiles
+2.  The corresponding set of **Removed Profiles**, is deleted from the Connection's Profiles
+3.  The corresponding **Action** is set against the Connection.
+4.  The Request is now tested against subsequent Entry, based on the resulting state of modified Connection's Profiles
+
+:::tip Quick Add
+This subsection supports quick-add wizard for faster configuration.
+:::
+
+### Secondary Policies
+
+Connections are tested against the Secondary Policies List after they are tested against the Default Policies List.
+
+The Policies List of Entries is processed top-down for each request and response in a Connection.
+
+Implement your Policies, by creating a logical order of Entries.
+
+Each Entry consists of Rules for testing applicability.
+
+An Entry is applicable only if a Request matches all the Rules of an Entry.
+
+When an Entry is applicable:
+
+1.  The corresponding set of **Added Profiles**, is appended to the Connection's Profiles
+2.  The corresponding set of **Removed Profiles**, is deleted from the Connection's Profiles
+3.  The corresponding **Action** is set against the Connection.
+4.  The Request is now tested against subsequent Entry, based on the resulting state of modified Connection's Profiles
+
+:::tip Quick Add
+This subsection supports quick-add wizard for faster configuration.
+:::
+
+
+
+## Usage Examples
+
+:::info Coming Soon
+Practical examples for this section will be added soon. In the meantime, refer to the field descriptions above for guidance.
+:::
+
+## Related Sections
+
+
+
+
+---
+
+**Section ID:** `profiles`  
+**Category:** Policy Management  
+**Wizard Available:** Yes
