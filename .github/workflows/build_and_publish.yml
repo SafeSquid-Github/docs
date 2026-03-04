@@ -1,39 +1,36 @@
 name: Build Docs and Publish
 run-name: Build triggered by ${{ github.actor }}
-# Trigger the workflow on push to main and dev branches 
+
 on:
   push:
     branches:
       - main
       - dev
- 
-# Workflow-level default: read everything, write nothing
+
 permissions:
   contents: read
- 
-# One deploy per branch
-# Two pushes to main cancel each other; main and dev are independent
+
 concurrency:
   group: deploy-${{ github.ref }}
   cancel-in-progress: true
-# Run a job inside node container
+
 jobs:
   build:
-    name: Setting up docusaurs
+    name: Setting up docusaurus
     runs-on: ubuntu-latest
+
     container:
       image: node:20
+
     steps:
-      # Checkout the repository, clones your repo in the container
       - name: Clone Repo
         uses: actions/checkout@v4
-      
-      # Install required system packages
+
       - name: Install rsync and ssh
         run: |
           apt-get update
           apt-get install -y rsync openssh-client
- 
+
       - name: Cache Docusaurus build cache
         uses: actions/cache@v3
         with:
@@ -43,18 +40,26 @@ jobs:
           key: ${{ runner.os }}-docusaurus-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-docusaurus-
- 
-      # Install dependencies and build the project
-      - name: Install Docusaurus Dependencies and build the project
+
+      - name: Install Dependencies and Build
         run: |
           npm install
           npm run build
 
-      # Deploy
+      - name: Setup SSH Agent
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
       - name: Deploy build to server
         run: |
-          [ "${{ github.ref_name }}" == "main" ] && TARGET="${{ vars.REMOTE_PATH }}"
-          [ "${{ github.ref_name }}" == "dev" ] && TARGET="${{ vars.REMOTE_PATH_DEV }}"
-  
-          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" build/ ${{ vars.REMOTE_USER }}@${{ vars.REMOTE_HOST }}:$TARGET
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            TARGET="${{ vars.REMOTE_PATH }}"
+          else
+            TARGET="${{ vars.REMOTE_PATH_DEV }}"
+          fi
 
+          rsync -avz --delete \
+            -e "ssh -o StrictHostKeyChecking=no" \
+            build/ \
+            ${{ vars.REMOTE_USER }}@${{ vars.REMOTE_HOST }}:$TARGET
