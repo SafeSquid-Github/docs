@@ -1,41 +1,59 @@
 name: Build Docs and Publish
+run-name: Build triggered by ${{ github.actor }}
+# Trigger the workflow on push to main and dev branches 
 on:
   push:
     branches:
       - main
       - dev
-
+ 
+# Workflow-level default: read everything, write nothing
+permissions:
+  contents: read
+ 
+# One deploy per branch
+# Two pushes to main cancel each other; main and dev are independent
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+# Run a job inside node container
 jobs:
   build:
+    name: Setting up docusaurs
     runs-on: ubuntu-latest
     container:
       image: node:20
     steps:
-      # Checkout the repository
-      - uses: actions/checkout@v3
-
-      # Set up Node.js
-      - uses: actions/setup-node@v3
+      # Checkout the repository, clones your repo in the container
+      - name: Clone Repo
+        uses: actions/checkout@v4
+      
+      # Install required system packages
+      - name: Install rsync and ssh
+        run: |
+          apt-get update
+          apt-get install -y rsync openssh-client
+ 
+      - name: Cache Docusaurus build cache
+        uses: actions/cache@v3
         with:
-          node-version: '20'
-
+          path: |
+            .docusaurus
+            node_modules
+          key: ${{ runner.os }}-docusaurus-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-docusaurus-
+ 
       # Install dependencies and build the project
-      - run: npm install
-      - run: npm run build
+      - name: Install Docusaurus Dependencies and build the project
+        run: |
+          npm install
+          npm run build
 
-      # Install rsync
-      - run: apt-get update && apt-get install -y rsync
-
-      # Set up SSH for rsync
-      - run: mkdir -p /github/home/.ssh
-      - run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > /github/home/.ssh/id_ed25519 && chmod 600 /github/home/.ssh/id_ed25519
-
-      # Deploy for main branch
-      - name: Deploy to production
-        if: github.ref == 'refs/heads/main'
-        run: rsync -avz --delete build/ -e "ssh -o StrictHostKeyChecking=no -i /github/home/.ssh/id_ed25519" ${{ vars.REMOTE_USER }}@${{ vars.REMOTE_HOST }}:${{ vars.REMOTE_PATH }}
-
-      # Deploy for dev branch
-      - name: Deploy to staging
-        if: github.ref == 'refs/heads/dev'
-        run: rsync -avz --delete build/ -e "ssh -o StrictHostKeyChecking=no -i /github/home/.ssh/id_ed25519" ${{ vars.REMOTE_USER }}@${{ vars.REMOTE_HOST }}:${{ vars.REMOTE_PATH_DEV }}
+      # Deploy
+      - name: Deploy build to server
+        run: |
+          [ "${{ github.ref_name }}" = "main" ] && TARGET="${{ vars.REMOTE_PATH }}"
+          [ "${{ github.ref_name }}" = "dev" ] && TARGET="${{ vars.REMOTE_PATH_DEV }}""
+  
+          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" build/ ${{ vars.REMOTE_USER }}@${{ vars.REMOTE_HOST }}:$TARGET
