@@ -54,6 +54,7 @@ jobs:
       - name: Deploy build to server
         run: |
           [ "${{ github.ref_name }}" == "main" ] && TARGET="${{ vars.REMOTE_PATH }}"
-          [ "${{ github.ref_name }}" == "dev" ] && TARGET="${{ vars.REMOTE_PATH_DEV }}""
+          [ "${{ github.ref_name }}" == "dev" ] && TARGET="${{ vars.REMOTE_PATH_DEV }}"
   
           rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" build/ ${{ vars.REMOTE_USER }}@${{ vars.REMOTE_HOST }}:$TARGET
+
