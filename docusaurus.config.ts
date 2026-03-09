@@ -57,6 +57,23 @@ const config: Config = {
         buttonStyle: 'dark',
       }
     ],
+    function webpackPlugin(context, options) {
+      return {
+        name: 'webpack-fix-plugin',
+        configureWebpack(config, isServer) {
+          if (isServer) {
+            return {
+              output: {
+                ...config.output,
+                filename: 'server.bundle.[contenthash:8].js',
+                chunkFilename: 'server.[name].[contenthash:8].js',
+              },
+            };
+          }
+          return {};
+        },
+      };
+    },
   ],
   themeConfig: {
     image: '@site/static/img/favicon.ico',

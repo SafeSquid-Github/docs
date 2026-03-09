@@ -66,6 +66,22 @@ const helpers = {
   },
 
   /**
+   * Get first paragraph/sentence from markdown for frontmatter
+   */
+  getFirstParagraph(markdown) {
+    if (!markdown) return '';
+    
+    // Split by double newlines (paragraphs)
+    const paragraphs = markdown.split(/\n\n+/);
+    
+    // Return first non-empty paragraph
+    const firstPara = paragraphs.find(p => p.trim().length > 0) || '';
+    
+    // Replace single newlines with spaces for YAML compatibility
+    return firstPara.replace(/\n/g, ' ').trim();
+  },
+
+  /**
    * Convert camelCase or PascalCase to kebab-case
    */
   toKebabCase(str) {
@@ -140,6 +156,11 @@ Handlebars.registerHelper('eq', (a, b) => a === b);
 Handlebars.registerHelper('cleanDesc', (desc) => helpers.cleanDescription(desc));
 Handlebars.registerHelper('kebab', (str) => helpers.toKebabCase(str));
 Handlebars.registerHelper('json', (obj) => JSON.stringify(obj, null, 2));
+Handlebars.registerHelper('escapeYaml', (str) => {
+  if (!str) return '';
+  // Escape double quotes and backslashes for YAML string values
+  return str.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+});
 
 /**
  * Parse section XML file
@@ -183,11 +204,15 @@ function extractSections(parsedXML) {
       continue;
     }
     
+    const fullDescription = helpers.cleanDescription(sectionData.desc);
+    const shortDescription = helpers.getFirstParagraph(fullDescription);
+    
     const section = {
       id: sectionName,
       slug: helpers.toKebabCase(sectionName),
       title: sectionData.comment || helpers.toTitleCase(sectionName),
-      description: helpers.cleanDescription(sectionData.desc),
+      description: fullDescription || 'Configuration section for SafeSquid.',
+      descriptionShort: shortDescription || 'Configuration section for SafeSquid.',
       enabled: sectionData.enabled === 'true' || sectionData.enabled === true,
       parentGroup: sectionData.parentgroup || 'other',
       parentGroupLabel: helpers.mapParentGroup(sectionData.parentgroup),
