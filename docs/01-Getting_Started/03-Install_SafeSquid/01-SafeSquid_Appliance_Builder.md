@@ -148,6 +148,5 @@ Confirm SAB installed successfully:
 ## Next Steps
 
 1. **[Activate your license](/docs/Getting_Started/Activate/)**
-  2. **[Connect a browser](/docs/Getting_Started/Connect_Your_Client/main/)** to verify traffic flows
-  3. **[Enable SSL Inspection](/docs/SSL_Inspection/main/)** for HTTPS visibility
-
+2. **[Connect a browser](/docs/Getting_Started/Connect_Your_Client/main/)** to verify traffic flows
+3. **[Enable SSL Inspection](/docs/SSL_Inspection/main/)** for HTTPS visibility
