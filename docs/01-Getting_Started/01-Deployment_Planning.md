@@ -73,7 +73,7 @@ Match CPU, RAM, and NICs to your expected **peak** concurrent connections (not a
 
 *Minimum required interfaces; see [Network: NICs and bonding](#network-nics-and-bonding) for bonding recommendations.*
 
-Beyond 4,000 concurrent connections, assign multiple WAN IPs to avoid outbound NAT pool exhaustion and consider [Proxy Clustering](/docs/Proxy_Clustering/main/) for HA.
+Beyond 4,000 concurrent connections, assign multiple WAN IPs to avoid outbound NAT pool exhaustion and consider [Proxy Clustering](/17-Proxy_Clustering/main) for HA.
 
 ## Network: NICs and bonding
 
@@ -111,7 +111,7 @@ SafeSquid performs high-frequency disk writes for session logging, behavioural a
 
 For compliance retention (90+ days), configure log forwarding to:
 - External syslog (rsyslog, Splunk, ELK)
-- SafeSquid Reporting Service (see [Reporting Service](/docs/SafeSquid_SWG/Reporting_Service/))
+- SafeSquid Reporting Service (see [Reporting Service](/02-SafeSquid_SWG/05-Reporting_Service))
 - Cloud storage (S3, Azure Blob)
 
 Monitor `/var/log/safesquid` disk usage weekly to avoid log truncation.
@@ -120,10 +120,10 @@ Monitor `/var/log/safesquid` disk usage weekly to avoid log truncation.
 
 | Scenario | When to use it | Key constraints | Next action |
 |----------|----------------|-----------------|-------------|
-| **Single node (pilot)** | Evaluation, lab, or low-availability pilot | No failover; plan for HA before production | [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/main/) |
+| **Single node (pilot)** | Evaluation, lab, or low-availability pilot | No failover; plan for HA before production | [Install SafeSquid](/01-Getting_Started/03-Install_SafeSquid/main) |
 | **Branch or small office** | One site, moderate user count | Size to [Hardware sizing](#hardware-sizing); use NVMe for logs | Single node (if outage is tolerable) or 2-node cluster for local HA (if uptime is critical) |
-| **High availability** | Production; cannot tolerate single-node outage | Master-slave or active-active; load balancer in front | [Proxy Clustering](/docs/Proxy_Clustering/main/), then [Disaster Recovery](/docs/Disaster_Recovery/main/) |
-| **Cloud (AWS, Azure, etc.)** | No on-prem hardware; cloud-first | Match instance type to hardware matrix; use cloud NVMe/storage | [Cloud Deployment](/docs/Getting_Started/Install_SafeSquid/Cloud_Deployment/) |
+| **High availability** | Production; cannot tolerate single-node outage | Master-slave or active-active; load balancer in front | [Proxy Clustering](/17-Proxy_Clustering/main), then [Disaster Recovery](/22-Disaster_Recovery/main) |
+| **Cloud (AWS, Azure, etc.)** | No on-prem hardware; cloud-first | Match instance type to hardware matrix; use cloud NVMe/storage | [Cloud Deployment](/01-Getting_Started/03-Install_SafeSquid/02-Cloud_Deployment) |
 
 ## Disaster recovery
 
@@ -132,7 +132,7 @@ Deploy a separate SafeSquid stack in a geographically distant zone to maintain w
 **DR site requirements:**
 - **Geography:** Different city, data center, and power grid than primary (co-location negates continuity)
 - **Capacity:** Mirror production sizing (CPU, RAM, NICs, disk) — DR must handle full load during failover
-- **Configuration:** Sync policies using [Configuration Sync](/docs/Proxy_Clustering/Configuration_Sync/) or manual replication
+- **Configuration:** Sync policies using [Configuration Sync](/17-Proxy_Clustering/02-Configuration_Sync) or manual replication
 
 **Recovery objectives:**
 - **RTO (Recovery Time Objective):** Time to redirect traffic to DR (typically 5-30 minutes with DNS or BGP failover)
@@ -167,7 +167,7 @@ Prepare the target environment before installation:
 
 After installation, validate against your plan:
 
-- **Interface checks** — In the [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), confirm network, proxy, and application settings match the planned topology.
+- **Interface checks** — In the [Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal), confirm network, proxy, and application settings match the planned topology.
 - **Performance baseline** — Under light load:
   - Session latency: &lt;50ms (check `/var/log/safesquid/extended.log`)
   - CPU usage: &lt;20% idle
@@ -235,6 +235,6 @@ Whitelist these for real-time URL categorization and classification:
 
 ## Next steps
 
-Proceed to [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/main/). After installation, [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) to confirm proxy and client connectivity.
+Proceed to [Install SafeSquid](/01-Getting_Started/03-Install_SafeSquid/main). After installation, [Verify Your Setup](/01-Getting_Started/06-Verify_Your_Setup) to confirm proxy and client connectivity.
 
-**Related:** [Activate Your License](/docs/Getting_Started/Activate/) for licensing and endpoint list · [Proxy Clustering](/docs/Proxy_Clustering/main/) for HA cluster setup
+**Related:** [Activate Your License](/01-Getting_Started/04-Activate) for licensing and endpoint list · [Proxy Clustering](/17-Proxy_Clustering/main) for HA cluster setup

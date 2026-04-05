@@ -17,39 +17,39 @@ Use the Image Analyzer to prevent users from viewing pornographic or inappropria
 
 
 ## Prerequisites
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, see the document - [How to enable HTTPS Inspection](/docs/SSL_Inspection/main/).
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, see the document - [How to enable HTTPS Inspection](/05-SSL_Inspection/main).
 
 
 
-## [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
+## [Access the SafeSquid User Interface](/02-SafeSquid_SWG/01-Configuration_Portal)
 
 
 
 ## Go to Configure page
 
-![Go to Configure Page Section to block inappropriate images by using Image Analyzer](/img/How_To/Block_inappropriate_images_by_using_Image_Analyzer/image1.webp)
+![Go to Configure Page Section to block inappropriate images by using Image Analyzer](/images/How_To/Block_inappropriate_images_by_using_Image_Analyzer/image1.webp)
 
 
 
 ## Go to Real time content security
-![Go to Real time content security section to block inappropriate images by using Image Analyzer](/img/How_To/Block_inappropriate_images_by_using_Image_Analyzer/image2.webp)
+![Go to Real time content security section to block inappropriate images by using Image Analyzer](/images/How_To/Block_inappropriate_images_by_using_Image_Analyzer/image2.webp)
 
 
 
 ## Go to Image analyzer
-![Go to Image analyzer section to block inappropriate images by using Image Analyzer](/img/How_To/Block_inappropriate_images_by_using_Image_Analyzer/image3.webp)
+![Go to Image analyzer section to block inappropriate images by using Image Analyzer](/images/How_To/Block_inappropriate_images_by_using_Image_Analyzer/image3.webp)
 
 
 
 ## Go to Filtering Policies
-![Select Filtering Policies section to block inappropriate images by using Image Analyzer](/img/How_To/Block_inappropriate_images_by_using_Image_Analyzer/image4.webp)
+![Select Filtering Policies section to block inappropriate images by using Image Analyzer](/images/How_To/Block_inappropriate_images_by_using_Image_Analyzer/image4.webp)
 
-![Verify default policy true to block inappropriate images by using Image Analyzer](/img/How_To/Block_inappropriate_images_by_using_Image_Analyzer/image5.webp)
+![Verify default policy true to block inappropriate images by using Image Analyzer](/images/How_To/Block_inappropriate_images_by_using_Image_Analyzer/image5.webp)
 
 
 
 ## Testing
 Try to open any pornographic website you will see that the images will block due to SafeSquid Image Analyzer
 
-![Block search due to Image Analyzer](/img/How_To/Block_inappropriate_images_by_using_Image_Analyzer/image6.webp)
+![Block search due to Image Analyzer](/images/How_To/Block_inappropriate_images_by_using_Image_Analyzer/image6.webp)
 

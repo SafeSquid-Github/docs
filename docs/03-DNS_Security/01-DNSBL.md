@@ -28,7 +28,7 @@ Unrestricted DNS resolution allows clients to reach domains listed as malicious 
 ## Prerequisites
 
 - SafeSquid SWG installed and operational.
-- SafeSquid configured as the primary DNS resolver (see [Supporting Services: BIND](/docs/SafeSquid_SWG/Supporting_Services/Bind/)).
+- SafeSquid configured as the primary DNS resolver (see [Supporting Services: BIND](/02-SafeSquid_SWG/07-Supporting_Services/02-Bind)).
 - A valid DNSBL service domain (e.g., `in.dnsbl.org` or a private threat intel list).
 - Outbound network access to the DNSBL service.
 
@@ -36,23 +36,23 @@ Unrestricted DNS resolution allows clients to reach domains listed as malicious 
 
 ## Configure DNSBL in Real-time content security
 
-1. [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/).
+1. [Access the SafeSquid User Interface](/02-SafeSquid_SWG/01-Configuration_Portal).
 2. Open the Configure page.
 3. Go to Real-time content security.
 
-![Go to Real time content security](/img/Configure/Real_Time_Content_Activity/DNS_blacklist/image1.webp)
+![Go to Real time content security](/images/Configure/Real_Time_Content_Activity/DNS_blacklist/image1.webp)
 
-![Configure page and Real-time content security](/img/Configure/Real_Time_Content_Activity/DNS_blacklist/image2.webp)
+![Configure page and Real-time content security](/images/Configure/Real_Time_Content_Activity/DNS_blacklist/image2.webp)
 
 4. Open the DNS Blacklist section.
 
-![DNS blacklist section](/img/Configure/Real_Time_Content_Activity/DNS_blacklist/image3.webp)
+![DNS blacklist section](/images/Configure/Real_Time_Content_Activity/DNS_blacklist/image3.webp)
 
-![DNS blacklist configuration options](/img/Configure/Real_Time_Content_Activity/DNS_blacklist/image4.webp)
+![DNS blacklist configuration options](/images/Configure/Real_Time_Content_Activity/DNS_blacklist/image4.webp)
 
-![DNS blacklist domain and blocked IPs](/img/Configure/Real_Time_Content_Activity/DNS_blacklist/image5.webp)
+![DNS blacklist domain and blocked IPs](/images/Configure/Real_Time_Content_Activity/DNS_blacklist/image5.webp)
 
-![DNS blacklist global settings](/img/Configure/Real_Time_Content_Activity/DNS_blacklist/image6.webp)
+![DNS blacklist global settings](/images/Configure/Real_Time_Content_Activity/DNS_blacklist/image6.webp)
 
 5. Set Global options:
    - **Enabled**: TRUE to enable DNSBL; FALSE to skip querying blacklist services.
@@ -90,7 +90,7 @@ When SafeSquid queries `in.dnsbl.org`, the service returns specific IP addresses
 
 Use blacklisting domain in.dnsbl.org and blocked IP addresses 127.0.0.1-127.0.0.6. SafeSquid blocks all matching domains and displays the blocked template. Use DNSBL when a SOC provides the list or when many domains must be blocked.
 
-![DNSBL example configuration](/img/Configure/Real_Time_Content_Activity/DNS_blacklist/image7.webp)
+![DNSBL example configuration](/images/Configure/Real_Time_Content_Activity/DNS_blacklist/image7.webp)
 
 
 
@@ -98,7 +98,7 @@ Use blacklisting domain in.dnsbl.org and blocked IP addresses 127.0.0.1-127.0.0.
 
 - **Interface**: Confirm DNS Blacklist is enabled, Domain and Blocked IP addresses are set, and Template is correct.
 - **Block test**: Request a domain known to be listed; expect block page and no connection to origin.
-- **Logs**: In [Security Logs](/docs/Audit_Forensics/Security_Logs/), confirm entries for blocked requests (action/result indicating DNSBL block).
+- **Logs**: In [Security Logs](/15-Audit_Forensics/02-Security_Logs), confirm entries for blocked requests (action/result indicating DNSBL block).
 - **Audit**: Run a report filtered by block reason or DNSBL; export for evidence that the control is active and blocking malicious domains.
 
 
@@ -112,7 +112,7 @@ Use blacklisting domain in.dnsbl.org and blocked IP addresses 127.0.0.1-127.0.0.
 | **Cache causing stale results** | Site unblocked after DNSBL update | **Cause:** SafeSquid caches DNSBL responses for performance. **Fix:** Wait for cache expiry (TTL-based) or restart SafeSquid: `systemctl restart safesquid`. |
 | **False positive blocks** | Legitimate site blocked | **Identify:** Check DNSBL query logs to confirm it's a list issue. **Fix:** Add domain to bypass/allow-list in Access Restrictions. **Alternative:** Switch to a different DNSBL provider with lower false-positive rates. |
 | **DNSBL enabled but no blocks** | Malicious sites still accessible | **Check:** 1) **Enabled** is TRUE. 2) **Domain** field is correct. 3) **Blocked IP addresses** includes the range returned by your DNSBL. **Test:** Query a known-malicious domain (use a test entry from your DNSBL provider). |
-| **Direct IP access bypasses DNSBL** | Users access sites by IP instead of hostname | **Limitation:** DNSBL only works on DNS queries, not direct IP connections. **Mitigation:** Use [Access Restriction](/docs/Access_Restriction/main/) to block by IP range or category. |
+| **Direct IP access bypasses DNSBL** | Users access sites by IP instead of hostname | **Limitation:** DNSBL only works on DNS queries, not direct IP connections. **Mitigation:** Use [Access Restriction](/08-Access_Restriction/main) to block by IP range or category. |
 
 **Still having issues?** Contact SafeSquid support with:
 - DNSBL service domain you're using

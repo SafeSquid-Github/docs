@@ -16,7 +16,7 @@ Install SafeSquid on an existing Linux server without replacing the OS or using 
 - You need custom OS hardening or disk layouts
 - You want full control over dependencies and supporting services
 
-**Trade-off:** You must manually configure Monit, BIND9, and other dependencies. For automated setup, use [Appliance Builder](/docs/Getting_Started/Install_SafeSquid/SafeSquid_Appliance_Builder/) instead.
+**Trade-off:** You must manually configure Monit, BIND9, and other dependencies. For automated setup, use [Appliance Builder](/01-Getting_Started/03-Install_SafeSquid/01-SafeSquid_Appliance_Builder) instead.
 
 ## Supported Distributions
 
@@ -34,7 +34,7 @@ Other distributions may work but are untested. Minimum kernel version: 3.10+
 
 :::info System Requirements
 
-- Linux server meeting [hardware requirements](/docs/Getting_Started/Deployment_Planning/#hardware-sizing) (minimum 4 CPU cores, 8 GB RAM, 100 GB disk)
+- Linux server meeting [hardware requirements](/01-Getting_Started/01-Deployment_Planning#hardware-sizing) (minimum 4 CPU cores, 8 GB RAM, 100 GB disk)
 - Root or sudo access
 - Internet connectivity for downloads
 - Kernel version 3.10 or newer
@@ -288,7 +288,7 @@ SAB handles these automatically, but TAR installations require manual setup:
    sudo systemctl enable --now monit
    ```
 
-**Full guide:** [Monit Configuration](/docs/SafeSquid_SWG/Supporting_Services/Monit/)
+**Full guide:** [Monit Configuration](/02-SafeSquid_SWG/07-Supporting_Services/01-Monit)
 
 ---
 
@@ -309,7 +309,7 @@ SafeSquid uses a local DNS resolver for performance and policy-aware resolution.
 
 2. Configure SafeSquid to use local BIND9 (done via SafeSquid admin interface after activation)
 
-**Full guide:** [BIND9 Configuration](/docs/SafeSquid_SWG/Supporting_Services/Bind/)
+**Full guide:** [BIND9 Configuration](/02-SafeSquid_SWG/07-Supporting_Services/02-Bind)
 
 :::tip Before Production
 
@@ -320,7 +320,7 @@ Configure both Monit and BIND9 before moving to production. Without Monit, a cra
 ## Next Steps
 
 1. **[Configure Supporting Services](#configure-supporting-services)** — Set up Monit and BIND9 before production
-2. **[Activate Your License](/docs/Getting_Started/Activate/)** — Upload your activation key to make SafeSquid fully operational
-3. **[Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/)** — Configure a browser to use the proxy
-4. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm traffic flows through SafeSquid
-5. **[Enable SSL Inspection](/docs/SSL_Inspection/main/)** — Decrypt and inspect HTTPS traffic
+2. **[Activate Your License](/01-Getting_Started/04-Activate)** — Upload your activation key to make SafeSquid fully operational
+3. **[Connect Your Client](/01-Getting_Started/05-Connect_Your_Client/main)** — Configure a browser to use the proxy
+4. **[Verify Your Setup](/01-Getting_Started/06-Verify_Your_Setup)** — Confirm traffic flows through SafeSquid
+5. **[Enable SSL Inspection](/05-SSL_Inspection/main)** — Decrypt and inspect HTTPS traffic

@@ -42,40 +42,40 @@ Remote applications like **Remote desktop applications, Download managers**, etc
 
 
 
-## [Access the SafeSquid interface](/docs/SafeSquid_SWG/Configuration_Portal/)
+## [Access the SafeSquid interface](/02-SafeSquid_SWG/01-Configuration_Portal)
 
 
 
 ## Go to configure page
-![Go to configure page to Allow anydesk](/img/How_To/Allow_anydesk/image1.webp)
+![Go to configure page to Allow anydesk](/images/How_To/Allow_anydesk/image1.webp)
 
 
 
 ## Go to Real-time content security: HTTPS Inspection
-![Select HTTPS Inspection option in Real time content security section to Allow anydesk](/img/How_To/Allow_anydesk/image2.webp)
+![Select HTTPS Inspection option in Real time content security section to Allow anydesk](/images/How_To/Allow_anydesk/image2.webp)
 
-![Enabled Global section as true to allow anydesk](/img/How_To/Allow_anydesk/image3.webp)
+![Enabled Global section as true to allow anydesk](/images/How_To/Allow_anydesk/image3.webp)
 
-![Bypass SSL inspection by editing policy in Inspection policy section](/img/How_To/Allow_anydesk/image4.webp)
+![Bypass SSL inspection by editing policy in Inspection policy section](/images/How_To/Allow_anydesk/image4.webp)
 
-![Select enabled as true of Bypass SSL Inspection policy to allow anydesk](/img/How_To/Allow_anydesk/image5.webp)
+![Select enabled as true of Bypass SSL Inspection policy to allow anydesk](/images/How_To/Allow_anydesk/image5.webp)
 
-![Save Bypass SSL Inspection policy to allow anydesk](/img/How_To/Allow_anydesk/image6.webp)
+![Save Bypass SSL Inspection policy to allow anydesk](/images/How_To/Allow_anydesk/image6.webp)
 
 
 
 ## Go to Restriction Policies
-![Select Access profiles in Restriction policies section to allow anydesk](/img/How_To/Allow_anydesk/image7.webp)
+![Select Access profiles in Restriction policies section to allow anydesk](/images/How_To/Allow_anydesk/image7.webp)
 
-![Default Restrict remote desktop application policies present in policies and profiles section](/img/How_To/Allow_anydesk/image8.webp)
+![Default Restrict remote desktop application policies present in policies and profiles section](/images/How_To/Allow_anydesk/image8.webp)
 
-![Edit one of clone policy in policies and profile section to allow anydesk](/img/How_To/Allow_anydesk/image9.webp)
+![Edit one of clone policy in policies and profile section to allow anydesk](/images/How_To/Allow_anydesk/image9.webp)
 
-![Edit and entry comment and request type in policy to allow anydesk](/img/How_To/Allow_anydesk/image10.webp)
+![Edit and entry comment and request type in policy to allow anydesk](/images/How_To/Allow_anydesk/image10.webp)
 
-![Select Bypass SSL Inspection in added profiles section to allow anydesk](/img/How_To/Allow_anydesk/image11.webp)
+![Select Bypass SSL Inspection in added profiles section to allow anydesk](/images/How_To/Allow_anydesk/image11.webp)
 
-![Save Allow anydesk policy](/img/How_To/Allow_anydesk/image12.webp)![Save configuration of policy to allow anydesk](/img/How_To/Allow_anydesk/image13.webp)
+![Save Allow anydesk policy](/images/How_To/Allow_anydesk/image12.webp)![Save configuration of policy to allow anydesk](/images/How_To/Allow_anydesk/image13.webp)
 
 
 
@@ -95,9 +95,9 @@ Bind that created user group and Request Type in Access Profiles and decide whet
 
 ## Verification and Evidence
 
-- **Interface Checks**: In [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), confirm Real-time content security → HTTPS Inspection has Bypass SSL Inspection policy enabled, and Restriction Policies → Access profiles show the allow policy for the remote desktop application with the correct request type and Bypass SSL Inspection profile.
+- **Interface Checks**: In [Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal), confirm Real-time content security → HTTPS Inspection has Bypass SSL Inspection policy enabled, and Restriction Policies → Access profiles show the allow policy for the remote desktop application with the correct request type and Bypass SSL Inspection profile.
 - **Log Analysis**: SafeSquid access logs should show successful CONNECT or requests for the remote app when allowed; blocked attempts appear with deny or policy response codes.
 - **Performance Validation**: From an allowed user and device, launch [AnyDesk](https://anydesk.com/) (or the configured app) with proxy set; connection should succeed. From a non-allowed user or app, access should be blocked.
 
-**Related**: [SSL Inspection](/docs/SSL_Inspection/main/), [Access Restriction](/docs/Access_Restriction/main/), [Application Signatures](/docs/Profiling_Engine/Application_Signatures/), [Restrict AnyDesk](/docs/Use_Cases/Restrict_anydesk/), [Troubleshooting](/docs/Troubleshooting/main/)
+**Related**: [SSL Inspection](/05-SSL_Inspection/main), [Access Restriction](/08-Access_Restriction/main), [Application Signatures](/07-Profiling_Engine/03-Application_Signatures), [Restrict AnyDesk](/21-Use_Cases/17-Restrict_anydesk), [Troubleshooting](/23-Troubleshooting/main)
 

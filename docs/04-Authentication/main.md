@@ -21,27 +21,27 @@ SafeSquid itself does not provide MFA prompts. To enforce MFA, integrate with di
 
 | Method | Use When | User Experience | Infrastructure Required |
 |--------|----------|-----------------|-------------------------|
-| [BASIC Authentication](/docs/Authentication/BASIC/) | No directory service available | Browser login prompt | None |
-| [Network Signature](/docs/Authentication/Network_Signature/) | IP-based policy needed (devices, legacy apps) | Transparent (no login) | Static IP addressing or DHCP reservations |
-| [Directory Services](/docs/Authentication/Directory_Services/main/) | Centralized identity required | Browser prompt or SSO | Active Directory or OpenLDAP |
-| [PAM Authentication](/docs/Authentication/PAM/) | OS credentials should apply to proxy | Browser login prompt | PAM-capable OS |
-| [Bypass Authentication](/docs/Authentication/Bypass_Authentication/) | Some apps cannot authenticate | Transparent for bypassed apps | None |
+| [BASIC Authentication](/04-Authentication/01-BASIC) | No directory service available | Browser login prompt | None |
+| [Network Signature](/04-Authentication/02-Network_Signature) | IP-based policy needed (devices, legacy apps) | Transparent (no login) | Static IP addressing or DHCP reservations |
+| [Directory Services](/04-Authentication/03-Directory_Services/main) | Centralized identity required | Browser prompt or SSO | Active Directory or OpenLDAP |
+| [PAM Authentication](/04-Authentication/04-PAM) | OS credentials should apply to proxy | Browser login prompt | PAM-capable OS |
+| [Bypass Authentication](/04-Authentication/05-Bypass_Authentication) | Some apps cannot authenticate | Transparent for bypassed apps | None |
 
 ## Authentication methods
 
-### [BASIC Authentication](/docs/Authentication/BASIC/)
+### [BASIC Authentication](/04-Authentication/01-BASIC)
 BASIC authentication (RFC 7617) with credentials stored locally in SafeSquid. Browser-prompt authentication with no directory infrastructure required; credentials managed locally. Use when you need identity-based policies without Active Directory or LDAP.
 
-### [Network Signature](/docs/Authentication/Network_Signature/)
+### [Network Signature](/04-Authentication/02-Network_Signature)
 Maps source IPs or subnets to user-groups for group-based access restriction and reporting. No user login required; policy applies by IP. Use when user identity is unavailable (device-only, legacy apps) but you need group-based rules.
 
-### [Directory Services](/docs/Authentication/Directory_Services/main/)
+### [Directory Services](/04-Authentication/03-Directory_Services/main)
 Integrates with Active Directory or OpenLDAP to leverage existing user accounts and group memberships. Supports simple authentication (browser prompt with directory credentials) and SSO (Kerberos with AD for transparent authentication). Use when you need centralized identity management and don't want to duplicate user accounts in SafeSquid.
 
-### [PAM Authentication](/docs/Authentication/PAM/)
+### [PAM Authentication](/04-Authentication/04-PAM)
 Validates proxy users via the system PAM stack so OS and proxy share credentials. Use when you want a single credential set for both OS login and proxy access in PAM-based environments (Linux, Unix).
 
-### [Bypass Authentication](/docs/Authentication/Bypass_Authentication/)
+### [Bypass Authentication](/04-Authentication/05-Bypass_Authentication)
 Allows specific destinations or request types to skip authentication while other traffic remains authenticated. Use for automatic updates or apps that cannot send proxy credentials.
 
 ## Combining authentication methods
@@ -67,5 +67,5 @@ After configuring authentication:
 ## Next steps
 
 1. Choose an authentication method above and configure it
-2. Combine with [Access Restriction](/docs/Access_Restriction/main/) for identity-based policies
-3. Enable [SSL Inspection](/docs/SSL_Inspection/main/) to decrypt HTTPS traffic — without it, SafeSquid can only authenticate based on CONNECT requests, not actual HTTPS content
+2. Combine with [Access Restriction](/08-Access_Restriction/main) for identity-based policies
+3. Enable [SSL Inspection](/05-SSL_Inspection/main) to decrypt HTTPS traffic — without it, SafeSquid can only authenticate based on CONNECT requests, not actual HTTPS content

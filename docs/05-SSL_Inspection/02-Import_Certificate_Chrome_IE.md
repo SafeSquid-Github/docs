@@ -26,7 +26,7 @@ For enterprise environments, deploy the certificate via **Group Policy (GPO)** i
 
 :::note Firefox Users
 
-Firefox uses its own certificate store and ignores the Windows trust store. See [Import certificate into Firefox](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#import-certificate-into-firefox).
+Firefox uses its own certificate store and ignores the Windows trust store. See [Import certificate into Firefox](/05-SSL_Inspection/01-Configure_HTTPS_Inspection#import-certificate-into-firefox).
 
 :::
 
@@ -50,13 +50,13 @@ Firefox uses its own certificate store and ignores the Windows trust store. See 
 
 Double-click the downloaded SafeSquid certificate file (usually `safesquid.crt` or `safesquid.cer`).
 
-![Opening SafeSquid certificate](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image1.webp)
+![Opening SafeSquid certificate](/images/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image1.webp)
 
 ---
 
 ### 2. Click "Install Certificate"
 
-![Install Certificate button](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image2.webp)
+![Install Certificate button](/images/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image2.webp)
 
 ---
 
@@ -68,7 +68,7 @@ Choose **"Local Machine"** (for all users on this computer) or **"Current User"*
 
 Click **Next**.
 
-![Store location selection](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image3.webp)
+![Store location selection](/images/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image3.webp)
 
 ---
 
@@ -76,7 +76,7 @@ Click **Next**.
 
 Click **"Browse"** to select the certificate store.
 
-![Browse certificate store](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image4.webp)
+![Browse certificate store](/images/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image4.webp)
 
 ---
 
@@ -86,7 +86,7 @@ Click **"Browse"** to select the certificate store.
 
 Click **OK**.
 
-![Select Trusted Root Certification Authorities](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image5.webp)
+![Select Trusted Root Certification Authorities](/images/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image5.webp)
 
 ---
 
@@ -94,7 +94,7 @@ Click **OK**.
 
 Click **Next** to continue.
 
-![Continue import](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image6.webp)
+![Continue import](/images/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image6.webp)
 
 ---
 
@@ -102,7 +102,7 @@ Click **Next** to continue.
 
 Click **Finish** to complete the import.
 
-![Finish import](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image7.webp)
+![Finish import](/images/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image7.webp)
 
 ---
 
@@ -112,9 +112,9 @@ A confirmation message appears: **"The import was successful."**
 
 Click **OK**.
 
-![Import successful confirmation](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image8.webp)
+![Import successful confirmation](/images/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image8.webp)
 
-![Import complete](/img/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image9.webp)
+![Import complete](/images/How_To/Importing_Your_SSL_Certificate_Into_Internet_Explorer_or_Chrome/image9.webp)
 
 ---
 
@@ -165,12 +165,12 @@ Click **OK**.
 
 ## Next Steps
 
-1. **[Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/)** — Complete setup guide (if you haven't enabled inspection yet)
-2. **[Import certificate into Firefox](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#import-certificate-into-firefox)** — Firefox uses separate trust store
+1. **[Configure HTTPS Inspection](/05-SSL_Inspection/01-Configure_HTTPS_Inspection)** — Complete setup guide (if you haven't enabled inspection yet)
+2. **[Import certificate into Firefox](/05-SSL_Inspection/01-Configure_HTTPS_Inspection#import-certificate-into-firefox)** — Firefox uses separate trust store
 3. **Deploy to all clients:**
    - **Windows enterprise:** Use GPO (see tip at top of page)
    - **macOS:** Use MDM or manual Keychain import
    - **Mobile:** Use MDM or manual installation
-4. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm proxy and SSL Inspection are working
+4. **[Verify Your Setup](/01-Getting_Started/06-Verify_Your_Setup)** — Confirm proxy and SSL Inspection are working
 
-**Related:** [SSL Inspection Overview](/docs/SSL_Inspection/main/) | [Troubleshooting](/docs/Troubleshooting/main/)
+**Related:** [SSL Inspection Overview](/05-SSL_Inspection/main) | [Troubleshooting](/23-Troubleshooting/main)

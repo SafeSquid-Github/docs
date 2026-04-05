@@ -22,15 +22,15 @@ Supporting services ensure SafeSquid SWG operates reliably, performs well, and m
 
 | **Service** | **Purpose** | **What Happens Without It** |
 |-------------|-------------|------------------------------|
-| **[Monit](/docs/SafeSquid_SWG/Supporting_Services/Monit/)** | Process monitoring and auto-restart | SafeSquid crashes stay down until manual restart |
-| **[BIND](/docs/SafeSquid_SWG/Supporting_Services/Bind/)** | Local DNS resolver with caching | Slow DNS lookups, dependency on external resolvers |
-| **[NTP](/docs/SafeSquid_SWG/Supporting_Services/NTP/)** | Time synchronization | SSO fails, TLS certificate errors, log timestamps incorrect |
+| **[Monit](/02-SafeSquid_SWG/07-Supporting_Services/01-Monit)** | Process monitoring and auto-restart | SafeSquid crashes stay down until manual restart |
+| **[BIND](/02-SafeSquid_SWG/07-Supporting_Services/02-Bind)** | Local DNS resolver with caching | Slow DNS lookups, dependency on external resolvers |
+| **[NTP](/02-SafeSquid_SWG/07-Supporting_Services/03-NTP)** | Time synchronization | SSO fails, TLS certificate errors, log timestamps incorrect |
 
 ---
 
 ## Service Guides
 
-### [Monit](/docs/SafeSquid_SWG/Supporting_Services/Monit/)
+### [Monit](/02-SafeSquid_SWG/07-Supporting_Services/01-Monit)
 
 **Automated monitoring and self-healing** for SafeSquid and dependent processes.
 
@@ -41,11 +41,11 @@ Supporting services ensure SafeSquid SWG operates reliably, performs well, and m
 - Fetches threat intelligence updates
 - Triggers housekeeping tasks
 
-**Install and configure:** [Monit Configuration Guide](/docs/SafeSquid_SWG/Supporting_Services/Monit/)
+**Install and configure:** [Monit Configuration Guide](/02-SafeSquid_SWG/07-Supporting_Services/01-Monit)
 
 ---
 
-### [BIND](/docs/SafeSquid_SWG/Supporting_Services/Bind/)
+### [BIND](/02-SafeSquid_SWG/07-Supporting_Services/02-Bind)
 
 **Local DNS resolver** for fast, reliable domain resolution.
 
@@ -55,11 +55,11 @@ Supporting services ensure SafeSquid SWG operates reliably, performs well, and m
 - Improves consistency and auditability
 - Enables local DNS overrides for internal domains
 
-**Install and configure:** [BIND Configuration Guide](/docs/SafeSquid_SWG/Supporting_Services/Bind/)
+**Install and configure:** [BIND Configuration Guide](/02-SafeSquid_SWG/07-Supporting_Services/02-Bind)
 
 ---
 
-### [NTP](/docs/SafeSquid_SWG/Supporting_Services/NTP/)
+### [NTP](/02-SafeSquid_SWG/07-Supporting_Services/03-NTP)
 
 **Time synchronization** critical for authentication and TLS validation.
 
@@ -69,7 +69,7 @@ Supporting services ensure SafeSquid SWG operates reliably, performs well, and m
 - Provides correct timestamps in logs for forensics
 - Prevents authentication failures due to clock drift
 
-**Install and configure:** [NTP Configuration Guide](/docs/SafeSquid_SWG/Supporting_Services/NTP/)
+**Install and configure:** [NTP Configuration Guide](/02-SafeSquid_SWG/07-Supporting_Services/03-NTP)
 
 ---
 
@@ -124,6 +124,6 @@ For a production-ready SafeSquid deployment:
 ## Next Steps
 
 1. **Configure each service** using the detailed guides above
-2. **[SSL Inspection](/docs/SSL_Inspection/main/)** — NTP is critical for TLS validation
-3. **[Authentication](/docs/Authentication/main/)** — NTP is required for SSO/Kerberos
-4. **[Audit & Forensics](/docs/Audit_Forensics/main/)** — Accurate timestamps for compliance
+2. **[SSL Inspection](/05-SSL_Inspection/main)** — NTP is critical for TLS validation
+3. **[Authentication](/04-Authentication/main)** — NTP is required for SSO/Kerberos
+4. **[Audit & Forensics](/15-Audit_Forensics/main)** — Accurate timestamps for compliance

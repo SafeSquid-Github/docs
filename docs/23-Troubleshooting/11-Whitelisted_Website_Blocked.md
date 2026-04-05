@@ -31,41 +31,41 @@ Note: Whitelist category is the category to allow. Blacklist category is the cat
 
 ## Enable sscore and add site to whitelist category
 
-Ensure the **sscore** section is enabled and the categorization engine is loaded. Verify from the SafeSquid Statistics page in the interface. See [the Reporting Module](/docs/Audit_Forensics/Reporting_Module/). Add the corporate website to the whitelist category from Custom Settings → Categorize Web-sites in the SafeSquid UI.
+Ensure the **sscore** section is enabled and the categorization engine is loaded. Verify from the SafeSquid Statistics page in the interface. See [the Reporting Module](/15-Audit_Forensics/01-Reporting_Module). Add the corporate website to the whitelist category from Custom Settings → Categorize Web-sites in the SafeSquid UI.
 
 
 
 ## Procedure
 
-1.  [Access the SafeSquid interface](/docs/SafeSquid_SWG/Configuration_Portal/)
+1.  [Access the SafeSquid interface](/02-SafeSquid_SWG/01-Configuration_Portal)
 2.  Go to configure page
 
-![click on configure in SafeSquid Interface](/img/Troubleshooting/White_listed_website_is_blocked/image1.webp)
+![click on configure in SafeSquid Interface](/images/Troubleshooting/White_listed_website_is_blocked/image1.webp)
 
 3.  Go to the **Categorize Web-sites section under Custom Settings** and search website/domain from the **search for category** option.
-![Access Blocked Template](/img/Troubleshooting/White_listed_website_is_blocked/image2.webp)
+![Access Blocked Template](/images/Troubleshooting/White_listed_website_is_blocked/image2.webp)
 4.  Modify that website with a whitelist category. (A whitelist is a custom category that is made to allow blocked websites)
 
-![Go to categorize web-sites under custom settings section](/img/Troubleshooting/White_listed_website_is_blocked/image3.webp)
+![Go to categorize web-sites under custom settings section](/images/Troubleshooting/White_listed_website_is_blocked/image3.webp)
 
-![enter the website to be whitelisted and click search](/img/Troubleshooting/White_listed_website_is_blocked/image4.webp)
+![enter the website to be whitelisted and click search](/images/Troubleshooting/White_listed_website_is_blocked/image4.webp)
 
-![Whitelisted website blocked troubleshooting step or policy edit](/img/Troubleshooting/White_listed_website_is_blocked/image5.webp)
+![Whitelisted website blocked troubleshooting step or policy edit](/images/Troubleshooting/White_listed_website_is_blocked/image5.webp)
 
-![Modify that website with whitelist category](/img/Troubleshooting/White_listed_website_is_blocked/image6.webp)
+![Modify that website with whitelist category](/images/Troubleshooting/White_listed_website_is_blocked/image6.webp)
 
-![click on Modify](/img/Troubleshooting/White_listed_website_is_blocked/image7.webp)
+![click on Modify](/images/Troubleshooting/White_listed_website_is_blocked/image7.webp)
 
-![success message of adding category to the category server](/img/Troubleshooting/White_listed_website_is_blocked/image8.webp)
+![success message of adding category to the category server](/images/Troubleshooting/White_listed_website_is_blocked/image8.webp)
 
 5.  Go to Access profiles for default policy and verify whether the policy is enabled or not. (Make it enabled)
-![go to default whitelist policy in access profiles](/img/Troubleshooting/White_listed_website_is_blocked/image9.webp)
+![go to default whitelist policy in access profiles](/images/Troubleshooting/White_listed_website_is_blocked/image9.webp)
 
-![Showing the category "whitelist"](/img/Troubleshooting/White_listed_website_is_blocked/image10.webp)
+![Showing the category "whitelist"](/images/Troubleshooting/White_listed_website_is_blocked/image10.webp)
 
-![Showing the unique name given to the default policy](/img/Troubleshooting/White_listed_website_is_blocked/image11.webp)
+![Showing the unique name given to the default policy](/images/Troubleshooting/White_listed_website_is_blocked/image11.webp)
 
-![Making sure this policy is above GLOBAL BLOCK policy and saving it](/img/Troubleshooting/White_listed_website_is_blocked/image12.webp)
+![Making sure this policy is above GLOBAL BLOCK policy and saving it](/images/Troubleshooting/White_listed_website_is_blocked/image12.webp)
 
 
 Use Categorize websites to Create and add websites to the "whitelist category".
@@ -74,9 +74,9 @@ Use Categorize websites to Create and add websites to the "whitelist category".
 
 ## Verification and Evidence
 
-- **Interface Checks**: In [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), Custom Settings → Categorize Web-sites: site shows whitelist category. Restriction Policies → Access profiles: default whitelist policy is enabled and above GLOBAL BLOCK.
+- **Interface Checks**: In [Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal), Custom Settings → Categorize Web-sites: site shows whitelist category. Restriction Policies → Access profiles: default whitelist policy is enabled and above GLOBAL BLOCK.
 - **Log Analysis**: Access logs show allowed response for the whitelisted URL; no block template or category block for that domain.
 - **Performance Validation**: From a client, open the whitelisted site; page loads without block template.
 
-**Related**: [Web Categorization](/docs/Profiling_Engine/Web_Categorization/), [Access Restriction](/docs/Access_Restriction/main/), [Reporting](/docs/Audit_Forensics/Reporting_Module/), [Troubleshooting](/docs/Troubleshooting/main/)
+**Related**: [Web Categorization](/07-Profiling_Engine/02-Web_Categorization), [Access Restriction](/08-Access_Restriction/main), [Reporting](/15-Audit_Forensics/01-Reporting_Module), [Troubleshooting](/23-Troubleshooting/main)
 

@@ -14,7 +14,7 @@ keywords:
 ## Issue
 Via proxy sometimes occur an error "DNS Lookup for safesqddns.com failed".
 
-![Proxy error showing "DNS Lookup for safesqddns.com failed"](/img/Troubleshooting/DNS_failure/image1.webp)
+![Proxy error showing "DNS Lookup for safesqddns.com failed"](/images/Troubleshooting/DNS_failure/image1.webp)
 
 
 

@@ -63,7 +63,7 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 
 ## How to Configure Profiling
 
-### 1. [User Identities](/docs/Profiling_Engine/User_Identities/main/) — Connect LDAP/AD, Create Groups
+### 1. [User Identities](/07-Profiling_Engine/01-User_Identities/main) — Connect LDAP/AD, Create Groups
 
 **Your goal:** Tie every HTTP request to a user and group (Finance, IT, Contractors) so policies apply by identity, not just IP address.
 
@@ -76,11 +76,11 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 
 **⚠️ Common pitfall:** Don't rely on IP addresses for identity. Laptops roam, NAT pools rotate, VPNs mask IPs. Use user authentication (LDAP/SAML) or accept that your policies will break constantly.
 
-→ [Configure User Identities](/docs/Profiling_Engine/User_Identities/main/)
+→ [Configure User Identities](/07-Profiling_Engine/01-User_Identities/main)
 
 ---
 
-### 2. [Web Categorization](/docs/Profiling_Engine/Web_Categorization/) — Assign Sites to Categories
+### 2. [Web Categorization](/07-Profiling_Engine/02-Web_Categorization) — Assign Sites to Categories
 
 **Your goal:** Block or allow websites by category (Social Media, Productivity, Malware, Adult Content) rather than maintaining endless URL lists.
 
@@ -96,11 +96,11 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 
 **⚠️ Common pitfall:** Don't block "Cloud Storage" category without whitelisting your approved services (SharePoint, OneDrive). You'll break business workflows.
 
-→ [Configure Web Categorization](/docs/Profiling_Engine/Web_Categorization/)
+→ [Configure Web Categorization](/07-Profiling_Engine/02-Web_Categorization)
 
 ---
 
-### 3. [Application Signatures](/docs/Profiling_Engine/Application_Signatures/) — Detect Apps by Traffic Fingerprints
+### 3. [Application Signatures](/07-Profiling_Engine/03-Application_Signatures) — Detect Apps by Traffic Fingerprints
 
 **Your goal:** Block (or allow) specific apps even when they use HTTPS or non-standard ports: TeamViewer, Tor Browser, Dropbox, Discord, Zoom.
 
@@ -119,11 +119,11 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 - Detect **Tor Browser** (anonymization) to prevent policy circumvention
 - Allow **Zoom** and **Teams** but block **Discord** and **Telegram** (unapproved chat apps)
 
-→ [Configure Application Signatures](/docs/Profiling_Engine/Application_Signatures/)
+→ [Configure Application Signatures](/07-Profiling_Engine/03-Application_Signatures)
 
 ---
 
-### 4. [Content Analyser](/docs/Profiling_Engine/Content_Analyser/main/) — Inspect Files, Text, Images
+### 4. [Content Analyser](/07-Profiling_Engine/04-Content_Analyser/main) — Inspect Files, Text, Images
 
 **Your goal:** Detect malware, data leaks, and inappropriate content by inspecting actual file content, not just the extension or URL.
 
@@ -140,11 +140,11 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 
 **⚠️ Common pitfall:** Content analysis requires SSL inspection to be enabled. If you're not decrypting HTTPS, the Content Analyser can't inspect encrypted uploads.
 
-→ [Configure Content Analyser](/docs/Profiling_Engine/Content_Analyser/main/)
+→ [Configure Content Analyser](/07-Profiling_Engine/04-Content_Analyser/main)
 
 ---
 
-### 5. [Request Profiles](/docs/Profiling_Engine/Request_Profiles/) — Control by HTTP Method, Protocol, User-Agent
+### 5. [Request Profiles](/07-Profiling_Engine/05-Request_Profiles) — Control by HTTP Method, Protocol, User-Agent
 
 **Your goal:** Enforce SafeSearch, block POST requests to unapproved sites, or restrict HTTP methods (DELETE, PUT) for read-only access.
 
@@ -159,11 +159,11 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 - ✅ Read-only mode for social media (allow GET, block POST to prevent comments/posts)
 - ✅ Block non-browser user agents (scrapers, bots, automated tools)
 
-→ [Configure Request Profiles](/docs/Profiling_Engine/Request_Profiles/)
+→ [Configure Request Profiles](/07-Profiling_Engine/05-Request_Profiles)
 
 ---
 
-### 6. [Response Profiles](/docs/Profiling_Engine/Response_Profiles/) — Filter by MIME Type, File Size
+### 6. [Response Profiles](/07-Profiling_Engine/06-Response_Profiles) — Filter by MIME Type, File Size
 
 **Your goal:** Block executable downloads, enforce file size limits, or quarantine archives for malware scanning.
 
@@ -180,11 +180,11 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 
 **⚠️ When NOT to use:** Response Profiles fire after the download starts. For pre-emptive blocking (before bandwidth is consumed), use Request Profiles + URL filtering instead.
 
-→ [Configure Response Profiles](/docs/Profiling_Engine/Response_Profiles/)
+→ [Configure Response Profiles](/07-Profiling_Engine/06-Response_Profiles)
 
 ---
 
-### 7. [Time Profiles](/docs/Profiling_Engine/Time_Profiles/) — Enforce Policies by Time Window
+### 7. [Time Profiles](/07-Profiling_Engine/07-Time_Profiles) — Enforce Policies by Time Window
 
 **Your goal:** Allow social media during lunch, block large downloads during business hours, or require manager approval for after-hours access.
 
@@ -200,7 +200,7 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 
 **Example:** Allow Facebook/Twitter only during lunch hour (12:00-13:00), block rest of the day.
 
-→ [Configure Time Profiles](/docs/Profiling_Engine/Time_Profiles/)
+→ [Configure Time Profiles](/07-Profiling_Engine/07-Time_Profiles)
 
 
 
@@ -208,7 +208,7 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 
 **1. Relying on IP addresses for identity**  
 **What breaks:** Laptops switch networks, VPNs mask IPs, NAT pools rotate. Your "Finance team = 192.168.10.0/24" rule breaks when someone works from home.  
-**Solution:** Use LDAP or SAML authentication. Configure [User Identities](/docs/Profiling_Engine/User_Identities/) before building IP-based rules.
+**Solution:** Use LDAP or SAML authentication. Configure [User Identities](/07-Profiling_Engine/01-User_Identities/main) before building IP-based rules.
 
 **2. Blocking "Cloud Storage" without whitelisting approved services**  
 **What breaks:** Your categorization rule blocks "Cloud Storage" — but that includes SharePoint, OneDrive, and Box (approved). Users can't access business files.  
@@ -216,7 +216,7 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 
 **3. Enabling Content Analyser without SSL Inspection**  
 **What breaks:** 90% of uploads are over HTTPS. If SSL inspection is disabled, Content Analyser can't see the payload — it's encrypted.  
-**Solution:** Enable [SSL Inspection](/docs/SSL_Inspection/) before relying on Content Analyser for DLP or malware detection.
+**Solution:** Enable [SSL Inspection](/05-SSL_Inspection/main) before relying on Content Analyser for DLP or malware detection.
 
 **4. Over-blocking with application signatures**  
 **What breaks:** You block "Remote Access" signatures, which includes TeamViewer, AnyDesk, Chrome Remote Desktop — but also your approved VPN client. IT can't work remotely.  
@@ -231,13 +231,13 @@ Your proxy sees thousands of requests per second: `https://cdn47.cloudprovider.c
 ## Related Topics
 
 **Prerequisites:**
-- [Authentication Setup](/docs/Authentication/main/) — User identities require LDAP, AD, or SAML authentication
+- [Authentication Setup](/04-Authentication/main) — User identities require LDAP, AD, or SAML authentication
 
 **Next Steps:**
-- [Access Restrictions](/docs/Access_Restriction/) — Use profiles to build allow/block policies
-- [Data Leakage Prevention](/docs/Data_Leakage_Prevention/) — Combine Content Analyser with DLP templates
+- [Access Restrictions](/08-Access_Restriction/main) — Use profiles to build allow/block policies
+- [Data Leakage Prevention](/09-Data_Leakage_Prevention/main) — Combine Content Analyser with DLP templates
 
 **Troubleshooting:**
-- [User Not Identified](/docs/Troubleshooting/) — LDAP bind failures, group membership issues
-- [Application Not Detected](/docs/Troubleshooting/) — Signature tuning, false positives
+- [User Not Identified](/23-Troubleshooting/main) — LDAP bind failures, group membership issues
+- [Application Not Detected](/23-Troubleshooting/main) — Signature tuning, false positives
 

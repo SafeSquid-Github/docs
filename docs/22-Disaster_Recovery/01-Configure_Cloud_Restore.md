@@ -59,16 +59,16 @@ systemctl enable monit
 
 
 
-## [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
-![Access the SafeSquid User Interface to configure cloud restore](/img/How_To/Setup_Cloud_Restore/image1.webp)
+## [Access the SafeSquid User Interface](/02-SafeSquid_SWG/01-Configuration_Portal)
+![Access the SafeSquid User Interface to configure cloud restore](/images/How_To/Setup_Cloud_Restore/image1.webp)
 
-![verify same Activation key before configure cloud restore ](/img/How_To/Setup_Cloud_Restore/image2.webp)
+![verify same Activation key before configure cloud restore ](/images/How_To/Setup_Cloud_Restore/image2.webp)
 
-![Select configure cloud restore option](/img/How_To/Setup_Cloud_Restore/image3.webp)
+![Select configure cloud restore option](/images/How_To/Setup_Cloud_Restore/image3.webp)
 
-![Click on restore to configure cloud restore](/img/How_To/Setup_Cloud_Restore/image4.webp)
+![Click on restore to configure cloud restore](/images/How_To/Setup_Cloud_Restore/image4.webp)
 
-![Confirmation of configure cloud restore](/img/How_To/Setup_Cloud_Restore/image5.webp)
+![Confirmation of configure cloud restore](/images/How_To/Setup_Cloud_Restore/image5.webp)
 
 After restore completes, SafeSquid restarts automatically. Wait 1-2 minutes for the service to fully start.
 
@@ -110,12 +110,12 @@ This creates a restore point you can revert to if changes cause issues.
   ls -l /usr/local/safesquid/security/ssl/ROOT_X509File.cer
   ls -l /usr/local/safesquid/security/ssl/ROOT_PrivateKeyFile.pem
   ```
-- Reimport SSL certificate to client browsers if needed: [Import Certificate](/docs/SSL_Inspection/Import_Certificate_Chrome_IE/)
+- Reimport SSL certificate to client browsers if needed: [Import Certificate](/05-SSL_Inspection/02-Import_Certificate_Chrome_IE)
 
 **Monit not restarting SafeSquid automatically:**
 - Check Monit status: `systemctl status monit`
 - Verify Monit configuration includes SafeSquid: `monit status`
 - Manually restart if needed: `systemctl restart safesquid`
 
-**Related**: [Disaster Recovery overview](/docs/Disaster_Recovery/main/), [Proxy Clustering](/docs/Proxy_Clustering/main/), [Troubleshooting](/docs/Troubleshooting/main/)
+**Related**: [Disaster Recovery overview](/22-Disaster_Recovery/main), [Proxy Clustering](/17-Proxy_Clustering/main), [Troubleshooting](/23-Troubleshooting/main)
 

@@ -35,9 +35,9 @@ Similarly setting the Default policy to Deny shall block all non-mandatory HTTP 
 
 ## Header filter configuration guides
 
-### [Header Filter Configuration and Reference](/docs/Header_Obfuscation/Header_Filter_Configuration/)
+### [Header Filter Configuration and Reference](/11-Header_Obfuscation/01-Header_Filter_Configuration)
 Header allow/deny/insert behavior requires correct Global policy and rule configuration. The document covers the Global section, Allow and Deny rule parameters (Type, Value, Applies to, Profiles), and Insert rules for adding or modifying headers. Solution verification confirms policies apply as intended. Use the document to configure and validate header filtering.
 
 ## Next steps
 
-Combine header filter with [Access Restriction](/docs/Access_Restriction/main/) and [Cookie Inspection](/docs/Cookie_Inspection/main/) for full request/response control.
+Combine header filter with [Access Restriction](/08-Access_Restriction/main) and [Cookie Inspection](/12-Cookie_Inspection/main) for full request/response control.

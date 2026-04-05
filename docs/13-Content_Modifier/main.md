@@ -31,25 +31,25 @@ Content Modifier enables security and operational control: strip or replace Acti
 
 **Client-side:** No change required; modification is transparent to the client.
 
-**SafeSquid-side:** SafeSquid deployed and operational; admin access to the configuration interface. [SSL Inspection](/docs/SSL_Inspection/main/) enabled if modifying HTTPS response body. [Access Restriction](/docs/Access_Restriction/main/) and profiles configured so modifier policies can target the right connections.
+**SafeSquid-side:** SafeSquid deployed and operational; admin access to the configuration interface. [SSL Inspection](/05-SSL_Inspection/main) enabled if modifying HTTPS response body. [Access Restriction](/08-Access_Restriction/main) and profiles configured so modifier policies can target the right connections.
 
 
 
 ## Enable and configure Content Modifier in SafeSquid
 
-Access the SafeSquid interface via the [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/).
+Access the SafeSquid interface via the [Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal).
 
 ### Open the Configure page
 
-![Navigate to Configure in the SafeSquid interface](/img/Configure/Real_Time_Content_Activity/Content_modifier/image1.webp)
+![Navigate to Configure in the SafeSquid interface](/images/Configure/Real_Time_Content_Activity/Content_modifier/image1.webp)
 
 ### Open Real-time content security
 
-![Open Real-time content security section](/img/Configure/Real_Time_Content_Activity/Content_modifier/image2.webp)
+![Open Real-time content security section](/images/Configure/Real_Time_Content_Activity/Content_modifier/image2.webp)
 
 ### Open the Content modifier section
 
-![Open Content Modifier section in Real-time content security](/img/Configure/Real_Time_Content_Activity/Content_modifier/image3.webp)
+![Open Content Modifier section in Real-time content security](/images/Configure/Real_Time_Content_Activity/Content_modifier/image3.webp)
 
 
 
@@ -59,21 +59,21 @@ Enable or Disable this section.
 -   **TRUE**: Enable content rewriting
 -   **FALSE**: Disable content rewriting
 
-![Content Modifier global Enabled toggle and options](/img/Configure/Real_Time_Content_Activity/Content_modifier/image4.webp)
+![Content Modifier global Enabled toggle and options](/images/Configure/Real_Time_Content_Activity/Content_modifier/image4.webp)
 
-![Content Modifier global settings view](/img/Configure/Real_Time_Content_Activity/Content_modifier/image5.webp)
+![Content Modifier global settings view](/images/Configure/Real_Time_Content_Activity/Content_modifier/image5.webp)
 
-![Content Modifier global configuration](/img/Configure/Real_Time_Content_Activity/Content_modifier/image6.webp)
+![Content Modifier global configuration](/images/Configure/Real_Time_Content_Activity/Content_modifier/image6.webp)
 
 
 
 ## Rewriting Policies
 
-![Rewriting Policies list and add entry](/img/Configure/Real_Time_Content_Activity/Content_modifier/image7.webp)
+![Rewriting Policies list and add entry](/images/Configure/Real_Time_Content_Activity/Content_modifier/image7.webp)
 
-![Rewriting policy entry configuration](/img/Configure/Real_Time_Content_Activity/Content_modifier/image8.webp)
+![Rewriting policy entry configuration](/images/Configure/Real_Time_Content_Activity/Content_modifier/image8.webp)
 
-![Content Modifier policy pattern and replace configuration](/img/Configure/Real_Time_Content_Activity/Content_modifier/image9.webp)
+![Content Modifier policy pattern and replace configuration](/images/Configure/Real_Time_Content_Activity/Content_modifier/image9.webp)
 
 List of regular expression substitutions to apply to matching files.
 
@@ -130,7 +130,7 @@ This option is to select what the rewrite entry applies to.
 ### Rule#1
 I want to modify the title tag of webpages which will indicate that it has been the webpage is inspected by SafeSquid. This rule is to be applied to every connection. To ensure the title tag is modified the chunked response needs to be buffered. Using regex (Regular Expression) we can use pattern matching to select the title tag of webpages. Replace with the title tag Inspected by SafeSquid.
 
-![Example rule: modify title tag to show inspected by SafeSquid](/img/Configure/Real_Time_Content_Activity/Content_modifier/image10.webp)
+![Example rule: modify title tag to show inspected by SafeSquid](/images/Configure/Real_Time_Content_Activity/Content_modifier/image10.webp)
 
 ### Rule#2
 We want to request PNG & JPG images instead of AVIF & WEBP from a remote server.
@@ -141,9 +141,9 @@ Using regex (Regular Expression) we can use pattern matching to select the heade
 
 Modify the header response and request for PNG & JPG images instead of AVIF & WEBP.
 
-![Example: request PNG and JPG instead of AVIF and WEBP](/img/Configure/Real_Time_Content_Activity/Content_modifier/image11.webp)
+![Example: request PNG and JPG instead of AVIF and WEBP](/images/Configure/Real_Time_Content_Activity/Content_modifier/image11.webp)
 
-![Content Modifier header rewrite result](/img/Configure/Real_Time_Content_Activity/Content_modifier/image12.webp)
+![Content Modifier header rewrite result](/images/Configure/Real_Time_Content_Activity/Content_modifier/image12.webp)
 
 
 
@@ -167,15 +167,15 @@ Modify the header response and request for PNG & JPG images instead of AVIF & WE
 
 ## Detailed reference and next steps
 
-### [Rewriting Policies Reference](/docs/Content_Modifier/Rewriting_Policies_Reference/)
+### [Rewriting Policies Reference](/13-Content_Modifier/01-Rewriting_Policies_Reference)
 Field-by-field reference for every policy parameter (Enabled, Profiles, Mime type, Pattern, Replace, Applies to) with practical examples — title tag injection, image format enforcement, and header rewriting.
 
 ### Related sections
-- [Header Re-Write](/docs/Header_Obfuscation/main/) for filtering or modifying specific headers.
-- [Cookie Inspection](/docs/Cookie_Inspection/main/) for cookie filtering and policy.
-- [Data Leakage Prevention](/docs/Data_Leakage_Prevention/main/) for DLP and compliance templates.
+- [Header Re-Write](/11-Header_Obfuscation/main) for filtering or modifying specific headers.
+- [Cookie Inspection](/12-Cookie_Inspection/main) for cookie filtering and policy.
+- [Data Leakage Prevention](/09-Data_Leakage_Prevention/main) for DLP and compliance templates.
 
 ## Next steps
 
-Use with [Access Restriction](/docs/Access_Restriction/main/) profiles; enable [SSL Inspection](/docs/SSL_Inspection/main/) when modifying HTTPS response body.
+Use with [Access Restriction](/08-Access_Restriction/main) profiles; enable [SSL Inspection](/05-SSL_Inspection/main) when modifying HTTPS response body.
 

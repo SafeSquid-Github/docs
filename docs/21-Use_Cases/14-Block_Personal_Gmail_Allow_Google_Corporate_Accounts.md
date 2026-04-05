@@ -28,7 +28,7 @@ Corporate Google accounts continue to work for mail and Google services. Persona
 
 ## Prerequisites
 
-- [HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) enabled so SafeSquid can inspect and modify HTTPS traffic to Google.
+- [HTTPS Inspection](/05-SSL_Inspection/01-Configure_HTTPS_Inspection) enabled so SafeSquid can inspect and modify HTTPS traffic to Google.
 - Access to SafeSquid Configuration Portal (Configure page).
 - List of allowed Google Workspace domains (e.g. `corp.example.com`). Multiple domains are separated by comma with no space.
 
@@ -44,11 +44,11 @@ Match requests to the Google Application policy first.
 2. Open **Policies and profiles** section.
 3. Search for the default profile named **GOOGLE APPLICATION**.
 
-![Search for the default policy GOOGLE APPLICATION](/img/How_To/Block_Personal_Gmail_Allow_Google_Corporate_Accounts/image1.webp)
+![Search for the default policy GOOGLE APPLICATION](/images/How_To/Block_Personal_Gmail_Allow_Google_Corporate_Accounts/image1.webp)
 
 4. Edit and enable this policy.
 
-![Edit and enable this policy](/img/How_To/Block_Personal_Gmail_Allow_Google_Corporate_Accounts/image2.webp)
+![Edit and enable this policy](/images/How_To/Block_Personal_Gmail_Allow_Google_Corporate_Accounts/image2.webp)
 
 :::note
 Administrators can add User Groups to restrict the policy to specific groups.
@@ -60,18 +60,18 @@ Insert a header so only allowed domains are accepted by Google.
 
 1. Open **Restriction Policies** (left panel).
 2. Open **Privacy Control** submenu.
-3. Open [Header Filter](/docs/Header_Obfuscation/main/) section. Ensure **Global** is **Enabled** **True**.
+3. Open [Header Filter](/11-Header_Obfuscation/main) section. Ensure **Global** is **Enabled** **True**.
 
-![Header filter under Restriction Policies](/img/How_To/Block_Personal_Gmail_Allow_Google_Corporate_Accounts/image3.webp)
+![Header filter under Restriction Policies](/images/How_To/Block_Personal_Gmail_Allow_Google_Corporate_Accounts/image3.webp)
 
 4. Open **Insert** tab.
 5. Search for default profile **GOOGLE APPLICATION** (first rule).
 
-![Insert tab and GOOGLE APPLICATION default profile](/img/How_To/Block_Personal_Gmail_Allow_Google_Corporate_Accounts/image4.webp)
+![Insert tab and GOOGLE APPLICATION default profile](/images/How_To/Block_Personal_Gmail_Allow_Google_Corporate_Accounts/image4.webp)
 
 6. Edit and enable this rule. Add allowed domains in the value field (comma-separated, no space). Save the policy.
 
-![Edit and enable rule; add allowed domains in value field and save](/img/How_To/Block_Personal_Gmail_Allow_Google_Corporate_Accounts/image5.webp)
+![Edit and enable rule; add allowed domains in value field and save](/images/How_To/Block_Personal_Gmail_Allow_Google_Corporate_Accounts/image5.webp)
 
 :::note
 Multiple domains: separate each with a comma, no space.
@@ -84,7 +84,7 @@ Multiple domains: separate each with a comma, no space.
 - **Block test:** Sign in to Google (e.g. mail.google.com) with a **personal** Gmail account through the proxy. Google returns an error template or message listing the allowed domains; sign-in is blocked.
 - **Allow test:** Sign in with a **corporate** Google Workspace account (allowed domain). Sign-in succeeds and mail works.
 - **Interface:** **Configure** → **Restriction Policies** → **Privacy Control** → **Header Filter** shows the GOOGLE APPLICATION Insert rule with the correct domain list. **Policies and profiles** shows GOOGLE APPLICATION enabled.
-- **Audit:** Access logs and restriction logs show traffic to Google; export from the [Reporting Module](/docs/Audit_Forensics/Reporting_Module/) for evidence of policy enforcement.
+- **Audit:** Access logs and restriction logs show traffic to Google; export from the [Reporting Module](/15-Audit_Forensics/01-Reporting_Module) for evidence of policy enforcement.
 
 
 
@@ -100,7 +100,7 @@ Multiple domains: separate each with a comma, no space.
 
 ## Next steps
 
-- [Header Re-Write](/docs/Header_Obfuscation/main/) for header filtering and privacy controls.
-- [Access Restriction](/docs/Access_Restriction/main/) for URL and category-based policies.
-- [SSL Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) for HTTPS visibility and bypass rules.
+- [Header Re-Write](/11-Header_Obfuscation/main) for header filtering and privacy controls.
+- [Access Restriction](/08-Access_Restriction/main) for URL and category-based policies.
+- [SSL Inspection](/05-SSL_Inspection/01-Configure_HTTPS_Inspection) for HTTPS visibility and bypass rules.
 

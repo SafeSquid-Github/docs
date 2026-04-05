@@ -19,12 +19,12 @@ SafeSquid customization covers custom templates (error pages, branding) and star
 
 ## Custom templates and startup configuration guides
 
-### [Custom Templates](/docs/Customisation/Custom_Templates/)
+### [Custom Templates](/18-Customisation/01-Custom_Templates)
 Organizations face user confusion when blocked content displays generic error messages without branding or escalation procedures. Custom templates enable branded error pages in any language with company logos, help desk contacts, and policy explanations. User awareness and corporate identity improve while support tickets decrease. Use the document to configure custom templates for blocking scenarios.
 
-### [Startup Parameters](/docs/Customisation/Startup_Parameters/)
+### [Startup Parameters](/18-Customisation/02-Startup_Parameters)
 Default SafeSquid configurations may not match enterprise requirements for threading, memory, logging, cluster sync, or socket tuning. Startup parameters control listening interfaces, thread management, buffer sizes, and master-slave configurations. Organizations optimize proxy performance and enable clustering or remote logging. Use the document to configure startup.ini and tune the proxy.
 
 ## Next steps
 
-After tuning, verify with [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) and [Performance Plot](/docs/Audit_Forensics/Performance_Plot/); for clustering see [Proxy Clustering](/docs/Proxy_Clustering/main/).
+After tuning, verify with [Verify Your Setup](/01-Getting_Started/06-Verify_Your_Setup) and [Performance Plot](/15-Audit_Forensics/03-Performance_Plot); for clustering see [Proxy Clustering](/17-Proxy_Clustering/main).

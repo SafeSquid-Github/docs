@@ -15,7 +15,7 @@ keywords:
 
 SafeSquid SWG is a modular, cloud-integrated platform that unifies policy decisions, combines intelligent threat detection with deep content inspection, and supports seamless multi-cloud deployment.
 
-![SafeSquid Application Ecosystem overview](/img/Application_Eco-System/Application_Eco-System/image1.webp)
+![SafeSquid Application Ecosystem overview](/images/Application_Eco-System/Application_Eco-System/image1.webp)
 
 ##  Why a Unified Ecosystem?
 
@@ -117,13 +117,13 @@ Nodes remain stateless and scale horizontally behind load balancers.
 
 For production use, deploy SafeSquid with supporting services for high availability, monitoring, and performance:
 
-1. **[Monit](/docs/SafeSquid_SWG/Supporting_Services/Monit/)**  
+1. **[Monit](/02-SafeSquid_SWG/07-Supporting_Services/01-Monit)**  
    Monitoring service that ensures zero downtime: auto-restarts processes, cleans temporary files, fetches threat intelligence updates.
 
-2. **[BIND](/docs/SafeSquid_SWG/Supporting_Services/Bind/)**  
+2. **[BIND](/02-SafeSquid_SWG/07-Supporting_Services/02-Bind)**  
    Local DNS resolver that accelerates lookups by caching and using root DNS servers directly.
 
-3. **[NTP](/docs/SafeSquid_SWG/Supporting_Services/NTP/)**  
+3. **[NTP](/02-SafeSquid_SWG/07-Supporting_Services/03-NTP)**  
    Time synchronization critical for Active Directory SSO and TLS certificate validation.
 
 ---
@@ -162,7 +162,7 @@ This structure ensures easy maintenance, debugging, and extensibility.
 
 ## Next Steps
 
-1. **[Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/)** — Access the admin interface and configure policies
-2. **[Supporting Services](/docs/SafeSquid_SWG/Supporting_Services/main/)** — Set up Monit, BIND, and NTP for production readiness
-3. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Enable HTTPS decryption
-4. **[Authentication](/docs/Authentication/main/)** — Integrate with Active Directory or LDAP
+1. **[Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal)** — Access the admin interface and configure policies
+2. **[Supporting Services](/02-SafeSquid_SWG/07-Supporting_Services/main)** — Set up Monit, BIND, and NTP for production readiness
+3. **[SSL Inspection](/05-SSL_Inspection/main)** — Enable HTTPS decryption
+4. **[Authentication](/04-Authentication/main)** — Integrate with Active Directory or LDAP

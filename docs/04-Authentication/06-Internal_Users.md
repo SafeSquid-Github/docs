@@ -12,18 +12,18 @@ When no Active Directory (AD) server is available for SafeSquid LDAP, administra
 
 ## Adding users using SafeSquid interface for authentication
 
-![clicking on configure in safesquid interface](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image1.webp)
+![clicking on configure in safesquid interface](/images/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image1.webp)
 
-![click on search in access profiles](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image2.webp)
+![click on search in access profiles](/images/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image2.webp)
 
-![User list in SafeSquid interface](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image4.webp)
+![User list in SafeSquid interface](/images/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image4.webp)
 
-![Add or edit user entry](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image6.webp)
+![Add or edit user entry](/images/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image6.webp)
 
-![User policy form](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image8.webp)
+![User policy form](/images/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image8.webp)
 
-![Save or submit user details](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image10.webp)
+![Save or submit user details](/images/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image10.webp)
 
-![User list with new entry](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image12.webp)
+![User list with new entry](/images/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image12.webp)
 
-![Configuration applied successfully](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image14.webp)
+![Configuration applied successfully](/images/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image14.webp)

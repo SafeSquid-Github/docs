@@ -15,8 +15,8 @@ keywords:
 
 :::info Before Running These Tests
 
-- SafeSquid is installed and the license is activated (see [Activate Your License](/docs/Getting_Started/Activate/))
-- At least one client is configured to use the proxy (see [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/))
+- SafeSquid is installed and the license is activated (see [Activate Your License](/01-Getting_Started/04-Activate))
+- At least one client is configured to use the proxy (see [Connect Your Client](/01-Getting_Started/05-Connect_Your_Client/main))
 - You have SSH access to the SafeSquid server
 
 :::
@@ -70,7 +70,7 @@ https://SAFESQUID-SERVER-IP:8443/
 ```
 
 :::tip Browser Not Configured?
-See [Explicit Proxy](/docs/Getting_Started/Connect_Your_Client/Explicit_Proxy/) for a 2-minute setup.
+See [Explicit Proxy](/01-Getting_Started/05-Connect_Your_Client/01-Explicit_Proxy) for a 2-minute setup.
 :::
 
 ---
@@ -85,7 +85,7 @@ Check the **Activation Details** section:
 - **Expiry:** In the future (commercial) or shows no expiry (free)
 
 **If Status shows "inactive":**
-- Re-upload your activation key ([Activate Your License](/docs/Getting_Started/Activate/))
+- Re-upload your activation key ([Activate Your License](/01-Getting_Started/04-Activate))
 - Check firewall allows outbound HTTPS to `api.safesquid.net`
 
 ---
@@ -152,7 +152,7 @@ tail -20 /var/log/safesquid/access/extended.log
 
 :::caution Certificate Warnings Are Normal (Without SSL Inspection)
 
-Until [SSL Inspection](/docs/SSL_Inspection/main/) is configured, HTTPS sites will show certificate warnings. This is expected behavior—SafeSquid is proxying the connection but not inspecting it.
+Until [SSL Inspection](/05-SSL_Inspection/main) is configured, HTTPS sites will show certificate warnings. This is expected behavior—SafeSquid is proxying the connection but not inspecting it.
 
 :::
 
@@ -170,7 +170,7 @@ nslookup example.com 127.0.0.1
 **If DNS fails:**
 - BIND9 not running: `systemctl status bind9`
 - Check BIND9 config: `/etc/bind/named.conf`
-- See [BIND9 Configuration](/docs/SafeSquid_SWG/Supporting_Services/Bind/)
+- See [BIND9 Configuration](/02-SafeSquid_SWG/07-Supporting_Services/02-Bind)
 
 ---
 
@@ -186,7 +186,7 @@ nslookup example.com 127.0.0.1
 | HTTPS sites don't load at all | Firewall blocking, or SafeSquid crashed | Check: `systemctl status safesquid`; Check firewall: `iptables -L` |
 
 :::info Detailed Troubleshooting
-For detailed troubleshooting, see [Troubleshooting](/docs/Troubleshooting/main/).
+For detailed troubleshooting, see [Troubleshooting](/23-Troubleshooting/main).
 :::
 
 ---
@@ -265,13 +265,13 @@ Use this checklist to verify that SafeSquid is fully integrated and ready for pr
 
 ## Next Steps
 
-1. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Enable HTTPS decryption so SafeSquid can inspect and filter encrypted traffic (required for policy enforcement on HTTPS sites)
+1. **[SSL Inspection](/05-SSL_Inspection/main)** — Enable HTTPS decryption so SafeSquid can inspect and filter encrypted traffic (required for policy enforcement on HTTPS sites)
 
-2. **[Authentication](/docs/Authentication/main/)** — Integrate with Active Directory or LDAP for user-aware policies
+2. **[Authentication](/04-Authentication/main)** — Integrate with Active Directory or LDAP for user-aware policies
 
-3. **[Access Restriction](/docs/Access_Restriction/main/)** — Set up URL filtering, category blocking, and time-based policies
+3. **[Access Restriction](/08-Access_Restriction/main)** — Set up URL filtering, category blocking, and time-based policies
 
-4. **[Troubleshooting](/docs/Troubleshooting/main/)** — Bookmark this for when issues arise (logs, diagnostics, common fixes)
+4. **[Troubleshooting](/23-Troubleshooting/main)** — Bookmark this for when issues arise (logs, diagnostics, common fixes)
 
 ---
 
@@ -282,6 +282,6 @@ Before going live with all users:
 - [ ] SSL Inspection configured and CA deployed to all endpoints
 - [ ] Authentication configured (AD/LDAP)
 - [ ] Basic access policies defined (block malware, adult content, etc.)
-- [ ] High availability configured ([Proxy Clustering](/docs/Proxy_Clustering/main/)) if uptime requirements demand it
+- [ ] High availability configured ([Proxy Clustering](/17-Proxy_Clustering/main)) if uptime requirements demand it
 - [ ] Monitoring and alerting set up
 - [ ] Support process defined for users

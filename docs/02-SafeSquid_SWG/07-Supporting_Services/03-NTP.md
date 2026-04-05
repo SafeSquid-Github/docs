@@ -310,9 +310,9 @@ Clock was stepped
 
 ## Next Steps
 
-1. **[Monit](/docs/SafeSquid_SWG/Supporting_Services/Monit/)** — Monitor chronyd and auto-restart if needed
-2. **[BIND](/docs/SafeSquid_SWG/Supporting_Services/Bind/)** — DNSSEC validation requires accurate time
-3. **[Authentication](/docs/Authentication/main/)** — Configure SSO/Kerberos (requires NTP)
-4. **[SSL Inspection](/docs/SSL_Inspection/main/)** — TLS certificate validation requires accurate time
+1. **[Monit](/02-SafeSquid_SWG/07-Supporting_Services/01-Monit)** — Monitor chronyd and auto-restart if needed
+2. **[BIND](/02-SafeSquid_SWG/07-Supporting_Services/02-Bind)** — DNSSEC validation requires accurate time
+3. **[Authentication](/04-Authentication/main)** — Configure SSO/Kerberos (requires NTP)
+4. **[SSL Inspection](/05-SSL_Inspection/main)** — TLS certificate validation requires accurate time
 
-**Related:** [Supporting Services Overview](/docs/SafeSquid_SWG/Supporting_Services/main/)
+**Related:** [Supporting Services Overview](/02-SafeSquid_SWG/07-Supporting_Services/main)

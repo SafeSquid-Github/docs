@@ -24,7 +24,7 @@ Use Elevated Privacy to protect privacy across websites. Otherwise, third-party 
 
 
 ## Global
-![Elevated Privacy restriction profile or configuration](/img/Configure/Restriction_Profiles/Elevated_Privacy/image1.webp)
+![Elevated Privacy restriction profile or configuration](/images/Configure/Restriction_Profiles/Elevated_Privacy/image1.webp)
 
 ### Enabled
 Enable or Disable this section.
@@ -35,7 +35,7 @@ Enable or Disable this section.
 
 
 ## Elevated policies
-![Elevated Privacy policy or profile options](/img/Configure/Restriction_Profiles/Elevated_Privacy/image2.webp)
+![Elevated Privacy policy or profile options](/images/Configure/Restriction_Profiles/Elevated_Privacy/image2.webp)
 
 Create the Policies for Elevated Privacy.
 
@@ -96,7 +96,7 @@ Websites such as Stack Overflow require third party cookies when using Google SS
 
 Connections with the profile "ENFORCE PARANOID LEVEL PRIVACY CHECK" will be ensured to have a paranoid level privacy check.
 
-![Elevated Privacy rule or entry configuration](/img/Configure/Restriction_Profiles/Elevated_Privacy/image3.webp)
+![Elevated Privacy rule or entry configuration](/images/Configure/Restriction_Profiles/Elevated_Privacy/image3.webp)
 
 ### Rule#2
 For applications for which we require third-party websites to sign in, Elevated privacy must be bypassed.
@@ -105,5 +105,5 @@ For connections with the profile "BYPASS ELEVATED PRIVACY" a privacy check will 
 
 Connections with "BYPASS ELEVATED PRIVACY" CAN use third-party cookies for authentication purposes.
 
-![Elevated Privacy save or apply configuration](/img/Configure/Restriction_Profiles/Elevated_Privacy/image4.webp)
+![Elevated Privacy save or apply configuration](/images/Configure/Restriction_Profiles/Elevated_Privacy/image4.webp)
 

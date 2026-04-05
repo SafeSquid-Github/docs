@@ -8,8 +8,6 @@ keywords:
 ---
 
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 # Activate Your License
 
@@ -71,33 +69,33 @@ Your SafeSquid server needs outbound access to these endpoints. Ensure your fire
 
 ## Activation Steps
 
-1. **Configure the browser** to use SafeSquid as the HTTP proxy (SafeSquid IP, port 8080). See [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/) if the browser is not yet configured.
+1. **Configure the browser** to use SafeSquid as the HTTP proxy (SafeSquid IP, port 8080). See [Connect Your Client](/01-Getting_Started/05-Connect_Your_Client/main) if the browser is not yet configured.
 
 2. **Open the SafeSquid interface** by navigating to [http://safesquid.cfg/](http://safesquid.cfg/) in your browser (an embedded Rest UI interface built into SafeSquid; accessible only when your client uses the proxy, but NOT resolved by SafeSquid's DNS resolver).
 
    When accessing for the first time, the interface prompts for upload of the activation key.
 
-   ![Upload activation key prompt](/img/License_Activation/image13.webp)
+   ![Upload activation key prompt](/images/License_Activation/image13.webp)
    *Initial activation prompt in the SafeSquid interface*
 
 3. **Select the activation key file** and click **Upload**.
 
-   ![Select and upload key](/img/License_Activation/image14.webp)
+   ![Select and upload key](/images/License_Activation/image14.webp)
    *Key upload dialog*
 
 4. **Click Restart** to apply the license.
 
-   ![Restart SafeSquid](/img/License_Activation/image15.webp)
+   ![Restart SafeSquid](/images/License_Activation/image15.webp)
    *Apply changes and restart notice*
 
 5. **Verify activation.** After the page reloads, go to **Support** in the menu.
 
-   ![Support menu](/img/License_Activation/image17.webp)
+   ![Support menu](/images/License_Activation/image17.webp)
    *Support and diagnostics menu*
 
 6. **Confirm activation details.** Ensure the **Activation Details** section shows your product type, expiry (if applicable), and subscription status.
 
-   ![Activation details](/img/License_Activation/image18.webp)
+   ![Activation details](/images/License_Activation/image18.webp)
    *Subscription and activation status display*
 
 :::tip Proxy Cluster Sync
@@ -111,7 +109,7 @@ After activation and restart, **Support** → **Activation Details** shows your 
 ## Troubleshooting
 
 <Tabs>
-  <TabItem value="case1" label="Key Not Detected" default>
+  <Tab title="Key Not Detected">
 
 **Symptom:** After uploading, the interface shows "Failed to set Subscription details."
 
@@ -136,9 +134,9 @@ After activation and restart, **Support** → **Activation Details** shows your 
    /etc/init.d/safesquid start
    ```
 
-  </TabItem>
+  </Tab>
 
-  <TabItem value="case2" label="Server Unreachable">
+  <Tab title="Server Unreachable">
 
 **Symptom:** After uploading the key, the browser shows "proxy server refusing connections."
 
@@ -161,9 +159,9 @@ After activation and restart, **Support** → **Activation Details** shows your 
    /etc/init.d/safesquid start
    ```
 
-  </TabItem>
+  </Tab>
 
-  <TabItem value="case3" label="Service Not Restarted">
+  <Tab title="Service Not Restarted">
 
 **Symptom:** Subscription details remain empty after uploading the key, or the browser shows the proxy is refusing connections.
 
@@ -178,8 +176,8 @@ After activation and restart, **Support** → **Activation Details** shows your 
    /etc/init.d/safesquid start
    ```
 
-  </TabItem>
-  <TabItem value="case4" label="License Expired">
+  </Tab>
+  <Tab title="License Expired">
 
 **Symptom:** SafeSquid displays "subscription expired" banner in the interface.
 
@@ -214,16 +212,16 @@ If you need time before renewing:
 4. The "expired" banner will disappear during the conservation period
 5. Restart SafeSquid from the web interface for changes to take effect
 
-![Extend Conservation Period](/img/License_Activation/image23.webp)  
+![Extend Conservation Period](/images/License_Activation/image23.webp)  
 *Extend Conservation Period button in the Self-Service Portal*
 
 :::note Conservation Period Limits
 The conservation period can be extended multiple times, each extension adding 3 days. However, this is a temporary measure — renew your subscription for continued commercial feature access.
 :::
 
-  </TabItem>
+  </Tab>
 
-  <TabItem value="case5" label="Wrong License Tier">
+  <Tab title="Wrong License Tier">
 
 **Symptom:** Activation succeeds but commercial features (URL categorization, threat intel) don't work.
 
@@ -241,10 +239,10 @@ The conservation period can be extended multiple times, each extension adding 3 
 
 3. Contact support if you purchased commercial but still see Free tier.
 
-  </TabItem>
+  </Tab>
 </Tabs>
 
 ## Next steps
 
-1. [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/) - configure at least one browser or client to use the proxy.
-2. [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) - run smoke tests to confirm the proxy is receiving traffic.
+1. [Connect Your Client](/01-Getting_Started/05-Connect_Your_Client/main) - configure at least one browser or client to use the proxy.
+2. [Verify Your Setup](/01-Getting_Started/06-Verify_Your_Setup) - run smoke tests to confirm the proxy is receiving traffic.

@@ -30,14 +30,14 @@ SafeSquid cloud services deliver real-time updates across six intelligence domai
 
 | Feed | Purpose | Used by |
 |---|---|---|
-| **Web Categorization** | URL and domain classification into categories (malware, phishing, adult, social media, etc.) | [Web Categorization](/docs/Profiling_Engine/Web_Categorization/), [Access Restriction](/docs/Access_Restriction/main/) |
-| **Application Signatures** | Identify applications by traffic patterns and user-agent strings | [Application Signatures](/docs/Profiling_Engine/Application_Signatures/) |
-| **SSL Security** | Certificate reputation, pinning data, and trust chain intelligence | [SSL Inspection](/docs/SSL_Inspection/main/) |
-| **Image Analysis** | Classification models for inappropriate or non-compliant visual content | [Image Analyser AI](/docs/Profiling_Engine/Content_Analyser/Image_Analyser_AI/) |
-| **Malware Scanning** | Signature databases and behavioral indicators for ClamAV and SqScan | [Malware Scanners](/docs/Malware_Scanners/main/) |
-| **Geo-Location** | IP-to-country and IP-to-ASN mapping for geographic policy enforcement | [GeoIP](/docs/DNS_Security/GeoIP/) |
+| **Web Categorization** | URL and domain classification into categories (malware, phishing, adult, social media, etc.) | [Web Categorization](/07-Profiling_Engine/02-Web_Categorization), [Access Restriction](/08-Access_Restriction/main) |
+| **Application Signatures** | Identify applications by traffic patterns and user-agent strings | [Application Signatures](/07-Profiling_Engine/03-Application_Signatures) |
+| **SSL Security** | Certificate reputation, pinning data, and trust chain intelligence | [SSL Inspection](/05-SSL_Inspection/main) |
+| **Image Analysis** | Classification models for inappropriate or non-compliant visual content | [Image Analyser AI](/07-Profiling_Engine/04-Content_Analyser/03-Image_Analyser_AI) |
+| **Malware Scanning** | Signature databases and behavioral indicators for ClamAV and SqScan | [Malware Scanners](/14-Malware_Scanners/main) |
+| **Geo-Location** | IP-to-country and IP-to-ASN mapping for geographic policy enforcement | [GeoIP](/03-DNS_Security/02-GeoIP) |
 
-Feed delivery and refresh schedules are managed by the SafeSquid cloud service. SafeSquid instances pull updates automatically when connected to the cloud. Custom categorization overrides (managed via the [Self-Service Portal](/docs/SafeSquid_SWG/Self-Service_Portal/)) merge with cloud feeds on each refresh.
+Feed delivery and refresh schedules are managed by the SafeSquid cloud service. SafeSquid instances pull updates automatically when connected to the cloud. Custom categorization overrides (managed via the [Self-Service Portal](/02-SafeSquid_SWG/04-Self-Service_Portal)) merge with cloud feeds on each refresh.
 
 
 
@@ -45,13 +45,13 @@ Feed delivery and refresh schedules are managed by the SafeSquid cloud service. 
 
 - **SafeSquid activation**: A valid product activation key from [key.safesquid.com](https://key.safesquid.com). The activation key links the instance to the cloud feed service.
 - **Internet connectivity**: SafeSquid must reach the SafeSquid cloud endpoints for feed updates. If SafeSquid operates behind a firewall, allow outbound HTTPS to `*.safesquid.com`.
-- **Subscription**: Some feed categories (e.g. DLP signatures, advanced application signatures) require a premium subscription. Check the [Self-Service Portal](/docs/SafeSquid_SWG/Self-Service_Portal/) for active subscriptions.
+- **Subscription**: Some feed categories (e.g. DLP signatures, advanced application signatures) require a premium subscription. Check the [Self-Service Portal](/02-SafeSquid_SWG/04-Self-Service_Portal) for active subscriptions.
 
 
 
 ## Verification and evidence
 
-- **Interface Checks**: In the [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), check the Support page for feed version numbers and last-update timestamps. Web Categorization, Application Signatures, and malware databases each show their current version.
+- **Interface Checks**: In the [Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal), check the Support page for feed version numbers and last-update timestamps. Web Categorization, Application Signatures, and malware databases each show their current version.
 - **Log Analysis**: SafeSquid logs feed update events including success, failure, and version changes. Search logs for feed-related entries to confirm refresh frequency.
 - **Custom Categorization**: Verify custom categories created in the Self-Service Portal appear in SafeSquid's categorization engine after the next feed sync. Test by browsing a custom-categorized URL and checking the access log for the expected category.
 
@@ -59,8 +59,8 @@ Feed delivery and refresh schedules are managed by the SafeSquid cloud service. 
 
 ## Next steps
 
-- [Web Categorization](/docs/Profiling_Engine/Web_Categorization/) to configure category-based policies.
-- [DNS Security](/docs/DNS_Security/main/) for DNSBL, GeoIP, and homograph detection.
-- [Malware Scanners](/docs/Malware_Scanners/main/) for ClamAV, ICAP, and SqScan configuration.
-- [Self-Service Portal](/docs/SafeSquid_SWG/Self-Service_Portal/) to manage custom categorization and subscriptions.
+- [Web Categorization](/07-Profiling_Engine/02-Web_Categorization) to configure category-based policies.
+- [DNS Security](/03-DNS_Security/main) for DNSBL, GeoIP, and homograph detection.
+- [Malware Scanners](/14-Malware_Scanners/main) for ClamAV, ICAP, and SqScan configuration.
+- [Self-Service Portal](/02-SafeSquid_SWG/04-Self-Service_Portal) to manage custom categorization and subscriptions.
 

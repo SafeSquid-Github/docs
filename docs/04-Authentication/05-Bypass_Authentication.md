@@ -28,11 +28,11 @@ Bypassed traffic is not attributed to a specific user. Keep your bypass list as 
 
 ## Step 1: Enable Global Bypass
 
-1. **Access Configuration:** Open the [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/).
+1. **Access Configuration:** Open the [Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal).
 2. **Enable Section:** Click **Search** → search for **BYPASS AUTHENTICATION**.
 3. **Set Enabled:** Edit the policy and set **Enabled** to **TRUE**.
 
-![Enable bypass authentication](/img/How_To/Bypass_Authentication/image5.webp)
+![Enable bypass authentication](/images/How_To/Bypass_Authentication/image5.webp)
 
 ## Step 2: Define Bypassed Destinations
 
@@ -51,7 +51,7 @@ Bypassed traffic is not attributed to a specific user. Keep your bypass list as 
 3. **Apply to Authentication Rule:** 
    In **Access Restrictions** → **Allow List**, ensure your authentication rule includes this bypass profile in the **Bypass** field.
 
-![Bind request type](/img/How_To/Bypass_Authentication/image13.webp)
+![Bind request type](/images/How_To/Bypass_Authentication/image13.webp)
 
 ## Verification
 
@@ -71,6 +71,6 @@ Bypassed traffic is not attributed to a specific user. Keep your bypass list as 
 
 ## Next steps
 
-- [Local Credential Store (BASIC)](/docs/Authentication/BASIC/)
-- [Directory Services](/docs/Authentication/Directory_Services/main/)
-- [Access Restriction](/docs/Access_Restriction/main/)
+- [Local Credential Store (BASIC)](/04-Authentication/01-BASIC)
+- [Directory Services](/04-Authentication/03-Directory_Services/main)
+- [Access Restriction](/08-Access_Restriction/main)

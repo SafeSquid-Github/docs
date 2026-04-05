@@ -22,7 +22,7 @@ SafeSquid **Advanced DLP** in **SafeSquid SWG** analyzes post data, inspects arc
 
 
 
-## [Manage Keyword Signatures using Self Service portal](/docs/Profiling_Engine/Application_Signatures/)
+## [Manage Keyword Signatures using Self Service portal](/07-Profiling_Engine/03-Application_Signatures)
 
 
 
@@ -30,27 +30,27 @@ SafeSquid **Advanced DLP** in **SafeSquid SWG** analyzes post data, inspects arc
 
 On configure page of SafeSquid interface open the Real time content security side menu. Click on Clam antivirus section to configure the policy.
 
-![Select Configure section to Block Emails or Files including archives or Social Posts using Keywords](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image1.webp)
+![Select Configure section to Block Emails or Files including archives or Social Posts using Keywords](/images/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image1.webp)
 
 Click on Global part of ClamAV Section and make Enabled as True.
 
-![Select Global part of ClamAV Section and make Enabled as True to Block Emails or Files including archives or Social Posts using Keywords](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image2.webp)
+![Select Global part of ClamAV Section and make Enabled as True to Block Emails or Files including archives or Social Posts using Keywords](/images/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image2.webp)
 
 Now click on clamav subsection to configure the policy.
 
-![Select clamav subsection to configure the policy](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image3.webp)
+![Select clamav subsection to configure the policy](/images/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image3.webp)
 
 Enable the default policy in the subsection for virus signature detection.
 
-![Enable the default policy in the subsection for virus signature detection](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image4.webp)
+![Enable the default policy in the subsection for virus signature detection](/images/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image4.webp)
 
 The policy appears in the list with the configured name, conditions, and BLOCK action (see screenshot below).
 
-![The default policy in the subsection for virus signature detection.](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image5.webp)
+![The default policy in the subsection for virus signature detection.](/images/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image5.webp)
 
 Click on bottom left Icon to save the configuration.
 
-![Save default policy in the subsection for virus signature detection.](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image6.webp)
+![Save default policy in the subsection for virus signature detection.](/images/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image6.webp)
 
 :::note
 After configuring the policy as above, go to the Support page and click Refresh to refresh subscription details.
@@ -59,53 +59,53 @@ After configuring the policy as above, go to the Support page and click Refresh 
 
 
 ## Testing signature detection
-HTTPS Inspection must be enabled in SafeSquid. If not, see [How to enable HTTPS Inspection](/docs/SSL_Inspection/main/).
+HTTPS Inspection must be enabled in SafeSquid. If not, see [How to enable HTTPS Inspection](/05-SSL_Inspection/main).
 
 ### Test using office documents
 Set proxy in the client browser and open Gmail. Confirm HTTPS traffic is inspected by SafeSquid; otherwise SafeSquid cannot block mail containing the configured keyword(s).
 
-![Testing Signature detection that Block Emails or Files including archives or Social Posts using Keywords](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image7.webp)
+![Testing Signature detection that Block Emails or Files including archives or Social Posts using Keywords](/images/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image7.webp)
 
 Create a dummy Microsoft file containing the configured keywords. Prepare a separate archive file for testing.
 
-![Create a dummy Microsoft file with configured keywords for testing](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image8.webp)
+![Create a dummy Microsoft file with configured keywords for testing](/images/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image8.webp)
 
 Attach the sample Microsoft file to a mail. SafeSquid blocks the attachment per policy.
 
-![SafeSquid block attachment by default policy for virus signature detection. ](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image9.webp)
+![SafeSquid block attachment by default policy for virus signature detection. ](/images/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image9.webp)
 
 That's it. Your created signatures are in the action and your data is safe.
 
 ### Test using archive files
 Attach the archive file to a mail; SafeSquid blocks the archive per policy.
 
-![Testing using archive files by default policy for virus signature detection.](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image10.webp)
+![Testing using archive files by default policy for virus signature detection.](/images/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image10.webp)
 
 ### Test using emails
 Create an email draft using the keywords for which signatures were configured.
 
 Before sending the mail SafeSquid will identify the keywords and will block the mail. You can see that **Save Failed** in gmail compose box.
 
-![Test using emails by default policy for virus signature detection.](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image11.webp)
+![Test using emails by default policy for virus signature detection.](/images/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image11.webp)
 
 In the browser, after clicking Send the mail remains in a sending state and is blocked.
 
-![Test using emails by default policy for virus signature detection.](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image12.webp)
+![Test using emails by default policy for virus signature detection.](/images/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image12.webp)
 
 ### Test using social media posts
 Open www.facebook.com and log in with test credentials.
 
 Now try to post a status update using your keywords. When you click on submit button, you will not see your post on Facebook page.
 
-![Test using social media posts by default policy for virus signature detection.](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image13.webp)
+![Test using social media posts by default policy for virus signature detection.](/images/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image13.webp)
 
 Posting the same status from the timeline is also blocked when it contains the configured keywords.
 
-![Test using social media posts by default policy for virus signature detection.](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image14.webp)
+![Test using social media posts by default policy for virus signature detection.](/images/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image14.webp)
 
 Now try to post the comment, you will not be able to post any comments with those specified keywords.
 
-![Not able to post any comments with those specified keyword due to default policy for virus signature detection.](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image15.webp)
+![Not able to post any comments with those specified keyword due to default policy for virus signature detection.](/images/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image15.webp)
 
 The same test can be run on other sites by posting data containing the configured keywords. SafeSquid blocks posts that contain those keywords.
 
@@ -115,7 +115,7 @@ The same test can be run on other sites by posting data containing the configure
 ### Check SafeSquid logs
 You can check SafeSquid logs for troubleshooting, if things are not working as explained above.
 
-![If default policy for virus signature detection is not working then refer SafeSquid logs for troubleshooting, ](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image16.webp)
+![If default policy for virus signature detection is not working then refer SafeSquid logs for troubleshooting, ](/images/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image16.webp)
 
 ### Check ClamAV daemon status
 You can check whether ClamAV daemon is running or not using following command.
@@ -123,7 +123,7 @@ You can check whether ClamAV daemon is running or not using following command.
 netstat -lnp | grep clamd
 ```
 
-![Check ClamAV daemon Status in proxy sever command line](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image17.webp)
+![Check ClamAV daemon Status in proxy sever command line](/images/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image17.webp)
 
 If you found that ClamAV daemon is not running then restart using following command.
 ```bash
@@ -139,7 +139,7 @@ If ClamAV service is running then check whether you have signatures database fil
 ```
 ### Check ANTIVIRUS profiles applicability
 
-![Check ANTIVIRUS profiles applicability](/img/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image18.webp)
+![Check ANTIVIRUS profiles applicability](/images/How_To/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/image18.webp)
 
 If you still got any problem, you can send us mail at support@safesquid.net
 

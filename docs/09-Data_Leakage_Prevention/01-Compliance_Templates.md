@@ -15,7 +15,7 @@ keywords:
 
 # Compliance Templates
 
-Uncontrolled exfiltration of cardholder data, PHI, or PII creates regulatory exposure (PCI-DSS, HIPAA, GDPR) and reputational harm. SafeSquid Text Analyser applies pattern-based detection for PCI, HIPAA, GDPR, and custom data; policies block or log matches. DLP events and matches are logged; reports from the [Reporting Module](/docs/Audit_Forensics/Reporting_Module/) support compliance audits and evidence of control operation.
+Uncontrolled exfiltration of cardholder data, PHI, or PII creates regulatory exposure (PCI-DSS, HIPAA, GDPR) and reputational harm. SafeSquid Text Analyser applies pattern-based detection for PCI, HIPAA, GDPR, and custom data; policies block or log matches. DLP events and matches are logged; reports from the [Reporting Module](/15-Audit_Forensics/01-Reporting_Module) support compliance audits and evidence of control operation.
 
 ## Problem: Sensitive data in transit requires detection for compliance
 
@@ -25,13 +25,13 @@ Organizations must detect and control sensitive data in web traffic to meet PCI-
 
 ## Key benefits
 
-Pre-built patterns reduce implementation time for PCI-DSS (cardholder data), HIPAA (PHI, SSN, MRN), and GDPR (PII, national IDs). Organizations can show auditors configured detection rules and logs of matches or blocks. Combine templates with [Access Restriction](/docs/Access_Restriction/main/) to block, log, or alert on matches.
+Pre-built patterns reduce implementation time for PCI-DSS (cardholder data), HIPAA (PHI, SSN, MRN), and GDPR (PII, national IDs). Organizations can show auditors configured detection rules and logs of matches or blocks. Combine templates with [Access Restriction](/08-Access_Restriction/main) to block, log, or alert on matches.
 
 
 
 ## Prerequisites
 
-- HTTPS inspection enabled so SafeSquid can inspect request/response body content. See [Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/).
+- HTTPS inspection enabled so SafeSquid can inspect request/response body content. See [Configure HTTPS Inspection](/05-SSL_Inspection/01-Configure_HTTPS_Inspection).
 - Access to Configure → Real Time Content Security → Text Analyser in the Configuration Portal.
 - Decision on which regulations apply and which data types to protect (assess before configuring).
 
@@ -42,7 +42,7 @@ Pre-built patterns reduce implementation time for PCI-DSS (cardholder data), HIP
 SafeSquid's Text Analyser supports pattern-based detection of sensitive data. Use the sections below as starting points for PCI-DSS, HIPAA, GDPR, and other regulatory requirements.
 
 :::note
-These templates provide detection patterns. Combine them with [Access Restriction](/docs/Access_Restriction/main/) policies to block, log, or alert on matches.
+These templates provide detection patterns. Combine them with [Access Restriction](/08-Access_Restriction/main) policies to block, log, or alert on matches.
 :::
 
 
@@ -223,7 +223,7 @@ Adjust scores and thresholds based on observed traffic:
 After tuning, enable blocking for high-confidence matches. Use templates to display compliance messaging.
 
 ### Step 5: Monitor and Report
-Use [Reporting Module](/docs/Audit_Forensics/Reporting_Module/) to track DLP events for compliance audits.
+Use [Reporting Module](/15-Audit_Forensics/01-Reporting_Module) to track DLP events for compliance audits.
 
 ---
 
@@ -257,5 +257,5 @@ Create organization-specific patterns for:
 - Customer account numbers
 - Proprietary terminology
 
-**Related**: [Text Analyser](/docs/Profiling_Engine/Content_Analyser/Text_Analyser/), [Image Analyser](/docs/Profiling_Engine/Content_Analyser/Image_Analyser_AI/), [Access Restriction](/docs/Access_Restriction/main/), [Reporting Module](/docs/Audit_Forensics/Reporting_Module/)
+**Related**: [Text Analyser](/07-Profiling_Engine/04-Content_Analyser/02-Text_Analyser), [Image Analyser](/07-Profiling_Engine/04-Content_Analyser/03-Image_Analyser_AI), [Access Restriction](/08-Access_Restriction/main), [Reporting Module](/15-Audit_Forensics/01-Reporting_Module)
 

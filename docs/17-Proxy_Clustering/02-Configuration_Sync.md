@@ -40,14 +40,14 @@ Without configuration synchronization, each proxy node must be updated manually.
 
 ## Prerequisites
 
-- Master and slave instances already connected (see [Master-Slave setup](/docs/Proxy_Clustering/Master_Slave/))
+- Master and slave instances already connected (see [Master-Slave setup](/17-Proxy_Clustering/01-Master_Slave))
 - If authentication is enabled on master, slave IP must be in Access Restriction → Allow list
 
 **Important**: If proxy authentication is required for all network traffic, create an allow-list policy on the master for the slave proxy IP. Otherwise the slave cannot reach the master Configuration Portal to sync policies.
 
 Below is an example of creating a user group for the slave proxy instance:
 
-![A screenshot of a computer](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image1.webp)
+![A screenshot of a computer](/images/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image1.webp)
 
 ## Configure sync on slave server
 
@@ -56,43 +56,43 @@ Perform these steps on each slave server to enable configuration sync from the m
 
 
 ## Access the web interface and go to Support
-![accessing safesquid web interface and going to support ](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image2.webp)
+![accessing safesquid web interface and going to support ](/images/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image2.webp)
 
 
 
 ## Select Startup Params
-![selecting setup params option](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image3.webp)
+![selecting setup params option](/images/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image3.webp)
 
 
 
 ## Click on the edit button.
-![clicking on edit button](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image4.webp)
+![clicking on edit button](/images/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image4.webp)
 
 
 
 ## Add the master proxy server IP address
-![Adding the master proxy server IP address](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image5.webp)
+![Adding the master proxy server IP address](/images/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image5.webp)
 
 
 
 ## Add the master proxy server port number
-![Adding the master proxy server port number](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image6.webp)
+![Adding the master proxy server port number](/images/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image6.webp)
 
 
 
 ## Now click on the correct icon to save the configuration.
-![clicking on the correct icon to save the configuration](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image7.webp)
+![clicking on the correct icon to save the configuration](/images/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image7.webp)
 
 
 
 ## Now click on restart for applying changes.
-![clicking on restart for applying changes](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image8.webp)
+![clicking on restart for applying changes](/images/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image8.webp)
 
 Click **Yes** to back up SafeSquid configuration to the cloud, or **No** to skip cloud backup.
 
 Click **Submit** after selecting the appropriate option.
 
-![clicking on submit after selecting yes or no for backup configuration](/img/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image9.webp)
+![clicking on submit after selecting yes or no for backup configuration](/images/How_to_Setup_Configuration_Sync_in_a_SafeSquid_Proxy_Cluster/image9.webp)
 
 After restart, the slave begins syncing configuration from the master. Policy changes made on the master will propagate to this slave automatically.
 
@@ -123,5 +123,5 @@ After restart, the slave begins syncing configuration from the master. Policy ch
 - Restart slave to apply configuration changes: Configuration Portal → Support → Restart SafeSquid
 - Some changes (network settings, startup params) require manual restart
 
-**Related**: [Master-Slave setup](/docs/Proxy_Clustering/Master_Slave/), [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), [Troubleshooting](/docs/Troubleshooting/main/)
+**Related**: [Master-Slave setup](/17-Proxy_Clustering/01-Master_Slave), [Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal), [Troubleshooting](/23-Troubleshooting/main)
 

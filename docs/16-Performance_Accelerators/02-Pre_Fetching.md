@@ -18,49 +18,49 @@ Prefetching fetches and caches files referenced in HTML before the user requests
 
 ## Configure prefetching
 
-1. Access the [SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/) and click **Configure**.
+1. Access the [SafeSquid User Interface](/02-SafeSquid_SWG/01-Configuration_Portal) and click **Configure**.
 
-   ![Configure page](/img/How_To/Prefetch_embedded_images/image1.webp)
+   ![Configure page](/images/How_To/Prefetch_embedded_images/image1.webp)
 
 2. Navigate to **Prefetching** under Application Setup.
 
-   ![Prefetching section](/img/How_To/Prefetch_embedded_images/image2.webp)
+   ![Prefetching section](/images/How_To/Prefetch_embedded_images/image2.webp)
 
 3. Ensure **Global** section has **Enabled** set to **True**.
 
-   ![Global enabled](/img/How_To/Prefetch_embedded_images/image3.webp)
+   ![Global enabled](/images/How_To/Prefetch_embedded_images/image3.webp)
 
 4. Click the **Prefetch** tab.
 
-   ![Prefetch tab](/img/How_To/Prefetch_embedded_images/image4.webp)
+   ![Prefetch tab](/images/How_To/Prefetch_embedded_images/image4.webp)
 
 5. Click **Add New** to create a new policy.
 
-   ![Add new policy](/img/How_To/Prefetch_embedded_images/image5.webp)
+   ![Add new policy](/images/How_To/Prefetch_embedded_images/image5.webp)
 
 6. Enter an appropriate comment for future reference.
 
-   ![Policy comment](/img/How_To/Prefetch_embedded_images/image6.webp)
+   ![Policy comment](/images/How_To/Prefetch_embedded_images/image6.webp)
 
 7. Specify the HTML tag to analyze for prefetchable URLs.
 
-   ![HTML tag specification](/img/How_To/Prefetch_embedded_images/image7.webp)
+   ![HTML tag specification](/images/How_To/Prefetch_embedded_images/image7.webp)
 
 8. Specify the attribute of the HTML tag holding the URL to prefetch.
 
-   ![Tag attribute](/img/How_To/Prefetch_embedded_images/image8.webp)
+   ![Tag attribute](/images/How_To/Prefetch_embedded_images/image8.webp)
 
 9. Specify the regular expression to evaluate discovered URLs in the tag attribute.
 
-   ![URL regex](/img/How_To/Prefetch_embedded_images/image9.webp)
+   ![URL regex](/images/How_To/Prefetch_embedded_images/image9.webp)
 
 10. Click **Save Policy**.
 
-    ![Save policy](/img/How_To/Prefetch_embedded_images/image10.webp)
+    ![Save policy](/images/How_To/Prefetch_embedded_images/image10.webp)
 
 11. Click **Save Config** to apply the configuration.
 
-    ![Save config](/img/How_To/Prefetch_embedded_images/image11.webp)
+    ![Save config](/images/How_To/Prefetch_embedded_images/image11.webp)
 
-    ![Configuration saved](/img/How_To/Prefetch_embedded_images/image12.webp)
+    ![Configuration saved](/images/How_To/Prefetch_embedded_images/image12.webp)
 

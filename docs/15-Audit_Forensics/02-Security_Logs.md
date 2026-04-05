@@ -104,7 +104,7 @@ Adjusting this value requires a restart of SafeSquid service.
 :::
 This file stored all data related **to every request and response** processed by the SafeSquid. These logs will be useful for debugging purpose.
 
-[Access the SafeSquid  User Interface ](/docs/SafeSquid_SWG/Configuration_Portal/)
+[Access the SafeSquid  User Interface ](/02-SafeSquid_SWG/01-Configuration_Portal)
 
 On top right of Safesquid Interface view **Reports >> Dashboard**
 
@@ -113,7 +113,7 @@ Click on "**Native logs**" to see the run time native logs.
 **Each request and response** processed through SafeSquid is visible. Use the search bar to find a particular string. The **Resume** button stops real-time streaming of logs.
 
   -----------------------------------------------------------------------------------------------------------------------------------------------
-  ![Access Reports to view Dashboard on safesquid user interface ](/img/How_To/Analyze_The_SafeSquid_Logs/image1.webp)
+  ![Access Reports to view Dashboard on safesquid user interface ](/images/How_To/Analyze_The_SafeSquid_Logs/image1.webp)
   -----------------------------------------------------------------------------------------------------------------------------------------------
 
   -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -229,7 +229,7 @@ You can use **search option** to find information related to specific user or sp
 You can also **search individually** from above list.
 
   -------------------------------------------------------------------------------------------------------------
-  ![Detailed logs of safesquid ](/img/How_To/Analyze_The_SafeSquid_Logs/image2.webp)
+  ![Detailed logs of safesquid ](/images/How_To/Analyze_The_SafeSquid_Logs/image2.webp)
   -------------------------------------------------------------------------------------------------------------
 
   -------------------------------------------------------------------------------------------------------------
@@ -290,7 +290,7 @@ Click on **"Config logs"**
 You can use **search option** to find information related to specific Time, Interface, Username, Section, Action, Arguments, Config File.
 
   ------------------------------------------------------------------------------------------------------------------
-  ![Configuration logs of safesquid ](/img/How_To/Analyze_The_SafeSquid_Logs/image3.webp)
+  ![Configuration logs of safesquid ](/images/How_To/Analyze_The_SafeSquid_Logs/image3.webp)
   ------------------------------------------------------------------------------------------------------------------
 
   ------------------------------------------------------------------------------------------------------------------
@@ -486,7 +486,7 @@ The details of the fields in performance.log are as follows:
 
 From the interface go to the Support page; open the **Performance Plot** tab, select two time intervals to generate the performance plot for that range.
 
-See More about [How to generate the Performance Plot ](/docs/Audit_Forensics/Performance_Plot/)
+See More about [How to generate the Performance Plot ](/15-Audit_Forensics/03-Performance_Plot)
 
 ### Bypass logs
 

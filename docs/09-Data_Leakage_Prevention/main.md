@@ -56,7 +56,7 @@ Scans uploads, emails, social posts, form submissions for:
 
 **How it works:** Regular expression (regex) matching against content. When a match is found, the configured action triggers (block, log, quarantine).
 
-→ [Configure Text Analyser](/docs/Profiling_Engine/Content_Analyser/Text_Analyser/)
+→ [Configure Text Analyser](/07-Profiling_Engine/04-Content_Analyser/02-Text_Analyser)
 
 ### 2. Image Analyzer Detects Visual Content
 
@@ -67,7 +67,7 @@ Inspects images in uploads and attachments:
 
 **Use case:** Employee screenshots customer data from internal CRM, uploads to personal cloud storage. Image Analyzer extracts text via OCR, detects SSN, blocks upload.
 
-→ [Configure Image Analyser](/docs/Profiling_Engine/Content_Analyser/Image_Analyser_AI/)
+→ [Configure Image Analyser](/07-Profiling_Engine/04-Content_Analyser/03-Image_Analyser_AI)
 
 ### 3. Compliance Templates Provide Pre-Built Rules
 
@@ -79,7 +79,7 @@ No need to write regex from scratch. SafeSquid includes templates for:
 
 **How to use:** Load template → Test with dummy data → Enable blocking.
 
-→ [Load Compliance Templates](/docs/Data_Leakage_Prevention/Compliance_Templates/)
+→ [Load Compliance Templates](/09-Data_Leakage_Prevention/01-Compliance_Templates)
 
 ### 4. Real-Time Enforcement
 
@@ -145,7 +145,7 @@ Credit card regex matches test data (`4111111111111111` is a test Visa number). 
 
 DLP can't inspect encrypted uploads without SSL inspection. 90% of web traffic is HTTPS.
 
-**Action:** [Enable SSL Inspection](/docs/SSL_Inspection/) and deploy the Root CA to client devices.
+**Action:** [Enable SSL Inspection](/05-SSL_Inspection/main) and deploy the Root CA to client devices.
 
 **Verification:** Visit an HTTPS site and confirm the certificate is issued by SafeSquid-Root-CA (not the website's original cert).
 
@@ -155,7 +155,7 @@ DLP can't inspect encrypted uploads without SSL inspection. 90% of web traffic i
 
 Pre-built regex patterns for PCI-DSS, HIPAA, GDPR.
 
-**Action:** [Load Compliance Templates](/docs/Data_Leakage_Prevention/Compliance_Templates/) in the Text Analyser configuration.
+**Action:** [Load Compliance Templates](/09-Data_Leakage_Prevention/01-Compliance_Templates) in the Text Analyser configuration.
 
 **What you'll get:**
 - Credit card patterns (Visa: `^4[0-9]{12}(?:[0-9]{3})?$`, Mastercard, Amex)
@@ -168,7 +168,7 @@ Pre-built regex patterns for PCI-DSS, HIPAA, GDPR.
 
 Enable content scanning in uploads, emails, form submissions.
 
-**Action:** [Configure Text Analyser](/docs/Profiling_Engine/Content_Analyser/Text_Analyser/)
+**Action:** [Configure Text Analyser](/07-Profiling_Engine/04-Content_Analyser/02-Text_Analyser)
 
 **Settings to configure:**
 - **Scan scope:** Uploads, emails, POST bodies, social media posts
@@ -182,7 +182,7 @@ Enable content scanning in uploads, emails, form submissions.
 
 DLP detections must trigger enforcement actions (block, log, quarantine).
 
-**Action:** [Configure Access Restrictions](/docs/Access_Restriction/) with DLP profile matching.
+**Action:** [Configure Access Restrictions](/08-Access_Restriction/main) with DLP profile matching.
 
 **Example rule:**
 - **If:** Text Analyser detects PCI data (credit card pattern)
@@ -195,7 +195,7 @@ DLP detections must trigger enforcement actions (block, log, quarantine).
 
 Send DLP alerts to your SIEM (Splunk, QRadar, Wazuh) for security monitoring.
 
-**Action:** [Configure SIEM Integration](/docs/Integrations/) with syslog forwarding.
+**Action:** [Configure SIEM Integration](/20-Integrations/main) with syslog forwarding.
 
 **What gets logged:**
 - Timestamp, user identity, source IP
@@ -229,7 +229,7 @@ Once tuning is complete, enable blocking for real data.
 
 **1. Enabling DLP without SSL inspection**  
 **What breaks:** 90% of uploads are HTTPS. DLP can't inspect encrypted traffic.  
-**Solution:** [Enable SSL Inspection](/docs/SSL_Inspection/) first, deploy Root CA to clients, then enable DLP.
+**Solution:** [Enable SSL Inspection](/05-SSL_Inspection/main) first, deploy Root CA to clients, then enable DLP.
 
 **2. Blocking too aggressively on day one**  
 **What breaks:** False positives block legitimate business workflows. Finance team can't email invoices (credit card-like numbers in invoice IDs).  
@@ -237,7 +237,7 @@ Once tuning is complete, enable blocking for real data.
 
 **3. Forgetting compressed files**  
 **What breaks:** User uploads `customer_data.zip` with 10,000 SSNs inside. DLP sees a ZIP file, not the contents.  
-**Solution:** Enable [archive decompression](/docs/Content_Modifier/) in Content Modifier. SafeSquid will extract and scan ZIP/RAR contents before allowing upload.
+**Solution:** Enable [archive decompression](/13-Content_Modifier/main) in Content Modifier. SafeSquid will extract and scan ZIP/RAR contents before allowing upload.
 
 **4. Not whitelisting approved data channels**  
 **What breaks:** You block all credit card uploads. But your payment team needs to upload transaction files to Stripe. Legitimate business stops.  
@@ -245,28 +245,28 @@ Once tuning is complete, enable blocking for real data.
 
 **5. Ignoring image-based data leaks**  
 **What breaks:** User screenshots customer SSN from CRM, uploads image to personal cloud. DLP only scans text, misses image uploads.  
-**Solution:** Enable [Image Analyser with OCR](/docs/Profiling_Engine/Content_Analyser/Image_Analyser_AI/) to extract text from images.
+**Solution:** Enable [Image Analyser with OCR](/07-Profiling_Engine/04-Content_Analyser/03-Image_Analyser_AI) to extract text from images.
 
 
 
 ## Related Topics
 
 **Prerequisites:**
-- [SSL Inspection](/docs/SSL_Inspection/) — Required to inspect encrypted uploads (90% of traffic)
-- [Authentication](/docs/Authentication/main/) — User identity needed for per-user DLP policies
+- [SSL Inspection](/05-SSL_Inspection/main) — Required to inspect encrypted uploads (90% of traffic)
+- [Authentication](/04-Authentication/main) — User identity needed for per-user DLP policies
 
 **Next Steps:**
-- [Text Analyser Configuration](/docs/Profiling_Engine/Content_Analyser/Text_Analyser/) — Fine-tune regex patterns
-- [Image Analyser (AI-powered)](/docs/Profiling_Engine/Content_Analyser/Image_Analyser_AI/) — OCR for screenshots
-- [Access Restrictions](/docs/Access_Restriction/) — Link DLP detections to block/log actions
-- [SIEM Integration](/docs/Integrations/) — Forward DLP alerts to Splunk, QRadar, etc.
+- [Text Analyser Configuration](/07-Profiling_Engine/04-Content_Analyser/02-Text_Analyser) — Fine-tune regex patterns
+- [Image Analyser (AI-powered)](/07-Profiling_Engine/04-Content_Analyser/03-Image_Analyser_AI) — OCR for screenshots
+- [Access Restrictions](/08-Access_Restriction/main) — Link DLP detections to block/log actions
+- [SIEM Integration](/20-Integrations/main) — Forward DLP alerts to Splunk, QRadar, etc.
 
 **Troubleshooting:**
-- [DLP False Positives](/docs/Troubleshooting/) — How to tune regex patterns, whitelist test data
+- [DLP False Positives](/23-Troubleshooting/main) — How to tune regex patterns, whitelist test data
 
 **Use Cases:**
-- [Block Personal Gmail, Allow Corporate](/docs/Use_Cases/Block_Personal_Gmail_Allow_Google_Corporate_Accounts/) — Prevent data leaks via personal email
-- [Block Keywords in Uploads](/docs/Use_Cases/Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords/) — Detect "confidential" in social posts
+- [Block Personal Gmail, Allow Corporate](/21-Use_Cases/14-Block_Personal_Gmail_Allow_Google_Corporate_Accounts) — Prevent data leaks via personal email
+- [Block Keywords in Uploads](/21-Use_Cases/11-Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords) — Detect "confidential" in social posts
 
 Uncontrolled data exfiltration drives regulatory fines (e.g. GDPR up to €20M, PCI-DSS loss of card processing), breach costs (average $4.45M), and reputational damage. SafeSquid DLP detects and blocks sensitive data (PII, PHI, payment card data) in real time at the network perimeter. DLP logs export to SIEM; violation reports are auditor-ready. Every block or alert includes timestamp, user, detected pattern, action taken, and file hash. Plan 1–2 weeks for deployment and tuning; then quarterly pattern review and SIEM alert monitoring.
 

@@ -36,21 +36,21 @@ Detect and block Internationalized Domain Name (IDN) homograph attacks where att
 | Compliance requires IDN attack mitigation | Blocking specific FQDNs (use Access Restriction) |
 
 :::tip Combine with Other Defenses
-Homograph detection works best alongside [DNSBL](/docs/DNS_Security/DNSBL/) (block known-bad domains), [SSL Inspection](/docs/SSL_Inspection/main/) (detect fake certificates), and user security awareness training.
+Homograph detection works best alongside [DNSBL](/03-DNS_Security/01-DNSBL) (block known-bad domains), [SSL Inspection](/05-SSL_Inspection/main) (detect fake certificates), and user security awareness training.
 :::
 
 ## Prerequisites
 
-- SafeSquid installed and operational (see [Getting Started](/docs/Getting_Started/main/))
-- Admin access to [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/)
-- DNS resolution handled by SafeSquid (see [Supporting Services: BIND](/docs/SafeSquid_SWG/Supporting_Services/Bind/))
+- SafeSquid installed and operational (see [Getting Started](/01-Getting_Started/main))
+- Admin access to [Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal)
+- DNS resolution handled by SafeSquid (see [Supporting Services: BIND](/02-SafeSquid_SWG/07-Supporting_Services/02-Bind))
 
 ## Configuration Steps
 
 1. **Access Configuration Portal**  
    Navigate to **Real Time Content Security** → **DNS Blacklist**
 
-   ![Homograph Configuration](/img/Homographic_Detection/homograph_config.webp)
+   ![Homograph Configuration](/images/Homographic_Detection/homograph_config.webp)
 
 2. **Enable Homograph Detection**  
    - **Enabled:** Set to **TRUE**
@@ -78,17 +78,17 @@ curl -v -x http://YOUR-SAFESQUID-IP:8080 http://аpple.com
 
 **Note:** The URL `http://аpple.com` uses a Cyrillic 'а' (U+0430) instead of the Latin 'a' (U+0061).
 
-![cURL Verification Output](/img/Homographic_Detection/homograph_curl_output.webp)
+![cURL Verification Output](/images/Homographic_Detection/homograph_curl_output.webp)
 
 ---
 
 ### Method 2: Browser Test
 
-1. Configure your browser to use SafeSquid as proxy (see [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/))
+1. Configure your browser to use SafeSquid as proxy (see [Connect Your Client](/01-Getting_Started/05-Connect_Your_Client/main))
 2. Navigate to `http://аpple.com`
 3. **Expected result:** SafeSquid displays a block page
 
-![Browser Verification Output](/img/Homographic_Detection/homograph_browser_output.webp)
+![Browser Verification Output](/images/Homographic_Detection/homograph_browser_output.webp)
 
 ---
 
@@ -127,8 +127,8 @@ When detected, SafeSquid blocks the request and logs the attempt for audit trail
 
 ## Next Steps
 
-- **Layer defenses:** Combine with [DNSBL](/docs/DNS_Security/DNSBL/) to block known-malicious domains
-- **Inspect certificates:** Enable [SSL Inspection](/docs/SSL_Inspection/main/) to detect fake TLS certificates on lookalike domains
-- **Monitor attempts:** Use [Security Logs](/docs/Audit_Forensics/Security_Logs/) and [Reporting](/docs/Audit_Forensics/Reporting_Module/) to track homograph attack patterns
+- **Layer defenses:** Combine with [DNSBL](/03-DNS_Security/01-DNSBL) to block known-malicious domains
+- **Inspect certificates:** Enable [SSL Inspection](/05-SSL_Inspection/main) to detect fake TLS certificates on lookalike domains
+- **Monitor attempts:** Use [Security Logs](/15-Audit_Forensics/02-Security_Logs) and [Reporting](/15-Audit_Forensics/01-Reporting_Module) to track homograph attack patterns
 - **User training:** Educate users about IDN attacks and visual domain verification
 

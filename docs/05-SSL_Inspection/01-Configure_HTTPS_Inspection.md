@@ -51,13 +51,13 @@ You have three options for the Root CA certificate:
 
 1. **Log in** to the [Self-Service Portal](https://key.safesquid.com/)
 
-   ![Self-Service Portal login](/img/SSL_Inspection/image1.webp)
+   ![Self-Service Portal login](/images/SSL_Inspection/image1.webp)
 
 2. **Navigate to Certificate Management**
 
    In the dashboard → find your deployment → click **Manage Certificate**
 
-   ![Manage Certificate button](/img/SSL_Inspection/image2.webp)
+   ![Manage Certificate button](/images/SSL_Inspection/image2.webp)
 
 ---
 
@@ -65,7 +65,7 @@ You have three options for the Root CA certificate:
 
 3. **Click Generate** (appears if no certificate exists yet)
 
-   ![Generate button](/img/SSL_Inspection/image3.webp)
+   ![Generate button](/images/SSL_Inspection/image3.webp)
 
 4. **Select "General self-signed"** → **Enter passphrase** → **Generate**
 
@@ -75,11 +75,11 @@ You have three options for the Root CA certificate:
    
    :::
 
-   ![Generate self-signed certificate](/img/SSL_Inspection/image4.webp)
+   ![Generate self-signed certificate](/images/SSL_Inspection/image4.webp)
 
 5. **Click Close** to continue
 
-   ![Certificate generated](/img/SSL_Inspection/image5.webp)
+   ![Certificate generated](/images/SSL_Inspection/image5.webp)
 
 ---
 
@@ -87,23 +87,23 @@ You have three options for the Root CA certificate:
 
 3. **Click Regenerate** → **Upload enterprise CA files** → **Select "has passphrase"**
 
-   ![Upload enterprise CA with passphrase](/img/SSL_Inspection/image6.webp)
+   ![Upload enterprise CA with passphrase](/images/SSL_Inspection/image6.webp)
 
 4. **Select CA certificate files** (`.crt` and `.key`)
 
-   ![Select CA files](/img/SSL_Inspection/image7.webp)
+   ![Select CA files](/images/SSL_Inspection/image7.webp)
 
 5. **Enter passphrase** → **Click "Validate private key"**
 
-   ![Enter passphrase](/img/SSL_Inspection/image8.webp)
+   ![Enter passphrase](/images/SSL_Inspection/image8.webp)
 
 6. **Select "Retain password"** → **Upload**
 
-   ![Retain password and upload](/img/SSL_Inspection/image9.webp)
+   ![Retain password and upload](/images/SSL_Inspection/image9.webp)
 
 7. **Click Close**
 
-   ![Upload complete](/img/SSL_Inspection/image10.webp)
+   ![Upload complete](/images/SSL_Inspection/image10.webp)
 
 ---
 
@@ -111,11 +111,11 @@ You have three options for the Root CA certificate:
 
 3. **Click Regenerate** → **Upload enterprise CA** → **Select "does not have passphrase"**
 
-   ![Upload enterprise CA without passphrase](/img/SSL_Inspection/image11.webp)
+   ![Upload enterprise CA without passphrase](/images/SSL_Inspection/image11.webp)
 
 4. **Select CA certificate files**
 
-   ![Select CA files](/img/SSL_Inspection/image12.webp)
+   ![Select CA files](/images/SSL_Inspection/image12.webp)
 
 5. **Enter new passphrase** → **Upload**
 
@@ -125,11 +125,11 @@ You have three options for the Root CA certificate:
    
    :::
 
-   ![Enter new passphrase](/img/SSL_Inspection/image13.webp)
+   ![Enter new passphrase](/images/SSL_Inspection/image13.webp)
 
 6. **Click Close**
 
-   ![Upload complete](/img/SSL_Inspection/image14.webp)
+   ![Upload complete](/images/SSL_Inspection/image14.webp)
 
 ---
 
@@ -137,8 +137,8 @@ You have three options for the Root CA certificate:
 
 7. **Enter passphrase** (if prompted) → **Click Download**
 
-   ![Download certificate](/img/SSL_Inspection/image15.webp)
-   ![Certificate download](/img/SSL_Inspection/image16.webp)
+   ![Download certificate](/images/SSL_Inspection/image15.webp)
+   ![Certificate download](/images/SSL_Inspection/image16.webp)
 
 **Save this file** — you'll deploy it to all client systems.
 
@@ -150,15 +150,15 @@ You have three options for the Root CA certificate:
 
 1. **Open SafeSquid interface** → **Click "Configure"**
 
-   ![Click Configure](/img/SSL_Inspection/image17.webp)
+   ![Click Configure](/images/SSL_Inspection/image17.webp)
 
 2. **Expand "Real Time Content Security"** in the sidebar
 
-   ![Real Time Content Security](/img/SSL_Inspection/image18.webp)
+   ![Real Time Content Security](/images/SSL_Inspection/image18.webp)
 
 3. **Click "HTTPS Inspection"**
 
-   ![HTTPS Inspection](/img/SSL_Inspection/image19.webp)
+   ![HTTPS Inspection](/images/SSL_Inspection/image19.webp)
 
 ---
 
@@ -172,13 +172,13 @@ You have three options for the Root CA certificate:
    
    :::
 
-   ![Global tab](/img/SSL_Inspection/image20.webp)
-   ![Click Edit](/img/SSL_Inspection/image21.webp)
+   ![Global tab](/images/SSL_Inspection/image20.webp)
+   ![Click Edit](/images/SSL_Inspection/image21.webp)
 
 5. **Set "Enabled" to "True"** → **Save Policy**
 
-   ![Enable HTTPS Inspection](/img/SSL_Inspection/image22.webp)
-   ![Save Policy](/img/SSL_Inspection/image23.webp)
+   ![Enable HTTPS Inspection](/images/SSL_Inspection/image22.webp)
+   ![Save Policy](/images/SSL_Inspection/image23.webp)
 
 ---
 
@@ -186,20 +186,20 @@ You have three options for the Root CA certificate:
 
 6. **Click "Inspection Policies" tab**
 
-   ![Inspection Policies tab](/img/SSL_Inspection/image24.webp)
+   ![Inspection Policies tab](/images/SSL_Inspection/image24.webp)
 
 7. **Verify default policies are enabled**
 
-   ![Default policies](/img/SSL_Inspection/image25.webp)
+   ![Default policies](/images/SSL_Inspection/image25.webp)
 
 8. **Find "Enforce SSL scanning for all websites"** → **Click Edit**
 
-   ![Edit enforce policy](/img/SSL_Inspection/image26.webp)
+   ![Edit enforce policy](/images/SSL_Inspection/image26.webp)
 
 9. **Set "Enabled" to "True"** → **Save Policy**
 
-   ![Enable enforce policy](/img/SSL_Inspection/image27.webp)
-   ![Save Policy](/img/SSL_Inspection/image28.webp)
+   ![Enable enforce policy](/images/SSL_Inspection/image27.webp)
+   ![Save Policy](/images/SSL_Inspection/image28.webp)
 
 ---
 
@@ -207,7 +207,7 @@ You have three options for the Root CA certificate:
 
 10. **Click "Save Configuration"** (floppy disk icon, bottom left)
 
-    ![Save Configuration](/img/SSL_Inspection/image29.webp)
+    ![Save Configuration](/images/SSL_Inspection/image29.webp)
 
 11. **Select "No"** (unless deploying to a cluster) → **Submit**
 
@@ -229,7 +229,7 @@ All clients must trust the SafeSquid Root CA to avoid certificate warnings.
 
 ### Windows (Chrome, Edge, IE)
 
-**See detailed guide:** [Import Certificate into Chrome/IE](/docs/SSL_Inspection/Import_Certificate_Chrome_IE/)
+**See detailed guide:** [Import Certificate into Chrome/IE](/05-SSL_Inspection/02-Import_Certificate_Chrome_IE)
 
 **Quick summary:**
 1. Double-click the downloaded certificate
@@ -293,28 +293,28 @@ Bypass HTTPS inspection for:
 
 1. **Click "Configure"** in SafeSquid interface
 
-   ![Click Configure](/img/SSL_Inspection/image30.webp)
+   ![Click Configure](/images/SSL_Inspection/image30.webp)
 
 2. **Click Search** (magnifying glass icon, top right)
 
-   ![Click Search](/img/SSL_Inspection/image31.webp)
+   ![Click Search](/images/SSL_Inspection/image31.webp)
 
 3. **Type "BYPASS SSL INSPECTION"** → **Enter**
 
-   ![Search bypass](/img/SSL_Inspection/image32.webp)
+   ![Search bypass](/images/SSL_Inspection/image32.webp)
 
 4. **Click Edit** on the bypass policy
 
-   ![Edit bypass policy](/img/SSL_Inspection/image33.webp)
+   ![Edit bypass policy](/images/SSL_Inspection/image33.webp)
 
 5. **Set "Enabled" to "True"** → **Save Policy**
 
-   ![Enable bypass](/img/SSL_Inspection/image34.webp)
-   ![Save bypass policy](/img/SSL_Inspection/image35.webp)
+   ![Enable bypass](/images/SSL_Inspection/image34.webp)
+   ![Save bypass policy](/images/SSL_Inspection/image35.webp)
 
 6. **Review and enable related bypass policies** (for banking apps, Windows Update, etc.)
 
-   ![Review bypass policies](/img/SSL_Inspection/image36.webp)
+   ![Review bypass policies](/images/SSL_Inspection/image36.webp)
 
 ---
 
@@ -322,37 +322,37 @@ Bypass HTTPS inspection for:
 
 **Example:** Bypass HTTPS inspection for Dropbox.
 
-![Custom bypass example](/img/SSL_Inspection/image37.webp)
+![Custom bypass example](/images/SSL_Inspection/image37.webp)
 
 **Step 1: Define Request Type**
 
 1. **Sidebar** → **Profiling Engine** → **Request Types** → **Add New**
 
-   ![Request Types](/img/SSL_Inspection/image38.webp)
-   ![Add New](/img/SSL_Inspection/image39.webp)
+   ![Request Types](/images/SSL_Inspection/image38.webp)
+   ![Add New](/images/SSL_Inspection/image39.webp)
 
 2. **Comment:** "Dropbox domains"  
    **Match pattern:** `.*dropbox.*`  
    **Smart TLD:** True
 
-   ![Define Dropbox pattern](/img/SSL_Inspection/image40.webp)
-   ![Enable Smart TLD](/img/SSL_Inspection/image41.webp)
+   ![Define Dropbox pattern](/images/SSL_Inspection/image40.webp)
+   ![Enable Smart TLD](/images/SSL_Inspection/image41.webp)
 
 **Step 2: Create Access Policy**
 
 3. **Sidebar** → **Access Policies** → **Access Profiles** → **Add New**
 
-   ![Access Profiles](/img/SSL_Inspection/image42.webp)
+   ![Access Profiles](/images/SSL_Inspection/image42.webp)
 
 4. **Comment:** "Bypass SSL for Dropbox"  
    **Request Type:** Select "Dropbox domains" (from Step 1)  
    **Added profiles:** Select "BYPASS SSL INSPECTION"
 
-   ![Create bypass policy](/img/SSL_Inspection/image43.webp)
+   ![Create bypass policy](/images/SSL_Inspection/image43.webp)
 
 5. **Save Policy**
 
-   ![Save bypass](/img/SSL_Inspection/image44.webp)
+   ![Save bypass](/images/SSL_Inspection/image44.webp)
 
 6. **Save Configuration** (floppy disk icon, bottom left)
 
@@ -447,11 +447,11 @@ tail -f /var/log/safesquid/access/extended.log
 
 ## Next Steps
 
-1. **[Authentication](/docs/Authentication/main/)** — Enable user-aware policies (SSL Inspection must be working first)
-2. **[Access Restriction](/docs/Access_Restriction/main/)** — Configure URL filtering (now works on HTTPS)
-3. **[Data Leakage Prevention](/docs/Data_Leakage_Prevention/main/)** — Scan HTTPS uploads for sensitive data
-4. **[Troubleshooting](/docs/Troubleshooting/main/)** — SSL-specific issues and diagnostics
+1. **[Authentication](/04-Authentication/main)** — Enable user-aware policies (SSL Inspection must be working first)
+2. **[Access Restriction](/08-Access_Restriction/main)** — Configure URL filtering (now works on HTTPS)
+3. **[Data Leakage Prevention](/09-Data_Leakage_Prevention/main)** — Scan HTTPS uploads for sensitive data
+4. **[Troubleshooting](/23-Troubleshooting/main)** — SSL-specific issues and diagnostics
 
 **Related:**
-- [Self-Service Portal](/docs/SafeSquid_SWG/Self-Service_Portal/) — Manage certificates
-- [Import Certificate into Chrome/IE](/docs/SSL_Inspection/Import_Certificate_Chrome_IE/) — Detailed Windows guide
+- [Self-Service Portal](/02-SafeSquid_SWG/04-Self-Service_Portal) — Manage certificates
+- [Import Certificate into Chrome/IE](/05-SSL_Inspection/02-Import_Certificate_Chrome_IE) — Detailed Windows guide

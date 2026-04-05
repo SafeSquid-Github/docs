@@ -50,7 +50,7 @@ keywords:
 
 ## Troubleshooting
 ### Verify SSL certificate import in browser
-Follow [Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) and [Import certificate into Firefox](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#import-certificate-into-firefox) or Chrome/IE.
+Follow [Configure HTTPS Inspection](/05-SSL_Inspection/01-Configure_HTTPS_Inspection) and [Import certificate into Firefox](/05-SSL_Inspection/01-Configure_HTTPS_Inspection#import-certificate-into-firefox) or Chrome/IE.
 
 ### Case 2: Check SSL certs/cache for these symptoms
 SafeSquid certificate is imported in the browser but a secured connection still fails when accessing HTTPS websites. Some HTTPS sites work while others do not. After removing the old activation key, installing a new key, and configuring the new SSL certificate, clear SSL cache if issues persist.
@@ -188,29 +188,29 @@ Public-Key: (2048 bit)
 
 To allow domain mismatch errors for specific HTTPS websites, create a policy:
 
-![Creating a new policy in request types under custom settings section](/img/Troubleshooting/SSL_certification_errors/image1.webp)
+![Creating a new policy in request types under custom settings section](/images/Troubleshooting/SSL_certification_errors/image1.webp)
 
-![Creating a policy by adding all the required values ](/img/Troubleshooting/SSL_certification_errors/image2.webp)
+![Creating a policy by adding all the required values ](/images/Troubleshooting/SSL_certification_errors/image2.webp)
 
-![Creating a new policy in Access profiles section](/img/Troubleshooting/SSL_certification_errors/image3.webp)
+![Creating a new policy in Access profiles section](/images/Troubleshooting/SSL_certification_errors/image3.webp)
 
-![adding the required values](/img/Troubleshooting/SSL_certification_errors/image4.webp)
+![adding the required values](/images/Troubleshooting/SSL_certification_errors/image4.webp)
 
-![Clicking on Inspection policies in HTTPS inspection under Real time content security section](/img/Troubleshooting/SSL_certification_errors/image5.webp)
+![Clicking on Inspection policies in HTTPS inspection under Real time content security section](/images/Troubleshooting/SSL_certification_errors/image5.webp)
 
-![Creating a new policy ](/img/Troubleshooting/SSL_certification_errors/image6.webp)
+![Creating a new policy ](/images/Troubleshooting/SSL_certification_errors/image6.webp)
 
-![showing settings to configure a security policy, allowing "block domain mismatch in the website ssl certificate"](/img/Troubleshooting/SSL_certification_errors/image7.webp)
+![showing settings to configure a security policy, allowing "block domain mismatch in the website ssl certificate"](/images/Troubleshooting/SSL_certification_errors/image7.webp)
 
-![moving up the created policy just above the last policy](/img/Troubleshooting/SSL_certification_errors/image8.webp)
+![moving up the created policy just above the last policy](/images/Troubleshooting/SSL_certification_errors/image8.webp)
 
-![saving configuration globally](/img/Troubleshooting/SSL_certification_errors/image9.webp)
+![saving configuration globally](/images/Troubleshooting/SSL_certification_errors/image9.webp)
 
 
 
 ## Verification and Evidence
 
-- **Interface Checks**: Confirm the SafeSquid Root CA is installed in the browser trust store ([Import Certificate into Chrome or IE](/docs/SSL_Inspection/Import_Certificate_Chrome_IE/)). In Configuration Portal, HTTPS Inspection policies match the intended bypass/enforce rules; SSL Certs/Cache cleared if DNS mismatch was the issue.
+- **Interface Checks**: Confirm the SafeSquid Root CA is installed in the browser trust store ([Import Certificate into Chrome or IE](/05-SSL_Inspection/02-Import_Certificate_Chrome_IE)). In Configuration Portal, HTTPS Inspection policies match the intended bypass/enforce rules; SSL Certs/Cache cleared if DNS mismatch was the issue.
 - **Log Analysis**: Native logs show successful client encryption for previously failing domains; no `S_X509_DNS_MISMATCH` or transfer failed errors for the fixed cases.
 - **Performance Validation**: Previously failing HTTPS sites load without "connection not secured" or "secured connection fail"; YouTube and other sites work per policy.
 
@@ -218,7 +218,7 @@ To allow domain mismatch errors for specific HTTPS websites, create a policy:
 
 ## Next steps
 
-- [Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) for setup and bypass rules.
-- [Import Certificate into Chrome or IE](/docs/SSL_Inspection/Import_Certificate_Chrome_IE/) for client certificate import.
-- [Troubleshooting](/docs/Troubleshooting/main/) for other diagnostic guides.
+- [Configure HTTPS Inspection](/05-SSL_Inspection/01-Configure_HTTPS_Inspection) for setup and bypass rules.
+- [Import Certificate into Chrome or IE](/05-SSL_Inspection/02-Import_Certificate_Chrome_IE) for client certificate import.
+- [Troubleshooting](/23-Troubleshooting/main) for other diagnostic guides.
 

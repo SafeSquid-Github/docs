@@ -36,7 +36,7 @@ You **must** change the password immediately after first login. Run `passwd` at 
 - **Minimum disk:** 100 GB (NVMe SSD recommended for production; includes 50 GB for OS+app + 50 GB for logs/cache)
 - **CPU:** 4+ cores with AES-NI (required for SSL inspection performance)
 - **RAM:** 8 GB minimum
-- See [Deployment Planning](/docs/Getting_Started/Deployment_Planning/) for full sizing guidance
+- See [Deployment Planning](/01-Getting_Started/01-Deployment_Planning) for full sizing guidance
 
 :::
 
@@ -51,7 +51,7 @@ SAB will **erase and repartition** the target disk. Back up any existing data be
 :::
 
 **Prepare your activation key:**
-- Download your activation key from the [Self-Service Portal](/docs/Getting_Started/Register/) (you'll upload it after installation)
+- Download your activation key from the [Self-Service Portal](/01-Getting_Started/02-Register) (you'll upload it after installation)
 
 **For physical hardware:**
 1. Burn the ISO to USB (use Rufus, Etcher, or `dd`) or DVD
@@ -70,47 +70,47 @@ SAB will **erase and repartition** the target disk. Back up any existing data be
 
 1. **Select Standard Installation** (recommended) at the boot menu.
 
-   ![SAB Boot Menu](/img/SAB_Debian/pptx_image1.png)
+   ![SAB Boot Menu](/images/SAB_Debian/pptx_image1.png)
    *SAB Boot Menu*
 
 2. **Configure networking.** Select **Yes** for DHCP or **No** for static IP.
 
-   ![DHCP prompt](/img/SAB_Debian/pptx_image2.png)
+   ![DHCP prompt](/images/SAB_Debian/pptx_image2.png)
 
 3. **Select locale and keyboard** — language, location (timezone), and keyboard layout.
 
-   ![Language](/img/SAB_Debian/pptx_image3.png)
-   ![Location](/img/SAB_Debian/pptx_image4.png)
-   ![Keyboard](/img/SAB_Debian/pptx_image5.png)
+   ![Language](/images/SAB_Debian/pptx_image3.png)
+   ![Location](/images/SAB_Debian/pptx_image4.png)
+   ![Keyboard](/images/SAB_Debian/pptx_image5.png)
 
 4. **Enter static IP details** *(skip if DHCP).* Provide IP/CIDR (e.g., `192.168.1.50/24`), gateway, and DNS.
 
-   ![Static IP](/img/SAB_Debian/pptx_image6.png)
-   ![Gateway](/img/SAB_Debian/pptx_image7.png)
-   ![DNS](/img/SAB_Debian/pptx_image8.png)
+   ![Static IP](/images/SAB_Debian/pptx_image6.png)
+   ![Gateway](/images/SAB_Debian/pptx_image7.png)
+   ![DNS](/images/SAB_Debian/pptx_image8.png)
 
 5. **Set hostname and domain** consistent with your network naming.
 
-   ![Hostname](/img/SAB_Debian/pptx_image9.png)
-   ![Domain](/img/SAB_Debian/pptx_image10.png)
+   ![Hostname](/images/SAB_Debian/pptx_image9.png)
+   ![Domain](/images/SAB_Debian/pptx_image10.png)
 
 6. **Select Debian mirror** — choose the geographically nearest mirror. Leave the HTTP proxy blank unless your network requires one.
 
-   ![Mirror](/img/SAB_Debian/pptx_image11.png)
-   ![HTTP proxy](/img/SAB_Debian/pptx_image12.png)
+   ![Mirror](/images/SAB_Debian/pptx_image11.png)
+   ![HTTP proxy](/images/SAB_Debian/pptx_image12.png)
 
    :::tip Continue via SSH (Optional)
 
    After network configuration completes, you can connect via SSH to the server IP and continue the installation remotely instead of using the console.
 
-   ![SSH notice](/img/SAB_Debian/pptx_image13.png)
+   ![SSH notice](/images/SAB_Debian/pptx_image13.png)
 
    :::
 
 7. **Confirm disk and GRUB target.** SAB auto-partitions the disk. Select the target drive (typically `/dev/sda`) for both partitioning and the GRUB bootloader.
 
-   ![Disk selection](/img/SAB_Debian/pptx_image14.png)
-   ![GRUB](/img/SAB_Debian/pptx_image15.png)
+   ![Disk selection](/images/SAB_Debian/pptx_image14.png)
+   ![GRUB](/images/SAB_Debian/pptx_image15.png)
 
    :::caution
    Installing GRUB on the wrong drive (e.g., external USB instead of internal disk) can make the system unbootable. Confirm you selected the internal disk where SafeSquid will be installed (typically `/dev/sda` or `/dev/nvme0n1`).
@@ -125,11 +125,11 @@ SAB will **erase and repartition** the target disk. Back up any existing data be
    
    The system reboots automatically when complete.
 
-   ![Finishing installation](/img/SAB_Debian/pptx_image16.png)
+   ![Finishing installation](/images/SAB_Debian/pptx_image16.png)
 
 9. **Log in** with the default credentials after reboot (**administrator** / **safesquid**).
 
-   ![Login prompt](/img/SAB_Debian/pptx_image17.png)
+   ![Login prompt](/images/SAB_Debian/pptx_image17.png)
 
 ## What Gets Installed
 
@@ -204,7 +204,7 @@ Switch to ALT + F2 if:
 
 ## Next Steps
 
-1. **[Activate Your License](/docs/Getting_Started/Activate/)** — Upload your activation key to make SafeSquid fully operational
-2. **[Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/)** — Configure a browser to use the proxy
-3. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm traffic flows through SafeSquid
-4. **[Enable SSL Inspection](/docs/SSL_Inspection/main/)** — Decrypt and inspect HTTPS traffic
+1. **[Activate Your License](/01-Getting_Started/04-Activate)** — Upload your activation key to make SafeSquid fully operational
+2. **[Connect Your Client](/01-Getting_Started/05-Connect_Your_Client/main)** — Configure a browser to use the proxy
+3. **[Verify Your Setup](/01-Getting_Started/06-Verify_Your_Setup)** — Confirm traffic flows through SafeSquid
+4. **[Enable SSL Inspection](/05-SSL_Inspection/main)** — Decrypt and inspect HTTPS traffic

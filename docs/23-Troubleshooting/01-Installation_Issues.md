@@ -28,7 +28,7 @@ Resolutions may include checking disk space, reviewing network settings, and ens
 
 For network-related issues such as those mentioned below, you can use the installer console to identify the root cause of the issue and act based on it.
 
-![using the installer console to identify the root cause of the issue and act based on them](/img/Troubleshooting/Troubleshooting_issues_during_installation_of_SafeSquid/image1.webp)
+![using the installer console to identify the root cause of the issue and act based on them](/images/Troubleshooting/Troubleshooting_issues_during_installation_of_SafeSquid/image1.webp)
 
 
 
@@ -44,13 +44,13 @@ Administrators can perform various checks to identify and resolve network-relate
    ip route show   # Display routing table
    ```
 
-   ![Reviewing and modifying network settings using the `ip` commands](/img/Troubleshooting/Troubleshooting_issues_during_installation_of_SafeSquid/image2.webp)
+   ![Reviewing and modifying network settings using the `ip` commands](/images/Troubleshooting/Troubleshooting_issues_during_installation_of_SafeSquid/image2.webp)
 
    **What to check:**
    - IP address is assigned to the correct interface (e.g., `eth0: inet 192.168.1.100/24`)
    - Default gateway is present in routing table (e.g., `default via 192.168.1.1 dev eth0`)
 
-   ![route command to check your default gateway and route.](/img/Troubleshooting/Troubleshooting_issues_during_installation_of_SafeSquid/image3.webp)
+   ![route command to check your default gateway and route.](/images/Troubleshooting/Troubleshooting_issues_during_installation_of_SafeSquid/image3.webp)
 
    **Common issues:**
    - No IP address shown → interface not configured or DHCP failed
@@ -62,7 +62,7 @@ Administrators can perform various checks to identify and resolve network-relate
    ping -c 3 google.com
    ```
 
-   ![pinging google.com` to confirm DNS resolution and internet connectivity](/img/Troubleshooting/Troubleshooting_issues_during_installation_of_SafeSquid/image4.webp)
+   ![pinging google.com` to confirm DNS resolution and internet connectivity](/images/Troubleshooting/Troubleshooting_issues_during_installation_of_SafeSquid/image4.webp)
 
    **Expected success output:**
    ```
@@ -81,15 +81,15 @@ By performing these network checks and using the available networking commands, 
 
 Once you have identified and solved your network problem, come back to the installer tty using ctrl + alt + F1 and select continue.
 
-![coming back to the installer tty using ctrl + alt + F1 and selecting continue ](/img/Troubleshooting/Troubleshooting_issues_during_installation_of_SafeSquid/image5.webp)
+![coming back to the installer tty using ctrl + alt + F1 and selecting continue ](/images/Troubleshooting/Troubleshooting_issues_during_installation_of_SafeSquid/image5.webp)
 
 Select continue again.
 
-![selecting continue again](/img/Troubleshooting/Troubleshooting_issues_during_installation_of_SafeSquid/image6.webp)
+![selecting continue again](/images/Troubleshooting/Troubleshooting_issues_during_installation_of_SafeSquid/image6.webp)
 
 Select the "Download debconf preconfiguration file" step.
 
-![selecting "Download debconf preconfiguration file" step.](/img/Troubleshooting/Troubleshooting_issues_during_installation_of_SafeSquid/image7.webp)
+![selecting "Download debconf preconfiguration file" step.](/images/Troubleshooting/Troubleshooting_issues_during_installation_of_SafeSquid/image7.webp)
 
 Follow the steps of standard installation and continue your installation process.
 
@@ -124,7 +124,7 @@ Appears when the installer cannot reach Debian package repositories. This indica
 If you face any error while installing SafeSquid Appliance Builder (SAB-ISO), you will get debugging logs information by pressing **ALT+F4**. To return to the previous screen press **ALT+F1**.
 :::
 
-![Bad Archive Mirror Template](/img/Troubleshooting/ISO_installation_failure/image1.webp)
+![Bad Archive Mirror Template](/images/Troubleshooting/ISO_installation_failure/image1.webp)
 
-![Failed to retrieve the pre-configuration file error template](/img/Troubleshooting/ISO_installation_failure/image2.webp)
+![Failed to retrieve the pre-configuration file error template](/images/Troubleshooting/ISO_installation_failure/image2.webp)
 

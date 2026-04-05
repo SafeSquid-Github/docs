@@ -14,7 +14,7 @@ keywords:
 Configure Access Restrictions to utilize OpenLDAP identities. This enables identity-based policies where users are recognized by their directory username and group membership.
 
 :::info Prerequisites
-- [OpenLDAP Simple Authentication](/docs/Authentication/Directory_Services/OpenLDAP/Simple_Authentication/) configured and successful.
+- [OpenLDAP Simple Authentication](/04-Authentication/03-Directory_Services/02-OpenLDAP/01-Simple_Authentication) configured and successful.
 - LDAP users and groups must be visible in the **LDAP Entities** tab.
 :::
 
@@ -28,7 +28,7 @@ Configure Access Restrictions to utilize OpenLDAP identities. This enables ident
 4. **Enable PAM:** Ensure **PAM Authentication** is set to **TRUE**.
 5. **Save Policy:** Click the checkmark to save.
 
-![selecting the users or user groups you want to set the authentication for](/img/How_To/Enable_authentication_for_LDAP_users/image11.webp)
+![selecting the users or user groups you want to set the authentication for](/images/How_To/Enable_authentication_for_LDAP_users/image11.webp)
 
 :::tip Note on Default Rules
 SafeSquid includes default entries under the **Allow List**. You can edit these to quickly map specific LDAP groups to default user-groups like `admins` or `users`.
@@ -42,7 +42,7 @@ SafeSquid includes default entries under the **Allow List**. You can edit these 
 | **Check Identity Log** | `tail -f /var/log/safesquid/identity.log` | Shows the authenticated OpenLDAP username for each request. |
 | **Review Dashboard** | **Reports** → **Detailed Logs** | Verify the **Username** column is populated with directory names. |
 
-![Confirming SSO authentication by seeing the username in SafeSquid detailed logs](/img/How_To/Enable_authentication_for_LDAP_users/image35.webp)
+![Confirming SSO authentication by seeing the username in SafeSquid detailed logs](/images/How_To/Enable_authentication_for_LDAP_users/image35.webp)
 
 ## Troubleshooting
 
@@ -54,6 +54,6 @@ SafeSquid includes default entries under the **Allow List**. You can edit these 
 
 ## Next steps
 
-- [Access Restriction](/docs/Access_Restriction/main/) to define policies for your different LDAP groups.
-- [SSL Inspection](/docs/SSL_Inspection/main/) to attribute encrypted traffic to specific users.
-- [Bypass Authentication](/docs/Authentication/Bypass_Authentication/) for automated services.
+- [Access Restriction](/08-Access_Restriction/main) to define policies for your different LDAP groups.
+- [SSL Inspection](/05-SSL_Inspection/main) to attribute encrypted traffic to specific users.
+- [Bypass Authentication](/04-Authentication/05-Bypass_Authentication) for automated services.

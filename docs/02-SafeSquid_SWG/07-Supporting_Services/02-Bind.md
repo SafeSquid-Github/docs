@@ -314,9 +314,9 @@ sudo tail -f /var/log/named/default.log
 
 ## Next Steps
 
-1. **[Monit](/docs/SafeSquid_SWG/Supporting_Services/Monit/)** — Monitor BIND and auto-restart if it crashes
-2. **[NTP](/docs/SafeSquid_SWG/Supporting_Services/NTP/)** — Required for DNSSEC validation
-3. **[Integrated DNS Security](/docs/SafeSquid_SWG/Integrated_DNS_Security/)** — Configure DNSBL for malicious domain blocking
-4. **[Troubleshooting](/docs/Troubleshooting/main/)** — DNS-specific troubleshooting
+1. **[Monit](/02-SafeSquid_SWG/07-Supporting_Services/01-Monit)** — Monitor BIND and auto-restart if it crashes
+2. **[NTP](/02-SafeSquid_SWG/07-Supporting_Services/03-NTP)** — Required for DNSSEC validation
+3. **[Integrated DNS Security](/02-SafeSquid_SWG/06-Integrated_DNS_Security)** — Configure DNSBL for malicious domain blocking
+4. **[Troubleshooting](/23-Troubleshooting/main)** — DNS-specific troubleshooting
 
-**Related:** [Supporting Services Overview](/docs/SafeSquid_SWG/Supporting_Services/main/)
+**Related:** [Supporting Services Overview](/02-SafeSquid_SWG/07-Supporting_Services/main)

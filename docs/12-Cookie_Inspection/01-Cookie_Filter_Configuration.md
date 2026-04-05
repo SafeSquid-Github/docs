@@ -13,12 +13,12 @@ keywords:
 
 
 
-## [Access SafeSquid interface](/docs/SafeSquid_SWG/Configuration_Portal/)
+## [Access SafeSquid interface](/02-SafeSquid_SWG/01-Configuration_Portal)
 
 
 
 ## Go to configure page
-![Configure page with Cookie Filter in sidebar](/img/Configure/Restriction_Profiles/Cookie_Filter/image1.webp)
+![Configure page with Cookie Filter in sidebar](/images/Configure/Restriction_Profiles/Cookie_Filter/image1.webp)
 
 
 
@@ -29,7 +29,7 @@ Enable or Disable the cookie filtering section.
 -   **TRUE:** Enable cookie filtering section
 -   **FALSE:** Disable the cookie filtering section
 
-![Cookie Filter Global section with Enabled and Policy options](/img/Configure/Restriction_Profiles/Cookie_Filter/image2.webp)
+![Cookie Filter Global section with Enabled and Policy options](/images/Configure/Restriction_Profiles/Cookie_Filter/image2.webp)
 
 ### Policy
 Select the default action to take, when no matching entry for a requested cookie is found.
@@ -40,7 +40,7 @@ Select the default action to take, when no matching entry for a requested cookie
 
 
 ## Allow
-![Cookie Filter Allow sub-section](/img/Configure/Restriction_Profiles/Cookie_Filter/image3.webp)
+![Cookie Filter Allow sub-section](/images/Configure/Restriction_Profiles/Cookie_Filter/image3.webp)
 
 When the Policy is Deny, rules defined under this sub-section, are exclusively allowed access.
 
@@ -151,12 +151,12 @@ So, it will be active every day from Monday to Friday between 9 AM to 5 PM.
 #### Rule#1
 I want to allow cookie filtering for connections with the profile "COOKIE ALLOW". Users who require access to log-in webpages and personal accounts need cookie access. We can use the cookie -> Allow subsection to allow Cookies.
 
-![Allow rule for COOKIE ALLOW profile](/img/Configure/Restriction_Profiles/Cookie_Filter/image4.webp)
+![Allow rule for COOKIE ALLOW profile](/images/Configure/Restriction_Profiles/Cookie_Filter/image4.webp)
 
 #### Rule#2
 I want to allow cookies for domain safesquid.com Despite the deny rule, connections to domain safesquid.com will not drop cookies This can be used in a situation where login is required for mission-critical applications.
 
-![Allow cookies for domain safesquid.com rule](/img/Configure/Restriction_Profiles/Cookie_Filter/image5.webp)
+![Allow cookies for domain safesquid.com rule](/images/Configure/Restriction_Profiles/Cookie_Filter/image5.webp)
 
 
 
@@ -167,7 +167,7 @@ Here, you can add rules under Deny that would explicitly result in blocking or d
 
 This effectively allows you to set a variety of intelligently and creatively defined Cookie Transfer Blacklist(s).
 
-![Cookie Filter Deny sub-section with rule list](/img/Configure/Restriction_Profiles/Cookie_Filter/image6.webp)
+![Cookie Filter Deny sub-section with rule list](/images/Configure/Restriction_Profiles/Cookie_Filter/image6.webp)
 
 ### Enabled
 Enable or Disable this entry
@@ -277,22 +277,22 @@ Connections with the profile "READ ONLY" will ensure users are unable to log in.
 
 Cookies sent in both directions are dropped.
 
-![DROP COOKIES rule with READ ONLY profile](/img/Configure/Restriction_Profiles/Cookie_Filter/image7.webp)
+![DROP COOKIES rule with READ ONLY profile](/images/Configure/Restriction_Profiles/Cookie_Filter/image7.webp)
 
 #### Rule#2
 Connections with the profile "DROP COOKIES FOR GOOGLE" will drop all cookies for the domain google.com.
 
 Cookies will be dropped for both incoming and outgoing requests.
 
-![DROP COOKIES FOR GOOGLE rule for domain google.com](/img/Configure/Restriction_Profiles/Cookie_Filter/image8.webp)
+![DROP COOKIES FOR GOOGLE rule for domain google.com](/images/Configure/Restriction_Profiles/Cookie_Filter/image8.webp)
 
 
 
 ## Verification and Evidence
 
-- **Interface Checks**: In [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), Restriction Profiles → Cookie Filter: Global and policy entries match intent (Allow/Deny, profiles). Test URLs or domains show correct category in Categorize Web-sites if used.
+- **Interface Checks**: In [Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal), Restriction Profiles → Cookie Filter: Global and policy entries match intent (Allow/Deny, profiles). Test URLs or domains show correct category in Categorize Web-sites if used.
 - **Log Analysis**: Access logs reflect cookie allow/deny per policy; blocked cookie exchange may show in response or request logs.
 - **Performance Validation**: Browsing with Allow profile allows login and cookies; with Deny or Drop profile, target sites do not receive or retain cookies as configured.
 
-**Related**: [Access Restriction](/docs/Access_Restriction/main/), [Header Obfuscation](/docs/Header_Obfuscation/main/), [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), [Troubleshooting](/docs/Troubleshooting/main/)
+**Related**: [Access Restriction](/08-Access_Restriction/main), [Header Obfuscation](/11-Header_Obfuscation/main), [Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal), [Troubleshooting](/23-Troubleshooting/main)
 

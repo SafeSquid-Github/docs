@@ -29,7 +29,7 @@ flowchart LR
 
 Example scenarios:
 
-![Proxy chain scenario: client, child proxy, and parent proxy network layout](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image1.webp)
+![Proxy chain scenario: client, child proxy, and parent proxy network layout](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image1.webp)
 
 Here am using two proxy servers as SafeSquid only
 
@@ -54,7 +54,7 @@ Deploy SafeSquid, it is up and running, no extra configuration required in paren
 
 
 ## Prerequisites
-Enable HTTPS inspection on child proxy (optionally on parent proxy also). Check our document to configure HTTPS inspection on SafeSquid - [How to configure HTTPS inspection](/docs/SSL_Inspection/main/)
+Enable HTTPS inspection on child proxy (optionally on parent proxy also). Check our document to configure HTTPS inspection on SafeSquid - [How to configure HTTPS inspection](/05-SSL_Inspection/main)
 
 Import SafeSquid child proxy ROOT CA in client browser
 
@@ -64,65 +64,65 @@ Note: No configuration required on Parent Proxy server. Just deploy the parent p
 
 ## Configure proxy chain in SafeSquid
 
-Access the [SafeSquid Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/).
+Access the [SafeSquid Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal).
 
 ### Open Configure page
 
-![Configure page in SafeSquid interface](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image2.webp)
+![Configure page in SafeSquid interface](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image2.webp)
 
 ### Open Application Setup → Proxy chain
 
-![Application Setup section in sidebar](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image3.webp)
+![Application Setup section in sidebar](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image3.webp)
 
-![Proxy chain section in Application Setup](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image4.webp)
+![Proxy chain section in Application Setup](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image4.webp)
 
 ### Enable Global section
-![Enable Global section for proxy chain](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image5.webp)
+![Enable Global section for proxy chain](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image5.webp)
 
-![Global proxy chain toggle and options](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image6.webp)
+![Global proxy chain toggle and options](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image6.webp)
 
-![Saving Global proxy chain configuration](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image7.webp)
+![Saving Global proxy chain configuration](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image7.webp)
 
 ### Open Forwarding proxies and add an entry
 
-![Forwarding proxies section](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image8.webp)
-![Add new forwarding proxy entry](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image9.webp)
+![Forwarding proxies section](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image8.webp)
+![Add new forwarding proxy entry](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image9.webp)
 
-![Forwarding proxy form with comment field](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image10.webp)
+![Forwarding proxy form with comment field](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image10.webp)
 
-![Entering parent proxy host or IP](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image11.webp)
+![Entering parent proxy host or IP](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image11.webp)
 
-![Forwarding proxy entry with IP 192.168.27.100](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image12.webp)
+![Forwarding proxy entry with IP 192.168.27.100](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image12.webp)
 
 In the example: my upstream proxy ip: 192.168.27.100
 
-![Entering parent proxy port](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image13.webp)
+![Entering parent proxy port](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image13.webp)
 
-![Forwarding proxy port 8080 configured](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image14.webp)
+![Forwarding proxy port 8080 configured](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image14.webp)
 
 In example: my upstream proxy listening on port 8080
 
-![Submit forwarding proxy entry](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image15.webp)
+![Submit forwarding proxy entry](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image15.webp)
 
-![Forwarding proxy list with new entry](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image16.webp)
+![Forwarding proxy list with new entry](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image16.webp)
 
-![Save configuration button](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image17.webp)
+![Save configuration button](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image17.webp)
 
-![Save conf confirmation](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image18.webp)
+![Save conf confirmation](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image18.webp)
 
-![Configuration saved successfully](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image19.webp)
+![Configuration saved successfully](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image19.webp)
 
 ### Test proxy chain connectivity
 
-![Testing proxy chain connectivity](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image20.webp)
+![Testing proxy chain connectivity](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image20.webp)
 
-![Proxy chain test result or log](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image21.webp)
+![Proxy chain test result or log](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image21.webp)
 
-![Verifying traffic through parent proxy](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image22.webp)
+![Verifying traffic through parent proxy](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image22.webp)
 
 ### Save configuration
 
-![Save configuration to apply proxy chain settings](/img/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image23.webp)
+![Save configuration to apply proxy chain settings](/images/How_To/Deploy_SafeSquid_Behind_Corporate_Proxy/image23.webp)
 
 When the administrator clicks Save config, a prompt asks for confirmation to store the configuration in the cloud.
 
@@ -138,7 +138,7 @@ Otherwise select No and click on submit.
 
 ## Verification and Evidence
 
-- **Interface Checks**: In [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), open Application Setup → Proxy chain. Confirm Global is enabled and the forwarding proxy entry shows the correct parent IP and port.
+- **Interface Checks**: In [Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal), open Application Setup → Proxy chain. Confirm Global is enabled and the forwarding proxy entry shows the correct parent IP and port.
 - **Log Analysis**: Check SafeSquid access logs for requests showing the parent proxy as upstream; connection failures to the parent appear in logs with connect errors.
 - **Performance Validation**: From a client behind the child proxy, browse an external site; traffic should succeed and appear in both child and parent proxy logs.
 
@@ -146,7 +146,7 @@ Otherwise select No and click on submit.
 
 ## Next steps
 
-- [Forward Proxy](/docs/Operational_Modes/Forward_Proxy/) for explicit proxy without chaining.
-- [SSL Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) for HTTPS inspection on the child proxy.
-- [Troubleshooting](/docs/Troubleshooting/main/) if connectivity or parent proxy errors occur.
+- [Forward Proxy](/19-Operational_Modes/01-Forward_Proxy) for explicit proxy without chaining.
+- [SSL Inspection](/05-SSL_Inspection/01-Configure_HTTPS_Inspection) for HTTPS inspection on the child proxy.
+- [Troubleshooting](/23-Troubleshooting/main) if connectivity or parent proxy errors occur.
 

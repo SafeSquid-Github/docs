@@ -76,7 +76,7 @@ You can verify it by using below command:
 ```bash
 netstat -tulnp
 ```
-![Check port 80 is free in proxy server by using netstat command](/img/How_To/How_to_configure_reverse_proxy/image1.webp)
+![Check port 80 is free in proxy server by using netstat command](/images/How_To/How_to_configure_reverse_proxy/image1.webp)
 
 No service is allocated to port 80
 
@@ -98,17 +98,17 @@ See how to allow single website
 
 Create a DNS entry for the website pointing to the back-end server IP. In this example **192.168.27.50** is **test.safesquid.net**.
 
-![Make DNS entry of website pointing to website IP](/img/How_To/How_to_configure_reverse_proxy/image2.webp)
+![Make DNS entry of website pointing to website IP](/images/How_To/How_to_configure_reverse_proxy/image2.webp)
 
 Access the website from a client machine without configuring proxy settings in the browser. Server logs show that the website was accessed via the proxy IP.
 
-![In Server logs, view which the website is access with proxy IP](/img/How_To/How_to_configure_reverse_proxy/image3.webp)
+![In Server logs, view which the website is access with proxy IP](/images/How_To/How_to_configure_reverse_proxy/image3.webp)
 
 
 
 ## Next steps
 
-- [Forward Proxy](/docs/Operational_Modes/Forward_Proxy/) for client-facing explicit proxy.
-- [SSL Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) for HTTPS termination.
-- [Proxy Clustering](/docs/Proxy_Clustering/main/) for high availability.
+- [Forward Proxy](/19-Operational_Modes/01-Forward_Proxy) for client-facing explicit proxy.
+- [SSL Inspection](/05-SSL_Inspection/01-Configure_HTTPS_Inspection) for HTTPS termination.
+- [Proxy Clustering](/17-Proxy_Clustering/main) for high availability.
 

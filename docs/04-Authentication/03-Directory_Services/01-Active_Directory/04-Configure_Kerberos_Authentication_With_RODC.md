@@ -9,8 +9,6 @@ keywords:
   - SafeSquid RODC authentication
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 ## Problem: Kerberos SSO in RODC Environments
 
@@ -109,7 +107,7 @@ These seven SPNs must be registered on the SafeSquid computer object. Replace pl
 Choose the method that fits your administration style.
 
 <Tabs>
-<TabItem value="manual" label="Manual Steps">
+<Tab title="Manual Steps">
 
 ### Step 1: Initialize Identity
 Replace `<Placeholders>` with your environment values.
@@ -169,8 +167,8 @@ Set-ADObject -Identity $obj.DistinguishedName -Server $TargetDC `
     }
 ```
 
-</TabItem>
-<TabItem value="script" label="Automated Script">
+</Tab>
+<Tab title="Automated Script">
 
 ### Fully Generalized AD Script
 Copy-paste this into a PowerShell (Admin) terminal on a Writable DC.
@@ -236,7 +234,7 @@ Set-ADObject -Identity $FinalObj.DistinguishedName -Server $TargetDC -Replace @{
 Write-Host "`nSUCCESS: Active Directory is now configured for SafeSquid." -ForegroundColor Green
 ```
 
-</TabItem>
+</Tab>
 </Tabs>
 
 
@@ -258,7 +256,7 @@ Since the RODC is read-only, you must allow it to cache the SafeSquid computer p
 
 Navigate to **Application Setup** > **Integrate LDAP** > **LDAP servers**.
 
-![LDAP CONFIG IN SAFESQUID FOR RODC](/img/How_To/Configure_LDAP_In_Safesquid_For_RHOD/image1.webp)
+![LDAP CONFIG IN SAFESQUID FOR RODC](/images/How_To/Configure_LDAP_In_Safesquid_For_RHOD/image1.webp)
 
 | Parameter | Configuration Value |
 | :--- | :--- |

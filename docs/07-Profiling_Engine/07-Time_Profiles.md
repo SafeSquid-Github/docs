@@ -22,19 +22,19 @@ Time Profiler enforces time-based internet access using configurable ranges: mon
 
 ## Enable Time Profiler
 
-1. Access the [SafeSquid interface](/docs/SafeSquid_SWG/Configuration_Portal/).
+1. Access the [SafeSquid interface](/02-SafeSquid_SWG/01-Configuration_Portal).
 
 2. Navigate to **Configure** page.
 
-   ![Configure page](/img/Configure/Custom_Settings/Time_Profiler/image1.webp)
+   ![Configure page](/images/Configure/Custom_Settings/Time_Profiler/image1.webp)
 
 3. Click **Custom Settings** in the sidebar.
 
-   ![Custom Settings](/img/Configure/Custom_Settings/Time_Profiler/image2.webp)
+   ![Custom Settings](/images/Configure/Custom_Settings/Time_Profiler/image2.webp)
 
 4. Select **Time Profiler**.
 
-   ![Time Profiler section](/img/Configure/Custom_Settings/Time_Profiler/image3.webp)
+   ![Time Profiler section](/images/Configure/Custom_Settings/Time_Profiler/image3.webp)
 
 
 
@@ -46,15 +46,15 @@ Time Profiler enforces time-based internet access using configurable ranges: mon
 |---------|-------------|
 | **Enabled** | TRUE: Enable time profiles. FALSE: Disable time profiles. |
 
-![Global section](/img/Configure/Custom_Settings/Time_Profiler/image4.webp)
+![Global section](/images/Configure/Custom_Settings/Time_Profiler/image4.webp)
 
 ### Time Profiles Tab
 
 SafeSquid evaluates entries from top to bottom. All entries within the time range are applicable.
 
-![Add new policy](/img/Configure/Custom_Settings/Time_Profiler/image5.webp)
+![Add new policy](/images/Configure/Custom_Settings/Time_Profiler/image5.webp)
 
-![Time profiles tab](/img/Configure/Custom_Settings/Time_Profiler/image6.webp)
+![Time profiles tab](/images/Configure/Custom_Settings/Time_Profiler/image6.webp)
 
 ### Entry Settings
 
@@ -97,7 +97,7 @@ Office hours: 10 AM to 9 PM, Monday to Friday.
 | Weekday Range | Monday to Friday |
 | Added Time Profiles | STANDARD OFFICE HOURS |
 
-![Office hours rule](/img/Configure/Custom_Settings/Time_Profiler/image7.webp)
+![Office hours rule](/images/Configure/Custom_Settings/Time_Profiler/image7.webp)
 
 ### Example 2: Lunch Hours
 
@@ -110,5 +110,5 @@ Lunch hours: 2 PM to 2:30 PM, Monday to Friday. Allow Social Media during lunch.
 | Weekday Range | Monday to Friday |
 | Added Time Profiles | STANDARD LUNCH HOURS |
 
-![Lunch hours rule](/img/Configure/Custom_Settings/Time_Profiler/image8.webp)
+![Lunch hours rule](/images/Configure/Custom_Settings/Time_Profiler/image8.webp)
 

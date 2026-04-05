@@ -1,0 +1,386 @@
+{
+  "theme": "mint",
+  "name": "SafeSquid SWG",
+  "description": "Deploy Zero-Trust Web Security — SafeSquid Secure Web Gateway documentation.",
+  "colors": {
+    "primary": "#0066CC",
+    "light": "#3B82F6",
+    "dark": "#0F172A"
+  },
+  "logo": {
+    "light": "/images/SafeSquidBlue.png",
+    "dark": "/images/safesquidWhite.png",
+    "href": "https://www.safesquid.com/#home"
+  },
+  "favicon": "/images/favicon.ico",
+  "styling": {
+    "eyebrows": "breadcrumbs"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Home",
+        "href": "https://www.safesquid.com/#home"
+      },
+      {
+        "label": "Pricing",
+        "href": "https://www.safesquid.com/pricing/"
+      },
+      {
+        "label": "Forum",
+        "href": "https://help.safesquid.com/portal/en/community/safesquid-labs"
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "website": "https://www.safesquid.com/"
+    }
+  },
+  "integrations": {
+    "ga4": {
+      "measurementId": "G-ZVZHSKFGQF"
+    }
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Getting Started",
+        "root": "01-Getting_Started/main",
+        "pages": [
+          "01-Getting_Started/01-Deployment_Planning",
+          "01-Getting_Started/02-Register",
+          {
+            "group": "Install SafeSquid",
+            "root": "01-Getting_Started/03-Install_SafeSquid/main",
+            "pages": [
+              "01-Getting_Started/03-Install_SafeSquid/01-SafeSquid_Appliance_Builder",
+              "01-Getting_Started/03-Install_SafeSquid/02-Cloud_Deployment",
+              "01-Getting_Started/03-Install_SafeSquid/03-Linux_Server"
+            ]
+          },
+          "01-Getting_Started/04-Activate",
+          {
+            "group": "Connect Your Client",
+            "root": "01-Getting_Started/05-Connect_Your_Client/main",
+            "pages": [
+              "01-Getting_Started/05-Connect_Your_Client/01-Explicit_Proxy",
+              "01-Getting_Started/05-Connect_Your_Client/02-PAC_File",
+              "01-Getting_Started/05-Connect_Your_Client/03-System_Wide_Proxy",
+              "01-Getting_Started/05-Connect_Your_Client/04-Enterprise_Deployment",
+              "01-Getting_Started/05-Connect_Your_Client/05-Application_Specific_Configuration"
+            ]
+          },
+          "01-Getting_Started/06-Verify_Your_Setup"
+        ]
+      },
+      {
+        "group": "SafeSquid SWG",
+        "root": "02-SafeSquid_SWG/main",
+        "pages": [
+          "02-SafeSquid_SWG/01-Configuration_Portal",
+          "02-SafeSquid_SWG/02-Application_Ecosystem",
+          "02-SafeSquid_SWG/03-SafeSquid_Proxy_Cluster",
+          "02-SafeSquid_SWG/04-Self-Service_Portal",
+          "02-SafeSquid_SWG/05-Reporting_Service",
+          "02-SafeSquid_SWG/06-Integrated_DNS_Security",
+          {
+            "group": "Supporting Services",
+            "root": "02-SafeSquid_SWG/07-Supporting_Services/main",
+            "pages": [
+              "02-SafeSquid_SWG/07-Supporting_Services/01-Monit",
+              "02-SafeSquid_SWG/07-Supporting_Services/02-Bind",
+              "02-SafeSquid_SWG/07-Supporting_Services/03-NTP"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "DNS Security",
+        "root": "03-DNS_Security/main",
+        "pages": [
+          "03-DNS_Security/01-DNSBL",
+          "03-DNS_Security/02-GeoIP",
+          "03-DNS_Security/03-Homograph_Detection"
+        ]
+      },
+      {
+        "group": "Authentication",
+        "root": "04-Authentication/main",
+        "pages": [
+          "04-Authentication/01-BASIC",
+          "04-Authentication/02-Network_Signature",
+          {
+            "group": "Directory Services",
+            "root": "04-Authentication/03-Directory_Services/main",
+            "pages": [
+              {
+                "group": "Active Directory",
+                "root": "04-Authentication/03-Directory_Services/01-Active_Directory/main",
+                "pages": [
+                  "04-Authentication/03-Directory_Services/01-Active_Directory/01-Setup_Active_Directory_Integration",
+                  "04-Authentication/03-Directory_Services/01-Active_Directory/02-Simple_Authentication",
+                  "04-Authentication/03-Directory_Services/01-Active_Directory/03-SSO_Authentication",
+                  "04-Authentication/03-Directory_Services/01-Active_Directory/04-Configure_Kerberos_Authentication_With_RODC"
+                ]
+              },
+              {
+                "group": "OpenLDAP",
+                "root": "04-Authentication/03-Directory_Services/02-OpenLDAP/main",
+                "pages": [
+                  "04-Authentication/03-Directory_Services/02-OpenLDAP/01-Simple_Authentication",
+                  "04-Authentication/03-Directory_Services/02-OpenLDAP/02-SSO_Authentication"
+                ]
+              }
+            ]
+          },
+          "04-Authentication/04-PAM",
+          "04-Authentication/05-Bypass_Authentication",
+          "04-Authentication/06-Internal_Users"
+        ]
+      },
+      {
+        "group": "SSL Inspection",
+        "root": "05-SSL_Inspection/main",
+        "pages": [
+          "05-SSL_Inspection/01-Configure_HTTPS_Inspection",
+          "05-SSL_Inspection/02-Import_Certificate_Chrome_IE"
+        ]
+      },
+      {
+        "group": "Profiling Engine",
+        "root": "07-Profiling_Engine/main",
+        "pages": [
+          {
+            "group": "User Identities",
+            "root": "07-Profiling_Engine/01-User_Identities/main",
+            "pages": [
+              "07-Profiling_Engine/01-User_Identities/01-User_Groups"
+            ]
+          },
+          "07-Profiling_Engine/02-Web_Categorization",
+          "07-Profiling_Engine/03-Application_Signatures",
+          {
+            "group": "Content Analyser",
+            "root": "07-Profiling_Engine/04-Content_Analyser/main",
+            "pages": [
+              "07-Profiling_Engine/04-Content_Analyser/01-True-Mime_Fingerprints",
+              "07-Profiling_Engine/04-Content_Analyser/02-Text_Analyser",
+              "07-Profiling_Engine/04-Content_Analyser/03-Image_Analyser_AI"
+            ]
+          },
+          "07-Profiling_Engine/05-Request_Profiles",
+          "07-Profiling_Engine/06-Response_Profiles",
+          "07-Profiling_Engine/07-Time_Profiles"
+        ]
+      },
+      {
+        "group": "Access Restriction",
+        "root": "08-Access_Restriction/main",
+        "pages": []
+      },
+      {
+        "group": "Data Leakage Prevention",
+        "root": "09-Data_Leakage_Prevention/main",
+        "pages": [
+          "09-Data_Leakage_Prevention/01-Compliance_Templates"
+        ]
+      },
+      {
+        "group": "URL Redirection",
+        "root": "10-URL_Redirection/main",
+        "pages": [
+          "10-URL_Redirection/01-Redirect_One_Website_to_Another",
+          "10-URL_Redirection/02-SafeSearch"
+        ]
+      },
+      {
+        "group": "Header Obfuscation",
+        "root": "11-Header_Obfuscation/main",
+        "pages": [
+          "11-Header_Obfuscation/01-Header_Filter_Configuration"
+        ]
+      },
+      {
+        "group": "Cookie Inspection",
+        "root": "12-Cookie_Inspection/main",
+        "pages": [
+          "12-Cookie_Inspection/01-Cookie_Filter_Configuration"
+        ]
+      },
+      {
+        "group": "Content Modifier",
+        "root": "13-Content_Modifier/main",
+        "pages": [
+          "13-Content_Modifier/01-Rewriting_Policies_Reference"
+        ]
+      },
+      {
+        "group": "Malware Scanners",
+        "root": "14-Malware_Scanners/main",
+        "pages": [
+          "14-Malware_Scanners/01-SqScan",
+          "14-Malware_Scanners/02-ClamAV_Malware_Scanning",
+          "14-Malware_Scanners/03-ICAP",
+          "14-Malware_Scanners/04-Adaptable_External_Parser",
+          "14-Malware_Scanners/05-Malware_Signatures"
+        ]
+      },
+      {
+        "group": "Audit Forensics",
+        "root": "15-Audit_Forensics/main",
+        "pages": [
+          "15-Audit_Forensics/01-Reporting_Module",
+          "15-Audit_Forensics/02-Security_Logs",
+          "15-Audit_Forensics/03-Performance_Plot",
+          "15-Audit_Forensics/04-Monit",
+          "15-Audit_Forensics/05-Directory_Structure"
+        ]
+      },
+      {
+        "group": "Performance Accelerators",
+        "root": "16-Performance_Accelerators/main",
+        "pages": [
+          "16-Performance_Accelerators/01-Caching",
+          "16-Performance_Accelerators/02-Pre_Fetching",
+          "16-Performance_Accelerators/03-Manage_Bandwidth",
+          "16-Performance_Accelerators/04-Speed_Limits",
+          "16-Performance_Accelerators/05-WCCP"
+        ]
+      },
+      {
+        "group": "Proxy Clustering",
+        "root": "17-Proxy_Clustering/main",
+        "pages": [
+          "17-Proxy_Clustering/01-Master_Slave",
+          "17-Proxy_Clustering/02-Configuration_Sync"
+        ]
+      },
+      {
+        "group": "Customisation",
+        "root": "18-Customisation/main",
+        "pages": [
+          "18-Customisation/01-Custom_Templates",
+          "18-Customisation/02-Startup_Parameters"
+        ]
+      },
+      {
+        "group": "Operational Modes",
+        "root": "19-Operational_Modes/main",
+        "pages": [
+          "19-Operational_Modes/01-Forward_Proxy",
+          "19-Operational_Modes/02-Transparent_Proxy",
+          "19-Operational_Modes/03-TCP_Proxy",
+          "19-Operational_Modes/04-Reverse_Proxy",
+          "19-Operational_Modes/05-Proxy_Chain"
+        ]
+      },
+      {
+        "group": "Integrations",
+        "root": "20-Integrations/main",
+        "pages": [
+          {
+            "group": "VPN",
+            "root": "20-Integrations/02-VPN/main",
+            "pages": []
+          }
+        ]
+      },
+      {
+        "group": "Use Cases",
+        "root": "21-Use_Cases/main",
+        "pages": [
+          "21-Use_Cases/01-Access_Mobile_Applications_Through_SafeSquid",
+          "21-Use_Cases/02-Access_Remote_Desktop_Applications_Through_SafeSquid",
+          "21-Use_Cases/03-Accessing_business_applications_through_SafeSquid",
+          "21-Use_Cases/04-Allow_anydesk",
+          "21-Use_Cases/05-Allow_Outlook_To_Work_through_SafeSquid",
+          "21-Use_Cases/06-Allow_remote_applications_to_particular_users",
+          "21-Use_Cases/07-Allow_Social_Networking_Sites_during_Lunch_Hours",
+          "21-Use_Cases/08-Allow_Specific_YouTube_Channel_and_its_Playlist",
+          "21-Use_Cases/09-Allowing_Specific_Page_on_Facebook",
+          "21-Use_Cases/10-Block_Advertisements_And_Banners",
+          "21-Use_Cases/11-Block_Emails_or_Files_including_archives_or_Social_Posts_using_Keywords",
+          "21-Use_Cases/12-Block_inappropriate_images_by_using_Image_Analyzer",
+          "21-Use_Cases/13-Block_Particular_User_Login_To_Facebook_Or_Gmail",
+          "21-Use_Cases/14-Block_Personal_Gmail_Allow_Google_Corporate_Accounts",
+          "21-Use_Cases/15-Facebook_Read_Only_Mode",
+          "21-Use_Cases/16-Block_Specific_Youtube_Channel",
+          "21-Use_Cases/17-Restrict_anydesk",
+          "21-Use_Cases/18-YouTube_API_Integration_With_SafeSquid_To_Allow_Specific_YouTube_Videos",
+          "21-Use_Cases/19-Native_Sandboxing",
+          "21-Use_Cases/20-Elevated_Privacy",
+          "21-Use_Cases/21-working_of_default_entries_in_access_restrictions"
+        ]
+      },
+      {
+        "group": "Disaster Recovery",
+        "root": "22-Disaster_Recovery/main",
+        "pages": [
+          "22-Disaster_Recovery/01-Configure_Cloud_Restore"
+        ]
+      },
+      {
+        "group": "Troubleshooting",
+        "root": "23-Troubleshooting/main",
+        "pages": [
+          "23-Troubleshooting/01-Installation_Issues",
+          "23-Troubleshooting/02-Interface_Access_Denied",
+          "23-Troubleshooting/03-SSL_Inspection_Issues",
+          "23-Troubleshooting/04-SSO_Authentication_Fail",
+          "23-Troubleshooting/05-Failed_To_Fetch_LDAP_Entries",
+          "23-Troubleshooting/06-Disk_Space_and_RAM_are_Full",
+          "23-Troubleshooting/07-Not_Generating_Performance_Plot",
+          "23-Troubleshooting/08-DNS_Failure",
+          "23-Troubleshooting/09-Connection_Failure_on_Websites",
+          "23-Troubleshooting/10-Website_Not_Accessible",
+          "23-Troubleshooting/11-Whitelisted_Website_Blocked",
+          "23-Troubleshooting/12-Custom_Categorisation_Not_Working",
+          "23-Troubleshooting/13-SafeSearch_Not_Working",
+          "23-Troubleshooting/14-Unable_To_Login_Specific_Website",
+          "23-Troubleshooting/15-Blank_Report_Page",
+          "23-Troubleshooting/16-Proxy_Server_Refusing_Connection_Error",
+          "23-Troubleshooting/17-No_Tar-Ball_Support",
+          "23-Troubleshooting/18-How_to_use_find_client_id.sh_for_getting_complete_connection_log",
+          "23-Troubleshooting/19-Product_Failure"
+        ]
+      },
+      {
+        "group": "Upgrade SafeSquid",
+        "root": "24-Upgrade_SafeSquid/main",
+        "pages": [
+          {
+            "group": "Version Upgrade",
+            "root": "24-Upgrade_SafeSquid/01-Version_Upgrade/main",
+            "pages": []
+          },
+          {
+            "group": "OS Upgrade",
+            "root": "24-Upgrade_SafeSquid/02-OS_Upgrade/main",
+            "pages": []
+          }
+        ]
+      },
+      {
+        "group": "FAQs",
+        "root": "25-FAQs/main",
+        "pages": []
+      },
+      {
+        "group": "Threat Intelligence Feeds",
+        "root": "27-Threat_Intelligence_Feeds/main",
+        "pages": []
+      },
+      {
+        "group": "Blog",
+        "pages": [
+          "blog/2025-05-17-Zero-Hour-Phishing-Beyond-URL-filters",
+          "blog/2025-06-02-CSRF-Abuse",
+          "blog/2025-06-02-Cyberslacking",
+          "blog/2025-06-02-DNS-Tunneling",
+          "blog/2025-06-02-Last-Mile-Reassembly-of-Drive‑By-Malware"
+        ]
+      }
+    ]
+  }
+}

@@ -31,7 +31,7 @@ When the total score is equal to or greater than the threshold, then the page is
 
 
 ## Global
-![Text-global.jpg](/img/Configure/Real_Time_Content_Activity/Text_analyzer/image1.webp)
+![Text-global.jpg](/images/Configure/Real_Time_Content_Activity/Text_analyzer/image1.webp)
 
 ### Enabled
 Enable or Disable text analyzer section.
@@ -57,7 +57,7 @@ Add new policies here to block websites based on content type.
 
 You can give the score to each policy and the keywords to block inappropriate content.
 
-![Text-policy.jpg](/img/Configure/Real_Time_Content_Activity/Text_analyzer/image2.webp)
+![Text-policy.jpg](/images/Configure/Real_Time_Content_Activity/Text_analyzer/image2.webp)
 
 ### Enabled
 Enable or Disable this Policy.
@@ -121,5 +121,5 @@ Text analyzer can be used in situations where uncategorized websites serve inapp
 
 **Example: Articles, news etc.**
 
-![Slide1-txtAnlyz.webp](/img/Configure/Real_Time_Content_Activity/Text_analyzer/image3.webp)
+![Slide1-txtAnlyz.webp](/images/Configure/Real_Time_Content_Activity/Text_analyzer/image3.webp)
 

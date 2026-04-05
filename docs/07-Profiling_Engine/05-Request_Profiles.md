@@ -21,17 +21,17 @@ The Request Profiler manages profiling based on the request sent to the web serv
 
 
 
-## [Access SafeSquid interface](/docs/SafeSquid_SWG/Configuration_Portal/)
+## [Access SafeSquid interface](/02-SafeSquid_SWG/01-Configuration_Portal)
 
 
 
 ## Go to the configure page
 
-![clicking on configure in safesquid interface](/img/Configure/Custom_Settings/Request_Types/image1.webp)
+![clicking on configure in safesquid interface](/images/Configure/Custom_Settings/Request_Types/image1.webp)
 
-![clicking on custom settings in the sidebar](/img/Configure/Custom_Settings/Request_Types/image2.webp)
+![clicking on custom settings in the sidebar](/images/Configure/Custom_Settings/Request_Types/image2.webp)
 
-![clicking on Response Types in custom settings](/img/Configure/Custom_Settings/Request_Types/image3.webp)
+![clicking on Response Types in custom settings](/images/Configure/Custom_Settings/Request_Types/image3.webp)
 
 
 
@@ -44,7 +44,7 @@ Enable or Disable request types of sections.
 - TRUE: Enable request types of section
 - FALSE: Disable request types of section
 
-![showing global section of request types](/img/Configure/Custom_Settings/Request_Types/image4.webp)
+![showing global section of request types](/images/Configure/Custom_Settings/Request_Types/image4.webp)
 
 
 
@@ -54,9 +54,9 @@ The following rules are tested for each connection. The testing is done in top-d
 
 The first entry that matches the Request Profile of a connection, will be applied to it.
 
-![adding a new policy by clicking on add new button](/img/Configure/Custom_Settings/Request_Types/image5.webp)
+![adding a new policy by clicking on add new button](/images/Configure/Custom_Settings/Request_Types/image5.webp)
 
-![showing response Type tab in Request type section](/img/Configure/Custom_Settings/Request_Types/image6.webp)
+![showing response Type tab in Request type section](/images/Configure/Custom_Settings/Request_Types/image6.webp)
 
 ### Enabled
 
@@ -226,13 +226,13 @@ Connections that match the pattern for the team's user agent will be added to th
 
 This is useful to remove authentication or bypass SSL inspection only for a specific application.
 
-![rule showing a request type created for Microsoft teams desktop](/img/Configure/Custom_Settings/Request_Types/image7.webp)
+![rule showing a request type created for Microsoft teams desktop](/images/Configure/Custom_Settings/Request_Types/image7.webp)
 
 ### Rule#2
 
 **Example:** When google.com is blocked organization-wide, allow only Google Keep while keeping other Google services blocked. Using Google Keep's host name, create a Request profile for Google Keep. That Request type allows access to Google Keep while other Google services remain blocked.
 
-![showing rule created for google keep](/img/Configure/Custom_Settings/Request_Types/image8.webp)
+![showing rule created for google keep](/images/Configure/Custom_Settings/Request_Types/image8.webp)
 
 ---
 
@@ -325,7 +325,7 @@ Profiles are evaluated top-to-bottom. Order entries from most specific to most g
 2. **Group by category** — `CLOUD_*`, `SOCIAL_*`, `WEBMAIL_*`
 3. **Separate read/write** — Distinguish GET (read) from POST/PUT (write)
 4. **Regular review** — Update patterns as new services emerge
-5. **Combine with DLP** — Use profiles to trigger [Data Leakage Prevention](/docs/Data_Leakage_Prevention/main/) policies
+5. **Combine with DLP** — Use profiles to trigger [Data Leakage Prevention](/09-Data_Leakage_Prevention/main) policies
 
-**Related**: [Data Leakage Prevention](/docs/Data_Leakage_Prevention/main/), [Access Restriction](/docs/Access_Restriction/main/), [Reporting Module](/docs/Audit_Forensics/Reporting_Module/)
+**Related**: [Data Leakage Prevention](/09-Data_Leakage_Prevention/main), [Access Restriction](/08-Access_Restriction/main), [Reporting Module](/15-Audit_Forensics/01-Reporting_Module)
 

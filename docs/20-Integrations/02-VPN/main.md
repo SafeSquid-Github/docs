@@ -12,21 +12,19 @@ keywords:
 ---
 
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 # Secure proxy access with WireGuard VPN
 
 Directly exposing a SafeSquid proxy in the cloud to office or remote users is insecure. A dedicated, encrypted [WireGuard](https://www.wireguard.com/) VPN tunnel enables secure transport from enterprise networks or remote endpoints to the cloud without public exposure. This isolates the proxy, limits attack surface, and supports zero-trust connectivity with SafeSquid inspection and access control.
 
 The following diagram depicts the VPN tunnel:
-![WireGuard VPN tunnel and SafeSquid proxy architecture](/img/wireguard/image1.webp)
+![WireGuard VPN tunnel and SafeSquid proxy architecture](/images/wireguard/image1.webp)
 
 
 
 ## Prerequisites
 <Tabs>
-<TabItem value="Cloud VPS" label="Cloud VPS" default>
+<Tab title="Cloud VPS">
 
 **Cloud VPS (WireGuard + SafeSquid Host)**
 
@@ -35,8 +33,8 @@ The following diagram depicts the VPN tunnel:
 -   UDP port 51820 open in the cloud firewall
 -   Root or sudo privileges
 -   curl utility installed
-</TabItem>
-<TabItem value="Office LAN" label="Office LAN or Remote Endpoint" default>
+</Tab>
+<Tab title="Office LAN or Remote Endpoint">
 
 **Office LAN or Remote Endpoint (WireGuard Client)**
 
@@ -45,14 +43,14 @@ The following diagram depicts the VPN tunnel:
 -   Access to client configuration files
 -   Internet connectivity to initiate outbound VPN tunnel
 
-</TabItem>
+</Tab>
 </Tabs>
 
 
 
 ## Example cloud and office network topology
 <Tabs>
-<TabItem value="Cloud Environment" label="Cloud Environment" default>
+<Tab title="Cloud Environment">
 
   | Element                                | Address         | Description                                      |
 |----------------------------------------|-----------------|--------------------------------------------------|
@@ -61,8 +59,8 @@ The following diagram depicts the VPN tunnel:
 | WireGuard Server / SafeSquid Proxy IP  | 10.0.0.100      | Internal IP of cloud VPS running WireGuard and SafeSquid |
 | VPN Tunnel Subnet                      | 10.66.66.1/24   | IP pool for WireGuard interfaces                 |
 
-</TabItem>
-<TabItem value="Office Environment" label="Office Environment" default>
+</Tab>
+<Tab title="Office Environment">
 
   | Element               | Address         | Description                                               |
 |-----------------------|-----------------|-----------------------------------------------------------|
@@ -70,7 +68,7 @@ The following diagram depicts the VPN tunnel:
 | WireGuard Client1 IP  | 10.200.2.100    | Office client behind NAT, initiates VPN tunnel to cloud   |
 | VPN Tunnel Subnet     | 10.66.66.2/24   | IP pool for WireGuard interfaces                          |
 
-</TabItem>
+</Tab>
 </Tabs>
 
 
@@ -243,7 +241,7 @@ netfilter-persistent save
 
 ## Validate VPN Connectivity
 <Tabs>
-<TabItem value="Cloud VPS Ping Test" label="Cloud VPS Ping Test" default>
+<Tab title="Cloud VPS Ping Test">
 
 Confirm tunnel and office endpoint reachability.
 
@@ -253,8 +251,8 @@ ping 10.66.66.2
 ```bash
 ping 10.200.2.100
 ```
-</TabItem>
-<TabItem value="Office Client Ping Tests" label="Office Client Ping Tests" default>
+</Tab>
+<Tab title="Office Client Ping Tests">
 
 Ensure reverse reachability to server and cloud LAN.
 
@@ -264,15 +262,15 @@ ping 10.66.66.1
 ```bash
 ping 10.0.0.100
 ```
-</TabItem>
-<TabItem value="Tunnel Status Inspection" label="Tunnel Status Inspection" default>
+</Tab>
+<Tab title="Tunnel Status Inspection">
 
 Display active peers and session statistics.
 
 ```bash
 wg show
 ```
-</TabItem>
+</Tab>
 </Tabs>
 
 
@@ -334,7 +332,7 @@ When deploying multiple SafeSquid instances as a cluster:
 
 The architecture shown in maintains performance, simplifies scale-out, and centralizes VPN and external access controls.
 
-![WireGuard load balancer and proxy layer architecture](/img/wireguard/image2.webp)
+![WireGuard load balancer and proxy layer architecture](/images/wireguard/image2.webp)
 
 ### 4. Key Pair Management
 

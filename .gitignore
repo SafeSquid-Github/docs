@@ -5,9 +5,10 @@ package-lock.json
 # Production
 /build
 
-# Generated files
+# Generated / local
 .docusaurus
 .cache-loader
+core.*
 
 # Misc
 .DS_Store

@@ -16,10 +16,10 @@ Integrate SafeSquid with Active Directory (AD) to enable centralized user manage
 
 | Step | Task | Goal |
 |------|------|------|
-| 1 | [Setup AD Integration](/docs/Authentication/Directory_Services/Active_Directory/Setup_Active_Directory_Integration/) | Link SafeSquid with AD and fetch user/group entities. |
+| 1 | [Setup AD Integration](/04-Authentication/03-Directory_Services/01-Active_Directory/01-Setup_Active_Directory_Integration) | Link SafeSquid with AD and fetch user/group entities. |
 | 2 | **Choose Auth Method** | Decide between Simple (prompt) or SSO (transparent) authentication. |
-| 3 | [Simple Authentication](/docs/Authentication/Directory_Services/Active_Directory/Simple_Authentication/) | Browser prompts users for AD credentials. |
-| 4 | [SSO Authentication](/docs/Authentication/Directory_Services/Active_Directory/SSO_Authentication/) | Transparent authentication for domain-joined users via Kerberos. |
+| 3 | [Simple Authentication](/04-Authentication/03-Directory_Services/01-Active_Directory/02-Simple_Authentication) | Browser prompts users for AD credentials. |
+| 4 | [SSO Authentication](/04-Authentication/03-Directory_Services/01-Active_Directory/03-SSO_Authentication) | Transparent authentication for domain-joined users via Kerberos. |
 
 ## Which AD authentication method to use?
 
@@ -43,5 +43,5 @@ After completing the integration:
 
 ## Next steps
 
-- Start with [Setup Active Directory Integration](/docs/Authentication/Directory_Services/Active_Directory/Setup_Active_Directory_Integration/) to establish the initial connection.
-- Configure [Access Restriction](/docs/Access_Restriction/main/) to apply policies based on AD groups.
+- Start with [Setup Active Directory Integration](/04-Authentication/03-Directory_Services/01-Active_Directory/01-Setup_Active_Directory_Integration) to establish the initial connection.
+- Configure [Access Restriction](/08-Access_Restriction/main) to apply policies based on AD groups.

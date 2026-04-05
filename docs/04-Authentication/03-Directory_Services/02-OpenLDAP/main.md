@@ -16,8 +16,8 @@ Integrate SafeSquid with OpenLDAP to enable centralized user identification and 
 
 | Step | Task | Goal |
 |------|------|------|
-| 1 | [Simple Authentication](/docs/Authentication/Directory_Services/OpenLDAP/Simple_Authentication/) | Configure LDAP server connection and enable browser-prompt authentication. |
-| 2 | [SSO Authentication](/docs/Authentication/Directory_Services/OpenLDAP/SSO_Authentication/) | Enable transparent authentication for LDAP users via Access Restrictions. |
+| 1 | [Simple Authentication](/04-Authentication/03-Directory_Services/02-OpenLDAP/01-Simple_Authentication) | Configure LDAP server connection and enable browser-prompt authentication. |
+| 2 | [SSO Authentication](/04-Authentication/03-Directory_Services/02-OpenLDAP/02-SSO_Authentication) | Enable transparent authentication for LDAP users via Access Restrictions. |
 
 ## Why use OpenLDAP with SafeSquid?
 
@@ -35,6 +35,6 @@ After configuring OpenLDAP:
 
 ## Next steps
 
-- [Configure Simple Authentication](/docs/Authentication/Directory_Services/OpenLDAP/Simple_Authentication/) to establish the connection.
-- [Configure SSO Authentication](/docs/Authentication/Directory_Services/OpenLDAP/SSO_Authentication/) to enable user-aware policies.
-- [Access Restriction](/docs/Access_Restriction/main/) to define what your LDAP groups can access.
+- [Configure Simple Authentication](/04-Authentication/03-Directory_Services/02-OpenLDAP/01-Simple_Authentication) to establish the connection.
+- [Configure SSO Authentication](/04-Authentication/03-Directory_Services/02-OpenLDAP/02-SSO_Authentication) to enable user-aware policies.
+- [Access Restriction](/08-Access_Restriction/main) to define what your LDAP groups can access.

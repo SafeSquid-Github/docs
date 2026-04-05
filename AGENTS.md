@@ -25,8 +25,8 @@ The agent should:
 - Add diagrams, screenshots, and log evidence
 
 ❌ **DO NOT:**
-- Build or modify the Docusaurus project infrastructure
-- Change configuration files (docusaurus.config.ts, package.json, etc.)
+- Build or modify Mintlify hosting bindings outside this repository (dashboard, custom domains) without an explicit ticket
+- Change root CI secrets, deployment credentials, or `package.json` dependencies without an explicit ticket
 - Modify build scripts or deployment processes
 - Alter the project structure outside of content folders
 - Install dependencies or run build commands
@@ -41,13 +41,13 @@ The agent should:
 
 ### About and Audience
 
-SafeSquid SWG documentation (Docusaurus 3.7.0) is a technically precise knowledge base for enterprise zero-trust web security. **Audience:** CISOs and security leadership; security and network technicians; system administrators; security architects; compliance and risk teams; operations. Docs serve both "get it done" (task-based) and "justify/audit" (control mapping, evidence, compliance) needs. Start each doc with a clear purpose and outcome so readers can decide quickly if it applies.
+SafeSquid SWG documentation (Mintlify) is a technically precise knowledge base for enterprise zero-trust web security. **Audience:** CISOs and security leadership; security and network technicians; system administrators; security architects; compliance and risk teams; operations. Docs serve both "get it done" (task-based) and "justify/audit" (control mapping, evidence, compliance) needs. Start each doc with a clear purpose and outcome so readers can decide quickly if it applies.
 
 **CISO-grade bar (every document):** Write so CISOs can justify controls, support audits, brief the board, and compare solutions. **Criteria:** (1) **Risk-and-control** — tie features to a risk and to the control SafeSquid provides. (2) **Compliance** — where relevant, cite NIST, ISO 27001, PCI-DSS, HIPAA, GDPR, SOC 2 and state what can be shown (logs, reports, config); link configurations and features to control frameworks (e.g. NIST SP 800-53, CIS, SOC 2) so customers can map to audits. (3) **Evidence** — state what is logged, reportable, auditable and how to prove control effectiveness; call out export paths, report names, and log snippets that support audits; where relevant, document retention and log lifecycle (generate, store, access) for incident investigation. (4) **Business impact** — problem and benefits must include impact (reputation, legal, operational, cost). (5) **No fluff** — no marketing superlatives; state facts, assumptions, limitations, trade-offs; every security claim verifiable. Where security reviewers need to assess applicability, state scope, assumptions, and trust boundaries (e.g. topology, on-path vs off-path) explicitly. **Weave this content into the body copy; do not use separate CISO takeaway callouts.**
 
 ### Project Structure
-- **Content:** `docs/[section-number]-[section-name]/`; `blog/` (date-prefixed); images in `/static/img/` as `/img/category/image-name.webp` (WebP preferred).
-- **Infrastructure:** Node ≥18, npm, Docusaurus build; hosting Apache/Nginx; Algolia search; GA analytics. Agent does not modify config, build, or infra.
+- **Content:** `docs/[section-number]-[section-name]/`; `docs/blog/` (date-prefixed posts); images under `docs/images/` referenced as `/images/category/image-name.webp` (WebP preferred).
+- **Infrastructure:** Node ≥20.17, npm, Mintlify CLI (`docs/docs.json`); search and GA via Mintlify/docs config. Agent does not change hosting bindings or CI secrets without an explicit ticket.
 
 ## Information Architecture
 
@@ -104,7 +104,7 @@ Using different headings, merging blocks, or omitting Verification and Evidence 
 - **Clarity:** Acronyms on first use; name exact target for "configure/set/update"; concrete nouns; descriptive link text (no "click here"); relative paths. Use concrete examples and numbers where helpful ("Block downloads >100MB during business hours"); analogies when they aid understanding. UI: **bold** or `code` for labels and menu paths (e.g. **Configuration → NGFW**).
 - **Formatting:** Lead with threat or outcome (never "This section describes…"); tables for comparisons; Mermaid for workflows; paragraphs ≤5 lines. See **Format conventions** and **Icons and visual conventions** below.
 - **Content principles (SaaS and security-product research):** **Skimmable** — descriptive headings, short paragraphs, lists; links that describe the target. **Exemplary** — include worked examples, sample configs, and expected outcomes; separate tutorials/examples from dense reference where it helps scanning. **ARID** — accept some repetition for clarity; prefer self-contained docs over over-DRYing (Write the Docs). **Consistent** — one style and terminology across docs; critical for control names, parameters, and log fields. **Current** — incorrect documentation is worse than missing; version docs when behavior differs by version.
-- **Evidence:** Images in `/static/img/` → `/img/category/name.webp`; alt text; screenshots and logs per feature. Diagrams: Mermaid preferred; caption or alt. Logs: what to check, where, pattern, success indicator. Code: language tags, comments, expected output when relevant.
+- **Evidence:** Images in `docs/images/` → `/images/category/name.webp`; alt text; screenshots and logs per feature. Diagrams: Mermaid preferred; caption or alt. Logs: what to check, where, pattern, success indicator. Code: language tags, comments, expected output when relevant.
 
 #### Format conventions
 
@@ -195,7 +195,7 @@ Before drafting: gather SafeSquid sources (docs, guides, release notes); at leas
 4. **Draft** — problem, benefits, prerequisites, implementation (and verification/troubleshooting where appropriate; headings may differ or blocks merged/omitted); PBAC; add evidence (diagrams, screenshots, logs); cross-links and next steps.
 5. **Run pre-publication checklist** — verify against Writing Guidelines, structure, technical, review.
 
-**Placement:** Docs in `docs/[section-number]-[section-name]/`; blog in `blog/` with date prefix (YYYY-MM-DD-Title.md); images in `/static/img/`; internal links relative.
+**Placement:** Docs in `docs/[section-number]-[section-name]/`; blog posts in `docs/blog/` with date prefix (YYYY-MM-DD-Title.md); images in `docs/images/`; internal links relative.
 
 ### Main file (main.md)
 
@@ -225,7 +225,7 @@ Verify against the sections above; no need to duplicate every rule here.
 
 - **Content:** Frontmatter complete; correct content type and page goal; content covers problem, benefits, prerequisites, implementation (and verification/troubleshooting where appropriate—different headings or merged/omitted blocks are acceptable); opens with threat/outcome; jargon defined; real threats/apps named; concrete examples; Common Pitfalls on config-heavy pages; Next steps at end. CISO bar met in body copy (risk and business impact, compliance where relevant, evidence/audit trail, trade-offs stated)—no separate CISO callouts. PBAC and voice/formatting per Writing Guidelines.
 - **Structure:** Headings per guidelines; main.md present with section overview and quickstart path as applicable; main.md updated for new/changed docs.
-- **Technical:** Markdown valid; internal links relative and working; images in `/static/img/`, paths correct; frontmatter valid YAML; code blocks with syntax highlighting. Screenshots current; code tested or scoped; procedures produce expected results.
+- **Technical:** Markdown valid; internal links relative and working; images in `docs/images/`, paths correct; frontmatter valid YAML; code blocks with syntax highlighting. Screenshots current; code tested or scoped; procedures produce expected results.
 - **Review:** Terminology and formatting consistent; format conventions followed (user-entered bold, output code, consistent menu style); icons used consistently (✅❌⚠️); cross-references correct; ready for publication and proper file placement. For release notes: version/date and summary present; linked from relevant docs where appropriate.
 
 ## Security and delivery

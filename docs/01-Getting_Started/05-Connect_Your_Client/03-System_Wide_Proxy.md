@@ -24,13 +24,13 @@ keywords:
 
 :::tip When to Use System-Wide Proxy
 
-Use system-wide proxy for complete coverage on a single machine. For enterprise rollout (100+ endpoints), use [Enterprise Deployment](/docs/Getting_Started/Connect_Your_Client/Enterprise_Deployment/) to push settings via GPO/MDM.
+Use system-wide proxy for complete coverage on a single machine. For enterprise rollout (100+ endpoints), use [Enterprise Deployment](/01-Getting_Started/05-Connect_Your_Client/04-Enterprise_Deployment) to push settings via GPO/MDM.
 
 :::
 
 :::caution Not All Apps Respect System Proxy
 
-Some applications (Docker, Git, npm, Python pip) ignore system proxy settings and require [application-specific configuration](/docs/Getting_Started/Connect_Your_Client/Application_Specific_Configuration/).
+Some applications (Docker, Git, npm, Python pip) ignore system proxy settings and require [application-specific configuration](/01-Getting_Started/05-Connect_Your_Client/05-Application_Specific_Configuration).
 
 :::
 
@@ -266,7 +266,7 @@ Navigate to an internal site (e.g., `http://intranet.local`)
 | Browser works, CLI tools don't | Environment variables not set | Add to `/etc/environment` or shell profile (see steps above) |
 | "Proxy refusing connections" | SafeSquid not running or firewall blocking | **Server:** `systemctl status safesquid` <br/> **Client:** `telnet 192.168.1.100 8080` |
 | Settings don't persist after reboot | Not saved to system config | Use `/etc/environment` (Linux) or System Settings (Win/Mac), not session exports |
-| Some apps ignore proxy | App uses own proxy settings | See [Application-Specific Configuration](/docs/Getting_Started/Connect_Your_Client/Application_Specific_Configuration/) |
+| Some apps ignore proxy | App uses own proxy settings | See [Application-Specific Configuration](/01-Getting_Started/05-Connect_Your_Client/05-Application_Specific_Configuration) |
 | Bypass list not working | Syntax error (semicolons vs commas) | Windows: use `;` <br/> Linux/macOS: use `,` |
 | WPAD conflicts with manual proxy | Auto-detect enabled | Disable "Automatically detect settings" / "Auto Proxy Discovery" |
 
@@ -310,7 +310,7 @@ Only use this method if you're comfortable with registry editing. Incorrect chan
 
 ## Next Steps
 
-1. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm all application traffic flows through SafeSquid
-2. **[Application-Specific Configuration](/docs/Getting_Started/Connect_Your_Client/Application_Specific_Configuration/)** — Configure Docker, Git, npm, and other tools that ignore system proxy
-3. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Deploy SafeSquid root CA for HTTPS inspection
-4. **Scale to enterprise:** [Enterprise Deployment](/docs/Getting_Started/Connect_Your_Client/Enterprise_Deployment/) — Push system proxy via GPO/MDM for 100+ endpoints
+1. **[Verify Your Setup](/01-Getting_Started/06-Verify_Your_Setup)** — Confirm all application traffic flows through SafeSquid
+2. **[Application-Specific Configuration](/01-Getting_Started/05-Connect_Your_Client/05-Application_Specific_Configuration)** — Configure Docker, Git, npm, and other tools that ignore system proxy
+3. **[SSL Inspection](/05-SSL_Inspection/main)** — Deploy SafeSquid root CA for HTTPS inspection
+4. **Scale to enterprise:** [Enterprise Deployment](/01-Getting_Started/05-Connect_Your_Client/04-Enterprise_Deployment) — Push system proxy via GPO/MDM for 100+ endpoints

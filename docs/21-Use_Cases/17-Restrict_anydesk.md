@@ -11,33 +11,33 @@ keywords:
 
 
 
-## [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
+## [Access the SafeSquid User Interface](/02-SafeSquid_SWG/01-Configuration_Portal)
 
 
 
 ## Go to configure page
-![Go to configure page to Restict anydesk](/img/How_To/Restrict_any_desk/image1.webp)
+![Go to configure page to Restict anydesk](/images/How_To/Restrict_any_desk/image1.webp)
 
 
 
 ## Go to Real time content security
-![Select HTTPS Inspection option in Real time content security section to Restrict anydesk](/img/How_To/Restrict_any_desk/image2.webp)
+![Select HTTPS Inspection option in Real time content security section to Restrict anydesk](/images/How_To/Restrict_any_desk/image2.webp)
 
-![Enabled Global section as true to restrict anydesk and to edit Inspection policy](/img/How_To/Restrict_any_desk/image3.webp)
+![Enabled Global section as true to restrict anydesk and to edit Inspection policy](/images/How_To/Restrict_any_desk/image3.webp)
 
-![Enabled Global section as true to restrict anydesk and to edit Inspection policy](/img/How_To/Restrict_any_desk/image4.webp)
+![Enabled Global section as true to restrict anydesk and to edit Inspection policy](/images/How_To/Restrict_any_desk/image4.webp)
 
-![Select Access profiles in Restriction policies to access default policies to restrict any desk](/img/How_To/Restrict_any_desk/image5.webp)
+![Select Access profiles in Restriction policies to access default policies to restrict any desk](/images/How_To/Restrict_any_desk/image5.webp)
 
-![Default Restrict remote desktop application policies present in policies and profiles section](/img/How_To/Restrict_any_desk/image6.webp)
+![Default Restrict remote desktop application policies present in policies and profiles section](/images/How_To/Restrict_any_desk/image6.webp)
 
-![Edit one of clone policy in policies and profile section to restrict anydesk](/img/How_To/Restrict_any_desk/image7.webp)
+![Edit one of clone policy in policies and profile section to restrict anydesk](/images/How_To/Restrict_any_desk/image7.webp)
 
-![Edit and entry comment and request type in policy to restrict anydesk](/img/How_To/Restrict_any_desk/image8.webp)
+![Edit and entry comment and request type in policy to restrict anydesk](/images/How_To/Restrict_any_desk/image8.webp)
 
-![Save Restrict anydesk policy](/img/How_To/Restrict_any_desk/image9.webp)
+![Save Restrict anydesk policy](/images/How_To/Restrict_any_desk/image9.webp)
 
-![Save configuration of policy to restrict anydesk](/img/How_To/Restrict_any_desk/image10.webp)
+![Save configuration of policy to restrict anydesk](/images/How_To/Restrict_any_desk/image10.webp)
 
 
 

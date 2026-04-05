@@ -39,11 +39,11 @@ Without destination geography visibility, organizations cannot enforce regional 
 
 ## Prerequisites
 
-- SafeSquid installed and operational (see [Getting Started](/docs/Getting_Started/main/))
-- Profiling Engine enabled (see [Profiling Engine](/docs/Profiling_Engine/main/))
+- SafeSquid installed and operational (see [Getting Started](/01-Getting_Started/main))
+- Profiling Engine enabled (see [Profiling Engine](/07-Profiling_Engine/main))
 - Up-to-date GeoIP database (SafeSquid includes MaxMind GeoLite2 by default)
-- Admin access to [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/)
-- Consistent DNS resolution (see [Supporting Services: BIND](/docs/SafeSquid_SWG/Supporting_Services/Bind/))
+- Admin access to [Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal)
+- Consistent DNS resolution (see [Supporting Services: BIND](/02-SafeSquid_SWG/07-Supporting_Services/02-Bind))
 
 
 
@@ -66,9 +66,9 @@ Without destination geography visibility, organizations cannot enforce regional 
 
 4. **Apply to policies**  
    Reference the geo-location profile in:
-   - **Access Control:** Block/allow by destination country (see [Access Restriction](/docs/Access_Restriction/main/))
-   - **Bandwidth Management:** Prioritize local regions (see [Manage Bandwidth](/docs/Performance_Accelerators/Manage_Bandwidth/))
-   - **Reporting:** Build dashboards by destination geography (see [Reporting Module](/docs/Audit_Forensics/Reporting_Module/))
+   - **Access Control:** Block/allow by destination country (see [Access Restriction](/08-Access_Restriction/main))
+   - **Bandwidth Management:** Prioritize local regions (see [Manage Bandwidth](/16-Performance_Accelerators/03-Manage_Bandwidth))
+   - **Reporting:** Build dashboards by destination geography (see [Reporting Module](/15-Audit_Forensics/01-Reporting_Module))
 
 5. **Test with regional destinations**  
    Validate by accessing known sites hosted in target countries.
@@ -78,8 +78,8 @@ Without destination geography visibility, organizations cannot enforce regional 
 ## Verification
 
 - **Interface**: Profile visible, enabled, and referenced in policies.
-- **Logs**: Confirm `server_country`, `server_region`, and `server_asn` in [Security Logs](/docs/Audit_Forensics/Security_Logs/).
-- **Demonstrate control to auditor**: Export logs or run a report filtered by `server_country`; show policy configuration that denies or allows by geography; provide a country-based dashboard from the [Reporting Module](/docs/Audit_Forensics/Reporting_Module/) as evidence of active enforcement.
+- **Logs**: Confirm `server_country`, `server_region`, and `server_asn` in [Security Logs](/15-Audit_Forensics/02-Security_Logs).
+- **Demonstrate control to auditor**: Export logs or run a report filtered by `server_country`; show policy configuration that denies or allows by geography; provide a country-based dashboard from the [Reporting Module](/15-Audit_Forensics/01-Reporting_Module) as evidence of active enforcement.
 - **Curl test**:
 
 ```bash
@@ -105,19 +105,19 @@ profile=Block-High-Risk-Countries rule=deny-non-compliant-regions user=jdoe
   - Fix: update GeoIP database; restart profiling service if required
 - CDN or anycast endpoints
   - Symptom: destination resolves to global POP; country differs from brand site location.
-  - Fix: allow-list CDNs by ASN where appropriate; use [Application Signatures](/docs/Profiling_Engine/Application_Signatures/).
+  - Fix: allow-list CDNs by ASN where appropriate; use [Application Signatures](/07-Profiling_Engine/03-Application_Signatures).
 - Private or RFC1918 destinations
   - Symptom: no geo data for non-routable IPs
-  - Fix: add explicit policy exceptions; rely on identity or application profiles. See [User Identities](/docs/Profiling_Engine/User_Identities/main/).
+  - Fix: add explicit policy exceptions; rely on identity or application profiles. See [User Identities](/07-Profiling_Engine/01-User_Identities/main).
 - DNS-based variance
   - Symptom: different resolver returns regionally distinct IPs.
-  - Fix: standardize resolvers; verify [Integrated DNS Security](/docs/SafeSquid_SWG/Integrated_DNS_Security/).
+  - Fix: standardize resolvers; verify [Integrated DNS Security](/02-SafeSquid_SWG/06-Integrated_DNS_Security).
 - IPv6 classification gaps
   - Symptom: missing geo for v6-only hosts
   - Fix: ensure IPv6 ranges in GeoIP; confirm dual-stack handling
 - HTTPS SNI/IP mismatch
   - Symptom: SNI points to geo X, IP maps to geo Y
-  - Fix: prefer IP-based geo for enforcement; validate SNI with server verification. See [SSL Inspection](/docs/SSL_Inspection/main/).
+  - Fix: prefer IP-based geo for enforcement; validate SNI with server verification. See [SSL Inspection](/05-SSL_Inspection/main).
 - Performance impact from complex geo sets
   - Symptom: latency on policy evaluation
   - Fix: consolidate countries into regions; push heavy rules higher in precedence; cache outcomes

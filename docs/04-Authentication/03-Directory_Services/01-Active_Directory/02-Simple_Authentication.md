@@ -22,7 +22,7 @@ Simple authentication validates domain users via LDAP bind. When users browse th
 | Troubleshooting authentication issues | Production environment for domain users |
 
 :::info Prerequisites
-- [Setup Active Directory Integration](/docs/Authentication/Directory_Services/Active_Directory/Setup_Active_Directory_Integration/) must be completed.
+- [Setup Active Directory Integration](/04-Authentication/03-Directory_Services/01-Active_Directory/01-Setup_Active_Directory_Integration) must be completed.
 - SafeSquid must be able to fetch LDAP entities (verify in **LDAP Entities** tab).
 :::
 
@@ -36,7 +36,7 @@ Simple authentication validates domain users via LDAP bind. When users browse th
    - Ensure **LDAP Bind Method** is set to **SIMPLE** (for browser-prompt authentication).
 4. **Save Configuration:** Click the checkmark to save.
 
-![Ensure LDAP Enabled](/img/How_To/Integrate_Active_Directory_For_Simple_Authentication/image4.webp)
+![Ensure LDAP Enabled](/images/How_To/Integrate_Active_Directory_For_Simple_Authentication/image4.webp)
 
 ## Enable Authentication in Access Rules
 
@@ -67,6 +67,6 @@ Simple authentication validates domain users via LDAP bind. When users browse th
 
 ## Next steps
 
-- [Configure SSO Authentication](/docs/Authentication/Directory_Services/Active_Directory/SSO_Authentication/) for a transparent user experience.
-- [Access Restriction](/docs/Access_Restriction/main/) to define policies by AD group.
-- [SSL Inspection](/docs/SSL_Inspection/main/) to attribute HTTPS traffic to AD users.
+- [Configure SSO Authentication](/04-Authentication/03-Directory_Services/01-Active_Directory/03-SSO_Authentication) for a transparent user experience.
+- [Access Restriction](/08-Access_Restriction/main) to define policies by AD group.
+- [SSL Inspection](/05-SSL_Inspection/main) to attribute HTTPS traffic to AD users.

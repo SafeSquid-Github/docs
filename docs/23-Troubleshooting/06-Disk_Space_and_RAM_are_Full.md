@@ -76,7 +76,7 @@ change the directory to /opt/safesquid/bin by using the command below:
 ```bash
 cd /opt/safesquid/bin
 ```
-![listing all the contents from /opt/safesquid/bin](/img/Troubleshooting/Disk_space_and_RAM_is_full_on_SafeSquid_server/image1.webp)
+![listing all the contents from /opt/safesquid/bin](/images/Troubleshooting/Disk_space_and_RAM_is_full_on_SafeSquid_server/image1.webp)
 
 The default files and folders are:
 

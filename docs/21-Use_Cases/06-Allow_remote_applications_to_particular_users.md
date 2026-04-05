@@ -21,7 +21,7 @@ When a user tries to access remote application software, First SafeSquid checks 
 
 
 ## How to Allow Remote Applications?
-Follow the Link: [Allow anydesk](/docs/Use_Cases/Allow_anydesk/)
+Follow the Link: [Allow anydesk](/21-Use_Cases/04-Allow_anydesk)
 
 
 

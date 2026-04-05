@@ -51,9 +51,9 @@ The document below covers Cloud Restore configuration and usage.
 
 ## Disaster recovery configuration guides
 
-### [Configure Cloud Restore](/docs/Disaster_Recovery/Configure_Cloud_Restore/)
+### [Configure Cloud Restore](/22-Disaster_Recovery/01-Configure_Cloud_Restore)
 Recovery requires Cloud Restore to be configured and the same activation key. The document covers how Cloud Restore works, required setup (Monit), and step-by-step configuration in the SafeSquid interface. Restoring configuration and SSL certificates from the cloud reduces downtime and rework. Use this document to implement and run disaster recovery.
 
 ## Next steps
 
-After configuring Cloud Restore, verify with [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/); for HA see [Proxy Clustering](/docs/Proxy_Clustering/main/).
+After configuring Cloud Restore, verify with [Verify Your Setup](/01-Getting_Started/06-Verify_Your_Setup); for HA see [Proxy Clustering](/17-Proxy_Clustering/main).

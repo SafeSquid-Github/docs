@@ -27,40 +27,40 @@ Organizations often want to allow Facebook for morale or recruitment but limit r
 
 
 ## Prerequisites
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, refer to the document - [How to enable HTTPS Inspection](/docs/SSL_Inspection/main/).
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, refer to the document - [How to enable HTTPS Inspection](/05-SSL_Inspection/main).
 
 
 
-## [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
-![Access safesquid user interface to enable Facebook read only mode](/img/How_To/Facebook_Read_Only_Mode/image1.webp)
+## [Access the SafeSquid User Interface](/02-SafeSquid_SWG/01-Configuration_Portal)
+![Access safesquid user interface to enable Facebook read only mode](/images/How_To/Facebook_Read_Only_Mode/image1.webp)
 
-![Search 'FACEBOOK READ ONLY MODE' in search section](/img/How_To/Facebook_Read_Only_Mode/image2.webp)
+![Search 'FACEBOOK READ ONLY MODE' in search section](/images/How_To/Facebook_Read_Only_Mode/image2.webp)
 
 
 
 ## Search policy: "FACEBOOK READ ONLY MODE" to Search
 
-![Search 'FACEBOOK READ ONLY MODE' in access profiles under restriction policies ](/img/How_To/Facebook_Read_Only_Mode/image3.webp)
+![Search 'FACEBOOK READ ONLY MODE' in access profiles under restriction policies ](/images/How_To/Facebook_Read_Only_Mode/image3.webp)
 
 
 
 ## Edit policies and profiles to Enable as TRUE
-![Enables 'FACEBOOK READ ONLY MODE' as true to make Facebook read only mode ](/img/How_To/Facebook_Read_Only_Mode/image4.webp)
+![Enables 'FACEBOOK READ ONLY MODE' as true to make Facebook read only mode ](/images/How_To/Facebook_Read_Only_Mode/image4.webp)
 
-![Click enabled 'FACEBOOK READ ONLY MODE' policy as true to make Facebook read only mode ](/img/How_To/Facebook_Read_Only_Mode/image5.webp)
+![Click enabled 'FACEBOOK READ ONLY MODE' policy as true to make Facebook read only mode ](/images/How_To/Facebook_Read_Only_Mode/image5.webp)
 
-![Save 'FACEBOOK READ ONLY MODE' policy as true to make Facebook read only mode ](/img/How_To/Facebook_Read_Only_Mode/image6.webp)
+![Save 'FACEBOOK READ ONLY MODE' policy as true to make Facebook read only mode ](/images/How_To/Facebook_Read_Only_Mode/image6.webp)
 
 
 
 ## Access FACEBOOK to verify
-![Access Facebook to verify Facebook read only mode policy](/img/How_To/Facebook_Read_Only_Mode/image7.webp)
+![Access Facebook to verify Facebook read only mode policy](/images/How_To/Facebook_Read_Only_Mode/image7.webp)
 
-![Test result of Facebook read only mode policy](/img/How_To/Facebook_Read_Only_Mode/image8.webp)
+![Test result of Facebook read only mode policy](/images/How_To/Facebook_Read_Only_Mode/image8.webp)
 
-![Test result of Facebook read only mode policy](/img/How_To/Facebook_Read_Only_Mode/image9.webp)
+![Test result of Facebook read only mode policy](/images/How_To/Facebook_Read_Only_Mode/image9.webp)
 
-![Test result of Facebook read only mode policy](/img/How_To/Facebook_Read_Only_Mode/image10.webp)
+![Test result of Facebook read only mode policy](/images/How_To/Facebook_Read_Only_Mode/image10.webp)
 
-![Test result of Facebook read only mode policy](/img/How_To/Facebook_Read_Only_Mode/image11.webp)
+![Test result of Facebook read only mode policy](/images/How_To/Facebook_Read_Only_Mode/image11.webp)
 

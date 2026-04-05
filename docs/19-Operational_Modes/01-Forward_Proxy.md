@@ -36,38 +36,38 @@ Explicit configuration ensures only intended traffic is inspected. Policy enforc
 
 1. Open Chrome browser settings from the toolbar.
 
-   ![Chrome menu](/img/How_To/How_To_configure_Proxy_In_a_Browser/image1.webp)
+   ![Chrome menu](/images/How_To/How_To_configure_Proxy_In_a_Browser/image1.webp)
 
-   ![Settings option](/img/How_To/How_To_configure_Proxy_In_a_Browser/image2.webp)
+   ![Settings option](/images/How_To/How_To_configure_Proxy_In_a_Browser/image2.webp)
 
 2. Click the **System** tab in Settings, or search for "proxy" in the search bar.
 
-   ![System tab](/img/How_To/How_To_configure_Proxy_In_a_Browser/image3.webp)
+   ![System tab](/images/How_To/How_To_configure_Proxy_In_a_Browser/image3.webp)
 
-   ![Search proxy](/img/How_To/How_To_configure_Proxy_In_a_Browser/image4.webp)
+   ![Search proxy](/images/How_To/How_To_configure_Proxy_In_a_Browser/image4.webp)
 
 3. Click **Open your computer's proxy settings**.
 
-   ![Proxy settings link](/img/How_To/How_To_configure_Proxy_In_a_Browser/image5.webp)
+   ![Proxy settings link](/images/How_To/How_To_configure_Proxy_In_a_Browser/image5.webp)
 
 4. Enable **Use a proxy server**.
 
-   ![Enable proxy](/img/How_To/How_To_configure_Proxy_In_a_Browser/image6.webp)
+   ![Enable proxy](/images/How_To/How_To_configure_Proxy_In_a_Browser/image6.webp)
 
-   ![Proxy toggle](/img/How_To/How_To_configure_Proxy_In_a_Browser/image7.webp)
+   ![Proxy toggle](/images/How_To/How_To_configure_Proxy_In_a_Browser/image7.webp)
 
 5. Enter the proxy server IP address and port **8080**.
 
-   ![Proxy address and port](/img/How_To/How_To_configure_Proxy_In_a_Browser/image8.webp)
+   ![Proxy address and port](/images/How_To/How_To_configure_Proxy_In_a_Browser/image8.webp)
 
 6. (Optional) Enter domains and IP addresses to bypass the proxy in the exclusion field:
    - Example: `infatica.io`, `192.158.1.38`, addresses starting with `127.`
 
-   ![Proxy bypass list](/img/How_To/How_To_configure_Proxy_In_a_Browser/image9.webp)
+   ![Proxy bypass list](/images/How_To/How_To_configure_Proxy_In_a_Browser/image9.webp)
 
 7. Click **Save**.
 
-   ![Save settings](/img/How_To/How_To_configure_Proxy_In_a_Browser/image10.webp)
+   ![Save settings](/images/How_To/How_To_configure_Proxy_In_a_Browser/image10.webp)
 
 
 
@@ -77,31 +77,31 @@ Firefox allows browser-specific proxy configuration without affecting system-wid
 
 1. Open Firefox and click the **menu button** (three horizontal lines) in the top right corner.
 
-   ![Firefox menu](/img/How_To/How_To_configure_Proxy_In_a_Browser/image11.webp)
+   ![Firefox menu](/images/How_To/How_To_configure_Proxy_In_a_Browser/image11.webp)
 
 2. Click **Settings**.
 
-   ![Firefox settings](/img/How_To/How_To_configure_Proxy_In_a_Browser/image12.webp)
+   ![Firefox settings](/images/How_To/How_To_configure_Proxy_In_a_Browser/image12.webp)
 
 3. Scroll down to **Network Settings** in the General section.
 
-   ![Network Settings](/img/How_To/How_To_configure_Proxy_In_a_Browser/image13.webp)
+   ![Network Settings](/images/How_To/How_To_configure_Proxy_In_a_Browser/image13.webp)
 
 4. Click the **Settings** button.
 
-   ![Settings button](/img/How_To/How_To_configure_Proxy_In_a_Browser/image14.webp)
+   ![Settings button](/images/How_To/How_To_configure_Proxy_In_a_Browser/image14.webp)
 
 5. Select **Manual proxy configuration**.
 
-   ![Manual proxy option](/img/How_To/How_To_configure_Proxy_In_a_Browser/image15.webp)
+   ![Manual proxy option](/images/How_To/How_To_configure_Proxy_In_a_Browser/image15.webp)
 
 6. Enter the proxy server address and port number.
 
-   ![Proxy details](/img/How_To/How_To_configure_Proxy_In_a_Browser/image16.webp)
+   ![Proxy details](/images/How_To/How_To_configure_Proxy_In_a_Browser/image16.webp)
 
 7. Click **OK** to save changes.
 
-   ![Save Firefox settings](/img/How_To/How_To_configure_Proxy_In_a_Browser/image17.webp)
+   ![Save Firefox settings](/images/How_To/How_To_configure_Proxy_In_a_Browser/image17.webp)
 
 
 
@@ -125,7 +125,7 @@ Open `http://safesquid.cfg` through the proxy; the SafeSquid WebGUI loads. Brows
 
 ## Next steps
 
-- [Transparent Proxy](/docs/Operational_Modes/Transparent_Proxy/) for interception without client proxy configuration.
-- [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/) for PAC file, system-wide, and enterprise deployment.
-- [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) to confirm end-to-end connectivity.
+- [Transparent Proxy](/19-Operational_Modes/02-Transparent_Proxy) for interception without client proxy configuration.
+- [Connect Your Client](/01-Getting_Started/05-Connect_Your_Client/main) for PAC file, system-wide, and enterprise deployment.
+- [Verify Your Setup](/01-Getting_Started/06-Verify_Your_Setup) to confirm end-to-end connectivity.
 

@@ -1,65 +1,42 @@
-name: Build Docs and Publish
-run-name: Build triggered by ${{ github.actor }}
+name: Validate documentation
+
+run-name: Docs validation — ${{ github.actor }}
 
 on:
   push:
     branches:
       - main
       - dev
+      - mintlify-docs
+  pull_request:
+    branches:
+      - main
+      - dev
+      - mintlify-docs
 
 permissions:
   contents: read
 
 concurrency:
-  group: deploy-${{ github.ref }}
+  group: docs-validate-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Setting up docusaurus
+  validate:
+    name: Mintlify validate
     runs-on: ubuntu-latest
 
-    container:
-      image: node:20
-
     steps:
-      - name: Clone Repo
+      - name: Clone repository
         uses: actions/checkout@v4
 
-      - name: Install rsync and ssh
-        run: |
-          apt-get update
-          apt-get install -y rsync openssh-client
-
-      - name: Cache Docusaurus build cache
-        uses: actions/cache@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          path: |
-            .docusaurus
-            node_modules
-          key: ${{ runner.os }}-docusaurus-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-docusaurus-
+          node-version: '20'
 
-      - name: Install Dependencies and Build
-        run: |
-          npm install
-          npm run build
+      - name: Install dependencies
+        run: npm install
 
-      - name: Setup SSH Agent
-        uses: webfactory/ssh-agent@v0.7.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: Deploy build to server
-        run: |
-          if [ "${{ github.ref_name }}" = "main" ]; then
-            TARGET="${{ vars.REMOTE_PATH }}"
-          else
-            TARGET="${{ vars.REMOTE_PATH_DEV }}"
-          fi
-
-          rsync -avz --delete \
-            -e "ssh -o StrictHostKeyChecking=no" \
-            build/ \
-            ${{ vars.REMOTE_USER }}@${{ vars.REMOTE_HOST }}:$TARGET
+      - name: Validate Mintlify project
+        run: npm run validate

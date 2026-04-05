@@ -28,7 +28,7 @@ SafeSquid evaluates Network Signature rules (Allow List) **top to bottom** and a
 
 :::info Prerequisites
 - SafeSquid deployed and operational
-- Admin access to [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/)
+- Admin access to [Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal)
 - Known client IP addresses or subnets (static or predictable ranges)
 :::
 
@@ -39,20 +39,20 @@ Network Signature attributes traffic to IP/subnet and group, **not to a named us
 ## Configure IP-based user-groups
 
 1. **Access SafeSquid Configuration**  
-   Open the [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/) and click **Configure**.
+   Open the [Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal) and click **Configure**.
 
-   ![SafeSquid Configure page](/img/How_To/IP_based_authentication/image1.webp)
+   ![SafeSquid Configure page](/images/How_To/IP_based_authentication/image1.webp)
 
 2. **Navigate to Access Restrictions**  
    **Application Setup** → **Access Restrictions** → **Allow List**
 
-   ![Access Restrictions section](/img/How_To/IP_based_authentication/image2.webp)
-   ![Allow List tab](/img/How_To/IP_based_authentication/image3.webp)
+   ![Access Restrictions section](/images/How_To/IP_based_authentication/image2.webp)
+   ![Allow List tab](/images/How_To/IP_based_authentication/image3.webp)
 
 3. **Create New Policy**  
    Click **Add New**.
 
-   ![Add New button](/img/How_To/IP_based_authentication/image4.webp)
+   ![Add New button](/images/How_To/IP_based_authentication/image4.webp)
 
 4. **Define IP Range**  
    Enter the IP address or range in the **IP Address** field.
@@ -63,12 +63,12 @@ Network Signature attributes traffic to IP/subnet and group, **not to a named us
    - IP range: `192.168.1.50-192.168.1.100`
    - CIDR notation: `192.168.1.0/24`
 
-   ![IP Address field](/img/How_To/IP_based_authentication/image5.webp)
+   ![IP Address field](/images/How_To/IP_based_authentication/image5.webp)
 
 5. **Assign User-Group**  
    In **Add to User-Groups**, specify a unique group name (e.g., `FINANCE_DEVICES`, `GUEST_KIOSKS`, `IOT_SENSORS`).
 
-   ![User-Groups field](/img/How_To/IP_based_authentication/image6.webp)
+   ![User-Groups field](/images/How_To/IP_based_authentication/image6.webp)
 
 6. **Save Policy**  
    Click the checkmark to save.
@@ -127,11 +127,11 @@ For environments with DHCP where client IPs change:
 1. **DHCP reservations:** Assign static IPs via DHCP for critical devices
 2. **VLAN-based ranges:** Use predictable ranges per VLAN; map VLAN subnets to user-groups
 3. **Combine with MAC-based DHCP:** Tie MAC addresses to IP reservations, then use Network Signature on those IPs
-4. **Upgrade to user auth:** For dynamic endpoints (laptops, mobile), use [Directory Services](/docs/Authentication/Directory_Services/main/) instead
+4. **Upgrade to user auth:** For dynamic endpoints (laptops, mobile), use [Directory Services](/04-Authentication/03-Directory_Services/main) instead
 
 ## Next steps
 
-- **Add user authentication:** Combine Network Signature with [Directory Services](/docs/Authentication/Directory_Services/main/) or [BASIC](/docs/Authentication/BASIC/) for user-aware policies
-- **Refine access rules:** Use [Access Restriction](/docs/Access_Restriction/main/) to define what each user-group can access
-- **Enable SSL Inspection:** Configure [SSL Inspection](/docs/SSL_Inspection/main/) to inspect HTTPS traffic from IP-based groups
+- **Add user authentication:** Combine Network Signature with [Directory Services](/04-Authentication/03-Directory_Services/main) or [BASIC](/04-Authentication/01-BASIC) for user-aware policies
+- **Refine access rules:** Use [Access Restriction](/08-Access_Restriction/main) to define what each user-group can access
+- **Enable SSL Inspection:** Configure [SSL Inspection](/05-SSL_Inspection/main) to inspect HTTPS traffic from IP-based groups
 - **Report by group:** Use SafeSquid reports to analyze bandwidth and activity per user-group

@@ -20,7 +20,7 @@ This section covers the SWG architecture, components, and supporting services.
 
 ## Core Components
 
-### [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/)
+### [Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal)
 
 The web-based administrative interface for defining and managing proxy policies. Configure access restriction, SSL inspection, authentication, DLP, and operational settings through a centralized console.
 
@@ -28,7 +28,7 @@ The web-based administrative interface for defining and managing proxy policies.
 
 ---
 
-### [Application Ecosystem](/docs/SafeSquid_SWG/Application_Ecosystem/)
+### [Application Ecosystem](/02-SafeSquid_SWG/02-Application_Ecosystem)
 
 Overview of how SafeSquid components work together: proxy cluster, policy console, self-service portal, reporting, DNS security, and supporting services. Understanding the ecosystem helps with deployment planning and integration.
 
@@ -36,15 +36,15 @@ Overview of how SafeSquid components work together: proxy cluster, policy consol
 
 ---
 
-### [SafeSquid Proxy Cluster](/docs/SafeSquid_SWG/SafeSquid_Proxy_Cluster/)
+### [SafeSquid Proxy Cluster](/02-SafeSquid_SWG/03-SafeSquid_Proxy_Cluster)
 
 The central enforcement layer for HTTP/HTTPS traffic. Multiple proxy nodes can be deployed for high availability and load balancing with centralized policy management.
 
-**Details:** [Proxy Clustering](/docs/Proxy_Clustering/main/)
+**Details:** [Proxy Clustering](/17-Proxy_Clustering/main)
 
 ---
 
-### [Self-Service Portal](/docs/SafeSquid_SWG/Self-Service_Portal/)
+### [Self-Service Portal](/02-SafeSquid_SWG/04-Self-Service_Portal)
 
 Cloud-based portal for activation keys, license management, and SSL certificate generation. Reduces dependency on support for routine licensing and certificate tasks.
 
@@ -52,7 +52,7 @@ Cloud-based portal for activation keys, license management, and SSL certificate 
 
 ---
 
-### [Reporting Service](/docs/SafeSquid_SWG/Reporting_Service/)
+### [Reporting Service](/02-SafeSquid_SWG/05-Reporting_Service)
 
 Centralized log aggregation, dashboards, and forensic logging. Provides visibility into traffic patterns, policy enforcement, and compliance evidence.
 
@@ -60,27 +60,27 @@ Centralized log aggregation, dashboards, and forensic logging. Provides visibili
 
 ---
 
-### [Integrated DNS Security](/docs/SafeSquid_SWG/Integrated_DNS_Security/)
+### [Integrated DNS Security](/02-SafeSquid_SWG/06-Integrated_DNS_Security)
 
 Policy-aware DNS resolution with DNSBL integration. Blocks malicious domains and mitigates DNS tunneling attacks.
 
-**Details:** [DNS Security](/docs/DNS_Security/main/)
+**Details:** [DNS Security](/03-DNS_Security/main)
 
 ---
 
-### [Supporting Services](/docs/SafeSquid_SWG/Supporting_Services/main/)
+### [Supporting Services](/02-SafeSquid_SWG/07-Supporting_Services/main)
 
 Operational services that ensure reliability and performance:
 
-- **[Monit](/docs/SafeSquid_SWG/Supporting_Services/Monit/)** — Process monitoring and auto-restart
-- **[BIND](/docs/SafeSquid_SWG/Supporting_Services/Bind/)** — Local DNS resolver for performance
-- **[NTP](/docs/SafeSquid_SWG/Supporting_Services/NTP/)** — Time synchronization for SSO and TLS
+- **[Monit](/02-SafeSquid_SWG/07-Supporting_Services/01-Monit)** — Process monitoring and auto-restart
+- **[BIND](/02-SafeSquid_SWG/07-Supporting_Services/02-Bind)** — Local DNS resolver for performance
+- **[NTP](/02-SafeSquid_SWG/07-Supporting_Services/03-NTP)** — Time synchronization for SSO and TLS
 
 **Critical for production:** Monit prevents service downtime; BIND improves DNS performance; NTP ensures authentication works correctly.
 
 ## Next Steps
 
-1. **[Getting Started](/docs/Getting_Started/main/)** — Install and activate SafeSquid if you haven't already
-2. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Enable HTTPS decryption for policy enforcement
-3. **[Authentication](/docs/Authentication/main/)** — Integrate with Active Directory or LDAP
-4. **[Access Restriction](/docs/Access_Restriction/main/)** — Configure URL filtering and content policies
+1. **[Getting Started](/01-Getting_Started/main)** — Install and activate SafeSquid if you haven't already
+2. **[SSL Inspection](/05-SSL_Inspection/main)** — Enable HTTPS decryption for policy enforcement
+3. **[Authentication](/04-Authentication/main)** — Integrate with Active Directory or LDAP
+4. **[Access Restriction](/08-Access_Restriction/main)** — Configure URL filtering and content policies

@@ -276,9 +276,9 @@ Or open in a browser on the server (if GUI available): `http://localhost:2812`
 
 ## Next Steps
 
-1. **[BIND](/docs/SafeSquid_SWG/Supporting_Services/Bind/)** — Configure local DNS resolver
-2. **[NTP](/docs/SafeSquid_SWG/Supporting_Services/NTP/)** — Ensure accurate time synchronization
-3. **[Audit & Forensics](/docs/Audit_Forensics/main/)** — Monitor SafeSquid logs and events
-4. **[Troubleshooting](/docs/Troubleshooting/main/)** — Common issues and fixes
+1. **[BIND](/02-SafeSquid_SWG/07-Supporting_Services/02-Bind)** — Configure local DNS resolver
+2. **[NTP](/02-SafeSquid_SWG/07-Supporting_Services/03-NTP)** — Ensure accurate time synchronization
+3. **[Audit & Forensics](/15-Audit_Forensics/main)** — Monitor SafeSquid logs and events
+4. **[Troubleshooting](/23-Troubleshooting/main)** — Common issues and fixes
 
-**Related:** [Supporting Services Overview](/docs/SafeSquid_SWG/Supporting_Services/main/)
+**Related:** [Supporting Services Overview](/02-SafeSquid_SWG/07-Supporting_Services/main)

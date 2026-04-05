@@ -22,9 +22,9 @@ All methods produce an operational node ready for license activation and client 
 
 :::info Prerequisites
 
-- Complete [Deployment Planning](/docs/Getting_Started/Deployment_Planning/) to size hardware and prepare your environment
-- Download your [activation key](/docs/Getting_Started/Register/) (you'll need it after installation)
-- Server or VM meeting [hardware requirements](/docs/Getting_Started/Deployment_Planning/#hardware-sizing)
+- Complete [Deployment Planning](/01-Getting_Started/01-Deployment_Planning) to size hardware and prepare your environment
+- Download your [activation key](/01-Getting_Started/02-Register) (you'll need it after installation)
+- Server or VM meeting [hardware requirements](/01-Getting_Started/01-Deployment_Planning#hardware-sizing)
 
 :::
 
@@ -32,17 +32,17 @@ All methods produce an operational node ready for license activation and client 
 
 | **Environment** | **Recommended Method** | **Why** |
 |-----------------|------------------------|---------|
-| New bare metal server | [SafeSquid Appliance Builder](/docs/Getting_Started/Install_SafeSquid/SafeSquid_Appliance_Builder/) | Turnkey image with hardened OS and all dependencies |
-| New VM (VMware, Hyper-V, KVM) | [SafeSquid Appliance Builder](/docs/Getting_Started/Install_SafeSquid/SafeSquid_Appliance_Builder/) | Pre-configured networking, monitoring, and DNS |
-| AWS, Azure, DigitalOcean | [Cloud Deployment](/docs/Getting_Started/Install_SafeSquid/Cloud_Deployment/) | Cloud-optimized images and cloud-init support |
-| Existing Linux server | [Linux Server](/docs/Getting_Started/Install_SafeSquid/Linux_Server/) | Minimal footprint; you manage OS and services |
-| Private cloud (OpenStack, Proxmox) | [SafeSquid Appliance Builder](/docs/Getting_Started/Install_SafeSquid/SafeSquid_Appliance_Builder/) | Complete appliance for self-managed infrastructure |
+| New bare metal server | [SafeSquid Appliance Builder](/01-Getting_Started/03-Install_SafeSquid/01-SafeSquid_Appliance_Builder) | Turnkey image with hardened OS and all dependencies |
+| New VM (VMware, Hyper-V, KVM) | [SafeSquid Appliance Builder](/01-Getting_Started/03-Install_SafeSquid/01-SafeSquid_Appliance_Builder) | Pre-configured networking, monitoring, and DNS |
+| AWS, Azure, DigitalOcean | [Cloud Deployment](/01-Getting_Started/03-Install_SafeSquid/02-Cloud_Deployment) | Cloud-optimized images and cloud-init support |
+| Existing Linux server | [Linux Server](/01-Getting_Started/03-Install_SafeSquid/03-Linux_Server) | Minimal footprint; you manage OS and services |
+| Private cloud (OpenStack, Proxmox) | [SafeSquid Appliance Builder](/01-Getting_Started/03-Install_SafeSquid/01-SafeSquid_Appliance_Builder) | Complete appliance for self-managed infrastructure |
 
-**Still unsure?** Start with [Deployment Planning](/docs/Getting_Started/Deployment_Planning/) to size hardware and plan topology.
+**Still unsure?** Start with [Deployment Planning](/01-Getting_Started/01-Deployment_Planning) to size hardware and plan topology.
 
 ## Installation Methods
 
-### [SafeSquid Appliance Builder](/docs/Getting_Started/Install_SafeSquid/SafeSquid_Appliance_Builder/)
+### [SafeSquid Appliance Builder](/01-Getting_Started/03-Install_SafeSquid/01-SafeSquid_Appliance_Builder)
 
 **Recommended for new deployments.** SAB builds a turnkey ISO with a security-hardened OS, SafeSquid, Monit, BIND9, and optimized disk layout. Boot from ISO, answer a few prompts, and deploy.
 
@@ -52,7 +52,7 @@ All methods produce an operational node ready for license activation and client 
 
 ---
 
-### [Cloud Deployment](/docs/Getting_Started/Install_SafeSquid/Cloud_Deployment/)
+### [Cloud Deployment](/01-Getting_Started/03-Install_SafeSquid/02-Cloud_Deployment)
 
 Deploy SafeSquid on AWS, Azure, DigitalOcean, or private cloud using cloud images or cloud-init. Full policy and inspection capabilities in the cloud with auto-scaling and cloud-native networking.
 
@@ -62,7 +62,7 @@ Deploy SafeSquid on AWS, Azure, DigitalOcean, or private cloud using cloud image
 
 ---
 
-### [Linux Server](/docs/Getting_Started/Install_SafeSquid/Linux_Server/)
+### [Linux Server](/01-Getting_Started/03-Install_SafeSquid/03-Linux_Server)
 
 Install SafeSquid from a TAR package on an existing Debian, Ubuntu, or RHEL-based server. You manage OS updates, networking, and supporting services separately.
 
@@ -74,8 +74,8 @@ Install SafeSquid from a TAR package on an existing Debian, Ubuntu, or RHEL-base
 
 Once SafeSquid is installed, complete these steps in order:
 
-1. **[Activate Your License](/docs/Getting_Started/Activate/)** — Upload your activation key to make the gateway fully operational
-2. **[Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/)** — Configure at least one browser or endpoint to use the proxy
-3. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm the service is running, licensed, and proxying traffic
+1. **[Activate Your License](/01-Getting_Started/04-Activate)** — Upload your activation key to make the gateway fully operational
+2. **[Connect Your Client](/01-Getting_Started/05-Connect_Your_Client/main)** — Configure at least one browser or endpoint to use the proxy
+3. **[Verify Your Setup](/01-Getting_Started/06-Verify_Your_Setup)** — Confirm the service is running, licensed, and proxying traffic
 
-Once verified, proceed to [SSL Inspection](/docs/SSL_Inspection/main/) to enable HTTPS filtering.
+Once verified, proceed to [SSL Inspection](/05-SSL_Inspection/main) to enable HTTPS filtering.

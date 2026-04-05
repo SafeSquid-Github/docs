@@ -20,20 +20,20 @@ Generate performance plots from the SafeSquid user interface to view traffic and
 
 ### Generate performance plot
 
-Access the [SafeSquid Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/). Click **Support**. Then use the options below to generate the plot.
+Access the [SafeSquid Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal). Click **Support**. Then use the options below to generate the plot.
 
-![Select Support to Generate Performance Plot from SafeSquid User Interaface](/img/How_To/Generate_Performance_Plot_From_SafeSquid_User_Interface/image1.webp)
+![Select Support to Generate Performance Plot from SafeSquid User Interaface](/images/How_To/Generate_Performance_Plot_From_SafeSquid_User_Interface/image1.webp)
 
-![Select Time range Generate Performance Plot from SafeSquid User Interaface](/img/How_To/Generate_Performance_Plot_From_SafeSquid_User_Interface/image2.webp)
+![Select Time range Generate Performance Plot from SafeSquid User Interaface](/images/How_To/Generate_Performance_Plot_From_SafeSquid_User_Interface/image2.webp)
 
-![Select date range for custome time to Generate Performance Plot from SafeSquid User Interaface](/img/How_To/Generate_Performance_Plot_From_SafeSquid_User_Interface/image3.webp)
+![Select date range for custome time to Generate Performance Plot from SafeSquid User Interaface](/images/How_To/Generate_Performance_Plot_From_SafeSquid_User_Interface/image3.webp)
 
-![Select Generate option to Generate Performance Plot from SafeSquid User Interaface](/img/How_To/Generate_Performance_Plot_From_SafeSquid_User_Interface/image4.webp) 
+![Select Generate option to Generate Performance Plot from SafeSquid User Interaface](/images/How_To/Generate_Performance_Plot_From_SafeSquid_User_Interface/image4.webp) 
 
-![Result of Generate Performance Plot from SafeSquid User Interaface](/img/How_To/Generate_Performance_Plot_From_SafeSquid_User_Interface/image5.webp)
+![Result of Generate Performance Plot from SafeSquid User Interaface](/images/How_To/Generate_Performance_Plot_From_SafeSquid_User_Interface/image5.webp)
 
 
 
 ## Save the Plot
-![Save Generated Performance Plot from SafeSquid User Interaface](/img/How_To/Generate_Performance_Plot_From_SafeSquid_User_Interface/image6.webp)
+![Save Generated Performance Plot from SafeSquid User Interaface](/images/How_To/Generate_Performance_Plot_From_SafeSquid_User_Interface/image6.webp)
 

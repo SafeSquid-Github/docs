@@ -30,7 +30,7 @@ Deploy SafeSquid on AWS, Azure, DigitalOcean, GCP, or private cloud infrastructu
 
 ## Choose an Instance Type
 
-Match your cloud instance to the [hardware sizing matrix](/docs/Getting_Started/Deployment_Planning/#hardware-sizing):
+Match your cloud instance to the [hardware sizing matrix](/01-Getting_Started/01-Deployment_Planning#hardware-sizing):
 
 | **Concurrent Connections** | **AWS** | **Azure** | **GCP** |
 |-----------------------------|---------|-----------|---------|
@@ -98,10 +98,10 @@ Use the SafeSquid cloud-init script for automated provisioning on any cloud-init
 ### Alternative Methods
 
 **For existing cloud VMs:**
-- Use the [TAR package method](/docs/Getting_Started/Install_SafeSquid/Linux_Server/) if you already have a Linux VM
+- Use the [TAR package method](/01-Getting_Started/03-Install_SafeSquid/03-Linux_Server) if you already have a Linux VM
 
 **For platforms without cloud-init:**
-- Attach the [SAB ISO](/docs/Getting_Started/Install_SafeSquid/SafeSquid_Appliance_Builder/) to a cloud VM and follow the standard installation
+- Attach the [SAB ISO](/01-Getting_Started/03-Install_SafeSquid/01-SafeSquid_Appliance_Builder) to a cloud VM and follow the standard installation
 
 ## Verify the Deployment
 
@@ -187,7 +187,7 @@ Use cloud auto-scaling groups to match instance count to load:
 
 ### Configuration Sync
 
-Use [Configuration Sync](/docs/Proxy_Clustering/Configuration_Sync/) to replicate policies across instances in the auto-scaling group.
+Use [Configuration Sync](/17-Proxy_Clustering/02-Configuration_Sync) to replicate policies across instances in the auto-scaling group.
 
 ## Troubleshooting
 
@@ -202,8 +202,8 @@ Use [Configuration Sync](/docs/Proxy_Clustering/Configuration_Sync/) to replicat
 
 ## Next Steps
 
-1. **[Activate Your License](/docs/Getting_Started/Activate/)** — Upload your activation key to make SafeSquid fully operational
-2. **[Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/)** — Configure a browser to use the cloud proxy
-3. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm traffic flows through SafeSquid
-4. **[Enable SSL Inspection](/docs/SSL_Inspection/main/)** — Decrypt and inspect HTTPS traffic
-5. **[Set up HA](/docs/Proxy_Clustering/main/)** — Configure load balancing and failover for production
+1. **[Activate Your License](/01-Getting_Started/04-Activate)** — Upload your activation key to make SafeSquid fully operational
+2. **[Connect Your Client](/01-Getting_Started/05-Connect_Your_Client/main)** — Configure a browser to use the cloud proxy
+3. **[Verify Your Setup](/01-Getting_Started/06-Verify_Your_Setup)** — Confirm traffic flows through SafeSquid
+4. **[Enable SSL Inspection](/05-SSL_Inspection/main)** — Decrypt and inspect HTTPS traffic
+5. **[Set up HA](/17-Proxy_Clustering/main)** — Configure load balancing and failover for production

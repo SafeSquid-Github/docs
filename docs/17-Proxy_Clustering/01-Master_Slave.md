@@ -57,29 +57,29 @@ Follow these steps to connect a slave instance to a master. Perform slave config
 
 ## Step 1: Configure slave server
 
-### [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/) on the slave server
+### [Access the SafeSquid User Interface](/02-SafeSquid_SWG/01-Configuration_Portal) on the slave server
 
 
 
 ## Go to Support
-![clicking on support in safesquid interface in top right corner ](/img/How_To/Master_Slave_configuration/image1.webp)
+![clicking on support in safesquid interface in top right corner ](/images/How_To/Master_Slave_configuration/image1.webp)
 
 
 
 ## Go to Startup params
-![clicking on start up params](/img/How_To/Master_Slave_configuration/image2.webp)
+![clicking on start up params](/images/How_To/Master_Slave_configuration/image2.webp)
 
-![clicking on edit button](/img/How_To/Master_Slave_configuration/image3.webp)
+![clicking on edit button](/images/How_To/Master_Slave_configuration/image3.webp)
 
-![entering the master IP address](/img/How_To/Master_Slave_configuration/image4.webp)
+![entering the master IP address](/images/How_To/Master_Slave_configuration/image4.webp)
 
-![entering the port of master server](/img/How_To/Master_Slave_configuration/image5.webp)
+![entering the port of master server](/images/How_To/Master_Slave_configuration/image5.webp)
 
-![clicking on submit button](/img/How_To/Master_Slave_configuration/image6.webp)
+![clicking on submit button](/images/How_To/Master_Slave_configuration/image6.webp)
 
-![clicking on restart button](/img/How_To/Master_Slave_configuration/image7.webp)
+![clicking on restart button](/images/How_To/Master_Slave_configuration/image7.webp)
 
-![clicking on yes for backup current configuration to cloud](/img/How_To/Master_Slave_configuration/image8.webp)
+![clicking on yes for backup current configuration to cloud](/images/How_To/Master_Slave_configuration/image8.webp)
 
 
 
@@ -89,20 +89,20 @@ If your master requires authentication, add the slave IP to the Allow list so th
 
 ### Go to Access Restriction under Application Setup
 
-![Going to Access Restriction under Application Setup](/img/How_To/Master_Slave_configuration/image9.webp)
+![Going to Access Restriction under Application Setup](/images/How_To/Master_Slave_configuration/image9.webp)
 
 
 
 ## Go to Allow list
-![going to allow list tab in access restrictions](/img/How_To/Master_Slave_configuration/image10.webp)
+![going to allow list tab in access restrictions](/images/How_To/Master_Slave_configuration/image10.webp)
 
-![enabling the policy as true](/img/How_To/Master_Slave_configuration/image11.webp)
+![enabling the policy as true](/images/How_To/Master_Slave_configuration/image11.webp)
 
-![enabling the policy as true for giving access to slave server](/img/How_To/Master_Slave_configuration/image12.webp)
+![enabling the policy as true for giving access to slave server](/images/How_To/Master_Slave_configuration/image12.webp)
 
-![clicking on save to save the policy](/img/How_To/Master_Slave_configuration/image13.webp)
+![clicking on save to save the policy](/images/How_To/Master_Slave_configuration/image13.webp)
 
-![policy saved](/img/How_To/Master_Slave_configuration/image14.webp)
+![policy saved](/images/How_To/Master_Slave_configuration/image14.webp)
 
 
 
@@ -110,13 +110,13 @@ If your master requires authentication, add the slave IP to the Allow list so th
 
 ### Check slave configuration sync
 
-![Verifying the synchronization of defined sections on Slave server](/img/How_To/Master_Slave_configuration/image15.webp)
+![Verifying the synchronization of defined sections on Slave server](/images/How_To/Master_Slave_configuration/image15.webp)
 
 On the slave Configuration Portal, confirm that sections synced from the master appear with the same settings. Make a test policy change on the master and verify it appears on the slave within a few minutes.
 
 ### Verify reporting flow
 
-On the master, open [Reporting Service](/docs/SafeSquid_SWG/Reporting_Service/) and confirm logs from slave nodes appear in unified reports. Slave traffic should be visible on the master.
+On the master, open [Reporting Service](/02-SafeSquid_SWG/05-Reporting_Service) and confirm logs from slave nodes appear in unified reports. Slave traffic should be visible on the master.
 
 ## Verification checklist
 
@@ -143,5 +143,5 @@ On the master, open [Reporting Service](/docs/SafeSquid_SWG/Reporting_Service/) 
 - After policy changes on master, restart slave to apply: Configuration Portal → Support → Restart SafeSquid
 - Verify slave activation key matches master (same license)
 
-**Related**: [Configuration Sync](/docs/Proxy_Clustering/Configuration_Sync/), [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), [Reporting Service](/docs/SafeSquid_SWG/Reporting_Service/), [Troubleshooting](/docs/Troubleshooting/main/)
+**Related**: [Configuration Sync](/17-Proxy_Clustering/02-Configuration_Sync), [Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal), [Reporting Service](/02-SafeSquid_SWG/05-Reporting_Service), [Troubleshooting](/23-Troubleshooting/main)
 

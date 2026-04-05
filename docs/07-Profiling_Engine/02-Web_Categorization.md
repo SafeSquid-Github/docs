@@ -21,13 +21,13 @@ Use Categorize Websites to manage web-site categorization. Review and modify the
 
 
 
-## [Access SafeSquid interface](/docs/SafeSquid_SWG/Configuration_Portal/)
+## [Access SafeSquid interface](/02-SafeSquid_SWG/01-Configuration_Portal)
 
 
 
 ## Go to the configure page
 
-![clicking on configure in safesquid interface](/img/Configure/Custom_Settings/Categorize_WebSites/image1.webp)
+![clicking on configure in safesquid interface](/images/Configure/Custom_Settings/Categorize_WebSites/image1.webp)
 
 
 
@@ -43,5 +43,5 @@ Edit or modify the previously existing category of any website here.
 
 Find the category of any website here. Enter the website or domain name in the search box and click Search; a dialog box of categories appears below with a comma-separated category list for that site.
 
-![entering the website in the categorize web-sites section in custom settings](/img/Configure/Custom_Settings/Categorize_WebSites/image2.webp)
+![entering the website in the categorize web-sites section in custom settings](/images/Configure/Custom_Settings/Categorize_WebSites/image2.webp)
 

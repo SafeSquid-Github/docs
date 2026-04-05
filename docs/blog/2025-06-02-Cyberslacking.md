@@ -13,7 +13,6 @@ Traditional proxies offer blunt choices—block an entire domain or allow everyt
 
 > *Definition – Cyberslacking*: Employee use of company bandwidth and work hours for non‑business web activity, including social networking, entertainment streaming, and casual gaming.
 
-<!-- truncate -->
 
 ***
 

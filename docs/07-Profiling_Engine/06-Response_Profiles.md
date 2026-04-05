@@ -26,21 +26,21 @@ Use Response profiles to manage profiling based on responses from the web server
 
 
 
-## [Access SafeSquid interface](/docs/SafeSquid_SWG/Configuration_Portal/)
+## [Access SafeSquid interface](/02-SafeSquid_SWG/01-Configuration_Portal)
 
 
 
 ## Go to configure page
 
-![clicking on configure in safesquid interface](/img/Configure/Custom_Settings/Response_Types/image1.webp)
+![clicking on configure in safesquid interface](/images/Configure/Custom_Settings/Response_Types/image1.webp)
 
 
 
 ## Go to custom settings.
 
-![clicking on custom settings in the sidebar](/img/Configure/Custom_Settings/Response_Types/image2.webp)
+![clicking on custom settings in the sidebar](/images/Configure/Custom_Settings/Response_Types/image2.webp)
 
-![clicking on Response Types in custom settings](/img/Configure/Custom_Settings/Response_Types/image3.webp)
+![clicking on Response Types in custom settings](/images/Configure/Custom_Settings/Response_Types/image3.webp)
 
 
 
@@ -54,9 +54,9 @@ TRUE: Enable response types section.
 
 FALSE: Disable response types of section.
 
-![showing global section of response types](/img/Configure/Custom_Settings/Response_Types/image4.webp)
+![showing global section of response types](/images/Configure/Custom_Settings/Response_Types/image4.webp)
 
-![adding a new policy by clicking on add new button](/img/Configure/Custom_Settings/Response_Types/image5.webp)
+![adding a new policy by clicking on add new button](/images/Configure/Custom_Settings/Response_Types/image5.webp)
 
 
 
@@ -68,7 +68,7 @@ The testing is done in top-down order.
 
 The first entry that matches the Response Profile of a connection, will be applied to it.
 
-![showing response Type tab in Response type section](/img/Configure/Custom_Settings/Response_Types/image6.webp)
+![showing response Type tab in Response type section](/images/Configure/Custom_Settings/Response_Types/image6.webp)
 
 ### Enabled
 
@@ -193,17 +193,17 @@ This response type blocks downloads of macro-enabled documents.
 
 Response type is used to profile connections based on the response received from the web server.
 
-![showing rule which will block micro enabled documents](/img/Configure/Custom_Settings/Response_Types/image7.webp)
+![showing rule which will block micro enabled documents](/images/Configure/Custom_Settings/Response_Types/image7.webp)
 
 ### Rule#2
 
 To block all e-book files: match file extensions .azw and .epub, add the matching response type "EBOOK's", then create Access policies that block files with those extensions.
 
-![showing rule which will block response type of electronic books](/img/Configure/Custom_Settings/Response_Types/image8.webp)
+![showing rule which will block response type of electronic books](/images/Configure/Custom_Settings/Response_Types/image8.webp)
 
 ### Rule#3
 
 For connections with response header Upgrade: websocket, add the response type as WebSocket All websocket connections will now be profiled as "Websocket".
 
-![showing rule which will add the response type of websocket](/img/Configure/Custom_Settings/Response_Types/image9.webp)
+![showing rule which will add the response type of websocket](/images/Configure/Custom_Settings/Response_Types/image9.webp)
 

@@ -36,22 +36,22 @@ Using a corporate email domain (not Gmail, Yahoo, Outlook personal) unlocks ente
 
 1. **Sign up** at [https://key.safesquid.com](https://key.safesquid.com). Enter your email, name, and captcha, then click **Register**.
 
-   ![Sign up form](/img/License_Activation/image2.webp)
+   ![Sign up form](/images/License_Activation/image2.webp)
    *Registration form — enter your business email, name, and complete captcha*
 
 2. **Check your inbox** for the activation email and click **Click here to activate your account**.
 
-   ![Email confirmation](/img/License_Activation/image3.webp)
+   ![Email confirmation](/images/License_Activation/image3.webp)
    *Activation email — click the "Click here to activate your account" link*
 
 3. **Set a password** and click **Activate**.
 
-   ![Activate account](/img/License_Activation/image6.webp)
+   ![Activate account](/images/License_Activation/image6.webp)
    *Password setup — choose a strong password and click Activate*
 
 4. **Sign in**, complete your profile, then click **Download Key**.
 
-   ![Download key](/img/License_Activation/image12.webp)
+   ![Download key](/images/License_Activation/image12.webp)
    *Portal dashboard — click Download Key to save the activation_key file*
 
 The downloaded file is named `activation_key` (no extension), typically 1-5 KB in size.
@@ -76,5 +76,5 @@ Most registration issues resolve by checking spam filters or trying a different 
 
 ## Next steps
 
-1. [Install SafeSquid](/docs/Getting_Started/Install_SafeSquid/main/) on your server or VM.
-2. After installation, [Activate Your License](/docs/Getting_Started/Activate/) by uploading this key in the SafeSquid interface.
+1. [Install SafeSquid](/01-Getting_Started/03-Install_SafeSquid/main) on your server or VM.
+2. After installation, [Activate Your License](/01-Getting_Started/04-Activate) by uploading this key in the SafeSquid interface.

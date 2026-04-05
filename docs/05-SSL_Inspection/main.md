@@ -87,7 +87,7 @@ All client browsers and applications must trust the SafeSquid Root CA certificat
 
 ## Configuration Guides
 
-### [Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/)
+### [Configure HTTPS Inspection](/05-SSL_Inspection/01-Configure_HTTPS_Inspection)
 
 **Complete setup guide covering:**
 - Generate or import Root CA certificate (Self-Service Portal)
@@ -100,7 +100,7 @@ All client browsers and applications must trust the SafeSquid Root CA certificat
 
 ---
 
-### [Import Certificate into Chrome/IE](/docs/SSL_Inspection/Import_Certificate_Chrome_IE/)
+### [Import Certificate into Chrome/IE](/05-SSL_Inspection/02-Import_Certificate_Chrome_IE)
 
 **Step-by-step walkthrough** for importing the SafeSquid Root CA into the Windows Trusted Root Certification Authorities store (used by Chrome, Edge, and Internet Explorer).
 
@@ -110,15 +110,15 @@ All client browsers and applications must trust the SafeSquid Root CA certificat
 
 ## Quick Start Checklist
 
-1. ✅ **[Generate Root CA](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#generating-ssl-certificates)** in Self-Service Portal
-2. ✅ **[Enable HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#enabling-ssl-inspection)** in SafeSquid Configuration Portal
-3. ✅ **[Configure bypass policies](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#bypass-policies)** for banking/healthcare sites
+1. ✅ **[Generate Root CA](/05-SSL_Inspection/01-Configure_HTTPS_Inspection#generating-ssl-certificates)** in Self-Service Portal
+2. ✅ **[Enable HTTPS Inspection](/05-SSL_Inspection/01-Configure_HTTPS_Inspection#enabling-ssl-inspection)** in SafeSquid Configuration Portal
+3. ✅ **[Configure bypass policies](/05-SSL_Inspection/01-Configure_HTTPS_Inspection#bypass-policies)** for banking/healthcare sites
 4. ✅ **Deploy Root CA** to all clients:
-   - [Windows (Chrome/IE)](/docs/SSL_Inspection/Import_Certificate_Chrome_IE/)
-   - [Firefox](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#import-certificate-into-firefox)
+   - [Windows (Chrome/IE)](/05-SSL_Inspection/02-Import_Certificate_Chrome_IE)
+   - [Firefox](/05-SSL_Inspection/01-Configure_HTTPS_Inspection#import-certificate-into-firefox)
    - macOS via MDM or Keychain
    - Mobile via MDM
-5. ✅ **[Verify](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#verification)** inspection is working (check padlock icon, test bypass)
+5. ✅ **[Verify](/05-SSL_Inspection/01-Configure_HTTPS_Inspection#verification)** inspection is working (check padlock icon, test bypass)
 
 ---
 
@@ -140,7 +140,7 @@ A: Minimal impact (&lt;50ms latency) if hardware supports AES-NI. Without AES-NI
 
 ## Next Steps
 
-1. **[Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/)** — Complete setup guide
-2. **[Authentication](/docs/Authentication/main/)** — Enable user-aware policies after SSL Inspection
-3. **[Access Restriction](/docs/Access_Restriction/main/)** — Configure URL filtering (now works on HTTPS)
-4. **[Data Leakage Prevention](/docs/Data_Leakage_Prevention/main/)** — Scan HTTPS uploads for sensitive data
+1. **[Configure HTTPS Inspection](/05-SSL_Inspection/01-Configure_HTTPS_Inspection)** — Complete setup guide
+2. **[Authentication](/04-Authentication/main)** — Enable user-aware policies after SSL Inspection
+3. **[Access Restriction](/08-Access_Restriction/main)** — Configure URL filtering (now works on HTTPS)
+4. **[Data Leakage Prevention](/09-Data_Leakage_Prevention/main)** — Scan HTTPS uploads for sensitive data

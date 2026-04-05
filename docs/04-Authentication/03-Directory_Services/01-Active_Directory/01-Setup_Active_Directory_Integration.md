@@ -24,7 +24,7 @@ Establish a connection between SafeSquid and Active Directory (AD) to synchroniz
 
 Before configuring SafeSquid, ensure your users and groups are organized in AD. Use **Active Directory Users and Computers** on your Windows Server.
 
-![In tools section of AD server, going to active directory users and computers](/img/How_To/Integrate_AD/image1.webp)
+![In tools section of AD server, going to active directory users and computers](/images/How_To/Integrate_AD/image1.webp)
 
 :::tip Note the Base DN
 Your Base DN usually follows your domain name. Example: `safesquid.test` → `DC=safesquid,DC=test`.
@@ -38,11 +38,11 @@ Use LDAP Admin to test connectivity and find the correct DNs (Distinguished Name
 2. **Test Connection:** Click **Test connection** to verify connectivity before proceeding to SafeSquid.
 3. **Fetch DNs:** If the tree is empty, right-click the connection → **Properties** → **Fetch DNs**.
 
-![Entering the username and password in username password field](/img/How_To/Integrate_AD/image9.webp)
+![Entering the username and password in username password field](/images/How_To/Integrate_AD/image9.webp)
 
 ## 3. Integrate LDAP with SafeSquid
 
-1. **Access SafeSquid Interface:** Open the [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/) and click **Configure**.
+1. **Access SafeSquid Interface:** Open the [Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal) and click **Configure**.
 2. **Navigate to LDAP Integration:** **Application Setup** → **Integrate LDAP**. Click the **+** (Add new) icon.
 3. **Configure Connection Details:**
    - **LDAP Server FQDN / IP:** Enter your AD server details.
@@ -51,7 +51,7 @@ Use LDAP Admin to test connectivity and find the correct DNs (Distinguished Name
    - **Base DN:** Enter your directory base (e.g., `DC=safesquid,DC=test`).
    - **LDAP Domain:** Enter your AD domain (e.g., `safesquid.test`).
 
-![Filling the required fields as per the configuration](/img/How_To/Integrate_AD/image20.webp)
+![Filling the required fields as per the configuration](/images/How_To/Integrate_AD/image20.webp)
 
 4. **Save Policy:** Click the checkmark to save.
 
@@ -74,6 +74,6 @@ Use LDAP Admin to test connectivity and find the correct DNs (Distinguished Name
 
 ## Next steps
 
-- [Configure Simple Authentication](/docs/Authentication/Directory_Services/Active_Directory/Simple_Authentication/) (Browser Prompt)
-- [Configure SSO Authentication](/docs/Authentication/Directory_Services/Active_Directory/SSO_Authentication/) (Kerberos/Transparent)
-- [Access Restriction](/docs/Access_Restriction/main/) (Apply policies by AD group)
+- [Configure Simple Authentication](/04-Authentication/03-Directory_Services/01-Active_Directory/02-Simple_Authentication) (Browser Prompt)
+- [Configure SSO Authentication](/04-Authentication/03-Directory_Services/01-Active_Directory/03-SSO_Authentication) (Kerberos/Transparent)
+- [Access Restriction](/08-Access_Restriction/main) (Apply policies by AD group)

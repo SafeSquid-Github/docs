@@ -47,7 +47,7 @@ The portal centralizes routine administration tasks:
 
 :::info Before You Start
 
-- SafeSquid account (see [Register and Get Your Key](/docs/Getting_Started/Register/) if you haven't registered yet)
+- SafeSquid account (see [Register and Get Your Key](/01-Getting_Started/02-Register) if you haven't registered yet)
 - Use your business/corporate email for enterprise benefits
 - Have your SafeSquid installation details ready (for license activation)
 
@@ -65,7 +65,7 @@ The portal centralizes routine administration tasks:
 3. Login with your registered email and password
 
 :::tip First-Time Users
-If you haven't created an account yet, see [Register and Get Your Key](/docs/Getting_Started/Register/) for registration steps.
+If you haven't created an account yet, see [Register and Get Your Key](/01-Getting_Started/02-Register) for registration steps.
 :::
 
 ---
@@ -79,7 +79,7 @@ If you haven't created an account yet, see [Register and Get Your Key](/docs/Get
 3. **Click Download Key**
 4. Save the `activation_key` file (do not rename it)
 
-**Use this key for:** [License activation](/docs/Getting_Started/Activate/) during SafeSquid setup.
+**Use this key for:** [License activation](/01-Getting_Started/04-Activate) during SafeSquid setup.
 
 ---
 
@@ -91,7 +91,7 @@ If you haven't created an account yet, see [Register and Get Your Key](/docs/Get
 4. **Download** the certificate
 5. **Deploy** to all endpoints for SSL inspection
 
-**Details:** [SSL Inspection](/docs/SSL_Inspection/main/)
+**Details:** [SSL Inspection](/05-SSL_Inspection/main)
 
 ---
 
@@ -145,7 +145,7 @@ When registering with a corporate email domain (not Gmail, Yahoo, Outlook person
 
 ## Next Steps
 
-1. **[Register and Get Your Key](/docs/Getting_Started/Register/)** — Create your account if you haven't already
-2. **[Activate Your License](/docs/Getting_Started/Activate/)** — Upload the key to SafeSquid
-3. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Deploy the Root CA for HTTPS inspection
-4. **[Custom Categorization](/docs/Profiling_Engine/Web_Categorization/)** — Use custom categories in access policies
+1. **[Register and Get Your Key](/01-Getting_Started/02-Register)** — Create your account if you haven't already
+2. **[Activate Your License](/01-Getting_Started/04-Activate)** — Upload the key to SafeSquid
+3. **[SSL Inspection](/05-SSL_Inspection/main)** — Deploy the Root CA for HTTPS inspection
+4. **[Custom Categorization](/07-Profiling_Engine/02-Web_Categorization)** — Use custom categories in access policies

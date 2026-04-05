@@ -16,8 +16,8 @@ SafeSquid integrates with directory services to provide centralized user authent
 
 | Directory Service | Integration Type | Key Features |
 |-------------------|------------------|--------------|
-| [Active Directory](/docs/Authentication/Directory_Services/Active_Directory/main/) | Kerberos SSO / LDAP | Seamless SSO for domain users, group sync |
-| [OpenLDAP](/docs/Authentication/Directory_Services/OpenLDAP/main/) | Simple LDAP | Centralized identity for Linux/Unix environments |
+| [Active Directory](/04-Authentication/03-Directory_Services/01-Active_Directory/main) | Kerberos SSO / LDAP | Seamless SSO for domain users, group sync |
+| [OpenLDAP](/04-Authentication/03-Directory_Services/02-OpenLDAP/main) | Simple LDAP | Centralized identity for Linux/Unix environments |
 
 ## Why use Directory Services?
 
@@ -28,10 +28,10 @@ SafeSquid integrates with directory services to provide centralized user authent
 
 ## Choose your integration method
 
-### [Active Directory (AD)](/docs/Authentication/Directory_Services/Active_Directory/main/)
+### [Active Directory (AD)](/04-Authentication/03-Directory_Services/01-Active_Directory/main)
 Best for Windows-centric environments. Supports **SSO Authentication** for the best user experience and **Simple Authentication** for non-domain devices or specific use cases.
 
-### [OpenLDAP](/docs/Authentication/Directory_Services/OpenLDAP/main/)
+### [OpenLDAP](/04-Authentication/03-Directory_Services/02-OpenLDAP/main)
 Best for Linux/Unix-heavy environments or organizations using OpenLDAP for identity. Supports **Simple Authentication** (LDAP bind) to validate credentials against the directory.
 
 ## Next steps
@@ -39,4 +39,4 @@ Best for Linux/Unix-heavy environments or organizations using OpenLDAP for ident
 1. Choose your directory service above.
 2. Follow the **Setup Integration** guide to link SafeSquid with your directory.
 3. Configure **Simple** or **SSO** authentication rules.
-4. Combine with [Access Restriction](/docs/Access_Restriction/main/) to enforce policies by directory group.
+4. Combine with [Access Restriction](/08-Access_Restriction/main) to enforce policies by directory group.

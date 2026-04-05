@@ -59,41 +59,41 @@ rm -rf *
 
 
 ## Steps
-### [Access the SafeSquid User Interface](/docs/SafeSquid_SWG/Configuration_Portal/)
+### [Access the SafeSquid User Interface](/02-SafeSquid_SWG/01-Configuration_Portal)
 
-![your current version of safesquid will be shown in the right hand bottom corner in the safesquid interface](/img/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image1.webp)
+![your current version of safesquid will be shown in the right hand bottom corner in the safesquid interface](/images/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image1.webp)
 
 ### Go to Support Page
-![clicking on support](/img/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image2.webp)
+![clicking on support](/images/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image2.webp)
 
 ### Go to upgradation
 :::note
 Download the latest SafeSquid SWG tarball from here and save into your machine.
 :::
 
-![clicking on upgradation](/img/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image3.webp)
+![clicking on upgradation](/images/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image3.webp)
 
 ### Select new tarball
 Select the latest SafeSquid tarball downloaded and saved in your machine before.
 
-![uploading a new tarball file](/img/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image4.webp)
+![uploading a new tarball file](/images/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image4.webp)
 
-![selecting the tarball file from the pc](/img/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image5.webp)
+![selecting the tarball file from the pc](/images/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image5.webp)
 
-![you can see the browsed tarball beside browse button](/img/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image6.webp)
+![you can see the browsed tarball beside browse button](/images/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image6.webp)
 
-![Tarball file selected and ready to upload](/img/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image6.webp)
+![Tarball file selected and ready to upload](/images/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image6.webp)
 
 Click on upload button to upload new tar file.
 
-![clicking on upload button to upload](/img/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image7.webp)
+![clicking on upload button to upload](/images/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image7.webp)
 
 
 
 ## Testing Upgradation
 You can see upgraded version number of SafeSquid SWG at the bottom right corner of interface.
 
-![test if the newer version of the safesquid is showing in the bottom right hand corner](/img/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image8.webp)
+![test if the newer version of the safesquid is showing in the bottom right hand corner](/images/How_To/Upgrade_SafeSquid_To_A_Newer_Version/image8.webp)
 
 
 

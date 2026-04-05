@@ -24,7 +24,7 @@ keywords:
 
 :::tip When to Use PAC Files
 
-Use PAC files when you need flexibility (different rules for different sites) without reconfiguring every browser. For enterprise scale (100+ endpoints), use [Enterprise Deployment](/docs/Getting_Started/Connect_Your_Client/Enterprise_Deployment/) to push PAC URLs via GPO/MDM.
+Use PAC files when you need flexibility (different rules for different sites) without reconfiguring every browser. For enterprise scale (100+ endpoints), use [Enterprise Deployment](/01-Getting_Started/05-Connect_Your_Client/04-Enterprise_Deployment) to push PAC URLs via GPO/MDM.
 
 :::
 
@@ -325,8 +325,8 @@ WPAD can be hijacked on untrusted networks (coffee shops, airports) through DNS 
 
 ## Next Steps
 
-1. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm traffic flows through SafeSquid
-2. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Enable HTTPS decryption
+1. **[Verify Your Setup](/01-Getting_Started/06-Verify_Your_Setup)** — Confirm traffic flows through SafeSquid
+2. **[SSL Inspection](/05-SSL_Inspection/main)** — Enable HTTPS decryption
 3. **Scale your deployment:**
-   - **Enterprise (100+ endpoints):** [Enterprise Deployment](/docs/Getting_Started/Connect_Your_Client/Enterprise_Deployment/) — Push PAC URL via GPO/MDM
-   - **Application-specific:** [Application Configuration](/docs/Getting_Started/Connect_Your_Client/Application_Specific_Configuration/) — Configure non-browser apps
+   - **Enterprise (100+ endpoints):** [Enterprise Deployment](/01-Getting_Started/05-Connect_Your_Client/04-Enterprise_Deployment) — Push PAC URL via GPO/MDM
+   - **Application-specific:** [Application Configuration](/01-Getting_Started/05-Connect_Your_Client/05-Application_Specific_Configuration) — Configure non-browser apps

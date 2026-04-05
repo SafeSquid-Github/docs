@@ -10,8 +10,6 @@ keywords:
   - credential management
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 # BASIC Authentication
 
@@ -32,13 +30,13 @@ BASIC authentication sends credentials in base64 encoding (not encrypted). Use o
 - HTTPS proxy connections, or  
 - With SSL inspection enabled
 
-For production deployments with external access, use [Directory Services](/docs/Authentication/Directory_Services/main/) with TLS.
+For production deployments with external access, use [Directory Services](/04-Authentication/03-Directory_Services/main) with TLS.
 :::
 
 :::info Prerequisites
 - SafeSquid deployed and operational
 - Admin access to SafeSquid configuration interface (`http://safesquid.cfg/` — embedded Rest UI, NOT DNS-resolved)
-- Browser configured to use SafeSquid as proxy (see [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/))
+- Browser configured to use SafeSquid as proxy (see [Connect Your Client](/01-Getting_Started/05-Connect_Your_Client/main))
 :::
 
 ## Enable browser authentication
@@ -50,14 +48,14 @@ For production deployments with external access, use [Directory Services](/docs/
    **Application Setup** → **Access Restrictions** → **Allow List**  
    Click the orange **+** icon to add a new entry.
 
-   ![Going in the access restrictions section in application setup](/img/How_To/Setup_Authentication/image2.webp)
+   ![Going in the access restrictions section in application setup](/images/How_To/Setup_Authentication/image2.webp)
 
 3. **Configure Authentication**  
    In the new rule window:
    - Set **PAM Authentication** to **FALSE** (we're using local credentials, not OS PAM)
    - Leave **Username** and **Password** empty to apply authentication to all users (or enter specific username/password to restrict this rule to a single user)
 
-   ![Making the PAM authentication false and adding username and password in the username password field](/img/How_To/Setup_Authentication/image3.webp)
+   ![Making the PAM authentication false and adding username and password in the username password field](/images/How_To/Setup_Authentication/image3.webp)
 
 4. **Save the Configuration**  
    Click the checkmark to save the rule.
@@ -73,39 +71,35 @@ After adding users or modifying access rules, click **Apply** in the Access Rest
 ## Add users
 
 <Tabs>
-  <TabItem
-    value="SafeSquid Credential Store"
-    label="SafeSquid Credential Store"
-    default
-  >
+  <Tab title="SafeSquid Credential Store">
     **Best for:** Adding individual users with SafeSquid-only access
 
     1. **Navigate to Access Profiles**  
        Click **Configure** → **Search** → **Access Profiles**
 
-       ![Click Configure in the SafeSquid interface](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image1.webp)
-       ![Click Search in Access Profiles](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image2.webp)
+       ![Click Configure in the SafeSquid interface](/images/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image1.webp)
+       ![Click Search in Access Profiles](/images/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image2.webp)
 
     2. **Create User Entry**  
        Click **Add New** → Select **BASIC** authentication type
 
-       ![Access profiles search or policy list](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image4.webp)
-       ![Edit or add BASIC auth user entry](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image6.webp)
+       ![Access profiles search or policy list](/images/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image4.webp)
+       ![Edit or add BASIC auth user entry](/images/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image6.webp)
 
     3. **Enter Credentials**  
        Add username and password for the user
 
-       ![BASIC authentication user form or credentials](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image8.webp)
+       ![BASIC authentication user form or credentials](/images/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image8.webp)
 
     4. **Save and Apply**  
        Save the user entry and apply to the access restriction rule
 
-       ![Save BASIC auth user or policy](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image10.webp)
-       ![BASIC auth profile applied to access restriction](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image12.webp)
-       ![Configuration saved for BASIC authentication](/img/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image14.webp)
-  </TabItem>
+       ![Save BASIC auth user or policy](/images/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image10.webp)
+       ![BASIC auth profile applied to access restriction](/images/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image12.webp)
+       ![Configuration saved for BASIC authentication](/images/How_To/Adding_users_using_SafeSquid_interface_for_authentication/image14.webp)
+  </Tab>
 
-  <TabItem value="OS User Accounts (PAM)" label="OS User Accounts (PAM)">
+  <Tab title="OS User Accounts (PAM)">
     **Best for:** Users who also need OS login access
 
     1. **Create a New User**  
@@ -119,7 +113,7 @@ After adding users or modifying access rules, click **Apply** in the Access Rest
        ```
        Enter and confirm the new password when prompted.
 
-       ![Changing the password](/img/How_To/Setup_Authentication/image4.webp)
+       ![Changing the password](/images/How_To/Setup_Authentication/image4.webp)
 
     3. **Enable PAM in Access Rule**  
        In SafeSquid **Access Restrictions** → **Allow List**, edit your access rule and set **PAM Authentication** to **TRUE**. This allows SafeSquid to validate against OS users.
@@ -127,7 +121,7 @@ After adding users or modifying access rules, click **Apply** in the Access Rest
     :::tip
     Use this method when you want proxy credentials to match OS login credentials (single credential set).
     :::
-  </TabItem>
+  </Tab>
 </Tabs>
 
 ## Verification
@@ -165,12 +159,12 @@ SafeSquid's local credential store does not enforce password policies automatica
 - **Audit:** Review `/var/log/safesquid/identity.log` monthly for unauthorized attempts
 - **Segregation:** Create separate user accounts for different roles/groups
 
-For automated password policy enforcement, migrate to [Directory Services](/docs/Authentication/Directory_Services/main/).
+For automated password policy enforcement, migrate to [Directory Services](/04-Authentication/03-Directory_Services/main).
 
 ## Next steps
 
-- **Add group-based policies:** Combine authentication with [Access Restriction](/docs/Access_Restriction/main/) to enforce different rules per user or group
-- **Attribute HTTPS traffic:** Enable [SSL Inspection](/docs/SSL_Inspection/main/) so encrypted traffic shows authenticated usernames in logs
-- **Upgrade to directory:** Migrate to [Directory Services](/docs/Authentication/Directory_Services/main/) when user count grows or centralized identity is required
-- **IP-based fallback:** Use [Network Signature](/docs/Authentication/Network_Signature/) for devices that cannot authenticate
-- **Bypass apps:** Configure [Bypass Authentication](/docs/Authentication/Bypass_Authentication/) for OS updates and automatic processes
+- **Add group-based policies:** Combine authentication with [Access Restriction](/08-Access_Restriction/main) to enforce different rules per user or group
+- **Attribute HTTPS traffic:** Enable [SSL Inspection](/05-SSL_Inspection/main) so encrypted traffic shows authenticated usernames in logs
+- **Upgrade to directory:** Migrate to [Directory Services](/04-Authentication/03-Directory_Services/main) when user count grows or centralized identity is required
+- **IP-based fallback:** Use [Network Signature](/04-Authentication/02-Network_Signature) for devices that cannot authenticate
+- **Bypass apps:** Configure [Bypass Authentication](/04-Authentication/05-Bypass_Authentication) for OS updates and automatic processes

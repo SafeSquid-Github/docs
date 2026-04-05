@@ -18,7 +18,7 @@ Image Analyser AI prevents users from viewing pornographic or inappropriate imag
 
 
 ## Global
-![Image-global.jpg](/img/Configure/Real_Time_Content_Activity/Image_analyzer/image1.webp)
+![Image-global.jpg](/images/Configure/Real_Time_Content_Activity/Image_analyzer/image1.webp)
 
 ### Enabled
 Enable or Disable this section.
@@ -42,7 +42,7 @@ Images are given scores by analysing the graphical content of an image, in real 
 
 Images are blocked based on the threshold score.
 
-![Image-policy.jpg](/img/Configure/Real_Time_Content_Activity/Image_analyzer/image2.webp)
+![Image-policy.jpg](/images/Configure/Real_Time_Content_Activity/Image_analyzer/image2.webp)
 
 ### Enabled
 Enable or Disable this Policy.
@@ -102,22 +102,22 @@ Enable debugging mode to test without blocking.
 ### Rule#1
 Bypass image filtering for the marketing team. The marketing team uses social media for digital marketing; create a "Bypass image filtering" profile and an access policy that bypasses the image filter for that group. General rules still apply (adult and blacklisted sites remain blocked).
 
-![Slide1-imgFltr.webp](/img/Configure/Real_Time_Content_Activity/Image_analyzer/image3.webp)
+![Slide1-imgFltr.webp](/images/Configure/Real_Time_Content_Activity/Image_analyzer/image3.webp)
 
 ### Rule#2
 Use enhanced image scanning for connections with profile "ENFORCE PARANOID IMAGE SCAN".
 
 Threshold for image scanning is set to -1.0, which will block images where the skin exposure is even slightest compared with the score 0.0.
 
-![Slide2-imgFltr.webp](/img/Configure/Real_Time_Content_Activity/Image_analyzer/image4.webp)
+![Slide2-imgFltr.webp](/images/Configure/Real_Time_Content_Activity/Image_analyzer/image4.webp)
 
 ### Rule#3
 For profile "IMAGE ANALYZER DEBUG", render the score for each scanned image without blurring. This helps understand how image scanning works.
 
-![Slide3-imgFltr.webp](/img/Configure/Real_Time_Content_Activity/Image_analyzer/image5.webp)
+![Slide3-imgFltr.webp](/images/Configure/Real_Time_Content_Activity/Image_analyzer/image5.webp)
 
 ### Rule#4
 Apply a standard image scanning rule to every connection. Adult images are blocked. Blocked images render as blurred.
 
-![Slide4-imgFltr.webp](/img/Configure/Real_Time_Content_Activity/Image_analyzer/image6.webp)
+![Slide4-imgFltr.webp](/images/Configure/Real_Time_Content_Activity/Image_analyzer/image6.webp)
 

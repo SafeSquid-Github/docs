@@ -16,7 +16,7 @@ Simple authentication validates users against OpenLDAP using standard LDAP bind.
 :::info Prerequisites
 - SafeSquid installed and operational.
 - OpenLDAP server reachable from the SafeSquid server (default port 389).
-- Admin access to the SafeSquid [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/).
+- Admin access to the SafeSquid [Configuration Portal](/02-SafeSquid_SWG/01-Configuration_Portal).
 :::
 
 ## Configure OpenLDAP Connection
@@ -31,7 +31,7 @@ Simple authentication validates users against OpenLDAP using standard LDAP bind.
    - **Base DN:** Enter your directory base (e.g., `dc=safesquid,dc=net`).
    - **LDAP Domain:** Enter your domain name.
 
-![entering LDAP server IP](/img/How_To/Integrate_openLDAP_for_simple_authentication/image12.webp)
+![entering LDAP server IP](/images/How_To/Integrate_openLDAP_for_simple_authentication/image12.webp)
 
 4. **Save Configuration:** Click the checkmark to save.
 
@@ -54,5 +54,5 @@ Simple authentication validates users against OpenLDAP using standard LDAP bind.
 
 ## Next steps
 
-- [Enable SSO Authentication](/docs/Authentication/Directory_Services/OpenLDAP/SSO_Authentication/) to apply these identities to access rules.
-- [Access Restriction](/docs/Access_Restriction/main/) to define policies by LDAP group.
+- [Enable SSO Authentication](/04-Authentication/03-Directory_Services/02-OpenLDAP/02-SSO_Authentication) to apply these identities to access rules.
+- [Access Restriction](/08-Access_Restriction/main) to define policies by LDAP group.

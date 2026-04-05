@@ -15,7 +15,6 @@ Pressure to release new features drives teams to adopt “good‑enough” escap
 
 > *Definition – XSS‑Driven CSRF*: An attack where a malicious script injected via XSS automatically issues authenticated requests (GET, POST, PUT) to the target domain, bypassing user intent checks.
 
-<!-- truncate -->
 
 ***
 

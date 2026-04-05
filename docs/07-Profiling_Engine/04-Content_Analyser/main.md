@@ -23,7 +23,7 @@ SafeSquid prevents users from accessing inappropriate content such as pornograph
 
 
 ## Prerequisites
-HTTPS Inspection must be enabled in SafeSquid. See [How to enable HTTPS Inspection](/docs/SSL_Inspection/main/) if not yet enabled.
+HTTPS Inspection must be enabled in SafeSquid. See [How to enable HTTPS Inspection](/05-SSL_Inspection/main) if not yet enabled.
 
 
 
@@ -51,7 +51,7 @@ SafeSquid includes sample policies to support policy creation.
 
 3. The page shows existing policies. Use the search box to find policies containing 'GLOBAL BLOCK'.
 
-![blocking inappropriate content for all users](/img/How_To/Content_Filtering/image1.webp)
+![blocking inappropriate content for all users](/images/How_To/Content_Filtering/image1.webp)
 
 Edit the policy and enable the policy by setting Enabled as TRUE and save (Save button is placed at right bottom)
 
@@ -64,7 +64,7 @@ Edit the policy and enable the policy by setting Enabled as TRUE and save (Save 
 
 3. Navigate to **Filtering Policies** and set the policy's **Enabled** field to **TRUE**.
 
-Read more about [How to block inappropriate images by using Image Analyzer](/docs/Profiling_Engine/Content_Analyser/Image_Analyser_AI/)
+Read more about [How to block inappropriate images by using Image Analyzer](/07-Profiling_Engine/04-Content_Analyser/03-Image_Analyser_AI)
 
 
 
@@ -76,7 +76,7 @@ Read more about [How to block inappropriate images by using Image Analyzer](/doc
 3. Navigate to **Filtering Policies** and set the policy's **Enabled** field to **TRUE**.
 
 
-Read more about [Image Analyzer](/docs/Profiling_Engine/Content_Analyser/Image_Analyser_AI/) and [Text Analyzer](/docs/Profiling_Engine/Content_Analyser/Text_Analyser/)
+Read more about [Image Analyzer](/07-Profiling_Engine/04-Content_Analyser/03-Image_Analyser_AI) and [Text Analyzer](/07-Profiling_Engine/04-Content_Analyser/02-Text_Analyser)
 
 
 
@@ -90,9 +90,9 @@ SafeSquid’s content moderation engine analyzes and filters web content in real
 
 
 ## Included Modules
-- [Content Fingerprints](/docs/Profiling_Engine/Content_Analyser/True-Mime_Fingerprints/): Detects true MIME types through content fingerprinting to prevent file extension spoofing and malware disguise
-- [Image Analyzer](/docs/Profiling_Engine/Content_Analyser/Image_Analyser_AI/): Detects inappropriate or non-compliant visual content using AI-powered image analysis
-- [Text Analyzer](/docs/Profiling_Engine/Content_Analyser/Text_Analyser/): Scans and classifies textual content for profanity, hate speech, and policy violations
+- [Content Fingerprints](/07-Profiling_Engine/04-Content_Analyser/01-True-Mime_Fingerprints): Detects true MIME types through content fingerprinting to prevent file extension spoofing and malware disguise
+- [Image Analyzer](/07-Profiling_Engine/04-Content_Analyser/03-Image_Analyser_AI): Detects inappropriate or non-compliant visual content using AI-powered image analysis
+- [Text Analyzer](/07-Profiling_Engine/04-Content_Analyser/02-Text_Analyser): Scans and classifies textual content for profanity, hate speech, and policy violations
 
 Use these tools to build a safer and policy-compliant browsing environment.
 

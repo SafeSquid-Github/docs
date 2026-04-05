@@ -23,9 +23,9 @@ Web traffic flows through SafeSquid only when clients are configured to use it a
 :::info Before You Start
 
 - SafeSquid installed and running (verify by accessing `https://SERVER-IP:8443`)
-- License activated (see [Activate Your License](/docs/Getting_Started/Activate/)) for full feature access
+- License activated (see [Activate Your License](/01-Getting_Started/04-Activate)) for full feature access
 - Note your SafeSquid server IP address and port (default: 8080)
-- For HTTPS sites, you'll need [SSL Inspection](/docs/SSL_Inspection/main/) configured later
+- For HTTPS sites, you'll need [SSL Inspection](/05-SSL_Inspection/main) configured later
 
 :::
 
@@ -43,7 +43,7 @@ Web traffic flows through SafeSquid only when clients are configured to use it a
 
 ## Configuration Methods
 
-### [Explicit Proxy](/docs/Getting_Started/Connect_Your_Client/Explicit_Proxy/)
+### [Explicit Proxy](/01-Getting_Started/05-Connect_Your_Client/01-Explicit_Proxy)
 
 **Manual browser configuration.** Set proxy IP and port in browser settings for quick testing or controlled environments.
 
@@ -53,7 +53,7 @@ Web traffic flows through SafeSquid only when clients are configured to use it a
 
 ---
 
-### [PAC File](/docs/Getting_Started/Connect_Your_Client/PAC_File/)
+### [PAC File](/01-Getting_Started/05-Connect_Your_Client/02-PAC_File)
 
 **Automated proxy selection.** Deploy a Proxy Auto-Configuration (PAC) file that all browsers reference. Supports conditional routing (e.g., direct access for internal sites, proxy for internet).
 
@@ -63,7 +63,7 @@ Web traffic flows through SafeSquid only when clients are configured to use it a
 
 ---
 
-### [System-Wide Proxy](/docs/Getting_Started/Connect_Your_Client/System_Wide_Proxy/)
+### [System-Wide Proxy](/01-Getting_Started/05-Connect_Your_Client/03-System_Wide_Proxy)
 
 **OS-level configuration.** Configure Windows, macOS, or Linux to route all application traffic through SafeSquid—browsers, CLI tools, and background apps.
 
@@ -73,7 +73,7 @@ Web traffic flows through SafeSquid only when clients are configured to use it a
 
 ---
 
-### [Enterprise Deployment](/docs/Getting_Started/Connect_Your_Client/Enterprise_Deployment/)
+### [Enterprise Deployment](/01-Getting_Started/05-Connect_Your_Client/04-Enterprise_Deployment)
 
 **Mass rollout via GPO, MDM, or config management.** Push proxy settings to hundreds or thousands of endpoints using Group Policy (Windows), MDM (macOS/mobile), Puppet, Ansible, or SCCM.
 
@@ -83,7 +83,7 @@ Web traffic flows through SafeSquid only when clients are configured to use it a
 
 ---
 
-### [Application-Specific Configuration](/docs/Getting_Started/Connect_Your_Client/Application_Specific_Configuration/)
+### [Application-Specific Configuration](/01-Getting_Started/05-Connect_Your_Client/05-Application_Specific_Configuration)
 
 **Configure individual applications.** Set proxy for Git, npm, Docker, email clients, and CLI tools that don't inherit system proxy settings.
 
@@ -112,13 +112,13 @@ Visit a site like [whatismyip.com](https://whatismyip.com) — the displayed IP 
 - Verify SafeSquid is running: `systemctl status safesquid`
 - Check firewall allows port 8080
 - Confirm proxy IP and port in client settings
-- See [Troubleshooting](/docs/Troubleshooting/main/) for common issues
+- See [Troubleshooting](/23-Troubleshooting/main) for common issues
 
-**For HTTPS sites:** You'll see certificate warnings until [SSL Inspection](/docs/SSL_Inspection/main/) is configured.
+**For HTTPS sites:** You'll see certificate warnings until [SSL Inspection](/05-SSL_Inspection/main) is configured.
 
 ## Next Steps
 
-1. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Run comprehensive smoke tests to confirm traffic flows
-2. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Enable HTTPS decryption so SafeSquid can inspect encrypted traffic
-3. **[Configure Policies](/docs/Access_Restriction/main/)** — Set up access controls and content filtering
+1. **[Verify Your Setup](/01-Getting_Started/06-Verify_Your_Setup)** — Run comprehensive smoke tests to confirm traffic flows
+2. **[SSL Inspection](/05-SSL_Inspection/main)** — Enable HTTPS decryption so SafeSquid can inspect encrypted traffic
+3. **[Configure Policies](/08-Access_Restriction/main)** — Set up access controls and content filtering
 4. **[Scale Your Deployment](#enterprise-deployment)** — If testing succeeded, roll out to all endpoints using Enterprise Deployment methods

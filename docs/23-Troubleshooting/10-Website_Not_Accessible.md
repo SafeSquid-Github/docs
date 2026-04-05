@@ -19,7 +19,7 @@ keywords:
 ## Connection failed to proxy or origin
 When the user accesses the website, the browser displays "**Connection to 192.168.27.30:80 failed**". When the user accesses https://abc.safesquid.com/ via proxy and logs in with a corporate email ID, the browser may show "**Connection to abc.safesquid.com:443 failed**".
 
-![Error showing "Connection to abc.safesquid.com:443 failed"](/img/Troubleshooting/Connection_failure_to_websites/image1.webp)
+![Error showing "Connection to abc.safesquid.com:443 failed"](/images/Troubleshooting/Connection_failure_to_websites/image1.webp)
 
 
 
