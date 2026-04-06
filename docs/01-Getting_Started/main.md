@@ -11,64 +11,65 @@ keywords:
 
 # Getting Started
 
-## [What is SafeSquid SWG?](/02-SafeSquid_SWG/main)
+**Problem:** HTTPS-default web use bypasses coarse network controls; operators need application-layer policy, optional inspection, and auditable evidence.
 
-SafeSquid SWG (Secure Web Gateway) is the full product: proxy, policy console, reporting, and DNS security. SafeSquid is an SMP-aware HTTP Proxy Server designed for application-layer (Layer 7) security. Its Zero Trust Web Security architecture delivers scalable performance while ensuring comprehensive mitigation of Layer 7 threats.
+**Outcome:** This section moves from concept to a controlled pilot: prerequisites, install paths, activation, admin access, client routing, and verification—then points to hardening topics (SSL inspection, authentication, DNS security).
 
-![SafeSquid SWG: proxy layer, policy and configuration, reporting, and DNS security](/images/Getting-Started/Getting_Started_with_SafeSquid_Secure_Web_Gateway/image1.webp)
-*SafeSquid SWG: proxy layer, policy and configuration, reporting, and DNS security.*
+## Introduction
 
-SafeSquid SWG enforces granular web access control, deep content mitigation, and real-time visibility in enterprise web traffic.
+### What is SafeSquid SWG?
 
-:::info Before you start
+Understand what SafeSquid controls and what risk it reduces. Read: [What is SafeSquid SWG?](/01-Getting_Started/09-What_is_SafeSquid_SWG)
 
-You'll need:
-- A server or VM with minimum 4 CPU cores, 8 GB RAM
-- At least 1 network interface (2+ recommended for WAN/LAN separation or NIC bonding for HA)
-- Internet connectivity for downloads and license activation
-- A browser on a machine that can reach the server (for admin access)
-- Server firewall allowing inbound TCP 8080 (proxy) from LAN and TCP 8443 (admin UI) from admin workstations
-- Network firewall allowing SafeSquid outbound internet access
+### Who should use SafeSquid SWG?
 
-After registration, you download an activation key; the gateway becomes fully operational once the key is uploaded and verified.
+Identify operator teams, stakeholders, and deployment contexts. Read: [Who should use SafeSquid SWG?](/01-Getting_Started/10-Who_should_use_SafeSquid_SWG)
 
-:::
+### Core concepts
 
-## Pilot Deployment in 5 Steps
+Learn the control model: traffic path, policy context, and evidence outputs. Read: [Core concepts](/01-Getting_Started/11-Core_concepts)
 
-Follow the sequence below to reach a working pilot: sizing and registration, installation, license activation, and client connectivity. By the end you will have a deployed SafeSquid node, an active license, and clients sending web traffic through the proxy.
+### Architecture
 
-### [Deployment Planning](/01-Getting_Started/01-Deployment_Planning)
+Review trust boundaries and component relationships before deployment design. Read: [Architecture](/01-Getting_Started/12-Architecture)
 
-SafeSquid is platform-agnostic: single node, HA (active-passive or active-active), cloud VMs, or existing Linux hosts. The deployment guide covers sizing, hardware matrix, network bonding, and disaster recovery. Start with a single node for pilot; plan HA and DR before production.
+## Quickstart
 
-### [Register and get your key](/01-Getting_Started/02-Register) 
+Use this path to deploy a pilot with verifiable controls.
 
-Register on the [SafeSquid Self Service portal](https://key.safesquid.com) and download the activation key.
+### Prerequisites
 
-### [Install SafeSquid](/01-Getting_Started/03-Install_SafeSquid/main)
+Validate system requirements, platform support, networking, identity, certificates, DNS, and firewall requirements. Read: [Prerequisites](/01-Getting_Started/07-Prerequisites)
 
-SafeSquid can be installed via Appliance Builder ISO (SAB), cloud image, or as a TAR package. **SAB (Recommended)** for new bare metal or VM; **Cloud** for AWS, Azure, DigitalOcean, or private cloud; **Linux TAR** for an existing Linux server where you add SafeSquid only.
+### Install SafeSquid
 
-### [Activate Your License](/01-Getting_Started/04-Activate)
+Install using appliance, cloud image, or Linux package based on your environment. Read: [Install SafeSquid](/01-Getting_Started/03-Install_SafeSquid/main). Then complete [Verify Your Setup](/01-Getting_Started/06-Verify_Your_Setup) as part of installation validation.
 
-Upload the activation key in the SafeSquid Interface (accessible at `https://safesquid.cfg` — an embedded Rest UI interface built into SafeSquid; accessible only when your client is configured to use the proxy, but NOT resolved by SafeSquid's DNS resolver — or directly at `https://YOUR-SERVER-IP:8443` before proxy setup). The gateway is fully operational only after license verification.
+### Access the Interface
 
-### [Connect Your Client](/01-Getting_Started/05-Connect_Your_Client/main) 
+Use `https://YOUR-SERVER-IP:8443` before proxy setup and `https://safesquid.cfg` after proxy routing is active. Read: [Access the Interface](/01-Getting_Started/08-Access_the_Interface)
 
-Clients can be configured to use the proxy via browser settings, a PAC (Proxy Auto-Configuration) file, or system-wide proxy settings pushed via MDM or GPO. For the fastest pilot check, configure explicit proxy on one browser, then [Verify Your Setup](/01-Getting_Started/06-Verify_Your_Setup).
+### License Activation
 
-## [Troubleshooting](/23-Troubleshooting/main)
+Register, obtain your key, and activate license status in the interface. Read: [Activate Your License](/01-Getting_Started/04-Activate)
 
-If the UI doesn't load, activation fails, or clients can't reach the proxy, see the Troubleshooting section for logs and common fixes.
+## Client Configuration
+
+### Connect Your Client
+
+Configure explicit proxy, PAC file, system-wide settings, or enterprise rollout profiles. Read: [Connect Your Client](/01-Getting_Started/05-Connect_Your_Client/main)
+
+## Troubleshooting
+
+If the UI does not load, activation fails, or clients cannot connect, use the troubleshooting guides for symptom-led diagnosis and fixes. Read: [Troubleshooting](/23-Troubleshooting/main)
 
 ## Next Steps
 
-Once your pilot is operational, configure security policies in this recommended order. Items 1-3 are essential for a functional security gateway; items 4-7 extend protection and visibility:
+After pilot validation, harden policy in this order. Items 1-3 establish baseline control. Items 4-7 extend detection and prevention.
 
 1. **[SSL Inspection](/05-SSL_Inspection/main)** — Most web traffic is encrypted. Enable SSL Inspection so SafeSquid can actually see and filter HTTPS content.
 
-2. **[Authentication](/04-Authentication/main)** — Combine Active Directory user groups with network-based signatures for multi-factor authentication.
+2. **[Authentication](/04-Authentication/main)** — Tie policy to directory users and groups, and use network signatures where devices cannot log in. For MFA, integrate with directory or PAM backends that enforce MFA; SafeSquid delegates credential validation (see that hub’s note on MFA).
 
 3. **[Integrated DNS Security](/03-DNS_Security/main)** — Block malicious DNS queries, enforce policy-aware resolution, and mitigate DNS tunneling.
 
@@ -83,7 +84,7 @@ Once your pilot is operational, configure security policies in this recommended 
 ### Production Deployment
 
 When moving to production:
-- Push client configuration to all endpoints using PAC files, system-wide proxy settings, GPO, or MDM
-- Deploy SafeSquid in a cluster for high availability (active-passive or active-active)
-- Configure traffic forensics, usage reports, and real-time dashboards for visibility and compliance
-- Integrate with existing IAM, SIEM, and threat intelligence platforms
+- Push client proxy settings to all endpoints using PAC, GPO, or MDM
+- Deploy HA topology based on your continuity requirements
+- Configure reporting, forensics, and retention for audit and incident response
+- Integrate IAM, SIEM, and threat intelligence workflows

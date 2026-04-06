@@ -11,11 +11,35 @@ keywords:
 
 **Goal:** Obtain an activation key so you can license SafeSquid after installation. Registration is free and takes about two minutes.
 
-:::tip Already registered?
+## Problems this step solves
+
+Operators cannot activate instances or unlock commercial capabilities without a key tied to the [Self-Service Portal](https://key.safesquid.com). Skipping registration blocks [Activate Your License](/01-Getting_Started/04-Activate).
+
+## Benefits stakeholders expect
+
+- A downloadable `activation_key` file you reuse across nodes (per steps below)
+- Account recovery and re-download if the file is lost
+- Enterprise-oriented options when using a business email (see tip below)
+
+## Advantages (source-backed only)
+
+| Claim | Status |
+| ----- | ------ |
+| Free registration; key download from Self-Service Portal | **Confirmed** — procedure in this page |
+| Key validity and reuse rules | **Confirmed** — “About Your Activation Key” below |
+| Comparative claims vs other licensing models | **Missing — escalate to CTO** |
+
+## Call to action
+
+Complete **Registration Process** below, then [Install SafeSquid](/01-Getting_Started/03-Install_SafeSquid/main) and [Activate Your License](/01-Getting_Started/04-Activate).
+
+:::tip
+**Already registered?**
 [Sign in to the Self-Service Portal](https://key.safesquid.com) to download your existing key.
 :::
 
-:::info Prerequisites
+:::note
+**Prerequisites**
 
 - A browser with internet access
 - A valid email address (for account activation and key delivery)
@@ -23,7 +47,8 @@ keywords:
 
 :::
 
-:::tip Use Your Business Email
+:::tip
+**Use Your Business Email**
 
 Using a corporate email domain (not Gmail, Yahoo, Outlook personal) unlocks enterprise account benefits:
 - Priority support during POC
