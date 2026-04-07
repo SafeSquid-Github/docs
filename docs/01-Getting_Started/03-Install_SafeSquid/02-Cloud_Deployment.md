@@ -10,6 +10,28 @@ keywords:
 
 # Cloud Deployment
 
+## Problems this method solves
+
+Backhauling remote traffic to a single on-premises gateway increases latency and creates regional bottlenecks for distributed users.
+
+## Benefits of cloud deployment
+
+- Closer enforcement points for remote and branch users
+- Elastic infrastructure options for changing demand
+- Reduced single-site dependency risk
+
+## Advantages (source-backed only)
+
+| Claim | Status |
+| ----- | ------ |
+| SafeSquid supports cloud deployment paths (Cloud-IMG, cloud-init, SAB/TAR alternatives) | **Confirmed** — methods in this page |
+| Cloud deployment is universally best for every organization | **Missing — environment-dependent** |
+| Comparative latency/throughput superiority vs other cloud SWGs | **Missing — escalate to CTO** |
+
+## Call to action
+
+Select one cloud deployment method below, validate service health, then continue to [Activate Your License](/01-Getting_Started/04-Activate).
+
 Deploy SafeSquid on AWS, Azure, DigitalOcean, GCP, or private cloud infrastructure using cloud-native methods (Cloud-IMG or cloud-init) or existing installation methods (SAB ISO or TAR package).
 
 **Recommended:** Use Cloud-IMG or cloud-init for cloud-native automation. Use SAB/TAR only when cloud-init is unavailable or you need a custom OS.
@@ -60,7 +82,8 @@ Import the prebuilt SafeSquid image directly into your cloud platform's custom i
 2. **Launch** an instance from the imported image
 3. **Access via SSH** with default credentials: `administrator` / `safesquid`
 
-:::caution Change Default Password
+:::caution
+**Change Default Password**
 
 Default credentials: **administrator** / **safesquid**
 
@@ -128,7 +151,8 @@ If the interface loads, deployment succeeded.
 
 ## Security Configuration
 
-:::caution Never Expose Port 8080 to Public Internet
+:::caution
+**Never Expose Port 8080 to Public Internet**
 
 Do not allow `0.0.0.0/0` access to port 8080 without authentication and strict access controls.
 

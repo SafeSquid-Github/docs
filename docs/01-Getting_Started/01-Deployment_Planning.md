@@ -18,6 +18,28 @@ keywords:
 
 # Deployment Planning
 
+## Problems this page prevents
+
+Sizing and topology mistakes cause dropped sessions, unstable inspection performance, and outages that are expensive to recover during production cutover.
+
+## Benefits of planning before installation
+
+- Capacity and resilience aligned to peak traffic
+- Fewer emergency changes after go-live
+- Clear evidence trail for operations and audit teams
+
+## Advantages (source-backed only)
+
+| Claim | Status |
+| ----- | ------ |
+| This page provides concrete sizing, network, storage, and scenario guidance | **Confirmed** — sections and tables below |
+| Specific throughput superiority versus other gateways | **Missing — escalate to CTO** |
+| One deployment pattern fits every environment | **Missing — scenario-dependent** |
+
+## Call to action
+
+Complete requirement capture and host preparation on all target nodes, then continue with [Install SafeSquid](/01-Getting_Started/03-Install_SafeSquid/main).
+
 ## Why deployment planning matters
 
 Undersized hardware breaks policy enforcement. Sessions drop. SSL decryption stalls. Logs fall behind. A single point of failure takes all web traffic offline.

@@ -9,6 +9,28 @@ keywords:
 
 # Install from TAR Package
 
+## Problems this method solves
+
+Teams with existing hardened Linux infrastructure need SafeSquid without replacing the base OS or rebuilding platform controls.
+
+## Benefits of TAR-based installation
+
+- Preserves existing server standards and hardening baselines
+- Offers full control of dependencies and service layout
+- Fits environments where appliance or cloud image paths are restricted
+
+## Advantages (source-backed only)
+
+| Claim | Status |
+| ----- | ------ |
+| TAR install supports multiple Linux distributions listed in this page | **Confirmed** — supported distributions table |
+| TAR path requires more manual dependency and service work than SAB | **Confirmed** — trade-off statement in this page |
+| TAR deployment outperforms other methods by default | **Missing — escalate to CTO** |
+
+## Call to action
+
+Complete prerequisites and installation steps below, then proceed to [Activate Your License](/01-Getting_Started/04-Activate) and [Verify Your Setup](/01-Getting_Started/06-Verify_Your_Setup).
+
 Install SafeSquid on an existing Linux server without replacing the OS or using a full appliance image. Works on any distribution — Debian, Ubuntu, Red Hat, CentOS, SUSE, Rocky Linux, and others.
 
 **Use this method when:**
@@ -32,7 +54,8 @@ Other distributions may work but are untested. Minimum kernel version: 3.10+
 
 ## Prerequisites
 
-:::info System Requirements
+:::note
+**System Requirements**
 
 - Linux server meeting [hardware requirements](/01-Getting_Started/01-Deployment_Planning#hardware-sizing) (minimum 4 CPU cores, 8 GB RAM, 100 GB disk)
 - Root or sudo access
@@ -311,7 +334,8 @@ SafeSquid uses a local DNS resolver for performance and policy-aware resolution.
 
 **Full guide:** [BIND9 Configuration](/02-SafeSquid_SWG/07-Supporting_Services/02-Bind)
 
-:::tip Before Production
+:::tip
+**Before Production**
 
 Configure both Monit and BIND9 before moving to production. Without Monit, a crashed SafeSquid process will not restart automatically.
 

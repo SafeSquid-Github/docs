@@ -10,6 +10,28 @@ keywords:
 
 # SafeSquid Appliance Builder (SAB)
 
+## Problems this method solves
+
+Manual OS hardening and dependency setup introduce avoidable configuration errors that delay pilot readiness and increase operational risk.
+
+## Benefits of SAB deployment
+
+- Faster time to a working SafeSquid node
+- Standardized base image and service layout
+- Lower setup variance across hardware and VM installs
+
+## Advantages (source-backed only)
+
+| Claim | Status |
+| ----- | ------ |
+| SAB automates OS + dependency + partitioning tasks for SafeSquid deployment | **Confirmed** — documented in this page |
+| Approximate 15-minute deployment window from ISO boot | **Confirmed** — documented timing in this page |
+| Performance superiority versus all manual installs | **Missing — escalate to CTO** |
+
+## Call to action
+
+Use the steps below to deploy SAB, then continue with [Activate Your License](/01-Getting_Started/04-Activate) and [Verify Your Setup](/01-Getting_Started/06-Verify_Your_Setup).
+
 ## What is SAB?
 
 SAB (SafeSquid Appliance Builder) is a security-hardened **Debian Linux** ISO that installs the OS, partitions disks, and deploys SafeSquid with all dependencies in about 15 minutes.
@@ -23,7 +45,8 @@ SAB (SafeSquid Appliance Builder) is a security-hardened **Debian Linux** ISO th
 - All SafeSquid dependencies installed and tested
 - Production-ready in 15 minutes from ISO boot
 
-:::caution Default Credentials
+:::caution
+**Default Credentials**
 
 **Default login:** administrator / safesquid
 
@@ -31,7 +54,8 @@ You **must** change the password immediately after first login. Run `passwd` at 
 
 :::
 
-:::info System Requirements
+:::note
+**System Requirements**
 
 - **Minimum disk:** 100 GB (NVMe SSD recommended for production; includes 50 GB for OS+app + 50 GB for logs/cache)
 - **CPU:** 4+ cores with AES-NI (required for SSL inspection performance)
@@ -44,7 +68,8 @@ You **must** change the password immediately after first login. Run `passwd` at 
 
 ## Before You Begin
 
-:::caution Back Up Data First
+:::caution
+**Back Up Data First**
 
 SAB will **erase and repartition** the target disk. Back up any existing data before proceeding.
 
@@ -99,7 +124,8 @@ SAB will **erase and repartition** the target disk. Back up any existing data be
    ![Mirror](/images/SAB_Debian/pptx_image11.png)
    ![HTTP proxy](/images/SAB_Debian/pptx_image12.png)
 
-   :::tip Continue via SSH (Optional)
+   :::tip
+   **Continue via SSH (Optional)**
 
    After network configuration completes, you can connect via SSH to the server IP and continue the installation remotely instead of using the console.
 
@@ -194,7 +220,8 @@ ping -c 3 8.8.8.8
 lsblk
 ```
 
-:::tip When to Use Live Logs
+:::tip
+**When to Use Live Logs**
 Switch to ALT + F2 if:
 - Installation appears stuck
 - Network configuration fails
