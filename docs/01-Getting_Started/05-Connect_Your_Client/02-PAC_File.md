@@ -12,6 +12,28 @@ keywords:
 
 # PAC File Configuration
 
+## Problems this method solves
+
+Manual browser-by-browser proxy setup does not scale and causes inconsistent routing, which creates policy bypass and troubleshooting overhead.
+
+## Benefits of PAC-based routing
+
+- Centralized proxy logic for many endpoints
+- Flexible routing for internal-direct and external-proxied traffic
+- Easier failover patterns across multiple SafeSquid nodes
+
+## Advantages (source-backed only)
+
+| Claim | Status |
+| ----- | ------ |
+| PAC provides conditional proxy selection via `FindProxyForURL` logic | **Confirmed** — examples in this page |
+| PAC is always superior to enterprise policy tools | **Missing — environment-dependent** |
+| Comparative reliability vs vendor-managed agent stacks | **Missing — escalate to CTO** |
+
+## Call to action
+
+Host a PAC file, point a pilot browser to it, and validate logs before broad rollout with [Enterprise Deployment](/01-Getting_Started/05-Connect_Your_Client/04-Enterprise_Deployment).
+
 **PAC (Proxy Auto-Configuration)** files use JavaScript to automatically select the right proxy for each request. Browsers fetch the PAC file from a URL and execute it for every connection.
 
 **Use this method for:**
@@ -22,7 +44,8 @@ keywords:
 
 **Time to deploy:** 10 minutes to create PAC + distribute URL
 
-:::tip When to Use PAC Files
+:::tip
+**When to Use PAC Files**
 
 Use PAC files when you need flexibility (different rules for different sites) without reconfiguring every browser. For enterprise scale (100+ endpoints), use [Enterprise Deployment](/01-Getting_Started/05-Connect_Your_Client/04-Enterprise_Deployment) to push PAC URLs via GPO/MDM.
 
@@ -30,7 +53,8 @@ Use PAC files when you need flexibility (different rules for different sites) wi
 
 ## Prerequisites
 
-:::info Before You Start
+:::note
+**Before You Start**
 
 - Web server to host PAC file (Apache, Nginx, IIS, or any HTTP server)
 - SafeSquid IP address and port (default: 8080)
@@ -317,7 +341,8 @@ wpad.company.com. IN A 192.168.1.10
 http://wpad.company.com/wpad.dat
 ```
 
-:::caution WPAD Security Risk
+:::caution
+**WPAD Security Risk**
 
 WPAD can be hijacked on untrusted networks (coffee shops, airports) through DNS or DHCP poisoning attacks—an attacker can serve a malicious PAC file that routes traffic through their proxy. For production, use explicit PAC URLs distributed via GPO/MDM instead of relying on WPAD auto-discovery.
 

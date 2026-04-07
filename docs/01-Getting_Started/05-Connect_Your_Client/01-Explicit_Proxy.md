@@ -14,6 +14,28 @@ keywords:
 
 # Explicit Proxy Configuration
 
+## Problems this method solves
+
+When pilot users are not explicitly routed to SafeSquid, teams cannot confirm whether policy failures come from product logic or simple client bypass.
+
+## Benefits of explicit proxy for early rollout
+
+- Fastest path to validate proxy reachability
+- Clear per-browser troubleshooting during pilot
+- Minimal blast radius before enterprise rollout
+
+## Advantages (source-backed only)
+
+| Claim | Status |
+| ----- | ------ |
+| Explicit proxy is a fast, manual validation method | **Confirmed** — steps in this page |
+| Explicit proxy scales best for large enterprises | **Missing — use enterprise methods for scale** |
+| Comparative end-user friction vs other SWGs | **Missing — escalate to CTO** |
+
+## Call to action
+
+Configure one browser with the steps below, validate traffic in logs, then move to [PAC File](/01-Getting_Started/05-Connect_Your_Client/02-PAC_File) or [Enterprise Deployment](/01-Getting_Started/05-Connect_Your_Client/04-Enterprise_Deployment).
+
 **Explicit proxy** means manually entering the proxy IP and port in browser settings. Use this method for:
 - Testing SafeSquid for the first time
 - Single-user setups or controlled environments
@@ -21,7 +43,8 @@ keywords:
 
 **Time to configure:** ~2 minutes per browser
 
-:::tip When to Use This Method
+:::tip
+**When to Use This Method**
 
 Use explicit proxy for initial testing. For production deployments, use [PAC File](/01-Getting_Started/05-Connect_Your_Client/02-PAC_File) or [Enterprise Deployment](/01-Getting_Started/05-Connect_Your_Client/04-Enterprise_Deployment) instead.
 
@@ -29,7 +52,8 @@ Use explicit proxy for initial testing. For production deployments, use [PAC Fil
 
 ## Prerequisites
 
-:::info Before You Start
+:::note
+**Before You Start**
 
 - SafeSquid IP address and port (default: 8080 for HTTP)
 - SafeSquid must be running and accessible from the client network
@@ -156,7 +180,8 @@ You should see your request logged with client IP, URL, and timestamp.
 - Via proxy: `http://safesquid.cfg/` (embedded Rest UI interface built into SafeSquid; accessible only when your client uses the proxy, but NOT resolved by SafeSquid's DNS resolver)
 - Direct: `https://SAFESQUID-IP:8443/`
 
-:::caution HTTPS Certificate Warnings
+:::caution
+**HTTPS Certificate Warnings**
 
 Until [SSL Inspection](/05-SSL_Inspection/main) is configured, HTTPS sites will show certificate warnings. This is expected—click through for now.
 

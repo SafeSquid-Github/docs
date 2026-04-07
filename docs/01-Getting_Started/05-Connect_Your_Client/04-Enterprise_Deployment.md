@@ -12,6 +12,28 @@ keywords:
 
 # Enterprise Deployment
 
+## Problems this method solves
+
+Manual endpoint-by-endpoint setup does not scale for production environments and leads to inconsistent enforcement across departments.
+
+## Benefits of centralized rollout
+
+- Consistent proxy policy across large endpoint fleets
+- Faster remediation and policy changes through central tooling
+- Better audit posture with managed configuration evidence
+
+## Advantages (source-backed only)
+
+| Claim | Status |
+| ----- | ------ |
+| GPO/MDM/config-management can enforce standardized proxy settings at scale | **Confirmed** — methods documented in this page |
+| One enterprise tool is best for every environment | **Missing — deployment-dependent** |
+| Comparative operational cost vs competing stacks | **Missing — escalate to CTO** |
+
+## Call to action
+
+Start with a pilot OU or device group, validate user impact, then expand to full production rollout.
+
 **Enterprise deployment** pushes proxy settings to hundreds or thousands of endpoints using centralized management tools—Group Policy (Windows), MDM (macOS/mobile), or config management (Puppet, Ansible, SCCM).
 
 **Use this method for:**
@@ -22,7 +44,8 @@ keywords:
 
 **Time to deploy:** Initial setup 1-2 hours, then automatic for all endpoints
 
-:::tip Start Small
+:::tip
+**Start Small**
 
 Test on a pilot group (5-10 users) before rolling out to the entire organization. This catches configuration issues before they affect everyone.
 
@@ -30,7 +53,8 @@ Test on a pilot group (5-10 users) before rolling out to the entire organization
 
 ## Prerequisites
 
-:::info Before You Start
+:::note
+**Before You Start**
 
 **For Windows (GPO):**
 - Active Directory environment

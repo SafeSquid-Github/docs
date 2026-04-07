@@ -12,6 +12,28 @@ keywords:
 
 # Application-Specific Configuration
 
+## Problems this method solves
+
+Some tools ignore system proxy settings, creating silent bypass paths for developer and automation traffic.
+
+## Benefits of per-application proxy control
+
+- Closes bypass gaps for critical tools
+- Improves troubleshooting with app-level verification
+- Supports phased adoption without forcing whole-device proxying
+
+## Advantages (source-backed only)
+
+| Claim | Status |
+| ----- | ------ |
+| Major developer and CLI tools can be configured individually for proxy use | **Confirmed** — examples in this page |
+| App-specific configuration is unnecessary when system proxy is set | **Missing — contradicted by known exceptions** |
+| Comparative maintenance overhead vs endpoint agents | **Missing — escalate to CTO** |
+
+## Call to action
+
+Configure your highest-risk applications first (Git, Docker, package managers), then validate traffic and logs before broad adoption.
+
 **Application-specific configuration** is needed for apps that ignore system-wide proxy settings—developer tools (Git, Docker, npm), email clients, and CLI utilities.
 
 **Use this method for:**
@@ -22,7 +44,8 @@ keywords:
 
 **Time to configure:** 2-5 minutes per application
 
-:::tip System Proxy First
+:::tip
+**System Proxy First**
 
 Try [System-Wide Proxy](/01-Getting_Started/05-Connect_Your_Client/03-System_Wide_Proxy) first. Only configure apps individually if they ignore system settings.
 
@@ -30,7 +53,8 @@ Try [System-Wide Proxy](/01-Getting_Started/05-Connect_Your_Client/03-System_Wid
 
 ## Prerequisites
 
-:::info Before You Start
+:::note
+**Before You Start**
 
 - SafeSquid IP and port (default: 8080)
 - Application installed and accessible

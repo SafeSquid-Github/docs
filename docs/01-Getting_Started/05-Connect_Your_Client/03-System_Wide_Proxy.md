@@ -12,6 +12,28 @@ keywords:
 
 # System-Wide Proxy Settings
 
+## Problems this method solves
+
+Browser-only proxy setup leaves non-browser traffic ungoverned. That weakens visibility and leaves policy gaps for developer and background applications.
+
+## Benefits of system-wide configuration
+
+- Broader traffic coverage per endpoint
+- Consistent OS-level behavior for many applications
+- Faster validation of full-device routing assumptions
+
+## Advantages (source-backed only)
+
+| Claim | Status |
+| ----- | ------ |
+| OS-level proxy can route many applications through SafeSquid | **Confirmed** — procedures in this page |
+| All applications always obey system proxy settings | **Draft** — exceptions already documented below |
+| Comparative endpoint coverage vs third-party agents | **Missing — escalate to CTO** |
+
+## Call to action
+
+Apply the OS-specific steps below, test traffic flow, then configure exceptions with [Application-Specific Configuration](/01-Getting_Started/05-Connect_Your_Client/05-Application_Specific_Configuration) where needed.
+
 **System-wide proxy** configures the operating system to route all application traffic through SafeSquid—browsers, email clients, CLI tools, and background apps.
 
 **Use this method for:**
@@ -22,13 +44,15 @@ keywords:
 
 **Time to configure:** ~5 minutes per OS
 
-:::tip When to Use System-Wide Proxy
+:::tip
+**When to Use System-Wide Proxy**
 
 Use system-wide proxy for complete coverage on a single machine. For enterprise rollout (100+ endpoints), use [Enterprise Deployment](/01-Getting_Started/05-Connect_Your_Client/04-Enterprise_Deployment) to push settings via GPO/MDM.
 
 :::
 
-:::caution Not All Apps Respect System Proxy
+:::caution
+**Not All Apps Respect System Proxy**
 
 Some applications (Docker, Git, npm, Python pip) ignore system proxy settings and require [application-specific configuration](/01-Getting_Started/05-Connect_Your_Client/05-Application_Specific_Configuration).
 
@@ -36,7 +60,8 @@ Some applications (Docker, Git, npm, Python pip) ignore system proxy settings an
 
 ## Prerequisites
 
-:::info Before You Start
+:::note
+**Before You Start**
 
 - SafeSquid IP address and port (default: 8080)
 - Administrator/root privileges (for system-level changes)
@@ -63,7 +88,8 @@ Some applications (Docker, Git, npm, Python pip) ignore system proxy settings an
    - Use semicolons (`;`) to separate entries
 6. Click **Save**
 
-:::tip Verify Applied
+:::tip
+**Verify Applied**
 Open Edge and type `edge://net-internals/#proxy` to confirm settings are active.
 :::
 
@@ -201,7 +227,8 @@ proxy=http://192.168.1.100:8080
 8. **Check** "Exclude simple hostnames"
 9. Click **OK** → **Apply**
 
-:::tip Network Locations
+:::tip
+**Network Locations**
 Create separate network locations (Home, Office) with different proxy settings. Switch via **System Settings → Network → Location**.
 :::
 
@@ -302,7 +329,8 @@ Windows Registry Editor Version 5.00
 
 Save as `proxy.reg` and run, or deploy via GPO.
 
-:::caution Registry Edits
+:::caution
+**Registry Edits**
 
 Only use this method if you're comfortable with registry editing. Incorrect changes can break networking. Use Settings app for manual configuration.
 
