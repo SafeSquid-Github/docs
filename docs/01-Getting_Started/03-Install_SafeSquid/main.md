@@ -12,6 +12,28 @@ keywords:
 
 # Install SafeSquid
 
+## Problems this page prevents
+
+Deployment stalls when teams pick the wrong install path for their environment. That causes rework, downtime windows, and delayed policy validation.
+
+## Benefits of choosing the right method early
+
+- Faster pilot time-to-value with fewer rebuilds
+- Lower rollout risk by matching method to infrastructure
+- Cleaner handoff to activation, client routing, and verification
+
+## Advantages (source-backed only)
+
+| Claim | Status |
+| ----- | ------ |
+| Three supported install paths (SAB, cloud, Linux TAR) | **Confirmed** — this page and linked child guides |
+| Turnkey speed and automation for SAB path | **Confirmed** — [SAB guide](/01-Getting_Started/03-Install_SafeSquid/01-SafeSquid_Appliance_Builder) |
+| Comparative performance vs other SWG installers | **Missing — escalate to CTO** |
+
+## Call to action
+
+Pick one method below, complete installation, then continue with [Activate Your License](/01-Getting_Started/04-Activate).
+
 SafeSquid offers three installation paths depending on your infrastructure:
 
 - **Appliance Builder (SAB)** — Full turnkey image (OS + SafeSquid + services) for bare metal or VM
@@ -20,7 +42,8 @@ SafeSquid offers three installation paths depending on your infrastructure:
 
 All methods produce an operational node ready for license activation and client connectivity.
 
-:::info Prerequisites
+:::note
+**Prerequisites**
 
 - Complete [Deployment Planning](/01-Getting_Started/01-Deployment_Planning) to size hardware and prepare your environment
 - Download your [activation key](/01-Getting_Started/02-Register) (you'll need it after installation)

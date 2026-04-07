@@ -9,11 +9,34 @@ keywords:
 
 # Verify Your Setup
 
+## Problems verification prevents
+
+Teams often proceed to policy tuning before confirming service, path, and licensing. That creates false negatives, wasted troubleshooting time, and weak audit evidence.
+
+## Benefits of a structured smoke test
+
+- Confirms service health, proxy path, and license state before hardening
+- Produces quick evidence for deployment handoff
+- Reduces rollout risk by catching foundational issues early
+
+## Advantages (source-backed only)
+
+| Claim | Status |
+| ----- | ------ |
+| 5-minute checks validate service, interface, license, traffic, and logging basics | **Confirmed** — checklist below |
+| This checklist alone proves full production readiness | **Draft** — needs broader hardening and HA validation |
+| Comparative reliability vs external validation suites | **Missing — escalate to CTO** |
+
+## Call to action
+
+Run all checklist steps below and fix failures before moving into advanced policy configuration.
+
 **Goal:** Confirm SafeSquid is installed, licensed, and proxying traffic so you can proceed to policy configuration with confidence.
 
 ## Prerequisites
 
-:::info Before Running These Tests
+:::note
+**Before Running These Tests**
 
 - SafeSquid is installed and the license is activated (see [Activate Your License](/01-Getting_Started/04-Activate))
 - At least one client is configured to use the proxy (see [Connect Your Client](/01-Getting_Started/05-Connect_Your_Client/main))
@@ -69,7 +92,8 @@ If proxy isn't configured yet, try:
 https://SAFESQUID-SERVER-IP:8443/
 ```
 
-:::tip Browser Not Configured?
+:::tip
+**Browser Not Configured?**
 See [Explicit Proxy](/01-Getting_Started/05-Connect_Your_Client/01-Explicit_Proxy) for a 2-minute setup.
 :::
 
@@ -150,7 +174,8 @@ tail -20 /var/log/safesquid/access/extended.log
 
 **Expected:** Entry for `www.google.com` with status `200`
 
-:::caution Certificate Warnings Are Normal (Without SSL Inspection)
+:::caution
+**Certificate Warnings Are Normal (Without SSL Inspection)**
 
 Until [SSL Inspection](/05-SSL_Inspection/main) is configured, HTTPS sites will show certificate warnings. This is expected behavior—SafeSquid is proxying the connection but not inspecting it.
 
@@ -185,7 +210,8 @@ nslookup example.com 127.0.0.1
 | DNS resolution fails | BIND9 not running | `systemctl restart bind9`; check `/var/log/syslog` for errors |
 | HTTPS sites don't load at all | Firewall blocking, or SafeSquid crashed | Check: `systemctl status safesquid`; Check firewall: `iptables -L` |
 
-:::info Detailed Troubleshooting
+:::note
+**Detailed Troubleshooting**
 For detailed troubleshooting, see [Troubleshooting](/23-Troubleshooting/main).
 :::
 

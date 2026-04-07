@@ -12,6 +12,28 @@ keywords:
 
 # Connect Your Client
 
+## Problems this page prevents
+
+SafeSquid cannot enforce policy for traffic that never reaches the proxy path. Misconfigured clients create blind spots, bypass controls, and weaken incident evidence.
+
+## Benefits of correct client routing
+
+- Enforceable policy on real user traffic
+- Reproducible rollout patterns from pilot to enterprise scale
+- Verifiable proxy-path evidence in logs
+
+## Advantages (source-backed only)
+
+| Claim | Status |
+| ----- | ------ |
+| Multiple client connection models (explicit, PAC, system-wide, enterprise, app-specific) | **Confirmed** — this section and child docs |
+| One model is universally best for every environment | **Missing — deployment-dependent** |
+| Comparative usability vs competing SWG clients | **Missing — escalate to CTO** |
+
+## Call to action
+
+Choose a method below, configure one endpoint, then validate with [Verify Your Setup](/01-Getting_Started/06-Verify_Your_Setup).
+
 Web traffic flows through SafeSquid only when clients are configured to use it as their HTTP proxy. Choose a configuration method based on your deployment scale and environment:
 
 - **Explicit Proxy** — Manual browser configuration (testing, single users)
@@ -20,7 +42,8 @@ Web traffic flows through SafeSquid only when clients are configured to use it a
 - **Enterprise Deployment** — Mass rollout via GPO, MDM, or config management (production at scale)
 - **Application-Specific** — Individual app configuration (Git, Docker, CLI tools)
 
-:::info Before You Start
+:::note
+**Before You Start**
 
 - SafeSquid installed and running (verify by accessing `https://SERVER-IP:8443`)
 - License activated (see [Activate Your License](/01-Getting_Started/04-Activate)) for full feature access

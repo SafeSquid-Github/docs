@@ -11,6 +11,28 @@ keywords:
 
 # Activate Your License
 
+## Problems activation resolves
+
+Without activation, teams cannot use licensed update feeds and commercial controls, and cannot prove license status during audits.
+
+## Benefits of completing activation
+
+- Enable licensed capabilities tied to your key tier
+- Receive update feeds required for ongoing protection workflows
+- Capture auditable license status in the interface
+
+## Advantages (source-backed only)
+
+| Claim | Status |
+| ----- | ------ |
+| Free and Commercial tiers with different capabilities | **Confirmed** — table below |
+| Activation requires outbound reachability to listed endpoints | **Confirmed** — readiness checklist below |
+| Competitive tier superiority claims | **Missing — escalate to CTO** |
+
+## Call to action
+
+Complete the readiness checks, run the activation steps, and confirm status in **Support → Activation Details**.
+
 An unactivated SafeSquid instance operates with limited features. Activation ties your key to this instance and unlocks your chosen tier (Free or Commercial), enabling full update feeds and commercial features where applicable.
 
 ## Key Benefits
@@ -98,11 +120,13 @@ Your SafeSquid server needs outbound access to these endpoints. Ensure your fire
    ![Activation details](/images/License_Activation/image18.webp)
    *Subscription and activation status display*
 
-:::tip Proxy Cluster Sync
+:::tip
+**Proxy Cluster Sync**
 To synchronize SSL certificates and configuration across a proxy cluster, upload the same activation key on every SafeSquid instance.
 :::
 
-:::note Verification
+:::note
+**Verification**
 After activation and restart, **Support** → **Activation Details** shows your product type, status, and expiry. Use this screen for compliance evidence that the gateway is correctly licensed.
 :::
 
@@ -215,7 +239,8 @@ If you need time before renewing:
 ![Extend Conservation Period](/images/License_Activation/image23.webp)  
 *Extend Conservation Period button in the Self-Service Portal*
 
-:::note Conservation Period Limits
+:::note
+**Conservation Period Limits**
 The conservation period can be extended multiple times, each extension adding 3 days. However, this is a temporary measure — renew your subscription for continued commercial feature access.
 :::
 
