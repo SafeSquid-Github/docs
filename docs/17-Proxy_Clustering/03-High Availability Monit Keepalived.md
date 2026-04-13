@@ -220,8 +220,6 @@ check process safesquid_proxy_service with pidfile /var/run/safesquid/safesquid.
   group root
   start program = "/usr/bin/systemctl start safesquid.service" with timeout 60 seconds
   stop program  = "/usr/bin/systemctl stop safesquid.service" with timeout 60 seconds
-  if does not exist then restart
-  if 3 restarts within 5 cycles then alert
   mode active
 ```
 
