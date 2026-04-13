@@ -39,4 +39,4 @@ Best for Linux/Unix-heavy environments or organizations using OpenLDAP for ident
 1. Choose your directory service above.
 2. Follow the **Setup Integration** guide to link SafeSquid with your directory.
 3. Configure **Simple** or **SSO** authentication rules.
-4. Combine with [Access Restriction](/docs/Access_Restriction/main/) to enforce policies by directory group.
+4. Combine with [Access Restriction](/docs/Access_Restriction/) to enforce policies by directory group.

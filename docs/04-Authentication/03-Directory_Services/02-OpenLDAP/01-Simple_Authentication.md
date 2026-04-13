@@ -55,4 +55,4 @@ Simple authentication validates users against OpenLDAP using standard LDAP bind.
 ## Next steps
 
 - [Enable SSO Authentication](/docs/Authentication/Directory_Services/OpenLDAP/SSO_Authentication/) to apply these identities to access rules.
-- [Access Restriction](/docs/Access_Restriction/main/) to define policies by LDAP group.
+- [Access Restriction](/docs/Access_Restriction/) to define policies by LDAP group.

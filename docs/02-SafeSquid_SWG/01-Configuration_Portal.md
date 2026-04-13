@@ -20,7 +20,7 @@ Access the interface from a browser configured to use SafeSquid as proxy:
 - **Via proxy:** `http://safesquid.cfg/` (embedded Rest UI interface built into SafeSquid; accessible only when your client uses the proxy, but NOT resolved by SafeSquid's DNS resolver)
 - **Direct access:** `https://SERVER-IP:8443/` (before proxy configuration or for troubleshooting)
 
-**First-time setup:** See [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/) to configure your browser to use SafeSquid.
+**First-time setup:** See [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/) to configure your browser to use SafeSquid.
 
 :::tip Login Credentials
 
@@ -44,7 +44,7 @@ Define access control rules by URL category, application signature, user/group, 
 - Enforce work-hours internet access
 - Allow specific applications while blocking others
 
-**Details:** [Access Restriction](/docs/Access_Restriction/main/)
+**Details:** [Access Restriction](/docs/Access_Restriction/)
 
 ---
 
@@ -60,7 +60,7 @@ Configure deep content inspection: DLP, malware scanning, image analysis, and co
 - Rewrite HTTP headers
 - Block specific MIME types
 
-**Details:** [Data Leakage Prevention](/docs/Data_Leakage_Prevention/main/), [Malware Scanners](/docs/Malware_Scanners/main/)
+**Details:** [Data Leakage Prevention](/docs/Data_Leakage_Prevention/), [Malware Scanners](/docs/Malware_Scanners/)
 
 ---
 
@@ -75,7 +75,7 @@ Integrate with Active Directory, LDAP, or configure local users for identity-bas
 - SSO with Active Directory
 - PAM authentication
 
-**Details:** [Authentication](/docs/Authentication/main/)
+**Details:** [Authentication](/docs/Authentication/)
 
 ---
 
@@ -90,7 +90,7 @@ Enable HTTPS decryption to inspect encrypted traffic for threats and policy viol
 - Deploy enterprise Root CA
 - Selective decryption by category/user
 
-**Details:** [SSL Inspection](/docs/SSL_Inspection/main/)
+**Details:** [SSL Inspection](/docs/SSL_Inspection/)
 
 ---
 
@@ -127,8 +127,8 @@ Access real-time logs, historical reports, and traffic analytics.
 
 ## Next Steps
 
-1. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Enable HTTPS decryption
-2. **[Authentication](/docs/Authentication/main/)** — Configure user authentication
-3. **[Access Restriction](/docs/Access_Restriction/main/)** — Set up URL filtering and content policies
-4. **[Troubleshooting](/docs/Troubleshooting/main/)** — Reference for common issues
+1. **[SSL Inspection](/docs/SSL_Inspection/)** — Enable HTTPS decryption
+2. **[Authentication](/docs/Authentication/)** — Configure user authentication
+3. **[Access Restriction](/docs/Access_Restriction/)** — Set up URL filtering and content policies
+4. **[Troubleshooting](/docs/Troubleshooting/)** — Reference for common issues
 

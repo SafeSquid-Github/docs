@@ -36,12 +36,12 @@ Detect and block Internationalized Domain Name (IDN) homograph attacks where att
 | Compliance requires IDN attack mitigation | Blocking specific FQDNs (use Access Restriction) |
 
 :::tip Combine with Other Defenses
-Homograph detection works best alongside [DNSBL](/docs/DNS_Security/DNSBL/) (block known-bad domains), [SSL Inspection](/docs/SSL_Inspection/main/) (detect fake certificates), and user security awareness training.
+Homograph detection works best alongside [DNSBL](/docs/DNS_Security/DNSBL/) (block known-bad domains), [SSL Inspection](/docs/SSL_Inspection/) (detect fake certificates), and user security awareness training.
 :::
 
 ## Prerequisites
 
-- SafeSquid installed and operational (see [Getting Started](/docs/Getting_Started/main/))
+- SafeSquid installed and operational (see [Getting Started](/docs/Getting_Started/))
 - Admin access to [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/)
 - DNS resolution handled by SafeSquid (see [Supporting Services: BIND](/docs/SafeSquid_SWG/Supporting_Services/Bind/))
 
@@ -84,7 +84,7 @@ curl -v -x http://YOUR-SAFESQUID-IP:8080 http://аpple.com
 
 ### Method 2: Browser Test
 
-1. Configure your browser to use SafeSquid as proxy (see [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/))
+1. Configure your browser to use SafeSquid as proxy (see [Connect Your Client](/docs/Getting_Started/Connect_Your_Client/))
 2. Navigate to `http://аpple.com`
 3. **Expected result:** SafeSquid displays a block page
 
@@ -128,7 +128,7 @@ When detected, SafeSquid blocks the request and logs the attempt for audit trail
 ## Next Steps
 
 - **Layer defenses:** Combine with [DNSBL](/docs/DNS_Security/DNSBL/) to block known-malicious domains
-- **Inspect certificates:** Enable [SSL Inspection](/docs/SSL_Inspection/main/) to detect fake TLS certificates on lookalike domains
+- **Inspect certificates:** Enable [SSL Inspection](/docs/SSL_Inspection/) to detect fake TLS certificates on lookalike domains
 - **Monitor attempts:** Use [Security Logs](/docs/Audit_Forensics/Security_Logs/) and [Reporting](/docs/Audit_Forensics/Reporting_Module/) to track homograph attack patterns
 - **User training:** Educate users about IDN attacks and visual domain verification
 

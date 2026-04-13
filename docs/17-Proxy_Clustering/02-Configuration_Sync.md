@@ -123,5 +123,5 @@ After restart, the slave begins syncing configuration from the master. Policy ch
 - Restart slave to apply configuration changes: Configuration Portal → Support → Restart SafeSquid
 - Some changes (network settings, startup params) require manual restart
 
-**Related**: [Master-Slave setup](/docs/Proxy_Clustering/Master_Slave/), [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), [Troubleshooting](/docs/Troubleshooting/main/)
+**Related**: [Master-Slave setup](/docs/Proxy_Clustering/Master_Slave/), [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/), [Troubleshooting](/docs/Troubleshooting/)
 

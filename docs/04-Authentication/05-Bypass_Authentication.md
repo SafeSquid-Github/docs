@@ -73,4 +73,4 @@ Bypassed traffic is not attributed to a specific user. Keep your bypass list as 
 
 - [Local Credential Store (BASIC)](/docs/Authentication/BASIC/)
 - [Directory Services](/docs/Authentication/Directory_Services/main/)
-- [Access Restriction](/docs/Access_Restriction/main/)
+- [Access Restriction](/docs/Access_Restriction/)

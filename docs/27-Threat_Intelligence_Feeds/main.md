@@ -30,11 +30,11 @@ SafeSquid cloud services deliver real-time updates across six intelligence domai
 
 | Feed | Purpose | Used by |
 |---|---|---|
-| **Web Categorization** | URL and domain classification into categories (malware, phishing, adult, social media, etc.) | [Web Categorization](/docs/Profiling_Engine/Web_Categorization/), [Access Restriction](/docs/Access_Restriction/main/) |
+| **Web Categorization** | URL and domain classification into categories (malware, phishing, adult, social media, etc.) | [Web Categorization](/docs/Profiling_Engine/Web_Categorization/), [Access Restriction](/docs/Access_Restriction/) |
 | **Application Signatures** | Identify applications by traffic patterns and user-agent strings | [Application Signatures](/docs/Profiling_Engine/Application_Signatures/) |
-| **SSL Security** | Certificate reputation, pinning data, and trust chain intelligence | [SSL Inspection](/docs/SSL_Inspection/main/) |
+| **SSL Security** | Certificate reputation, pinning data, and trust chain intelligence | [SSL Inspection](/docs/SSL_Inspection/) |
 | **Image Analysis** | Classification models for inappropriate or non-compliant visual content | [Image Analyser AI](/docs/Profiling_Engine/Content_Analyser/Image_Analyser_AI/) |
-| **Malware Scanning** | Signature databases and behavioral indicators for ClamAV and SqScan | [Malware Scanners](/docs/Malware_Scanners/main/) |
+| **Malware Scanning** | Signature databases and behavioral indicators for ClamAV and SqScan | [Malware Scanners](/docs/Malware_Scanners/) |
 | **Geo-Location** | IP-to-country and IP-to-ASN mapping for geographic policy enforcement | [GeoIP](/docs/DNS_Security/GeoIP/) |
 
 Feed delivery and refresh schedules are managed by the SafeSquid cloud service. SafeSquid instances pull updates automatically when connected to the cloud. Custom categorization overrides (managed via the [Self-Service Portal](/docs/SafeSquid_SWG/Self-Service_Portal/)) merge with cloud feeds on each refresh.
@@ -60,7 +60,7 @@ Feed delivery and refresh schedules are managed by the SafeSquid cloud service. 
 ## Next steps
 
 - [Web Categorization](/docs/Profiling_Engine/Web_Categorization/) to configure category-based policies.
-- [DNS Security](/docs/DNS_Security/main/) for DNSBL, GeoIP, and homograph detection.
-- [Malware Scanners](/docs/Malware_Scanners/main/) for ClamAV, ICAP, and SqScan configuration.
+- [DNS Security](/docs/DNS_Security/) for DNSBL, GeoIP, and homograph detection.
+- [Malware Scanners](/docs/Malware_Scanners/) for ClamAV, ICAP, and SqScan configuration.
 - [Self-Service Portal](/docs/SafeSquid_SWG/Self-Service_Portal/) to manage custom categorization and subscriptions.
 

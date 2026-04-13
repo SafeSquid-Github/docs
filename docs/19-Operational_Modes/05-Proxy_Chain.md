@@ -54,7 +54,7 @@ Deploy SafeSquid, it is up and running, no extra configuration required in paren
 
 
 ## Prerequisites
-Enable HTTPS inspection on child proxy (optionally on parent proxy also). Check our document to configure HTTPS inspection on SafeSquid - [How to configure HTTPS inspection](/docs/SSL_Inspection/main/)
+Enable HTTPS inspection on child proxy (optionally on parent proxy also). Check our document to configure HTTPS inspection on SafeSquid - [How to configure HTTPS inspection](/docs/SSL_Inspection/)
 
 Import SafeSquid child proxy ROOT CA in client browser
 
@@ -148,5 +148,5 @@ Otherwise select No and click on submit.
 
 - [Forward Proxy](/docs/Operational_Modes/Forward_Proxy/) for explicit proxy without chaining.
 - [SSL Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) for HTTPS inspection on the child proxy.
-- [Troubleshooting](/docs/Troubleshooting/main/) if connectivity or parent proxy errors occur.
+- [Troubleshooting](/docs/Troubleshooting/) if connectivity or parent proxy errors occur.
 

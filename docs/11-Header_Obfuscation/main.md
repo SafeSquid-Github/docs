@@ -40,4 +40,4 @@ Header allow/deny/insert behavior requires correct Global policy and rule config
 
 ## Next steps
 
-Combine header filter with [Access Restriction](/docs/Access_Restriction/main/) and [Cookie Inspection](/docs/Cookie_Inspection/main/) for full request/response control.
+Combine header filter with [Access Restriction](/docs/Access_Restriction/) and [Cookie Inspection](/docs/Cookie_Inspection/) for full request/response control.

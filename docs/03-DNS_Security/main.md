@@ -42,4 +42,4 @@ IDN homograph attacks use visually similar characters to impersonate legitimate 
 
 ## Next steps
 
-Use DNS security together with [Access Restriction](/docs/Access_Restriction/main/) and [Profiling Engine](/docs/Profiling_Engine/main/) for URL and application policy; see [Integrated DNS Security](/docs/SafeSquid_SWG/Integrated_DNS_Security/) for architecture context.
+Use DNS security together with [Access Restriction](/docs/Access_Restriction/) and [Profiling Engine](/docs/Profiling_Engine/) for URL and application policy; see [Integrated DNS Security](/docs/SafeSquid_SWG/Integrated_DNS_Security/) for architecture context.

@@ -75,7 +75,7 @@ Install SafeSquid from a TAR package on an existing Debian, Ubuntu, or RHEL-base
 Once SafeSquid is installed, complete these steps in order:
 
 1. **[Activate Your License](/docs/Getting_Started/Activate/)** — Upload your activation key to make the gateway fully operational
-2. **[Connect Your Client](/docs/Getting_Started/Connect_Your_Client/main/)** — Configure at least one browser or endpoint to use the proxy
+2. **[Connect Your Client](/docs/Getting_Started/Connect_Your_Client/)** — Configure at least one browser or endpoint to use the proxy
 3. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Confirm the service is running, licensed, and proxying traffic
 
-Once verified, proceed to [SSL Inspection](/docs/SSL_Inspection/main/) to enable HTTPS filtering.
+Once verified, proceed to [SSL Inspection](/docs/SSL_Inspection/) to enable HTTPS filtering.

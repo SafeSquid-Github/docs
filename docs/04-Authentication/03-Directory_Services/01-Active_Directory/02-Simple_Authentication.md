@@ -68,5 +68,5 @@ Simple authentication validates domain users via LDAP bind. When users browse th
 ## Next steps
 
 - [Configure SSO Authentication](/docs/Authentication/Directory_Services/Active_Directory/SSO_Authentication/) for a transparent user experience.
-- [Access Restriction](/docs/Access_Restriction/main/) to define policies by AD group.
-- [SSL Inspection](/docs/SSL_Inspection/main/) to attribute HTTPS traffic to AD users.
+- [Access Restriction](/docs/Access_Restriction/) to define policies by AD group.
+- [SSL Inspection](/docs/SSL_Inspection/) to attribute HTTPS traffic to AD users.

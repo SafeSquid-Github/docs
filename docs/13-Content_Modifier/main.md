@@ -31,7 +31,7 @@ Content Modifier enables security and operational control: strip or replace Acti
 
 **Client-side:** No change required; modification is transparent to the client.
 
-**SafeSquid-side:** SafeSquid deployed and operational; admin access to the configuration interface. [SSL Inspection](/docs/SSL_Inspection/main/) enabled if modifying HTTPS response body. [Access Restriction](/docs/Access_Restriction/main/) and profiles configured so modifier policies can target the right connections.
+**SafeSquid-side:** SafeSquid deployed and operational; admin access to the configuration interface. [SSL Inspection](/docs/SSL_Inspection/) enabled if modifying HTTPS response body. [Access Restriction](/docs/Access_Restriction/) and profiles configured so modifier policies can target the right connections.
 
 
 
@@ -171,11 +171,11 @@ Modify the header response and request for PNG & JPG images instead of AVIF & WE
 Field-by-field reference for every policy parameter (Enabled, Profiles, Mime type, Pattern, Replace, Applies to) with practical examples — title tag injection, image format enforcement, and header rewriting.
 
 ### Related sections
-- [Header Re-Write](/docs/Header_Obfuscation/main/) for filtering or modifying specific headers.
-- [Cookie Inspection](/docs/Cookie_Inspection/main/) for cookie filtering and policy.
-- [Data Leakage Prevention](/docs/Data_Leakage_Prevention/main/) for DLP and compliance templates.
+- [Header Re-Write](/docs/Header_Obfuscation/) for filtering or modifying specific headers.
+- [Cookie Inspection](/docs/Cookie_Inspection/) for cookie filtering and policy.
+- [Data Leakage Prevention](/docs/Data_Leakage_Prevention/) for DLP and compliance templates.
 
 ## Next steps
 
-Use with [Access Restriction](/docs/Access_Restriction/main/) profiles; enable [SSL Inspection](/docs/SSL_Inspection/main/) when modifying HTTPS response body.
+Use with [Access Restriction](/docs/Access_Restriction/) profiles; enable [SSL Inspection](/docs/SSL_Inspection/) when modifying HTTPS response body.
 

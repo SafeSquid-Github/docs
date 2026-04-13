@@ -17,7 +17,7 @@ Restrict which users can log into Facebook or Gmail; only selected users can log
 
 
 ## Prerequisites
-HTTPS Inspection should be enabled in SafeSquid. If not enabled, see the document - [How to enable HTTPS Inspection](/docs/SSL_Inspection/main/).
+HTTPS Inspection should be enabled in SafeSquid. If not enabled, see the document - [How to enable HTTPS Inspection](/docs/SSL_Inspection/).
 
 
 

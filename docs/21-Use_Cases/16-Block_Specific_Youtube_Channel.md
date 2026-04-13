@@ -22,7 +22,7 @@ Blocking specific YouTube channels while allowing other videos is a common polic
 
 ## Prerequisites
 
-- HTTPS Inspection must be enabled in SafeSquid. See [How to enable HTTPS Inspection](/docs/SSL_Inspection/main/).
+- HTTPS Inspection must be enabled in SafeSquid. See [How to enable HTTPS Inspection](/docs/SSL_Inspection/).
 - Extract the YouTube **Channel-ID** and **List-ID** from the target channel URL
 
 
@@ -122,5 +122,5 @@ To block all videos from a channel, add all playlist List-IDs and individual vid
 ## Next steps
 
 - [Allow Specific YouTube Channel and Its Playlist](/docs/Use_Cases/Allow_Specific_YouTube_Channel_and_its_Playlist/) to allow only approved channels.
-- [Access Restriction](/docs/Access_Restriction/main/) for policy and profile configuration.
+- [Access Restriction](/docs/Access_Restriction/) for policy and profile configuration.
 

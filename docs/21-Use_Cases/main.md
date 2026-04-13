@@ -83,4 +83,4 @@ Default access restriction policies control baseline web access and must be unde
 
 ## Next steps
 
-Configure [Access Restriction](/docs/Access_Restriction/main/) and [Profiling Engine](/docs/Profiling_Engine/main/) for policy; see [Troubleshooting](/docs/Troubleshooting/main/) if a use case does not behave as expected.
+Configure [Access Restriction](/docs/Access_Restriction/) and [Profiling Engine](/docs/Profiling_Engine/) for policy; see [Troubleshooting](/docs/Troubleshooting/) if a use case does not behave as expected.

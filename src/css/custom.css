@@ -42,6 +42,40 @@ element {
   margin-top: 5px;
 }
 
+/* ===== Responsive Navbar Fixes ===== */
+
+/* Fluid spacing for navbar items to prevent overlap */
+.navbar__items--right,
+.navbar__items--left {
+  gap: clamp(0.25rem, 1vw, 0.75rem) !important;
+}
+
+.navbar__item {
+  padding: 0 clamp(0.25rem, 0.8vw, 0.5rem) !important;
+}
+
+/* Slightly reduce font size on medium screens */
+@media screen and (max-width: 1200px) {
+  .navbar__link {
+    font-size: 0.9rem;
+  }
+}
+
+/* Show mobile menu earlier to prevent overlap */
+@media screen and (max-width: 1100px) {
+  .navbar__items {
+    display: none;
+  }
+  
+  .navbar__toggle {
+    display: inherit !important;
+  }
+  
+  .navbar-sidebar {
+    display: block;
+  }
+}
+
 /* ===== Enterprise Documentation Enhancements ===== */
 
 /* Full-Width Images in Documentation */

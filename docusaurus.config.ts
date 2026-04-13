@@ -12,6 +12,7 @@ const config: Config = {
   organizationName: 'SafeSquid-Github',
   projectName: 'docs',
   onBrokenLinks: 'warn',
+  
   markdown: {
     mermaid: true,
   },
@@ -29,6 +30,8 @@ const config: Config = {
           breadcrumbs: true,
           showLastUpdateTime: false,
           showLastUpdateAuthor: false,
+          // Reduce memory usage during doc processing
+          exclude: ['**/_*.{js,jsx,ts,tsx,md,mdx}'],
         },
         theme: {
           customCss: './src/css/custom.css',

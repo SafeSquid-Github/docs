@@ -27,4 +27,4 @@ Default SafeSquid configurations may not match enterprise requirements for threa
 
 ## Next steps
 
-After tuning, verify with [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) and [Performance Plot](/docs/Audit_Forensics/Performance_Plot/); for clustering see [Proxy Clustering](/docs/Proxy_Clustering/main/).
+After tuning, verify with [Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/) and [Performance Plot](/docs/Audit_Forensics/Performance_Plot/); for clustering see [Proxy Clustering](/docs/Proxy_Clustering/).

@@ -25,7 +25,7 @@ Web traffic flows through SafeSquid only when clients are configured to use it a
 - SafeSquid installed and running (verify by accessing `https://SERVER-IP:8443`)
 - License activated (see [Activate Your License](/docs/Getting_Started/Activate/)) for full feature access
 - Note your SafeSquid server IP address and port (default: 8080)
-- For HTTPS sites, you'll need [SSL Inspection](/docs/SSL_Inspection/main/) configured later
+- For HTTPS sites, you'll need [SSL Inspection](/docs/SSL_Inspection/) configured later
 
 :::
 
@@ -112,13 +112,13 @@ Visit a site like [whatismyip.com](https://whatismyip.com) — the displayed IP 
 - Verify SafeSquid is running: `systemctl status safesquid`
 - Check firewall allows port 8080
 - Confirm proxy IP and port in client settings
-- See [Troubleshooting](/docs/Troubleshooting/main/) for common issues
+- See [Troubleshooting](/docs/Troubleshooting/) for common issues
 
-**For HTTPS sites:** You'll see certificate warnings until [SSL Inspection](/docs/SSL_Inspection/main/) is configured.
+**For HTTPS sites:** You'll see certificate warnings until [SSL Inspection](/docs/SSL_Inspection/) is configured.
 
 ## Next Steps
 
 1. **[Verify Your Setup](/docs/Getting_Started/Verify_Your_Setup/)** — Run comprehensive smoke tests to confirm traffic flows
-2. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Enable HTTPS decryption so SafeSquid can inspect encrypted traffic
-3. **[Configure Policies](/docs/Access_Restriction/main/)** — Set up access controls and content filtering
+2. **[SSL Inspection](/docs/SSL_Inspection/)** — Enable HTTPS decryption so SafeSquid can inspect encrypted traffic
+3. **[Configure Policies](/docs/Access_Restriction/)** — Set up access controls and content filtering
 4. **[Scale Your Deployment](#enterprise-deployment)** — If testing succeeded, roll out to all endpoints using Enterprise Deployment methods

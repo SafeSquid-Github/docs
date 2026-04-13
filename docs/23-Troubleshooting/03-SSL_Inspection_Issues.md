@@ -50,7 +50,7 @@ keywords:
 
 ## Troubleshooting
 ### Verify SSL certificate import in browser
-Follow [Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) and [Import certificate into Firefox](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#import-certificate-into-firefox) or Chrome/IE.
+Follow [Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) and [Import certificate into Firefox](/docs/SSL_Inspection/Configure_HTTPS_Inspection/#firefox-all-platforms) or Chrome/IE.
 
 ### Case 2: Check SSL certs/cache for these symptoms
 SafeSquid certificate is imported in the browser but a secured connection still fails when accessing HTTPS websites. Some HTTPS sites work while others do not. After removing the old activation key, installing a new key, and configuring the new SSL certificate, clear SSL cache if issues persist.
@@ -220,5 +220,5 @@ To allow domain mismatch errors for specific HTTPS websites, create a policy:
 
 - [Configure HTTPS Inspection](/docs/SSL_Inspection/Configure_HTTPS_Inspection/) for setup and bypass rules.
 - [Import Certificate into Chrome or IE](/docs/SSL_Inspection/Import_Certificate_Chrome_IE/) for client certificate import.
-- [Troubleshooting](/docs/Troubleshooting/main/) for other diagnostic guides.
+- [Troubleshooting](/docs/Troubleshooting/) for other diagnostic guides.
 

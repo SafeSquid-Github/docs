@@ -59,7 +59,7 @@ After configuring the policy as above, go to the Support page and click Refresh 
 
 
 ## Testing signature detection
-HTTPS Inspection must be enabled in SafeSquid. If not, see [How to enable HTTPS Inspection](/docs/SSL_Inspection/main/).
+HTTPS Inspection must be enabled in SafeSquid. If not, see [How to enable HTTPS Inspection](/docs/SSL_Inspection/).
 
 ### Test using office documents
 Set proxy in the client browser and open Gmail. Confirm HTTPS traffic is inspected by SafeSquid; otherwise SafeSquid cannot block mail containing the configured keyword(s).

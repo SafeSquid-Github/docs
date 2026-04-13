@@ -30,4 +30,4 @@ Cookie allow/deny behavior requires correct Global policy and Allow/Deny rules. 
 
 ## Next steps
 
-Combine with [Header Obfuscation](/docs/Header_Obfuscation/main/) and [Access Restriction](/docs/Access_Restriction/main/) for full request/response and privacy control.
+Combine with [Header Obfuscation](/docs/Header_Obfuscation/) and [Access Restriction](/docs/Access_Restriction/) for full request/response and privacy control.

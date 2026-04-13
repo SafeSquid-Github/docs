@@ -57,4 +57,4 @@ Security teams require organized access to log files, configuration data, and fo
 
 ## Next steps
 
-Correlate with [Security Logs](/docs/Audit_Forensics/Security_Logs/) and [Troubleshooting](/docs/Troubleshooting/main/) for incident response; for policy configuration see [Access Restriction](/docs/Access_Restriction/main/) and [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/).
+Correlate with [Security Logs](/docs/Audit_Forensics/Security_Logs/) and [Troubleshooting](/docs/Troubleshooting/) for incident response; for policy configuration see [Access Restriction](/docs/Access_Restriction/) and [Configuration Portal](/docs/SafeSquid_SWG/Configuration_Portal/).

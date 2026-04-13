@@ -40,7 +40,7 @@ Overview of how SafeSquid components work together: proxy cluster, policy consol
 
 The central enforcement layer for HTTP/HTTPS traffic. Multiple proxy nodes can be deployed for high availability and load balancing with centralized policy management.
 
-**Details:** [Proxy Clustering](/docs/Proxy_Clustering/main/)
+**Details:** [Proxy Clustering](/docs/Proxy_Clustering/)
 
 ---
 
@@ -64,11 +64,11 @@ Centralized log aggregation, dashboards, and forensic logging. Provides visibili
 
 Policy-aware DNS resolution with DNSBL integration. Blocks malicious domains and mitigates DNS tunneling attacks.
 
-**Details:** [DNS Security](/docs/DNS_Security/main/)
+**Details:** [DNS Security](/docs/DNS_Security/)
 
 ---
 
-### [Supporting Services](/docs/SafeSquid_SWG/Supporting_Services/main/)
+### [Supporting Services](/docs/SafeSquid_SWG/Supporting_Services/)
 
 Operational services that ensure reliability and performance:
 
@@ -80,7 +80,7 @@ Operational services that ensure reliability and performance:
 
 ## Next Steps
 
-1. **[Getting Started](/docs/Getting_Started/main/)** — Install and activate SafeSquid if you haven't already
-2. **[SSL Inspection](/docs/SSL_Inspection/main/)** — Enable HTTPS decryption for policy enforcement
-3. **[Authentication](/docs/Authentication/main/)** — Integrate with Active Directory or LDAP
-4. **[Access Restriction](/docs/Access_Restriction/main/)** — Configure URL filtering and content policies
+1. **[Getting Started](/docs/Getting_Started/)** — Install and activate SafeSquid if you haven't already
+2. **[SSL Inspection](/docs/SSL_Inspection/)** — Enable HTTPS decryption for policy enforcement
+3. **[Authentication](/docs/Authentication/)** — Integrate with Active Directory or LDAP
+4. **[Access Restriction](/docs/Access_Restriction/)** — Configure URL filtering and content policies

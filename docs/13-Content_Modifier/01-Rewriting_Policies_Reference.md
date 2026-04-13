@@ -117,5 +117,5 @@ SafeSquid strips the AVIF and WEBP entries from the Accept header, causing the s
 - **Log Analysis**: Access logs should show connections matching the configured profiles and MIME types. Enable extended logging to confirm rewriting occurred on the expected connections.
 - **Performance Validation**: Load a target page in the browser and inspect the page source (or response headers) to verify the expected modification. For body rewrites, view source to confirm substituted text. For header rewrites, use browser developer tools or SafeSquid logs.
 
-**Next steps:** [Content Modifier overview](/docs/Content_Modifier/main/) for prerequisites, implementation actions, and troubleshooting. [Header Obfuscation](/docs/Header_Obfuscation/main/) for header-specific filtering. [Cookie Inspection](/docs/Cookie_Inspection/main/) for cookie-level policies.
+**Next steps:** [Content Modifier overview](/docs/Content_Modifier/) for prerequisites, implementation actions, and troubleshooting. [Header Obfuscation](/docs/Header_Obfuscation/) for header-specific filtering. [Cookie Inspection](/docs/Cookie_Inspection/) for cookie-level policies.
 

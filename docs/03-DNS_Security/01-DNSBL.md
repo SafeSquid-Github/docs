@@ -112,7 +112,7 @@ Use blacklisting domain in.dnsbl.org and blocked IP addresses 127.0.0.1-127.0.0.
 | **Cache causing stale results** | Site unblocked after DNSBL update | **Cause:** SafeSquid caches DNSBL responses for performance. **Fix:** Wait for cache expiry (TTL-based) or restart SafeSquid: `systemctl restart safesquid`. |
 | **False positive blocks** | Legitimate site blocked | **Identify:** Check DNSBL query logs to confirm it's a list issue. **Fix:** Add domain to bypass/allow-list in Access Restrictions. **Alternative:** Switch to a different DNSBL provider with lower false-positive rates. |
 | **DNSBL enabled but no blocks** | Malicious sites still accessible | **Check:** 1) **Enabled** is TRUE. 2) **Domain** field is correct. 3) **Blocked IP addresses** includes the range returned by your DNSBL. **Test:** Query a known-malicious domain (use a test entry from your DNSBL provider). |
-| **Direct IP access bypasses DNSBL** | Users access sites by IP instead of hostname | **Limitation:** DNSBL only works on DNS queries, not direct IP connections. **Mitigation:** Use [Access Restriction](/docs/Access_Restriction/main/) to block by IP range or category. |
+| **Direct IP access bypasses DNSBL** | Users access sites by IP instead of hostname | **Limitation:** DNSBL only works on DNS queries, not direct IP connections. **Mitigation:** Use [Access Restriction](/docs/Access_Restriction/) to block by IP range or category. |
 
 **Still having issues?** Contact SafeSquid support with:
 - DNSBL service domain you're using
