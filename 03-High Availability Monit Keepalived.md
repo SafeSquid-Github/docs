@@ -215,16 +215,6 @@ Monit monitors the SafeSquid process, auto-restarts it on failure, and sends ale
 sudo nano /etc/monit/conf.d/safesquid.monit
 ```
 
-```
-check process safesquid_proxy_service with pidfile /var/run/safesquid/safesquid.pid
-  group root
-  start program = "/usr/bin/systemctl start safesquid.service" with timeout 60 seconds
-  stop program  = "/usr/bin/systemctl stop safesquid.service" with timeout 60 seconds
-  if does not exist then restart
-  if 3 restarts within 5 cycles then alert
-  mode active
-```
-
 ## Step 5: Start services on both nodes
 
 ```bash
@@ -350,4 +340,3 @@ Because `nopreempt` is set, the VIP stays on VM2 after SafeSquid recovers on VM1
 
 ```
 
-**Related**: [Proxy Clustering](https://docs.safesquid.com/docs/Proxy_Clustering/), [Disaster Recovery](https://docs.safesquid.com/docs/Disaster_Recovery/), [Troubleshooting](https://docs.safesquid.com/docs/Troubleshooting/)
