@@ -24,7 +24,7 @@ Send research requests as a message containing:
 - The topic
 - A numbered list of specific questions you need answered
 
-Review the response. If gaps remain or new questions arise, send follow-up questions. There is no round limit — loop until you have everything you need to write accurately.
+Review the response. If gaps remain or new questions arise, send follow-up questions. There is no round limit — loop until you have everything you need to write accurately. If after two follow-up rounds a critical gap remains unfilled, escalate to the user before drafting.
 
 ## Drafting
 
@@ -87,7 +87,7 @@ validate: docs/[section]/[filename].md — revised: [brief list of changes made]
 
 **On PASS:** Notify the user: "Doc approved and ready: `docs/[section]/[filename].md`"
 
-**On round 3+ without PASS:** Before revising again, message the user: "3 validation rounds without approval. Issues remaining: [list]. How would you like to proceed?"
+**After two FAIL responses without reaching PASS:** Before any further revision, message the user: "Two validation rounds without approval. Issues remaining: [list]. How would you like to proceed?"
 
 ## What you do NOT do
 
