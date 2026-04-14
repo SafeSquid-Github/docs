@@ -62,7 +62,7 @@ Read the file and check every item:
 Scan the doc for every UI path (e.g. `Configuration → SSL Inspection → Certificates`, references to buttons, field names, menu items).
 
 **Step 2 — Delegate to safesquid-sysadmin:**
-Message safesquid-sysadmin:
+Use SendMessage (to: "safesquid-sysadmin") with:
 
 ```
 verify these UI paths:
@@ -71,7 +71,9 @@ verify these UI paths:
 ...
 ```
 
-Wait for the CONFIRMED / MISMATCH / NOT FOUND report.
+Wait for the CONFIRMED / MISMATCH / NOT FOUND report per path.
+
+If safesquid-sysadmin is unavailable or returns no response, record Gate 2 as FAIL with note "safesquid-sysadmin unavailable — UI paths unverified." If the response is partial (some paths missing), treat unverified paths as NOT FOUND.
 
 **Step 3 — Check rendered output (if dev server is running):**
 Use agent-browser to open `http://localhost:3000` and navigate to the doc's rendered page. Check:
@@ -135,8 +137,10 @@ ESCALATION: [N] rounds without approval. Flagging to user before continuing.
 
 Keep count of rounds in your messages. Round 1 is the first validation of a new doc. Each re-validation after a revision increments the count. If doc-writer sends a new doc (different file path), reset the count to 1.
 
+Escalation fires when N ≥ 3 (i.e. the third or later validation of the same file without a PASS).
+
 ## What you do NOT do
 
 - Do not edit documentation files — that is doc-writer's job
 - Do not navigate the SafeSquid admin interface directly — delegate to safesquid-sysadmin
-- Do not approve a doc that has open Gate 1 or Gate 3 failures, even if UI paths look fine
+- Do not approve a doc that has any open Gate 1, Gate 2, or Gate 3 failures — all three gates must be clear
