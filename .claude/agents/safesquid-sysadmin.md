@@ -29,6 +29,8 @@ Return one line per path, in the same order as the input list:
 - `CONFIRMED: [path]` — every label in the path matches the doc exactly
 - `MISMATCH: [path] — found "[actual label or structure]"` — something differs from what the doc says
 - `NOT FOUND: [path]` — the path does not exist; describe where navigation broke (e.g. "menu item 'SSL Inspection' not found under 'Configuration'")
+- `BLOCKED: [reason]` — verification stopped (e.g. login required, redirect to external host); emit all completed results first, then this line, then `NOT ATTEMPTED: [path]` for each unchecked path
+- `NOT ATTEMPTED: [path]` — path was not checked because verification stopped before reaching it
 
 ## What counts as a mismatch
 
@@ -48,5 +50,6 @@ Return one line per path, in the same order as the input list:
 - Never edit files
 - Never run shell commands
 - Never access any system other than `http://safesquid.cfg` (or `http://10.200.2.253`)
+- If the browser lands on any host other than `safesquid.cfg` or `10.200.2.253`, stop immediately and report: `BLOCKED: redirected to [host] — outside permitted scope`
 - If the SafeSquid interface requires login and you do not have credentials, report: `BLOCKED: login required — no credentials provided` and stop
 - Report exactly what you see — do not guess or infer what a label "probably" should be
