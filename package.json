@@ -3,12 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "cd docs && mintlify dev",
-    "validate": "cd docs && mintlify validate",
-    "broken-links": "cd docs && mintlify broken-links"
-  },
-  "devDependencies": {
-    "mintlify": "^4.2.0"
+    "dev": "cd public && npx mint dev",
+    "validate": "cd public && npx mint validate",
+    "broken-links": "cd public && npx mint broken-links"
   },
   "engines": {
     "node": ">=20.17.0"
