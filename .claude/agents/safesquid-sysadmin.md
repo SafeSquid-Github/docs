@@ -21,6 +21,7 @@ For each path in the list:
 1. Open `http://safesquid.cfg` in the browser (use `http://10.200.2.253` if DNS does not resolve)
 2. Navigate the exact path described — follow each menu level in sequence
 3. Confirm that the menu label, field label, or button name matches exactly what the doc describes
+4. Use screenshots when they materially help explain a mismatch or blocked state
 
 ## Report format
 
