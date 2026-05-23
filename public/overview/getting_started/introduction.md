@@ -1,6 +1,6 @@
 ---
-title: "Introduction"
-description: "SafeSquid is a multi-threaded HTTP proxy server, engineered for scalable Zero-Trust Web Security."
+title: "SafeSquid SWG"
+description: "SafeSquid is a purpose-built inline proxy that inspects every HTTP and HTTPS transaction for threats, policy violations, and data leakage before the connection reaches the internet."
 keywords:
   - SafeSquid introduction
   - getting started
@@ -9,83 +9,79 @@ keywords:
   - HTTPS inspection
   - on-premise web security
   - RBI compliance
+  - SEBI CSCRF
   - India sovereign proxy
   - squid replacement
 ---
 
-# [Zero-Trust Web Security](/overview/zero_trust_web_security/zero_trust_web_security)
+# Web-Based Threats Bypass Network Perimeter Controls
 
-Since the birth of the web, enterprises have faced a constant trade-off between productivity and risk. Web Services improve business efficiency, but also opened new paths for data leakage, phishing, malware delivery, ransomware, botnets, privacy abuse, and zero-day exploitation. 
+Zero-hour phishing, ransomware delivery, command-and-control callbacks, credential theft, and confidential data exfiltration routinely transit approved HTTP and HTTPS sessions. Uncontrolled exposure creates financial, operational, legal, and reputational impact, including regulatory action, breach notification obligations, ransomware recovery delays, and loss of stakeholder trust.
 
-Legacy defences such as endpoint security, URL filtering, and firewalls improve baseline protection, but struggle against modern web traffic shaped by encrypted sessions, user-generated content, SaaS platforms, and interconnected Layer-7 services. Endpoint controls are hard to scale and manage uniformly. Network firewalls secure Layers 3 and 4, but effective web security requires Layer-7 inspection before threats reach endpoints. Traditionally, Application Layer Firewalls seek to re-purpose web caching proxy technologies. Inherent limitations thus not only restrict security capabilities but also impact performance when multiple security options are enabled.
+Network Firewalls provide packet inspection capabilities to enforce Layer 3 and Layer 4 security policies. Such controls prevent unauthorized connections, but cannot fully interpret the HTTP transaction, user intent, payload semantics, browser behavior, or content risk inside approved web sessions. Layer-7 web security requires an HTTP/HTTPS proxy that can terminate sessions, inspect protocol headers and payloads, apply policy, and generate transaction-level audit evidence before traffic reaches the internet or the endpoint.
 
-Zero-Trust Web Security requires continuous, multi-dimensional Layer-7 inspection of every DNS and HTTP(S) transaction, with policy decisions driven by protocol metadata, payload, identity, context, destination, and session correlation.
+# Introducing SafeSquid SWG
 
-# [What is SafeSquid SWG](/overview/safesquid_swg/what_is_safesquid_swg)
+SafeSquid deploys as an inline HTTP/HTTPS proxy at the network perimeter. Every web transaction from a configured client is inspected by SafeSquid before reaching the internet. 
 
-To address these shortcomings, SafeSquid was introduced in 2004 as a purpose-built HTTP Proxy Server, designed specifically for Zero-Trust Web security. Multiple specialised security processors execute in a shared‑memory, in‑stream pipeline on the same transaction context for Layer 7 inspection, and policy enforcement. The purpose-oriented architecture promises scalable performance while ensuring comprehensive mitigation of Layer 7 threats.
+SafeSquid enforces [Zero-Trust Web Security](/overview/zero_trust_web_security/zero_trust_web_security) at Layer 7 by:
 
-Pioneering solutions to mitigate web-based threats, yet unaddressed by alternatives, highlights SafeSquid’s evolution since its maiden release in 2004. Collaboration with security specialists, administrators, and vendors world-wide sets the innovation goals.
+* Blocking phishing pages and credential-harvesting sites before users submit credentials, using real-time URL reputation and content analysis
+* Stopping ransomware delivery and severing command-and-control channels
+* Preventing egress of confidential data across all HTTP and HTTPS channels
+* Preventing session hijacking of authenticated web sessions
+* Isolating untrusted web content in Remote Browser Isolation (RBI) — an embedded browser at the perimeter renders pages; no active content reaches the endpoint
 
-## How SafeSquid Enforces Policy
+SafeSquid's inline policy enforcement and per-transaction audit logs satisfy access control, audit retention, and incident response evidence requirements across [NIST SP 800-53](https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final), [PCI-DSS](https://www.pcisecuritystandards.org/document_library/), [HIPAA](https://www.hhs.gov/hipaa/index.html), [ISO 27001](https://www.iso.org/standard/27001), [SOC 2](https://www.aicpa-cima.com/resources/landing/system-and-organization-controls-soc-suite-of-services), [RBI Master Direction on IT Governance 2023](https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12562), [SEBI CSCRF](https://www.sebi.gov.in/legal/circulars/aug-2024/cybersecurity-and-cyber-resilience-framework-cscrf-for-sebi-regulated-entities-res-_85964.html), and the [DPDP Act](https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf).
 
-SafeSquid terminates the client-side TLS session, inspects and enforces policy on the plaintext request, and establishes a new TLS session to the origin. Every step is logged.
+# How SafeSquid Inspects Every Transaction
 
-```mermaid
-flowchart LR
-    C[Client] --> SS
-    subgraph SS[SafeSquid SWG]
-        SSL[SSL Inspection] --> Auth[Authentication]
-        Auth --> Context[Contextual Intelligence]
-        Context --> PE[Policy Engine]
-        PE --> OUT[Outbound Request]
-    end
-    OUT --> Internet
-    SS --> LOG[Web SIEM]
-```
+![SafeSquid inline proxy architecture: users on the left, SafeSquid proxy in the center terminating TLS, origin servers on the right](/images/ProxyArchitecture.png)
 
-Each transaction log entry captures: user identity, source IP, destination URL, TLS certificate chain, content category, policy rule matched, DLP outcome, and disposition (allowed / blocked / inspected). Log entries are SIEM-ready and satisfy per-transaction evidence requirements under RBI Master Direction 2023, SEBI CSCRF, NIST SP 800-92, PCI-DSS Requirement 10, SOC 2 CC7.2, and ISO 27001 A.12.4.
+For HTTPS traffic, SafeSquid terminates the client-side TLS session, decrypts the HTTP transaction, inspects the HTTP protocol headers and the payload entities, applies policy, re-encrypts the transaction, and establishes a separate TLS session with the origin server. Specialized security processors operate on the same transaction context in an in-stream inspection pipeline. Malware scanning, DLP, image analysis, homograph detection, content modification, cookie inspection, header controls, and application signatures can evaluate the transaction before the final allow, block, modify, isolate, or log decision. Because processors operate on the same transaction context, policy enforcement avoids fragmented inspection chains and reduces the need for repeated parsing, copying, or handoff between independent tools.
 
-## What SafeSquid Adds to a Standard Proxy
+# Start Intercepting Web Traffic
 
-| Capability | Custom Squid Build | SafeSquid SWG |
-|---|---|---|
-| HTTPS / TLS 1.3 deep inspection | ❌ ssl-bump incompatible with TLS 1.3 in legacy builds; requires manual cert infrastructure | ✅ Full TLS 1.0–1.3 inspection; managed certificate lifecycle |
-| Identity-aware policy (AD / LDAP / RADIUS) | ❌ No native integration; requires custom scripting | ✅ Per-user and per-group rules; native directory integration |
-| Application signatures | ❌ Not available | ✅ 1,000+ apps — TeamViewer, Tor, Zoom, WhatsApp Web; SNI, header, and behavioural detection |
-| Data Loss Prevention | ❌ Not available | ✅ Keyword, file type, size threshold, regex; outbound content inspection |
-| Compliance-grade per-user audit logs | ⚠️ Basic access log only; no user identity; not SIEM-ready | ✅ Per-transaction: user identity, policy rule, category, disposition, TLS chain; SIEM-ready |
-| Zero-trust deny-by-default engine | ❌ Not built-in | ✅ Explicit allow required; unrecognised traffic blocked by default |
-| Supported commercial product | ❌ Internal maintenance burden; no vendor support | ✅ Active release cycle; commercial support; AMC available |
+Follow these steps to deploy SafeSquid and begin intercepting every HTTP and HTTPS transaction from enrolled clients.
 
-## When to Deploy SafeSquid
+<Steps>
+  <Step title="Register and obtain an activation key">
+    Create an account on the [SafeSquid Self-Service Portal](/overview/getting_started/register). The portal generates the activation key on signup.
+  </Step>
+  <Step title="Plan your deployment">
+    [Plan your proxy deployment](/overview/getting_started/deployment_planning) before installing. Choose a proxy topology, size the gateway for user count and throughput, and define high-availability and client rollout requirements.
+  </Step>
+  <Step title="Deploy the gateway">
+    Choose the installation path that matches your infrastructure:
 
-**✅ Deploy SafeSquid when:**
-
-- HTTPS/TLS inspection is required to enforce URL policy, detect malware, or prevent data exfiltration
-- Policy must be enforced per user or per group — not per IP address
-- Audit-ready per-user logs are required for RBI Master Direction 2023, SEBI CSCRF, IRDAI Cybersecurity Guidelines 2023, NCIIPC CII Guidelines, or CERT-In Directions (April 2022)
-- Cloud-hosted SWG is excluded on data sovereignty grounds, US sanctions restrictions, or RBI data localisation requirements
-- A custom-built or open-source proxy deployment is reaching end of maintainability — TLS 1.3 incompatibility, scaling constraints, or internal skill loss
-
-**❌ Do not deploy SafeSquid when:**
-
-- HTTP caching and bandwidth savings are the only requirement, with no inspection or identity-aware policy need — a standard Squid deployment is proportionate
-- No user identity source (Active Directory, LDAP, RADIUS) is available — identity-aware policy cannot be enforced without a directory
-- Fewer than 200–300 internet-connected users and no compliance driver — a UTM appliance with integrated URL filtering may be proportionate
-
-## Deploy in Five Steps
-
-Built on an open architecture and delivered as a 100% software solution, SafeSquid deploys on any standard hardware, virtual machine, or cloud instance without requiring proprietary appliances.
-
-1. [Register and obtain an activation key](/Register) — create an account on the SafeSquid Self-Service Portal in under five minutes.
-2. Deploy the gateway — [SafeSquid Appliance Builder ISO](/getting-started/quickstart/SafeSquid_Appliance_Builder) installs on any standard Intel server in under 15 minutes; [Cloud Deployment](/getting-started/quickstart/Cloud_Deployment) covers AWS, Azure, and GCP.
-3. [Route client traffic through the proxy](/getting-started/client-configuration/Connect_Your_Client) — explicit proxy, PAC file, transparent proxy, or enterprise GPO.
-4. [Activate the license and configure policies](/getting-started/introduction/Configure_Web_Security_Policies) — enable SSL inspection, user identity integration, URL categories, and DLP rules.
-5. Verify enforcement — browse a blocked category from a test client; confirm the block page renders and the transaction appears in the access log with user identity, matched policy rule, and disposition.
+    <CardGroup cols={3}>
+      <Card title="Appliance Builder ISO" href="/overview/getting_started/install_safesquid/safesquid_appliance_builder">
+        Bare metal or VM — boots and configures a dedicated SafeSquid appliance.
+      </Card>
+      <Card title="Cloud Deployment" href="/overview/getting_started/install_safesquid/cloud_deployment">
+        AWS, Azure, GCP, and DigitalOcean — deploy from a pre-built image or marketplace listing.
+      </Card>
+      <Card title="Linux Server" href="/overview/getting_started/install_safesquid/linux_server">
+        Existing Debian or Ubuntu host — installs SafeSquid alongside current services.
+      </Card>
+    </CardGroup>
+  </Step>
+  <Step title="Route client traffic through the proxy">
+    [Configure clients](/overview/getting_started/client_configuration/connect_your_client) to route HTTP and HTTPS traffic through SafeSquid. Client routing is required before the admin interface becomes accessible. Options include explicit proxy settings, a PAC file, system-wide proxy configuration, or enterprise GPO rollout.
+  </Step>
+  <Step title="Access the admin interface">
+    [Open the SafeSquid admin interface](/overview/getting_started/access_the_interface) from a browser on the admin network. The Configuration Portal is required to activate the license and configure all policies.
+  </Step>
+  <Step title="Activate the license">
+    [Upload the activation key](/overview/getting_started/activate) to unlock full policy enforcement and SSL inspection. The proxy operates in restricted mode until activation completes.
+  </Step>
+  <Step title="Configure web security policies">
+    [Configure SSL inspection, user identity, URL categories, and DLP rules](/overview/getting_started/configure_web_security_policies). To verify enforcement, browse a blocked URL category from a test client. Confirm the access log shows the transaction with the matched policy rule and disposition.
+  </Step>
+</Steps>
 
 ## Next Steps
 
-- [Zero-Trust Web Security](/getting-started/introduction/Zero-Trust_Web_Security) — threat model, kill chain, and enforcement architecture.
-- [What is SafeSquid SWG](/getting-started/introduction/What_is_SafeSquid_SWG) — platform components, inspection pipeline, and deployment scope.
-- [Register and Get Your Key](/Register) — begin the activation sequence.
+- [Troubleshooting](/troubleshooting/troubleshooting) — diagnose proxy connectivity, certificate trust, and policy enforcement failures after deployment
+- [Zero-Trust Web Security](/overview/zero_trust_web_security/zero_trust_web_security) — understand the policy model behind every allow, block, and inspect decision
+- [SafeSquid SWG Architecture](/overview/safesquid_swg/what_is_safesquid_swg) — understand proxy components, DNS security integration, and reporting modules
